@@ -40,49 +40,49 @@
 	backgroundColor = "#ffffff";
 	patterns = (
 		
-		{ name = "Comments"; begin = "<!--"; end = "-->"; foregroundColor = "#999999"; },
+		{ name = "comments.block.html"; begin = "<!--"; end = "-->"; foregroundColor = "#999999"; },
 		
-		{ name = "Embedded PHP"; begin = "<\\?(php|=)?"; end = "\\?>";
+		{ name = "embedded.php"; begin = "<\\?(php|=)?"; end = "\\?>";
 			patterns = (
 				{ include = "PHP"; }
 			);
 		},
 		
-		{ name = "HTML Entities"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
+		{ name = "constants.entities.html"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
 		
-		{ name = "Bad Entities"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
+		{ name = "invalid.entities.html"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
 		
-		{ name = "Tags"; begin = "</?([a-zA-Z0-9]+)"; end = ">";
+		{ name = "keywords.markup.tags.html"; begin = "</?([a-zA-Z0-9]+)"; end = ">";
   		"elementFontStyle[1]" = ( underline ); 
 			foregroundColor = "#888888";
 			patterns = (
-	  			{ name = "Option"; match = " ([a-zA-Z\-]+)"; },
-	  			{ name = "Double Quoted String"; begin = "\""; end = "\"";
+	  			{ name = "keywords.markup.tag.options.html"; match = " ([a-zA-Z\-]+)"; },
+	  			{ name = "strings.double-quoted.html"; begin = "\""; end = "\"";
 					patterns = (
 						{	begin = "<\\?="; end = "\\?>";
 							patterns = (
 								/*{ include = "PHP"; } commented out 'till supported by TM */
 							);
 						},
-						{ name = "HTML Entities"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
-						{ name = "Bad Ampersand"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
+						{ name = "constants.character-entities.html"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
+						{ name = "invalid.bad-ampersand.html"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
 					);
 	  			},
-				{ name = "Single Quoted String"; begin = "'"; end = "'";
+				{ name = "strings.single-quoted.html"; begin = "'"; end = "'";
 					patterns = (
 						{	begin = "<\\?="; end = "\\?>";
 							patterns = (
 								/*{ include = "PHP Source"; } commented out 'till supported by TM */
 							);
 						},
-						{ name = "HTML Entities"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
-						{ name = "Bad Ampersand"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
+						{ name = "constants.character-entities.html"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
+						{ name = "invalid.bad-ampersand.html"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
 					);
 	  			},
 			);
 		},
 		
-		{ name = "Document Type"; begin = "<!DOCTYPE"; end = ">";
+		{ name = "meta.docinfo.doctype.html"; begin = "<!DOCTYPE"; end = ">";
   			foregroundColor = "#aaaaaa";
  		}
 	);
