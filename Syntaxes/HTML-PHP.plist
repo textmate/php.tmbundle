@@ -42,6 +42,8 @@
 		{ name = "comments.block.html"; begin = "<!--"; end = "-->"; foregroundColor = "#999999"; },
 		
 		{ name = "embedded.php"; begin = "<\\?(php|=)?"; end = "\\?>";
+		    foregroundColor = "#DADADA";
+		    backgroundColor = "#322E2E";
 			patterns = (
 				{ include = "PHP"; }
 			);

@@ -939,7 +939,7 @@
 		/* OPERATORS: Strings */
 		{ 	name = "keywords.operators.strings.php";
 			foregroundColor = "#FFFFFF";
-			backgroundColor = "#3F3C3C";
+			/*backgroundColor = "#3F3C3C";*/
 			fontStyle = ( bold );
 			match = "(\\.|\\.=)";  
 		},		
