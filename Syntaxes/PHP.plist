@@ -13,9 +13,16 @@
 	
 	name = "PHP";
 	mode = "HTML.PHP";
-	fileTypes = ( );
+
+	/* Filetypes this highlighting should be applied automatically to */
+	fileTypes = ( php, php3, php4, php5, inc );
+
+	/* Folding, this will start folds at comments (/*) and at {
+	   Stop folding at their counterparts. 
+	*/
 	foldingStartMarker = "(/\\*|\\{\\s*$)";
 	foldingStopMarker = "(\\*/|^\\s*\\})";
+
 	smartTypingPairs	= ( ( "(", ")" ), ( "[", "]" ), ( "{", "}" ), ( "\"", "\"" ), ( "'", "'" ) );
 	highlightPairs		= ( ( "(", ")" ), ( "[", "]" ), ( "{", "}" ) );
 	
