@@ -47,7 +47,7 @@
 				/* SELECTORS: HTML Elements */
 				{	name = "keywords.selectors.html-elements.css";
 					foregroundColor = "#B8CD06";
-					fontStyle = (bold);
+					fontStyle = (normal);
 					match = "\\<(a|abbr|acronym|address|area|b|base|big|blockquote|body|br|button|caption|cite|code|col|colgroup|dd|del|dfn|div|dl|dt|em|fieldset|form|frame|frameset|(h[1-6])|head|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|meta|noframes|noscript|object|ol|optgroup|option|p|param|pre|q|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|ul|var)\\>";
 				},
 				
@@ -214,7 +214,7 @@ relative|repeat|repeat-x|repeat-y|right|ridge|row-resize|rtl|s-resize|scroll|se-
 
 						/* PROPERTIES: Values: Units */
 						{ 	name = "keywords.properties.values.units.css";
-							fontStyle = ( bold );
+							fontStyle = ( normal );
 							foregroundColor = "#CDDA32";
 							match = "(px|pt|cm|mm|in|em|ex|pc|%)";
 						},
