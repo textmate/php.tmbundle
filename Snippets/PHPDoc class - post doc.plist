@@ -6,19 +6,16 @@
 	<string>/Users/kumar/Library/Application Support/TextMate/Bundles/PHPDoc.tmbundle</string>
 	<key>content</key>
 	<string>/**
- * ${4:undocumented function}
+ * ${1:undocumented class}
  *
- * @return ${5:void}
- * @author `"$TM_BUNDLE_PATH/bin/phpdoc_getauthor.sh"`$6
- **/
-$1function $2($3)
-{$0
-}</string>
+ * @package ${2:default}
+ * @author `"$TM_BUNDLE_PATH/bin/phpdoc_getauthor.sh"`$3
+ **/$0</string>
 	<key>name</key>
-	<string>PHPDoc function</string>
+	<string>PHPDoc class - post doc</string>
 	<key>tabTrigger</key>
-	<string>phpdoc_f</string>
+	<string>phpdoc_cp</string>
 	<key>uuid</key>
-	<string>9087051B-87E7-11D9-A6A3-000D93589AF6</string>
+	<string>C65A0A03-956D-11D9-B0A1-000D93382786</string>
 </dict>
 </plist>

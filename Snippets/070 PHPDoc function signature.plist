@@ -11,7 +11,7 @@
  * @return ${5:void}
  * @author `"$TM_BUNDLE_PATH/bin/phpdoc_getauthor.sh"`$6
  **/
-$1 function $2($3);$0</string>
+$1function $2($3);$0</string>
 	<key>keyEquivalent</key>
 	<string></string>
 	<key>name</key>

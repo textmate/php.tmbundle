@@ -11,12 +11,16 @@
 snippet commands :
 
 "phpdoc_c"	- Class
+"phpdoc_cp"	- Class (post documentation)
 "phpdoc_d"	- Define inline constant
+"phpdoc_dp"	- Define inline constant (post documentation)
 "phpdoc_f"	- Function
+"phpdoc_fp"	- Function (post documentation)
 "phpdoc_h"	- Document header
 "phpdoc_i"	- Interface class
 "phpdoc_s"	- Abstract function signature
 "phpdoc_v"	- Class variable
+"phpdoc_vp"	- Class variable (post documentation)
 "phpdoc_u"	- This usage information
 
 TextMate shell variables :
@@ -24,7 +28,7 @@ TextMate shell variables :
 \$PHPDOC_AUTHOR  -- [optional] default value of @author (realname will be used if not set)
 [ Preferences &gt; Advanced &gt; Shell Variables ]
 
-</string>
+NOTE: Commands marked as "post documentation" are designed for undocumented code -- in other words, a comment block is added at the cursor position.</string>
 	<key>name</key>
 	<string>PHPDoc usage</string>
 	<key>tabTrigger</key>
