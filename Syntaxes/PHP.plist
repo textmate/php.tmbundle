@@ -4,7 +4,7 @@
 	
 	PHP SCRIPTING DICTIONARY
 	========================
-	Version 2.0beta5 [2005-02-28] (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan, Mats Persson)
+	Version 2.0beta6 [2005-03-04] (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan, Mats Persson)
 
 	* look for README file for more info and revision history *	
 
@@ -33,7 +33,7 @@
 			end = "\\*/"; 
 			patterns = ( 
 				{	name = "comments.block.phpdocs.php"; 
-					match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo)\\>";
+					match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo)\\>.*$";
 					foregroundColor = "#777777";
 				}
 			);		
@@ -912,7 +912,7 @@
 		{ 	name = "keywords.operators.comparison.php";
 			foregroundColor = "#FFFFFF";
 			fontStyle = ( );
-			match = "(==|===|!=|!==|<>|<|>|<=|>=)";  
+			match = "(==|===|!=|!==|<>|<|>|<=|>=)(?=[^?php])";  
 		},		
 
 		/* OPERATORS: Error Control */
@@ -1028,5 +1028,5 @@
 		}
 	);
 	
-	uuid = "D0568CF2-899B-11D9-A563-000D93C8BE28";
+	uuid = "22986475-8CA5-11D9-AEDD-000D93C8BE28";
 }

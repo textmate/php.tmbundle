@@ -1,6 +1,12 @@
 PHP SCRIPTING DICTIONARY
 ========================
-Version 2.0beta5 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan, Mats Persson)
+Version 2.0beta6 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan, Mats Persson)
+
+
+Notes v2.0beta6 [2005-03-04] (mats@imediatec.co.uk)
+------
+-- amended "comments.block.phpdocs.php" to highlight until end of line
+-- amended "keywords.operators.comparison.php" to prevent highlighting of <?php ?> tags
 
 Notes v2.0beta5 [2005-02-28] (mats@imediatec.co.uk)
 ------
