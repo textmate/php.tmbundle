@@ -1,0 +1,89 @@
+{
+	
+	/*
+	
+	HTML WITH EMBEDDED PHP
+	
+	Following David's lead, taking a more monotone approach to HTML when there's
+	a combo of PHP and HTML -- otherwise, the colors clash, and everything gets
+	way too busy.
+	
+	Maybe someday we'll come up with a scheme which works for multiple languages
+	all at once (mega HTML?).
+	
+	
+	SOME IDEAS & ISSUES
+	- not sure if we should claim .html or not -- currently just claiming .phtml
+	- variable variables need some looking at ($$foo is okay, ${$foo} is not)
+	- see HTML.plist for more notes on HTML in general
+	- nesting of PHP (or whatever else) inside quoted strings of tags doesn't
+	  work yet... Allan knows, is working on it.
+	
+	*/
+	
+	
+	name = "HTML (PHP)";
+	mode = "HTML";
+	fileTypes = ( phtml, php, php3, php4, php5, inc );
+	foldingStartMarker = "(<(?i:(head|body|table|div|style|script|ul|ol|form|dl))\\>.*?>|\\{)";
+	foldingStopMarker = "(</(?i:(head|body|table|div|style|script|ul|ol|form|dl))>|\\})";
+	increaseIndentPattern = "(<(head|title|table|tr|td|ul|ol|dl|div)\\>[^>]*>|\\{)\\s*$"; 
+
+	smartTypingPairs = (
+	    ( "(", ")" ), ( "[", "]" ), ( "{", "}" ), ( "\"", "\"" )
+	);
+	 highlightPairs = (
+	    ( "(", ")" ), ( "[", "]" ), ( "{", "}" ), ( "\"", "\"" )
+	);
+
+	foregroundColor = "#333333";
+	backgroundColor = "#ffffff";
+	patterns = (
+		
+		{ name = "Comments"; begin = "<!--"; end = "-->"; foregroundColor = "#999999"; },
+		
+		{ name = "Embedded PHP"; begin = "<\\?(php|=)?"; end = "\\?>";
+			patterns = (
+				{ include = "PHP"; }
+			);
+		},
+		
+		{ name = "HTML Entities"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
+		
+		{ name = "Bad Entities"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
+		
+		{ name = "Tags"; begin = "</?([a-zA-Z0-9]+)"; end = ">";
+  		"elementFontStyle[1]" = ( underline ); 
+			foregroundColor = "#888888";
+			patterns = (
+	  			{ name = "Option"; match = " ([a-zA-Z\-]+)"; },
+	  			{ name = "Double Quoted String"; begin = "\""; end = "\"";
+					patterns = (
+						{	begin = "<\\?="; end = "\\?>";
+							patterns = (
+								/*{ include = "PHP"; } commented out 'till supported by TM */
+							);
+						},
+						{ name = "HTML Entities"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
+						{ name = "Bad Ampersand"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
+					);
+	  			},
+				{ name = "Single Quoted String"; begin = "'"; end = "'";
+					patterns = (
+						{	begin = "<\\?="; end = "\\?>";
+							patterns = (
+								/*{ include = "PHP Source"; } commented out 'till supported by TM */
+							);
+						},
+						{ name = "HTML Entities"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
+						{ name = "Bad Ampersand"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
+					);
+	  			},
+			);
+		},
+		
+		{ name = "Document Type"; begin = "<!DOCTYPE"; end = ">";
+  			foregroundColor = "#aaaaaa";
+ 		}
+	);
+}

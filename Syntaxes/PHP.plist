@@ -1,0 +1,74 @@
+{
+	
+	/*--------------------------------------------------------------------------
+	
+	PHP SCRIPTING DICTIONARY
+	========================
+	Version 1.0 (Justin French, Sune Foldager, Allan Odgaard)
+	
+	Notes:
+	------
+	- commented out the auto-indent feature, because it helps some, and makes
+	  life a real pain for others, depending on coding style
+	- PHP's 3500+ native functions aren't here yet -- just reserved words and
+	  basic constants from the docs, plus the control structures and language
+	  constructs
+	
+	Possible Additions:
+	-------------------
+	- add EOF as a folding option?
+	
+	--------------------------------------------------------------------------*/
+	
+	
+	name = "PHP";
+	mode = "HTML.PHP";
+	fileTypes = ( );
+	foldingStartMarker = "(/\\*|\\{\\s*$)";
+	foldingStopMarker = "(\\*/|^\\s*\\})";
+	smartTypingPairs	= ( ( "(", ")" ), ( "[", "]" ), ( "{", "}" ), ( "\"", "\"" ), ( "'", "'" ) );
+	highlightPairs		= ( ( "(", ")" ), ( "[", "]" ), ( "{", "}" ) );
+	
+	/*Auto Indenting -- comment out the next line for PEAR-style auto-indenting*/
+	increaseIndentPattern = "^.*(\\{[^}\"']*|\\([^)\"']*)$";
+	
+	foregroundColor = "#333333";
+	backgroundColor = "#ffffff";
+	patterns = (
+		
+		/* comments */
+		{ name = "Comment"; begin = "/\\*"; end = "\\*/"; foregroundColor = "#999999"; },
+		{ name = "Line comment"; match = "(//|#).*$"; foregroundColor = "#999999"; },
+		
+		/* language stuff */
+		{ name = "Control Structures"; 		foregroundColor = "#6600CC";	fontStyle = ( );		match = "\\<(if|else|elseif|while|do|for|foreach|break|case|continue|switch|return|continue|default|die|do|endfor|endforeach|endif|endswitch|endwhile|exit)\\>"; },
+		{ name = "Language Constructs"; 	foregroundColor = "#0066CC";	fontStyle = ( );			match = "\\<(function|old_function|cfunction|array|declare|class|echo|enddeclare|empty|eval|isset|list|new|extends|global|print|return|static|var|const|use|exception|php_user_filter)\\>"; },
+		{ name = "Array Functions"; 		foregroundColor = "#0066CC";	fontStyle = ( );			match = "\\<(array|array_change_key_case|array_chunk|array_combine|array_count_values|array_diff_assoc|array_diff_key|array_diff_uassoc|array_diff_ukey|array_diff|array_fill|array_filter|array_flip|array_intersect_assoc|array_intersect_key|array_intersect_uassoc|array_intersect_ukey|array_intersect|array_key_exists|array_keys|array_map|array_merge_recursive|array_merge|array_multisort|array_pad|array_pop|array_push|array_rand|array_reduce|array_reverse|array_search|array_shift|array_slice|array_splice|array_sum|array_udiff_assoc|array_udiff_uassoc|array_udiff|array_uintersect_assoc|array_uintersect_uassoc|array_uintersect|array_unique|array_unshift|array_values|array_walk_recursive|array_walk|array|arsort|asort|compact|count|current|each|end|extract|in_array|krsort|ksort|list|natcasesort|natsort|reset|rsort|shuffle|sizeof|sort|uasort|uksort|usort)\\>"; },
+		{ name = "MySQL Functions"; 		foregroundColor = "#0066CC";	fontStyle = ( );			match = "\\<(mysql_affected_rows|mysql_change_user|mysql_client_encoding|mysql_close|mysql_connect|mysql_create_db|mysql_data_seek|mysql_db_name|mysql_db_query|mysql_drop_db|mysql_errno|mysql_error|mysql_escape_string|mysql_fetch_array|mysql_fetch_assoc|mysql_fetch_field|mysql_fetch_lengths|mysql_fetch_object|mysql_fetch_row|mysql_field_flags|mysql_field_len|mysql_field_name|mysql_field_seek|mysql_field_table|mysql_field_type|mysql_free_result|mysql_get_client_info|mysql_get_host_info|mysql_get_proto_info|mysql_get_server_info|mysql_info|mysql_insert_id|mysql_list_dbs|mysql_list_fields|mysql_list_processes|mysql_list_tables|mysql_num_fields|mysql_num_rows|mysql_pconnect|mysql_ping|mysql_query|mysql_real_escape_string|mysql_result|mysql_select_db|mysql_stat|mysql_tablename|mysql_thread_id|mysql_unbuffered_query)\\>"; },
+		{ name = "Include Functions"; 		foregroundColor = "#0066CC";	fontStyle = ( );			match = "\\<(require|include)(_once)?\\>";   },
+		{ name = "Comparision Operators";	foregroundColor = "#0066CC";	fontStyle = ( ); 			match = "\\<(and|or|xor|as)\\>"; }, 
+		{ name = "String Functions";		foregroundColor = "#0066CC";	fontStyle = ( ); 			match = "\\<(addcslashes|addslashes|bin2hex|chop|chr|chunk_split|convert_cyr_string|convert_uudecode|convert_uuencode|count_chars|crc32|crypt|echo|explode|fprintf|get_html_translation_table|hebrev|hebrevc|html_entity_decode|htmlentities|htmlspecialchars|implode|join|levenshtein|localeconv|ltrim|md5_file|md5|metaphone|money_format|nl_langinfo|nl2br|number_format|ord|parse_str|print|printf|quoted_printable_decode|quotemeta|rtrim|setlocale|sha1_file|sha1|similar_text|soundex|sprintf|sscanf|str_ireplace|str_pad|str_repeat|str_replace|str_rot13|str_shuffle|str_split|str_word_count|strcasecmp|strchr|strcmp|strcoll|strcspn|strip_tags|stripcslashes|stripos|stripslashes|stristr|strlen|strnatcasecmp|strnatcmp|strncasecmp|strncmp|strpbrk|strpos|strrchr|strrev|strripos|strrpos|strspn|strstr|strtok|strtolower|strtoupper|strtr|substr_compare|substr_count|substr_replace|substr|trim|ucfirst|ucwords|vfprintf|vprintf|vsprintf|wordwrap)\\>"; },
+		{ name = "Filesystem Functions";	foregroundColor = "#0066CC";	fontStyle = ( ); 			match = "\\<(basename|chgrp|chmod|chown|clearstatcache|copy|delete|dirname|disk_free_space|disk_total_space|diskfreespace|fclose|feof|fflush|fgetc|fgetcsv|fgets|fgetss|file_exists|file_get_contents|file_put_contents|file|fileatime|filectime|filegroup|fileinode|filemtime|fileowner|fileperms|filesize|filetype|flock|fnmatch|fopen|fpassthru|fputs|fread|fscanf|fseek|fstat|ftell|ftruncate|fwrite|glob|is_dir|is_executable|is_file|is_link|is_readable|is_uploaded_file|is_writable|is_writeable|link|linkinfo|lstat|mkdir|move_uploaded_file|parse_ini_file|pathinfo|pclose|popen|readfile|readlink|realpath|rename|rewind|rmdir|set_file_buffer|stat|symlink|tempnam|tmpfile|touch|umask|unlink)\\>"; },
+		{ name = "Misc. tokens"; 			foregroundColor = "#0066CC"; 	fontStyle = ( );			match = "(=>|->)"; },
+		
+		
+		/* numbers and strings */
+		{ name = "Numeric Constant"; 		foregroundColor = "#000000";	match = "\\<((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f)?\\>";  },
+		{ name = "Quoted string"; 			foregroundColor = "#CC3300";	begin = "\""; end = "\""; swallow = "\\\\.";  patterns =
+			(
+				{ name = "Complex variable";	foregroundColor = "#8B9B08"; match = "\\{\\$[a-zA-Z_\x7f-\xff].*?\\}"; },
+				{ name = "Simple variable";		foregroundColor = "#8B9B08"; match = "\\$(\\{)?[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*(\\[[a-zA-Z0-9_\x7f-\xff]+\\])?(->[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*(\\[[a-zA-Z0-9_\x7f-\xff]+\\])?)*(?(1)\\}:)";  },
+			);
+		},
+		{ name = "Pinged string"; 			foregroundColor = "#CC3300";	begin = "'"; end = "'"; swallow = "\\\\.";  },
+		
+		/* variables */
+		/*{ name = "Superglobal Variable";	foregroundColor = "#8B9B08";	fontStyle = ( bold ); match = "\\$(_SESSION|_SERVER|_POST|_GET|_COOKIE|GLOBALS|_FILES|_ENV|_REQUEST)\\>"; },*/
+		{ name = "Variable"; 				foregroundColor = "#8B9B08";	fontStyle = (  );	match = "\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*?\\>";  },
+		
+		/* misc */
+		{ name = "Constants"; 				foregroundColor = "#6600CC";	fontStyle = ( bold );	match = "\\<(TRUE|FALSE|true|false|__FILE__|__FUNCTION__|__CLASS__|__METHOD__|__LINE__)\\>";  },
+		
+	);
+	
+}
