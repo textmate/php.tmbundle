@@ -31,7 +31,7 @@
     increaseIndentPattern = "(<(head|title|table|tr|td|ul|ol|dl|div)\\>[^>]*>|\\{)\\s*$";
 
     foregroundColor = "#DADADA";
-    backgroundColor = "#322E2E";
+    backgroundColor = "#211E1E";
 
 	patterns = (
 		
