@@ -1,0 +1,58 @@
+PHP SCRIPTING DICTIONARY
+========================
+Version 2.0beta2 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli)
+
+Notes v2.0beta2 [2005-02-23]:
+------
+- Under Allan suggestion I stripped out some functions from the list. Here
+  follows the stripped functions:
+    * Advanced PHP debugger functions
+    * Aspell functions
+    * PHP bytecode Compiler
+    * CCVS API Functions
+    * COM and .Net (any complains about this?) 
+    * Cybercash Payment Functions (is someone really using them?)
+    * DBM Functions
+    * DOM Functions (most of them are class functions, don't know how to
+      handle them exactly with code highlighting)
+    * DOM XML Functions (same as above)
+    * Hyperwave Functions
+    * Hyperwave API Functions
+    * ICAP Functions
+    * Ingres II Functions (removed as considered experimental)
+    * mailparse Functions
+    * MCVE Payment Functions
+    * Memcache Functions
+    * mnoGoSearch Functions           
+    * Mohawk Software Session Handler Functions (I heard bugs about it)
+    * muscat Functions (here kitty-kitty-kitty!)
+    * Ncurses Terminal Screen Control Functions
+    * YP/NIS Functions
+    * OpenAL Audio Bindings
+    * PDO Functions
+    * Verisign Payflow Pro Functions
+    * XSL functions
+    * YAZ Functions
+	
+  Please let me know if you think I removed an important set of functions
+  or you think I kept useless ones.
+	
+- I heard a new code colouring method is under development for the next TM
+  betas, so I am not working anymore on color scheme until the new version
+  will be available
+  
+
+Notes v2.0beta1 [2005-02-21] (Matteo Spinelli):
+------
+- added all 3500+ PHP's functions, deprecated onces are also available but
+  commented out
+- all functions are grouped by topic/type and displayed alphabetically
+- new color scheme 
+
+Notes v1.0 [Original version by: Justin French, Sune Foldager, Allan Odgaard]
+------
+- commented out the auto-indent feature, because it helps some, and makes
+  life a real pain for others, depending on coding style
+- PHP's 3500+ native functions aren't here yet -- just reserved words and
+  basic constants from the docs, plus the control structures and language
+  constructs
