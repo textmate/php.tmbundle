@@ -75,7 +75,7 @@
 		{ 	name = "keywords.constructs.php";
 			foregroundColor = "#A1A1FF";
 			fontStyle = ( ); 
-			match = "(::|->)|\\<(class|extends|parent|new|function|abstract|interface|implements|__autoload|__call|__clone|__construct|__destruct|__get|__set|__sleep|__toString|__wakeup|clone)\\>"; 
+			match = "(::|->)|\\<(class|extends|parent|new|function|abstract|interface|implements|self|__autoload|__call|__clone|__construct|__destruct|__get|__set|__sleep|__toString|__wakeup|clone)\\>"; 
 		},
 		
 		/* Classes & Objects Constructs PHP4/5: Members visibility and status */
