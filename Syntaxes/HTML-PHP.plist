@@ -1,91 +1,168 @@
 {
+	/*--------------------------------------------------------------------------
+
+	HTML-PHP SYNTAX
+	===============
+	Version 2.0b1	[2005-03-04] Created by Mats Persson (mats@imediatec.co.uk)
+
+	Based in part upon the default TM HTML-PHP syntax file, but extended and amended.
+
+	* look for README file for more info and revision history *	
+
+	--------------------------------------------------------------------------*/	
 	
-	/*
-	
-	HTML WITH EMBEDDED PHP
-	
-	Following David's lead, taking a more monotone approach to HTML when there's
-	a combo of PHP and HTML -- otherwise, the colors clash, and everything gets
-	way too busy.
-	
-	Maybe someday we'll come up with a scheme which works for multiple languages
-	all at once (mega HTML?).
-	
-	
-	SOME IDEAS & ISSUES
-	- not sure if we should claim .html or not -- currently just claiming .phtml
-	- variable variables need some looking at ($$foo is okay, ${$foo} is not)
-	- see HTML.plist for more notes on HTML in general
-	- nesting of PHP (or whatever else) inside quoted strings of tags doesn't
-	  work yet... Allan knows, is working on it.
-	
-	*/
-	
+	/* The name as it will appear in the Syntax Highlight List and used by any other loading syntax file	*/
 	name = "HTML (PHP)";
-	mode = "HTML";
-	fileTypes = ( phtml, php, php3, php4, php5, inc );
-	foldingStartMarker = "(<(?i:(head|body|table|div|style|script|ul|ol|form|dl))\\>.*?>|\\{)";
-	foldingStopMarker = "(</(?i:(head|body|table|div|style|script|ul|ol|form|dl))>|\\})";
-	increaseIndentPattern = "(<(head|title|table|tr|td|ul|ol|dl|div)\\>[^>]*>|\\{)\\s*$"; 
+	mode = "HTML_PHP";
+	
+	/* Filetypes this highlighting should be applied automatically to */
+	fileTypes = (phtml, html, htm, shtml, xhtml);
+	    
+	/* Folding, this will start folds at comments (/*) and at {
+	   Stop folding at their counterparts. 
+	*/
+    foldingStartMarker = "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\>.*?>|\\{)";
+    foldingStopMarker = "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>|\\})"; 
+     
+    /* smart typing pairs and highlighting pairs */
+    smartTypingPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""), ("<", ">"));
+    highlightPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""));
 
-	smartTypingPairs = (
-	    ( "(", ")" ), ( "[", "]" ), ( "{", "}" ), ( "\"", "\"" )
-	);
-	 highlightPairs = (
-	    ( "(", ")" ), ( "[", "]" ), ( "{", "}" ), ( "\"", "\"" )
-	);
+    increaseIndentPattern = "(<(head|title|table|tr|td|ul|ol|dl|div)\\>[^>]*>|\\{)\\s*$";
 
-	foregroundColor = "#333333";
-	backgroundColor = "#f0f0f0";
+    foregroundColor = "#DADADA";
+    backgroundColor = "#322E2E";
+
 	patterns = (
 		
-		{ name = "comments.block.html"; begin = "<!--"; end = "-->"; foregroundColor = "#999999"; },
-		
-		{ name = "embedded.php"; begin = "<\\?(php|=)?"; end = "\\?>";
-		    foregroundColor = "#DADADA";
-		    backgroundColor = "#322E2E";
+		/* COMMENTS: */
+		{	name = "comments.html";
+			foregroundColor = "#555555";
+			fontStyle = ();
+			begin = "<!--";
+			end = "-->";
 			patterns = (
-				{ include = "PHP"; }
-			);
+				
+				/* SERVER-SIDE INCLUDES: */
+				{	name = "macros.server-side-includes.html";
+					foregroundColor = "#888888";
+					fontStyle = ();
+					begin = "^#\\s*(include|config|echo|exec|fsize|flastmod|printenv|set)";
+					end = "(?=\\s*--|>)";
+				},
+				
+				/* INVALID BAD COMMENT ENDING: */
+				{	name = "invalid.bad-comment-end.html";
+					foregroundColor = "#ffffff";
+					backgroundColor = "#CC3300";
+					fontStyle = ();						 
+		            match = ">|<";
+				}
+		  	);
 		},
-		
-		{ name = "constants.entities.html"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
-		
-		{ name = "invalid.entities.html"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
-		
-		{ name = "keywords.markup.tags.html"; begin = "</?([a-zA-Z0-9]+)"; end = ">";
-  		"elementFontStyle[1]" = ( underline ); 
+
+		/* EMBEDDED LANGUAGES: PHP */
+		{ 	name = "embedded.php.html";
+			begin = "<\\?(php|=)?";
+			end = "\\?>";
+			patterns = ({ include = "PHP"; }  );
+		},
+
+		/* EMBEDDED LANGUAGES: CSS */
+		{	name = "embedded.css.html";
+			begin = "(^\\s+)?<(?i:style)\\>.*?>?"; 
+			end = "</(?i:style)>(\\s+$)?"; 
+			patterns = ({ include = "CSS (PHP)"; } );
+		}, 
+
+		/* EMBEDDED LANGUAGES: JavaScript */
+		{	name = "embedded.js.html"; 
+			begin = "(^\\s+)?<(?i:script)\\>.*?>?"; 
+			end = "</(?i:script)>(\\s+$)?";
+		    patterns = ( { include = "JavaScript (PHP)"; } );
+		},
+
+		/* META DOCINFO: xml	*/
+		{	name = "meta.docinfo.xml-processing.html";
+			foregroundColor = "#68685B";
+			fontStyle = ();
+			match = "<\\?xml.*?\\?>";  /* <?xml <?xml-stylesheet */
+		},
+
+		/* META DOCINFO: DOCTYPE	*/
+		{	name = "meta.docinfo.doctype.html";
 			foregroundColor = "#888888";
+			fontStyle = (); 
+			begin = "<!DOCTYPE";
+			end = ">";
 			patterns = (
-	  			{ name = "keywords.markup.tag.options.html"; match = " ([a-zA-Z\-]+)"; },
-	  			{ name = "strings.double-quoted.html"; begin = "\""; end = "\"";
+				
+				/* META DOCINFO: dtd	*/
+				{	name = "meta.docinfo.doctype.identifiers-and-DTDs.html";
+					fontStyle = (italic); 
+					match = "\"[^\">]*\"";  
+				}
+			);
+		},
+
+		/* HTML ELEMENTS:  */
+		{	name = "keywords.markup.elements.html";
+			foregroundColor = "#858EF4";
+			fontStyle = ();
+			begin = "</?(a|abbr|acronym|address|area|b|base|big|blockquote|body|br|button|caption|cite|code|col|colgroup|dd|del|dfn|div|dl|dt|em|fieldset|form|frame|frameset|(h[1-6])|head|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|meta|noframes|noscript|object|ol|optgroup|option|p|param|pre|q|samp|script|select|small|span|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|ul|var)";
+			end = "/?>";
+			patterns = (
+				
+				/* HTML ATTRIBUTES:		*/
+				{	name = "keywords.markup.attributes.html";
+					foregroundColor = "#9B456F";
+					begin = "(abbr|accept-charset|accept|accesskey|action|align|alt|archive|axis|border|cellpadding|cellspacing|char|charoff|charset|checked|cite|class|classid|codebase|codetype|cols|colspan|content|coords|data|datetime|declare|defer|dir|disabled|encoding|enctype|for|frame|frameborder|headers|height|href|hreflang|http-equiv|id|ismap|label|lang|language|longdesc|marginheight|marginwidth|maxlength|media|method|multiple|name|nohref|noresize|onblur|onchange|onclick|ondblclick|onfocus|onkeydown|onkeypress|onkeyup|onload|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|onreset|onselect|onsubmit|onunload|profile|readonly|rel|rev|rows|rowspan|rules|scheme|scope|scrolling|selected|shape|size|span|src|standby|style|summary|tabindex|target|title|type|usemap|valign|value|valuetype|version|width|xmlns|xmlns:isbn|xml:lang)=\"";
+					end = "\"";
 					patterns = (
-						{	begin = "<\\?="; end = "\\?>";
+				
+						/* VALUES: */
+						/* STRINGS: Double-quoted	*/
+						{	name = "strings.double-quoted.html";
+							foregroundColor = "#8F8582";
+							fontStyle = ();
+							match = "[^\"]*";
+							/* SUB PATTERNS: THAT DON'T WORK: If you can make them work please help out.
 							patterns = (
-								/*{ include = "PHP"; } commented out 'till supported by TM */
-							);
-						},
-						{ name = "constants.character-entities.html"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
-						{ name = "invalid.bad-ampersand.html"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
+
+								/* CONSTANTS: Character entities	* /
+								{	name = "constants.character-entities.html";
+									foregroundColor = "#AFA472";
+									fontStyle = ();
+									match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);";
+								},
+								
+								/* JAVASCRIPTS: enclosed JS bits * /
+								{	name = "keywords.events.html";
+									foregroundColor = "#F7F025";
+									match = "(?i:javascript:).*;";									
+								},
+								
+								/* INVALID BAD &: * /
+								{	name = "invalid.bad-ampersand.html";
+									foregroundColor = "#ffffff";
+									backgroundColor = "#CC3300";
+									fontStyle = ();
+									match = "&";
+								}
+							); */
+						},								
 					);
-	  			},
-				{ name = "strings.single-quoted.html"; begin = "'"; end = "'";
-					patterns = (
-						{	begin = "<\\?="; end = "\\?>";
-							patterns = (
-								/*{ include = "PHP Source"; } commented out 'till supported by TM */
-							);
-						},
-						{ name = "constants.character-entities.html"; match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; foregroundColor = "#6600CC"; },
-						{ name = "invalid.bad-ampersand.html"; match = "&"; backgroundColor = "#CC3300"; foregroundColor = "#ffffff"; },
-					);
-	  			},
+				}		
 			);
 		},
 		
-		{ name = "meta.docinfo.doctype.html"; begin = "<!DOCTYPE"; end = ">";
-  			foregroundColor = "#aaaaaa";
- 		}
-	);
-	uuid = "EB6E6ACA-6B1C-11D9-B166-000D93589AF6";
+		/* CONSTANTS: Character entities	*/
+		{	name = "constants.character-entities.html";
+			foregroundColor = "#AFA472";
+			fontStyle = ();
+			match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);";
+		}
+
+	); 
+	uuid = "D0568CF2-899B-11D9-A563-000D93C8BE28";
 }
