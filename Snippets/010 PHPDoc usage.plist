@@ -21,6 +21,7 @@ snippet commands :
 
 TextMate shell variables :
 \$TM_ORGANIZATION_NAME  -- default value of @copyright [+ date]
+\$PHPDOC_AUTHOR  -- [optional] default value of @author (realname will be used if not set)
 [ Preferences &gt; Advanced &gt; Shell Variables ]
 
 </string>
