@@ -2,11 +2,63 @@ PHP SCRIPTING DICTIONARY
 ========================
 Version 2.0beta6 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan, Mats Persson)
 
-
 Notes v2.0beta6 [2005-03-04] (mats@imediatec.co.uk)
 ------
+PHP.plist
 -- amended "comments.block.phpdocs.php" to highlight until end of line
 -- amended "keywords.operators.comparison.php" to prevent highlighting of <?php ?> tags
+
+Also added a reworked HTML (PHP) and added CSS (PHP) and JavaScript (PHP) syntaxes. These syntax files may still have some issues, visual bugs or missing words/tags/attributes, etc. If you find any fault, please let me know. Thanks!
+
+
+HTML (PHP).plist
+A reworking/rebuilding of the existing HTML-PHP syntax for more fine-grained control of tags, attributes and values, as well as some additions from the main HTML syntax file.
+-- changed text formatting for better readability of syntax structure
+-- changed syntax colouring to a darker more easy to read scheme (temporary display where all syntax groups have a unique colour)
+-- added "macros.server-side-includes.html" for Server Side Includes syntax.
+-- added "meta.docinfo.xml.html" for <?xml..> highlighting
+-- removed "keywords.markup.tags.html" and "keywords.markup.tag.options.html" replaced with improved elements and attributes syntax groups (see next two points)
+-- added "keywords.markup.elements.html" with named html elements so that only proper HTML tags are highlighted
+-- added "keywords.markup.attributes.html" with named attributes so that only proper attributes are highlighted
+-- changed "embedded.php" to "embedded.php.html"
+-- added "embedded.css.html" for CSS syntax inside HTML files (see below for more info)
+-- added "embedded.js.html" for JavaScript syntax inside HTML files (see below for more info)
+
+CSS (PHP).plist
+Added a CSS syntax for PHP which is also a complete reworking/rebuilding of the existing CSS syntax for more fine-grained control of selectors, properties and values.
+-- text formatted for better readability of syntax structure
+-- temporary syntax colouring in line with other files in this package for easier to read scheme (all syntax groups have a unique colour)
+-- added/reworked "keywords.selectors.css" syntax group enabling unique syntax colouring for each sub-pattern
+	-- "keywords.selectors.html-elements.css" with named <tags>
+	-- "keywords.selectors.classes.css" for User Defined .Classes
+	-- "keywords.selectors.id.css" for User Defined #IDs
+	-- "keywords.selectors.pseudo-class.css" for :hover, :visited etc.
+-- added "keywords.at-rules.css" for @import or @media syntaxes. 
+-- added "keywords.properties.css" for named properties values;
+-- added/reworked "keywords.properties.values.css" with sub syntax groups
+	-- "keywords.properties.values.keywords.css" for CSS value keywords, like top, left, inherit etc.
+	-- "keywords.properties.values.fonts.css" for common Fonts, or "quoted fonts"
+	-- "keywords.properties.values.digits.css" for displayed numbers. = 10px
+	-- "keywords.properties.values.units.css" for px/em/cm/pt/% etc,
+	-- "keywords.properties.values.colors.css" for #FFFFFF colours
+	-- "keywords.properties.values.functions.css" for url(),rgb() etc. with sub patterns for strings, rgb colour and % values.
+
+	JavaScript (PHP).plist
+	Added a JS syntax for PHP which is also a complete reworking/rebuilding of the existing JavaScript syntax for more fine-grained control of Objects, Methods and properties.
+	-- text formatted for better readability of syntax structure
+	-- temporary syntax colouring in line with other files in this package for easier to read scheme (all syntax groups have a unique colour)
+	-- added "comments.html.js" for supported <!-- tags inside <script> tags in HTML.
+	-- changed "keywords.js" to "keywords.reserved.js" and added all known reserved keywords
+	-- added "keywords.objects.js" syntax group with named JS Objects (currently set to be case-insensitive, but can be changed to case sensitive)
+	-- added "keywords.methods.js" syntax group with named JS methods (case-sensitive)
+	-- added "keywords.properties.js" syntax group with named JS properties (case-sensitive)
+	-- added "keywords.event-handlers.js" syntax group with named JS Event-handlers (case-sensitive)
+	-- added "keywords.operators.js" syntax group with complete range of operators
+	-- added "constants.js" for JavaScript defined constants
+	-- disabled "strings.regex.js" as it cuts out syntax colouring. Needs more work.
+
+Also added a number of generic snippets.
+
 
 Notes v2.0beta5 [2005-02-28] (mats@imediatec.co.uk)
 ------
