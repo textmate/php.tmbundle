@@ -40,7 +40,7 @@
 			end = "\\*/"; 
 			patterns = ( 
 				{	name = "comments.block.phpdocs.php"; 
-					match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo)\\>";
+					match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo|throws)\\>";
 					foregroundColor = "#777777";
 				}
 			);		
