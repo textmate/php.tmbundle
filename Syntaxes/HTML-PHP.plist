@@ -21,7 +21,6 @@
 	
 	*/
 	
-	
 	name = "HTML (PHP)";
 	mode = "HTML";
 	fileTypes = ( phtml, php, php3, php4, php5, inc );
@@ -37,7 +36,7 @@
 	);
 
 	foregroundColor = "#333333";
-	backgroundColor = "#ffffff";
+	backgroundColor = "#f0f0f0";
 	patterns = (
 		
 		{ name = "comments.block.html"; begin = "<!--"; end = "-->"; foregroundColor = "#999999"; },

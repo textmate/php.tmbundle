@@ -1,11 +1,15 @@
 PHP SCRIPTING DICTIONARY
 ========================
-Version 2.0beta2 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli)
+Version 2.0beta3 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli)
+
+Notes v2.0beta3 [2005-02-24]:
+------
+- Added PHP5 language constructs and PHPDoc tags to inline comments
 
 Notes v2.0beta2 [2005-02-23]:
 ------
-- Under Allan suggestion I stripped out some functions from the list. Here
-  follows the stripped functions:
+- Under Allan suggestion I stripped out some functions from the list.
+  Stripped functions:
     * Advanced PHP debugger functions
     * Aspell functions
     * PHP bytecode Compiler
@@ -37,9 +41,8 @@ Notes v2.0beta2 [2005-02-23]:
   Please let me know if you think I removed an important set of functions
   or you think I kept useless ones.
 	
-- I heard a new code colouring method is under development for the next TM
-  betas, so I am not working anymore on color scheme until the new version
-  will be available
+- I heard a new code colouring method is under development, so I am not
+  working anymore on color scheme until the new TM version will be available
   
 
 Notes v2.0beta1 [2005-02-21] (Matteo Spinelli):

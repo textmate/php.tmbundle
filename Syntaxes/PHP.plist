@@ -4,9 +4,16 @@
 	
 	PHP SCRIPTING DICTIONARY
 	========================
-	Version 2.0beta2 [2005-02-23] (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli)
+	Version 2.0beta3 [2005-02-24]
 
-	* look for README file for more info and revision history *	
+	Bundled by: Justin French, Sune Foldager, Allan Odgaard
+	Maintained by: Matteo Spinelli
+	Contributors: K.M., M.T. (full names as soon as I receive their approval)
+	
+	Please send comments and suggestions about this bundle --and this bundle
+	only-- to cubiq at cubiq.org
+	
+	! More info in the README file
 	
 	--------------------------------------------------------------------------*/
 
@@ -23,15 +30,21 @@
 	increaseIndentPattern = "^.*(\\{[^}\"']*|\\([^)\"']*)$";
 	
 	foregroundColor = "#333333";
-	backgroundColor = "#FFFFFF";
+	backgroundColor = "#f0f0f0";
 	patterns = (
 		
 		/* comments */
-		{ name = "comments.block.php"; begin = "/\\*"; end = "\\*/"; foregroundColor = "#FF8000"; },
+		{ name = "comments.block.php"; begin = "/\\*"; end = "\\*/"; foregroundColor = "#FF8000"; 
+		  patterns =
+		  (
+			{ name = "PHPDoc tags";     foregroundColor = "#DE4A02";        match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo)\\>"; }
+		  );
+		}, 
+
 		{ name = "comments.line.php"; match = "(//|#).*$"; foregroundColor = "#FF8000"; },
 		
 		/* language stuff */
-		{ name = "keywords.control.php";				foregroundColor = "#3300BB";	fontStyle = ( );		match = "\\<(break|case|class|continue|const|default|declare|die|do|else|elseif|empty|enddeclare|endfor|endforeach|endif|endswitch|endwhile|exception|exit|extends|for|foreach|function|global|if|include|include_once|new|require|require_once|return|static|switch|use|var|while)\\>"; },
+		{ name = "keywords.control.php";				foregroundColor = "#3300BB";	fontStyle = ( );		match = "\\<(abstract|break|case|catch|class|clone|continue|const|default|declare|die|do|else|elseif|empty|enddeclare|endfor|endforeach|endif|endswitch|endwhile|exception|exit|extends|final|for|foreach|function|global|if|implements|include|include_once|interface|new|parent|private|protected|public|require|require_once|return|self|static|switch|throw|try|use|var|while)\\>"; },
 
 
 		/* Apache-specific Functions */
@@ -404,7 +417,7 @@
 		{ name = "keywords.variables.php"; 				foregroundColor = "#0066CC";	fontStyle = (  );	match = "\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*?\\>";  },
 		
 		/* misc */
-		{ name = "keywords.control.php"; 				foregroundColor = "#007700";	fontStyle = ( bold );	match = "\\<(TRUE|FALSE|true|false|null|__FILE__|__FUNCTION__|__CLASS__|__METHOD__|__LINE__)\\>";  },
+		{ name = "keywords.control.php"; 				foregroundColor = "#007700";	fontStyle = ( bold );	match = "\\<(TRUE|FALSE|true|false|null|NULL|__FILE__|__FUNCTION__|__CLASS__|__METHOD__|__LINE__)\\>";  },
 	);
 	
 	uuid = "E8628DCE-6B1C-11D9-AF96-000D93589AF6";
