@@ -1,5 +1,37 @@
 PHP SCRIPTING DICTIONARY
 ========================
+Version 2.0beta5 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan, Mats Persson)
+
+Notes v2.0beta5 [2005-02-28] (mats@imediatec.co.uk)
+------
+-- changed text formatting for better readability of syntax structure
+-- changed syntax colouring to a darker more easy to read scheme (still experimental)
+-- changed Comments-> "PHPDoc tags" to  "comments.block.phpdocs.php" for better TM stylesheet support
+-- changed "keywords.control.php" syntax group to only deal with Control Structures.
+-- added "keywords.control.includerequire.php" syntax group for separate highlighting of include/require functions
+-- added "keywords.exceptions.php" syntax group to deal with Exception handling in PHP5
+-- added "keywords.constructs.php" syntax group to deal with classes for PHP4/5
+-- incorporated the Scope Resolution Operator [ :: ] and [ -> ] into the "keywords.constructs.php" syntax group
+-- added "keywords.constructs.members.php" syntax group for class member status declaration
+-- changed all "keywords.<php-built-in-functions>.php" to "keywords.functions.<php-built-in-functions>.php" for better TM stylesheet support
+-- incorporated the [ => ] into the "keywords.functions.array.php" syntax group
+-- added/reworked the Operators syntax group
+	-- "keywords.operators.arithmetic.php" syntax group
+	-- "keywords.operators.comparison.php" syntax group
+	-- "keywords.operators.error-control.php" syntax group
+	-- "keywords.operators.increment-decrement.php" syntax group
+	-- "keywords.operators.logical.php" syntax group
+	-- "keywords.operators.strings.php" syntax group
+	-- "keywords.operators.type.php" syntax group
+	-- removed "keywords.operators.arrows.php" syntax group as these were incorporated in other groups -> keywords.constructs & keywords.functions.array
+-- changed Variables-> "Superglobal Variable" syntax group to "keywords.variables.globals.php"
+-- amended list of variables in "keywords.variables.globals.php" to contain only the (validation required) globals
+-- added "keywords.variables.globals.safer.php" syntax group for safer (=non-validation required) global variables.
+-- changed Misc. -> "keywords.control.php" to "constants.php" and added a few good usability shortcuts (need to be define()'d in code )
+-- moved "constants.numeric.php" syntax group to be part of Constants syntax group
+-- added "constants.core-predefined.php" syntax group
+-- added "constants.std-predefined.php syntax group
+
 Version 2.0beta4 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan)
 
 Notes v2.0beta4 [2005-02-25] (kumar.mcmillan/gmail.com):
