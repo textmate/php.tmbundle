@@ -1,6 +1,10 @@
 PHP SCRIPTING DICTIONARY
 ========================
-Version 2.0beta3 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli)
+Version 2.0beta4 (Justin French, Sune Foldager, Allan Odgaard, Matteo Spinelli, Kumar McMillan)
+
+Notes v2.0beta4 [2005-02-25] (kumar.mcmillan/gmail.com):
+------
+- Added PHP Documentor snippets (snippet "phpdoc_u" prints usage)
 
 Notes v2.0beta3 [2005-02-24]:
 ------
