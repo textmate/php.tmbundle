@@ -13,5 +13,7 @@ define($1, $2);$0</string>
 	<string>PHPDoc constant definition</string>
 	<key>trigger</key>
 	<string>phpdoc_d</string>
+	<key>uuid</key>
+	<string>9086E254-87E7-11D9-A6A3-000D93589AF6</string>
 </dict>
 </plist>

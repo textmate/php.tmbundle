@@ -15,5 +15,7 @@ ${1:var} \$$2;$0</string>
 	<string>PHPDoc class var</string>
 	<key>trigger</key>
 	<string>phpdoc_v</string>
+	<key>uuid</key>
+	<string>90879700-87E7-11D9-A6A3-000D93589AF6</string>
 </dict>
 </plist>

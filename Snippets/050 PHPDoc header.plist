@@ -8,7 +8,7 @@
 	<string>/**
  * $1
  *
- * @author `echo $PHPDOC_AUTHOR`
+ * @author `niutil -readprop / /users/$USER realname`
  * @version \$Id\$
  * @copyright `echo $TM_ORGANIZATION_NAME`, `date +"%e %B, %Y"`
  * @package ${3:default}
@@ -20,7 +20,9 @@
 </string>
 	<key>name</key>
 	<string>PHPDoc header</string>
-	<key>trigger</key>
+	<key>tabTrigger</key>
 	<string>phpdoc_h</string>
+	<key>uuid</key>
+	<string>90872B90-87E7-11D9-A6A3-000D93589AF6</string>
 </dict>
 </plist>

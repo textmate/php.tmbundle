@@ -9,14 +9,16 @@
  * ${2:undocumented class}
  *
  * @package ${3:default}
- * @author `echo $PHPDOC_AUTHOR`
+ * @author `niutil -readprop / /users/$USER realname`
  **/
 interface $1
 {$0
 } // END interface $1</string>
 	<key>name</key>
 	<string>PHPDoc interface</string>
-	<key>trigger</key>
+	<key>tabTrigger</key>
 	<string>phpdoc_i</string>
+	<key>uuid</key>
+	<string>90874D6F-87E7-11D9-A6A3-000D93589AF6</string>
 </dict>
 </plist>

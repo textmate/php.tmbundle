@@ -9,14 +9,16 @@
  * ${4:undocumented function}
  *
  * @return ${5:void}
- * @author `cat "/Users/$USER/Library/Application Support/TextMate/PHPDoc/Defaults/author.txt"`$6
+ * @author `niutil -readprop / /users/$USER realname`$6
  **/
 $1function $2($3)
 {$0
 } // END $1function $2()</string>
 	<key>name</key>
 	<string>PHPDoc function</string>
-	<key>trigger</key>
+	<key>tabTrigger</key>
 	<string>phpdoc_f</string>
+	<key>uuid</key>
+	<string>9087051B-87E7-11D9-A6A3-000D93589AF6</string>
 </dict>
 </plist>

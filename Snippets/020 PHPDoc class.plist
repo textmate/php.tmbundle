@@ -9,14 +9,16 @@
  * ${3:undocumented class}
  *
  * @package ${4:default}
- * @author `echo $PHPDOC_AUTHOR`
+ * @author `niutil -readprop / /users/$USER realname`
  **/
 $1class $2
 {$0
 } // END $1class $2</string>
 	<key>name</key>
 	<string>PHPDoc class</string>
-	<key>trigger</key>
+	<key>tabTrigger</key>
 	<string>phpdoc_c</string>
+	<key>uuid</key>
+	<string>9086BA3F-87E7-11D9-A6A3-000D93589AF6</string>
 </dict>
 </plist>
