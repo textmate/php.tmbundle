@@ -33,7 +33,7 @@
 			end = "\\*/"; 
 			patterns = ( 
 				{	name = "comments.block.phpdocs.php"; 
-					match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo)\\>.*$";
+					match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo)\\>";
 					foregroundColor = "#777777";
 				}
 			);		
@@ -977,6 +977,27 @@
 			swallow = "\\\\.";
 		},
 		
+		/* String: Heredoc strings */
+		{   name = "strings.heredoc.php";
+		    foregroundColor = "#AD9361";
+		    begin = "<<<([a-zA-Z]+[a-zA-Z0-9_]*)";
+		    end = "^[a-zA-Z_]+[a-zA-Z0-9_]*;$";
+		    patterns = (
+		        { 	name = "keywords.variables.complex.php";
+					foregroundColor = "#EDED45"; 
+					match = "\\{\\$[a-zA-Z_\x7f-\xff].*?\\}"; 
+				},
+				{ 	name = "keywords.variables.simple.php";	
+					foregroundColor = "#C1C144"; 
+					match = "\\$(\\{)?[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*(\\[[a-zA-Z0-9_\x7f-\xff]+\\])?(->[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*(\\[[a-zA-Z0-9_\x7f-\xff]+\\])?)*(?(1)\\}:)";  
+				},
+                {   name = "strings.heredoc.html.php";
+				    foregroundColor = "#EDED45";
+				    match = "<[^>]+>"; 
+				},
+		    );
+		},
+				
 		/* VARIABLES: */
 
 		/* VARIABLES: SuperGloblals Unsafe (needs checking for safety) */ 

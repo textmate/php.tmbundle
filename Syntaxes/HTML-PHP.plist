@@ -25,7 +25,7 @@
     foldingStopMarker = "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>|\\})"; 
      
     /* smart typing pairs and highlighting pairs */
-    smartTypingPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""), ("<", ">"));
+    smartTypingPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""), ("<", ">"), ("'", "'"));
     highlightPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""));
 
     increaseIndentPattern = "(<(head|title|table|tr|td|ul|ol|dl|div)\\>[^>]*>|\\{)\\s*$";
