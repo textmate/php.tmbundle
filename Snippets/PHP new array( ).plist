@@ -6,6 +6,8 @@
 	<string>\$${1:arrayName} = array( '$2'${3:,} );$0</string>
 	<key>name</key>
 	<string>PHP new array( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>array</string>
 	<key>uuid</key>
