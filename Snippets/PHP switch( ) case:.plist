@@ -9,6 +9,8 @@ break;
 </string>
 	<key>name</key>
 	<string>PHP switch( ) case:</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>case</string>
 	<key>uuid</key>

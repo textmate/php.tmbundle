@@ -6,6 +6,8 @@
 	<string>print "$1"${2: . };$0</string>
 	<key>name</key>
 	<string>PHP print( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>print</string>
 	<key>uuid</key>

@@ -6,6 +6,8 @@
 	<string>\$_COOKIE['$1']${2:;}$0</string>
 	<key>name</key>
 	<string>PHP $_COOKIE['']</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>-cookie</string>
 	<key>uuid</key>

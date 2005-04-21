@@ -6,6 +6,8 @@
 	<string>return FALSE;$0</string>
 	<key>name</key>
 	<string>PHP return FALSE;</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>ret0</string>
 	<key>uuid</key>

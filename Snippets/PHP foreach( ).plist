@@ -9,6 +9,8 @@
 }</string>
 	<key>name</key>
 	<string>PHP foreach( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>foreach</string>
 	<key>uuid</key>

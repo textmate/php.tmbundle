@@ -6,6 +6,8 @@
 	<string>\$_GET['$1']${2:;}$0</string>
 	<key>name</key>
 	<string>PHP $_GET['']</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>-get</string>
 	<key>uuid</key>

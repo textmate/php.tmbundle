@@ -6,6 +6,8 @@
 	<string>\$${1:retVal} = ( ${2:condition} ) ? ${3:a} : ${4:b} ;</string>
 	<key>name</key>
 	<string>PHP if ?: a : b;</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>if?</string>
 	<key>uuid</key>

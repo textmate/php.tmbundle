@@ -10,6 +10,8 @@
 $0</string>
 	<key>name</key>
 	<string>PHP define( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>def</string>
 	<key>uuid</key>

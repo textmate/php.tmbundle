@@ -11,7 +11,9 @@
 define($1, $2);$0</string>
 	<key>name</key>
 	<string>PHPDoc constant definition</string>
-	<key>trigger</key>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
 	<string>phpdoc_d</string>
 	<key>uuid</key>
 	<string>9086E254-87E7-11D9-A6A3-000D93589AF6</string>

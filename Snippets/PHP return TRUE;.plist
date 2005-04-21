@@ -6,6 +6,8 @@
 	<string>return TRUE;$0</string>
 	<key>name</key>
 	<string>PHP return TRUE;</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>ret1</string>
 	<key>uuid</key>

@@ -6,6 +6,8 @@
 	<string>\$_REQUEST['$1']${2:;}$0</string>
 	<key>name</key>
 	<string>PHP $_REQUEST['']</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>-req</string>
 	<key>uuid</key>

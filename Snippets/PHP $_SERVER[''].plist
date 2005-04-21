@@ -6,6 +6,8 @@
 	<string>\$_SERVER['$1']${2:;}$0</string>
 	<key>name</key>
 	<string>PHP $_SERVER['']</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>-server</string>
 	<key>uuid</key>

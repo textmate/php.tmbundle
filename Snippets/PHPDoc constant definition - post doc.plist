@@ -10,6 +10,8 @@
  **/$0</string>
 	<key>name</key>
 	<string>PHPDoc constant definition - post doc</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>phpdoc_dp</string>
 	<key>uuid</key>

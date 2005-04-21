@@ -16,6 +16,8 @@ $1function $2($3)
 }</string>
 	<key>name</key>
 	<string>PHPDoc function</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>phpdoc_f</string>
 	<key>uuid</key>

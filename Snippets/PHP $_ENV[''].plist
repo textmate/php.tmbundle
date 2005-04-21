@@ -6,6 +6,8 @@
 	<string>\$_ENV['$1']${2:;}$0</string>
 	<key>name</key>
 	<string>PHP $_ENV['']</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>-env</string>
 	<key>uuid</key>

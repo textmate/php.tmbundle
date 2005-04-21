@@ -6,6 +6,8 @@
 	<string>\$GLOBALS['$1']${2: = }${3:something}${4:;}$0</string>
 	<key>name</key>
 	<string>PHP $GLOBALS['']</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>-globals</string>
 	<key>uuid</key>

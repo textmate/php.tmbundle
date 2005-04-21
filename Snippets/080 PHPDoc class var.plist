@@ -13,7 +13,9 @@
 ${1:var} \$$2;$0</string>
 	<key>name</key>
 	<string>PHPDoc class var</string>
-	<key>trigger</key>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
 	<string>phpdoc_v</string>
 	<key>uuid</key>
 	<string>90879700-87E7-11D9-A6A3-000D93589AF6</string>

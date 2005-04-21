@@ -16,6 +16,8 @@ interface $1
 } // END interface $1</string>
 	<key>name</key>
 	<string>PHPDoc interface</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>phpdoc_i</string>
 	<key>uuid</key>

@@ -6,6 +6,8 @@
 	<string>require_once( '$1' );$0</string>
 	<key>name</key>
 	<string>PHP require_once( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>req1</string>
 	<key>uuid</key>

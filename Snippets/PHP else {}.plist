@@ -3,22 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>if ( $1 )
+	<string>else
 {
-	#	$2
-}
-else
-{
-	#	$3
-}
-$0</string>
+	#	$0
+}</string>
 	<key>name</key>
-	<string>PHP if( ) else( )</string>
+	<string>PHP else {}</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>ifelse</string>
+	<string>else</string>
 	<key>uuid</key>
-	<string>4B72EA1F-8CCE-11D9-B507-000D93C8BE28</string>
+	<string>609FE8EB-B251-11D9-872D-000D93C8BE28</string>
 </dict>
 </plist>

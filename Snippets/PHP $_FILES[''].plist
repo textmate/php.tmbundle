@@ -6,6 +6,10 @@
 	<string>\$_FILES['$1']${2:;}$0</string>
 	<key>name</key>
 	<string>PHP $_FILES['']</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>-files</string>
 	<key>uuid</key>
 	<string>FF0A8A5C-8CD0-11D9-B507-000D93C8BE28</string>
 </dict>

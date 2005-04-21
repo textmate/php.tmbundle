@@ -6,6 +6,8 @@
 	<string>include( '$1' );$0</string>
 	<key>name</key>
 	<string>PHP include( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>incl</string>
 	<key>uuid</key>

@@ -9,6 +9,8 @@
 }</string>
 	<key>name</key>
 	<string>PHP while( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>while</string>
 	<key>uuid</key>

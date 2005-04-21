@@ -6,6 +6,8 @@
 	<string>require( '$1' );$0</string>
 	<key>name</key>
 	<string>PHP require( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>req</string>
 	<key>uuid</key>

@@ -9,6 +9,8 @@
 }</string>
 	<key>name</key>
 	<string>PHP if( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>if</string>
 	<key>uuid</key>

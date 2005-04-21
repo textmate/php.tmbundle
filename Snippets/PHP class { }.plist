@@ -25,6 +25,8 @@ class ${1:ClassName} ${3:extends AnotherClass}
 ###</string>
 	<key>name</key>
 	<string>PHP class { }</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>classdef</string>
 	<key>uuid</key>

@@ -16,6 +16,8 @@ $1class $2
 } // END $1class $2</string>
 	<key>name</key>
 	<string>PHPDoc class</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>phpdoc_c</string>
 	<key>uuid</key>

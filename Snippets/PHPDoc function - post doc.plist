@@ -13,6 +13,8 @@
  **/$0</string>
 	<key>name</key>
 	<string>PHPDoc function - post doc</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>phpdoc_fp</string>
 	<key>uuid</key>

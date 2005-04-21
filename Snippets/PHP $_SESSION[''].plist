@@ -6,6 +6,8 @@
 	<string>\$_SESSION['$1']${2:;}$0</string>
 	<key>name</key>
 	<string>PHP $_SESSION['']</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>-sess</string>
 	<key>uuid</key>

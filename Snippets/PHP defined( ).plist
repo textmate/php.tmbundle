@@ -6,6 +6,8 @@
 	<string>$1defined( '$2' )$0</string>
 	<key>name</key>
 	<string>PHP defined( )</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>def?</string>
 	<key>uuid</key>

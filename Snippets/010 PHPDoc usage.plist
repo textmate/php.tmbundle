@@ -31,6 +31,8 @@ TextMate shell variables :
 NOTE: Commands marked as "post documentation" are designed for undocumented code -- in other words, a comment block is added at the cursor position.</string>
 	<key>name</key>
 	<string>PHPDoc usage</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>phpdoc_u</string>
 	<key>uuid</key>

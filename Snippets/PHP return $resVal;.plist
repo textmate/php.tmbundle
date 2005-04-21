@@ -6,6 +6,8 @@
 	<string>return \$resVal;$0</string>
 	<key>name</key>
 	<string>PHP return $resVal;</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>retres</string>
 	<key>uuid</key>
