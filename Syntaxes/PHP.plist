@@ -29,6 +29,10 @@
             name = "comments.line.php"; 
         }, 
         {
+            name = "symbols";
+            match = "^\\s*((final|abstract)?\\s?(public|private|protected)?\\s?(static)?\\s*)((function|class|interface)\\s+)([^$]+[&a-zA-Z0-9_]+)(.*$)";
+        },
+        {
             fontStyle = (); 
             foregroundColor = "#6969FA"; 
             match = "\\<(break|case|continue|default|declare|die|do|else|elseif|enddeclare|endfor|endforeach|endif|endswitch|endwhile|exit|for|foreach|if|return|switch|use|while)\\>"; 
