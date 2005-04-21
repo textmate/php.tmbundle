@@ -13,6 +13,7 @@
 	
 	/* The name as it will appear in the Syntax Highlight List and used by any other loading syntax file	*/
 	name = "JavaScript (PHP)";
+	scopeName = "source.javascript.php";
 	mode = "JS_PHP";
     
     /* Filetypes this highlighting should be applied automatically to */

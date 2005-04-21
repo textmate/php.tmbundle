@@ -1,294 +1,221 @@
 {
-	/*--------------------------------------------------------------------------
-
-	CSS (PHP) version
-	========================	
-	Version 2.0b1	[2005-03-04] Created by Mats Persson (mats@imediatec.co.uk)
-		
-	Based in part upon the default TM CSS syntax file, but extended and amended.
-
-	* look for README file for more info and revision history *	
-
-	--------------------------------------------------------------------------*/	
-
-	/* The name as it will appear in the Syntax Highlight List and used by any other loading syntax file	*/
-	name = "CSS (PHP)"; 
-	mode = "CSS_PHP"; 
-
-    /* Filetypes this highlighting should be applied automatically to */
+    backgroundColor = "#211E1E"; 
     fileTypes = (css); 
-
-    /* Folding, this will start folds at comments (/*) and at {
-       Stop folding at their counterparts. 
-    */
     foldingStartMarker = "(/\\*|\\{|\\()"; 
     foldingStopMarker = "(\\*/|\\}|\\))"; 
-
-    /* smart typing pairs and highlighting pairs */
-    smartTypingPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""), ("'", "'")); 
-    highlightPairs = (("(", ")"), ("[", "]"), ("{", "}")); 
-
-    /* auto-indent -- uncomment this for auto-indenting */
-    /* increaseIndentPattern = "\\{\\s*$"; */
-
     foregroundColor = "#DEDEDE"; 
-    backgroundColor = "#211E1E";
-	
-	patterns = (
-						
-		/* SELECTORS: */
-		{	name = "keywords.selectors.css";
-			/* foregroundColor = "#B8CD06";
-			fontStyle = (); */
-			begin = "^[^{]*?"; 
-			end = "(/\\*|\\{|\\s|$)";
-			patterns = (
-				
-				/* SELECTORS: HTML Elements */
-				{	name = "keywords.selectors.html-elements.css";
-					foregroundColor = "#B8CD06";
-					fontStyle = (normal);
-					match = "\\<(a|abbr|acronym|address|area|b|base|big|blockquote|body|br|button|caption|cite|code|col|colgroup|dd|del|dfn|div|dl|dt|em|fieldset|form|frame|frameset|(h[1-6])|head|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|meta|noframes|noscript|object|ol|optgroup|option|p|param|pre|q|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|ul|var)\\>";
-				},
-				
-				/* SELECTORS: User Defined .Classes */
-				{	name = "keywords.selectors.classes.css";
-					foregroundColor = "#EDCA06";
-					fontStyle = ();
-					match = "(\\.[a-zA-Z0-9_\-]+)";
-				},
-				
-				/* SELECTORS: User Defined #IDs */
-				{	name = "keywords.selectors.id.css";
-					foregroundColor = "#EC9E00";
-					fontStyle = ();
-					match = "(#[a-zA-Z0-9_-]+)";
-				},
-				
-				/* SELECTORS: Psuedo Classes */
-				{	name = "keywords.selectors.pseudo-class.css";
-					foregroundColor = "#2E759C";
-					fontStyle = ();
-					match = ":\\<(active|after|before|first-letter|first-line|hover|link|visited)\\>";
-                },
-				/* */
-
-             ); 
-        },
-		
- 		/* COMMENTS: Block */
-		{	name = "comments.block.css";
-			foregroundColor = "#555555";
-			fontStyle = ();
-			begin = "/\\*"; 
-			end = "\\*/"; 
-		},
-
-        /* INVALID: Bad Comma */
-        {	name = "invalid.bad-comma.css";
-        	match = "[^} \\t{/@][^{,]*?(,)\\s*?(?=\\{)";
-        	"foregroundColor[1]" = "#ffffff";
-        	"backgroundColor[1]" = "#CC3300";
-        },
-
-        /* @RULES: @media 
-			Removed for the time being as 1.1b5 does not support this.
-		* /
-        {	name = "keywords.at-rules.media.css";
-        	foregroundColor = "#6699CC"; 
-        	fontStyle = ( );
-        	match = "(\\{)";
-        	/* end = "^\\s*\\}"; * /
-        },
-
-         /* @RULES: @import */
-         { 	name = "keywords.at-rules.css";
-         	foregroundColor = "#8B8E00";
-         	begin = "^\\s*(@\\<(import|media)\\>)";
-			end = "\\s*((?=;|\\}))";
-         	patterns = (
-
-         		/* STRINGS: Double-Quoted String */
-         		{ 	name = "keywords.at-rules.values.strings.double-quoted.css";
-         			fontStyle = ( );
-         			foregroundColor = "#95884D";
-         			begin = "\"";
-         			end = "\"";
-         			swallow = "\\\\.";
-         		},
-         	
-         		/* @RULES: Import */
-         		{ 	name = "keywords.at-rules.import.url.css";
-         			foregroundColor = "#E2D8BA";
-         			fontStyle = ( );
-         			begin = "(url\\s*\\(\\s*)";
-         			/* end = "\\s*\\)"; */
-         			end = "\\s*\\)\\s*";
-         			patterns = (
-         				
-         				/* STRINGS: UN-Quoted */
-         				{ 	name = "keywords.at-rules.values.strings.un-quoted.css";
-         					fontStyle = ( );
-         					foregroundColor = "#AFA472";
-         					match = "[^'\"]";
-         				},
-         				
-         				/* STRINGS: Single-Quoted */	
-         				{ 	name = "keywords.at-rules.values.strings.single-quoted.css";
-         					fontStyle = ( );
-         					foregroundColor = "#95884D";
-         					begin = "'";
-         					end = "'";
-         					swallow = "\\\\.";
-         				},
-         				
-         				/* STRINGS: Double-Quoted String */
-         				{ 	name = "keywords.at-rules.values.strings.double-quoted.css";
-         					fontStyle = ( );
-         					foregroundColor = "#7D6D34";
-         					begin = "\"";
-         					end = "\"";
-         					swallow = "\\\\.";
-         				},
-         			);
-         		},
-         		
-         		/*  @RULES: Usage rules	*/
-         		{	name = "keywords.at-rules.mediums.css";
-         			foregroundColor = "#C28F00";
-         			match = "\\<(all|aural|braille|embossed|handheld|print|projection|screen|tty|tv)\\>,?";
-         		}
-         	);
-        },
-		
-		/* PROPERTIES: Block */
-		{	name = "keywords.properties-block.css";
-			foregroundColor = "#CCCCCC";
-			begin = "\\{";
-			end = "\\}";
-			patterns = (
-				
-				/* PROPERTIES: Comments Block */
-				{	name = "comments.block.css";
-					foregroundColor = "#494949";
-					fontStyle = ();
-					begin = "/\\*"; 
-					end = "\\*/"; 
-				},
-				
-				/* PROPERTIES: Keywords */
-				{ 	name = "keywords.properties.css";
-					foregroundColor = "#AA13A8";
-					fontStyle = ( ); 
-					match = "\\<(azimuth|background|background-attachment|background-color|background-image|background-position|background-repeat|border|border-bottom|border-bottom-color|border-bottom-style|border-bottom-width|border-collapse|border-color|border-left|border-left-color|border-left-style|border-left-width|border-right|border-right-color|border-right-style|border-right-width|border-spacing|border-style|border-top|border-top-color|border-top-style|border-top-width|border-width|bottom|caption-side|clear|clip|color|content|counter-increment|counter-reset|cue|cue-after|cue-before|cursor|direction|display|elevation|empty-cells|float|font|font-family|font-size|font-size-adjust|font-stretch|font-style|font-variant|font-weight|height|left|letter-spacing|line-height|list-style|list-style-image|list-style-position|list-style-type|margin|margin-bottom|margin-left|margin-right|margin-top|marker-offset|marks|max-height|max-width|min-height|min-width|-moz-border-radius|orphans|outline|outline-color|outline-style|outline-width|overflow|padding|padding-bottom|padding-left|padding-right|padding-top|page|page-break-after|page-break-before|page-break-inside|pause|pause-after|pause-before|pitch|pitch-range|play-during|position|quotes|richness|right|size|speak|speak-header|speak-numeral|speak-punctuation|speech-rate|stress|table-layout|text-align|text-decoration|text-indent|text-shadow|text-transform|top|unicode-bidi|vertical-align|visibility|voice-family|volume|white-space|widows|width|word-spacing|z-index)\\>"; 
-				},
-				
-				/* PROPERTIES: Values */
-				{	name = "keywords.properties.values.css";
-					begin = ":\\s*";
-					end = "\\s*(;|(?=\\}))";
-					patterns = (
-						
-						/* PROPERTIES: Values: Keywords */
-						{	name = "keywords.properties.values.keywords.css";
-							foregroundColor = "#E1C96B";
-							fontStyle = ( );
-							match = "\\<(absolute|all-scroll|always|auto|baseline|below|bidi-override|block|bold|bolder|both|bottom|break-all|break-word|capitalize|center|char|circle|col-resize|collapse|crosshair|dashed|decimal|default|disabled|disc|distribute|distribute-all-lines|distribute-letter|distribute-space|dotted|double|e-resize|ellipsis|fixed|groove|hand|help|hidden|horizontal|ideograph-alpha|ideograph-numeric|ideograph-parenthesis|ideograph-space|
-inactive|inherit|inline|inline-block|inset|inside|inter-ideograph|inter-word|italic|justify|keep-all|lighter|line|line-edge|left|line-through|list-item|loose|lower-alpha||lower-roman|lowercase|lr-tb|ltr|medium|middle|move|n-resize|ne-resize|newspaper|no-drop|no-repeat|nw-resize|none|normal|not-allowed|nowrap|oblique|outset|outside|overline|pointer|progress|
-relative|repeat|repeat-x|repeat-y|right|ridge|row-resize|rtl|s-resize|scroll|se-resize|separate|small-caps|solid|square|static|strict|super|sw-resize|table-footer-group|table-header-group|tb-rl|text|text-bottom|text-top|thick|thin|top|transparent|underline|upper-alpha|upper-roman|uppercase|vertical-ideographic|vertical-text|visible|w-resize|wait|whitespace)\\>";
-						},
-						
-						/* PROPERTIES: Values: Fonts */
-						{ 	name = "keywords.properties.values.fonts.css";
-							"foregroundColor[1]" = "#776D6A";
-							"fontStyle[1]" = ( );
-							match = "(\\<(?i:arial|century|comic|courier|garamond|georgia|helvetica|impact|lucida|symbol|system|tahoma|times|trebuchet|utopia|verdana|webdings|sans-serif|serif|monospace)\\>|(\"([a-zA-Z0-9-_]|\\s)+\")|('([a-zA-Z0-9-_]|\\s)+')),?";
-						},
-
-						/* PROPERTIES: Values: Digits */
-						{ 	name = "keywords.properties.values.digits.css";
-							foregroundColor = "#C7C8C2";
-							fontStyle = ( );
-							match = "(-|\\+)?\\s*[0-9]+(\\.[0-9]+)?";
-						},
-
-						/* PROPERTIES: Values: Units */
-						{ 	name = "keywords.properties.values.units.css";
-							fontStyle = ( normal );
-							foregroundColor = "#CDDA32";
-							match = "(px|pt|cm|mm|in|em|ex|pc|%)";
-						},
-						
-						/* PROPERTIES: Values: #RRGGBB Colours */
-						{ 	name = "keywords.properties.values.colors.css";
-							foregroundColor = "#9C9C95";
-							fontStyle = ( );
-							match = "(#)([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\>";
-						},
-						
-						/* PROPERTIES: Values: Strings Double Quoted */
-						{ 	name = "keywords.properties.values.strings.double-quoted.css"; 
-							fontStyle = ( plain ); 
-							foregroundColor = "#7D6D34"; 
-							begin = "\""; 
-							end = "\""; 
-							swallow = "\\\\."; 
-						},
-
-						/* PROPERTIES: Values: Functions */
-						{ 	name = "keywords.properties.values.functions.css";
-							foregroundColor = "#978C36";
-							fontStyle = ( ); 
-							begin = "(rgb|url|attr|counter|counters)\\s*\\("; 
-							end = "\\)";
-							patterns = (
-								
-								/* PROPERTIES: Values: Functions: Strings UN-Quoted */
-								{ 	name = "keywords.properties.values.strings.un-quoted.css";
-									fontStyle = ( );
-									foregroundColor = "#AFA472";
-									match = "[^'\"]";
-								},
-
-								/* PROPERTIES: Values: Functions: Strings Single Quoted */
-								{ 	name = "keywords.properties.values.strings.single-quoted.css"; 
-									fontStyle = ( plain ); 
-									foregroundColor = "#95884D"; 
-									begin = "'"; 
-									end = "'"; 
-									swallow = "\\\\.";
-								},
-								
-								/* PROPERTIES: Values: Functions: Strings Double Quoted */
-								{ 	name = "keywords.properties.values.strings.double-quoted.css"; 
-									fontStyle = ( plain ); 
-									foregroundColor = "#7D6D34"; 
-									begin = "\""; 
-									end = "\""; 
-									swallow = "\\\\."; 
-								},
-								
-								/* PROPERTIES: Values: Functions: RGB Colour Values == matches 0-255,0-255,0-255 */
-								{ 	name = "keywords.properties.values.rgb-value.css";
-									fontStyle = ( plain );
-									foregroundColor = "#666633";
-									match = "(\\<0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\s*,\\s*)(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\s*,\\s*)(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\>)";
-								},
-															
-								/* PROPERTIES: Values: Functions: RGB Colour Values  == matches 0-100%,0-100%,0-100%  */	
-								{ 	name = "keywords.properties.values.constants.rgb-percentage.css";
-									fontStyle = ( );
-									foregroundColor = "#7D7D33"; 
-									match = "\\<([0-9]{1,2}|100)\\s*%,\\s*([0-9]{1,2}|100)\\s*%,\\s*([0-9]{1,2}|100)\\s*%";
-								}, /* */
-							);
-						}
-					);
-				}
-				/* */
-			);
-		}
+    highlightPairs = (("(", ")"), ("[", "]"), ("{", "}")); 
+    keyEquivalent = ""; 
+    mode = "CSS_PHP"; 
+    name = "CSS (PHP)"; 
+    scopeName = "source.css.php";
+    patterns = (
+        {
+            begin = "^[^{]*?"; 
+            end = "(/\\*|\\{|\\s|$)"; 
+            name = "keywords.selectors.css"; 
+            patterns = (
+                {
+                    fontStyle = (normal); 
+                    foregroundColor = "#B8CD06"; 
+                    match = "\\<(a|abbr|acronym|address|area|b|base|big|blockquote|body|br|button|caption|cite|code|col|colgroup|dd|del|dfn|div|dl|dt|em|fieldset|form|frame|frameset|(h[1-6])|head|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|meta|noframes|noscript|object|ol|optgroup|option|p|param|pre|q|samp|script|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|ul|var)\\>"; 
+                    name = "keywords.selectors.html-elements.css"; 
+                }, 
+                {
+                    fontStyle = (); 
+                    foregroundColor = "#EDCA06"; 
+                    match = "(\\.[a-zA-Z0-9_-]+)"; 
+                    name = "keywords.selectors.classes.css"; 
+                }, 
+                {
+                    fontStyle = (); 
+                    foregroundColor = "#EC9E00"; 
+                    match = "(#[a-zA-Z0-9_-]+)"; 
+                    name = "keywords.selectors.id.css"; 
+                }, 
+                {
+                    fontStyle = (); 
+                    foregroundColor = "#2E759C"; 
+                    match = ":\\<(active|after|before|first-letter|first-line|hover|link|visited)\\>"; 
+                    name = "keywords.selectors.pseudo-class.css"; 
+                }
+            ); 
+        }, 
+        {
+            begin = "/\\*"; 
+            end = "\\*/"; 
+            fontStyle = (); 
+            foregroundColor = "#555555"; 
+            name = "comments.block.css"; 
+        }, 
+        {
+            "backgroundColor[1]" = "#CC3300"; 
+            "foregroundColor[1]" = "#ffffff"; 
+            match = "[^} \\t{/@][^{,]*?(,)\\s*?(?=\\{)"; 
+            name = "invalid.bad-comma.css"; 
+        }, 
+        {
+            begin = "^\\s*(@\\<(import|media)\\>)"; 
+            end = "\\s*((?=;|\\}))"; 
+            foregroundColor = "#8B8E00"; 
+            name = "keywords.at-rules.css"; 
+            patterns = (
+                {
+                    begin = "\""; 
+                    end = "\""; 
+                    fontStyle = (); 
+                    foregroundColor = "#95884D"; 
+                    name = "keywords.at-rules.values.strings.double-quoted.css"; 
+                    swallow = "\\\\."; 
+                }, 
+                {
+                    begin = "(url\\s*\\(\\s*)"; 
+                    end = "\\s*\\)\\s*"; 
+                    fontStyle = (); 
+                    foregroundColor = "#E2D8BA"; 
+                    name = "keywords.at-rules.import.url.css"; 
+                    patterns = (
+                        {
+                            fontStyle = (); 
+                            foregroundColor = "#AFA472"; 
+                            match = "[^'\"]"; 
+                            name = "keywords.at-rules.values.strings.un-quoted.css"; 
+                        }, 
+                        {
+                            begin = "'"; 
+                            end = "'"; 
+                            fontStyle = (); 
+                            foregroundColor = "#95884D"; 
+                            name = "keywords.at-rules.values.strings.single-quoted.css"; 
+                            swallow = "\\\\."; 
+                        }, 
+                        {
+                            begin = "\""; 
+                            end = "\""; 
+                            fontStyle = (); 
+                            foregroundColor = "#7D6D34"; 
+                            name = "keywords.at-rules.values.strings.double-quoted.css"; 
+                            swallow = "\\\\."; 
+                        }
+                    ); 
+                }, 
+                {
+                    foregroundColor = "#C28F00"; 
+                    match = "\\<(all|aural|braille|embossed|handheld|print|projection|screen|tty|tv)\\>,?"; 
+                    name = "keywords.at-rules.mediums.css"; 
+                }
+            ); 
+        }, 
+        {
+            begin = "\\{"; 
+            end = "\\}"; 
+            foregroundColor = "#CCCCCC"; 
+            name = "keywords.properties-block.css"; 
+            patterns = (
+                {
+                    begin = "/\\*"; 
+                    end = "\\*/"; 
+                    fontStyle = (); 
+                    foregroundColor = "#494949"; 
+                    name = "comments.block.css"; 
+                }, 
+                {
+                    fontStyle = (); 
+                    foregroundColor = "#AA13A8"; 
+                    match = "\\<(azimuth|background|background-attachment|background-color|background-image|background-position|background-repeat|border|border-bottom|border-bottom-color|border-bottom-style|border-bottom-width|border-collapse|border-color|border-left|border-left-color|border-left-style|border-left-width|border-right|border-right-color|border-right-style|border-right-width|border-spacing|border-style|border-top|border-top-color|border-top-style|border-top-width|border-width|bottom|caption-side|clear|clip|color|content|counter-increment|counter-reset|cue|cue-after|cue-before|cursor|direction|display|elevation|empty-cells|float|font|font-family|font-size|font-size-adjust|font-stretch|font-style|font-variant|font-weight|height|left|letter-spacing|line-height|list-style|list-style-image|list-style-position|list-style-type|margin|margin-bottom|margin-left|margin-right|margin-top|marker-offset|marks|max-height|max-width|min-height|min-width|-moz-border-radius|orphans|outline|outline-color|outline-style|outline-width|overflow|padding|padding-bottom|padding-left|padding-right|padding-top|page|page-break-after|page-break-before|page-break-inside|pause|pause-after|pause-before|pitch|pitch-range|play-during|position|quotes|richness|right|size|speak|speak-header|speak-numeral|speak-punctuation|speech-rate|stress|table-layout|text-align|text-decoration|text-indent|text-shadow|text-transform|top|unicode-bidi|vertical-align|visibility|voice-family|volume|white-space|widows|width|word-spacing|z-index)\\>"; 
+                    name = "keywords.properties.css"; 
+                }, 
+                {
+                    begin = ":\\s*"; 
+                    end = "\\s*(;|(?=\\}))"; 
+                    name = "keywords.properties.values.css"; 
+                    patterns = (
+                        {
+                            fontStyle = (); 
+                            foregroundColor = "#E1C96B"; 
+                            match = "\\<(absolute|all-scroll|always|auto|baseline|below|bidi-override|block|bold|bolder|both|bottom|break-all|break-word|capitalize|center|char|circle|col-resize|collapse|crosshair|dashed|decimal|default|disabled|disc|distribute|distribute-all-lines|distribute-letter|distribute-space|dotted|double|e-resize|ellipsis|fixed|groove|hand|help|hidden|horizontal|ideograph-alpha|ideograph-numeric|ideograph-parenthesis|ideograph-space|\ninactive|inherit|inline|inline-block|inset|inside|inter-ideograph|inter-word|italic|justify|keep-all|lighter|line|line-edge|left|line-through|list-item|loose|lower-alpha||lower-roman|lowercase|lr-tb|ltr|medium|middle|move|n-resize|ne-resize|newspaper|no-drop|no-repeat|nw-resize|none|normal|not-allowed|nowrap|oblique|outset|outside|overline|pointer|progress|\nrelative|repeat|repeat-x|repeat-y|right|ridge|row-resize|rtl|s-resize|scroll|se-resize|separate|small-caps|solid|square|static|strict|super|sw-resize|table-footer-group|table-header-group|tb-rl|text|text-bottom|text-top|thick|thin|top|transparent|underline|upper-alpha|upper-roman|uppercase|vertical-ideographic|vertical-text|visible|w-resize|wait|whitespace)\\>"; 
+                            name = "keywords.properties.values.keywords.css"; 
+                        }, 
+                        {
+                            "fontStyle[1]" = (); 
+                            "foregroundColor[1]" = "#776D6A"; 
+                            match = "(\\<(?i:arial|century|comic|courier|garamond|georgia|helvetica|impact|lucida|symbol|system|tahoma|times|trebuchet|utopia|verdana|webdings|sans-serif|serif|monospace)\\>|(\"([a-zA-Z0-9-_]|\\s)+\")|('([a-zA-Z0-9-_]|\\s)+')),?"; 
+                            name = "keywords.properties.values.fonts.css"; 
+                        }, 
+                        {
+                            fontStyle = (); 
+                            foregroundColor = "#C7C8C2"; 
+                            match = "(-|\\+)?\\s*[0-9]+(\\.[0-9]+)?"; 
+                            name = "keywords.properties.values.digits.css"; 
+                        }, 
+                        {
+                            fontStyle = (normal); 
+                            foregroundColor = "#CDDA32"; 
+                            match = "(px|pt|cm|mm|in|em|ex|pc|%)"; 
+                            name = "keywords.properties.values.units.css"; 
+                        }, 
+                        {
+                            fontStyle = (); 
+                            foregroundColor = "#9C9C95"; 
+                            match = "(#)([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\>"; 
+                            name = "keywords.properties.values.colors.css"; 
+                        }, 
+                        {
+                            begin = "\""; 
+                            end = "\""; 
+                            fontStyle = (plain); 
+                            foregroundColor = "#7D6D34"; 
+                            name = "keywords.properties.values.strings.double-quoted.css"; 
+                            swallow = "\\\\."; 
+                        }, 
+                        {
+                            begin = "(rgb|url|attr|counter|counters)\\s*\\("; 
+                            end = "\\)"; 
+                            fontStyle = (); 
+                            foregroundColor = "#978C36"; 
+                            name = "keywords.properties.values.functions.css"; 
+                            patterns = (
+                                {
+                                    fontStyle = (); 
+                                    foregroundColor = "#AFA472"; 
+                                    match = "[^'\"]"; 
+                                    name = "keywords.properties.values.strings.un-quoted.css"; 
+                                }, 
+                                {
+                                    begin = "'"; 
+                                    end = "'"; 
+                                    fontStyle = (plain); 
+                                    foregroundColor = "#95884D"; 
+                                    name = "keywords.properties.values.strings.single-quoted.css"; 
+                                    swallow = "\\\\."; 
+                                }, 
+                                {
+                                    begin = "\""; 
+                                    end = "\""; 
+                                    fontStyle = (plain); 
+                                    foregroundColor = "#7D6D34"; 
+                                    name = "keywords.properties.values.strings.double-quoted.css"; 
+                                    swallow = "\\\\."; 
+                                }, 
+                                {
+                                    fontStyle = (plain); 
+                                    foregroundColor = "#666633"; 
+                                    match = "(\\<0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\s*,\\s*)(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\s*,\\s*)(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\\>)"; 
+                                    name = "keywords.properties.values.rgb-value.css"; 
+                                }, 
+                                {
+                                    fontStyle = (); 
+                                    foregroundColor = "#7D7D33"; 
+                                    match = "\\<([0-9]{1,2}|100)\\s*%,\\s*([0-9]{1,2}|100)\\s*%,\\s*([0-9]{1,2}|100)\\s*%"; 
+                                    name = "keywords.properties.values.constants.rgb-percentage.css"; 
+                                }
+                            ); 
+                        }
+                    ); 
+                }
+            ); 
+        }
     ); 
-
+    smartTypingPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""), ("'", "'")); 
     uuid = "6CD4A87D-8B0F-11D9-BBB5-000D93C8BE28"; 
 }
