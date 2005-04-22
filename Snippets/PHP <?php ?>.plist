@@ -11,7 +11,7 @@
 	<key>name</key>
 	<string>PHP &lt;?php ?&gt;</string>
 	<key>scope</key>
-	<string>source.*</string>
+	<string>text.html</string>
 	<key>tabTrigger</key>
 	<string>php</string>
 	<key>uuid</key>
