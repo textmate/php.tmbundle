@@ -15,14 +15,14 @@
             end = "-->"; 
             fontStyle = (); 
             foregroundColor = "#555555"; 
-            name = "comments.html"; 
+            name = "comment.html"; 
             patterns = (
                 {
                     begin = "^#\\s*(include|config|echo|exec|fsize|flastmod|printenv|set)"; 
                     end = "(?=\\s*--|>)"; 
                     fontStyle = (); 
                     foregroundColor = "#888888"; 
-                    name = "macros.server-side-includes.html"; 
+                    name = "macro.server-side-includes.html"; 
                 }, 
                 {
                     backgroundColor = "#CC3300"; 
@@ -76,19 +76,19 @@
             end = "/?>"; 
             fontStyle = (); 
             foregroundColor = "#858EF4"; 
-            name = "keywords.markup.elements.html"; 
+            name = "keyword.markup.elements.html"; 
             patterns = (
                 {
                     begin = "(abbr|accept-charset|accept|accesskey|action|align|alt|archive|axis|border|cellpadding|cellspacing|char|charoff|charset|checked|cite|class|classid|codebase|codetype|cols|colspan|content|coords|data|datetime|declare|defer|dir|disabled|encoding|enctype|for|frame|frameborder|headers|height|href|hreflang|http-equiv|id|ismap|label|lang|language|longdesc|marginheight|marginwidth|maxlength|media|method|multiple|name|nohref|noresize|onblur|onchange|onclick|ondblclick|onfocus|onkeydown|onkeypress|onkeyup|onload|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|onreset|onselect|onsubmit|onunload|profile|readonly|rel|rev|rows|rowspan|rules|scheme|scope|scrolling|selected|shape|size|span|src|standby|style|summary|tabindex|target|title|type|usemap|valign|value|valuetype|version|width|xmlns|xmlns:isbn|xml:lang)=\""; 
                     end = "\""; 
                     foregroundColor = "#9B456F"; 
-                    name = "keywords.markup.attributes.html"; 
+                    name = "keyword.markup.attributes.html"; 
                     patterns = (
                         {
                             fontStyle = (); 
                             foregroundColor = "#8F8582"; 
                             match = "[^\"]*"; 
-                            name = "strings.double-quoted.html"; 
+                            name = "string.double-quoted.html"; 
                         }
                     ); 
                 }
@@ -98,7 +98,7 @@
             fontStyle = (); 
             foregroundColor = "#AFA472"; 
             match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; 
-            name = "constants.character-entities.html"; 
+            name = "constant.character-entities.html"; 
         }
     ); 
     scopeName = "text.html"; 

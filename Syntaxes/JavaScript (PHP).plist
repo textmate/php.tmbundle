@@ -49,7 +49,7 @@
   	patterns = (
 		
   		/* HTML COMMENTS: inside <script></script> embedded in a HTML page */
-  		{	name = "comments.html.js";
+  		{	name = "comment.html.js";
   			foregroundColor = "#555555";
   			fontStyle = ();
   			match = "(<!--|-->)";
@@ -64,7 +64,7 @@
 		/* */
 
 		/* COMMENTS: Block */	
-	    {	name = "comments.block.js";
+	    {	name = "comment.block.js";
 			foregroundColor = "#555555";
 			fontStyle = ( ); 
 			begin = "\\/\\*";
@@ -73,21 +73,21 @@
 		},
 
 		/* COMMENTS: Single Line */		
-		{	name = "comments.line.js";
+		{	name = "comment.line.js";
 			foregroundColor = "#555555";
 			fontStyle = ( ); 
 			match = "\\/\\/.*$"; 
 		},
 		
 		/* KEYWORDS: Reserved */
-		{	name = "keywords.reserved.js";
+		{	name = "keyword.reserved.js";
 			foregroundColor = "#637890";
 			fontStyle = ( );
 			match = "\\<(boolean|break|byte|case|catch|char|class|const|continue|debugger|default|delete|do|double|else|enum|export|extends|false|final|finally|float|for|function|goto|if|implements|import|in|instanceof|int|interface|long|native|new|null|package|private|protected|public|return|short|static|super|switch|synchronized|this|throw|throws|transient|true|try|typeof|var|void|volatile|while|with)\\>";	
 		},
 		
 		/* OBJECTS::	*/
-		{ 	name = "keywords.objects.js";
+		{ 	name = "keyword.objects.js";
 			foregroundColor = "#B8CD06";
 			/* CASE Sensitive Objects * /
 			 match = "\\<(Anchor|Applet|Area|Array|Boolean|Button|Checkbox|Date|document|event|FileUpload|Form|Frame|Function|Hidden|History|Image|JavaArray|JavaClass|JavaObject|JavaPackage|java|Layer|Link|Location|Math|MimeType|Number|navigator|netscape|Object|Option|Packages|Password|Plugin|Radio|RegExp|Reset|Select|String|Style|Submit|screen|sun|Text|Textarea|window|XMLHttpRequest)\\>\\.";
@@ -98,47 +98,47 @@
 		},
 		
 		/* OBJECTS:: Methods */
-		{	name = "keywords.methods.js";
+		{	name = "keyword.method.js";
 			foregroundColor = "#EDCA06";
 			match = "\\<(abort|abs|acos|alert|anchor|apply|asin|atan|atan2|atob|attachEvent|back|big|blink|blur|bold|borderWidths|btoa|call|captureEvents|ceil|charAt|charCodeAt|clear|clearInterval|clearTimeout|click|close|compile|concat|confirm|contextual|cos|createElement|createEventObject|createPopup|createStyleSheet|createTextNode|detachEvent|disableExternalCapture|dump|elementFromPoint|enableExternalCapture|escape|eval|exec|execCommand|execScript|exp|fileCreatedDate|fileModifiedDate|fileSize|fileUpdatedDate|find|firstChild|fixed|floor|focus|fontcolor|fontsize|fromCharCode|forward|getAllResponseHeaders|getAttention|getDate|getDay|getElementById|getElementsByName|getElementsByTagName|getFullYear|getHours|getMilliseconds|getMinutes|getMonth|getResponseHeader|getSeconds|getSelection|getTime|getTimezoneOffset|getUTCDate|getUTCDay|getUTCFullYear|getUTCHours|getUTCMilliseconds|getUTCMinutes|getUTCMonth|getUTCSeconds|getYear|go|handleEvent|home|indexOf|isFinite|isNaN|italics|javaEnabled|join|lastIndexOf|link|load|log|margins|match|max|mergeAttributes|min|moveAbove|moveBelow|moveBy|moveTo|moveToAbsolute|navigate|open|paddings|parse|parseFloat|parseInt|plugins.refresh|pop|pow|preference|print|prompt|push|queryCommandEnabled|queryCommandIndeterm|queryCommandState|queryCommandValue|random|recalc|releaseCapture|releaseEvents|reload|replace|reset|resizeBy|resizeTo|returnValue|reverse|round|routeEvents|savePreferences|scroll|scrollBy|scrollByLines|scrollByPages|scrollTo|scrollX|scrollY|search|select|send|setDate|setFullYear|setActive|setCursor|setHotKeys|setHours|setInterval|setMilliseconds|setMinutes|setMonth|setResizable|setRequestHeader|setSeconds|setTime|setTimeout|setUTCDate|setUTCFullYear|setUTCHours|setUTCMilliseconds|setUTCMinutes|setUTCMonth|setUTCSeconds|setYear|setZOptions|shift|showHelp|showModalDialog|showModelessDialog|sidebar|sin|signText|sizeToContent|slice|small|sort|splice|split|sqrt|strike|stop|sub|submit|substr|substring|sup|taint|taintEnabled|tan|test|toGMTString|toLocaleString|toLowerCase|toSource|toString|toUpperCase|toUTCString|UTC|unescape|unshift|untaint|updateCommands|unwatch|valueOf|watch|write|writeln)\\>";
 		},
 		
 		/* OBJECTS:: Properties */
-		{ 	name = "keywords.properties.js";
+		{ 	name = "keyword.property.js";
 			foregroundColor = "#EC9E00";
 			fontStyle = ( );
 			match = "\\<(_content|above|action|align|aLinkcolor|all|anchors|appCodeName|appCore|appMinorVersion|appName|applets|appVersion|arguments|arguments.callee|arguments.caller|arguments.length|arity|attributes|availHeight|availLeft|availTop|availWidth|background|backgroundColor|backgroundImage|below|bgColor|body|border|borderBottomWidth|borderColor|borderLeftWidth|borderRightWidth|borderStyle|borderTopWidth|bottom|bufferDepth|characterSet|checked|childNodes|classes|className|clientInformation|clip|clipboardData|closed|colorDepth|complete|components|constructor|controllers|cookie|cookieEnabled|cpuClass|crypto|current|data|defaultCharset|defaultChecked|defaultStatus|defaultValue|defaultView|description|dialogArguments|dialogHeight|dialogLeft|dialogTop|dialogWidth|dir|directories|display|doctype|documentElement|domain|E|elements|embeds|enabledPlugin|encoding|expando|external|fgColor|filename|fontFamily|fontSize|fontWeight|form|formName|forms|frameElement|frames|global|hasFocus|hash|height|history|host|hostname|href|hspace|ids|ignoreCase|images|implementation|input|innerHeight|innerWidth|index|LN10|LN2|LOG10E|LOG2E|language|lastChild|lastIndex|lastMatch|lastModified|lastParen|layers|layerX|left|leftContext|length|lineHeight|linkColor|links|listStyleType|localName|location|locationbar|lowsrc|MAX_VALUE|MIN_VALUE|marginBottom|marginLeft|marginRight|marginTop|media|method|menubar|mimeTypes|multiline|NEGATIVE_INFINITY|name|nameProp|namespaces|namespaceURI|next|nextSibling|nodeName|nodeType|nodeValue|offscreenBuffering|onLine|onreadystatechange|opener|opsProfile|oscpu|options|outerHeight|outerWidth|ownerDocument|POSITIVE_INFINITY|PI|paddingBottom|paddingLeft|paddingRight|paddingTop|pageX|pageY|pageXOffset|pageYOffset|parent|parentLayer|parentNode|parentWindow|pathname|personalbar|pixelDepth|platform|plugins|pkcs11|port|prefix|previous|previousSibling|product|productSub|prompter|protocol|prototype|readyState|referrer|responseText|responseXML|right|rightContext|SQRT1_2|SQRT2|screenLeft|screenTop|screenX|screenY|scripts|scrollbars|security|securityPolicy|selected|selection|selectedIndex|self|siblingAbove|siblingBelow|src|source|status|statusbar|statusText|styleSheets|suffixes|systemLanguage|tags|target|text|textAlign|textDecoration|textIndent|textTransform|title|toolbar|top|type|URL|URLUnencoded|undefined|uniqueID|updateInterval|userAgent|userLanguage|userProfile|value|vendor|vendorSub|visibility|vLinkcolor|vspace|whiteSpace|width|XMLDocument|XSLDocument|x|y|zIndex)\\>"; 
 		},
 
 		/* OBJECTS:: Event Handlers:: */
-		{ 	name = "keywords.event-handlers.js";
+		{ 	name = "keyword.event-handlers.js";
 			foregroundColor = "#2E759C";
 			fontStyle = ( );
 			match = "\\<(onAbort|onActivate|onAfterprint|onAfterupdate|onBeforeactivate|onBeforecut|onBeforedeactivate|onBeforeeditfocus|onBeforepaste|onBeforeprint|onBeforeunload|onBeforeupdate|onBlur|onCellchange|onChange|onClick|onClose|onContextmenu|onControlselect|onCut|onDataavailable|onDatasetchanged|onDatasetcomplete|onDblclick|onDeactivate|onDrag|onDragdrop|onDragend|onDragenter|onDragleave|onDragover|onDragstart|onDrop|onError|onErrorupdate|onFocus|onHelp|onKeydown|onKeypress|onKeyup|onLoad|onMousedown|onMousemove|onMouseout|onMouseover|onMouseup|onPaste|onPropertychange|onReadystatechange|onReset|onResize|onResizeend|onResizestart|onRowenter|onRowexit|onRowsdelete|onRowsinserted|onScroll|onSelect|onSelectionchange|onSelectstart|onStop|onSubmit|onUnload)\\>";
 		},
 		
 		/* OPERATORS::  */
-		{	name = "keywords.operators.js";
+		{	name = "keyword.operator.js";
 			foregroundColor = "#8496AB";
 			fontStyle = ( );
 			match = "(!|\\$|%|&|\\*|\\+|\\-|\\-\\-|\\+\\+|~|==|===|!=|!==|<>|<|>|<=|>=|!|&&|\\|\\||\\?\\:|\\*=|/=|%=|\\+=|\\-=|<<=|>>=|>>>=|&=|\\^=|\\|=)|\\<(in|instanceof|new|delete|typeof|void)\\>";		
 		},
 				
 		/* CONSTANTS:: */
-		{ 	name = "constants.js";
+		{ 	name = "constant.js";
 			foregroundColor = "#D07525";
 			match = "\\<(Infinity|NaN|Undefined)\\>";
 		},
 		
 		/* CONSTANTS:: Numeric */
-		{	name = "constants.numeric.js";
+		{	name = "constant.numeric.js";
 			foregroundColor = "#3387CC";
 			fontStyle = ( ); 
 			match = "\\<((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\>";
 		},
 		
 		/* STRINGS: Single */
-		{ 	name = "strings.single-quoted.js";
+		{ 	name = "string.single-quoted.js";
 			foregroundColor = "#95884D";
 			fontStyle = ( );
 			begin = "'";
@@ -147,7 +147,7 @@
 		},
 		
 		/* STRINGS: Double */
-		{ 	name = "strings.double-quoted.js";
+		{ 	name = "string.double-quoted.js";
 			foregroundColor = "#7D6D34";
 			fontStyle = ( );
 			begin = "\"";
@@ -158,14 +158,14 @@
 		/* STRINGS: RegEx 
 			Needs Further work, as it cuts out the colouring on several items.
 		* /
-		{ 	name = "strings.regex.js";
+		{ 	name = "string.regex.js";
 			foregroundColor = "#CCCC33";
 			fontStyle = ( );
 			begin = "/"; 
 			end = "/([igm]+)?";
 			patterns = (
 				
-				{ 	name = "strings.escaped-slash.js";
+				{ 	name = "string.escaped-slash.js";
 					foregroundColor = "#CCCC44";
 					fontStyle = ( );
 					match = "\\\\/";
