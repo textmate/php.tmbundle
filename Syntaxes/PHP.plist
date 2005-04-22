@@ -6,8 +6,7 @@
     foregroundColor = "#DADADA"; 
     highlightPairs = (("(", ")"), ("[", "]"), ("{", "}")); 
     increaseIndentPattern = "^.*(\\{[^}\"']*|\\([^)\"']*)$"; 
-    mode = "HTML.PHP"; 
-    name = PHP; 
+    name = "PHP"; 
     scopeName = "source.php";
     patterns = (
         {
@@ -19,7 +18,7 @@
                 {
                     foregroundColor = "#777777"; 
                     match = "\\@(see|link|access|param|var|return|static|global|author|version|package|subpackage|copyright|since|category|todo|throws)\\>"; 
-                    name = "comment.block.phpdocs.php"; 
+                    name = "comment.block.phpdoc.php"; 
                 }
             ); 
         }, 
@@ -28,10 +27,12 @@
             match = "(//|#).*$"; 
             name = "comment.line.php"; 
         }, 
+        /* * /
         {
             name = "symbols";
             match = "^\\s*((final|abstract)?\\s?(public|private|protected)?\\s?(static)?\\s*)((function|class|interface)\\s+)([^$]+[&a-zA-Z0-9_]+)(.*$)";
         },
+        /* */
         {
             fontStyle = (); 
             foregroundColor = "#6969FA"; 
@@ -48,19 +49,19 @@
             fontStyle = (normal); 
             foregroundColor = "#C82255"; 
             match = "\\<(catch|try|throw|exception)|([a-zA-Z_]*Exception)\\>"; 
-            name = "keyword.exceptions.php"; 
+            name = "keyword.exception.php"; 
         }, 
         {
             fontStyle = (); 
             foregroundColor = "#A1A1FF"; 
             match = "(::|->)|\\<(class|extends|parent|new|function|abstract|interface|implements|self|__autoload|__call|__clone|__construct|__destruct|__get|__set|__sleep|__toString|__wakeup|clone)\\>"; 
-            name = "keyword.constructs.php"; 
+            name = "keyword.construct.php"; 
         }, 
         {
             fontStyle = (); 
             foregroundColor = "#7171F3"; 
             match = "\\<(var|public|private|protected|static|const|final)\\>"; 
-            name = "keyword.constructs.members.php"; 
+            name = "keyword.construct.member.php"; 
         }, 
         {
             fontStyle = (); 
@@ -798,7 +799,7 @@
             fontStyle = (normal); 
             foregroundColor = "#FFFFFF"; 
             match = "(\\.|\\.=)"; 
-            name = "keyword.operator.strings.php"; 
+            name = "keyword.operator.string.php"; 
         }, 
         {
             fontStyle = (); 
@@ -859,13 +860,13 @@
             fontStyle = (normal); 
             foregroundColor = "#B72E1D"; 
             match = "\\$(_COOKIE|_FILES|_GET|_POST|_REQUEST)\\>"; 
-            name = "keyword.variable.globals.php"; 
+            name = "keyword.variable.global.php"; 
         }, 
         {
             fontStyle = (normal); 
             foregroundColor = "#00FF00"; 
             match = "(\\$(_ENV|GLOBALS|_SERVER|_SESSION))|global\\>"; 
-            name = "keyword.variable.globals.safer.php"; 
+            name = "keyword.variable.global.safer.php"; 
         }, 
         {
             fontStyle = (); 

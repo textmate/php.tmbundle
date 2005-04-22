@@ -13,8 +13,7 @@
 	
 	/* The name as it will appear in the Syntax Highlight List and used by any other loading syntax file	*/
 	name = "JavaScript (PHP)";
-	scopeName = "source.javascript.php";
-	mode = "JS_PHP";
+	scopeName = "source.js.php";
     
     /* Filetypes this highlighting should be applied automatically to */
     fileTypes = (js);
@@ -41,11 +40,6 @@
     backgroundColor = "#211E1E";
     /* */
 
-    /* WHITE BACKGROUND STYLE:: * /
-    foregroundColor = "#322E2E"; 
-    backgroundColor = "#FFFFFF"; 
-    /* */
-
   	patterns = (
 		
   		/* HTML COMMENTS: inside <script></script> embedded in a HTML page */
@@ -54,15 +48,6 @@
   			fontStyle = ();
   			match = "(<!--|-->)";
 		},
-
-  		/* EMBEDDED LANGUAGES: HTML Supported in TM 1.1b6+ only * /
-  		{	name = "embedded.html.js";
-			begin = "<(?i:script)\\>.*?>?";
-			end = "</(?i:script)>(\\s+$)?";
-			patterns = ( { include = "HTML (PHP)"; } );
-  		},
-		/* */
-
 		/* COMMENTS: Block */	
 	    {	name = "comment.block.js";
 			foregroundColor = "#555555";
@@ -87,7 +72,7 @@
 		},
 		
 		/* OBJECTS::	*/
-		{ 	name = "keyword.objects.js";
+		{ 	name = "keyword.object.js";
 			foregroundColor = "#B8CD06";
 			/* CASE Sensitive Objects * /
 			 match = "\\<(Anchor|Applet|Area|Array|Boolean|Button|Checkbox|Date|document|event|FileUpload|Form|Frame|Function|Hidden|History|Image|JavaArray|JavaClass|JavaObject|JavaPackage|java|Layer|Link|Location|Math|MimeType|Number|navigator|netscape|Object|Option|Packages|Password|Plugin|Radio|RegExp|Reset|Select|String|Style|Submit|screen|sun|Text|Textarea|window|XMLHttpRequest)\\>\\.";
@@ -111,7 +96,7 @@
 		},
 
 		/* OBJECTS:: Event Handlers:: */
-		{ 	name = "keyword.event-handlers.js";
+		{ 	name = "keyword.event-handler.js";
 			foregroundColor = "#2E759C";
 			fontStyle = ( );
 			match = "\\<(onAbort|onActivate|onAfterprint|onAfterupdate|onBeforeactivate|onBeforecut|onBeforedeactivate|onBeforeeditfocus|onBeforepaste|onBeforeprint|onBeforeunload|onBeforeupdate|onBlur|onCellchange|onChange|onClick|onClose|onContextmenu|onControlselect|onCut|onDataavailable|onDatasetchanged|onDatasetcomplete|onDblclick|onDeactivate|onDrag|onDragdrop|onDragend|onDragenter|onDragleave|onDragover|onDragstart|onDrop|onError|onErrorupdate|onFocus|onHelp|onKeydown|onKeypress|onKeyup|onLoad|onMousedown|onMousemove|onMouseout|onMouseover|onMouseup|onPaste|onPropertychange|onReadystatechange|onReset|onResize|onResizeend|onResizestart|onRowenter|onRowexit|onRowsdelete|onRowsinserted|onScroll|onSelect|onSelectionchange|onSelectstart|onStop|onSubmit|onUnload)\\>";
