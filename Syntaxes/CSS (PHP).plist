@@ -11,7 +11,7 @@
     scopeName = "source.css.php";
     patterns = (
         {
-            begin = "^(?=[.#a-zA-Z])"; 
+            begin = "^(?=\\s*[.#a-zA-Z])"; 
             end = "(/\\*|\\{|\\s|$)"; 
             name = "keyword.selectors.css"; 
             patterns = (
