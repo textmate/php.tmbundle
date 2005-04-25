@@ -27,12 +27,6 @@
             match = "(//|#).*$"; 
             name = "comment.line.php"; 
         }, 
-        /* * /
-        {
-            name = "symbols";
-            match = "^\\s*((final|abstract)?\\s?(public|private|protected)?\\s?(static)?\\s*)((function|class|interface)\\s+)([^$]+[&a-zA-Z0-9_]+)(.*$)";
-        },
-        /* */
         {
             fontStyle = (); 
             foregroundColor = "#6969FA"; 
@@ -52,25 +46,25 @@
             name = "keyword.exception.php"; 
         }, 
 		{   
-		    name = "declaration.function";
+		    name = "declaration.function.php";
 		    match = "(^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\(([^\\)]+)\\).$";
 		    captures = {
 		        1 = { name = "indent"; };
 		        2 = { name = "keyword.modifier.pre"; };
-		        3 = { name = "visibility"; };
+		        3 = { name = "keyword.visibility"; };
 		        4 = { name = "keyword.modifier.post"; };
-		        5 = { name = "type"; };
+		        5 = { name = "keyword.type"; };
 		        6 = { name = "function-name"; };
 		        7 = { name = "function-argument"; };
 		    };
 		},
 		{   
-		    name = "declaration.class";
+		    name = "declaration.class.php";
 		    match = "(^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?.$";
 		    captures = {
 		        1 = { name = "indent"; };
 		        2 = { name = "keyword.modifier"; };
-		        3 = { name = "type"; };
+		        3 = { name = "keyword.type"; };
 		        4 = { name = "class-name"; };
 		        5 = { name = "class-inheritance"; };
 		    };
