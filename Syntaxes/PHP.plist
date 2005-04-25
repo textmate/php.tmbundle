@@ -51,6 +51,30 @@
             match = "\\<(catch|try|throw|exception)|([a-zA-Z_]*Exception)\\>"; 
             name = "keyword.exception.php"; 
         }, 
+		{   
+		    name = "declaration.function";
+		    match = "(^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\(([^\\)]+)\\).$";
+		    captures = {
+		        1 = { name = "indent"; };
+		        2 = { name = "keyword.modifier.pre"; };
+		        3 = { name = "visibility"; };
+		        4 = { name = "keyword.modifier.post"; };
+		        5 = { name = "type"; };
+		        6 = { name = "function-name"; };
+		        7 = { name = "function-argument"; };
+		    };
+		},
+		{   
+		    name = "declaration.class";
+		    match = "(^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?.$";
+		    captures = {
+		        1 = { name = "indent"; };
+		        2 = { name = "keyword.modifier"; };
+		        3 = { name = "type"; };
+		        4 = { name = "class-name"; };
+		        5 = { name = "class-inheritance"; };
+		    };
+		},
         {
             fontStyle = (); 
             foregroundColor = "#A1A1FF"; 
