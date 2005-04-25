@@ -1,6 +1,6 @@
 {
     backgroundColor = "#211E1E"; 
-    fileTypes = (php, php3, php4, php5, inc); 
+//  fileTypes = (php, php3, php4, php5, inc); 
     foldingStartMarker = "(/\\*|\\{\\s*$)"; 
     foldingStopMarker = "(\\*/|^\\s*\\})"; 
     foregroundColor = "#DADADA"; 
