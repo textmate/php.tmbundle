@@ -574,11 +574,11 @@
             end = "\""; 
             patterns = (
                 {
-                    name = "keyword.variable.complex.php"; 
+                    name = "variable.complex.php"; 
                     match = "\\{\\$[a-zA-Z_x7f-xff].*?\\}"; 
                 }, 
                 {
-                    name = "keyword.variable.simple.php"; 
+                    name = "variable.simple.php"; 
                     match = "\\$(\\{)?[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*(\\[[a-zA-Z0-9_x7f-xff]+\\])?(->[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*(\\[[a-zA-Z0-9_x7f-xff]+\\])?)*(?(1)\\}:)"; 
                 }
             ); 
