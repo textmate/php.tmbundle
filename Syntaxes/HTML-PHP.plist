@@ -1,5 +1,5 @@
 {
-    /* fileTypes = (phtml, php, php3, php4, php5, inc); */
+    fileTypes = (phtml, php, php3, php4, php5, inc);
 	firstLineMatch = "^(<\\?php\\>|#!/.*php\\>)";
     foldingStartMarker = "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\>.*?>|\\{)"; 
     foldingStopMarker = "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>|\\})"; 
