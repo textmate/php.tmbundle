@@ -1,78 +1,70 @@
 {
-    backgroundColor = "#211E1E"; 
-    //fileTypes = (phtml, html, htm, shtml, xhtml) 
-    fileTypes = (phtml, php, php3, php4, php5, inc);
+    /* fileTypes = (phtml, php, php3, php4, php5, inc); */
 	firstLineMatch = "^(<\\?php\\>|#!/.*php\\>)";
     foldingStartMarker = "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\>.*?>|\\{)"; 
     foldingStopMarker = "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>|\\})"; 
-    foregroundColor = "#DADADA"; 
-    highlightPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\"")); 
-    increaseIndentPattern = "(<(head|title|table|tr|td|ul|ol|dl|div)\\>[^>]*>|\\{)\\s*$"; 
     name = "HTML (PHP)"; 
-    scopeName = "source.html.php";
+    scopeName = "text.html";
     patterns = (
         {
+            name = "comment.html"; 
             begin = "<!--"; 
             end = "-->"; 
-            fontStyle = (); 
-            foregroundColor = "#555555"; 
-            name = "comment.html"; 
             patterns = (
                 {
+                    name = "macro.server-side-include.html"; 
                     begin = "^#\\s*(include|config|echo|exec|fsize|flastmod|printenv|set)"; 
                     end = "(?=\\s*--|>)"; 
-                    fontStyle = (); 
-                    foregroundColor = "#888888"; 
-                    name = "macro.server-side-include.html"; 
                 }, 
                 {
-                    backgroundColor = "#CC3300"; 
-                    fontStyle = (); 
-                    foregroundColor = "#ffffff"; 
-                    match = ">|<"; 
                     name = "invalid.bad-comment-end.html"; 
+                    match = ">|<"; 
                 }
             ); 
         }, 
         /* */
-        {
+        {   name = "source.php.embedded.html"; 
             begin = "<\\?(php|=)?"; 
             end = "\\?>"; 
-            name = "source.php.embedded.html.php"; 
             patterns = ({include = "source.php"; }); 
         }, 
-        /* */
+        /* * /
         {
-            begin = "(^\\s+)?<(?i:style)\\>.*?>?"; 
-            end = "</(?i:style)>(\\s+$)?"; 
-            name = "source.css.embedded.html.php"; 
-            patterns = ({include = "source.css.php"; }); 
+
+            match = "<(?i:style)\\>.*?>?(?s:.*?)</(?i:style)>";
+            captures = {
+                1 = {   name = "dummy.one"; };
+                2 = {   name = "source.css.embedded.html";
+                        patterns = ( { include = "source.css"; } ); 
+                };
+                3 = {   name = "dummy.three"; };
+            }; 
         }, 
          /* */
-       {
+        {   name = "source.css.embedded.html"; 
+            begin = "(^\\s+)?<(?i:style)\\>.*?>?"; 
+            end = "</(?i:style)>(\\s+$)?"; 
+            patterns = ( {include = "source.css"; } ); 
+        }, 
+         /* */
+       {    name = "source.js.embedded.html"; 
             begin = "(^\\s+)?<(?i:script)\\>.*?>?"; 
             end = "</(?i:script)>(\\s+$)?"; 
-            name = "source.js.embedded.html.php"; 
-            patterns = ({include = "source.js.php"; }); 
+            patterns = ({include = "source.js"; }); 
         }, 
         /* */
         {
-            fontStyle = (); 
-            foregroundColor = "#68685B"; 
-            match = "<\\?xml.*?\\?>"; 
             name = "meta.docinfo.xml-processing.html"; 
+            match = "<\\?xml.*?\\?>"; 
         }, 
         {
+            name = "meta.docinfo.doctype.html"; 
             begin = "<!DOCTYPE"; 
             end = ">"; 
-            fontStyle = (); 
-            foregroundColor = "#888888"; 
-            name = "meta.docinfo.doctype.html"; 
             patterns = (
                 {
-                    fontStyle = (italic); 
-                    match = "\"[^\">]*\""; 
                     name = "meta.docinfo.doctype.identifier-and-DTD.html"; 
+                    match = "\"[^\">]*\""; 
                 }
             ); 
         }, 
@@ -102,13 +94,9 @@
             ); 
         }, 
         {
-            fontStyle = (); 
-            foregroundColor = "#AFA472"; 
+            name = "constant.character.html"; 
             match = "&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+);"; 
-            name = "constant.character-entity.html"; 
         }
-    ); 
-    scopeName = "text.html"; 
-    smartTypingPairs = (("(", ")"), ("[", "]"), ("{", "}"), ("\"", "\""), ("<", ">"), ("'", "'")); 
-    uuid = "B1D8F50C-AC86-11D9-B52D-000D93589AF6"; 
+    );
+    uuid = "56FC1CD0-B7C6-11D9-A1CF-000D93C8BE28"; 
 }
