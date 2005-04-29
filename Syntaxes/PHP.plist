@@ -55,7 +55,7 @@
         },
         {   
             name = "declaration.class.php";
-            match = "(^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?.$";
+            match = "(^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?.*$";
             captures = {
                 1 = { name = "indent"; };
                 2 = { name = "keyword.modifier"; };
