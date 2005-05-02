@@ -40,26 +40,24 @@
         }, 
         {   
             name = "declaration.function.php";
-            match = "(^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\(([^\\)]+)\\).$";
+            match = "(?:^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\(([^\\)]*)\\)";
             captures = {
-                1 = { name = "indent"; };
-                2 = { name = "keyword.modifier.pre"; };
-                3 = { name = "keyword.visibility"; };
-                4 = { name = "keyword.modifier.post"; };
-                5 = { name = "keyword.type"; };
-                6 = { name = "function-name"; };
-                7 = { name = "function-argument"; };
+                1 = { name = "keyword.storage.modifier.abstract-or-final.php"; };
+                2 = { name = "keyword.storage.modifier.visibility.php"; };
+                3 = { name = "keyword.storage.modifier.static.php"; };
+                4 = { name = "keyword.storage.function.php"; };
+                5 = { name = "function-name"; };
+                6 = { name = "function-argument"; };
             };
         },
         {   
             name = "declaration.class.php";
-            match = "(^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?.*$";
+            match = "(?:^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?";
             captures = {
-                1 = { name = "indent"; };
-                2 = { name = "keyword.modifier"; };
-                3 = { name = "keyword.type"; };
-                4 = { name = "class-name"; };
-                5 = { name = "class-inheritance"; };
+                1 = { name = "keyword.storage.modifier.abstract.php"; };
+                2 = { name = "keyword.storage.class-or-interface.php"; };
+                3 = { name = "class-name"; };
+                4 = { name = "class-inheritance"; };
             };
         },
         {
