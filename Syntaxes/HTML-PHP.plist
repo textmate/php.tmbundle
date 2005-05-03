@@ -72,13 +72,13 @@
             name = "declaration.tag.html";
             begin = "</?(a|abbr|acronym|address|area|b|base|big|blockquote|body|br|button|caption|cite|code|col|colgroup|dd|del|dfn|div|dl|dt|em|fieldset|form|frame|frameset|(h[1-6])|head|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|meta|noframes|noscript|object|ol|optgroup|option|p|param|pre|q|samp|script|select|small|span|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|ul|var)"; 
             end = "/?>"; 
-            captures = { 1 = { name = "keyword.markup.element-name.html"; }; };
+            captures = { 1 = { name = "entity.name.tag.html"; }; };
             patterns = (
                 {
                     name = "declaration.attribute-with-value.html";
                     begin = "(abbr|accept-charset|accept|accesskey|action|align|alt|archive|axis|border|cellpadding|cellspacing|char|charoff|charset|checked|cite|class|classid|codebase|codetype|cols|colspan|content|coords|data|datetime|declare|defer|dir|disabled|encoding|enctype|for|frame|frameborder|headers|height|href|hreflang|http-equiv|id|ismap|label|lang|language|longdesc|marginheight|marginwidth|maxlength|media|method|multiple|name|nohref|noresize|onblur|onchange|onclick|ondblclick|onfocus|onkeydown|onkeypress|onkeyup|onload|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|onreset|onselect|onsubmit|onunload|profile|readonly|rel|rev|rows|rowspan|rules|scheme|scope|scrolling|selected|shape|size|span|src|standby|style|summary|tabindex|target|title|type|usemap|valign|value|valuetype|version|width|xmlns|xmlns:isbn|xml:lang)=(?=\")"; 
                     end = "(?=\\s|>)"; 
-                    captures = { 1 = { name = "keyword.markup.attribute-name.html"; }; };
+                    captures = { 1 = { name = "entity.parameter.attribute.tag.html"; }; };
                     patterns = (
                         {
                             name = "string.double-quoted.html"; 

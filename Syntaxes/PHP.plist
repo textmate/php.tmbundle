@@ -40,8 +40,8 @@
                 2 = { name = "keyword.storage.modifier.visibility.php"; };
                 3 = { name = "keyword.storage.modifier.static.php"; };
                 4 = { name = "keyword.storage.function.php"; };
-                5 = { name = "function-name"; };
-                6 = { name = "function-argument"; };
+                5 = { name = "entity.name.function"; };
+                6 = { name = "entity.parameter.variable.function"; };
             };
         },
         {   
@@ -50,8 +50,8 @@
             captures = {
                 1 = { name = "keyword.storage.modifier.abstract.php"; };
                 2 = { name = "keyword.storage.class-or-interface.php"; };
-                3 = { name = "class-name"; };
-                4 = { name = "class-inheritance"; };
+                3 = { name = "entity.name.class"; };
+                4 = { name = "entity.parameter.parent.class"; };
             };
         },
         {
