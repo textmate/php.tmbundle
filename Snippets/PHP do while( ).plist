@@ -9,11 +9,11 @@
 	
 } while ( ${1:$a &lt;= 10} );</string>
 	<key>name</key>
-	<string>do .. while .. (dowhile)</string>
+	<string>do .. while .. (do)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>dowhile</string>
+	<string>do</string>
 	<key>uuid</key>
 	<string>1C06D786-8CCF-11D9-B507-000D93C8BE28</string>
 </dict>
