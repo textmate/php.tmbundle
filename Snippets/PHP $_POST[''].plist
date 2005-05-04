@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$_POST['$1']${2:;}$0</string>
+	<string>\$_POST['${1:variable}']${2:;}$0</string>
 	<key>name</key>
-	<string>PHP $_POST['']</string>
+	<string>$_POST['..'] (-post)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>require( '$1' );$0</string>
+	<string>require( '${1:file}' );$0</string>
 	<key>name</key>
-	<string>PHP require( )</string>
+	<string>require(..) (req)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

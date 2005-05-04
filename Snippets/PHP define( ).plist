@@ -1,20 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>content</key>
-	<string>###	Begin $1 - $2
-		define( '$3', '$4' );
-###	End $1
-
-$0</string>
-	<key>name</key>
-	<string>PHP define( )</string>
-	<key>scope</key>
-	<string>source.php</string>
-	<key>tabTrigger</key>
-	<string>def</string>
-	<key>uuid</key>
-	<string>8AAEC70A-8CCF-11D9-B507-000D93C8BE28</string>
-</dict>
-</plist>
+{
+    content = "###\tBegin $1 - $2\n\t\tdefine( '$3', '$4' );\n###\tEnd $1\n\n$0"; 
+    scope = "source.php"; 
+    tabTrigger = def; 
+    uuid = "8AAEC70A-8CCF-11D9-B507-000D93C8BE28"; 
+    name = "define( ) (def)";
+}

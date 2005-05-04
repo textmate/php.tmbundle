@@ -14,21 +14,20 @@ class ${1:ClassName} ${3:extends AnotherClass}
 	#	internal variables
 	
 	#	Constructor
-	function __construct ( $4 )
+	function __construct ( ${4:argument} )
 	{
-		#	
-		$0
+		${0:# code...}
 	}
 	###	
 
 }
 ###</string>
 	<key>name</key>
-	<string>PHP class { }</string>
+	<string>class .. (class)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>classdef</string>
+	<string>class</string>
 	<key>uuid</key>
 	<string>0F39268F-8CD0-11D9-B507-000D93C8BE28</string>
 </dict>

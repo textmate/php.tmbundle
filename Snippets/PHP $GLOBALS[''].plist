@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$GLOBALS['$1']${2: = }${3:something}${4:;}$0</string>
+	<string>\$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}$0</string>
 	<key>name</key>
-	<string>PHP $GLOBALS['']</string>
+	<string>$GLOBALS['..'] (-globals)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

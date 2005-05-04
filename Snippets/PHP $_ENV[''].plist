@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$_ENV['$1']${2:;}$0</string>
+	<string>\$_ENV['${1:variable}']${2:;}$0</string>
 	<key>name</key>
-	<string>PHP $_ENV['']</string>
+	<string>$_ENV['..'] (-env)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

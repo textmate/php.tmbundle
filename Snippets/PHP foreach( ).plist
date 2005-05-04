@@ -5,10 +5,10 @@
 	<key>content</key>
 	<string>foreach( \$${1:variable} as \$${2:key} =&gt; \$${3:value} )
 {
-	#	$0
+	${0:# code...}
 }</string>
 	<key>name</key>
-	<string>PHP foreach( )</string>
+	<string>foreach .. (foreach)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

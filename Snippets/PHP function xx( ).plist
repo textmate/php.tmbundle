@@ -5,15 +5,15 @@
 	<key>content</key>
 	<string>${1:public} function ${2:FunctionName} ( \$${3:value}${4:=''} )
 {
-	#	$0
+	${0:# code...}
 }
 ###</string>
 	<key>name</key>
-	<string>PHP function xx( )</string>
+	<string>function .. (function)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>func</string>
+	<string>function</string>
 	<key>uuid</key>
 	<string>EC96DA26-8CCF-11D9-B507-000D93C8BE28</string>
 </dict>

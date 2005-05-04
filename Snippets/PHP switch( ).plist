@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>switch ( $1 )
+	<string>switch ( ${1:variable} )
 {
-	case '$2':
-		#	$3
+	case '${2:value}':
+		${3:# code...}
 	break;
 	
 	$0
 			
 	default:
-		#	$4
+		${4:# code...}
 	break;
 }</string>
 	<key>name</key>
-	<string>PHP switch( )</string>
+	<string>switch .. (switch)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

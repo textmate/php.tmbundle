@@ -5,10 +5,10 @@
 	<key>content</key>
 	<string>else
 {
-	#	$0
+	${0:# code...}
 }</string>
 	<key>name</key>
-	<string>PHP else {}</string>
+	<string>else .. (else)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

@@ -5,12 +5,11 @@
 	<key>content</key>
 	<string>do
 {
-	#	$2
-	$0
+	${0:# code...}
 	
 } while ( ${1:$a &lt;= 10} );</string>
 	<key>name</key>
-	<string>PHP do while( )</string>
+	<string>do .. while .. (dowhile)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

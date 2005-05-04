@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>include_once( '$1' );$0</string>
+	<string>include_once( '${1:file}' );$0</string>
 	<key>name</key>
-	<string>PHP include_once( )</string>
+	<string>include_once(..) (incl1)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$_SESSION['$1']${2:;}$0</string>
+	<string>\$_SESSION['${1:variable}']${2:;}$0</string>
 	<key>name</key>
-	<string>PHP $_SESSION['']</string>
+	<string>$_SESSION['..'] (-sess)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

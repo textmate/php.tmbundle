@@ -5,10 +5,10 @@
 	<key>content</key>
 	<string>while ( $(1:\$a &lt;= 10} )
 {
-	#	$2
+	${0:# code...}
 }</string>
 	<key>name</key>
-	<string>PHP while( )</string>
+	<string>while .. (while)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

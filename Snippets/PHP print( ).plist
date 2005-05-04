@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>print "$1"${2: . };$0</string>
+	<string>print "${1:string}"${2: . };$0</string>
 	<key>name</key>
-	<string>PHP print( )</string>
+	<string>print ".." (print)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

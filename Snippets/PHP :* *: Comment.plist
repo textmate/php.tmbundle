@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>/* $0 */</string>
 	<key>name</key>
-	<string>PHP /* */ Comment</string>
+	<string>/* .. */ (/*)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

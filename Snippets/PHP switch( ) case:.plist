@@ -3,12 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>case '$1':
-	#	$0
-break;
-</string>
+	<string>case '${1:variable}':
+	${0:# code...}
+break;</string>
 	<key>name</key>
-	<string>PHP switch( ) case:</string>
+	<string>case .. (case)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

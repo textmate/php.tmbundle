@@ -5,11 +5,11 @@
 	<key>content</key>
 	<string>&lt;?php
 
-	$0
+	${0:# code...}
 
 ?&gt;</string>
 	<key>name</key>
-	<string>PHP &lt;?php ?&gt;</string>
+	<string>&lt;?php .. ?&gt; (php)</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>tabTrigger</key>

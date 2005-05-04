@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>if ( $1 )
+	<string>if ( ${1:condition} )
 {
-	#	$2
+	${0:# code...}
 }</string>
 	<key>name</key>
-	<string>PHP if( )</string>
+	<string>if .. (if)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

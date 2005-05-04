@@ -5,11 +5,10 @@
 	<key>content</key>
 	<string>for ( \$${1:i}=${2:0}; \$${1:i} &lt; $3; \$${1:i}++ )
 { 
-	#	$4
-	$0
+	${0:# code...}
 }</string>
 	<key>name</key>
-	<string>PHP for( )</string>
+	<string>for .. (for)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
