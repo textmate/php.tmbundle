@@ -4,7 +4,7 @@
     /* fileTypes = (php, php3, php4, php5, inc); */
     foldingStartMarker = "(/\\*|\\{\\s*$)"; 
     foldingStopMarker = "(\\*/|^\\s*\\})";
-    keyEquivalent = "@~\Uf704";
+    keyEquivalent = "~^P";
     patterns = (
 
         {   name = "comment.block.php"; 
