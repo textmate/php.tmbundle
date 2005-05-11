@@ -54,7 +54,7 @@
         {   name = "keyword.storage.php"; 
             match = "\\<(const|final|p(r(ivate|otected)|ublic)|static|var|)\\>";
         },
-        /*  BEGIN FUNCTION COMMENTING OUT, (just make a space between the * and the / to the right ) */
+        /*  BEGIN FUNCTION COMMENTING OUT, (just make a space between the * and the / to the right ) * /
         {   name = "support.function.apache.php"; 
             match = "\\<(apache_(child_terminate|get(env|_(modules|version))|lookup_uri|note|re(quest_headers|set_timeout|sponse_headers)|setenv)|ascii2ebcdic|ebcdic2ascii|getallheaders|virtual)\\>";            
         }, 
