@@ -1,7 +1,7 @@
 {
     fileTypes = (phtml, php, php3, php4, php5, inc);
-	firstLineMatch = "^(<\\?php\\>|#!/.*php\\>)";
-    foldingStartMarker = "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\>.*?>|\\{)"; 
+	firstLineMatch = "^(<\\?php\\b|#!/.*php\\b)";
+    foldingStartMarker = "(<(?i:(head|table|div|style|script|ul|ol|form|dl))\\b.*?>|\\{)"; 
     foldingStopMarker = "(</(?i:(head|table|div|style|script|ul|ol|form|dl))>|\\})"; 
     name = "HTML (PHP)"; 
     scopeName = "text.html";
@@ -31,7 +31,7 @@
         /* * /
         {
 
-            match = "<(?i:style)\\>.*?>?(?s:.*?)</(?i:style)>";
+            match = "<(?i:style)\\b.*?>?(?s:.*?)</(?i:style)>";
             captures = {
                 1 = {   name = "dummy.one"; };
                 2 = {   name = "source.css.embedded.html";
@@ -42,13 +42,13 @@
         }, 
          /* */
         {   name = "source.css.embedded.html"; 
-            begin = "(^\\s+)?<(?i:style)\\>.*?>?"; 
+            begin = "(^\\s+)?<(?i:style)\\b.*?>?"; 
             end = "</(?i:style)>(\\s+$)?"; 
             patterns = ( {include = "source.css"; } ); 
         }, 
          /* */
        {    name = "source.js.embedded.html"; 
-            begin = "(^\\s+)?<(?i:script)\\>.*?>?"; 
+            begin = "(^\\s+)?<(?i:script)\\b.*?>?"; 
             end = "</(?i:script)>(\\s+$)?"; 
             patterns = ({include = "source.js"; }); 
         }, 
