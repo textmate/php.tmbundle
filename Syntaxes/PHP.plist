@@ -29,15 +29,22 @@
             match = "\\b(catch|try|throw|exception)|([a-zA-Z_]*Exception)\\b"; 
         }, 
         {   name = "declaration.function.php";
-            match = "(?:^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\(([^\\)]*)\\)";
+            begin = "(?:^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\("; end = "\\)";
             captures = {
                 1 = { name = "keyword.storage.modifier.abstract-or-final.php"; };
                 2 = { name = "keyword.storage.modifier.visibility.php"; };
                 3 = { name = "keyword.storage.modifier.static.php"; };
                 4 = { name = "keyword.storage.function.php"; };
                 5 = { name = "entity.name.function"; };
-                6 = { name = "entity.parameter.variable.function"; };
             };
+            patterns = (
+                {   name = "entity.parameter.variable.function";
+                    match = "\\$[a-zA-Z]\\w*";
+                },
+                {   name = "constant.language.php";
+                    match = "NULL";
+                }
+            );
         },
         {   name = "declaration.class.php";
             match = "(?:^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?";
