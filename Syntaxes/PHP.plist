@@ -54,7 +54,7 @@
         {   name = "keyword.storage.php"; 
             match = "\\b(const|final|p(r(ivate|otected)|ublic)|static|var)\\b";
         },
-        /*  BEGIN FUNCTION COMMENTING OUT, (just make a space between the * and the / to the right ) * /
+        /*  BEGIN FUNCTION COMMENTING OUT, (just make a space between the * and the / to the right ) */
         {   name = "support.function.apache.php"; 
             match = "\\b(apache_(child_terminate|get(env|_(modules|version))|lookup_uri|note|re(quest_headers|set_timeout|sponse_headers)|setenv)|ascii2ebcdic|ebcdic2ascii|getallheaders|virtual)\\b";            
         }, 
@@ -203,7 +203,7 @@
             match = "\\b(mhash(|_count|_get_(block_size|hash_name)|_keygen_s2k))\\b"; 
         }, 
         {   name = "support.function.ming.php"; 
-            match = "\\b(ming_(set(cubicthreshold|scale)|useswfversion)|SWF(Action|Bitmap|button(|_keypress)|DisplayItem|Font|Gradient|Mo(rph|vie)|S(hape|prite)|Text(|Field(|->addstring))))\\b"; 
+            match = "\\b(ming_(set(cubicthreshold|scale)|useswfversion)|SWF(Action|Bitmap|button(|_keypress)|DisplayItem|Font|Gradient|Mo(rph|vie)|S(hape|prite)|Text(|Field(|\->addstring))))\\b"; 
         }, 
         {   name = "support.function.misc.php"; 
             match = "\\b(con(nection_(aborted|status|timeout)|stant)|d(efine(|d)|ie|om_import_simplexml|otnet_load)|e(val|xit|zmlm_hash)|fribidi_log2vis|get_browser|highlight_(file|string)|i(gnore_user_abort|s_soap_fault)|java_last_exception_(clear|get)|lzf_(compress|decompress|optimized_for)|m(ail|emcache_debug|ime_content_type)|nsapi_(re(quest_headers|sponse_headers)|virtual)|overload|p(ack|hp_(check_syntax|strip_whitespace))|qdom_(error|tree)|r(ar_(close|entry_get|list|open)|ecode(|_file|_string))|s(how_source|leep)|t(cpwrap_check|ime_nanosleep|oken_(get_all|name))|u(n(iqid|pack)|s(e_soap_error_handler|leep)))\\b"; 
@@ -366,7 +366,7 @@
             match = "(\\-|\\+|\\*|\\/|%)"; 
         }, 
         {   name = "keyword.operator.comparison.php"; 
-            match = "(==|===|!=|!==|<>|<|>|<=|>=)(?=[^?php])"; 
+            match = "(===|==|!==|!=|<=|>=|<>|<|>)(?=[^?php])"; 
         }, 
         {   name = "keyword.operator.error-control.php"; 
             match = "(@)"; 
@@ -378,7 +378,7 @@
             match = "(!|&&|\\|\\|)|\\b(and|or|xor|as)\\b"; 
         }, 
         {   name = "keyword.operator.string.php"; 
-            match = "(\\.|\\.=)"; 
+            match = "(\\.=|\\.)"; 
         }, 
         {   name = "keyword.operator.type.php"; 
             match = "\\b(instanceof)\\b"; 
@@ -423,7 +423,7 @@
             match = "\\$(_(COOKIE|FILES|GET|POST|REQUEST))\\b"; 
         }, 
         {   name = "variable.global.safer.php"; 
-            match = "(\\$(GLOBALS|_(ENV|SERVER|SESSION)))|global\\b"; 
+            match = "(\\$(GLOBALS|_(ENV|SERVER|SESSION)))|\\b(global)\\b"; 
         }, 
         {   name = "variable.php"; 
             match = "\\$[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b"; 
