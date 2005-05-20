@@ -29,7 +29,8 @@
             match = "\\b(catch|try|throw|exception)|([a-zA-Z_]*Exception)\\b"; 
         }, 
         {   name = "declaration.function.php";
-            begin = "(?:^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\("; end = "\\)";
+            begin = "(?:^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\("; 
+            end = "\\)";
             captures = {
                 1 = { name = "keyword.storage.modifier.abstract-or-final.php"; };
                 2 = { name = "keyword.storage.modifier.visibility.php"; };
@@ -38,12 +39,51 @@
                 5 = { name = "entity.name.function"; };
             };
             patterns = (
-                {   name = "entity.parameter.variable.function";
-                    match = "\\$[a-zA-Z]\\w*";
-                },
-                {   name = "constant.language.php";
-                    match = "NULL";
-                }
+                {   name = "string.double-quoted.php"; 
+                    begin = "\""; 
+                    end = "\""; 
+                    patterns = (
+                        {   name = "variable.complex.php"; 
+                            match = "\\{\\$[a-zA-Z_x7f-xff].*?\\}"; 
+                        },
+                        {   name = "variable.simple.php"; 
+                            match = "\\$(?:(?<body>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?(->[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?)*)|\\{\\g<body>\\})";
+                        }
+                    ); 
+                    swallow = "\\\\."; 
+                }, 
+                {   name = "string.single-quoted.php"; 
+                    begin = "'"; 
+                    end = "'"; 
+                    swallow = "\\\\."; 
+                }, 
+                {   name = "string.heredoc.php"; 
+                    begin = "<<<([a-zA-Z]+[a-zA-Z0-9_]*)"; 
+                    end = "^[a-zA-Z_]+[a-zA-Z0-9_]*;$"; 
+                    patterns = (
+                        {   name = "variable.complex.php"; 
+                            match = "\\{\\$[a-zA-Z_\\x{7f}-\\x{ff}].*?\\}"; 
+                        }, 
+                        {   name = "variable.simple.php"; 
+                            match = "\\$(?:(?<body>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?(->[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?)*)|\\{\\g<body>\\})";
+                        }, 
+                        {   name = "string.heredoc.html.php"; 
+                            match = "<[^>]+>"; 
+                        }
+                    ); 
+                }, 
+                {   name = "variable.global.php"; 
+                    match = "\\$(_(COOKIE|FILES|GET|POST|REQUEST))\\b"; 
+                }, 
+                {   name = "variable.global.safer.php"; 
+                    match = "(\\$(GLOBALS|_(ENV|SERVER|SESSION)))|\\b(global)\\b"; 
+                }, 
+                {   name = "variable.php"; 
+                    match = "\\$[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b"; 
+                }, 
+                {   name = "constant.language.php"; 
+                    match = "\\b(TRUE|true|FALSE|false|NULL|null|__(FILE__|FUNCTION__|CLASS__|METHOD__|LINE__)|ON|OFF|YES|NO|NL|BR|TAB)\\b"; 
+                } 
             );
         },
         {   name = "declaration.class.php";
@@ -401,7 +441,7 @@
                     match = "\\{\\$[a-zA-Z_x7f-xff].*?\\}"; 
                 },
                 {   name = "variable.simple.php"; 
-                    match = "\\$(\\{)?[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?(->[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?)*(?(1)\\}:)"; 
+                    match = "\\$(?:(?<body>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?(->[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?)*)|\\{\\g<body>\\})";
                 }
             ); 
             swallow = "\\\\."; 
@@ -419,7 +459,7 @@
                     match = "\\{\\$[a-zA-Z_\\x{7f}-\\x{ff}].*?\\}"; 
                 }, 
                 {   name = "variable.simple.php"; 
-                    match = "\\$(\\{)?[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?(->[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?)*(?(1)\\}:)"; 
+                    match = "\\$(?:(?<body>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?(->[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*(\\[[a-zA-Z0-9_\\x{7f}-\\x{ff}]+\\])?)*)|\\{\\g<body>\\})";
                 }, 
                 {   name = "string.heredoc.html.php"; 
                     match = "<[^>]+>"; 
