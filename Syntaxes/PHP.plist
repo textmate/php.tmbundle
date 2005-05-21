@@ -47,7 +47,7 @@
                     end = "\""; 
                     patterns = (
                         {   name = "variable.php"; 
-                            match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?\\}|(?#complex syntax)\\{\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*\\})";
+                            match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{(?:\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?|\\g<complex>|\\$\\{\\g<complex>\\})\\}|(?#complex syntax)\\{(?<complex>\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*|\\$\\g<complex>|\\$\\{\\g<complex>\\})\\})";
                         }, 
                     ); 
                     swallow = "\\\\."; 
@@ -423,7 +423,7 @@
             end = "\""; 
             patterns = (
                 {   name = "variable.php"; 
-                    match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?\\}|(?#complex syntax)\\{\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*\\})";
+                    match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{(?:\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?|\\g<complex>|\\$\\{\\g<complex>\\})\\}|(?#complex syntax)\\{(?<complex>\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*|\\$\\g<complex>|\\$\\{\\g<complex>\\})\\})";
                 }, 
             ); 
             swallow = "\\\\."; 
@@ -438,7 +438,7 @@
             end = "^[a-zA-Z_]+[a-zA-Z0-9_]*;$"; 
             patterns = (
                 {   name = "variable.php"; 
-                    match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?\\}|(?#complex syntax)\\{\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*\\})";
+                    match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{(?:\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?|\\g<complex>|\\$\\{\\g<complex>\\})\\}|(?#complex syntax)\\{(?<complex>\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*|\\$\\g<complex>|\\$\\{\\g<complex>\\})\\})";
                 }, 
                 {   name = "string.heredoc.html.php"; 
                     match = "<[^>]+>"; 
