@@ -445,10 +445,6 @@
                 }
             ); 
         }, 
-        /* I'm uncertain if this group should remain here, but it seems to make sense for me */
-        {   name = "variable.php"; 
-            match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?\\}|(?#complex syntax)\\{\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*\\})";
-        }, 
         {   name = "variable.global.php"; 
             match = "\\$(_(COOKIE|FILES|GET|POST|REQUEST))\\b"; 
         }, 
@@ -457,6 +453,12 @@
         }, 
         {   name = "variable.php"; 
             match = "\\$[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b"; 
+        }, 
+        {
+            match = "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])->([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?)\\b";
+            captures = {
+                1 = { name = "variable.property.php"; };
+            };
         }, 
         {   name = "constant.language.php"; 
             match = "\\b(TRUE|true|FALSE|false|NULL|null|__(FILE__|FUNCTION__|CLASS__|METHOD__|LINE__)|ON|OFF|YES|NO|NL|BR|TAB)\\b"; 
