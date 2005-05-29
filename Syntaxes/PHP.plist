@@ -455,9 +455,10 @@
             match = "\\$[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b"; 
         }, 
         {
-            match = "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])->([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?)\\b";
+            match = "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])(->)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?)\\b";
             captures = {
-                1 = { name = "variable.property.php"; };
+                1 = { name = "keyword.construct.php"; };
+                2 = { name = "variable.property.php"; };
             };
         }, 
         {   name = "constant.language.php"; 
