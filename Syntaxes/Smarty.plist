@@ -1,4 +1,13 @@
 {
+    /*
+        PHP-Smarty Syntax::
+        Original version by James Spahr, james@spahr.org
+        
+        Reworked into new syntax format by Mats Persson [mats@imediatec.co.uk]
+        Version: 1.0b1
+        
+    */
+    
     name = "PHP-Smarty"; 
     scopeName = "source.smarty";
     fileTypes = (); 
