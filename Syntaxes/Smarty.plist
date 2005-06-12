@@ -14,7 +14,7 @@
     foldingStartMarker = "(<(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|\\{\\{?(if|foreach|capture|literal|foreach|php|section|strip)|\\{\\s*$)";
     foldingStopMarker = "(</(?i:(head|table|tr|div|style|script|ul|ol|form|dl))>|\\{\\{?/(if|foreach|capture|literal|foreach|php|section|strip)|(^|\\s)\\})";
     patterns = (
-        {   name = "comment.smarty"; 
+        {   name = "comment.block.smarty"; 
             begin = "\\*"; 
             end = "\\*";
         }, 
@@ -35,22 +35,22 @@
             match = "\\|(capitalize|cat|count_characters|count_paragraphs|count_sentences|count_words|date_format|default|escape|indent|lower|nl2br|regex_replace|replace|spacify|string_format|strip|strip_tags|truncate|upper|wordwrap)";             
         }, 
         {   name = "declaration.attribute.smarty";
-            match = "\\b[a-zA-Z]*="; 
+            match = "\\b[a-zA-Z]+="; 
         }, 
-        {   name = "string.single-quoted.smarty"; 
+        {   name = "string.quoted.single.smarty"; 
             begin = "'"; 
             end = "'"; 
             swallow = "\\\\."; 
         }, 
-        {   name = "string.double-quoted.smarty"; 
+        {   name = "string.quoted.double.smarty"; 
             begin = "\""; 
             end = "\"";             
             swallow = "\\\\."; 
         }, 
-        {   name = "variable.global.smarty"; 
+        {   name = "variable.other.global.smarty"; 
             match = "\\b\\$Smarty\\."; 
         }, 
-        {   name = "variable.smarty";
+        {   name = "variable.other.smarty";
             match = "\\$[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b";
             /* 
             match = "\\$[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?(\\b|\\.)"; 

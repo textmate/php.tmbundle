@@ -11,7 +11,7 @@
             begin = "/\\*"; 
             end = "\\*/"; 
             patterns = (
-                {   name = "phpdoc.php"; 
+                {   name = "keyword.other.phpdoc.php"; 
                     match = "\\@(a(ccess|uthor)|c(ategory|opyright)|global|link|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion))\\b"; 
                 }
             ); 
@@ -23,47 +23,47 @@
             match = "#.*$"; 
         }, 
         {   name = "keyword.control.php"; 
-            match = "\\b(break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(|if)|nd(declare|for(|each)|if|switch|while)|xit)|for(|each)|if|return|switch|use|while)\\b"; 
+            match = "\\b(break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while)\\b"; 
         }, 
-        {   name = "keyword.control.includerequire.php"; 
+        {   name = "keyword.other.include.php"; 
             match = "\\b(require|include)(_once)?\\b"; 
         }, 
-        {   name = "keyword.exception.php"; 
+        {   name = "keyword.control.exception.php"; 
             match = "\\b(catch|try|throw|exception)|([a-zA-Z_]*Exception)\\b"; 
         }, 
         {   name = "declaration.function.php";
             begin = "(?:^\\s*)(final|abstract)?\\s*(public|private|protected)?\\s*(static)?\\s*(function)\\s*([&a-zA-Z0-9_]+)\\s*\\("; 
             end = "\\)";
             captures = {
-                1 = { name = "keyword.storage.modifier.abstract-or-final.php"; };
-                2 = { name = "keyword.storage.modifier.visibility.php"; };
-                3 = { name = "keyword.storage.modifier.static.php"; };
-                4 = { name = "keyword.storage.function.php"; };
-                5 = { name = "entity.name.function"; };
+                1 = { name = "storage.modifier.abstract-or-final.php"; };
+                2 = { name = "storage.modifier.visibility.php"; };
+                3 = { name = "storage.modifier.static.php"; };
+                4 = { name = "storage.type.function.php"; };
+                5 = { name = "entity.name.function.php"; };
             };
             patterns = (
-                {   name = "string.double-quoted.php"; 
+                {   name = "string.quoted.double.php"; 
                     begin = "\""; 
                     end = "\""; 
                     patterns = (
-                        {   name = "variable.php"; 
+                        {   name = "variable.other.php"; 
                             match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{(?:\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?|\\g<complex>|\\$\\{\\g<complex>\\})\\}|(?#complex syntax)\\{(?<complex>\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*|\\$\\g<complex>|\\$\\{\\g<complex>\\})\\})";
                         }, 
                     ); 
                     swallow = "\\\\."; 
                 }, 
-                {   name = "string.single-quoted.php"; 
+                {   name = "string.quoted.single.php"; 
                     begin = "'"; 
                     end = "'"; 
                     swallow = "\\\\."; 
                 },                 
-                {   name = "variable.global.php"; 
+                {   name = "variable.other.global.php"; 
                     match = "\\$(_(COOKIE|FILES|GET|POST|REQUEST))\\b"; 
                 }, 
-                {   name = "variable.global.safer.php"; 
+                {   name = "variable.other.global.safer.php"; 
                     match = "(\\$(GLOBALS|_(ENV|SERVER|SESSION)))|\\b(global)\\b"; 
                 }, 
-                {   name = "variable.php"; 
+                {   name = "variable.other.php"; 
                     match = "\\$[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b"; 
                 }, 
                 {   name = "constant.language.php"; 
@@ -74,18 +74,28 @@
         {   name = "declaration.class.php";
             match = "(?:^\\s*)(abstract)?\\s*(class|interface)\\s+([a-zA-Z0-9_]+)\\s*(extends\\s+([a-zA-Z0-9_]+))?";
             captures = {
-                1 = { name = "keyword.storage.modifier.abstract.php"; };
-                2 = { name = "keyword.storage.class-or-interface.php"; };
-                3 = { name = "entity.name.class"; };
-                4 = { name = "entity.parameter.parent.class"; };
+                1 = { name = "storage.modifier.abstract.php"; };
+                2 = { name = "storage.modifier.class-or-interface.php"; };
+                3 = { name = "entity.name.class.php"; };
+                4 = { name = "entity.other.inherited-class.php"; };
             };
         },
-        {   name = "keyword.construct.php"; 
-            match = "(::|->)|\\b(abstract|cl(ass|one)|extends|function|i(mplements|nterface)|new|parent|self|__(autoload|c(all|lone|onstruct)|destruct|get|s(et|leep)|toString|wakeup))\\b"; 
+        {   name = "storage.type.php"; 
+            match = "\\b(class|var|function|interface|new|parent|self|__(autoload|c(all|lone|onstruct)|destruct|get|s(et|leep)|toString|wakeup))\\b"; 
         }, 
-        {   name = "keyword.storage.php"; 
-            match = "\\b(const|final|p(r(ivate|otected)|ublic)|static|var)\\b";
+        {   name = "storage.modifier.php"; 
+            match = "\\b(abstract|const|extends|implements|final|p(r(ivate|otected)|ublic)|static)\\b";
         },
+        {   name = "constant.language.php";
+            match = "\\b(parent|self)\\b";
+        },
+        {   name = "keyword.other.php"; 
+            match = "\\b(clone|new|__(autoload|c(all|lone|onstruct)|destruct|get|s(et|leep)|toString|wakeup))\\b"; 
+        }, 
+        {   name = "keyword.operator.php"; 
+            match = "::|->"; 
+        }, 
+
         /*  BEGIN FUNCTION COMMENTING OUT, (just make a space between the * and the / to the right ) */
         {   name = "support.function.apache.php"; 
             match = "\\b(apache_(child_terminate|get(env|_(modules|version))|lookup_uri|note|re(quest_headers|set_timeout|sponse_headers)|setenv)|ascii2ebcdic|ebcdic2ascii|getallheaders|virtual)\\b";            
@@ -418,32 +428,32 @@
         {   name = "constant.numeric.php"; 
             match = "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f)?\\b"; 
         }, 
-        {   name = "string.double-quoted.php"; 
+        {   name = "string.quoted.double.php"; 
             begin = "\""; 
             end = "\""; 
             patterns = (
-                {   name = "variable.php"; 
+                {   name = "variable.other.php"; 
                     match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{(?:\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?|\\g<complex>|\\$\\{\\g<complex>\\})\\}|(?#complex syntax)\\{(?<complex>\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*|\\$\\g<complex>|\\$\\{\\g<complex>\\})\\})";
                 }, 
             ); 
             swallow = "\\\\."; 
         }, 
-        {   name = "string.single-quoted.php"; 
+        {   name = "string.quoted.single.php"; 
             begin = "'"; 
             end = "'"; 
             swallow = "\\\\."; 
         }, 
-        {   name = "string.heredoc.php"; 
+        {   name = "string.unquoted.heredoc.php"; 
             begin = "<<<([a-zA-Z]+[a-zA-Z0-9_]*)"; 
             end = "^[a-zA-Z_]+[a-zA-Z0-9_]*;$"; 
             patterns = (
-                {   name = "variable.php"; 
+                {   name = "variable.other.php"; 
                     match = "(?<regex>(?#simple syntax)\\$(?<name>[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?:\\[(?<index>[a-zA-Z0-9_\\x{7f}-\\x{ff}]+|\\$\\g<name>)\\]|->\\g<name>)?|(?#simple syntax with braces)\\$\\{(?:\\g<name>(?<indices>\\[(?:\\g<index>|'(?:\\\\.|[^'\\\\])*'|\"(?:\\g<regex>|\\\\.|[^\"\\\\])*\")\\])?|\\g<complex>|\\$\\{\\g<complex>\\})\\}|(?#complex syntax)\\{(?<complex>\\$(?<segment>\\g<name>\\g<indices>*)(?:->\\g<segment>)*|\\$\\g<complex>|\\$\\{\\g<complex>\\})\\})";
                 }, 
-                {   name = "string.heredoc.html.php"; 
+/*              {   name = "string.heredoc.html.php"; 
                     match = "<[^>]+>"; 
                 }
-            ); 
+*/            ); 
         }, 
         {   name = "variable.global.php"; 
             match = "\\$(_(COOKIE|FILES|GET|POST|REQUEST))\\b"; 
