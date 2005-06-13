@@ -455,20 +455,20 @@
                 }
 */            ); 
         }, 
-        {   name = "variable.global.php"; 
+        {   name = "variable.other.global.php"; 
             match = "\\$(_(COOKIE|FILES|GET|POST|REQUEST))\\b"; 
         }, 
-        {   name = "variable.global.safer.php"; 
+        {   name = "variable.other.global.safer.php"; 
             match = "(\\$(GLOBALS|_(ENV|SERVER|SESSION)))|\\b(global)\\b"; 
         }, 
-        {   name = "variable.php"; 
+        {   name = "variable.other.php"; 
             match = "\\$[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?\\b"; 
         }, 
         {
             match = "(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])(->)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*?)\\b";
             captures = {
-                1 = { name = "keyword.construct.php"; };
-                2 = { name = "variable.property.php"; };
+                1 = { name = "keyword.operator.php"; };
+                2 = { name = "variable.other.property.php"; };
             };
         }, 
         {   name = "constant.language.php"; 
