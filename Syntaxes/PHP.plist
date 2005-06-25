@@ -18,10 +18,10 @@
             ); 
         }, 
         {   name = "comment.line.double-slash.php"; 
-            match = "//.*$"; 
+            match = "//.*?(?=\\?>|$)";
         }, 
         {   name = "comment.line.number-sign.php"; 
-            match = "#.*$"; 
+        		match = "#.*?(?=\\?>|$)";
         }, 
         {   name = "keyword.control.php"; 
             match = "\\b(break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while)\\b"; 
