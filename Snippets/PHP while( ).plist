@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>while ( $(1:\$a &lt;= 10} )
+	<string>while ( ${1:$a &lt;= 10} )
 {
 	${0:# code...}
 }</string>
