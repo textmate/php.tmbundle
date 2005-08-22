@@ -1,9 +1,6 @@
 #!/bin/bash
 
-AUTHOR=`echo $PHPDOC_AUTHOR`
-if [ ! $AUTHOR ]
-then
-    niutil -readprop / /users/$USER realname
-else
-    echo $AUTHOR
+if [[ -n "$PHPDOC_AUTHOR" ]];
+	then printenv PHPDOC_AUTHOR
+	else niutil -readprop / "/users/$USER" realname
 fi
