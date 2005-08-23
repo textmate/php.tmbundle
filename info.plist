@@ -6,6 +6,7 @@
 	<string>PHP</string>
 	<key>ordering</key>
 	<array>
+		<string>412481DC-89B7-11D9-9FE3-000A9584EC8C</string>
 		<string>774E75DA-A747-4CB4-B8AF-DE720B01E295</string>
 		<string>EC271DAE-BEC9-11D9-8856-000D93589AF6</string>
 		<string>9086823A-87E7-11D9-A6A3-000D93589AF6</string>
@@ -57,7 +58,7 @@
 		<string>306E5B79-8CD1-11D9-B507-000D93C8BE28</string>
 		<string>40A7709D-8CD1-11D9-B507-000D93C8BE28</string>
 		<string>22986475-8CA5-11D9-AEDD-000D93C8BE28</string>
-		<string>56FC1CD0-B7C6-11D9-A1CF-000D93C8BE28</string>
+		<string>4D6BBA54-E3FC-4296-9CA1-662B2AD537C6</string>
 	</array>
 	<key>uuid</key>
 	<string>467A1966-6227-11D9-BFB1-000D93589AF6</string>
