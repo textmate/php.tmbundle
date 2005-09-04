@@ -32,7 +32,7 @@
 					<key>match</key>
 					<string>\@(a(ccess|uthor)|c(ategory|opyright)|global|link|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion))\b</string>
 					<key>name</key>
-					<string>comment.documentation.phpdoc.php</string>
+					<string>keyword.other.phpdoc.php</string>
 				</dict>
 			</array>
 		</dict>
