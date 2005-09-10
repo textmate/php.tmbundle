@@ -9,7 +9,7 @@
  * ${2:undocumented class}
  *
  * @package ${3:default}
- * @author `"$TM_BUNDLE_PATH/bin/phpdoc_getauthor.sh"`
+ * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}
  **/
 interface $1
 {$0

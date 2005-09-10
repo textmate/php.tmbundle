@@ -9,7 +9,7 @@
  * ${4:undocumented function}
  *
  * @return ${5:void}
- * @author `"$TM_BUNDLE_PATH/bin/phpdoc_getauthor.sh"`$6
+ * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}$6
  **/
 $1function $2($3);$0</string>
 	<key>keyEquivalent</key>
