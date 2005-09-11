@@ -38,13 +38,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>//.*?(?=\?&gt;|$)</string>
+			<string>//.*$</string>
 			<key>name</key>
 			<string>comment.line.double-slash.php</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>#.*?(?=\?&gt;|$)</string>
+			<string>#.*$</string>
 			<key>name</key>
 			<string>comment.line.number-sign.php</string>
 		</dict>
