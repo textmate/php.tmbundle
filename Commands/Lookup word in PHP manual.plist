@@ -16,9 +16,9 @@ echo "&lt;html&gt;&lt;head&gt;&lt;meta http-equiv=\"Refresh\" content=\"0; URL=h
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
-	<string>^h</string>
+	<string></string>
 	<key>name</key>
-	<string>Lookup word in PHP manual</string>
+	<string>Lookup Word in Manual</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>

@@ -11,7 +11,7 @@
 	<key>keyEquivalent</key>
 	<string>^V</string>
 	<key>name</key>
-	<string>Validate syntax</string>
+	<string>Validate Syntax</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
