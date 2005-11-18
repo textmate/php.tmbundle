@@ -4,21 +4,44 @@
 <dict>
 	<key>comment</key>
 	<string>
-	PHP Syntax - version 2.0 - 2005-07-23
-	last edited: by Mats Persson.
-	</string>
+	    PHP Syntax - version 2.0.1 - 2005-11-10 	
+    	last edited by: Paul Bissex &lt;pb@e-scribe.com&gt;.
+    	</string>
 	<key>firstLineMatch</key>
 	<string>^#!.*php[0-9]{0,1}\b</string>
 	<key>foldingStartMarker</key>
-	<string>(/\*|\{\s*$)</string>
+	<string>(/\*|\{\s*$|&lt;&lt;&lt;HTML)</string>
 	<key>foldingStopMarker</key>
-	<string>(\*/|^\s*\})</string>
+	<string>(\*/|^\s*\}|^HTML;)</string>
 	<key>keyEquivalent</key>
 	<string>~^P</string>
 	<key>name</key>
 	<string>PHP</string>
 	<key>patterns</key>
 	<array>
+		<dict>
+			<key>begin</key>
+			<string>(&lt;&lt;&lt;HTML)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.heredoc</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^(HTML);</string>
+			<key>name</key>
+			<string>meta.scope.heredoc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>text.html.basic</string>
+				</dict>
+			</array>
+		</dict>
 		<dict>
 			<key>begin</key>
 			<string>/\*</string>
