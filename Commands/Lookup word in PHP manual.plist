@@ -7,12 +7,11 @@
 	<key>bundlePath</key>
 	<string>/Users/kumar/Library/Application Support/TextMate/Bundles/Custom.tmbundle</string>
 	<key>command</key>
-	<string>if [ `echo "$TM_CURRENT_WORD" | grep -Ev '[a-zA-Z0-9_]+'` ]; then
-	echo "Nothing to lookup (hint: place the cursor on a function name)"
-	exit 1
+	<string>if grep &lt;&lt;&lt;${TM_CURRENT_WORD:-!} -Esq '[a-zA-Z0-9_]+'
+	then exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=http://dk2.php.net/$TM_CURRENT_WORD'&gt;"
+	else echo "Nothing to lookup (hint: place the caret on a function name)"
 fi
-
-echo "&lt;html&gt;&lt;head&gt;&lt;meta http-equiv=\"Refresh\" content=\"0; URL=http://php.net/$TM_CURRENT_WORD\"&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"</string>
+</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
@@ -20,7 +19,7 @@ echo "&lt;html&gt;&lt;head&gt;&lt;meta http-equiv=\"Refresh\" content=\"0; URL=h
 	<key>name</key>
 	<string>Lookup Word in Manual</string>
 	<key>output</key>
-	<string>showAsHTML</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>uuid</key>
