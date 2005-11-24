@@ -15,9 +15,9 @@ fi
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
-	<string></string>
+	<string>^h</string>
 	<key>name</key>
-	<string>Lookup Word in Manual</string>
+	<string>Documentation for Word</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
