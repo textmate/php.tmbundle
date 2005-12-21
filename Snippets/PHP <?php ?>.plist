@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>&lt;?php
 
-	${0:# code...}
+	$0
 
 ?&gt;</string>
 	<key>name</key>

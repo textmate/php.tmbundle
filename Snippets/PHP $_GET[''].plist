@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$_GET['${1:variable}']${2:;}$0</string>
+	<string>\$_GET['${1:variable}']</string>
 	<key>name</key>
-	<string>$_GET['..'] (-get)</string>
+	<string>GET['..'] ($_)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>-get</string>
+	<string>$_</string>
 	<key>uuid</key>
 	<string>CF29C6B5-8CD0-11D9-B507-000D93C8BE28</string>
 </dict>

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$_COOKIE['${1:variable}']${2:;}$0</string>
+	<string>\$_COOKIE['${1:variable}']</string>
 	<key>name</key>
-	<string>$_COOKIE['..'] (-cookie)</string>
+	<string>COOKIE['..'] ($_)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>-cookie</string>
+	<string>$_</string>
 	<key>uuid</key>
 	<string>9B253562-8CD0-11D9-B507-000D93C8BE28</string>
 </dict>

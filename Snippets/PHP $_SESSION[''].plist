@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$_SESSION['${1:variable}']${2:;}$0</string>
+	<string>\$_SESSION['${1:variable}']</string>
 	<key>name</key>
-	<string>$_SESSION['..'] (-sess)</string>
+	<string>SESSION['..'] ($_)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>-sess</string>
+	<string>$_</string>
 	<key>uuid</key>
 	<string>40A7709D-8CD1-11D9-B507-000D93C8BE28</string>
 </dict>

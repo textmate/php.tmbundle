@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$_REQUEST['${1:variable}']${2:;}$0</string>
+	<string>\$_REQUEST['${1:variable}']</string>
 	<key>name</key>
-	<string>$_REQUEST['..'] (-req)</string>
+	<string>REQUEST['..'] ($_)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>-req</string>
+	<string>$_</string>
 	<key>uuid</key>
 	<string>19B4F695-8CD1-11D9-B507-000D93C8BE28</string>
 </dict>
