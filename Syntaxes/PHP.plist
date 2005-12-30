@@ -972,7 +972,7 @@
 		<key>var_basic</key>
 		<dict>
 			<key>match</key>
-			<string>\$[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+			<string>\$+[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
 			<key>name</key>
 			<string>variable.other.php</string>
 		</dict>
