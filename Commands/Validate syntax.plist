@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>php -l</string>
+	<string>"${TM_PHP:-php}" -l</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
