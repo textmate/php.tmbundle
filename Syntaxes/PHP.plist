@@ -25,6 +25,8 @@
 					<string>keyword.other.heredoc</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>text.html</string>
 			<key>end</key>
 			<string>^(HTML);</string>
 			<key>name</key>
