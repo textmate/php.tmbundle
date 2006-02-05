@@ -26,7 +26,7 @@
 				</dict>
 			</dict>
 			<key>contentName</key>
-			<string>text.html</string>
+			<string>text.html.basic.embedded</string>
 			<key>end</key>
 			<string>^(HTML);</string>
 			<key>name</key>
