@@ -8,8 +8,6 @@
 	<string>(/\*|\{\s*$|&lt;&lt;&lt;HTML)</string>
 	<key>foldingStopMarker</key>
 	<string>(\*/|^\s*\}|^HTML;)</string>
-	<key>keyEquivalent</key>
-	<string></string>
 	<key>name</key>
 	<string>✘ PHP ➡ Use HTML</string>
 	<key>patterns</key>
@@ -301,30 +299,20 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s*)(final|abstract)?\s*(public|private|protected)?\s*(static)?\s*(function)\s*([&amp;a-zA-Z0-9_]+)\s*\(</string>
+			<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)\s*([&amp;a-zA-Z0-9_]+)\s*\(</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.modifier.abstract-or-final.php</string>
+					<string>storage.modifier.php</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.modifier.visibility.php</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.static.php</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
 					<string>storage.type.function.php</string>
 				</dict>
-				<key>5</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.php</string>
