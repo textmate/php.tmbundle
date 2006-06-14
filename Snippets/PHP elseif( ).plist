@@ -8,7 +8,7 @@
 	${0:# code...}
 }</string>
 	<key>name</key>
-	<string>elseif .. (elseif)</string>
+	<string>elseif ..</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>\$_REQUEST['${1:variable}']</string>
 	<key>name</key>
-	<string>REQUEST['..'] ($_)</string>
+	<string>REQUEST['..']</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

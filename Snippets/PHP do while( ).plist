@@ -9,7 +9,7 @@
 	
 } while ( ${1:$a &lt;= 10} );</string>
 	<key>name</key>
-	<string>do .. while .. (do)</string>
+	<string>do .. while ..</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

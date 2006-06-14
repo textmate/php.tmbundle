@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>include( '${1:file}' );$0</string>
 	<key>name</key>
-	<string>include(..) (incl)</string>
+	<string>include(..)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

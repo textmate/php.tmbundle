@@ -13,7 +13,7 @@ else
 }
 $0</string>
 	<key>name</key>
-	<string>if .. else .. (ifelse)</string>
+	<string>if .. else ..</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

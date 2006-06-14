@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>\$_FILES['${1:variable}']</string>
 	<key>name</key>
-	<string>FILES['..'] ($_)</string>
+	<string>FILES['..']</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

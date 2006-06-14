@@ -8,7 +8,7 @@
 	${0:# code...}
 }</string>
 	<key>name</key>
-	<string>while .. (while)</string>
+	<string>while ..</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

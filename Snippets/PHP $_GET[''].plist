@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>\$_GET['${1:variable}']</string>
 	<key>name</key>
-	<string>GET['..'] ($_)</string>
+	<string>GET['..']</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

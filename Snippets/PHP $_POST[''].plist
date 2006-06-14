@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>\$_POST['${1:variable}']</string>
 	<key>name</key>
-	<string>POST['..'] ($_)</string>
+	<string>POST['..']</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

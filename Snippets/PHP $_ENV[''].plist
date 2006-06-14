@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>\$_ENV['${1:variable}']</string>
 	<key>name</key>
-	<string>ENV['..'] ($_)</string>
+	<string>ENV['..']</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

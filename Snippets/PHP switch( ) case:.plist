@@ -7,7 +7,7 @@
 	${0:# code...}
 break;</string>
 	<key>name</key>
-	<string>case .. (case)</string>
+	<string>case ..</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
