@@ -1185,12 +1185,16 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.untitled</string>
+				</dict>
+				<dict>
 					<key>include</key>
 					<string>#var_complex_string_heredoc</string>
 				</dict>
 			</array>
-			<key>swallow</key>
-			<string>\\.</string>
 		</dict>
 		<key>string-single-quoted</key>
 		<dict>
@@ -1200,8 +1204,15 @@
 			<string>'</string>
 			<key>name</key>
 			<string>string.quoted.single.php</string>
-			<key>swallow</key>
-			<string>\\.</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.untitled</string>
+				</dict>
+			</array>
 		</dict>
 		<key>var_basic</key>
 		<dict>
