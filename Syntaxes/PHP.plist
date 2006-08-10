@@ -1188,7 +1188,7 @@
 					<key>match</key>
 					<string>\\.</string>
 					<key>name</key>
-					<string>constant.character.escape.untitled</string>
+					<string>constant.character.escape.php</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1210,7 +1210,7 @@
 					<key>match</key>
 					<string>\\.</string>
 					<key>name</key>
-					<string>constant.character.escape.untitled</string>
+					<string>constant.character.escape.php</string>
 				</dict>
 			</array>
 		</dict>
