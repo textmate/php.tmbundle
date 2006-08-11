@@ -321,7 +321,7 @@
 					<key>match</key>
 					<string>\b(require|include)(_once)?\b</string>
 					<key>name</key>
-					<string>keyword.control.include.php</string>
+					<string>keyword.control.import.include.php</string>
 				</dict>
 				<dict>
 					<key>match</key>
