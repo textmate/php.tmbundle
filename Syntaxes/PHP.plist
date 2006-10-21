@@ -169,20 +169,28 @@
 				</dict>
 				<dict>
 					<key>begin</key>
+					<string>/\*\*(?!/)</string>
+					<key>end</key>
+					<string>\*/</string>
+					<key>name</key>
+					<string>comment.documentation.phpdoc.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\@(a(ccess|uthor)|c(ategory|opyright)|global|li(cense|nk)|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion))\b</string>
+							<key>name</key>
+							<string>keyword.other.phpdoc.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>/\*</string>
 					<key>end</key>
 					<string>\*/</string>
 					<key>name</key>
 					<string>comment.block.php</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\@(a(ccess|uthor)|c(ategory|opyright)|global|link|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion))\b</string>
-							<key>name</key>
-							<string>keyword.other.phpdoc.php</string>
-						</dict>
-					</array>
 				</dict>
 				<dict>
 					<key>match</key>
