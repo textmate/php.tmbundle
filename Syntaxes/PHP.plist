@@ -1150,7 +1150,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>^(\1)(;?)$</string>
+					<string>^(\2)(;?)$</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
