@@ -225,7 +225,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\@(a(ccess|uthor)|c(ategory|opyright)|global|li(cense|nk)|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion))\b</string>
+							<string>\@(a(ccess|uthor)|c(ategory|opyright)|global|li(cense|nk)|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion))|uses\b</string>
 							<key>name</key>
 							<string>keyword.other.phpdoc.php</string>
 						</dict>
