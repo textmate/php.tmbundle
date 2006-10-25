@@ -458,6 +458,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#string-backtick</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#var_global</string>
 						</dict>
 						<dict>
@@ -1232,6 +1236,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#string-backtick</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#var_global</string>
 				</dict>
 				<dict>
@@ -1283,6 +1291,44 @@
 			<string>\b(TRUE|true|FALSE|false|NULL|null|__(FILE__|FUNCTION__|CLASS__|METHOD__|LINE__)|ON|OFF|YES|NO|NL|BR|TAB)\b</string>
 			<key>name</key>
 			<string>constant.language.php</string>
+		</dict>
+		<key>string-backtick</key>
+		<dict>
+			<key>begin</key>
+			<string>`</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.php</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>`</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.php</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.interpolated.php</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.php</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_complex_string_heredoc</string>
+				</dict>
+			</array>
 		</dict>
 		<key>string-double-quoted</key>
 		<dict>
