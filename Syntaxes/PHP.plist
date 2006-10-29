@@ -220,7 +220,7 @@
 					<key>end</key>
 					<string>\*/</string>
 					<key>name</key>
-					<string>comment.documentation.phpdoc.php</string>
+					<string>comment.block.documentation.phpdoc.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
