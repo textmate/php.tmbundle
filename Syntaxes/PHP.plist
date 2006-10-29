@@ -431,7 +431,7 @@
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.parameters.start.php</string>
+							<string>punctuation.definition.parameters.begin.php</string>
 						</dict>
 					</dict>
 					<key>end</key>
