@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+html_header PHPDoc
+
+Markdown.pl &lt;&lt;'EOF'
+
+# Snippets
+
+This bundle contains snippets for use with [PHPDoc](http://phpdoc.org/).
+
+ * `doc_c ` — Class
+ * `doc_cp` — Class (post documentation)
+ * `doc_d ` — Define inline constant
+ * `doc_dp` — Define inline constant (post documentation)
+ * `doc_f ` — Function
+ * `doc_fp` — Function (post documentation)
+ * `doc_h ` — Document header
+ * `doc_i ` — Interface class
+ * `doc_s ` — Abstract function signature
+ * `doc_v ` — Class variable
+ * `doc_vp` — Class variable (post documentation)
+
+_Commands marked as “post documentation” are designed for undocumented code — in other words, a comment block is added at the caret position._
+
+# Shell Variables
+
+The snippets make use of two environment variables (_set these under Preferences &amp;#x2192; Advanced &amp;#x2192; Shell Variables_).
+
+ * `TM_ORGANIZATION_NAME` — default value of @copyright [+ date]
+ * `PHPDOC_AUTHOR` — default value of @author (realname will be used if not set)
+
+EOF</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Help</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>EBD6D4CF-9F5E-4616-9880-5D3FF21EF408</string>
+</dict>
+</plist>
