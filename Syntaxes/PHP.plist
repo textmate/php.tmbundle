@@ -515,7 +515,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(abstract|const|extends|implements|final|p(r(ivate|otected)|ublic)|static)\b</string>
+					<string>\b(global|abstract|const|extends|implements|final|p(r(ivate|otected)|ublic)|static)\b</string>
 					<key>name</key>
 					<string>storage.modifier.php</string>
 				</dict>
