@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$${1:retVal} = ( ${2:condition} ) ? ${3:a} : ${4:b} ;</string>
+	<string>\$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b} ;</string>
 	<key>name</key>
 	<string>$.. = ( .. ) ? .. : ..</string>
 	<key>scope</key>

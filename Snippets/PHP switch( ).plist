@@ -3,17 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>switch ( ${1:variable} )
-{
+	<string>switch (${1:variable}) {
 	case '${2:value}':
 		${3:# code...}
-	break;
-	
+		break;
 	$0
-			
 	default:
 		${4:# code...}
-	break;
+		break;
 }</string>
 	<key>name</key>
 	<string>switch ..</string>

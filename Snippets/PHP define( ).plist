@@ -3,10 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>###	Begin $1 - $2
-		define( '$3', '$4' );
-###	End $1
-
+	<string>define( '$1', '$2' );
 $0</string>
 	<key>name</key>
 	<string>define( )</string>

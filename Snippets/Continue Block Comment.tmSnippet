@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${TM_CURRENT_LINE/^((\s+\*)?)(\s*).*$/(?2:\n*$3:\n)/}</string>
+	<string>${TM_CURRENT_LINE/(.*\*\/$)|.*?(\/\*(?!.*\*\/)).*|.*/(?1:
+:
+(?2: )* )/}</string>
 	<key>keyEquivalent</key>
 	<string></string>
 	<key>name</key>

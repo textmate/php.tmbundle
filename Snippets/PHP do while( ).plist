@@ -3,11 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>do
-{
+	<string>do {
 	${0:# code...}
-	
-} while ( ${1:$a &lt;= 10} );</string>
+} while (${1:$a &lt;= 10});</string>
 	<key>name</key>
 	<string>do .. while ..</string>
 	<key>scope</key>

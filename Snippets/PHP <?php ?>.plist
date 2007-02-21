@@ -4,10 +4,9 @@
 <dict>
 	<key>content</key>
 	<string>&lt;?php
-
-	$0
-
-?&gt;</string>
+$0
+?&gt;
+</string>
 	<key>name</key>
 	<string>&lt;?php .. ?&gt;</string>
 	<key>scope</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>return FALSE;$0</string>
+	<string>return false;$0</string>
 	<key>name</key>
 	<string>return FALSE</string>
 	<key>scope</key>

@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>elseif ( ${1:condition} )
-{
+	<string>elseif (${1:condition}) {
 	${0:# code...}
 }</string>
 	<key>name</key>

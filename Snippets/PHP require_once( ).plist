@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>require_once( '${1:file}' );$0</string>
+	<string>require_once '${1:file}';$0</string>
 	<key>name</key>
 	<string>require_once(..)</string>
 	<key>scope</key>

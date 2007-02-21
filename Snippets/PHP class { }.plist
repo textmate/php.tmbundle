@@ -3,25 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>#doc
-#	classname:	${1:ClassName}
-#	scope:		${2:PUBLIC}
-#
-#/doc
-
-class ${1:ClassName} ${3:extends AnotherClass}
+	<string>/**
+* $1
+*/
+class ${2:ClassName} ${3:extends ${4:AnotherClass}}
 {
-	#	internal variables
-	
-	#	Constructor
-	function __construct ( ${4:argument} )
+	function ${5:__construct}(${6:argument})
 	{
 		${0:# code...}
 	}
-	###	
-
 }
-###</string>
+</string>
 	<key>name</key>
 	<string>class ..</string>
 	<key>scope</key>
