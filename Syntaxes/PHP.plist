@@ -224,10 +224,8 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>match</key>
-							<string>\@(a(ccess|uthor)|c(ategory|opyright)|global|li(cense|nk)|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion)|uses|deprecated|final)\b</string>
-							<key>name</key>
-							<string>keyword.other.phpdoc.php</string>
+							<key>include</key>
+							<string>#php_doc</string>
 						</dict>
 					</array>
 				</dict>
@@ -1291,6 +1289,85 @@
 			<string>\b(TRUE|true|FALSE|false|NULL|null|__(FILE__|FUNCTION__|CLASS__|METHOD__|LINE__)|ON|OFF|YES|NO|NL|BR|TAB)\b</string>
 			<key>name</key>
 			<string>constant.language.php</string>
+		</dict>
+		<key>php_doc</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>PHPDocumentor only recognises lines with an asterisk as the first non-whitespaces character</string>
+					<key>match</key>
+					<string>^(?!\s*\*( |/?\s*$)).*$\n?</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.phpdoc.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*\*\s*(@access)\s+((public|private|protected)|(.+))\s*$</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>((https?|s?ftp|ftps|file|smb|afp|nfs|(x-)?man|gopher|txmt)://|mailto:)[-:@a-zA-Z0-9_.~%+/?=&amp;#]+(?&lt;![.?:])</string>
+					<key>name</key>
+					<string>markup.underline.link</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.phpdoc.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>markup.underline.link</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(@xlink)\s+(.+)\s*$</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\@(a(bstract|uthor)|c(ategory|opyright)|global|li(cense|nk)|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion)|uses|deprecated|final)\b</string>
+					<key>name</key>
+					<string>keyword.other.phpdoc.php</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.phpdoc.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\{(@(link)).+?\}</string>
+					<key>name</key>
+					<string>meta.tag.inline.phpdoc.php</string>
+				</dict>
+			</array>
 		</dict>
 		<key>string-backtick</key>
 		<dict>
