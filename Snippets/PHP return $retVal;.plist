@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>return \$retVal;$0</string>
+	<string>return$1;$0</string>
 	<key>name</key>
-	<string>return $retVal</string>
+	<string>return</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>retret</string>
+	<string>ret</string>
 	<key>uuid</key>
 	<string>80D861BF-8CD0-11D9-B507-000D93C8BE28</string>
 </dict>

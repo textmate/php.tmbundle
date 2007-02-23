@@ -2,11 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>deleted</key>
+	<array>
+		<string>6FABC1A4-8CD0-11D9-B507-000D93C8BE28</string>
+	</array>
 	<key>mainMenu</key>
 	<dict>
 		<key>excludedItems</key>
 		<array>
 			<string>26BC937A-5A0B-493E-B51F-1AF6E6FEFAD4</string>
+			<string>6F7E7868-F5A2-4B7D-ACFB-2A8DE2CD04E2</string>
 		</array>
 		<key>items</key>
 		<array>
@@ -39,7 +44,6 @@
 				<key>items</key>
 				<array>
 					<string>80D861BF-8CD0-11D9-B507-000D93C8BE28</string>
-					<string>6FABC1A4-8CD0-11D9-B507-000D93C8BE28</string>
 					<string>459B8A24-8CD0-11D9-B507-000D93C8BE28</string>
 					<string>56873C6E-8CD0-11D9-B507-000D93C8BE28</string>
 				</array>
@@ -90,7 +94,6 @@
 					<string>EBD6D4CF-9F5E-4616-9880-5D3FF21EF408</string>
 					<string>------------------------------------</string>
 					<string>775F7FCC-C43C-4C23-B935-9D5F6C25CF1D</string>
-					<string>6F7E7868-F5A2-4B7D-ACFB-2A8DE2CD04E2</string>
 					<string>------------------------------------</string>
 					<string>9086BA3F-87E7-11D9-A6A3-000D93589AF6</string>
 					<string>C65A0A03-956D-11D9-B0A1-000D93382786</string>
@@ -142,7 +145,6 @@
 		<string>34E2C808-8CCF-11D9-B507-000D93C8BE28</string>
 		<string>4833C612-8CCF-11D9-B507-000D93C8BE28</string>
 		<string>80D861BF-8CD0-11D9-B507-000D93C8BE28</string>
-		<string>6FABC1A4-8CD0-11D9-B507-000D93C8BE28</string>
 		<string>459B8A24-8CD0-11D9-B507-000D93C8BE28</string>
 		<string>56873C6E-8CD0-11D9-B507-000D93C8BE28</string>
 		<string>E8BDF86F-8CD0-11D9-B507-000D93C8BE28</string>

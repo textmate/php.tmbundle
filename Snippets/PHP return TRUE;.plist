@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>return true;$0</string>
 	<key>name</key>
-	<string>return TRUE</string>
+	<string>return true</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
