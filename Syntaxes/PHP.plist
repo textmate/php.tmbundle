@@ -1300,7 +1300,7 @@
 					<key>match</key>
 					<string>^(?!\s*\*( |/?\s*$)).*$\n?</string>
 					<key>name</key>
-					<string>invalid.illegal</string>
+					<string>invalid.illegal.missing-asterisks.phpdoc.php</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -1318,7 +1318,7 @@
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>invalid.illegal</string>
+							<string>invalid.illegal.trailing-stuff-not-expected.phpdoc.php</string>
 						</dict>
 					</dict>
 					<key>match</key>
