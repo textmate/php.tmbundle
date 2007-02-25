@@ -11,7 +11,7 @@
 		<key>decreaseIndentPattern</key>
 		<string>(?x) ^ (.*\*/)? \s* \} ( [^}{"']* \{ | \s* while \s* \( .* )? [;\s]* (//.*|/\*.*\*/\s*)? $</string>
 		<key>indentNextLinePattern</key>
-		<string>^(?!.*&lt;\?)(?!.*[};:]\s*(//|/\*.*\*/\s*$)).*[^\s;:{}]\s*$</string>
+		<string>^(?!.*(#|//|\*/|&lt;\?))(?!.*[};:]\s*(//|/\*.*\*/\s*$)).*[^\s;:{}]\s*$</string>
 	</dict>
 	<key>uuid</key>
 	<string>CA15DF69-E80D-46DA-BD45-E88C68E92117</string>
