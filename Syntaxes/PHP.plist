@@ -1670,7 +1670,7 @@
 					<key>comment</key>
 					<string>PHPDocumentor only recognises lines with an asterisk as the first non-whitespaces character</string>
 					<key>match</key>
-					<string>^(?!\s*\*( |/?\s*$)).*$\n?</string>
+					<string>^(?!\s*\*).*$\n?</string>
 					<key>name</key>
 					<string>invalid.illegal.missing-asterisk.phpdoc.php</string>
 				</dict>
