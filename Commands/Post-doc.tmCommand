@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/ruby
+
+next_line = STDIN.read.to_a[ENV['TM_LINE_NUMBER'].to_i..-1].join("\n").strip[/.+$/]
+
+puts '/**'
+
+@tags = []
+type = ''
+author = true
+
+def tag(tag, default, trailing = nil)
+  @tags &lt;&lt; {:tag =&gt; tag, :default =&gt; default, :trailing =&gt; trailing}
+end
+
+case next_line
+when /(class|interface)/
+  type = $&amp;
+  tag 'package', 'default'
+when /function\s*\((.*)\)/
+  type = 'function'
+  $1.split(/,/).each do |arg|
+    tag 'param', 'string', '\\$' + arg[/[A-z0-9]+/].strip
+  end
+  tag 'return', 'void'
+when /const|define/
+  type = 'constant'
+  author = false
+when /var|p(ublic|rivate|rotected)/
+  type = 'variable'
+  tag 'var', 'string'
+  author = false
+end
+
+puts " * ${1:undocumented #{type}}"
+puts ' *' if @tags.size &gt; 0 or author
+
+placeholder = 1
+@tags.each do |tag|
+  placeholder += 1
+  if tag[:trailing]
+    puts " * @#{tag[:tag]} ${#{placeholder}:#{tag[:default]}} #{tag[:trailing] } \$#{placeholder += 1}"
+  else
+    puts " * @#{tag[:tag]} ${#{placeholder}:#{tag[:default]}}"
+  end
+end
+
+puts ' * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}$' + (placeholder + 1).to_s if author
+puts ' */$0'</string>
+	<key>fallbackInput</key>
+	<string>scope</string>
+	<key>input</key>
+	<string>document</string>
+	<key>name</key>
+	<string>Post-doc</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>doc</string>
+	<key>uuid</key>
+	<string>94D8B40B-9F49-4B6D-90B5-DBFF5FB36590</string>
+</dict>
+</plist>
