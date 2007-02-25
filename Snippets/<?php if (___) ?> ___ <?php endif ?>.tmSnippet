@@ -3,14 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>echo "${1:string}"${0};</string>
+	<string>&lt;?php if (${1:condition}): ?&gt;
+	$0
+&lt;?php endif ?&gt;</string>
 	<key>name</key>
-	<string>print ".."</string>
+	<string>&lt;?php if (...) ?&gt; ... &lt;?php endif ?&gt;</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>text.html</string>
 	<key>tabTrigger</key>
-	<string>echo</string>
+	<string>if</string>
 	<key>uuid</key>
-	<string>2B91DE5F-8CD0-11D9-B507-000D93C8BE28</string>
+	<string>4F33617A-80FE-47D2-84AF-AA3D5D8A7128</string>
 </dict>
 </plist>
