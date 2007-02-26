@@ -507,7 +507,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(class|clone|var|function|interface|new|parent|self|__(autoload|c(all|lone|onstruct)|destruct|get|set|sleep|toString|wakeup))\b</string>
+					<string>\b(real|double|float|int(eger)?|bool(ean)?|string|class|clone|var|function|interface|new|parent|self|__(autoload|c(all|lone|onstruct)|destruct|get|set|sleep|toString|wakeup))\b</string>
 					<key>name</key>
 					<string>storage.type.php</string>
 				</dict>
@@ -525,7 +525,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(s(tr(nc(asecmp|mp)|c(asecmp|mp)|len)|et_e(rror_handler|xception_handler))|c(lass_exists|reate_function)|trigger_error|i(s_(subclass_of|a)|nterface_exists)|zend_version|de(fine(d)?|bug_(print_backtrace|backtrace))|property_exists|e(ach|rror_reporting|xtension_loaded)|func(tion_exists|_(num_args|get_arg(s)?))|leak|restore_e(rror_handler|xception_handler)|get_(class(_(vars|methods))?|included_files|object_vars|de(clared_(classes|interfaces)|fined_(constants|vars|functions))|parent_class|extension_funcs|loaded_extensions|resource_type)|method_exists)\b</string>
+					<string>\b(eval|s(tr(nc(asecmp|mp)|c(asecmp|mp)|len)|et_e(rror_handler|xception_handler))|c(lass_exists|reate_function)|trigger_error|i(s_(subclass_of|a)|nterface_exists)|zend_version|de(fine(d)?|bug_(print_backtrace|backtrace))|property_exists|e(ach|rror_reporting|xtension_loaded)|func(tion_exists|_(num_args|get_arg(s)?))|leak|restore_e(rror_handler|xception_handler)|get_(class(_(vars|methods))?|included_files|object_vars|de(clared_(classes|interfaces)|fined_(constants|vars|functions))|parent_class|extension_funcs|loaded_extensions|resource_type)|method_exists)\b</string>
 					<key>name</key>
 					<string>support.function.builtin_functions.php</string>
 				</dict>
@@ -1065,7 +1065,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(=&gt;)|\b(array|s(huffle|ort)|n(ext|at(sort|casesort))|c(o(unt|mpact)|urrent)|in_array|u(sort|ksort|asort)|prev|e(nd|xtract)|k(sort|ey|rsort)|a(sort|r(sort|ray_(s(hift|um|plice|earch|lice)|c(h(unk|ange_key_case)|o(unt_values|mbine))|intersect(_(u(key|assoc)|key|assoc))?|diff(_(u(key|assoc)|key|assoc))?|u(n(shift|ique)|intersect(_(uassoc|assoc))?|diff(_(uassoc|assoc))?)|p(op|ush|ad|roduct)|values|key(s|_exists)|f(il(ter|l(_keys)?)|lip)|walk(_recursive)?|r(e(duce|verse)|and)|m(ultisort|erge(_recursive)?|ap))))|r(sort|eset|ange)|m(in|ax))\b</string>
+					<string>(=&gt;)|\b(list|array|s(huffle|ort)|n(ext|at(sort|casesort))|c(o(unt|mpact)|urrent)|in_array|u(sort|ksort|asort)|prev|e(nd|xtract)|k(sort|ey|rsort)|a(sort|r(sort|ray_(s(hift|um|plice|earch|lice)|c(h(unk|ange_key_case)|o(unt_values|mbine))|intersect(_(u(key|assoc)|key|assoc))?|diff(_(u(key|assoc)|key|assoc))?|u(n(shift|ique)|intersect(_(uassoc|assoc))?|diff(_(uassoc|assoc))?)|p(op|ush|ad|roduct)|values|key(s|_exists)|f(il(ter|l(_keys)?)|lip)|walk(_recursive)?|r(e(duce|verse)|and)|m(ultisort|erge(_recursive)?|ap))))|r(sort|eset|ange)|m(in|ax))\b</string>
 					<key>name</key>
 					<string>support.function.array.php</string>
 				</dict>
@@ -1353,7 +1353,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(serialize|debug_zval_dump|unserialize|var_(dump|export)|memory_get_(usage|peak_usage))\b</string>
+					<string>\b((un|is)set|empty|serialize|debug_zval_dump|unserialize|var_(dump|export)|memory_get_(usage|peak_usage))\b</string>
 					<key>name</key>
 					<string>support.function.var.php</string>
 				</dict>
