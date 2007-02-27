@@ -10,7 +10,7 @@
 }
 $0</string>
 	<key>name</key>
-	<string>if .. else ..</string>
+	<string>if … else …</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

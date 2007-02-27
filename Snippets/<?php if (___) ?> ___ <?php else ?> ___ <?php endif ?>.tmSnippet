@@ -9,7 +9,7 @@
 	$0
 &lt;?php endif ?&gt;</string>
 	<key>name</key>
-	<string>&lt;?php if (...) ?&gt; ... &lt;?php else ?&gt; ... &lt;?php endif ?&gt;</string>
+	<string>&lt;?php if (…) ?&gt; … &lt;?php else ?&gt; … &lt;?php endif ?&gt;</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>tabTrigger</key>

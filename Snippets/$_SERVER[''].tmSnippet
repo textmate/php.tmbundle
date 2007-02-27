@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>\$_SERVER['${1:variable}']</string>
 	<key>name</key>
-	<string>SERVER['..']</string>
+	<string>SERVER['…']</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

@@ -208,7 +208,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>/\*\*(?!/)</string>
+					<string>/\*\*\s*$</string>
 					<key>captures</key>
 					<dict>
 						<key>0</key>
@@ -217,6 +217,8 @@
 							<string>punctuation.definition.comment.php</string>
 						</dict>
 					</dict>
+					<key>comment</key>
+					<string>This now only highlights a docblock if the first line contains only /** - this is to stop highlighting everything as invalid when people do comment banners with /******** ...</string>
 					<key>end</key>
 					<string>\*/</string>
 					<key>name</key>

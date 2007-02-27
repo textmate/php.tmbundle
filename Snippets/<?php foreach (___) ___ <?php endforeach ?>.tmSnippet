@@ -7,7 +7,7 @@
 	${0}
 &lt;?php endforeach ?&gt;</string>
 	<key>name</key>
-	<string>&lt;?php foreach (...) ... &lt;?php endforeach ?&gt;</string>
+	<string>&lt;?php foreach (…) … &lt;?php endforeach ?&gt;</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>tabTrigger</key>

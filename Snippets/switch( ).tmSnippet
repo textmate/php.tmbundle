@@ -13,7 +13,7 @@
 		break;
 }</string>
 	<key>name</key>
-	<string>switch ..</string>
+	<string>switch …</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

@@ -15,7 +15,7 @@ class ${2:ClassName} ${3:extends ${4:AnotherClass}}
 }
 </string>
 	<key>name</key>
-	<string>class ..</string>
+	<string>class …</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

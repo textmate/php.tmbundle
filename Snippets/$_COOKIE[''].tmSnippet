@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>\$_COOKIE['${1:variable}']</string>
 	<key>name</key>
-	<string>COOKIE['..']</string>
+	<string>COOKIE['…']</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

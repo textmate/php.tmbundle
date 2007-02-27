@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>&lt;?php echo ${1:\$var} ?&gt;$0</string>
 	<key>name</key>
-	<string>&lt;?php echo ... ?&gt;</string>
+	<string>&lt;?php echo … ?&gt;</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>tabTrigger</key>
