@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+
+SUPPORT = ENV['TM_SUPPORT_PATH']
+DIALOG = SUPPORT + '/bin/tm_dialog'
+
+require SUPPORT + '/lib/escape'
+require SUPPORT + '/lib/osx/plist'
+
+functions = `grep -i "^$TM_CURRENT_WORD%" "$TM_BUNDLE_SUPPORT"/lib/functions.txt`.split("\n")
+
+if functions.size != 1
+  puts "Function not found: " + ENV['TM_CURRENT_WORD'].to_s
+else
+  function, prototype, description = functions.pop.split('%')
+  
+  puts prototype
+  puts description
+end</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>~</string>
+	<key>name</key>
+	<string>Function Tooltip</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>19A164B7-4A3C-421B-9866-85FB9077A983</string>
+</dict>
+</plist>

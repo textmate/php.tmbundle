@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+
+SUPPORT = ENV['TM_SUPPORT_PATH']
+DIALOG = SUPPORT + '/bin/tm_dialog'
+
+require SUPPORT + '/lib/escape'
+require SUPPORT + '/lib/osx/plist'
+
+functions = `grep -i "^$TM_CURRENT_WORD" "$TM_BUNDLE_SUPPORT"/lib/functions.txt`.split("\n")
+abort if functions.empty?
+
+if functions.size &gt; 1
+  functions = functions.collect {|e| { 'title' =&gt; e[/^.+?(?=%|$)/], 'data' =&gt; e } }
+  plist = { 'menuItems' =&gt; functions }.to_plist
+
+  res = PropertyList::load(`#{e_sh DIALOG} -up #{e_sh plist}`)
+  abort unless res.has_key? 'selectedMenuItem'
+  choice = res['selectedMenuItem']['data']
+else
+  choice = functions.pop
+end
+
+function, prototype, description = choice.split('%')
+
+print function[ENV['TM_CURRENT_WORD'].length..-1] + '('
+
+parts = prototype.strip.match(/^\s*(?:([0-9A-Za-z|_]+)\s+)?(\w+)\s*\((.*)\).*$/)
+params = parts[3] rescue ''
+
+tabstop = 0
+print(params.scan(/(\w+) (\w+)( = .+)?(\])?,?/).map do |arg|
+  snippet = arg[0] + ' ' + arg[1]
+  optional = false
+  if arg[3]
+    # Optional
+    snippet = '[' + snippet + ']'
+    optional = true
+  elsif arg[2]
+    # Optional with default
+    snippet = '[' + snippet + ' = ' + arg[2] + ']'
+    optional = true
+  end
+  tabstop += 1
+  if tabstop &gt; 1
+    if optional
+      "${#{tabstop}:, #{snippet}}"
+    else
+      ", ${#{tabstop}:#{snippet}}"
+    end
+  else
+    "${#{tabstop}:#{snippet}}"
+  end
+end.join(''))
+
+print ')$0'</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>~</string>
+	<key>name</key>
+	<string>Completion</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>7E7936B6-7334-455B-A5ED-D51CA49CF532</string>
+</dict>
+</plist>
