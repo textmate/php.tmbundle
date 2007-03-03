@@ -3,10 +3,11 @@ require 'rubygems'
 require 'builder'
 
 # These are language constructs rather than functions, so don't appear in the generated list
+# includes/requires are in the language definiation so shouldn't be here
 ConstructFunctions = {
   'eval'  => ['(string $code_str)', 'Evaluate a string as PHP code'],
-  'echo'  => ['string $arg1 [, string $...]', 'Output one or more strings'],
-  'print' => ['string $arg', 'Output a string'],
+  'echo'  => ['(string $arg1 [, string $...])', 'Output one or more strings'],
+  'print' => ['(string $arg)', 'Output a string'],
   'empty' => ['(mixed $var)', 'Determine whether a variable is empty'],
   'isset' => ['(mixed $var [, mixed $var [, $...]])', 'Determine whether a variable is set'],
   'unset' => ['(mixed $var [, mixed $var [, $...]])', 'Unset a given variable'],
