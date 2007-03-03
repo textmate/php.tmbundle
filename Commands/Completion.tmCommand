@@ -13,7 +13,7 @@ DIALOG = SUPPORT + '/bin/tm_dialog'
 require SUPPORT + '/lib/escape'
 require SUPPORT + '/lib/osx/plist'
 
-functions = `grep -i "^$TM_CURRENT_WORD" "$TM_BUNDLE_SUPPORT"/lib/functions.txt`.split("\n")
+functions = `grep -i "^$TM_CURRENT_WORD" "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
 abort if functions.empty?
 
 if functions.size &gt; 1
