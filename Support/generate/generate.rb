@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'enumerator' # each_slice
 require 'rubygems'
 require 'builder'
@@ -5,14 +6,14 @@ require 'builder'
 # These are language constructs rather than functions, so don't appear in the generated list
 # includes/requires are in the language definiation so shouldn't be here
 ConstructFunctions = {
-  'eval'  => ['(string $code_str)', 'Evaluate a string as PHP code'],
-  'echo'  => ['(string $arg1 [, string $...])', 'Output one or more strings'],
-  'print' => ['(string $arg)', 'Output a string'],
-  'empty' => ['(mixed $var)', 'Determine whether a variable is empty'],
-  'isset' => ['(mixed $var [, mixed $var [, $...]])', 'Determine whether a variable is set'],
-  'unset' => ['(mixed $var [, mixed $var [, $...]])', 'Unset a given variable'],
-  'list'  => ['(mixed $varname, mixed $...)', 'Assign variables as if they were an array'],
-  'array' => ['([mixed $...])', 'Create an array']
+  'eval'  => ['mixed eval(string code_str)', 'Evaluate a string as PHP code'],
+  'echo'  => ['void echo(string arg1 [, string ...])', 'Output one or more strings'],
+  'print' => ['int print(string arg)', 'Output a string'],
+  'empty' => ['bool empty(mixed var)', 'Determine whether a variable is empty'],
+  'isset' => ['bool isset(mixed var [, mixed var [, ...]])', 'Determine whether a variable is set'],
+  'unset' => ['void unset(mixed var [, mixed var [, ...]])', 'Unset a given variable'],
+  'list'  => ['void list(mixed varname, mixed ...)', 'Assign variables as if they were an array'],
+  'array' => ['array array([mixed ...])', 'Create an array']
 }
 
 if ARGV.size == 0
@@ -69,12 +70,12 @@ match = '(?i)\\b#{ list }\\b';
   END
 end
 
-def print_completion_data(name, prototype, description)
-  @completion_data.puts [name, prototype, description].map{|s| s.to_s.strip }.join('%')
+def add_completion_data(name, prototype, description)
+  @completion_data << [name, prototype, description].map{|s| s.to_s.strip }
 end
 
 data = File.read(functions_file).strip
-@completion_data = File.open('../lib/functions.txt', 'w')
+@completion_data = []
 
 sections = data.split(/^#.+\/(?:zend_)?(.+)\..+$/)[1..-1]
 
@@ -82,7 +83,7 @@ classes     = [] # Stored class names, for a pattern at the end
 completions = [] # List of all function names for completion
 
 ConstructFunctions.each do |(function, info)|
-  print_completion_data(function, info[0], info[1])
+  add_completion_data(function, info[0], info[1])
 end
 
 sections.each_slice(2) do |(section, functions)|
@@ -96,7 +97,7 @@ sections.each_slice(2) do |(section, functions)|
     else
       if prototype.strip.match(/(\w+)\s*\(/)
         function_names << $1 
-        print_completion_data($1, prototype, description)
+        add_completion_data($1, prototype, description)
       end
     end
   end
@@ -106,6 +107,13 @@ end
 
 print_pattern('support.function.construct', ConstructFunctions.keys)
 print_pattern('support.class.builtin', classes)
+
+@completion_data = @completion_data.sort_by {|function| function[0] }
+File.open('../functions.txt', 'w') do |file|
+  @completion_data.each do |function|
+    file.puts function.join('%')
+  end
+end
 
 xml = Builder::XmlMarkup.new(:indent => 2, :target => File.open('../../Preferences/Completions.tmPreferences', 'w'))
 xml.instruct!
