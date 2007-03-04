@@ -28,7 +28,7 @@ end</string>
 	<key>keyEquivalent</key>
 	<string>~</string>
 	<key>name</key>
-	<string>Function Tooltip</string>
+	<string>Documentation for Word (tool tip)</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>

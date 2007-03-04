@@ -65,7 +65,7 @@ print ')$0'</string>
 	<key>keyEquivalent</key>
 	<string>~</string>
 	<key>name</key>
-	<string>Completion</string>
+	<string>Completions for Word…</string>
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
