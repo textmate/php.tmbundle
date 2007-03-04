@@ -2,10 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>contactEmailRot13</key>
+	<string>pvnjny@tznvy.pbz</string>
+	<key>contactName</key>
+	<string>Ciarán Walsh</string>
 	<key>deleted</key>
 	<array>
 		<string>6FABC1A4-8CD0-11D9-B507-000D93C8BE28</string>
 	</array>
+	<key>description</key>
+	<string>&lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt; is a widely-used general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</string>
 	<key>mainMenu</key>
 	<dict>
 		<key>excludedItems</key>
