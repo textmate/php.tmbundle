@@ -1,11 +1,11 @@
-list%(mixed $varname, mixed $...)%Assign variables as if they were an array
-isset%(mixed $var [, mixed $var [, $...]])%Determine whether a variable is set
-empty%(mixed $var)%Determine whether a variable is empty
-print%(string $arg)%Output a string
-array%([mixed $...])%Create an array
-unset%(mixed $var [, mixed $var [, $...]])%Unset a given variable
-echo%(string $arg1 [, string $...])%Output one or more strings
-eval%(string $code_str)%Evaluate a string as PHP code
+list%void list(mixed varname [, mixed ...])%Assign variables as if they were an array
+isset%bool isset(mixed var [, mixed var [, ...]])%Determine whether a variable is set
+empty%bool empty(mixed var)%Determine whether a variable is empty
+print%int print(string arg)%Output a string
+array%array array([mixed ...])%Create an array
+unset%void unset(mixed var [, mixed var [, ...]])%Unset a given variable
+echo%void echo(string arg1 [, string ...])%Output one or more strings
+eval%mixed eval(string code_str)%Evaluate a string as PHP code
 class_exists%bool class_exists(string classname [, bool autoload])%Checks if the class exists
 create_function%string create_function(string args, string code)%Creates an anonymous function, and returns its name (funny, eh?)
 debug_backtrace%array debug_backtrace(void)%Return backtrace as array

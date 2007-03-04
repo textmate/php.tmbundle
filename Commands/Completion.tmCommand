@@ -20,7 +20,10 @@ if functions.size &gt; 1
   functions = functions.collect {|e| { 'title' =&gt; e[/^.+?(?=%|$)/], 'data' =&gt; e } }
   plist = { 'menuItems' =&gt; functions }.to_plist
 
-  res = PropertyList::load(`#{e_sh DIALOG} -up #{e_sh plist}`)
+  io = open("|#{e_sh DIALOG} -u", "r+")
+  io &lt;&lt; plist
+  io.close_write
+  res = PropertyList::load(io.read)
   abort unless res.has_key? 'selectedMenuItem'
   choice = res['selectedMenuItem']['data']
 else
@@ -29,13 +32,15 @@ end
 
 function, prototype, description = choice.split('%')
 
-print function[ENV['TM_CURRENT_WORD'].length..-1] + '('
+offset = ENV['TM_CURRENT_WORD'] ? ENV['TM_CURRENT_WORD'].length : 0
+
+print function[offset..-1] + '('
 
 parts = prototype.strip.match(/^\s*(?:([0-9A-Za-z|_]+)\s+)?(\w+)\s*\((.*)\).*$/)
 params = parts[3] rescue ''
 
 tabstop = 0
-print(params.scan(/(\w+) (\w+)( = .+)?(\])?,?/).map do |arg|
+print(params.scan(/(\w+) ([\w.]+)( = .+)?(\])?,?/).map do |arg|
   snippet = arg[0] + ' ' + arg[1]
   optional = false
   if arg[3]
