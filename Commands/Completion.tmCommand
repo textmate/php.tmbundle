@@ -7,25 +7,15 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby -wKU
 
-SUPPORT = ENV['TM_SUPPORT_PATH']
-DIALOG = SUPPORT + '/bin/tm_dialog'
-
-require SUPPORT + '/lib/escape'
-require SUPPORT + '/lib/osx/plist'
+require ENV["TM_SUPPORT_PATH"] + "/lib/dialog.rb"
 
 functions = `grep -i "^$TM_CURRENT_WORD" "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
 abort if functions.empty?
 
 if functions.size &gt; 1
-  functions = functions.collect {|e| { 'title' =&gt; e[/^.+?(?=%|$)/], 'data' =&gt; e } }
-  plist = { 'menuItems' =&gt; functions }.to_plist
-
-  io = open("|#{e_sh DIALOG} -u", "r+")
-  io &lt;&lt; plist
-  io.close_write
-  res = PropertyList::load(io.read)
-  abort unless res.has_key? 'selectedMenuItem'
-  choice = res['selectedMenuItem']['data']
+  names = functions.map {|e| e[/^.+?(?=%|$)/] }
+  abort unless choice = Dialog.menu(names)
+  choice = functions[choice]
 else
   choice = functions.pop
 end
