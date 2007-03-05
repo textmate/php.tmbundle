@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>${1:public }function ${2:FunctionName}(${3:\$${4:value}${5:=''}})
 {
-	${0:// code...}
+	${0:# code...}
 }</string>
 	<key>name</key>
 	<string>function …</string>
