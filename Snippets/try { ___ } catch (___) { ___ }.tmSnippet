@@ -9,7 +9,7 @@ ${TM_SELECTED_TEXT/([\t ]*).*/$1/m}} catch (${1:Exception} ${2:\$e}) {
 ${TM_SELECTED_TEXT/([\t ]*).*/$1/m}	$0
 ${TM_SELECTED_TEXT/([\t ]*).*/$1/m}}</string>
 	<key>keyEquivalent</key>
-	<string>^W</string>
+	<string>^@w</string>
 	<key>name</key>
 	<string>Wrap in try { … } catch (…) { … }
 </string>
