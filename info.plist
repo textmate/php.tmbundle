@@ -9,6 +9,7 @@
 	<key>deleted</key>
 	<array>
 		<string>6FABC1A4-8CD0-11D9-B507-000D93C8BE28</string>
+		<string>D723521E-CC93-419A-8056-D5178F28615B</string>
 	</array>
 	<key>description</key>
 	<string>&lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt; is a widely-used general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</string>
@@ -215,6 +216,11 @@
 		<string>E863B097-0FD5-43D5-8547-235330081203</string>
 		<string>F7751DAF-AC95-4D47-955F-FE2534FDE4F5</string>
 		<string>FE39640E-A69C-48DF-9282-633672AAEFD2</string>
+		<string>2543E52B-D5CF-4BBE-B792-51F1574EA05F</string>
+		<string>7E7936B6-7334-455B-A5ED-D51CA49CF532</string>
+		<string>19A164B7-4A3C-421B-9866-85FB9077A983</string>
+		<string>B5E34751-D5EB-4AC8-9DB1-779BD6489C76</string>
+		<string>B3E79B47-40E9-4EF9-BAD9-11FEEE0D238F</string>
 	</array>
 	<key>uuid</key>
 	<string>467A1966-6227-11D9-BFB1-000D93589AF6</string>

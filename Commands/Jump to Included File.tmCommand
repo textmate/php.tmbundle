@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+require ENV["TM_SUPPORT_PATH"] + "/lib/dialog.rb"
+require ENV["TM_SUPPORT_PATH"] + "/lib/textmate.rb"
+
+options = []
+
+if ENV['TM_CURRENT_LINE'] =~ /(?:include|require)(?:_once)?\s*\(?\s*?['"](.+)['"]\s*\)?/
+  options &lt;&lt; $1
+else
+  STDIN.read.scan(/(?:include|require)(?:_once)?\s*\(?\s*?['"](.+)['"]\s*\)?/).each do |path|
+    options &lt;&lt; path[0] unless path[0].include?('$') # Skip dynamic includes
+  end
+end
+
+abort if options.empty?
+
+file = ''
+if options.size &gt; 1
+  abort unless choice = Dialog.menu(options)
+  file = options[choice]
+else
+  file = options.pop
+end
+
+paths = []
+if ENV['PHP_INCLUDE_PATH']
+  paths = ENV['PHP_INCLUDE_PATH'].split(':')
+else
+  paths = ['.']
+end
+
+paths.each do |path|
+  expanded_path = File.expand_path(file, path)
+  if File.exists?(expanded_path)
+    TextMate.go_to :file =&gt; expanded_path
+    exit
+  end
+end
+puts "File not found: #{file}"
+puts "Set PHP_INCLUDE_PATH for best results" unless ENV['PHP_INCLUDE_PATH']</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>~@</string>
+	<key>name</key>
+	<string>Jump to Included File</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>B3E79B47-40E9-4EF9-BAD9-11FEEE0D238F</string>
+</dict>
+</plist>
