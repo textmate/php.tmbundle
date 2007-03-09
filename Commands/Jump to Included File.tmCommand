@@ -48,7 +48,7 @@ puts "Set PHP_INCLUDE_PATH for best results" unless ENV['PHP_INCLUDE_PATH']</str
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
-	<string>~@</string>
+	<string>@D</string>
 	<key>name</key>
 	<string>Jump to Included File</string>
 	<key>output</key>
