@@ -285,6 +285,7 @@ deg2rad%float deg2rad(float number)%Converts the number in degrees to the radian
 deleteIndex%bool deleteIndex(int index)%Delete a file using its index
 deleteName%bool deleteName(string name)%Delete a file using its index
 dgettext%string dgettext(string domain_name, string msgid)%Return the translation of msgid for domain_name, or msgid unaltered if a translation does not exist
+die%void die([string status])%Output a message and terminate the current script
 dir%object dir(string directory[, resource context])%Directory class with properties, handle and class and methods read, rewind and close
 dirname%string dirname(string path)%Returns the directory name component of the path
 disk_free_space%float disk_free_space(string path)%Get free disk space for filesystem that path is on
@@ -420,6 +421,7 @@ exif_imagetype%int exif_imagetype(string imagefile)%Get the type of an image
 exif_read_data%array exif_read_data(string filename [, sections_needed [, sub_arrays[, read_thumbnail]]])%Reads header data from the JPEG/TIFF image filename and optionally reads the internal thumbnails
 exif_tagname%string exif_tagname(index)%Get headername for index or false if not defined
 exif_thumbnail%string exif_thumbnail(string filename [, &width, &height [, &imagetype]])%Reads the embedded thumbnail
+exit%void exit([string status])%Output a message and terminate the current script
 exp%float exp(float number)%Returns e raised to the power of the number
 explode%array explode(string separator, string str [, int limit])%Splits a string on string separator and return array of components. If limit is positive only limit number of components is returned. If limit is negative all components except the last abs(limit) are returned.
 expm1%float expm1(float number)%Returns exp(number) - 1, computed in a way that accurate even when the value of number is close to zero
@@ -635,9 +637,9 @@ get_meta_tags%array get_meta_tags(string filename [, bool use_include_path])%Ext
 get_object_vars%array get_object_vars(object obj)%Returns an array of object properties
 get_parent_class%string get_parent_class([mixed object])%Retrieves the parent class name for object or class or current scope.
 get_resource_type%string get_resource_type(resource res)%Get the resource type name for a given resource
+getallheaders%array getallheaders(void)%Fetch all HTTP request headers
+getallheaders%array getallheaders(void)%Fetch all HTTP request headers
 getallheaders%array getallheaders(void)%
-getallheaders%array getallheaders(void)%Fetch all HTTP request headers
-getallheaders%array getallheaders(void)%Fetch all HTTP request headers
 getallheaders%array getallheaders(void)%Alias for apache_request_headers()
 getcwd%mixed getcwd(void)%Gets the current directory
 getdate%array getdate([int timestamp])%Get date/time information
@@ -2248,8 +2250,8 @@ sybase_fetch_array%array sybase_fetch_array(int result)%Fetch row as array
 sybase_fetch_assoc%array sybase_fetch_assoc(int result)%Fetch row as array without numberic indices
 sybase_fetch_field%object sybase_fetch_field(int result [, int offset])%Get field information
 sybase_fetch_field%object sybase_fetch_field(int result [, int offset])%Get field information
-sybase_fetch_object%object sybase_fetch_object(int result)%Fetch row as object
 sybase_fetch_object%object sybase_fetch_object(int result [, mixed object])%Fetch row as object
+sybase_fetch_object%object sybase_fetch_object(int result)%Fetch row as object
 sybase_fetch_row%array sybase_fetch_row(int result)%Get row as enumerated array
 sybase_fetch_row%array sybase_fetch_row(int result)%Get row as enumerated array
 sybase_field_seek%bool sybase_field_seek(int result, int offset)%Set field offset
@@ -2330,8 +2332,8 @@ ucfirst%string ucfirst(string str)%Makes a string's first character uppercase
 ucwords%string ucwords(string str)%Uppercase the first character of every word in a string
 uksort%bool uksort(array array_arg, string cmp_function)%Sort an array by keys using a user-defined comparison function
 umask%int umask([int mask])%Return or change the umask
-unchangeAll%bool unchangeAll()%All changes to files and global information in archive are reverted
 unchangeAll%bool unchangeAll()%Revert all global changes to the archive archive.  For now, this only reverts archive comment changes.
+unchangeAll%bool unchangeAll()%All changes to files and global information in archive are reverted
 unchangeIndex%bool unchangeIndex(int index)%Changes to the file at position index are reverted
 unchangeName%bool unchangeName(string name)%Changes to the file named 'name' are reverted
 uniqid%string uniqid([string prefix , bool more_entropy])%Generates a unique ID
@@ -2377,9 +2379,9 @@ variant_sub%mixed variant_sub(mixed left, mixed right)%subtracts the value of th
 variant_xor%mixed variant_xor(mixed left, mixed right)%Performs a logical exclusion on two variants
 version_compare%int version_compare(string ver1, string ver2 [, string oper])%Compares two "PHP-standardized" version number strings
 vfprintf%int vfprintf(resource stream, string format, array args)%Output a formatted string into a stream
+virtual%bool virtual(string filename)%Perform an Apache sub-request
+virtual%bool virtual(string filename)%Perform an Apache sub-request
 virtual%bool virtual(string uri)%Perform an apache sub-request
-virtual%bool virtual(string filename)%Perform an Apache sub-request
-virtual%bool virtual(string filename)%Perform an Apache sub-request
 virtual%bool virtual(string uri)%Perform an apache sub-request
 vprintf%int vprintf(string format, array args)%Output a formatted string
 vsprintf%string vsprintf(string format, array args)%Return a formatted string

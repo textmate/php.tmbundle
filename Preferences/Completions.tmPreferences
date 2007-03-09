@@ -1429,7 +1429,6 @@
         <string>preg_replace_callback</string>
         <string>preg_split</string>
         <string>pdo_drivers</string>
-        <string>pdo_drivers</string>
         <string>pg_affected_rows</string>
         <string>pg_cancel_query</string>
         <string>pg_client_encoding</string>
@@ -1889,7 +1888,6 @@
         <string>fwrite</string>
         <string>get_meta_tags</string>
         <string>mkdir</string>
-        <string>mkdir</string>
         <string>pclose</string>
         <string>popen</string>
         <string>readfile</string>
@@ -1904,7 +1902,6 @@
         <string>unlink</string>
         <string>chgrp</string>
         <string>chmod</string>
-        <string>chown</string>
         <string>chown</string>
         <string>clearstatcache</string>
         <string>disk_free_space</string>
@@ -2012,8 +2009,6 @@
         <string>sqrt</string>
         <string>tan</string>
         <string>tanh</string>
-        <string>md5</string>
-        <string>md5_file</string>
         <string>metaphone</string>
         <string>getrusage</string>
         <string>gettimeofday</string>
@@ -2043,8 +2038,6 @@
         <string>split</string>
         <string>spliti</string>
         <string>sql_regcase</string>
-        <string>sha1</string>
-        <string>sha1_file</string>
         <string>soundex</string>
         <string>stream_context_create</string>
         <string>stream_context_get_default</string>
@@ -2199,27 +2192,10 @@
         <string>sybase_query</string>
         <string>sybase_result</string>
         <string>sybase_select_db</string>
-        <string>sybase_affected_rows</string>
-        <string>sybase_close</string>
-        <string>sybase_connect</string>
-        <string>sybase_data_seek</string>
         <string>sybase_deadlock_retry_count</string>
-        <string>sybase_fetch_array</string>
         <string>sybase_fetch_assoc</string>
-        <string>sybase_fetch_field</string>
-        <string>sybase_fetch_object</string>
-        <string>sybase_fetch_row</string>
-        <string>sybase_field_seek</string>
-        <string>sybase_free_result</string>
-        <string>sybase_get_last_message</string>
         <string>sybase_min_client_severity</string>
         <string>sybase_min_server_severity</string>
-        <string>sybase_num_fields</string>
-        <string>sybase_num_rows</string>
-        <string>sybase_pconnect</string>
-        <string>sybase_query</string>
-        <string>sybase_result</string>
-        <string>sybase_select_db</string>
         <string>sybase_set_message_handler</string>
         <string>sybase_unbuffered_query</string>
         <string>msg_get_queue</string>
@@ -2382,7 +2358,6 @@
         <string>statIndex</string>
         <string>statName</string>
         <string>unchangeAll</string>
-        <string>unchangeAll</string>
         <string>unchangeIndex</string>
         <string>unchangeName</string>
         <string>zip_close</string>
@@ -2435,33 +2410,12 @@
         <string>apache_setenv</string>
         <string>getallheaders</string>
         <string>virtual</string>
-        <string>apache_get_modules</string>
-        <string>apache_get_version</string>
         <string>apache_getenv</string>
-        <string>apache_note</string>
-        <string>apache_response_headers</string>
-        <string>apache_setenv</string>
-        <string>getallheaders</string>
-        <string>virtual</string>
-        <string>apache_get_modules</string>
-        <string>apache_get_version</string>
-        <string>apache_getenv</string>
-        <string>apache_note</string>
-        <string>apache_response_headers</string>
-        <string>apache_setenv</string>
-        <string>getallheaders</string>
-        <string>virtual</string>
         <string>apache_request_basic_auth_pw</string>
-        <string>apache_child_terminate</string>
-        <string>apache_get_modules</string>
-        <string>apache_get_version</string>
-        <string>apache_lookup_uri</string>
-        <string>apache_note</string>
         <string>apache_request_auth_name</string>
         <string>apache_request_auth_type</string>
         <string>apache_request_discard_request_body</string>
         <string>apache_request_err_headers_out</string>
-        <string>apache_request_headers</string>
         <string>apache_request_headers_in</string>
         <string>apache_request_headers_out</string>
         <string>apache_request_is_initial_req</string>
@@ -2478,10 +2432,6 @@
         <string>apache_request_sub_req_lookup_uri</string>
         <string>apache_request_sub_req_method_uri</string>
         <string>apache_request_update_mtime</string>
-        <string>apache_response_headers</string>
-        <string>apache_setenv</string>
-        <string>getallheaders</string>
-        <string>virtual</string>
         <string>smfi_addheader</string>
         <string>smfi_addrcpt</string>
         <string>smfi_chgheader</string>
@@ -2494,6 +2444,34 @@
         <string>nsapi_request_headers</string>
         <string>nsapi_response_headers</string>
         <string>nsapi_virtual</string>
+        <string>if</string>
+        <string>else</string>
+        <string>elseif</string>
+        <string>endif</string>
+        <string>for</string>
+        <string>foreach</string>
+        <string>endforeach</string>
+        <string>while</string>
+        <string>do</string>
+        <string>endwhile</string>
+        <string>switch</string>
+        <string>endswitch</string>
+        <string>case</string>
+        <string>default</string>
+        <string>break</string>
+        <string>continue</string>
+        <string>function</string>
+        <string>class</string>
+        <string>die</string>
+        <string>exit</string>
+        <string>list</string>
+        <string>isset</string>
+        <string>empty</string>
+        <string>print</string>
+        <string>array</string>
+        <string>unset</string>
+        <string>echo</string>
+        <string>eval</string>
       </array>
     </dict>
     <key>uuid</key>

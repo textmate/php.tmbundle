@@ -13,8 +13,17 @@ ConstructFunctions = {
   'isset' => ['bool isset(mixed var [, mixed var [, ...]])', 'Determine whether a variable is set'],
   'unset' => ['void unset(mixed var [, mixed var [, ...]])', 'Unset a given variable'],
   'list'  => ['void list(mixed varname, mixed ...)', 'Assign variables as if they were an array'],
-  'array' => ['array array([mixed ...])', 'Create an array']
+  'array' => ['array array([mixed ...])', 'Create an array'],
+  'exit' => ['void exit([string status])', 'Output a message and terminate the current script'],
+  'die' => ['void die([string status])', 'Output a message and terminate the current script'],
 }
+
+Keywords = ['if', 'else', 'elseif', 'endif',
+                'for', 'foreach', 'endforeach',
+                'while', 'do', 'endwhile',
+                'switch', 'endswitch', 'case', 'default',
+                'break', 'continue',
+                'function', 'class']
 
 if ARGV.size == 0
   puts "Usage: generate.rb functions_list.txt"
@@ -114,6 +123,9 @@ File.open('../functions.txt', 'w') do |file|
     file.puts function.join('%')
   end
 end
+
+completions += Keywords + ConstructFunctions.keys
+completions.uniq!
 
 xml = Builder::XmlMarkup.new(:indent => 2, :target => File.open('../../Preferences/Completions.tmPreferences', 'w'))
 xml.instruct!
