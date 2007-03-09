@@ -24,6 +24,7 @@
 		<array>
 			<string>774E75DA-A747-4CB4-B8AF-DE720B01E295</string>
 			<string>EC271DAE-BEC9-11D9-8856-000D93589AF6</string>
+			<string>B3E79B47-40E9-4EF9-BAD9-11FEEE0D238F</string>
 			<string>------------------------------------</string>
 			<string>412481DC-89B7-11D9-9FE3-000A9584EC8C</string>
 			<string>19A164B7-4A3C-421B-9866-85FB9077A983</string>
@@ -46,7 +47,7 @@
 			<string>CBF8F204-8CCF-11D9-B507-000D93C8BE28</string>
 			<string>7720523B-8CCE-11D9-B507-000D93C8BE28</string>
 			<string>------------------------------------</string>
-			<string>B3E79B47-40E9-4EF9-BAD9-11FEEE0D238F</string>
+			<string>C81F7FF7-7899-48F5-AD79-F248B7BC3DCB</string>
 		</array>
 		<key>submenus</key>
 		<dict>
@@ -151,6 +152,7 @@
 	<string>PHP</string>
 	<key>ordering</key>
 	<array>
+		<string>C81F7FF7-7899-48F5-AD79-F248B7BC3DCB</string>
 		<string>774E75DA-A747-4CB4-B8AF-DE720B01E295</string>
 		<string>412481DC-89B7-11D9-9FE3-000A9584EC8C</string>
 		<string>EC271DAE-BEC9-11D9-8856-000D93589AF6</string>
