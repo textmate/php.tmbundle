@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>$1defined( '$2' )$0</string>
+	<string>$1defined('$2')$0</string>
 	<key>name</key>
-	<string>defined( )</string>
+	<string>defined(…)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

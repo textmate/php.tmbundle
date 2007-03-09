@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>define( '$1', '$2' );
+	<string>define('$1', '$2');
 $0</string>
 	<key>name</key>
-	<string>define( )</string>
+	<string>define(…, …)</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>

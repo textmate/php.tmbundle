@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>\$${1:arrayName} = array( '$2' =&gt; $3${4:,} $0);</string>
+	<string>\$${1:arrayName} = array('$2' =&gt; $3${4:,} $0);</string>
 	<key>name</key>
 	<string>$… = array (…)</string>
 	<key>scope</key>

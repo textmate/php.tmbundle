@@ -6,7 +6,7 @@
 	<string>/**
 * $1
 */
-class ${2:ClassName} ${3:extends ${4:AnotherClass}}
+class ${2:ClassName}${3: extends ${4:AnotherClass}}
 {
 	function ${5:__construct}(${6:argument})
 	{
