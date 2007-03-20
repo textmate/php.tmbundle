@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;script type="text/javascript" charset="utf-8"&gt;
+function scanErrors() {
+    bolds = document.getElementsByTagName('b');
+    for (index = 0; index &lt; bolds.length; index++) {
+        if (bolds[index].innerText.match('(Strict Standards|Warning|Notice|(Parse|Fatal) error)')) {
+            link = document.createElement('a');
+            link.href = 'txmt://open?url=file://' + bolds[index-0+1].innerText + '&amp;line=' + bolds[index-0+2].innerText;
+            link.className = 'tm_err';
+            link.innerText = '[Open in TextMate]';
+            bolds[index-0+2].appendChild(document.createTextNode(' '));
+            bolds[index-0+2].appendChild(link);
+        }
+    }
+}
+var currentload = window.onload;
+if (typeof window.onload != 'function') {
+    window.onload = scanErrors;
+} else {
+    window.onload = function(){
+        currentload();
+        scanErrors();
+    }
+}
+&lt;/script&gt;</string>
+	<key>name</key>
+	<string>PHP Error Catching</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>phperr</string>
+	<key>uuid</key>
+	<string>9C891C7B-CFA8-4860-B76F-4E3AD60B0E13</string>
+</dict>
+</plist>
