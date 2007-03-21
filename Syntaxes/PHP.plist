@@ -70,24 +70,37 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>((&lt;&lt;&lt;)HTML)</string>
-					<key>captures</key>
+					<string>(&lt;&lt;&lt;)(HTML)</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.heredoc</string>
+							<string>punctuation.definition.string.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.php</string>
+							<string>keyword.operator.heredoc.php</string>
 						</dict>
 					</dict>
 					<key>contentName</key>
 					<string>text.html.basic.embedded</string>
 					<key>end</key>
-					<string>^(HTML);</string>
+					<string>^(HTML)(;?)$</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.heredoc.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.php</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.scope.heredoc</string>
 					<key>patterns</key>
@@ -117,23 +130,36 @@
 				<dict>
 					<key>begin</key>
 					<string>((&lt;&lt;&lt;)XML)</string>
-					<key>captures</key>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.heredoc</string>
+							<string>punctuation.definition.string.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.php</string>
+							<string>keyword.operator.heredoc.php</string>
 						</dict>
 					</dict>
 					<key>contentName</key>
 					<string>text.xml.embedded</string>
 					<key>end</key>
-					<string>^(XML);</string>
+					<string>^(XML)(;?)$</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.heredoc.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.php</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.scope.heredoc</string>
 					<key>patterns</key>
@@ -163,23 +189,36 @@
 				<dict>
 					<key>begin</key>
 					<string>((&lt;&lt;&lt;)SQL)</string>
-					<key>captures</key>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.other.heredoc</string>
+							<string>punctuation.definition.string.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.keyword.php</string>
+							<string>keyword.operator.heredoc.php</string>
 						</dict>
 					</dict>
 					<key>contentName</key>
 					<string>source.sql.embedded</string>
 					<key>end</key>
-					<string>^(SQL);</string>
+					<string>^(SQL)(;?)$</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.heredoc.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.php</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.scope.heredoc</string>
 					<key>patterns</key>
@@ -1539,7 +1578,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.heredoc.shell</string>
+							<string>keyword.operator.heredoc.php</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1549,7 +1588,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.heredoc.shell</string>
+							<string>keyword.operator.heredoc.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
