@@ -23,7 +23,8 @@ There are several snippets available for use when writing PHPDoc blocks. See the
 ## Completion
 
 Standard completion for built-in function names is provided by pressing the ⎋ key.  
-Additionally, completing a built-in function using ⌥⎋ will display a list of available options, and will expand the chosen option into a snippet for the function prototype.
+Additionally, completing a built-in function using ⌥⎋ will display a list of available options, and will expand the chosen option into a snippet for the function prototype.  
+When ⎋ completion is invoked inside of a string following an `include`/`require`, the filename will be completed instead. The environment variable `PHP_INCLUDE_PATH` is used to look for matching files - see "Include Path Configuration" below for details on this.
 
 ## Function Reference
 

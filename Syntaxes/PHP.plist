@@ -397,10 +397,27 @@
 					<string>keyword.control.php</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>\b(require|include)(_once)?\b</string>
+					<key>begin</key>
+					<string>\b((require|include)(_once)?)\b</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.import.include.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>;</string>
 					<key>name</key>
-					<string>keyword.control.import.include.php</string>
+					<string>meta.include.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#language</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>match</key>
