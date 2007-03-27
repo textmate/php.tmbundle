@@ -9,7 +9,7 @@
 	<key>command</key>
 	<string>if grep &lt;&lt;&lt;${TM_CURRENT_WORD:-!} -Esq '^[a-zA-Z0-9_]+$'
 	then
-		if URL=`grep -i "^$TM_CURRENT_WORD=" "/Users/ciaran/Bundles/PHP.tmbundle/Support/documentation.txt"`
+		if URL=`grep -i "^$TM_CURRENT_WORD=" "$TM_BUNDLE_SUPPORT/documentation.txt"`
 			then
 				URL=${URL:${#TM_CURRENT_WORD}+1}
 			else
