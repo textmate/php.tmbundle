@@ -7,11 +7,26 @@
 	<key>bundlePath</key>
 	<string>/Users/kumar/Library/Application Support/TextMate/Bundles/Custom.tmbundle</string>
 	<key>command</key>
-	<string>if grep &lt;&lt;&lt;${TM_CURRENT_WORD:-!} -Esq '[a-zA-Z0-9_]+'
-	then exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=http://php.net/$TM_CURRENT_WORD'&gt;"
+	<string>if grep &lt;&lt;&lt;${TM_CURRENT_WORD:-!} -Esq '^[a-zA-Z0-9_]+$'
+	then
+		if URL=`grep -i "^$TM_CURRENT_WORD=" "/Users/ciaran/Bundles/PHP.tmbundle/Support/documentation.txt"`
+			then
+				URL=${URL:${#TM_CURRENT_WORD}+1}
+			else
+				URL="function.$TM_CURRENT_WORD"
+		fi
+		if [[ "$PHP_MANUAL_LOCATION" ]]
+			then
+				if [[ ! -f "$PHP_MANUAL_LOCATION/$URL.html" ]]
+					then
+						exit_show_tool_tip "No documenation found for '$TM_CURRENT_WORD'"
+				fi
+				URL="file://$PHP_MANUAL_LOCATION/$URL.html"
+			else URL="http://php.net/manual/${LANG:-en}/$URL.php"
+		fi
+		exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=$URL'&gt;"
 	else echo "Nothing to lookup (hint: place the caret on a function name)"
-fi
-</string>
+fi</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
