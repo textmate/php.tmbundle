@@ -30,7 +30,7 @@ When ⎋ completion is invoked inside of a string following an `include`/`requir
 
 There are 2 help commands, both of which work on the current word:
 
-  * Pressing ⌃H will open a browser showing the function definition on the PHP website.
+  * Pressing ⌃H will open a browser showing the function definition on the PHP website (or a local file, see `PHP Manual Location` below).
   * Pressing ⌥F1 will display a tooltip showing the function prototype and a brief description of its use.
 
 ## Drag Commands
@@ -50,6 +50,14 @@ The environment variable `PHP_INCLUDE_PATH` is used for the 2 commands above. Th
 
 See section 9, "Environment variables" in the [TextMate help](?environment_variables) for more information on setting environment variables.
 
+## PHP Manual Location
+
+If you don't have a persistent internet connection (or you just want a quicker response), you can store a local copy of the PHP manual for documentation lookups. You need to download and extract a copy of the “Many HTML files” manual package in your language from [the PHP website](http://www.php.net/download-docs.php). Then set an environment variable `PHP_MANUAL_LOCATION` to the full path of the extracted files, and your local copy will be used instead of routing to the PHP website.
+
 ## Adding PHP Error Linkbacks
 
 Using the snippet `phperr⇥` you can add some JavaScript to your HTML templates which will scan the page for PHP errors and add links to open the relevant file and line in TextMate. If you already have a project open with a folder reference which includes the file, then TextMate will open the file as a tab in that project.
+
+## Miscellaneous
+
+You may find it preferable to add ‘`$`’ to the list of word characters recognised by TextMate. To do this, open the TextMate → Preferences… → Text Editing dialog and type a single ‘`$`’ character in the “Word Characters” text field. With this change, moving by a word with ⌥← and ⌥→ will jump over PHP variables instead of stopping at the ‘`$`’ symbol.

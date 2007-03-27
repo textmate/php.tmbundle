@@ -13,10 +13,14 @@
 			then
 				URL=${URL:${#TM_CURRENT_WORD}+1}
 			else
-				URL="function.$TM_CURRENT_WORD"
+				URL="function.${TM_CURRENT_WORD//_/-}"
 		fi
 		if [[ "$PHP_MANUAL_LOCATION" ]]
 			then
+				if [[ ! -d "$PHP_MANUAL_LOCATION" ]]
+					then
+						exit_show_tool_tip "Your PHP_MANUAL_LOCATION directory ($PHP_MANUAL_LOCATION) does not exist. See the bundle Help for setup instructions."
+				fi
 				if [[ ! -f "$PHP_MANUAL_LOCATION/$URL.html" ]]
 					then
 						exit_show_tool_tip "No documenation found for '$TM_CURRENT_WORD'"
