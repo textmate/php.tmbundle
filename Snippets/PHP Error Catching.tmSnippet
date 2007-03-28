@@ -3,32 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;script type="text/javascript" charset="utf-8"&gt;
-function scanErrors() {
-    bolds = document.getElementsByTagName('b');
-    for (index = 0; index &lt; bolds.length; index++) {
-        if (bolds[index].innerText.match('(Strict Standards|Warning|Notice|(Parse|Fatal) error)')) {
-            link = document.createElement('a');
-            link.href = 'txmt://open?url=file://' + bolds[index-0+1].innerText + '&amp;line=' + bolds[index-0+2].innerText;
-            link.className = 'tm_err';
-            link.innerText = '[Open in TextMate]';
-            bolds[index-0+2].appendChild(document.createTextNode(' '));
-            bolds[index-0+2].appendChild(link);
-        }
-    }
-}
-var currentload = window.onload;
-if (typeof window.onload != 'function') {
-    window.onload = scanErrors;
-} else {
-    window.onload = function(){
-        currentload();
-        scanErrors();
-    }
-}
-&lt;/script&gt;</string>
+	<string>`cat "$TM_BUNDLE_SUPPORT/errors/javascript.html" | grep -E -v '^[ \t\s]*\/\/' | sed 's/\(.*\)[ \t]*--.*/\1/' | tr -s ' \n\t' ' '`</string>
 	<key>name</key>
-	<string>PHP Error Catching</string>
+	<string>PHP Error Catching JavaScript (HTML)</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>tabTrigger</key>

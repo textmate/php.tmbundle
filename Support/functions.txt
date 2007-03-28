@@ -412,7 +412,7 @@ eregi%int eregi(string pattern, string string [, array registers])%Case-insensit
 eregi_replace%string eregi_replace(string pattern, string replacement, string string)%Case insensitive replace regular expression
 error_get_last%array error_get_last()%Get the last occurred error as associative array. Returns NULL if there hasn't been an error yet.
 error_log%bool error_log(string message [, int message_type [, string destination [, string extra_headers]]])%Send an error message somewhere
-error_reporting%int error_reporting(int new_error_level=null)%Return the current error_reporting level, and if an argument was passed - change to the new level
+error_reporting%int error_reporting(E_ERROR|E_WARNING|E_PARSE|E_NOTICE|E_CORE_ERROR|E_CORE_WARNING|E_COMPILE_ERROR|E_COMPILE_WARNING|E_USER_ERROR|E_USER_WARNING|E_USER_NOTICE|E_ALL|E_STRICT|E_RECOVERABLE_ERROR)%Return the current error_reporting level, and if an argument was passed - change to the new level
 escapeshellarg%string escapeshellarg(string arg)%Quote and escape an argument for use in a shell command
 escapeshellcmd%string escapeshellcmd(string command)%Escape shell metacharacters
 eval%mixed eval(string code_str)%Evaluate a string as PHP code
@@ -732,8 +732,8 @@ hebrevc%string hebrevc(string str [, int max_chars_per_line])%Converts logical H
 hexdec%int hexdec(string hexadecimal_number)%Returns the decimal equivalent of the hexadecimal number
 highlight_file%bool highlight_file(string file_name [, bool return] )%Syntax highlight a source file
 highlight_string%bool highlight_string(string string [, bool return] )%Syntax highlight a string or optionally return it
-html_entity_decode%string html_entity_decode(string string [, int quote_style][, string charset])%Convert all HTML entities to their applicable characters
-htmlentities%string htmlentities(string string [, int quote_style][, string charset])%Convert all applicable characters to HTML entities
+html_entity_decode%string html_entity_decode(string string [, ENT_COMPAT|ENT_QUOTES|ENT_NOQUOTES][, string charset])%Convert all HTML entities to their applicable characters
+htmlentities%string htmlentities(string string [, ENT_COMPAT|ENT_QUOTES|ENT_NOQUOTES][, string charset])%Convert all applicable characters to HTML entities
 htmlspecialchars%string htmlspecialchars(string string [, int quote_style][, string charset])%Convert special characters to HTML entities
 htmlspecialchars_decode%string htmlspecialchars_decode(string string [, int quote_style])%Convert special HTML entities back to characters
 http_build_query%string http_build_query(mixed formdata [, string prefix [, string arg_separator]])%Generates a form-encoded query string from an associative array or object.
@@ -2325,7 +2325,7 @@ tmpfile%resource tmpfile(void)%Create a temporary file that will be deleted auto
 token_get_all%array token_get_all(string source)%
 token_name%string token_name(int type)%
 touch%bool touch(string filename [, int time [, int atime]])%Set modification time of file
-trigger_error%void trigger_error(string messsage [, int error_type])%Generates a user-level error/warning/notice message
+trigger_error%void trigger_error(string messsage [, E_USER_ERROR|E_USER_WARNING|E_USER_NOTICE])%Generates a user-level error/warning/notice message
 trim%string trim(string str [, string character_mask])%Strips whitespace from the beginning and end of a string
 uasort%bool uasort(array array_arg, string cmp_function)%Sort an array with a user-defined comparison function and maintain index association
 ucfirst%string ucfirst(string str)%Makes a string's first character uppercase

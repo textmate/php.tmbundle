@@ -56,7 +56,8 @@ If you don't have a persistent internet connection (or you just want a quicker r
 
 ## Adding PHP Error Linkbacks
 
-Using the snippet `phperr⇥` you can add some JavaScript to your HTML templates which will scan the page for PHP errors and add links to open the relevant file and line in TextMate. If you already have a project open with a folder reference which includes the file, then TextMate will open the file as a tab in that project.
+Using the snippet `phperr⇥` you can add some JavaScript which will scan the page for PHP errors and add links to open the relevant file and line in TextMate. If you already have a project open with a folder reference which includes the file, then TextMate will open the file as a tab in that project.  
+When used inside HTML code, the snippet will produce only the JavaScript block required. When used inside PHP code it will produce an include to a file which contains code to set-up the error parsing.
 
 ## Miscellaneous
 
