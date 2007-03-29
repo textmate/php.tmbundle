@@ -3,10 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;?php
-$0
-?&gt;
-</string>
+	<string>&lt;?php $0 ?&gt;</string>
 	<key>name</key>
 	<string>&lt;?php … ?&gt;</string>
 	<key>scope</key>
