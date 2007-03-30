@@ -54,10 +54,17 @@ See section 9, "Environment variables" in the [TextMate help](?environment_varia
 
 If you don't have a persistent internet connection (or you just want a quicker response), you can store a local copy of the PHP manual for documentation lookups. You need to download and extract a copy of the “Many HTML files” manual package in your language from [the PHP website](http://www.php.net/download-docs.php). Then set an environment variable `PHP_MANUAL_LOCATION` to the full path of the extracted files, and your local copy will be used instead of routing to the PHP website.
 
-## Adding PHP Error Linkbacks
+## TextMate Support File
 
-Using the snippet `phperr⇥` you can add some JavaScript which will scan the page for PHP errors and add links to open the relevant file and line in TextMate. If you already have a project open with a folder reference which includes the file, then TextMate will open the file as a tab in that project.  
-When used inside HTML code, the snippet will produce only the JavaScript block required. When used inside PHP code it will produce an include to a file which contains code to set-up the error parsing.
+The bundle contains a file with support code that you can include in your project by using the snippet `tmphp⇥`. This file currently contains 2 things:
+
+  * A function `textmate_backtrace`() which works just like `debug_print_backtrace`() but will add a link to jump to files in TextMate
+  * JavaScript code which will scan the page for PHP errors and add links to open the relevant file and line in TextMate
+    
+    There are 3 ways to include this JavaScript:
+    1. If `TEXMATE_ERRORS` is define()d before the support file is included then the script tags will automatically be printed at the end of the page. This has the disadvantage that it will invalidate the page source.
+    2. You can call `textmate_print_error_handler`() anywhere in your code to print the JavaScript.
+    3. Alternatively, you can use the `phperr⇥` snippet in HTML to insert the script tags directly into your template.
 
 ## Miscellaneous
 

@@ -8,13 +8,13 @@
 then echo "// NOTE: Your PHP bundle is checked out to your home directory.
 // If the webserver process does not have permission to access the included file, you can replace ${TM_BUNDLE_PATH%Bundles*} below with '/Applications/TextMate.app/Contents/SharedSupport/Bundles/' (or whatever path your TextMate.app is in)";
 fi`
-@include_once '$TM_BUNDLE_SUPPORT/errors/textmate_error_handler.php';</string>
+@include_once '$TM_BUNDLE_SUPPORT/textmate.php';</string>
 	<key>name</key>
-	<string>PHP Error Catching JavaScript (PHP)</string>
+	<string>Include TextMate Support Script</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>phperr</string>
+	<string>tmphp</string>
 	<key>uuid</key>
 	<string>6F3ABAC6-EEC9-4797-8D4A-6FD549094852</string>
 </dict>
