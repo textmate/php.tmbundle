@@ -466,7 +466,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)\s*([&amp;a-zA-Z0-9_]+)\s*(\()</string>
+					<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)\s*(&amp;)?\s*([a-zA-Z0-9_]+)\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -482,9 +482,14 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.php</string>
+							<string>storage.modifier.reference.php</string>
 						</dict>
 						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.php</string>
+						</dict>
+						<key>5</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.parameters.begin.php</string>
