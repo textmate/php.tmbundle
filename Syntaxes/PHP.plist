@@ -466,7 +466,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)\s*(&amp;)?\s*([a-zA-Z0-9_]+)\s*(\()</string>
+					<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)(?:\s+|(\s*&amp;\s*))([a-zA-Z0-9_]+)\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
