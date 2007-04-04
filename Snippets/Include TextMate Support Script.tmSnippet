@@ -4,11 +4,15 @@
 <dict>
 	<key>content</key>
 	<string>// === TextMate error handling ===
-`if grep Users &lt;&lt;&lt; "$TM_BUNDLE_SUPPORT" &gt; /dev/null;
-then echo "// NOTE: Your PHP bundle is checked out to your home directory.
-// If the webserver process does not have permission to access the included file, you can replace ${TM_BUNDLE_PATH%Bundles*} below with '/Applications/TextMate.app/Contents/SharedSupport/Bundles/' (or whatever path your TextMate.app is in)";
+`if [[ "$TM_BUNDLE_SUPPORT" == "$HOME"* ]]; then
+  echo "// NOTE: Your PHP bundle is checked out to your home directory."
+  echo "// If the webserver process does not have permission to access"
+  echo "// the included file, you can replace"
+  echo "// ‘${TM_BUNDLE_SUPPORT%Bundles*}’ with"
+  echo "// ‘$(find_app TextMate.app)/Contents/SharedSupport/’."
 fi`
-@include_once '$TM_BUNDLE_SUPPORT/textmate.php';</string>
+@include_once '$TM_BUNDLE_SUPPORT/textmate.php';
+</string>
 	<key>name</key>
 	<string>Include TextMate Support Script</string>
 	<key>scope</key>
