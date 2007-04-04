@@ -9,7 +9,7 @@
  * Perhaps there are more situations to handle (i.e. network mounts)
  * But since I don't use them I'll need an example case from someone to implement it
  */
-if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1') return;
+if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] != '127.0.0.1') return;
 
 /*
  * Print the error linking javascript at the end of the page
