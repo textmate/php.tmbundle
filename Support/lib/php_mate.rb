@@ -11,8 +11,9 @@ class PhpScript < UserScript
   end
   def executable; @hashbang || ENV['TM_PHP'] || 'php' end
   def version_string
-    php_path = %x{ #{ENV['TM_RUBY'] || 'ruby'} -e 'require "rbconfig"; print Config::CONFIG["bindir"] + "/" + Config::CONFIG["ruby_install_name"]'}
-    res = %x{ #{executable} -v | head -n1 | cut -d" " -f 1-3 }
+    path = ENV['PATH'].split(':').find { |e| File.exists? File.join(e, executable) }
+    php_path = File.join(path.to_s, executable)
+    res = %x{ #{executable} -v }.split[0..2].join %{ }
     res + " (#{php_path})"
   end
 end
