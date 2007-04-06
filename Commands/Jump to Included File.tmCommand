@@ -6,7 +6,7 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-require ENV["TM_SUPPORT_PATH"] + "/lib/dialog.rb"
+require ENV["TM_SUPPORT_PATH"] + "/lib/ui.rb"
 require ENV["TM_SUPPORT_PATH"] + "/lib/textmate.rb"
 
 options = []
@@ -23,7 +23,7 @@ abort if options.empty?
 
 file = ''
 if options.size &gt; 1
-  abort unless choice = Dialog.menu(options)
+  abort unless choice = TextMate::UI.menu(options)
   file = options[choice]
 else
   file = options.pop
