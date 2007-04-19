@@ -1908,7 +1908,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\.</string>
+					<string>\\[\\']</string>
 					<key>name</key>
 					<string>constant.character.escape.php</string>
 				</dict>
