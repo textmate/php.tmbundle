@@ -26,7 +26,7 @@
 						exit_show_tool_tip "No documenation found for '$TM_CURRENT_WORD'"
 				fi
 				URL="file://$PHP_MANUAL_LOCATION/$URL.html"
-			else URL="http://php.net/manual/${LANG:-en}/$URL.php"
+			else URL="http://php.net/manual/en/$URL.php"
 		fi
 		exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=$URL'&gt;"
 	else echo "Nothing to lookup (hint: place the caret on a function name)"
