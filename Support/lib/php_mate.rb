@@ -18,10 +18,9 @@ class PhpScript < UserScript
   end
 end
 
-# Inherit to change the title
 class PhpMate < ScriptMate
   def filter_stderr(str)
-    # strings from stderr are passwed through this method before printing
+    # strings from stderr are passed through this method before printing
     '<span style="color: red">' + 
     str.gsub(/in (.+?) on line (\d+)$/) {
       'in <a href="txmt://open?' + (ENV.has_key?('TM_FILEPATH') ? "url=file://#{$1}&amp;" : '') + 'line=' + $2 + '"> ' + $1 + ' on line ' + $2 + '</a>'
