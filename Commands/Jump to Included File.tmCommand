@@ -5,46 +5,48 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby
-require ENV["TM_SUPPORT_PATH"] + "/lib/ui.rb"
-require ENV["TM_SUPPORT_PATH"] + "/lib/textmate.rb"
+	<string>ruby &lt;&lt;-'RUBY'
+	require ENV["TM_SUPPORT_PATH"] + "/lib/ui.rb"
+	require ENV["TM_SUPPORT_PATH"] + "/lib/textmate.rb"
 
-options = []
+	options = []
 
-if ENV['TM_CURRENT_LINE'] =~ /(?:include|require)(?:_once)?\s*\(?\s*?['"](.+)['"]\s*\)?/
-  options &lt;&lt; $1
-else
-  STDIN.read.scan(/(?:include|require)(?:_once)?\s*\(?\s*?['"](.+)['"]\s*\)?/).each do |path|
-    options &lt;&lt; path[0] unless path[0].include?('$') # Skip dynamic includes
-  end
-end
+	if ENV['TM_CURRENT_LINE'] =~ /(?:include|require)(?:_once)?\s*\(?\s*?['"](.+)['"]\s*\)?/
+	  options &lt;&lt; $1
+	else
+	  STDIN.read.scan(/(?:include|require)(?:_once)?\s*\(?\s*?['"](.+)['"]\s*\)?/).each do |path|
+	    options &lt;&lt; path[0] unless path[0].include?('$') # Skip dynamic includes
+	  end
+	end
 
-abort if options.empty?
+	abort if options.empty?
 
-file = ''
-if options.size &gt; 1
-  abort unless choice = TextMate::UI.menu(options)
-  file = options[choice]
-else
-  file = options.pop
-end
+	file = ''
+	if options.size &gt; 1
+	  abort unless choice = TextMate::UI.menu(options)
+	  file = options[choice]
+	else
+	  file = options.pop
+	end
 
-paths = []
-if ENV['PHP_INCLUDE_PATH']
-  paths = ENV['PHP_INCLUDE_PATH'].split(':')
-else
-  paths = ['.']
-end
+	paths = []
+	if ENV['PHP_INCLUDE_PATH']
+	  paths = ENV['PHP_INCLUDE_PATH'].split(':')
+	else
+	  paths = ['.']
+	end
 
-paths.each do |path|
-  expanded_path = File.expand_path(file, path)
-  if File.exists?(expanded_path)
-    TextMate.go_to :file =&gt; expanded_path
-    exit
-  end
-end
-puts "File not found: #{file}"
-puts "Set PHP_INCLUDE_PATH for best results" unless ENV['PHP_INCLUDE_PATH']</string>
+	paths.each do |path|
+	  expanded_path = File.expand_path(file, path)
+	  if File.exists?(expanded_path)
+	    TextMate.go_to :file =&gt; expanded_path
+	    exit
+	  end
+	end
+	puts "File not found: #{file}"
+	puts "Set PHP_INCLUDE_PATH for best results" unless ENV['PHP_INCLUDE_PATH']
+RUBY
+</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>

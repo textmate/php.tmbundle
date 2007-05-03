@@ -5,8 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/ruby
-
+	<string>ruby &lt;&lt;-'RUBY'
 # Stores all the possible paths to the dropped file
 paths = []
 
@@ -25,7 +24,8 @@ end
 
 # Find the shortest path
 path = paths.sort_by{|path| path.size}.reverse.pop
-puts "${1:include} '#{path}';\$0"</string>
+puts "${1:include} '#{path}';\$0"
+RUBY</string>
 	<key>draggedFileExtensions</key>
 	<array>
 		<string>php</string>
