@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>define('$1', '$2');
+	<string>define('$1', ${2:'$3'});
 $0</string>
 	<key>name</key>
 	<string>define(…, …)</string>
