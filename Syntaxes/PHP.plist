@@ -69,7 +69,7 @@
 			<key>match</key>
 			<string>[A-Za-z_][A-Za-z_0-9]*(?=\s*\()</string>
 			<key>name</key>
-			<string>entity.name.function.php</string>
+			<string>meta.function-call.php</string>
 		</dict>
 		<key>language</key>
 		<dict>
@@ -473,7 +473,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)(?:\s+|(\s*&amp;\s*))([a-zA-Z0-9_]+)\s*(\()</string>
+					<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)(?:\s+|(\s*&amp;\s*))(?:(__(?:call|(?:con|de)struct|get|(?:is|un)?set|tostring|clone|set_state|sleep|wakeup|autoload))|([a-zA-Z0-9_]+))\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -494,9 +494,14 @@
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.php</string>
+							<string>support.function.magic.php</string>
 						</dict>
 						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.php</string>
+						</dict>
+						<key>6</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.parameters.begin.php</string>
@@ -606,12 +611,12 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.php</string>
+							<string>meta.function-call.static.php</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.php</string>
+							<string>variable.other.class.php</string>
 						</dict>
 						<key>4</key>
 						<dict>
@@ -645,12 +650,12 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.php</string>
+							<string>meta.function-call.object.php</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.php</string>
+							<string>variable.other.property.php</string>
 						</dict>
 						<key>4</key>
 						<dict>
@@ -719,7 +724,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>&amp;(?=\s*(\$|[A-Za-z_][A-Za-z_0-9]+(?=\s*\()))</string>
+					<string>&amp;(?=\s*(\$|new|[A-Za-z_][A-Za-z_0-9]+(?=\s*\()))</string>
 					<key>name</key>
 					<string>storage.modifier.reference.php</string>
 				</dict>
@@ -874,16 +879,16 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.class.php</string>
+					<string>support.class.php</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.class.php</string>
+					<string>support.class.php</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i)(new)\s+(\w+)|(\w+)(?=::)</string>
+			<string>(?i)\b(new)\s+(\w+)|(\w+)(?=::)</string>
 		</dict>
 		<key>php_doc</key>
 		<dict>
