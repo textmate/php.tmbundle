@@ -558,6 +558,12 @@
 						</dict>
 						<dict>
 							<key>match</key>
+							<string>&amp;(?=\s*\$)</string>
+							<key>name</key>
+							<string>storage.modifier.reference.php</string>
+						</dict>
+						<dict>
+							<key>match</key>
 							<string>array(?=\()</string>
 							<key>name</key>
 							<string>support.function.construct.php</string>
