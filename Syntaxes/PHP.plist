@@ -64,6 +64,13 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>constant</key>
+		<dict>
+			<key>match</key>
+			<string>[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*</string>
+			<key>name</key>
+			<string>constant.other.php</string>
+		</dict>
 		<key>function-call</key>
 		<dict>
 			<key>match</key>
@@ -454,7 +461,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\s|;|$</string>
+					<string>(?=\s|;|$)</string>
 					<key>name</key>
 					<string>meta.include.php</string>
 					<key>patterns</key>
@@ -523,7 +530,15 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>#regex-double-quoted</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#string-double-quoted</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#regex-single-quoted</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -542,8 +557,10 @@
 							<string>#var_global_safer</string>
 						</dict>
 						<dict>
-							<key>include</key>
-							<string>#function-call</string>
+							<key>match</key>
+							<string>array(?=\()</string>
+							<key>name</key>
+							<string>support.function.construct.php</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -557,36 +574,11 @@
 							<key>include</key>
 							<string>#object</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#constant</string>
+						</dict>
 					</array>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.abstract.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.class-or-interface.php</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.type.class.php</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>entity.other.inherited-class.php</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(?:^\s*)(abstract)?\s*(class|interface)\s+([a-zA-Z0-9_]+)\s*(extends\s+([a-zA-Z0-9_]+))?</string>
-					<key>name</key>
-					<string>meta.class.php</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -742,6 +734,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>;</string>
+					<key>name</key>
+					<string>keyword.operator.terminator.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(@)</string>
 					<key>name</key>
 					<string>keyword.operator.error-control.php</string>
@@ -781,7 +779,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.class.php</string>
+							<string>support.class.php</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -795,7 +793,15 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#regex-double-quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#string-double-quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#regex-single-quoted</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -845,6 +851,10 @@
 				<dict>
 					<key>include</key>
 					<string>#object</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constant</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -969,6 +979,174 @@
 				</dict>
 			</array>
 		</dict>
+		<key>regex-double-quoted</key>
+		<dict>
+			<key>begin</key>
+			<string>(")(/)(?=.*?/[imsxeADSUXu]*")</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.php</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(/)([imsxeADSUXu]*)(")</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.php</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.regexp.double-quoted.php</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arbitrary-repitition.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arbitrary-repitition.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\{)\d+(,\d+)?(\})</string>
+					<key>name</key>
+					<string>string.regexp.arbitrary-repitition.php</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\[(?:\^?\])?</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.character-class.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\]</string>
+					<key>name</key>
+					<string>string.regexp.character-class.ruby</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\.</string>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[$^+*]</string>
+					<key>name</key>
+					<string>keyword.operator.regexp.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>regex-single-quoted</key>
+		<dict>
+			<key>begin</key>
+			<string>(')(/)(?=.*?/[imsxeADSUXu]*')</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.php</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(/)([imsxeADSUXu]*)(')</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.php</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.regexp.single-quoted.php</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arbitrary-repitition.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arbitrary-repitition.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\{)\d+(,\d+)?(\})</string>
+					<key>name</key>
+					<string>string.regexp.arbitrary-repitition.php</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\[(?:\^?\])?</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.character-class.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\]</string>
+					<key>name</key>
+					<string>string.regexp.character-class.ruby</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\[\\']</string>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[$^+*]</string>
+					<key>name</key>
+					<string>keyword.operator.regexp.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\[\\']</string>
+					<key>name</key>
+					<string>constant.character.escape.php</string>
+				</dict>
+			</array>
+		</dict>
 		<key>string-backtick</key>
 		<dict>
 			<key>begin</key>
@@ -1071,6 +1249,29 @@
 			<string>string.quoted.single.php</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.regexp.begin.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.regexp.begin.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)
+						foo
+					    (?&lt;=')(/)
+                        .*?
+					    (/)([imsxeADSUXu]*)(?=')</string>
+					<key>name</key>
+					<string>string.regexp.single-quoted.php</string>
+				</dict>
 				<dict>
 					<key>match</key>
 					<string>\\[\\']</string>
