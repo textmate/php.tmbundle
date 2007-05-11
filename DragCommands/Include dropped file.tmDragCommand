@@ -14,10 +14,11 @@ paths = []
 paths &lt;&lt; ENV['TM_DROPPED_FILE']
 if ENV['PHP_INCLUDE_PATH']
   ENV['PHP_INCLUDE_PATH'].split(':').each do |dir|
+    dir &lt;&lt; '/'
     # Check each directory in the include path to see if it prefixes the requested file
     if ENV['TM_DROPPED_FILEPATH'][0, dir.size] == dir
       # If it matches, store the path to the file from this include directory 
-      paths &lt;&lt; ENV['TM_DROPPED_FILEPATH'][dir.size+1..-1]
+      paths &lt;&lt; ENV['TM_DROPPED_FILEPATH'][dir.size..-1]
     end
   end
 end
