@@ -989,10 +989,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#language_constant</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#instantiation</string>
 				</dict>
 				<dict>
@@ -1112,10 +1108,6 @@
 							<string>#parameter-default-types</string>
 						</dict>
 					</array>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#language_constant</string>
 				</dict>
 				<dict>
 					<key>include</key>
