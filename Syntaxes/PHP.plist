@@ -40,16 +40,39 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>constant</key>
+		<key>constants</key>
 		<dict>
-			<key>comment</key>
-			<string>In PHP, any identifier which is not a variable is taken to be a constant.
-			However, if there is no constant defined with the given name then a notice
-			is generated and the constant is assumed to have the value of its name.</string>
-			<key>match</key>
-			<string>[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*</string>
-			<key>name</key>
-			<string>constant.other.php</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?i)\b(TRUE|FALSE|NULL|__(FILE|FUNCTION|CLASS|METHOD|LINE)__|ON|OFF|YES|NO|NL|BR|TAB)\b</string>
+					<key>name</key>
+					<string>constant.language.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(DEFAULT_INCLUDE_PATH|E_(ALL|COMPILE_(ERROR|WARNING)|CORE_(ERROR|WARNING)|(RECOVERABLE_)?ERROR|NOTICE|PARSE|STRICT|USER_(ERROR|NOTICE|WARNING)|WARNING)|PEAR_(EXTENSION_DIR|INSTALL_DIR)|PHP_(BINDIR|CONFIG_FILE_PATH|DATADIR|E(OL|XTENSION_DIR)|L(IBDIR|OCALSTATEDIR)|O(S|UTPUT_HANDLER_CONT|UTPUT_HANDLER_END|UTPUT_HANDLER_START)|SYSCONFDIR|VERSION))\b</string>
+					<key>name</key>
+					<string>support.constant.core.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(A(B(DAY_([1-7])|MON_([0-9]{1,2}))|LT_DIGITS|M_STR|SSERT_(ACTIVE|BAIL|CALLBACK|QUIET_EVAL|WARNING))|C(ASE_(LOWER|UPPER)|HAR_MAX|O(DESET|NNECTION_(ABORTED|NORMAL|TIMEOUT)|UNT_(NORMAL|RECURSIVE))|REDITS_(ALL|DOCS|FULLPAGE|GENERAL|GROUP|MODULES|QA|SAPI)|RNCYSTR|RYPT_(BLOWFISH|EXT_DES|MD5|SALT_LENGTH|STD_DES)|URRENCY_SYMBOL)|D(AY_([1-7])|ECIMAL_POINT|IRECTORY_SEPARATOR|_(FMT|T_FMT))|E(NT_(COMPAT|NOQUOTES|QUOTES)|RA(|_D_FMT|_D_T_FMT|_T_FMT|_YEAR)|XTR_(IF_EXISTS|OVERWRITE|PREFIX_(ALL|IF_EXISTS|INVALID|SAME)|SKIP))|FRAC_DIGITS|GROUPING|HTML_(ENTITIES|SPECIALCHARS)|IN(FO_(ALL|CONFIGURATION|CREDITS|ENVIRONMENT|GENERAL|LICENSE|MODULES|VARIABLES)|I_(ALL|PERDIR|SYSTEM|USER)|T_(CURR_SYMBOL|FRAC_DIGITS))|L(C_(ALL|COLLATE|CTYPE|MESSAGES|MONETARY|NUMERIC|TIME)|O(CK_(EX|NB|SH|UN)|G_(ALERT|AUTH(|PRIV)|CONS|CRIT|CRON|DAEMON|DEBUG|EMERG|ERR|INFO|KERN|LOCAL([0-7])|LPR|MAIL|NDELAY|NEWS|NOTICE|NOWAIT|ODELAY|PERROR|PID|SYSLOG|USER|UUCP|WARNING)))|M(ON_([0-9]{1,2}|DECIMAL_POINT|GROUPING|THOUSANDS_SEP)|YSQL_(ASSOC|BOTH|NUM)|_(1_PI|2_(PI|SQRTPI)|E|L(N10|N2|OG(10E|2E))|PI(|_2|_4)|SQRT1_2|SQRT2))|N(EGATIVE_SIGN|O(EXPR|STR)|_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN))|P(ATH(INFO_(BASENAME|DIRNAME|EXTENSION)|_SEPARATOR)|M_STR|OSITIVE_SIGN|_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN))|RADIXCHAR|S(EEK_(CUR|END|SET)|ORT_(ASC|DESC|NUMERIC|REGULAR|STRING)|TR_PAD_(BOTH|LEFT|RIGHT))|T(HOUS(ANDS_SEP|EP)|_(FMT(|_AMPM)))|YES(EXPR|STR))\b</string>
+					<key>name</key>
+					<string>support.constant.std.php</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>In PHP, any identifier which is not a variable is taken to be a constant.
+				However, if there is no constant defined with the given name then a notice
+				is generated and the constant is assumed to have the value of its name.</string>
+					<key>match</key>
+					<string>[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*</string>
+					<key>name</key>
+					<string>constant.other.php</string>
+				</dict>
+			</array>
 		</dict>
 		<key>function-call</key>
 		<dict>
@@ -242,7 +265,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;&lt;)(HTML)</string>
+					<string>(&lt;&lt;&lt;)\s*(HTML)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -289,7 +312,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>((&lt;&lt;&lt;)XML)</string>
+					<string>(&lt;&lt;&lt;)\s*(XML)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -336,7 +359,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>((&lt;&lt;&lt;)SQL)</string>
+					<string>(&lt;&lt;&lt;)\s*(SQL)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -717,7 +740,7 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\s*(=)\s*)?\s*</string>
+							<string>\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\s*(=)\s*)\s*</string>
 							<key>captures</key>
 							<dict>
 								<key>1</key>
@@ -811,7 +834,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;&lt;&lt;)([a-zA-Z_]+[a-zA-Z0-9_]*)</string>
+					<string>(&lt;&lt;&lt;)\s*([a-zA-Z_]+[a-zA-Z0-9_]*)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -974,28 +997,9 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#constant</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(DEFAULT_INCLUDE_PATH|E_(ALL|COMPILE_(ERROR|WARNING)|CORE_(ERROR|WARNING)|(RECOVERABLE_)?ERROR|NOTICE|PARSE|STRICT|USER_(ERROR|NOTICE|WARNING)|WARNING)|PEAR_(EXTENSION_DIR|INSTALL_DIR)|PHP_(BINDIR|CONFIG_FILE_PATH|DATADIR|E(OL|XTENSION_DIR)|L(IBDIR|OCALSTATEDIR)|O(S|UTPUT_HANDLER_CONT|UTPUT_HANDLER_END|UTPUT_HANDLER_START)|SYSCONFDIR|VERSION))\b</string>
-					<key>name</key>
-					<string>support.constant.core.php</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(A(B(DAY_([1-7])|MON_([0-9]{1,2}))|LT_DIGITS|M_STR|SSERT_(ACTIVE|BAIL|CALLBACK|QUIET_EVAL|WARNING))|C(ASE_(LOWER|UPPER)|HAR_MAX|O(DESET|NNECTION_(ABORTED|NORMAL|TIMEOUT)|UNT_(NORMAL|RECURSIVE))|REDITS_(ALL|DOCS|FULLPAGE|GENERAL|GROUP|MODULES|QA|SAPI)|RNCYSTR|RYPT_(BLOWFISH|EXT_DES|MD5|SALT_LENGTH|STD_DES)|URRENCY_SYMBOL)|D(AY_([1-7])|ECIMAL_POINT|IRECTORY_SEPARATOR|_(FMT|T_FMT))|E(NT_(COMPAT|NOQUOTES|QUOTES)|RA(|_D_FMT|_D_T_FMT|_T_FMT|_YEAR)|XTR_(IF_EXISTS|OVERWRITE|PREFIX_(ALL|IF_EXISTS|INVALID|SAME)|SKIP))|FRAC_DIGITS|GROUPING|HTML_(ENTITIES|SPECIALCHARS)|IN(FO_(ALL|CONFIGURATION|CREDITS|ENVIRONMENT|GENERAL|LICENSE|MODULES|VARIABLES)|I_(ALL|PERDIR|SYSTEM|USER)|T_(CURR_SYMBOL|FRAC_DIGITS))|L(C_(ALL|COLLATE|CTYPE|MESSAGES|MONETARY|NUMERIC|TIME)|O(CK_(EX|NB|SH|UN)|G_(ALERT|AUTH(|PRIV)|CONS|CRIT|CRON|DAEMON|DEBUG|EMERG|ERR|INFO|KERN|LOCAL([0-7])|LPR|MAIL|NDELAY|NEWS|NOTICE|NOWAIT|ODELAY|PERROR|PID|SYSLOG|USER|UUCP|WARNING)))|M(ON_([0-9]{1,2}|DECIMAL_POINT|GROUPING|THOUSANDS_SEP)|YSQL_(ASSOC|BOTH|NUM)|_(1_PI|2_(PI|SQRTPI)|E|L(N10|N2|OG(10E|2E))|PI(|_2|_4)|SQRT1_2|SQRT2))|N(EGATIVE_SIGN|O(EXPR|STR)|_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN))|P(ATH(INFO_(BASENAME|DIRNAME|EXTENSION)|_SEPARATOR)|M_STR|OSITIVE_SIGN|_(CS_PRECEDES|SEP_BY_SPACE|SIGN_POSN))|RADIXCHAR|S(EEK_(CUR|END|SET)|ORT_(ASC|DESC|NUMERIC|REGULAR|STRING)|TR_PAD_(BOTH|LEFT|RIGHT))|T(HOUS(ANDS_SEP|EP)|_(FMT(|_AMPM)))|YES(EXPR|STR))\b</string>
-					<key>name</key>
-					<string>support.constant.std.php</string>
+					<string>#constants</string>
 				</dict>
 			</array>
-		</dict>
-		<key>language_constant</key>
-		<dict>
-			<key>match</key>
-			<string>(?i)\b(TRUE|FALSE|NULL|__(FILE|FUNCTION|CLASS|METHOD|LINE)__|ON|OFF|YES|NO|NL|BR|TAB)\b</string>
-			<key>name</key>
-			<string>constant.language.php</string>
 		</dict>
 		<key>numbers</key>
 		<dict>
@@ -1119,7 +1123,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#constant</string>
+					<string>#constants</string>
 				</dict>
 			</array>
 		</dict>
@@ -1377,7 +1381,7 @@
 		<key>sql-string-double-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>"(?=(SELECT|INSERT|UPDATE|DELETE)\b)</string>
+			<string>"\s*(?=(SELECT|INSERT|UPDATE|DELETE)\b)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1401,6 +1405,12 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.php</string>
+				</dict>
+				<dict>
 					<key>include</key>
 					<string>#interpolation</string>
 				</dict>
@@ -1413,7 +1423,7 @@
 		<key>sql-string-single-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>'(?=(SELECT|INSERT|UPDATE|DELETE)\b)</string>
+			<string>'\s*(?=(SELECT|INSERT|UPDATE|DELETE)\b)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1437,8 +1447,10 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#interpolation</string>
+					<key>match</key>
+					<string>\\[\\']</string>
+					<key>name</key>
+					<string>constant.character.escape.php</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1548,29 +1560,6 @@
 			<string>string.quoted.single.php</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.regexp.begin.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.regexp.begin.php</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(?x)
-						foo
-					    (?&lt;=')(/)
-                        .*?
-					    (/)([imsxeADSUXu]*)(?=')</string>
-					<key>name</key>
-					<string>string.regexp.single-quoted.php</string>
-				</dict>
 				<dict>
 					<key>match</key>
 					<string>\\[\\']</string>
