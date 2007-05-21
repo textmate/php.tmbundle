@@ -13,22 +13,34 @@ DIALOG = SUPPORT + '/bin/tm_dialog'
 require SUPPORT + '/lib/escape'
 require SUPPORT + '/lib/osx/plist'
 
-functions = `grep -i "^$TM_CURRENT_WORD%" "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
+def show_function_and_exit(function)
+  functions = `grep -i "^#{function}%" "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
+  if functions.size == 1
+    function, prototype, description = functions.pop.split('%')
 
-if functions.size != 1
-  puts "Function not found: " + ENV['TM_CURRENT_WORD'].to_s
-else
-  function, prototype, description = functions.pop.split('%')
-  
-  puts prototype
-  puts description
-end</string>
+    puts prototype
+    puts description
+    exit
+  end
+end
+
+function = nil
+
+show_function_and_exit(function = ENV['TM_CURRENT_WORD'].to_s)
+
+show_function_and_exit(function = $1) if ENV['TM_CURRENT_LINE'][0..ENV['TM_LINE_INDEX'].to_i] =~ /(\w+)\(/
+
+puts "Function not found: " + function.to_s</string>
+	<key>fallbackInput</key>
+	<string>line</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>xml</string>
 	<key>keyEquivalent</key>
 	<string>~</string>
 	<key>name</key>
-	<string>Documentation for Word (tool tip)</string>
+	<string>Documentation for Function Call (tool tip)</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
