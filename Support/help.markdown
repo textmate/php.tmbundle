@@ -37,6 +37,7 @@ There are 2 help commands, both of which work on the current word:
 
 Dragging a .php file (from the Project Drawer or Finder, for example) into PHP source will generate an `include` for that file.  
 If the environment variable `PHP_INCLUDE_PATH` is set to your PHP environment's `include_path` directive, it will be searched for the optimal path to the dropped file to include.
+You can hold ⌃ when you drop the file to generate a `require` instead, and you can hold ⌥ to use the `_once` variant of either method.
 
 ## Project Navigation
 

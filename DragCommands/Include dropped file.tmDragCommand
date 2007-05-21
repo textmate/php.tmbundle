@@ -23,9 +23,13 @@ if ENV['PHP_INCLUDE_PATH']
   end
 end
 
+include_method = ENV['TM_MODIFIER_FLAGS'].include?('CONTROL') ? 'require' : 'include'
+
+include_method &lt;&lt; '_once' if ENV['TM_MODIFIER_FLAGS'].include?('OPTION')
+
 # Find the shortest path
 path = paths.sort_by{|path| path.size}.reverse.pop
-puts "${1:include} '#{path}';\$0"
+puts "${1:#{include_method}} '#{path}';\$0"
 RUBY</string>
 	<key>draggedFileExtensions</key>
 	<array>
