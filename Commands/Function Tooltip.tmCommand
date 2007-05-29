@@ -14,7 +14,8 @@ require SUPPORT + '/lib/escape'
 require SUPPORT + '/lib/osx/plist'
 
 def show_function_and_exit(function)
-  functions = `grep -i "^#{function}%" "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
+  return unless function =~ /^[A-Za-z_][A-Za-z0-9_]*$/
+  functions = `grep -i '^#{function}%' "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
   if functions.size == 1
     function, prototype, description = functions.pop.split('%')
 
