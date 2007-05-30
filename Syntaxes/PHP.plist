@@ -771,6 +771,22 @@
 								</dict>
 							</array>
 						</dict>
+						<dict>
+							<key>begin</key>
+							<string>/\*</string>
+							<key>captures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.php</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>\*/</string>
+							<key>name</key>
+							<string>comment.block.php</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -887,12 +903,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(===|==|!==|!=|&lt;=|&gt;=|&lt;&gt;|&lt;|&gt;)</string>
-					<key>name</key>
-					<string>keyword.operator.comparison.php</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>=</string>
 					<key>name</key>
 					<string>keyword.operator.assignment.php</string>
@@ -926,6 +936,18 @@
 					<string>(?i)(!|&amp;&amp;|\|\|)|\b(and|or|xor|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.logical.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&lt;&lt;|&gt;&gt;|~|\^|&amp;|\|</string>
+					<key>name</key>
+					<string>keyword.operator.bitwise.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(===|==|!==|!=|&lt;=|&gt;=|&lt;&gt;|&lt;|&gt;)</string>
+					<key>name</key>
+					<string>keyword.operator.comparison.php</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -1101,6 +1123,8 @@
 							<string>punctuation.definition.array.end.php</string>
 						</dict>
 					</dict>
+					<key>name</key>
+					<string>meta.array.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1289,7 +1313,7 @@
 		<key>regex-single-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>(')(/)(?=.*?/[imsxeADSUXu]*')</string>
+			<string>(')(/)(?!.*?[^\\]')(?=.+?/[imsxeADSUXu]*')</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1373,7 +1397,7 @@
 		<key>sql-string-double-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>"\s*(?=(SELECT|INSERT|UPDATE|DELETE)\b)</string>
+			<string>"\s*(?=(SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER)\b)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1415,7 +1439,7 @@
 		<key>sql-string-single-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>'\s*(?=(SELECT|INSERT|UPDATE|DELETE)\b)</string>
+			<string>'\s*(?=(SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER)\b)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1595,8 +1619,44 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>begin</key>
+					<string>(array)(\()</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.construct.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.array.begin.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.array.end.php</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.array.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#language</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
 					<key>match</key>
-					<string>(?i)\b(isset|unset|print|e(cho|val|mpty)|array|list)\b</string>
+					<string>(?i)\b(isset|unset|print|e(cho|val|mpty)|list)\b</string>
 					<key>name</key>
 					<string>support.function.construct.php</string>
 				</dict>
