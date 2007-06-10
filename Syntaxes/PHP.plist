@@ -927,7 +927,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(\-|\+|\*|\/|%)</string>
+					<string>(\-|\+|\*|/|%)</string>
 					<key>name</key>
 					<string>keyword.operator.arithmetic.php</string>
 				</dict>
@@ -1225,7 +1225,7 @@
 		<key>regex-double-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>(")(/)(?=.*?/[imsxeADSUXu]*")</string>
+			<string>(?x)"/ (?= (\\.|[^"/])+/[imsxeADSUXu]*" )</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1285,7 +1285,7 @@
 					<key>end</key>
 					<string>\]</string>
 					<key>name</key>
-					<string>string.regexp.character-class.ruby</string>
+					<string>string.regexp.character-class.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1313,7 +1313,7 @@
 		<key>regex-single-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>(')(/)(?!.*?[^\\]')(?=.+?/[imsxeADSUXu]*')</string>
+			<string>(?x)'/ (?= (\\.|[^'/])+/[imsxeADSUXu]*' )</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1369,7 +1369,7 @@
 					<key>end</key>
 					<string>\]</string>
 					<key>name</key>
-					<string>string.regexp.character-class.ruby</string>
+					<string>string.regexp.character-class.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
