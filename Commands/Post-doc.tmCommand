@@ -23,7 +23,7 @@ case next_line
 when /(class|interface)/
   type = $&amp;
   tag 'package', 'default'
-when /function\s*\((.*)\)/
+when /function\s*\w+\((.*)\)/
   type = 'function'
   $1.split(/,/).each do |arg|
     tag 'param', 'string', '\\$' + arg[/[A-z0-9]+/].strip
@@ -32,7 +32,7 @@ when /function\s*\((.*)\)/
 when /const|define/
   type = 'constant'
   author = false
-when /var|p(ublic|rivate|rotected)/
+when /var|p(ublic|rivate|rotected)\s*\$/
   type = 'variable'
   tag 'var', 'string'
   author = false
