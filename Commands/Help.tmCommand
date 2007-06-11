@@ -21,7 +21,7 @@ html_footer
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
-	<string>text.tex.latex</string>
+	<string>source.php</string>
 	<key>uuid</key>
 	<string>C81F7FF7-7899-48F5-AD79-F248B7BC3DCB</string>
 </dict>
