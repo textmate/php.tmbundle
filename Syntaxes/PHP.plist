@@ -76,16 +76,8 @@
 		</dict>
 		<key>function-call</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.php</string>
-				</dict>
-			</dict>
 			<key>match</key>
-			<string>([A-Za-z_][A-Za-z_0-9]*)(?=\s*\()</string>
+			<string>[A-Za-z_][A-Za-z_0-9]*(?=\s*\()</string>
 			<key>name</key>
 			<string>meta.function-call.php</string>
 		</dict>
@@ -829,19 +821,14 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.php</string>
+							<string>variable.other.class.php</string>
 						</dict>
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.class.php</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
 							<string>punctuation.definition.variable.php</string>
 						</dict>
-						<key>6</key>
+						<key>5</key>
 						<dict>
 							<key>name</key>
 							<string>constant.other.class.php</string>
@@ -850,7 +837,7 @@
 					<key>match</key>
 					<string>(?x)(::)
                         (?:
-        				    (([A-Za-z_][A-Za-z_0-9]*))\s*\(
+        				    ([A-Za-z_][A-Za-z_0-9]*)\s*\(
         				    |
         				    ((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
         				    |
@@ -1056,14 +1043,9 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.php</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
 					<string>variable.other.property.php</string>
 				</dict>
-				<key>5</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.variable.php</string>
@@ -1072,7 +1054,7 @@
 			<key>match</key>
 			<string>(?x)(-&gt;)
     				(?:
-    				    (([A-Za-z_][A-Za-z_0-9]*))\s*\(
+    				    ([A-Za-z_][A-Za-z_0-9]*)\s*\(
     				    |
     				    ((\$+)?[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
     				)?</string>
