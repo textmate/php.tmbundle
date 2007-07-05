@@ -3,7 +3,10 @@ require "#{ENV["TM_SUPPORT_PATH"]}/lib/scriptmate"
 class PhpScript < UserScript
   def lang; "Php" end
   # Disable display_errors so that errors are printed to stderr only
-  def args; ['-d display_errors=off'] end
+  # Enabling log_errors (without an error_log) sends errors to stdout
+  def args
+    ['-d display_errors=0', '-d log_errors=1', '-d error_log=']
+  end
   def filter_cmd(cmd)
     # PHP doesn't understand - to mean stdin :(
     cmd[cmd.size - 1] = '--' if cmd.last == '-'
