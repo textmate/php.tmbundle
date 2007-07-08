@@ -23,7 +23,7 @@
 				fi
 				if [[ ! -f "$PHP_MANUAL_LOCATION/$URL.html" ]]
 					then
-						exit_show_tool_tip "No documenation found for '$TM_CURRENT_WORD'"
+						exit_show_tool_tip "No documentation found for '$TM_CURRENT_WORD'"
 				fi
 				URL="file://$PHP_MANUAL_LOCATION/$URL.html"
 			else URL="http://php.net/manual/en/$URL.php"
