@@ -19,16 +19,24 @@
 		<dict>
 			<key>begin</key>
 			<string>&lt;\?(?i:php|=)?</string>
-			<key>captures</key>
+			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.embedded.php</string>
+					<string>punctuation.section.embedded.begin.php</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>\?&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.embedded.end.php</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
