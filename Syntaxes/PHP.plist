@@ -905,12 +905,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>=</string>
-					<key>name</key>
-					<string>keyword.operator.assignment.php</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>;</string>
 					<key>name</key>
 					<string>keyword.operator.terminator.php</string>
@@ -956,6 +950,12 @@
 					<string>(\.=|\.)</string>
 					<key>name</key>
 					<string>keyword.operator.string.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>=</string>
+					<key>name</key>
+					<string>keyword.operator.assignment.php</string>
 				</dict>
 				<dict>
 					<key>captures</key>
