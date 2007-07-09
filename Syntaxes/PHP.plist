@@ -1101,7 +1101,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(array)(\()</string>
+					<string>(array)\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
