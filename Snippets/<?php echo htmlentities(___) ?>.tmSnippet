@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>&lt;?php echo htmlentities(${1:\$var}) ?&gt;$0</string>
+	<string>&lt;?php echo htmlentities(${1:\$var}, ENT_QUOTES, 'utf-8') ?&gt;$0</string>
 	<key>name</key>
 	<string>&lt;?php echo htmlentities(…) ?&gt;</string>
 	<key>scope</key>
