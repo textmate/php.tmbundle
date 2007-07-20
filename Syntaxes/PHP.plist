@@ -129,6 +129,16 @@
 						<key>10</key>
 						<dict>
 							<key>name</key>
+							<string>string.unquoted.index.php</string>
+						</dict>
+						<key>11</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.invalid-simple-array-index.php</string>
+						</dict>
+						<key>12</key>
+						<dict>
+							<key>name</key>
 							<string>keyword.operator.index-end.php</string>
 						</dict>
 						<key>2</key>
@@ -177,7 +187,7 @@
 							(\g&lt;name&gt;)
 							|
 							(\[)
-								(?:(\d+|((\$)\g&lt;name&gt;)))
+								(?:(\d+)|((\$)\g&lt;name&gt;)|(\w+)|(.*?))
 							(\])
 						)?
 						</string>
