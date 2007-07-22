@@ -1436,6 +1436,8 @@
 					<string>punctuation.definition.string.begin.php</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>source.sql.embedded.php</string>
 			<key>end</key>
 			<string>"</string>
 			<key>endCaptures</key>
@@ -1452,9 +1454,99 @@
 			<array>
 				<dict>
 					<key>match</key>
+					<string>#(\\"|[^"])*(?="|$\n?)</string>
+					<key>name</key>
+					<string>comment.line.number-sign.sql</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>--(\\"|[^"])*(?="|$\n?)</string>
+					<key>name</key>
+					<string>comment.line.double-dash.sql</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'(?=[^']*?")</string>
+					<key>comment</key>
+					<string>Unclosed strings must be captured to avoid them eating the remainder of the PHP script
+					Sample case: $sql = "SELECT * FROM bar WHERE foo = '" . $variable . "'"</string>
+					<key>end</key>
+					<string>(?=")</string>
+					<key>name</key>
+					<string>string.quoted.single.unclosed.sql</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\[\\']</string>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\\"(?!([^\\"]|\\[^"])*\\")(?=(\\[^"]|.)*?")</string>
+					<key>comment</key>
+					<string>Unclosed strings must be captured to avoid them eating the remainder of the PHP script
+					Sample case: $sql = "SELECT * FROM bar WHERE foo = '" . $variable . "'"</string>
+					<key>end</key>
+					<string>(?=")</string>
+					<key>name</key>
+					<string>string.quoted.double.unclosed.sql</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\[\\']</string>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\\"</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\\"</string>
+					<key>name</key>
+					<string>string.quoted.double.sql</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#interpolation</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\\.</string>
 					<key>name</key>
 					<string>constant.character.escape.php</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>end</key>
+					<string>'</string>
+					<key>name</key>
+					<string>string.quoted.single.sql</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#interpolation</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1478,6 +1570,8 @@
 					<string>punctuation.definition.string.begin.php</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>source.sql.embedded.php</string>
 			<key>end</key>
 			<string>'</string>
 			<key>endCaptures</key>
@@ -1492,6 +1586,74 @@
 			<string>string.quoted.single.sql.php</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>match</key>
+					<string>#(\\'|[^'])*(?='|$\n?)</string>
+					<key>name</key>
+					<string>comment.line.number-sign.sql</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>--(\\'|[^'])*(?='|$\n?)</string>
+					<key>name</key>
+					<string>comment.line.double-dash.sql</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\\'(?!([^\\']|\\[^'])*\\')(?=(\\[^']|.)*?')</string>
+					<key>comment</key>
+					<string>Unclosed strings must be captured to avoid them eating the remainder of the PHP script
+					Sample case: $sql = "SELECT * FROM bar WHERE foo = '" . $variable . "'"</string>
+					<key>end</key>
+					<string>(?=')</string>
+					<key>name</key>
+					<string>string.quoted.single.unclosed.sql</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\[\\']</string>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"(?=[^"]*?')</string>
+					<key>comment</key>
+					<string>Unclosed strings must be captured to avoid them eating the remainder of the PHP script
+					Sample case: $sql = "SELECT * FROM bar WHERE foo = '" . $variable . "'"</string>
+					<key>end</key>
+					<string>(?=')</string>
+					<key>name</key>
+					<string>string.quoted.double.unclosed.sql</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\[\\']</string>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\\'</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>constant.character.escape.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\\'</string>
+					<key>name</key>
+					<string>string.quoted.single.sql</string>
+				</dict>
 				<dict>
 					<key>match</key>
 					<string>\\[\\']</string>
