@@ -144,17 +144,48 @@
 							<key>name</key>
 							<string>variable.other.php</string>
 						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Simple syntax with braces: "foo${bar}baz"</string>
+					<key>match</key>
+					<string>(?x)
+						((\$\{)(?&lt;name&gt;[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(\}))
+						</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
 						<key>10</key>
 						<dict>
 							<key>name</key>
-							<string>string.unquoted.index.php</string>
+							<string>punctuation.definition.variable.php</string>
 						</dict>
 						<key>11</key>
 						<dict>
 							<key>name</key>
-							<string>invalid.illegal.invalid-simple-array-index.php</string>
+							<string>string.unquoted.index.php</string>
 						</dict>
 						<key>12</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.invalid-simple-array-index.php</string>
+						</dict>
+						<key>13</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.operator.index-end.php</string>
@@ -177,22 +208,22 @@
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.index-start.php</string>
+							<string>invalid.illegal.php</string>
 						</dict>
 						<key>7</key>
 						<dict>
 							<key>name</key>
-							<string>constant.numeric.index.php</string>
+							<string>keyword.operator.index-start.php</string>
 						</dict>
 						<key>8</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.index.php</string>
+							<string>constant.numeric.index.php</string>
 						</dict>
 						<key>9</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.php</string>
+							<string>variable.other.index.php</string>
 						</dict>
 					</dict>
 					<key>comment</key>
@@ -202,38 +233,18 @@
 						((\$)(?&lt;name&gt;[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*))
 						(?:
 							(-&gt;)
-							(\g&lt;name&gt;)
+								(?:
+									(\g&lt;name&gt;)
+									|
+									(\$\g&lt;name&gt;)
+								)
 							|
 							(\[)
 								(?:(\d+)|((\$)\g&lt;name&gt;)|(\w+)|(.*?))
 							(\])
+							|
+							(\$foo)
 						)?
-						</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.variable.php</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.variable.php</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Simple syntax with braces: "foo${bar}baz"</string>
-					<key>match</key>
-					<string>(?x)
-						((\$\{)(?&lt;name&gt;[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(\}))
 						</string>
 				</dict>
 				<dict>
