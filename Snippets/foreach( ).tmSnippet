@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>foreach (\$${1:variable} as \$${2:key} =&gt; \$${3:value}) {
+	<string>foreach (\$${1:variable} as \$${2:key}${3: =&gt; \$${4:value}}) {
 	${0:# code...}
 }</string>
 	<key>name</key>
