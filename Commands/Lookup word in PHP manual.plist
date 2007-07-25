@@ -25,7 +25,44 @@
 					then
 						exit_show_tool_tip "No documentation found for '$TM_CURRENT_WORD'"
 				fi
-				URL="file://$PHP_MANUAL_LOCATION/$URL.html"
+				. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+				html_header "PHP Help" "${TM_FILENAME:-}"
+				cat &lt;&lt;-'HTML'
+				&lt;script type="text/javascript" charset="utf-8"&gt;
+				function jump(page) {
+					TextMate.isBusy = true;
+					res = TextMate.system('cat "$PHP_MANUAL_LOCATION"/' + page, null).outputString;
+					document.getElementById('php_help').innerHTML = res;
+					TextMate.isBusy = false;
+					setupLinks();
+
+					historyList = document.getElementById('history_list');
+					TextMate.log(historyList);
+					item = document.createElement('option');
+					TextMate.log(item);
+					item.value = page;
+					TextMate.log(page);
+					item.innerText = res.match(/&gt;(.+?)&lt;\/TITLE/)[1];
+					historyList.appendChild(item);
+					item.selected = true;
+				}
+				
+				function setupLinks() {
+					var link, links = document.links;
+					for (i = 0; i &lt; links.length; i++) {
+					    link = links[i];
+					    if (matches = link.href.match(/^file:.+\/(.+.html)$/)) {
+					        link.href = 'javascript:jump("' + matches[1] + '")';
+					    }
+					}
+				}
+				&lt;/script&gt;
+				HTML
+				echo '&lt;select id="history_list" onchange="jump(this.options[this.selectedIndex].value)"&gt;&lt;/select&gt;'
+				echo '&lt;div id="php_help"&gt;&lt;/div&gt;'
+				echo '&lt;script&gt;jump("'"$URL"'.html");&lt;/script&gt;'
+				html_footer
+				exit_show_html
 			else URL="http://php.net/manual/en/$URL.php"
 		fi
 		exit_show_html "&lt;meta http-equiv='Refresh' content='0;URL=$URL'&gt;"
