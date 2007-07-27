@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
-result = `#{ENV['TM_PHP'] || 'php'} -l`
+result = `#{ENV['TM_PHP'] || 'php'} -d display_errors=on -l`
 puts result
 TextMate.go_to :line =&gt; $1 if result =~ /line (\d+)/</string>
 	<key>input</key>
