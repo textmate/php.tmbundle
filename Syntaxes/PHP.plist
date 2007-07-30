@@ -1730,10 +1730,19 @@
 					</array>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>\\.</string>
+					<key>begin</key>
+					<string>`</string>
+					<key>end</key>
+					<string>`</string>
 					<key>name</key>
-					<string>constant.character.escape.php</string>
+					<string>string.quoted.backtick.sql</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#interpolation</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1749,6 +1758,12 @@
 							<string>#interpolation</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.php</string>
 				</dict>
 				<dict>
 					<key>include</key>
