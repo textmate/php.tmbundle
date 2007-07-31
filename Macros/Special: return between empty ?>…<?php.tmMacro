@@ -21,8 +21,7 @@
 		</dict>
 	</array>
 	<key>keyEquivalent</key>
-	<string>
-</string>
+	<string></string>
 	<key>name</key>
 	<string>Special: return between empty ?&gt;…&lt;?php</string>
 	<key>scope</key>
