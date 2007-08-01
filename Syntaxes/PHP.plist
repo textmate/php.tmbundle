@@ -1675,7 +1675,7 @@
 					<key>end</key>
 					<string>(?=")</string>
 					<key>name</key>
-					<string>string.quoted.backtick.unclosed.sql</string>
+					<string>string.quoted.other.backtick.unclosed.sql</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1735,7 +1735,7 @@
 					<key>end</key>
 					<string>`</string>
 					<key>name</key>
-					<string>string.quoted.backtick.sql</string>
+					<string>string.quoted.other.backtick.sql</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1844,7 +1844,7 @@
 					<key>end</key>
 					<string>(?=')</string>
 					<key>name</key>
-					<string>string.quoted.backtick.unclosed.sql</string>
+					<string>string.quoted.other.backtick.unclosed.sql</string>
 					<key>patterns</key>
 					<array>
 						<dict>
