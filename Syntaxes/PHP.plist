@@ -1107,7 +1107,7 @@
 					<key>match</key>
 					<string>;</string>
 					<key>name</key>
-					<string>keyword.operator.terminator.php</string>
+					<string>punctuation.terminator.expression.php</string>
 				</dict>
 				<dict>
 					<key>match</key>
