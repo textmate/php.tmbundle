@@ -1383,7 +1383,7 @@
 					<key>match</key>
 					<string>((https?|s?ftp|ftps|file|smb|afp|nfs|(x-)?man|gopher|txmt)://|mailto:)[-:@a-zA-Z0-9_.~%+/?=&amp;#]+(?&lt;![.?:])</string>
 					<key>name</key>
-					<string>markup.underline.link</string>
+					<string>markup.underline.link.php</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -1396,7 +1396,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>markup.underline.link</string>
+							<string>markup.underline.link.php</string>
 						</dict>
 					</dict>
 					<key>match</key>
