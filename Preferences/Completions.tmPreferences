@@ -74,7 +74,6 @@
         <string>addFromString</string>
         <string>addcslashes</string>
         <string>addslashes</string>
-        <string>adoptNode</string>
         <string>apache_child_terminate</string>
         <string>apache_get_modules</string>
         <string>apache_get_version</string>
@@ -105,9 +104,6 @@
         <string>apache_reset_timeout</string>
         <string>apache_response_headers</string>
         <string>apache_setenv</string>
-        <string>append</string>
-        <string>appendChild</string>
-        <string>appendData</string>
         <string>array_change_key_case</string>
         <string>array_chunk</string>
         <string>array_combine</string>
@@ -161,16 +157,9 @@
         <string>asort</string>
         <string>assert</string>
         <string>assert_options</string>
-        <string>assign</string>
-        <string>assignelem</string>
         <string>atan</string>
         <string>atan2</string>
         <string>atanh</string>
-        <string>attr_get</string>
-        <string>attr_set</string>
-        <string>auth_name</string>
-        <string>auth_type</string>
-        <string>autocommit</string>
         <string>base64_decode</string>
         <string>base64_encode</string>
         <string>base_convert</string>
@@ -186,8 +175,6 @@
         <string>bcsqrt</string>
         <string>bcsub</string>
         <string>bin2hex</string>
-        <string>bind_param</string>
-        <string>bind_result</string>
         <string>bind_textdomain_codeset</string>
         <string>bindec</string>
         <string>bindtextdomain</string>
@@ -203,16 +190,13 @@
         <string>birdstep_off_autocommit</string>
         <string>birdstep_result</string>
         <string>birdstep_rollback</string>
-        <string>bzclose</string>
         <string>bzcompress</string>
         <string>bzdecompress</string>
         <string>bzerrno</string>
         <string>bzerror</string>
         <string>bzerrstr</string>
-        <string>bzflush</string>
         <string>bzopen</string>
         <string>bzread</string>
-        <string>bzwrite</string>
         <string>cal_days_in_month</string>
         <string>cal_from_jd</string>
         <string>cal_info</string>
@@ -221,16 +205,11 @@
         <string>call_user_func_array</string>
         <string>call_user_method</string>
         <string>call_user_method_array</string>
-        <string>canSetParameter</string>
         <string>ceil</string>
-        <string>change_user</string>
-        <string>character_set_name</string>
         <string>chdir</string>
         <string>checkdate</string>
-        <string>checkdnsrr</string>
         <string>chgrp</string>
         <string>chmod</string>
-        <string>chop</string>
         <string>chown</string>
         <string>chr</string>
         <string>chroot</string>
@@ -239,8 +218,6 @@
         <string>class_implements</string>
         <string>class_parents</string>
         <string>clearstatcache</string>
-        <string>client_encoding</string>
-        <string>cloneNode</string>
         <string>close</string>
         <string>closedir</string>
         <string>closelog</string>
@@ -250,11 +227,8 @@
         <string>com_load_typelib</string>
         <string>com_message_pump</string>
         <string>com_print_typeinfo</string>
-        <string>commit</string>
         <string>compact</string>
-        <string>compareDocumentPosition</string>
         <string>confirm_extname_compiled</string>
-        <string>connect</string>
         <string>connection_aborted</string>
         <string>connection_status</string>
         <string>constant</string>
@@ -267,17 +241,7 @@
         <string>count</string>
         <string>count_chars</string>
         <string>crc32</string>
-        <string>createAttribute</string>
-        <string>createAttributeNS</string>
-        <string>createCDATASection</string>
-        <string>createComment</string>
-        <string>createDocumentFragment</string>
-        <string>createElement</string>
-        <string>createElementNS</string>
         <string>createEmptyDir</string>
-        <string>createEntityReference</string>
-        <string>createProcessingInstruction</string>
-        <string>createTextNode</string>
         <string>create_function</string>
         <string>crypt</string>
         <string>ctype_alnum</string>
@@ -310,7 +274,6 @@
         <string>curl_setopt_array</string>
         <string>curl_version</string>
         <string>current</string>
-        <string>data_seek</string>
         <string>date</string>
         <string>date_create</string>
         <string>date_date_set</string>
@@ -356,7 +319,6 @@
         <string>dbase_replace_record</string>
         <string>dcgettext</string>
         <string>dcngettext</string>
-        <string>debug</string>
         <string>debug_backtrace</string>
         <string>debug_print_backtrace</string>
         <string>debug_zval_dump</string>
@@ -367,18 +329,13 @@
         <string>define_syslog_variables</string>
         <string>defined</string>
         <string>deg2rad</string>
-        <string>deleteData</string>
         <string>deleteIndex</string>
         <string>deleteName</string>
         <string>dgettext</string>
         <string>dir</string>
         <string>dirname</string>
-        <string>disable_reads_from_master</string>
-        <string>disable_rpl_parse</string>
-        <string>discard_request_body</string>
         <string>disk_free_space</string>
         <string>disk_total_space</string>
-        <string>diskfreespace</string>
         <string>dl</string>
         <string>dngettext</string>
         <string>dns_check_record</string>
@@ -489,32 +446,20 @@
         <string>dom_xpath_evaluate</string>
         <string>dom_xpath_query</string>
         <string>dom_xpath_register_ns</string>
-        <string>doubleval</string>
-        <string>dump_debug_info</string>
         <string>each</string>
         <string>easter_date</string>
         <string>easter_days</string>
-        <string>embedded_server_end</string>
-        <string>embedded_server_start</string>
-        <string>enable_reads_from_master</string>
-        <string>enable_rpl_parse</string>
         <string>end</string>
-        <string>eof</string>
-        <string>erase</string>
         <string>ereg</string>
         <string>ereg_replace</string>
         <string>eregi</string>
         <string>eregi_replace</string>
-        <string>err_headers_out</string>
         <string>error_get_last</string>
         <string>error_log</string>
         <string>error_reporting</string>
-        <string>escape_string</string>
         <string>escapeshellarg</string>
         <string>escapeshellcmd</string>
-        <string>evaluate</string>
         <string>exec</string>
-        <string>execute</string>
         <string>exif_imagetype</string>
         <string>exif_read_data</string>
         <string>exif_tagname</string>
@@ -522,60 +467,9 @@
         <string>exp</string>
         <string>explode</string>
         <string>expm1</string>
-        <string>export</string>
         <string>extension_loaded</string>
         <string>extract</string>
         <string>ezmlm_hash</string>
-        <string>fbird_add_user</string>
-        <string>fbird_affected_rows</string>
-        <string>fbird_backup</string>
-        <string>fbird_blob_add</string>
-        <string>fbird_blob_cancel</string>
-        <string>fbird_blob_close</string>
-        <string>fbird_blob_create</string>
-        <string>fbird_blob_echo</string>
-        <string>fbird_blob_get</string>
-        <string>fbird_blob_import</string>
-        <string>fbird_blob_info</string>
-        <string>fbird_blob_open</string>
-        <string>fbird_close</string>
-        <string>fbird_commit</string>
-        <string>fbird_commit_ret</string>
-        <string>fbird_connect</string>
-        <string>fbird_db_info</string>
-        <string>fbird_delete_user</string>
-        <string>fbird_drop_db</string>
-        <string>fbird_errcode</string>
-        <string>fbird_errmsg</string>
-        <string>fbird_execute</string>
-        <string>fbird_fetch_assoc</string>
-        <string>fbird_fetch_object</string>
-        <string>fbird_fetch_row</string>
-        <string>fbird_field_info</string>
-        <string>fbird_free_event_handler</string>
-        <string>fbird_free_query</string>
-        <string>fbird_free_result</string>
-        <string>fbird_gen_id</string>
-        <string>fbird_maintain_db</string>
-        <string>fbird_modify_user</string>
-        <string>fbird_name_result</string>
-        <string>fbird_num_fields</string>
-        <string>fbird_num_params</string>
-        <string>fbird_num_rows</string>
-        <string>fbird_param_info</string>
-        <string>fbird_pconnect</string>
-        <string>fbird_prepare</string>
-        <string>fbird_query</string>
-        <string>fbird_restore</string>
-        <string>fbird_rollback</string>
-        <string>fbird_rollback_ret</string>
-        <string>fbird_server_info</string>
-        <string>fbird_service_attach</string>
-        <string>fbird_service_detach</string>
-        <string>fbird_set_event_handler</string>
-        <string>fbird_trans</string>
-        <string>fbird_wait_event</string>
-        <string>fbsql</string>
         <string>fbsql_affected_rows</string>
         <string>fbsql_autocommit</string>
         <string>fbsql_blob_size</string>
@@ -633,7 +527,6 @@
         <string>fbsql_start_db</string>
         <string>fbsql_stop_db</string>
         <string>fbsql_table_name</string>
-        <string>fbsql_tablename</string>
         <string>fbsql_username</string>
         <string>fbsql_warnings</string>
         <string>fclose</string>
@@ -673,21 +566,11 @@
         <string>fdf_set_value</string>
         <string>fdf_set_version</string>
         <string>feof</string>
-        <string>fetch</string>
-        <string>fetch_array</string>
-        <string>fetch_assoc</string>
-        <string>fetch_field</string>
-        <string>fetch_field_direct</string>
-        <string>fetch_fields</string>
-        <string>fetch_object</string>
-        <string>fetch_row</string>
         <string>fflush</string>
         <string>fgetc</string>
         <string>fgetcsv</string>
         <string>fgets</string>
         <string>fgetss</string>
-        <string>field_count</string>
-        <string>field_seek</string>
         <string>file</string>
         <string>file_exists</string>
         <string>file_get_contents</string>
@@ -706,8 +589,6 @@
         <string>filter_input_array</string>
         <string>filter_var</string>
         <string>filter_var_array</string>
-        <string>findOffset16</string>
-        <string>findOffset32</string>
         <string>floatval</string>
         <string>flock</string>
         <string>floor</string>
@@ -718,10 +599,7 @@
         <string>fpassthru</string>
         <string>fprintf</string>
         <string>fputcsv</string>
-        <string>fputs</string>
         <string>fread</string>
-        <string>free</string>
-        <string>free_result</string>
         <string>frenchtojd</string>
         <string>fscanf</string>
         <string>fseek</string>
@@ -753,7 +631,6 @@
         <string>ftp_pasv</string>
         <string>ftp_put</string>
         <string>ftp_pwd</string>
-        <string>ftp_quit</string>
         <string>ftp_raw</string>
         <string>ftp_rawlist</string>
         <string>ftp_rename</string>
@@ -771,35 +648,17 @@
         <string>fwrite</string>
         <string>gd_info</string>
         <string>getArchiveComment</string>
-        <string>getAttribute</string>
-        <string>getAttributeNS</string>
-        <string>getAttributeNode</string>
-        <string>getAttributeNodeNS</string>
         <string>getCommentIndex</string>
         <string>getCommentName</string>
-        <string>getDomimplementation</string>
-        <string>getDomimplementations</string>
-        <string>getElementById</string>
-        <string>getElementsByTagName</string>
-        <string>getElementsByTagNameNS</string>
-        <string>getFeature</string>
         <string>getFromIndex</string>
         <string>getFromName</string>
-        <string>getName</string>
         <string>getNameIndex</string>
-        <string>getNamedItem</string>
-        <string>getNamedItemNS</string>
-        <string>getNamespaceURI</string>
-        <string>getParameter</string>
         <string>getStream</string>
-        <string>getUserData</string>
         <string>get_browser</string>
         <string>get_cfg_var</string>
-        <string>get_charset</string>
         <string>get_class</string>
         <string>get_class_methods</string>
         <string>get_class_vars</string>
-        <string>get_client_info</string>
         <string>get_current_user</string>
         <string>get_declared_classes</string>
         <string>get_declared_interfaces</string>
@@ -818,20 +677,15 @@
         <string>get_object_vars</string>
         <string>get_parent_class</string>
         <string>get_resource_type</string>
-        <string>get_server_info</string>
-        <string>get_warnings</string>
         <string>getallheaders</string>
-        <string>getbuffering</string>
         <string>getcwd</string>
         <string>getdate</string>
-        <string>getelem</string>
         <string>getenv</string>
         <string>gethostbyaddr</string>
         <string>gethostbyname</string>
         <string>gethostbynamel</string>
         <string>getimagesize</string>
         <string>getlastmod</string>
-        <string>getmxrr</string>
         <string>getmygid</string>
         <string>getmyinode</string>
         <string>getmypid</string>
@@ -890,32 +744,13 @@
         <string>gmp_xor</string>
         <string>gmstrftime</string>
         <string>gregoriantojd</string>
-        <string>gzclose</string>
         <string>gzcompress</string>
         <string>gzdeflate</string>
         <string>gzencode</string>
-        <string>gzeof</string>
         <string>gzfile</string>
-        <string>gzgetc</string>
-        <string>gzgets</string>
-        <string>gzgetss</string>
         <string>gzinflate</string>
         <string>gzopen</string>
-        <string>gzpassthru</string>
-        <string>gzputs</string>
-        <string>gzread</string>
-        <string>gzrewind</string>
-        <string>gzseek</string>
-        <string>gztell</string>
         <string>gzuncompress</string>
-        <string>gzwrite</string>
-        <string>handle</string>
-        <string>handleError</string>
-        <string>hasAttribute</string>
-        <string>hasAttributeNS</string>
-        <string>hasAttributes</string>
-        <string>hasChildNodes</string>
-        <string>hasExsltSupport</string>
         <string>hash</string>
         <string>hash_algos</string>
         <string>hash_file</string>
@@ -927,9 +762,7 @@
         <string>hash_update_file</string>
         <string>hash_update_stream</string>
         <string>header</string>
-        <string>headers_in</string>
         <string>headers_list</string>
-        <string>headers_out</string>
         <string>headers_sent</string>
         <string>hebrev</string>
         <string>hebrevc</string>
@@ -1063,6 +896,8 @@
         <string>imagegd</string>
         <string>imagegd2</string>
         <string>imagegif</string>
+        <string>imagegrabscreen</string>
+        <string>imagegrabwindow</string>
         <string>imageinterlace</string>
         <string>imageistruecolor</string>
         <string>imagejpeg</string>
@@ -1108,7 +943,6 @@
         <string>imap_check</string>
         <string>imap_clearflag_full</string>
         <string>imap_close</string>
-        <string>imap_create</string>
         <string>imap_createmailbox</string>
         <string>imap_delete</string>
         <string>imap_deletemailbox</string>
@@ -1118,19 +952,15 @@
         <string>imap_fetchbody</string>
         <string>imap_fetchheader</string>
         <string>imap_fetchstructure</string>
-        <string>imap_fetchtext</string>
         <string>imap_get_quota</string>
         <string>imap_get_quotaroot</string>
         <string>imap_getacl</string>
         <string>imap_getmailboxes</string>
         <string>imap_getsubscribed</string>
-        <string>imap_header</string>
         <string>imap_headerinfo</string>
         <string>imap_headers</string>
         <string>imap_last_error</string>
         <string>imap_list</string>
-        <string>imap_listmailbox</string>
-        <string>imap_listsubscribed</string>
         <string>imap_lsub</string>
         <string>imap_mail</string>
         <string>imap_mail_compose</string>
@@ -1144,7 +974,6 @@
         <string>imap_open</string>
         <string>imap_ping</string>
         <string>imap_qprint</string>
-        <string>imap_rename</string>
         <string>imap_renamemailbox</string>
         <string>imap_reopen</string>
         <string>imap_rfc822_parse_adrlist</string>
@@ -1168,47 +997,29 @@
         <string>imap_utf7_encode</string>
         <string>imap_utf8</string>
         <string>implode</string>
-        <string>import</string>
-        <string>importNode</string>
-        <string>importStylesheet</string>
         <string>import_request_variables</string>
         <string>in_array</string>
         <string>inet_ntop</string>
         <string>inet_pton</string>
-        <string>ini_alter</string>
         <string>ini_get</string>
         <string>ini_get_all</string>
         <string>ini_restore</string>
         <string>ini_set</string>
-        <string>init</string>
-        <string>insertBefore</string>
-        <string>insertData</string>
         <string>interface_exists</string>
         <string>intval</string>
         <string>ip2long</string>
         <string>iptcembed</string>
         <string>iptcparse</string>
-        <string>isDefaultNamespace</string>
-        <string>isElementContentWhitespace</string>
-        <string>isEqualNode</string>
-        <string>isId</string>
-        <string>isSameNode</string>
-        <string>isSupported</string>
-        <string>isWhitespaceInElementContent</string>
         <string>is_a</string>
         <string>is_array</string>
         <string>is_bool</string>
         <string>is_callable</string>
         <string>is_dir</string>
-        <string>is_double</string>
         <string>is_executable</string>
         <string>is_file</string>
         <string>is_finite</string>
         <string>is_float</string>
         <string>is_infinite</string>
-        <string>is_initial_req</string>
-        <string>is_int</string>
-        <string>is_integer</string>
         <string>is_link</string>
         <string>is_long</string>
         <string>is_nan</string>
@@ -1216,15 +1027,12 @@
         <string>is_numeric</string>
         <string>is_object</string>
         <string>is_readable</string>
-        <string>is_real</string>
         <string>is_resource</string>
         <string>is_scalar</string>
         <string>is_string</string>
         <string>is_subclass_of</string>
         <string>is_uploaded_file</string>
         <string>is_writable</string>
-        <string>is_writeable</string>
-        <string>item</string>
         <string>iterator_apply</string>
         <string>iterator_count</string>
         <string>iterator_to_array</string>
@@ -1238,10 +1046,10 @@
         <string>jewishtojd</string>
         <string>join</string>
         <string>jpeg2wbmp</string>
+        <string>json_decode</string>
+        <string>json_encode</string>
         <string>juliantojd</string>
         <string>key</string>
-        <string>key_exists</string>
-        <string>kill</string>
         <string>krsort</string>
         <string>ksort</string>
         <string>lcg_value</string>
@@ -1249,7 +1057,6 @@
         <string>ldap_8859_to_t61</string>
         <string>ldap_add</string>
         <string>ldap_bind</string>
-        <string>ldap_close</string>
         <string>ldap_compare</string>
         <string>ldap_connect</string>
         <string>ldap_count_entries</string>
@@ -1267,13 +1074,11 @@
         <string>ldap_get_dn</string>
         <string>ldap_get_entries</string>
         <string>ldap_get_option</string>
-        <string>ldap_get_values</string>
         <string>ldap_get_values_len</string>
         <string>ldap_list</string>
         <string>ldap_mod_add</string>
         <string>ldap_mod_del</string>
         <string>ldap_mod_replace</string>
-        <string>ldap_modify</string>
         <string>ldap_next_attribute</string>
         <string>ldap_next_entry</string>
         <string>ldap_next_reference</string>
@@ -1298,24 +1103,16 @@
         <string>libxml_use_internal_errors</string>
         <string>link</string>
         <string>linkinfo</string>
-        <string>load</string>
         <string>localeconv</string>
         <string>localtime</string>
         <string>locateName</string>
         <string>log</string>
         <string>log10</string>
         <string>log1p</string>
-        <string>log_error</string>
         <string>long2ip</string>
-        <string>lookupNamespaceUri</string>
-        <string>lookupPrefix</string>
-        <string>lookup_file</string>
-        <string>lookup_uri</string>
         <string>lstat</string>
         <string>ltrim</string>
-        <string>magic_quotes_runtime</string>
         <string>mail</string>
-        <string>master_query</string>
         <string>max</string>
         <string>mb_check_encoding</string>
         <string>mb_convert_case</string>
@@ -1372,20 +1169,6 @@
         <string>mb_substitute_character</string>
         <string>mb_substr</string>
         <string>mb_substr_count</string>
-        <string>mbereg</string>
-        <string>mbereg_match</string>
-        <string>mbereg_replace</string>
-        <string>mbereg_search</string>
-        <string>mbereg_search_getpos</string>
-        <string>mbereg_search_getregs</string>
-        <string>mbereg_search_init</string>
-        <string>mbereg_search_pos</string>
-        <string>mbereg_search_regs</string>
-        <string>mbereg_search_setpos</string>
-        <string>mberegi</string>
-        <string>mberegi_replace</string>
-        <string>mbregex_encoding</string>
-        <string>mbsplit</string>
         <string>mcrypt_cbc</string>
         <string>mcrypt_cfb</string>
         <string>mcrypt_create_iv</string>
@@ -1424,12 +1207,10 @@
         <string>md5</string>
         <string>md5_file</string>
         <string>mdecrypt_generic</string>
-        <string>meets_conditions</string>
         <string>memory_get_peak_usage</string>
         <string>memory_get_usage</string>
         <string>metaphone</string>
         <string>method_exists</string>
-        <string>method_uri</string>
         <string>mhash</string>
         <string>mhash_count</string>
         <string>mhash_get_block_size</string>
@@ -1446,7 +1227,6 @@
         <string>mkdir</string>
         <string>mktime</string>
         <string>money_format</string>
-        <string>more_results</string>
         <string>move_uploaded_file</string>
         <string>msg_get_queue</string>
         <string>msg_receive</string>
@@ -1454,17 +1234,13 @@
         <string>msg_send</string>
         <string>msg_set_queue</string>
         <string>msg_stat_queue</string>
-        <string>msql</string>
         <string>msql_affected_rows</string>
         <string>msql_close</string>
         <string>msql_connect</string>
         <string>msql_create_db</string>
-        <string>msql_createdb</string>
         <string>msql_data_seek</string>
         <string>msql_db_query</string>
-        <string>msql_dbname</string>
         <string>msql_drop_db</string>
-        <string>msql_dropdb</string>
         <string>msql_error</string>
         <string>msql_fetch_array</string>
         <string>msql_fetch_field</string>
@@ -1476,36 +1252,20 @@
         <string>msql_field_seek</string>
         <string>msql_field_table</string>
         <string>msql_field_type</string>
-        <string>msql_fieldflags</string>
-        <string>msql_fieldlen</string>
-        <string>msql_fieldname</string>
-        <string>msql_fieldtable</string>
-        <string>msql_fieldtype</string>
         <string>msql_free_result</string>
-        <string>msql_freeresult</string>
         <string>msql_list_dbs</string>
         <string>msql_list_fields</string>
         <string>msql_list_tables</string>
-        <string>msql_listdbs</string>
-        <string>msql_listfields</string>
-        <string>msql_listtables</string>
         <string>msql_num_fields</string>
         <string>msql_num_rows</string>
-        <string>msql_numfields</string>
-        <string>msql_numrows</string>
         <string>msql_pconnect</string>
         <string>msql_query</string>
-        <string>msql_regcase</string>
         <string>msql_result</string>
         <string>msql_select_db</string>
-        <string>msql_selectdb</string>
-        <string>msql_tablename</string>
-        <string>mssql_affected_rows</string>
         <string>mssql_bind</string>
         <string>mssql_close</string>
         <string>mssql_connect</string>
         <string>mssql_data_seek</string>
-        <string>mssql_deadlock_retry_count</string>
         <string>mssql_execute</string>
         <string>mssql_fetch_array</string>
         <string>mssql_fetch_assoc</string>
@@ -1522,10 +1282,8 @@
         <string>mssql_get_last_message</string>
         <string>mssql_guid_string</string>
         <string>mssql_init</string>
-        <string>mssql_min_client_severity</string>
         <string>mssql_min_error_severity</string>
         <string>mssql_min_message_severity</string>
-        <string>mssql_min_server_severity</string>
         <string>mssql_next_result</string>
         <string>mssql_num_fields</string>
         <string>mssql_num_rows</string>
@@ -1534,22 +1292,16 @@
         <string>mssql_result</string>
         <string>mssql_rows_affected</string>
         <string>mssql_select_db</string>
-        <string>mssql_set_message_handler</string>
-        <string>mssql_unbuffered_query</string>
         <string>mt_getrandmax</string>
         <string>mt_rand</string>
         <string>mt_srand</string>
-        <string>multi_query</string>
-        <string>mysql</string>
         <string>mysql_affected_rows</string>
         <string>mysql_client_encoding</string>
         <string>mysql_close</string>
         <string>mysql_connect</string>
         <string>mysql_create_db</string>
         <string>mysql_data_seek</string>
-        <string>mysql_db_name</string>
         <string>mysql_db_query</string>
-        <string>mysql_dbname</string>
         <string>mysql_drop_db</string>
         <string>mysql_errno</string>
         <string>mysql_error</string>
@@ -1566,13 +1318,7 @@
         <string>mysql_field_seek</string>
         <string>mysql_field_table</string>
         <string>mysql_field_type</string>
-        <string>mysql_fieldflags</string>
-        <string>mysql_fieldlen</string>
-        <string>mysql_fieldname</string>
-        <string>mysql_fieldtable</string>
-        <string>mysql_fieldtype</string>
         <string>mysql_free_result</string>
-        <string>mysql_freeresult</string>
         <string>mysql_get_client_info</string>
         <string>mysql_get_host_info</string>
         <string>mysql_get_proto_info</string>
@@ -1583,32 +1329,22 @@
         <string>mysql_list_fields</string>
         <string>mysql_list_processes</string>
         <string>mysql_list_tables</string>
-        <string>mysql_listdbs</string>
-        <string>mysql_listfields</string>
         <string>mysql_num_fields</string>
         <string>mysql_num_rows</string>
-        <string>mysql_numfields</string>
-        <string>mysql_numrows</string>
         <string>mysql_pconnect</string>
         <string>mysql_ping</string>
         <string>mysql_query</string>
         <string>mysql_real_escape_string</string>
         <string>mysql_result</string>
         <string>mysql_select_db</string>
-        <string>mysql_selectdb</string>
+        <string>mysql_set_charset</string>
         <string>mysql_stat</string>
-        <string>mysql_table_name</string>
-        <string>mysql_tablename</string>
         <string>mysql_thread_id</string>
         <string>mysql_unbuffered_query</string>
-        <string>mysqli</string>
         <string>mysqli_affected_rows</string>
         <string>mysqli_autocommit</string>
-        <string>mysqli_bind_param</string>
-        <string>mysqli_bind_result</string>
         <string>mysqli_change_user</string>
         <string>mysqli_character_set_name</string>
-        <string>mysqli_client_encoding</string>
         <string>mysqli_close</string>
         <string>mysqli_commit</string>
         <string>mysqli_connect</string>
@@ -1625,9 +1361,6 @@
         <string>mysqli_enable_rpl_parse</string>
         <string>mysqli_errno</string>
         <string>mysqli_error</string>
-        <string>mysqli_escape_string</string>
-        <string>mysqli_execute</string>
-        <string>mysqli_fetch</string>
         <string>mysqli_fetch_array</string>
         <string>mysqli_fetch_assoc</string>
         <string>mysqli_fetch_field</string>
@@ -1644,7 +1377,6 @@
         <string>mysqli_get_client_info</string>
         <string>mysqli_get_client_version</string>
         <string>mysqli_get_host_info</string>
-        <string>mysqli_get_metadata</string>
         <string>mysqli_get_proto_info</string>
         <string>mysqli_get_server_info</string>
         <string>mysqli_get_server_version</string>
@@ -1660,7 +1392,6 @@
         <string>mysqli_num_fields</string>
         <string>mysqli_num_rows</string>
         <string>mysqli_options</string>
-        <string>mysqli_param_count</string>
         <string>mysqli_ping</string>
         <string>mysqli_prepare</string>
         <string>mysqli_query</string>
@@ -1673,12 +1404,10 @@
         <string>mysqli_rpl_probe</string>
         <string>mysqli_rpl_query_type</string>
         <string>mysqli_select_db</string>
-        <string>mysqli_send_long_data</string>
         <string>mysqli_send_query</string>
         <string>mysqli_set_charset</string>
         <string>mysqli_set_local_infile_default</string>
         <string>mysqli_set_local_infile_handler</string>
-        <string>mysqli_set_opt</string>
         <string>mysqli_slave_query</string>
         <string>mysqli_sqlstate</string>
         <string>mysqli_ssl_set</string>
@@ -1875,16 +1604,12 @@
         <string>ncurses_wstandout</string>
         <string>ncurses_wvline</string>
         <string>next</string>
-        <string>next_result</string>
         <string>ngettext</string>
         <string>nl2br</string>
         <string>nl_langinfo</string>
-        <string>normalize</string>
-        <string>normalizeDocument</string>
         <string>nsapi_request_headers</string>
         <string>nsapi_response_headers</string>
         <string>nsapi_virtual</string>
-        <string>num_rows</string>
         <string>number_format</string>
         <string>ob_clean</string>
         <string>ob_end_clean</string>
@@ -1931,7 +1656,6 @@
         <string>oci_field_type</string>
         <string>oci_field_type_raw</string>
         <string>oci_free_collection</string>
-        <string>oci_free_cursor</string>
         <string>oci_free_descriptor</string>
         <string>oci_free_statement</string>
         <string>oci_internal_debug</string>
@@ -1968,55 +1692,9 @@
         <string>oci_server_version</string>
         <string>oci_set_prefetch</string>
         <string>oci_statement_type</string>
-        <string>ocibindbyname</string>
-        <string>ocicancel</string>
-        <string>ocicollappend</string>
-        <string>ocicollassignelem</string>
-        <string>ocicollgetelem</string>
-        <string>ocicollmax</string>
-        <string>ocicollsize</string>
-        <string>ocicolltrim</string>
-        <string>ocicolumnisnull</string>
-        <string>ocicolumnname</string>
-        <string>ocicolumnprecision</string>
-        <string>ocicolumnscale</string>
-        <string>ocicolumnsize</string>
-        <string>ocicolumntype</string>
-        <string>ocicolumntyperaw</string>
-        <string>ocicommit</string>
-        <string>ocidefinebyname</string>
-        <string>ocierror</string>
-        <string>ociexecute</string>
-        <string>ocifetch</string>
         <string>ocifetchinto</string>
-        <string>ocifetchstatement</string>
-        <string>ocifreecollection</string>
-        <string>ocifreecursor</string>
-        <string>ocifreedesc</string>
-        <string>ocifreestatement</string>
         <string>ocigetbufferinglob</string>
-        <string>ociinternaldebug</string>
-        <string>ociloadlob</string>
-        <string>ocilogoff</string>
-        <string>ocilogon</string>
-        <string>ocinewcollection</string>
-        <string>ocinewcursor</string>
-        <string>ocinewdescriptor</string>
-        <string>ocinlogon</string>
-        <string>ocinumcols</string>
-        <string>ociparse</string>
-        <string>ocipasswordchange</string>
-        <string>ociplogon</string>
-        <string>ociresult</string>
-        <string>ocirollback</string>
-        <string>ocirowcount</string>
-        <string>ocisavelob</string>
-        <string>ocisavelobfile</string>
-        <string>ociserverversion</string>
         <string>ocisetbufferinglob</string>
-        <string>ocisetprefetch</string>
-        <string>ocistatementtype</string>
-        <string>ociwritelobtofile</string>
         <string>octdec</string>
         <string>odbc_autocommit</string>
         <string>odbc_binmode</string>
@@ -2028,7 +1706,6 @@
         <string>odbc_connect</string>
         <string>odbc_cursor</string>
         <string>odbc_data_source</string>
-        <string>odbc_do</string>
         <string>odbc_error</string>
         <string>odbc_errormsg</string>
         <string>odbc_exec</string>
@@ -2040,7 +1717,6 @@
         <string>odbc_field_len</string>
         <string>odbc_field_name</string>
         <string>odbc_field_num</string>
-        <string>odbc_field_precision</string>
         <string>odbc_field_scale</string>
         <string>odbc_field_type</string>
         <string>odbc_foreignkeys</string>
@@ -2073,10 +1749,10 @@
         <string>openssl_csr_new</string>
         <string>openssl_csr_sign</string>
         <string>openssl_error_string</string>
-        <string>openssl_free_key</string>
-        <string>openssl_get_privatekey</string>
-        <string>openssl_get_publickey</string>
         <string>openssl_open</string>
+        <string>openssl_pkcs12_export</string>
+        <string>openssl_pkcs12_export_to_file</string>
+        <string>openssl_pkcs12_read</string>
         <string>openssl_pkcs7_decrypt</string>
         <string>openssl_pkcs7_encrypt</string>
         <string>openssl_pkcs7_sign</string>
@@ -2102,7 +1778,6 @@
         <string>openssl_x509_free</string>
         <string>openssl_x509_parse</string>
         <string>openssl_x509_read</string>
-        <string>options</string>
         <string>ord</string>
         <string>output_add_rewrite_var</string>
         <string>output_reset_rewrite_vars</string>
@@ -2132,9 +1807,7 @@
         <string>pg_affected_rows</string>
         <string>pg_cancel_query</string>
         <string>pg_client_encoding</string>
-        <string>pg_clientencoding</string>
         <string>pg_close</string>
-        <string>pg_cmdtuples</string>
         <string>pg_connect</string>
         <string>pg_connection_busy</string>
         <string>pg_connection_reset</string>
@@ -2145,10 +1818,8 @@
         <string>pg_dbname</string>
         <string>pg_delete</string>
         <string>pg_end_copy</string>
-        <string>pg_errormessage</string>
         <string>pg_escape_bytea</string>
         <string>pg_escape_string</string>
-        <string>pg_exec</string>
         <string>pg_execute</string>
         <string>pg_fetch_all</string>
         <string>pg_fetch_all_columns</string>
@@ -2165,18 +1836,10 @@
         <string>pg_field_table</string>
         <string>pg_field_type</string>
         <string>pg_field_type_oid</string>
-        <string>pg_fieldisnull</string>
-        <string>pg_fieldname</string>
-        <string>pg_fieldnum</string>
-        <string>pg_fieldprtlen</string>
-        <string>pg_fieldsize</string>
-        <string>pg_fieldtype</string>
         <string>pg_free_result</string>
-        <string>pg_freeresult</string>
         <string>pg_get_notify</string>
         <string>pg_get_pid</string>
         <string>pg_get_result</string>
-        <string>pg_getlastoid</string>
         <string>pg_host</string>
         <string>pg_insert</string>
         <string>pg_last_error</string>
@@ -2193,20 +1856,9 @@
         <string>pg_lo_tell</string>
         <string>pg_lo_unlink</string>
         <string>pg_lo_write</string>
-        <string>pg_loclose</string>
-        <string>pg_locreate</string>
-        <string>pg_loexport</string>
-        <string>pg_loimport</string>
-        <string>pg_loopen</string>
-        <string>pg_loread</string>
-        <string>pg_loreadall</string>
-        <string>pg_lounlink</string>
-        <string>pg_lowrite</string>
         <string>pg_meta_data</string>
         <string>pg_num_fields</string>
         <string>pg_num_rows</string>
-        <string>pg_numfields</string>
-        <string>pg_numrows</string>
         <string>pg_options</string>
         <string>pg_parameter_status</string>
         <string>pg_pconnect</string>
@@ -2216,7 +1868,6 @@
         <string>pg_put_line</string>
         <string>pg_query</string>
         <string>pg_query_params</string>
-        <string>pg_result</string>
         <string>pg_result_error</string>
         <string>pg_result_error_field</string>
         <string>pg_result_seek</string>
@@ -2228,7 +1879,6 @@
         <string>pg_send_query_params</string>
         <string>pg_set_client_encoding</string>
         <string>pg_set_error_verbosity</string>
-        <string>pg_setclientencoding</string>
         <string>pg_trace</string>
         <string>pg_transaction_status</string>
         <string>pg_tty</string>
@@ -2248,13 +1898,10 @@
         <string>phpinfo</string>
         <string>phpversion</string>
         <string>pi</string>
-        <string>ping</string>
         <string>png2wbmp</string>
         <string>popen</string>
-        <string>pos</string>
         <string>posix_access</string>
         <string>posix_ctermid</string>
-        <string>posix_errno</string>
         <string>posix_get_last_error</string>
         <string>posix_getcwd</string>
         <string>posix_getegid</string>
@@ -2297,7 +1944,6 @@
         <string>preg_replace</string>
         <string>preg_replace_callback</string>
         <string>preg_split</string>
-        <string>prepare</string>
         <string>prev</string>
         <string>print_r</string>
         <string>printf</string>
@@ -2327,7 +1973,6 @@
         <string>pspell_store_replacement</string>
         <string>pspell_suggest</string>
         <string>putenv</string>
-        <string>query</string>
         <string>quoted_printable_decode</string>
         <string>quotemeta</string>
         <string>rad2deg</string>
@@ -2335,8 +1980,6 @@
         <string>range</string>
         <string>rawurldecode</string>
         <string>rawurlencode</string>
-        <string>read</string>
-        <string>read_exif_data</string>
         <string>readdir</string>
         <string>readfile</string>
         <string>readgzfile</string>
@@ -2354,70 +1997,32 @@
         <string>readline_redisplay</string>
         <string>readline_write_history</string>
         <string>readlink</string>
-        <string>real_connect</string>
-        <string>real_escape_string</string>
-        <string>real_query</string>
         <string>realpath</string>
-        <string>recode</string>
         <string>recode_file</string>
         <string>recode_string</string>
-        <string>registerNamespace</string>
-        <string>registerPHPFunctions</string>
         <string>register_shutdown_function</string>
         <string>register_tick_function</string>
-        <string>relaxNGValidate</string>
-        <string>relaxNGValidateSource</string>
-        <string>remote_host</string>
-        <string>removeAttribute</string>
-        <string>removeAttributeNS</string>
-        <string>removeAttributeNode</string>
-        <string>removeChild</string>
-        <string>removeNamedItem</string>
-        <string>removeNamedItemNS</string>
-        <string>removeParameter</string>
         <string>rename</string>
         <string>renameIndex</string>
         <string>renameName</string>
-        <string>renameNode</string>
-        <string>replaceChild</string>
-        <string>replaceData</string>
-        <string>replaceWholeText</string>
         <string>reset</string>
         <string>restore_error_handler</string>
         <string>restore_exception_handler</string>
         <string>restore_include_path</string>
-        <string>result_metadata</string>
         <string>rewind</string>
         <string>rewinddir</string>
         <string>rmdir</string>
-        <string>rollback</string>
         <string>round</string>
-        <string>rpl_parse_enabled</string>
-        <string>rpl_probe</string>
-        <string>rpl_query_type</string>
         <string>rsort</string>
         <string>rtrim</string>
-        <string>run</string>
-        <string>satisfies</string>
-        <string>save</string>
-        <string>saveHTML</string>
-        <string>saveHTMLFile</string>
-        <string>saveXML</string>
-        <string>savefile</string>
         <string>scandir</string>
-        <string>schemaValidate</string>
-        <string>seek</string>
-        <string>select_db</string>
         <string>sem_acquire</string>
         <string>sem_get</string>
         <string>sem_release</string>
         <string>sem_remove</string>
-        <string>send_long_data</string>
         <string>serialize</string>
-        <string>server_port</string>
         <string>session_cache_expire</string>
         <string>session_cache_limiter</string>
-        <string>session_commit</string>
         <string>session_decode</string>
         <string>session_destroy</string>
         <string>session_encode</string>
@@ -2436,32 +2041,13 @@
         <string>session_unset</string>
         <string>session_write_close</string>
         <string>setArchiveComment</string>
-        <string>setAttribute</string>
-        <string>setAttributeNS</string>
-        <string>setAttributeNode</string>
-        <string>setAttributeNodeNS</string>
         <string>setCommentIndex</string>
         <string>setCommentName</string>
-        <string>setIdAttribute</string>
-        <string>setIdAttributeNS</string>
-        <string>setIdAttributeNode</string>
-        <string>setNamedItem</string>
-        <string>setNamedItemNS</string>
-        <string>setParameter</string>
-        <string>setUserData</string>
-        <string>set_charset</string>
         <string>set_error_handler</string>
-        <string>set_etag</string>
         <string>set_exception_handler</string>
-        <string>set_file_buffer</string>
         <string>set_include_path</string>
-        <string>set_last_modified</string>
-        <string>set_local_infile_default</string>
-        <string>set_local_infile_handler</string>
         <string>set_magic_quotes_runtime</string>
-        <string>set_opt</string>
         <string>set_time_limit</string>
-        <string>setbuffering</string>
         <string>setcookie</string>
         <string>setlocale</string>
         <string>setrawcookie</string>
@@ -2481,7 +2067,6 @@
         <string>shmop_read</string>
         <string>shmop_size</string>
         <string>shmop_write</string>
-        <string>show_source</string>
         <string>shuffle</string>
         <string>similar_text</string>
         <string>simplexml_import_dom</string>
@@ -2489,9 +2074,6 @@
         <string>simplexml_load_string</string>
         <string>sin</string>
         <string>sinh</string>
-        <string>size</string>
-        <string>sizeof</string>
-        <string>slave_query</string>
         <string>sleep</string>
         <string>smfi_addheader</string>
         <string>smfi_addrcpt</string>
@@ -2516,7 +2098,6 @@
         <string>snmp_get_valueretrieval</string>
         <string>snmp_read_mib</string>
         <string>snmp_set_enum_print</string>
-        <string>snmp_set_oid_numeric_print</string>
         <string>snmp_set_oid_output_format</string>
         <string>snmp_set_quick_print</string>
         <string>snmp_set_valueretrieval</string>
@@ -2525,7 +2106,6 @@
         <string>snmprealwalk</string>
         <string>snmpset</string>
         <string>snmpwalk</string>
-        <string>snmpwalkoid</string>
         <string>socket_accept</string>
         <string>socket_bind</string>
         <string>socket_clear_error</string>
@@ -2535,8 +2115,6 @@
         <string>socket_create_listen</string>
         <string>socket_create_pair</string>
         <string>socket_get_option</string>
-        <string>socket_get_status</string>
-        <string>socket_getopt</string>
         <string>socket_getpeername</string>
         <string>socket_getsockname</string>
         <string>socket_last_error</string>
@@ -2548,16 +2126,12 @@
         <string>socket_send</string>
         <string>socket_sendto</string>
         <string>socket_set_block</string>
-        <string>socket_set_blocking</string>
         <string>socket_set_nonblock</string>
         <string>socket_set_option</string>
-        <string>socket_set_timeout</string>
-        <string>socket_setopt</string>
         <string>socket_shutdown</string>
         <string>socket_strerror</string>
         <string>socket_write</string>
         <string>solid_fetch_prev</string>
-        <string>some_auth_required</string>
         <string>sort</string>
         <string>soundex</string>
         <string>spl_autoload</string>
@@ -2569,7 +2143,6 @@
         <string>spl_classes</string>
         <string>spl_object_hash</string>
         <string>split</string>
-        <string>splitText</string>
         <string>spliti</string>
         <string>sprintf</string>
         <string>sql_regcase</string>
@@ -2590,9 +2163,7 @@
         <string>sqlite_fetch_column_types</string>
         <string>sqlite_fetch_object</string>
         <string>sqlite_fetch_single</string>
-        <string>sqlite_fetch_string</string>
         <string>sqlite_field_name</string>
-        <string>sqlite_has_more</string>
         <string>sqlite_has_prev</string>
         <string>sqlite_key</string>
         <string>sqlite_last_error</string>
@@ -2616,13 +2187,9 @@
         <string>sqrt</string>
         <string>srand</string>
         <string>sscanf</string>
-        <string>ssl_set</string>
         <string>stat</string>
         <string>statIndex</string>
         <string>statName</string>
-        <string>stmt</string>
-        <string>stmt_init</string>
-        <string>store_result</string>
         <string>str_ireplace</string>
         <string>str_pad</string>
         <string>str_repeat</string>
@@ -2656,7 +2223,6 @@
         <string>stream_get_meta_data</string>
         <string>stream_get_transports</string>
         <string>stream_get_wrappers</string>
-        <string>stream_register_wrapper</string>
         <string>stream_select</string>
         <string>stream_set_blocking</string>
         <string>stream_set_timeout</string>
@@ -2703,7 +2269,6 @@
         <string>substr_compare</string>
         <string>substr_count</string>
         <string>substr_replace</string>
-        <string>substringData</string>
         <string>swfaction</string>
         <string>swfbitmap</string>
         <string>swfbutton</string>
@@ -2754,10 +2319,8 @@
         <string>system</string>
         <string>tan</string>
         <string>tanh</string>
-        <string>tell</string>
         <string>tempnam</string>
         <string>textdomain</string>
-        <string>thread_safe</string>
         <string>tidyNode</string>
         <string>tidy_access_count</string>
         <string>tidy_clean_repair</string>
@@ -2797,12 +2360,8 @@
         <string>token_get_all</string>
         <string>token_name</string>
         <string>touch</string>
-        <string>transformToDoc</string>
-        <string>transformToUri</string>
-        <string>transformToXml</string>
         <string>trigger_error</string>
         <string>trim</string>
-        <string>truncate</string>
         <string>uasort</string>
         <string>ucfirst</string>
         <string>ucwords</string>
@@ -2817,15 +2376,12 @@
         <string>unpack</string>
         <string>unregister_tick_function</string>
         <string>unserialize</string>
-        <string>update_mtime</string>
         <string>urldecode</string>
         <string>urlencode</string>
-        <string>use_result</string>
         <string>usleep</string>
         <string>usort</string>
         <string>utf8_decode</string>
         <string>utf8_encode</string>
-        <string>validate</string>
         <string>var_dump</string>
         <string>var_export</string>
         <string>variant_abs</string>
@@ -2854,18 +2410,6 @@
         <string>variant_set_type</string>
         <string>variant_sub</string>
         <string>variant_xor</string>
-        <string>velocis_autocommit</string>
-        <string>velocis_close</string>
-        <string>velocis_commit</string>
-        <string>velocis_connect</string>
-        <string>velocis_exec</string>
-        <string>velocis_fetch</string>
-        <string>velocis_fieldname</string>
-        <string>velocis_fieldnum</string>
-        <string>velocis_freeresult</string>
-        <string>velocis_off_autocommit</string>
-        <string>velocis_result</string>
-        <string>velocis_rollback</string>
         <string>version_compare</string>
         <string>vfprintf</string>
         <string>virtual</string>
@@ -2878,10 +2422,6 @@
         <string>wddx_serialize_value</string>
         <string>wddx_serialize_vars</string>
         <string>wordwrap</string>
-        <string>write</string>
-        <string>writetemporary</string>
-        <string>writetofile</string>
-        <string>xinclude</string>
         <string>xml_error_string</string>
         <string>xml_get_current_byte_index</string>
         <string>xml_get_current_column_number</string>

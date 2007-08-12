@@ -10,17 +10,15 @@
 
 require 'rubygems'
 require 'builder'
+require '/Applications/TextMate.app/Contents/SharedSupport/Support/lib/osx/plist'
 
 path = ARGV.join('')
-parsefiles = Dir[path + '**/*.{cpp,c,h,ec}']
+parsefiles = Dir[path + '/**/*.{cpp,c,h,ec}']
 
 unless parsefiles
   puts "No files found"
   exit
 end
-
-# These are language constructs rather than functions, so don't appear in the generated list
-ConstructFunctions = %w[eval echo empty isset unset print list array]
 
 # =======================
 # = Source file parsing =
@@ -34,17 +32,17 @@ proto_regex  = /^\s*?    # Start of the line
                  \s+?
                  proto
                  \s+?
-                 (\S+?)?  # Type
+                 (\S+?)? # Type
                  \s+?
-                 (.+?)         # Function name
-                 $             # End of the prototype line
-                 (.+?)         # Function description
-                \*\/      # End of the comment
+                 (.+?)   # Function name
+                 $       # End of the prototype line
+                 (.+?)   # Function description
+                \*\/     # End of the comment
               /msx
-alias_regex  = /PHP_FALIAS\((\w+),\s*(\w+)/
+# alias_regex  = /PHP_FALIAS\((\w+),\s*(\w+)/
 
 functions = {}
-aliases = {}
+# aliases = {}
 sections = {}
 classes = []
 
@@ -70,18 +68,18 @@ parsefiles.sort.each_with_index do |file, key|
       sections[section] << name
     end
   end
-  if file_contents.match(alias_regex)
-    file_contents.gsub(alias_regex) do
-      aliases[$1] = $2
-    end
-  end
+  # if file_contents.match(alias_regex)
+  #   file_contents.gsub(alias_regex) do
+  #     aliases[$1] = $2
+  #   end
+  # end
 end
 
-aliases.each_pair do |func_alias, func|
-  next unless functions[func]
-  functions[func_alias] = functions[func].dup
-  sections[functions[func][:type]] << func_alias
-end
+# aliases.each_pair do |func_alias, func|
+#   next unless functions[func]
+#   functions[func_alias] = functions[func].dup
+#   sections[functions[func][:type]] << func_alias
+# end
 
 classes.uniq!
 
@@ -155,20 +153,44 @@ def process_list(list)
   end
 end
 
-def print_pattern(name, list, require_parens = true)
+def pattern_for(name, list)
   return unless list = process_list(list)
-  puts <<-END
-{	name = '#{ name }';
-match = '(?i)\\b#{ list }\\b#{"(?=\\s*\\()" if require_parens}';
-},
-  END
+  {
+    'name'  => name,
+    'match' => "(?i)\\b#{ list }(?=\\s*\\()"
+  }
 end
 
-print_pattern('support.function.construct.php', ConstructFunctions, false)
+GrammarPath = File.dirname(__FILE__) + '/../../Syntaxes/PHP.plist'
+
+grammar = OSX::PropertyList.load(File.read(GrammarPath))
+
+grammar['repository']['support'] = {}
+grammar['repository']['support']['patterns'] = []
+
+grammar['repository']['support']['patterns'] << {
+  'name' => 'meta.array.php',
+  'begin' => '(array)(\\()',
+  'end' => '\\)',
+  'beginCaptures' => {
+    '1' => { 'name' => 'support.function.construct.php' },
+    '2' => { 'name' => 'punctuation.definition.array.begin.php' },
+  },
+  'endCaptures' => { '0' => { 'name' => 'punctuation.definition.array.end.php' } },
+  'patterns' => [{ 'include' => '#language' } ],
+}
+grammar['repository']['support']['patterns'] << {
+  'name' => 'support.function.construct.php',
+  'match' => '(?i)\\b(print|echo|(isset|unset|e(val|mpty)|list)(?=\\s*\\())'
+}
+
 sections.sort.each do |(section, funcs)|
-  print_pattern('support.function.' + section + '.php', funcs)
+  grammar['repository']['support']['patterns'] << pattern_for('support.function.' + section + '.php', funcs)
 end
-print_pattern('support.class.builtin.php', classes)
+grammar['repository']['support']['patterns'] << pattern_for('support.class.builtin.php', classes)
+File.open(GrammarPath, 'w') do |file|
+  file << grammar.to_plist
+end
 
 # =========================
 # = Functions.txt writing =
@@ -178,3 +200,5 @@ File.open('../functions.txt', 'w') do |file|
     file << function + '%' + data[:prototype] + '%' + data[:description] + "\n"
   end
 end
+
+`osascript -e'tell app "TextMate" to reload bundles'`
