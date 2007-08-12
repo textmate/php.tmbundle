@@ -165,10 +165,9 @@ GrammarPath = File.dirname(__FILE__) + '/../../Syntaxes/PHP.plist'
 
 grammar = OSX::PropertyList.load(File.read(GrammarPath))
 
-grammar['repository']['support'] = {}
-grammar['repository']['support']['patterns'] = []
+patterns = []
 
-grammar['repository']['support']['patterns'] << {
+patterns << {
   'name' => 'meta.array.php',
   'begin' => '(array)(\\()',
   'end' => '\\)',
@@ -179,15 +178,18 @@ grammar['repository']['support']['patterns'] << {
   'endCaptures' => { '0' => { 'name' => 'punctuation.definition.array.end.php' } },
   'patterns' => [{ 'include' => '#language' } ],
 }
-grammar['repository']['support']['patterns'] << {
+patterns << {
   'name' => 'support.function.construct.php',
   'match' => '(?i)\\b(print|echo|(isset|unset|e(val|mpty)|list)(?=\\s*\\())'
 }
 
 sections.sort.each do |(section, funcs)|
-  grammar['repository']['support']['patterns'] << pattern_for('support.function.' + section + '.php', funcs)
+  patterns << pattern_for('support.function.' + section + '.php', funcs)
 end
-grammar['repository']['support']['patterns'] << pattern_for('support.class.builtin.php', classes)
+patterns << pattern_for('support.function.alias.php', %w{is_int is_integer})
+patterns << pattern_for('support.class.builtin.php', classes)
+
+grammar['repository']['support'] = { 'patterns' => patterns }
 File.open(GrammarPath, 'w') do |file|
   file << grammar.to_plist
 end
