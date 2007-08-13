@@ -7,6 +7,9 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby -wKU
 require ENV["TM_SUPPORT_PATH"] + "/lib/ui.rb"
+require ENV["TM_SUPPORT_PATH"] + "/lib/exit_codes.rb"
+
+ENV['TM_CURRENT_WORD'] ||= ''
 
 if ENV['TM_SELECTED_TEXT'] and ENV['TM_SELECTED_TEXT'].to_s.include?('|')
   require ENV["TM_SUPPORT_PATH"] + "/lib/exit_codes.rb"
@@ -21,10 +24,26 @@ end
 
 functions = `grep -i "^$TM_CURRENT_WORD" "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
 
-abort if functions.empty?
+TextMate::exit_show_tool_tip('No matches found') if functions.empty?
 
 if functions.size &gt; 1
-  names = functions.map {|e| e[/^.+?(?=%|$)/] }.uniq
+  skip_prefix = false
+  if ENV['TM_CURRENT_WORD'][-1] == ?_
+    # If the last char in the word is a _ we don't show the word in the completion list,
+    # to enable the user to continue typing. See: array_⌥⎋
+    skip_prefix = true
+  else
+    # We also skip the prefix if the first char in all the matches is a _
+    skip_prefix = ! functions.find { |fun| fun[ENV['TM_CURRENT_WORD'].size] != ?_ } rescue false
+  end
+  names = functions.map do |line|
+    line =~ /^(#{ENV['TM_CURRENT_WORD']})(.*?)(%|$)/i
+    if skip_prefix
+      $2
+    else
+      $1 + $2
+    end
+  end.uniq
   abort unless choice = TextMate::UI.menu(names)
   choice = functions[choice]
 else
