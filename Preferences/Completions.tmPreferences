@@ -2190,6 +2190,7 @@
         <string>stat</string>
         <string>statIndex</string>
         <string>statName</string>
+        <string>stdClass</string>
         <string>str_ireplace</string>
         <string>str_pad</string>
         <string>str_repeat</string>
