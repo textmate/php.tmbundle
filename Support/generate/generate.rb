@@ -44,7 +44,7 @@ proto_regex  = /^\s*?    # Start of the line
 functions = {}
 # aliases = {}
 sections = {}
-classes = []
+classes = %w[stdClass]
 
 # prototype blocks
 parsefiles.sort.each_with_index do |file, key|
@@ -90,9 +90,12 @@ classes.uniq!
 completions = classes + functions.keys
 completions.sort!
 
-xml = Builder::XmlMarkup.new(:indent => 2, :target => File.open('../../Preferences/Completions.tmPreferences', 'w'))
+xml = Builder::XmlMarkup.new(:indent => 2, :target => File.open(File.dirname(__FILE__) + '/../../Preferences/Completions.tmPreferences', 'w'))
 xml.instruct!
-xml.declare! :DOCTYPE, :plist, :public, "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"
+xml.declare! :DOCTYPE,
+             :plist,
+             :public,
+             "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"
 xml.plist :version => '1.0' do
   xml.dict do
     xml.key 'name'
