@@ -17,26 +17,171 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.embedded.leading.php</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>source.php.embedded.line.empty.html</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.embedded.begin.php</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>meta.consecutive-tags.php</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>source.php</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.embedded.end.php</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>source.php</string>
+				</dict>
+				<key>8</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.embedded.trailing.php</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Matches empty tags.</string>
+			<key>match</key>
+			<string>(?x)
+				(^\s*)?							# 1 - Leading whitespace
+					(							# 2 - meta.embedded.line.empty.php
+						(						# 3 - Open Tag
+							(?:
+								((?&lt;=\?&gt;)&lt;)		# 4 - Consecutive tags
+							  | &lt;
+							)
+							\?(?i:php|=)?
+						)
+							(\s*)				# 5 - Loneliness
+						((\?)&gt;)					# 6 - Close Tag
+												# 7 - Scope ? as scope.php
+					)
+				(
+					\1							# Match nothing if there was no
+												#   leading whitespace...
+				  | (\s*$\n)?					# or match trailing whitespace.
+				)
+			</string>
+		</dict>
+		<dict>
 			<key>begin</key>
-			<string>&lt;\?(?i:php|=)?</string>
+			<string>^\s*(?=&lt;\?)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.embedded.begin.php</string>
+					<string>punctuation.whitespace.embedded.leading.php</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>Catches tags with preceeding whitespace.</string>
 			<key>end</key>
-			<string>\?&gt;</string>
+			<string>(?&lt;=\?&gt;)(\s*$\n)?</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.embedded.end.php</string>
+					<string>punctuation.whitespace.embedded.trailing.php</string>
 				</dict>
 			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>&lt;\?(?i:php|=)?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.embedded.begin.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\?)&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.embedded.end.php</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>source.php</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>source.php.embedded.block.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#language</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(((?&lt;=\?&gt;)&lt;)|&lt;)\?(?i:php|=)?</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.embedded.begin.php</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>meta.consecutive-tags.php</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Catches the remainder.</string>
+			<key>end</key>
+			<string>(\?)&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.embedded.end.php</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>source.php</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>source.php.embedded.line.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>

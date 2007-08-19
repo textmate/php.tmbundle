@@ -10,7 +10,8 @@
 	<array>
 		<string>6FABC1A4-8CD0-11D9-B507-000D93C8BE28</string>
 		<string>D723521E-CC93-419A-8056-D5178F28615B</string>
-    	<string>9E187BE5-3E25-49A1-9FA1-D7EF18DF027D</string>
+		<string>9E187BE5-3E25-49A1-9FA1-D7EF18DF027D</string>
+		<string>ADE95F8E-EC59-482C-AAD6-0212D5D7AB61</string>
 	</array>
 	<key>description</key>
 	<string>&lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt; is a widely-used general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</string>
@@ -20,9 +21,8 @@
 		<array>
 			<string>26BC937A-5A0B-493E-B51F-1AF6E6FEFAD4</string>
 			<string>6F7E7868-F5A2-4B7D-ACFB-2A8DE2CD04E2</string>
-			<string>ADE95F8E-EC59-482C-AAD6-0212D5D7AB61</string>
-			<string>C77638F5-A539-4D72-AB94-E1355A7835D4</string>
-			<string>5DC3AA9D-32F7-4ECF-A8CB-303AF9E3ABDF</string>
+			<string>89385241-0117-42AE-BDAE-0471554CC3DF</string>
+			<string>647C793F-9098-481B-8B5A-BCEF3B48CB03</string>
 		</array>
 		<key>items</key>
 		<array>
@@ -55,6 +55,7 @@
 			<string>------------------------------------</string>
 			<string>6F3ABAC6-EEC9-4797-8D4A-6FD549094852</string>
 			<string>9C891C7B-CFA8-4860-B76F-4E3AD60B0E13</string>
+			<string>C1B97DFD-7F2E-4CF8-881D-F63843DE8BD5</string>
 		</array>
 		<key>submenus</key>
 		<dict>
@@ -236,9 +237,10 @@
 		<string>CA15DF69-E80D-46DA-BD45-E88C68E92117</string>
 		<string>F15B444C-13E3-4A3C-83E1-4A6E0C1A84F3</string>
 		<string>5157F71C-2801-4385-92EA-3D0B72AEE7C5</string>
-		<string>C77638F5-A539-4D72-AB94-E1355A7835D4</string>
-		<string>5DC3AA9D-32F7-4ECF-A8CB-303AF9E3ABDF</string>
-		<string>ADE95F8E-EC59-482C-AAD6-0212D5D7AB61</string>
+		<string>C1B97DFD-7F2E-4CF8-881D-F63843DE8BD5</string>
+		<string>77F2D17D-A48A-4E19-B2A4-B2FBCBD1264D</string>
+		<string>89385241-0117-42AE-BDAE-0471554CC3DF</string>
+		<string>647C793F-9098-481B-8B5A-BCEF3B48CB03</string>
 	</array>
 	<key>uuid</key>
 	<string>467A1966-6227-11D9-BFB1-000D93589AF6</string>
