@@ -75,7 +75,7 @@ print(params.scan(/(\w+ )?&amp;?([\w.|]+)( = .+)?(\])?,?/).map do |(type, name, 
   tabstop += 1
   if tabstop &gt; 1
     if optional
-      "${#{tabstop}:, #{snippet}}"
+      "${#{tabstop}:, ${#{tabstop+=1}:#{snippet}}}"
     else
       ", ${#{tabstop}:#{snippet}}"
     end
