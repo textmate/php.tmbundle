@@ -60,7 +60,7 @@ parts = prototype.strip.match(/^\s*(?:([0-9A-Za-z|_]+)\s+)?(\w+)\s*\((.*)\).*$/)
 params = parts[3] rescue ''
 
 tabstop = 0
-print(params.scan(/(\w+ )?([\w.|]+)( = .+)?(\])?,?/).map do |(type, name, default, optional_bracket)|
+print(params.scan(/(\w+ )?&amp;?([\w.|]+)( = .+)?(\])?,?/).map do |(type, name, default, optional_bracket)|
   snippet = type.to_s + name
   optional = false
   if optional_bracket
