@@ -2230,12 +2230,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(print|echo|(isset|unset|e(val|mpty)|list)(?=\s*\())</string>
-					<key>name</key>
-					<string>support.function.construct.php</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>(?i)\b(s(huffle|ort)|n(ext|at(sort|casesort))|c(o(unt|mpact)|urrent)|in_array|u(sort|ksort|asort)|prev|e(nd|xtract)|k(sort|ey|rsort)|a(sort|r(sort|ray_(s(hift|um|plice|earch|lice)|c(h(unk|ange_key_case)|o(unt_values|mbine))|intersect(_(u(key|assoc)|key|assoc))?|diff(_(u(key|assoc)|key|assoc))?|u(n(shift|ique)|intersect(_(uassoc|assoc))?|diff(_(uassoc|assoc))?)|p(op|ush|ad|roduct)|values|key(s|_exists)|f(il(ter|l(_keys)?)|lip)|walk(_recursive)?|r(e(duce|verse)|and)|m(ultisort|erge(_recursive)?|ap))))|r(sort|eset|ange)|m(in|ax))(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.array.php</string>
@@ -3217,6 +3211,12 @@
 					<string>(?i)\b(Re(cursive(RegexIterator|CachingIterator|IteratorIterator|DirectoryIterator|FilterIterator|ArrayIterator)|flection(Method|Class|Object|Extension|P(arameter|roperty)|Function)?|gexIterator)|s(tdClass|wf(s(hape|ound|prite)|text(field)?|displayitem|f(ill|ont(cha(r)?)?)|action|gradient|mo(vie|rph)|b(itmap|utton)))|XMLReader|tidyNode|S(impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|pl(TempFileObject|ObjectStorage|File(Info|Object)))|NoRewindIterator|C(OMPersistHelper|achingIterator)|I(nfiniteIterator|teratorIterator)|D(irectoryIterator|OM(XPath|Node|C(omment|dataSection)|Text|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr))|P(DO(Statement)?|arentIterator)|E(rrorException|mptyIterator|xception)|FilterIterator|LimitIterator|A(p(pendIterator|acheRequest)|rray(Iterator|Object)))(?=\s*\()</string>
 					<key>name</key>
 					<string>support.class.builtin.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i)\b((print|echo)\b|(isset|unset|e(val|mpty)|list)(?=\s*\())</string>
+					<key>name</key>
+					<string>support.function.construct.php</string>
 				</dict>
 			</array>
 		</dict>

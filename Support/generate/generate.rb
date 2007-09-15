@@ -190,7 +190,7 @@ patterns << pattern_for('support.class.builtin.php', classes)
 
 patterns << {
   'name' => 'support.function.construct.php',
-  'match' => '(?i)\\b(print|echo|(isset|unset|e(val|mpty)|list)(?=\\s*\\())'
+  'match' => '(?i)\\b((print|echo)\\b|(isset|unset|e(val|mpty)|list)(?=\\s*\\())'
 }
 
 grammar['repository']['support'] = { 'patterns' => patterns }
