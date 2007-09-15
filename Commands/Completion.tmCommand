@@ -59,6 +59,8 @@ print function[offset..-1] + '('
 parts = prototype.strip.match(/^\s*(?:([0-9A-Za-z|_]+)\s+)?(\w+)\s*\((.*)\).*$/)
 params = parts[3] rescue ''
 
+params = '' if params == 'void'
+
 tabstop = 0
 print(params.scan(/(\w+ )?&amp;?([\w.|]+)( = .+)?(\])?,?/).map do |(type, name, default, optional_bracket)|
   snippet = type.to_s + name
