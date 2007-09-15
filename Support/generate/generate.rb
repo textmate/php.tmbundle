@@ -181,16 +181,17 @@ patterns << {
   'endCaptures' => { '0' => { 'name' => 'punctuation.definition.array.end.php' } },
   'patterns' => [{ 'include' => '#language' } ],
 }
-patterns << {
-  'name' => 'support.function.construct.php',
-  'match' => '(?i)\\b(print|echo|(isset|unset|e(val|mpty)|list)(?=\\s*\\())'
-}
 
 sections.sort.each do |(section, funcs)|
   patterns << pattern_for('support.function.' + section + '.php', funcs)
 end
 patterns << pattern_for('support.function.alias.php', %w{is_int is_integer})
 patterns << pattern_for('support.class.builtin.php', classes)
+
+patterns << {
+  'name' => 'support.function.construct.php',
+  'match' => '(?i)\\b(print|echo|(isset|unset|e(val|mpty)|list)(?=\\s*\\())'
+}
 
 grammar['repository']['support'] = { 'patterns' => patterns }
 File.open(GrammarPath, 'w') do |file|
