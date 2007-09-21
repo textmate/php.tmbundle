@@ -1,3 +1,7 @@
+# Language
+
+**Note**: you should always select the `HTML` language when working with PHP (and not the `PHP` language). You can switch language by selecting `HTML` from the status bar at the bottom of the window, or by pressing `⌃⌥⇧H`.
+
 # Snippets
 
 ## Control Structures
