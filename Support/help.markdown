@@ -45,6 +45,12 @@ The command ⇧⌘D can be used to jump to a file included from the current docu
 
 # Setup
 
+## PHP Versions
+
+If you use PHP 5 (rather than PHP 4 which is bundled with OS X) then you’ll want to make sure TextMate is using PHP 5 so that the Validate and Run commands work. To do this you’ll need to have PHP 5 installed – I recommend [these packages](http://www.entropy.ch/software/macosx/php/).
+
+Once PHP is installed, you need to make TextMate use the new PHP binary. You can either replace the default `/usr/bin/php` with the PHP 5 binary (e.g. with a symlink) or you can set the `TM_PHP` environment variable through TextMate → Preferences → Advanced → Shell Variables.
+
 ## Include Path Configuration
 
 The environment variable `PHP_INCLUDE_PATH` is used for the 2 commands above. This variable should contain a colon-separated list of directories to scan for PHP include files (as in your PHP configuration). The correct value for this variable can be found either by checking the output of phpInfo() or printing the result of get\_include_path(). The best way to set this up is as a [Project Dependent Variable](?project_dependent_variables) – make sure nothing is selected in the project drawer and then press the ⓘ icon to configure these.
