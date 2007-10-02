@@ -12,7 +12,7 @@
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>function</string>
+	<string>fun</string>
 	<key>uuid</key>
 	<string>EC96DA26-8CCF-11D9-B507-000D93C8BE28</string>
 </dict>
