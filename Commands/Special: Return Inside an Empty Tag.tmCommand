@@ -6,7 +6,7 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>exit_insert_snippet "
-	\$0
+\$0
 ?"</string>
 	<key>fallbackInput</key>
 	<string>scope</string>
