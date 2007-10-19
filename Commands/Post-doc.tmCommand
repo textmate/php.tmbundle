@@ -51,7 +51,7 @@ placeholder = 1
   end
 end
 
-puts ' * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}$' + (placeholder + 1).to_s if author
+puts ' * @author ${PHPDOC_AUTHOR:$TM_FULLNAME}$' + (placeholder + 1).to_s if author
 puts ' */$0'</string>
 	<key>fallbackInput</key>
 	<string>scope</string>
