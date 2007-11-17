@@ -9,7 +9,7 @@
  * ${3:undocumented class}
  *
  * @package ${4:default}
- * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}
+ * @author ${PHPDOC_AUTHOR:$TM_FULLNAME}
  **/
 $1class $2
 {$0

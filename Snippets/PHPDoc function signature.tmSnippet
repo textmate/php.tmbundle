@@ -9,7 +9,7 @@
  * ${4:undocumented function}
  *
  * @return ${5:void}
- * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}$6
+ * @author ${PHPDOC_AUTHOR:$TM_FULLNAME}$6
  **/
 $1function $2($3);$0</string>
 	<key>keyEquivalent</key>

@@ -9,7 +9,7 @@
  * ${1:undocumented function}
  *
  * @return ${2:void}
- * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}$3
+ * @author ${PHPDOC_AUTHOR:$TM_FULLNAME}$3
  **/$0</string>
 	<key>name</key>
 	<string>Function - post doc</string>

@@ -8,7 +8,7 @@
 	<string>/**
  * $1
  *
- * @author ${PHPDOC_AUTHOR:`niutil -readprop / "/users/$USER" realname`}
+ * @author ${PHPDOC_AUTHOR:$TM_FULLNAME}
  * @version \$Id\$
  * @copyright `echo $TM_ORGANIZATION_NAME`, `date +"%e %B, %Y"`
  * @package ${3:default}
