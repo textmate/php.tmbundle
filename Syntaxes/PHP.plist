@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>comment</key>
@@ -32,7 +32,7 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.embedded.begin.php</string>
+					<string>punctuation.section.embedded.begin.php</string>
 				</dict>
 				<key>4</key>
 				<dict>
@@ -47,7 +47,7 @@
 				<key>6</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.embedded.end.php</string>
+					<string>punctuation.section.embedded.end.php</string>
 				</dict>
 				<key>7</key>
 				<dict>
@@ -117,7 +117,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.embedded.begin.php</string>
+							<string>punctuation.section.embedded.begin.php</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -127,7 +127,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.embedded.end.php</string>
+							<string>punctuation.section.embedded.end.php</string>
 						</dict>
 						<key>1</key>
 						<dict>
@@ -155,7 +155,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.embedded.begin.php</string>
+					<string>punctuation.section.embedded.begin.php</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -172,7 +172,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.embedded.end.php</string>
+					<string>punctuation.section.embedded.end.php</string>
 				</dict>
 				<key>1</key>
 				<dict>
@@ -472,7 +472,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.embedded.begin.php</string>
+									<string>punctuation.section.embedded.begin.php</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -494,7 +494,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.embedded.end.php</string>
+									<string>punctuation.section.embedded.end.php</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -529,7 +529,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.embedded.begin.php</string>
+									<string>punctuation.section.embedded.begin.php</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -551,7 +551,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.embedded.end.php</string>
+									<string>punctuation.section.embedded.end.php</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -586,7 +586,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.embedded.begin.php</string>
+									<string>punctuation.section.embedded.begin.php</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -608,7 +608,7 @@
 								<key>0</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.embedded.end.php</string>
+									<string>punctuation.section.embedded.end.php</string>
 								</dict>
 								<key>1</key>
 								<dict>
@@ -1613,7 +1613,7 @@
 		<key>regex-double-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>(?x)"/ (?= (\\.|[^"/])+/[imsxeADSUXu]*" )</string>
+			<string>(?x)"/ (?= (\\.|[^"/])++/[imsxeADSUXu]*" )</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -1701,7 +1701,7 @@
 		<key>regex-single-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>(?x)'/ (?= (\\.|[^'/])+/[imsxeADSUXu]*' )</string>
+			<string>(?x)'/ (?= (\\.|[^'/])++/[imsxeADSUXu]*' )</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
