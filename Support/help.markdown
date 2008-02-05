@@ -53,7 +53,7 @@ The command ⇧⌘D can be used to jump to a file included from the current docu
 
 If you use PHP 5 (rather than PHP 4 which is bundled with OS X) then you’ll want to make sure TextMate is using PHP 5 so that the Validate and Run commands work. To do this you’ll need to have PHP 5 installed – I recommend [these packages](http://www.entropy.ch/software/macosx/php/).
 
-Once PHP is installed, you need to make TextMate use the new PHP binary. You can either replace the default `/usr/bin/php` with the PHP 5 binary (e.g. with a symlink) or you can set the `TM_PHP` environment variable through TextMate → Preferences → Advanced → Shell Variables.
+Once PHP is installed, you need to make TextMate use the new PHP binary. You can either replace the default `/usr/bin/php` with the PHP 5 binary (e.g. with a symlink) or you can set the `TM_PHP` environment variable to the absolute path to the PHP executable through TextMate → Preferences → Advanced → Shell Variables.
 
 ## Include Path Configuration
 
