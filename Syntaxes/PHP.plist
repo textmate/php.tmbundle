@@ -710,7 +710,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^\s*(interface)\s+([a-zA-Z0-9_]+)\s*(extends)?\s*</string>
+					<string>^(?i)\s*(interface)\s+([a-z0-9_]+)\s*(extends)?\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -745,7 +745,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^\s*(abstract|final)?\s*(class)\s+([a-zA-Z0-9_]+)\s*</string>
+					<string>(?i)^\s*(abstract|final)?\s*(class)\s+([a-z0-9_]+)\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -785,11 +785,11 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(extends)\s+([a-zA-Z0-9_]+)\s*</string>
+							<string>(?i:(extends))\s+([a-zA-Z0-9_]+)\s*</string>
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(implements)\s+([a-zA-Z0-9_]+)\s*</string>
+							<string>(?i:(implements))\s+([a-zA-Z0-9_]+)\s*</string>
 							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>
@@ -804,7 +804,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>(?=\s*\bextends)|$</string>
+							<string>(?=\s*\b(?i:(extends)))|$</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1185,7 +1185,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(global|abstract|const|extends|implements|final|p(r(ivate|otected)|ublic)|static)\b</string>
+					<string>(?i)\b(global|abstract|const|extends|implements|final|p(r(ivate|otected)|ublic)|static)\b</string>
 					<key>name</key>
 					<string>storage.modifier.php</string>
 				</dict>
