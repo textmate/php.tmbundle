@@ -24,11 +24,16 @@ end
 class PhpMate < ScriptMate
   def filter_stderr(str)
     # strings from stderr are passed through this method before printing
-    '<span style="color: red">' + 
-    str.gsub(/in (.+?) on line (\d+)$/) {
-      'in <a href="txmt://open?' + (ENV.has_key?('TM_FILEPATH') ? "url=file://#{$1}&amp;" : '') + 'line=' + $2 + '"> ' + $1 + ' on line ' + $2 + '</a>'
-    } +
-    '</span>'
+    super(str).gsub(/in (.+?) on line (\d+)<br>$/) {
+      'in <a href="txmt://open?' + (ENV.has_key?('TM_FILEPATH') ? "url=file://#{$1}&amp;" : '') + 'line=' + $2 + '"> ' + $1 + ' on line ' + $2 + '</a><br>'
+    }
+  end
+
+  def filter_stdout(str)
+    # strings from stderr are passed through this method before printing
+    super(str).gsub(/\[([^\]]+?) line (\d+)\]<br>$/) {
+      '[<a href="txmt://open?' + (ENV.has_key?('TM_FILEPATH') ? "url=file://#{$1}&amp;" : '') + 'line=' + $2 + '">' + $1 + ' line ' + $2 + '</a>]<br>'
+    }
   end
 end
 
