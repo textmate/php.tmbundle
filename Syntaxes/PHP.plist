@@ -246,16 +246,21 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.class.php</string>
+					<string>variable.other.php</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>support.class.php</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.php</string>
+				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i)\b(new)\s+(\w+)|(\w+)(?=::)</string>
+			<string>(?i)\b(new)\s+(?:(\$[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)|(\w+))|(\w+)(?=::)</string>
 		</dict>
 		<key>interpolation</key>
 		<dict>
