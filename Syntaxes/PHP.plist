@@ -1593,7 +1593,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\@(a(bstract|uthor)|c(ategory|opyright)|global|li(cense|nk)|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion)|uses|deprecated|final)\b</string>
+					<string>\@(a(bstract|uthor)|c(ategory|opyright)|example|global|li(cense|nk)|pa(ckage|ram)|return|s(ee|ince|tatic|ubpackage)|t(hrows|odo)|v(ar|ersion)|uses|deprecated|final)\b</string>
 					<key>name</key>
 					<string>keyword.other.phpdoc.php</string>
 				</dict>
