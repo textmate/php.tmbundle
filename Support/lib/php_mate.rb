@@ -24,7 +24,11 @@ end
 class PhpMate < ScriptMate
   def filter_stderr(str)
     # strings from stderr are passed through this method before printing
-    super(str).gsub(/in (.+?) on line (\d+)(<br>$)?/) {
+    super(str).
+    gsub(/(#\d+ )((.+?)\((\d+)\)): /) {
+      $1 + '<a href="txmt://open?' + (ENV.has_key?('TM_FILEPATH') ? "url=file://#{$3}&amp;" : '') + 'line=' + $4 + '"> ' + $2 + '</a>: '
+    }.
+    gsub(/in (.+?) on line (\d+)(<br>$)?/) {
       'in <a href="txmt://open?' + (ENV.has_key?('TM_FILEPATH') ? "url=file://#{$1}&amp;" : '') + 'line=' + $2 + '"> ' + $1 + ' on line ' + $2 + '</a>' + $3.to_s
     }
   end
