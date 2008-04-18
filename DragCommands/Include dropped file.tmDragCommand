@@ -29,7 +29,7 @@ include_method &lt;&lt; '_once' if ENV['TM_MODIFIER_FLAGS'].include?('OPTION')
 
 # Find the shortest path
 path = paths.sort_by{|path| path.size}.reverse.pop
-puts "${1:#{include_method}} '#{path}';\$0"
+puts "#{include_method} '#{path}';"
 RUBY</string>
 	<key>draggedFileExtensions</key>
 	<array>
