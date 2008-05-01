@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
@@ -26,7 +26,8 @@ when /(class|interface)/
 when /function\s*\w+\((.*)\)/
   type = 'function'
   $1.split(/,/).each do |arg|
-    tag 'param', 'string', '\\$' + arg[/[A-z0-9]+/].strip
+    arg.strip =~ /(?:(\w+)\s*)?\$([A-z0-9]+)/
+    tag 'param', $1 || 'string', "\\$" + $2
   end
   tag 'return', 'void'
 when /const|define/
@@ -52,7 +53,7 @@ placeholder = 1
 end
 
 puts ' * @author ${PHPDOC_AUTHOR:$TM_FULLNAME}$' + (placeholder + 1).to_s if author
-puts ' */$0'</string>
+print ' */$0'</string>
 	<key>fallbackInput</key>
 	<string>scope</string>
 	<key>input</key>
