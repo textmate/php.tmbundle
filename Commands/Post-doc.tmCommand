@@ -23,13 +23,14 @@ case next_line
 when /(class|interface)/
   type = $&amp;
   tag 'package', 'default'
-when /function\s*\w+\((.*)\)/
+when /function\s*(\w+)\((.*)\)/
+  function_name, args = $1, $2
   type = 'function'
-  $1.split(/,/).each do |arg|
+  args.split(/,/).each do |arg|
     arg.strip =~ /(?:(\w+)\s*)?\$([A-z0-9]+)/
     tag 'param', $1 || 'string', "\\$" + $2
   end
-  tag 'return', 'void'
+  tag 'return', 'void' unless function_name == '__construct'
 when /const|define/
   type = 'constant'
   author = false
