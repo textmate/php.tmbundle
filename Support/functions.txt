@@ -2436,3 +2436,14 @@ zip_entry_read%mixed zip_entry_read(resource zip_entry [, int len])%Read from an
 zip_open%resource zip_open(string filename)%Create new zip using source uri for output
 zip_read%resource zip_read(resource zip)%Returns the next file in the archive
 zlib_get_coding_type%string zlib_get_coding_type(void)%Returns the coding type used for output compression
+exit%void exit([mixed status])%Output a message and terminate the current script
+die%void die([mixed status])%Output a message and terminate the current script
+print%int print(string arg)%Output a string
+echo%void echo(string arg1 [, string ...])%Output one or more strings
+isset%bool isset(mixed var [, mixed var])%Determine whether a variable is set
+unset%void unset (mixed var [, mixed var])%Unset a given variable
+empty%bool empty( mixed var )%Determine whether a variable is empty
+include%bool include(string path)%Includes and evaluates the specified file
+include_once%bool include_once(string path)%Includes and evaluates the specified file
+require%bool require(string path)%Includes and evaluates the specified file, erroring if the file cannot be included
+require_once%bool require_once(string path)%Includes and evaluates the specified file, erroring if the file cannot be included
