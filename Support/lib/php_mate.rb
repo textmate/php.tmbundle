@@ -4,6 +4,7 @@ class PhpScript < UserScript
   def lang; "Php" end
   # Disable display_errors so that errors are printed to stderr only
   # Enabling log_errors (without an error_log) sends errors to stdout
+  def default_extension; ".php" end
   def args
     ['-d display_errors=0', '-d log_errors=1', '-d error_log=']
   end
