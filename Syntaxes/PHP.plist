@@ -7,7 +7,7 @@
 • Try to improve parameters list syntax – scope numbers, ‘=’, ‘,’ and possibly be intelligent about entity ordering
 • Is meta.function-call the correct scope? I've added it to my theme but by default it's not highlighted</string>
 	<key>firstLineMatch</key>
-	<string>^#!.*php[0-9]{0,1}\b</string>
+	<string>^#!.*(?&lt;!-)php[0-9]{0,1}\b</string>
 	<key>foldingStartMarker</key>
 	<string>(/\*|\{\s*$|&lt;&lt;&lt;HTML)</string>
 	<key>foldingStopMarker</key>
