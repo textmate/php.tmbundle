@@ -12,6 +12,10 @@
 		<string>D723521E-CC93-419A-8056-D5178F28615B</string>
 		<string>9E187BE5-3E25-49A1-9FA1-D7EF18DF027D</string>
 		<string>ADE95F8E-EC59-482C-AAD6-0212D5D7AB61</string>
+		<string>C65A0A03-956D-11D9-B0A1-000D93382786</string>
+		<string>FDFDEE91-956D-11D9-B0A1-000D93382786</string>
+		<string>13266D30-956E-11D9-B0A1-000D93382786</string>
+		<string>2CDD1B21-956E-11D9-B0A1-000D93382786</string>
 	</array>
 	<key>description</key>
 	<string>&lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt; is a widely-used general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</string>
@@ -152,15 +156,11 @@
 					<string>94D8B40B-9F49-4B6D-90B5-DBFF5FB36590</string>
 					<string>------------------------------------</string>
 					<string>9086BA3F-87E7-11D9-A6A3-000D93589AF6</string>
-					<string>C65A0A03-956D-11D9-B0A1-000D93382786</string>
 					<string>90879700-87E7-11D9-A6A3-000D93589AF6</string>
-					<string>FDFDEE91-956D-11D9-B0A1-000D93382786</string>
 					<string>------------------------------------</string>
 					<string>9086E254-87E7-11D9-A6A3-000D93589AF6</string>
-					<string>13266D30-956E-11D9-B0A1-000D93382786</string>
 					<string>------------------------------------</string>
 					<string>9087051B-87E7-11D9-A6A3-000D93589AF6</string>
-					<string>2CDD1B21-956E-11D9-B0A1-000D93382786</string>
 					<string>908774B1-87E7-11D9-A6A3-000D93589AF6</string>
 					<string>------------------------------------</string>
 					<string>90872B90-87E7-11D9-A6A3-000D93589AF6</string>
@@ -195,13 +195,9 @@
 		<string>26BC937A-5A0B-493E-B51F-1AF6E6FEFAD4</string>
 		<string>9C891C7B-CFA8-4860-B76F-4E3AD60B0E13</string>
 		<string>6F3ABAC6-EEC9-4797-8D4A-6FD549094852</string>
-		<string>C65A0A03-956D-11D9-B0A1-000D93382786</string>
-		<string>FDFDEE91-956D-11D9-B0A1-000D93382786</string>
 		<string>90879700-87E7-11D9-A6A3-000D93589AF6</string>
 		<string>9086BA3F-87E7-11D9-A6A3-000D93589AF6</string>
-		<string>13266D30-956E-11D9-B0A1-000D93382786</string>
 		<string>9086E254-87E7-11D9-A6A3-000D93589AF6</string>
-		<string>2CDD1B21-956E-11D9-B0A1-000D93382786</string>
 		<string>908774B1-87E7-11D9-A6A3-000D93589AF6</string>
 		<string>9087051B-87E7-11D9-A6A3-000D93589AF6</string>
 		<string>90872B90-87E7-11D9-A6A3-000D93589AF6</string>
