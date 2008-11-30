@@ -193,6 +193,22 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>block</key>
+		<dict>
+			<key>begin</key>
+			<string>\{</string>
+			<key>end</key>
+			<string>\}</string>
+			<key>name</key>
+			<string>meta.block.php</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#language</string>
+				</dict>
+			</array>
+		</dict>
 		<key>constants</key>
 		<dict>
 			<key>patterns</key>
@@ -805,7 +821,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)^\s*(abstract|final)?\s*(class)\s+([a-z0-9_]+)\s*</string>
+					<string>(?i)^\s*(abstract|final)?\s*(class)\s+(\w+)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -825,7 +841,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>$</string>
+					<string>(?&lt;=\})</string>
 					<key>name</key>
 					<string>meta.class.php</string>
 					<key>patterns</key>
@@ -849,7 +865,7 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(?i:(implements))\s+([a-zA-Z0-9_]+)\s*</string>
+							<string>(?i:(implements))\s+([a-zA-Z0-9_]+)</string>
 							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>
@@ -864,7 +880,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>(?=\s*\b(?i:(extends)))|$</string>
+							<string>$\n?|\{</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -877,7 +893,36 @@
 										</dict>
 									</dict>
 									<key>match</key>
-									<string>,\s*([a-zA-Z0-9_]+)\s*</string>
+									<string>,\s*([a-zA-Z0-9_]+)</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(\{)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.scope.php</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(\})</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.scope.php</string>
+								</dict>
+							</dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#language</string>
 								</dict>
 							</array>
 						</dict>
@@ -1493,6 +1538,10 @@
 				<dict>
 					<key>include</key>
 					<string>#constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#block</string>
 				</dict>
 			</array>
 		</dict>
