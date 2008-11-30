@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>name</key>
 	<string>Symbols List: Indent Functions</string>
 	<key>scope</key>
-	<string>entity.name.function.php, support.function.magic.php</string>
+	<string>meta.class.php entity.name.function.php, meta.class.php support.function.magic.php, meta.interface.php entity.name.function.php, meta.interface.php support.function.magic.php</string>
 	<key>settings</key>
 	<dict>
 		<key>symbolTransformation</key>
