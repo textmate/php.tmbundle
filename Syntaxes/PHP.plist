@@ -204,6 +204,21 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>begin</key>
+					<string>\?&gt;</string>
+					<key>end</key>
+					<string>&lt;\?(?i:php|=)?</string>
+					<key>name</key>
+					<string>text.html.basic</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
 					<key>include</key>
 					<string>#language</string>
 				</dict>
