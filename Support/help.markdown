@@ -16,7 +16,7 @@ These snippets are designed to conform to the [PEAR style guide][]. To summarise
   * Functions should be called with no spaces between the function name, the opening parenthesis, and the first parameter.
   * Function and class definitions have their brace on the line following the prototype.
 
-[PEAR style guide]: http://www.go-pear.org/manual/en/standards.php
+[PEAR style guide]: http://pear.php.net/manual/en/standards.php
 
 ## PHPDoc
 
