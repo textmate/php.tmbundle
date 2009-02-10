@@ -45,7 +45,7 @@ for ($i = $start - 1; $i &gt; 0; $i--)
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
-	<string>source.php meta.class.php meta.block.php</string>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>parent</string>
 	<key>uuid</key>

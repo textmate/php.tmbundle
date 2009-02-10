@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>function __construct</string>
 	<key>scope</key>
-	<string>source.php meta.class.php</string>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>con</string>
 	<key>uuid</key>
