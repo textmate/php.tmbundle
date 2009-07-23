@@ -460,9 +460,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?=&lt;&lt;&lt;\s*(HTML|XML|SQL|JAVASCRIPT)\s*$)</string>
+					<string>(?=&lt;&lt;&lt;\s*(HTML|XML|SQL|JAVASCRIPT|CSS)\s*$)</string>
 					<key>end</key>
-					<string>(?!&lt;?&lt;&lt;\s*(HTML|XML|SQL|JAVASCRIPT)\s*$)</string>
+					<string>(?!&lt;?&lt;&lt;\s*(HTML|XML|SQL|JAVASCRIPT|CSS)\s*$)</string>
 					<key>name</key>
 					<string>string.unquoted.heredoc.php</string>
 					<key>patterns</key>
@@ -688,6 +688,63 @@
 								<dict>
 									<key>include</key>
 									<string>source.js</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#interpolation</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(&lt;&lt;&lt;)\s*(CSS)\s*$\n?</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.section.embedded.begin.php</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.php</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.heredoc.php</string>
+								</dict>
+							</dict>
+							<key>contentName</key>
+							<string>source.css</string>
+							<key>end</key>
+							<string>^(CSS)(;?)$\n?</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.section.embedded.end.php</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.heredoc.php</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.string.php</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>meta.embedded.css</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>source.css</string>
 								</dict>
 								<dict>
 									<key>include</key>
