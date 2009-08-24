@@ -13,29 +13,40 @@ $start = getenv('TM_LINE_NUMBER');
 
 for ($i = $start - 1; $i &gt; 0; $i--)
 {
-    $line = trim($file[$i]);
-    switch(substr($line, 0, 2))
-    {
-        case '//':
-        case '/*':
-        case '* ':
-        case '':
-            continue 2;
-        break;
-    }
+	$line = trim($file[$i]);
+	switch(substr($line, 0, 1))
+	{
+		case '/':
+		case '*':
+		case '':
+		continue;
+		break;
+	}
 
-    if (preg_match('/function (.+?)\s*\((.+?)\)/', $line, $matches))
-    {
-       $parameters = explode(',', $matches[2]);
-       
-       for($tabstop = 1; $tabstop &lt;= count($parameters); ++$tabstop)
-       {
-          $parameter = str_replace('$', '\$', trim($parameters[$tabstop-1]));
-          $parameters[$tabstop-1] = "\${{$tabstop}:${parameter}}";
-       }
-       echo 'parent::'.$matches[1].'(' . implode(', ', $parameters) . ');$0';
-       break;
-    }
+	if (preg_match('/function (.+?)\s*\((.*)\)/', $line, $matches))
+	{
+		if (isset($matches[2]))
+		{
+			$parameters = explode(',', $matches[2]);
+
+			for($tabstop = 1; $tabstop &lt;= count($parameters); ++$tabstop)
+			{
+				$parameter = str_replace('$', '\$', 
+					preg_replace('/^(?:[a-z\s]+)?(\$[^\s=]+).*$/i', '$1', 
+						trim($parameters[$tabstop-1])
+					)
+				);
+				$parameters[$tabstop-1] = "\${{$tabstop}:${parameter}}";
+			}
+		}
+		else
+		{
+			$parameters = array();
+		}
+
+		echo 'parent::'.$matches[1].'(' . implode(', ', $parameters) . ');$0';
+		break;
+	}
 }
 ?&gt;</string>
 	<key>input</key>
