@@ -9,7 +9,7 @@
 # 
 
 require 'rubygems'
-require 'builder'
+require ENV['TM_BUNDLE_SUPPORT'] + '/lib/Builder'
 require '/Applications/TextMate.app/Contents/SharedSupport/Support/lib/osx/plist'
 
 path = ARGV.join('')
