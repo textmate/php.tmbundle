@@ -1,6 +1,14 @@
 PHP Bundle for TextMate
 ========================
 
+Version 3.0.1 [2010-03-03]
+--------------------------
+
+Contributors: Josh Varner <josh.varner@gmail.com>
+
+* Fixes in the language grammar for class instantiations using variable class names
+
+
 Version 3.0.0 [2010-03-02]
 --------------------------
 
