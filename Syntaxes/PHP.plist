@@ -227,16 +227,314 @@
 				</dict>
 			</array>
 		</dict>
+		<key>function-arguments</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+							\s*(array) # Typehint
+							\s*(&amp;)? 					# Reference
+							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
+							\s*(=)	# A default value
+							\s*(array)\s*(\()
+							</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.assignment.php</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.construct.php</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.array.begin.php</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.array.php</string>
+					<key>end</key>
+					<string>\)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.array.end.php</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.function.argument.array.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#strings</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#numbers</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.assignment.php</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>constant.language.php</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.non-null-typehinted.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)
+							\s*(array) # Typehint
+							\s*(&amp;)? 					# Reference
+							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
+							(?:
+								\s*(=)	# A default value
+								\s*(?i:
+									(NULL)
+									|
+									(\S.*?)
+									)?
+							)?
+							\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
+							</string>
+					<key>name</key>
+					<string>meta.function.argument.array.php</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.class.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.assignment.php</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>constant.language.php</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.non-null-typehinted.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)
+							\s*([A-Za-z_][A-Za-z_0-9]*) # Typehinted class name
+							\s*(&amp;)? 					# Reference
+							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
+							(?:
+								\s*(=)	# A default value
+								\s*(?i:
+									(NULL)
+									|
+									(\S.*?)
+									)?
+							)?
+							\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
+							</string>
+					<key>name</key>
+					<string>meta.function.argument.typehinted.php</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\))</string>
+					<key>name</key>
+					<string>meta.function.argument.no-default.php</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\s*(=)\s*)\s*</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.assignment.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=,|\))</string>
+					<key>name</key>
+					<string>meta.function.argument.default.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#parameter-default-types</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>/\*</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\*/</string>
+					<key>name</key>
+					<string>comment.block.php</string>
+				</dict>
+			</array>
+		</dict>
 		<key>function-call</key>
 		<dict>
-			<key>match</key>
+			<key>begin</key>
+			<string>(?i)(\\?)(?=[a-z_](?:[a-z0-9_\\]*)[a-z0-9_]*\s*\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.terminator.namespace.php</string>
+				</dict>
+			</dict>
+			<key>end</key>
 			<string>[A-Za-z_][A-Za-z_0-9]*(?=\s*\()</string>
 			<key>name</key>
 			<string>meta.function-call.php</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.terminator.namespace.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?i)[a-z0-9_]+(\\)?</string>
+				</dict>
+			</array>
 		</dict>
 		<key>instantiation</key>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>(?i)(new)\s+(\\?)\s*(?=[a-z_][a-z0-9_\\]*\s*[(;])</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -246,21 +544,39 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.php</string>
+					<string>punctuation.terminator.namespace.php</string>
 				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>support.class.php</string>
-				</dict>
-				<key>4</key>
+			</dict>
+			<key>end</key>
+			<string>(?i)([a-z_][a-z_0-9]*)\s*([(;])</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>support.class.php</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(?i)\b(new)\s+(?:(\$[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)|(\w+))|(\w+)(?=::)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.namespace.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.terminator.namespace.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?i)([a-z0-9_]+)(\\)</string>
+				</dict>
+			</array>
 		</dict>
 		<key>interpolation</key>
 		<dict>
@@ -428,6 +744,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#invoke-call</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#var_basic</string>
 						</dict>
 						<dict>
@@ -453,6 +773,15 @@
 					</array>
 				</dict>
 			</array>
+		</dict>
+		<key>invoke-call</key>
+		<dict>
+			<key>begin</key>
+			<string>(?i)\$[a-z_0-9]+(?=\s*\()</string>
+			<key>end</key>
+			<string>\s*(?=\()</string>
+			<key>name</key>
+			<string>meta.function-call.invoke.php</string>
 		</dict>
 		<key>language</key>
 		<dict>
@@ -827,7 +1156,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^(?i)\s*(interface)\s+([a-z0-9_]+)\s*(extends)?\s*</string>
+					<string>(?i)^\s*(interface)\s+([a-z0-9_]+)\s*(extends)?\s*(\\?)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -845,18 +1174,129 @@
 							<key>name</key>
 							<string>storage.modifier.extends.php</string>
 						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.terminator.namespace.php</string>
+						</dict>
 					</dict>
 					<key>end</key>
-					<string>$</string>
+					<string>([a-zA-Z0-9_]+)?\s*(?:(?=\{)|$)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.class.extends.php</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.interface.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.terminator.namespace.php</string>
+								</dict>
+							</dict>
 							<key>match</key>
-							<string>[a-zA-Z0-9_]+</string>
+							<string>[a-zA-Z0-9_]+(\\)</string>
 							<key>name</key>
-							<string>entity.other.inherited-class.php</string>
+							<string>support.class.extends.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)^\s*(namespace)\s+(?=[a-z0-9_]+)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.namespace.php</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>entity.name.type.namespace.php</string>
+					<key>end</key>
+					<string>\s*(?=;|{)</string>
+					<key>name</key>
+					<string>meta.namespace.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.terminator.namespace.php</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(?i)\s*(\\)?\s*[a-z0-9_]+</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?i)^\s*(use)(?=\s+)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.use.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=\;)</string>
+					<key>name</key>
+					<string>meta.use.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>\s+</string>
+							<key>contentName</key>
+							<string>support.namespace.use.php</string>
+							<key>end</key>
+							<string>(?xi)
+							    (?:\s+(as)\s+([a-z0-9_]+))?
+							    (?:\s*(?:,|(?=;)))</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.other.use-as.php</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>support.namespace.use-as.php</string>
+								</dict>
+							</dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.terminator.namespace.php</string>
+										</dict>
+									</dict>
+									<key>match</key>
+									<string>(?i)(\\)?[a-z0-9_]+</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
@@ -882,46 +1322,26 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>$</string>
+					<string>(?:[;{])</string>
 					<key>name</key>
 					<string>meta.class.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>captures</key>
+							<key>begin</key>
+							<string>(?i)(extends)\s+</string>
+							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>
 								<dict>
 									<key>name</key>
 									<string>storage.modifier.extends.php</string>
 								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>entity.other.inherited-class.php</string>
-								</dict>
 							</dict>
-							<key>match</key>
-							<string>(?i:(extends))\s+([a-zA-Z0-9_]+)\s*</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(?i:(implements))\s+([a-zA-Z0-9_]+)\s*</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>storage.modifier.implements.php</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>support.class.implements.php</string>
-								</dict>
-							</dict>
+							<key>contentName</key>
+							<string>support.class.extends.php</string>
 							<key>end</key>
-							<string>(?=\s*\b(?i:(extends)))|$</string>
+							<string>(?=(\s*\b(?i:(implements)))|([;{]))</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -930,11 +1350,51 @@
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>support.class.implements.php</string>
+											<string>punctuation.terminator.namespace.php</string>
 										</dict>
 									</dict>
 									<key>match</key>
-									<string>,\s*([a-zA-Z0-9_]+)\s*</string>
+									<string>(?i)(\\)?[a-z0-9_]+</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(?i)(implements)\s+</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>storage.modifier.implements.php</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(?i)(?=(?:\s*\b(?:extends))|(?:[;{]))</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>begin</key>
+									<string>(?i)(?=[a-z0-9_\\]+)</string>
+									<key>contentName</key>
+									<string>support.class.implements.php</string>
+									<key>end</key>
+									<string>(?i)(?:\s*(?:(,))|(?=[;{])\s*)</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>captures</key>
+											<dict>
+												<key>1</key>
+												<dict>
+													<key>name</key>
+													<string>punctuation.terminator.namespace.php</string>
+												</dict>
+											</dict>
+											<key>match</key>
+											<string>(?i)(\\)?[a-z0-9_]+</string>
+										</dict>
+									</array>
 								</dict>
 							</array>
 						</dict>
@@ -1006,7 +1466,78 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?:^\s*)((?:(?:final|abstract|public|private|protected|static)\s+)*)(function)(?:\s+|(\s*&amp;\s*))(?:(__(?:call|(?:con|de)struct|get|(?:is|un)?set|tostring|clone|set_state|sleep|wakeup|autoload))|([a-zA-Z0-9_]+))\s*(\()</string>
+					<string>(?x)
+					    \b(function)\s*
+				        (&amp;\s*)?
+				        (\()</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.function.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.reference.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.begin.php</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.function.arguments.php</string>
+					<key>end</key>
+					<string>(\))\s*(?:(use)\s*(\()[^)]*(\)))?</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.end.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.function.use.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.begin.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.end.php</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.function.closure.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-arguments</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+					    (?:^\s*)
+					    ((?:(?:final|abstract|public|private|protected|static)\s+)*)
+				        (function)
+				        (?:\s+|(\s*&amp;\s*))
+				        (?:
+				            (__(?:call|construct|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic))
+				            |([a-zA-Z0-9_]+)
+				        )
+				        \s*
+				        (\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1057,269 +1588,8 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>begin</key>
-							<string>(?x)
-									\s*(array) # Typehint
-									\s*(&amp;)? 					# Reference
-									\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
-									\s*(=)	# A default value
-									\s*(array)\s*(\()
-									</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>storage.type.php</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>storage.modifier.php</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.php</string>
-								</dict>
-								<key>4</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.variable.php</string>
-								</dict>
-								<key>5</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.assignment.php</string>
-								</dict>
-								<key>6</key>
-								<dict>
-									<key>name</key>
-									<string>support.function.construct.php</string>
-								</dict>
-								<key>7</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.array.begin.php</string>
-								</dict>
-							</dict>
-							<key>contentName</key>
-							<string>meta.array.php</string>
-							<key>end</key>
-							<string>\)</string>
-							<key>endCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.array.end.php</string>
-								</dict>
-							</dict>
-							<key>name</key>
-							<string>meta.function.argument.array.php</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#strings</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#numbers</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>storage.type.php</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>storage.modifier.php</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.php</string>
-								</dict>
-								<key>4</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.variable.php</string>
-								</dict>
-								<key>5</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.assignment.php</string>
-								</dict>
-								<key>6</key>
-								<dict>
-									<key>name</key>
-									<string>constant.language.php</string>
-								</dict>
-								<key>7</key>
-								<dict>
-									<key>name</key>
-									<string>invalid.illegal.non-null-typehinted.php</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(?x)
-									\s*(array) # Typehint
-									\s*(&amp;)? 					# Reference
-									\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
-									(?:
-										\s*(=)	# A default value
-										\s*(?i:
-											(NULL)
-											|
-											(\S.*?)
-											)?
-									)?
-									\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
-									</string>
-							<key>name</key>
-							<string>meta.function.argument.array.php</string>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>support.class.php</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>storage.modifier.php</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.php</string>
-								</dict>
-								<key>4</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.variable.php</string>
-								</dict>
-								<key>5</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.assignment.php</string>
-								</dict>
-								<key>6</key>
-								<dict>
-									<key>name</key>
-									<string>constant.language.php</string>
-								</dict>
-								<key>7</key>
-								<dict>
-									<key>name</key>
-									<string>invalid.illegal.non-null-typehinted.php</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(?x)
-									\s*([A-Za-z_][A-Za-z_0-9]*) # Typehinted class name
-									\s*(&amp;)? 					# Reference
-									\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
-									(?:
-										\s*(=)	# A default value
-										\s*(?i:
-											(NULL)
-											|
-											(\S.*?)
-											)?
-									)?
-									\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
-									</string>
-							<key>name</key>
-							<string>meta.function.argument.typehinted.php</string>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>storage.modifier.php</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.php</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.variable.php</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\))</string>
-							<key>name</key>
-							<string>meta.function.argument.no-default.php</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\s*(=)\s*)\s*</string>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>storage.modifier.php</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.php</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.variable.php</string>
-								</dict>
-								<key>4</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.assignment.php</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>(?=,|\))</string>
-							<key>name</key>
-							<string>meta.function.argument.default.php</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#parameter-default-types</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>/\*</string>
-							<key>captures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.comment.php</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>\*/</string>
-							<key>name</key>
-							<string>comment.block.php</string>
+							<key>include</key>
+							<string>#function-arguments</string>
 						</dict>
 					</array>
 				</dict>
@@ -1517,6 +1787,10 @@
 				<dict>
 					<key>include</key>
 					<string>#string-backtick</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#invoke-call</string>
 				</dict>
 				<dict>
 					<key>include</key>
