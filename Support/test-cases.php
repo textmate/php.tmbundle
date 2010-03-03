@@ -88,6 +88,14 @@ $blah();
 $blah(1, 2, 3);
 blah(1, 2, 3);
 
+$blah = new Foo();
+$blah = new Foo;
+$blah = new \blah\Foo();
+$blah = new blah\Foo();
+$blah = new $foo();
+$blah = new $foo;
+$blah = new blah\$Foo();
+
 // ========================
 // = String interpolation =
 // ========================
@@ -107,6 +115,8 @@ blah(1, 2, 3);
 "{$foo->bar[0]->baz}"
 "{$foo->bar(12, $foo)}"
 "{$foo(12, $foo)}"
+
+$foo = $foo->{'foo' . 'bar'};
 
 // Heredoc
 $foo = <<<BLAH
