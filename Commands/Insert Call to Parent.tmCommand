@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/opt/local/bin/php
+	<string>#!/usr/bin/env php
 &lt;?php
 
 $file = explode("\n", file_get_contents('php://stdin'));
