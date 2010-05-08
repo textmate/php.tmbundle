@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/opt/local/bin/php
+	<string>#!/usr/bin/env php
 &lt;?php
 
 $file = explode("\n", file_get_contents('php://stdin'));
@@ -32,7 +32,7 @@ for ($i = $start - 1; $i &gt; 0; $i--)
 			for($tabstop = 1; $tabstop &lt;= count($parameters); ++$tabstop)
 			{
 				$parameter = str_replace('$', '\$', 
-					preg_replace('/^(?:[a-z\s]+)?(\$[^\s=]+).*$/i', '$1', 
+					preg_replace('/^(?:[a-z\s&amp;]+)?(\$[^\s=]+).*$/i', '$1', 
 						trim($parameters[$tabstop-1])
 					)
 				);
