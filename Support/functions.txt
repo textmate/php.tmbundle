@@ -980,6 +980,7 @@ juliantojd%int juliantojd(int month, int day, int year)%Converts a julian calend
 key%mixed key(array array_arg)%Return the key of the element currently pointed to by the internal array pointer
 krsort%bool krsort(array &array_arg [, int sort_flags])%Sort an array by key value in reverse order
 ksort%bool ksort(array &array_arg [, int sort_flags])%Sort an array by key
+lcfirst%string ucfirst(string str)%Make a string's first character lowercase
 lcg_value%float lcg_value()%Returns a value from the combined linear congruential generator
 lchgrp%bool lchgrp(string filename, mixed group)%Change symlink group
 ldap_8859_to_t61%string ldap_8859_to_t61(string value)%Translate 8859 characters to t61 characters

@@ -981,6 +981,7 @@
 	{display = 'key'; insert = '(${1:array array_arg})';},
 	{display = 'krsort'; insert = '(${1:array &array_arg}, ${2:[int sort_flags]})';},
 	{display = 'ksort'; insert = '(${1:array &array_arg}, ${2:[int sort_flags]})';},
+	{display = 'lcfirst'; insert = '(${1:string str})';},
 	{display = 'lcg_value'; insert = '()';},
 	{display = 'lchgrp'; insert = '(${1:string filename}, ${2:mixed group})';},
 	{display = 'ldap_8859_to_t61'; insert = '(${1:string value})';},

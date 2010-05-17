@@ -1073,6 +1073,7 @@
         <string>key</string>
         <string>krsort</string>
         <string>ksort</string>
+        <string>lcfirst</string>
         <string>lcg_value</string>
         <string>lchgrp</string>
         <string>ldap_8859_to_t61</string>
