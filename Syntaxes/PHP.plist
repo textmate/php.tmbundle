@@ -3515,7 +3515,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)(hebrev(c)?|s(scanf|imilar_text|tr(s(tr|pn)|natc(asecmp|mp)|c(hr|spn|oll)|i(str|p(slashes|cslashes|os|_tags))|t(o(upper|k|lower)|r)|_(s(huffle|plit)|ireplace|pad|word_count|getcsv|r(ot13|ep(eat|lace)))|p(os|brk)|r(chr|ipos|ev|pos))|ubstr(_(co(unt|mpare)|replace))?|etlocale)|c(h(unk_split|r)|ount_chars)|nl(2br|_langinfo)|implode|trim|ord|dirname|uc(first|words)|join|pa(thinfo|rse_str)|explode|quotemeta|add(slashes|cslashes)|wordwrap|l(trim|ocaleconv)|rtrim|money_format|b(in2hex|asename))(?=\s*\()</string>
+					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)(s(scanf|tr(s(tr|pn)|natc(asecmp|mp)|c(spn|hr|oll)|t(o(upper|k|lower)|r)|i(str|p(slashes|cslashes|os|_tags))|_(s(huffle|plit)|ireplace|pad|word_count|r(ot13|ep(eat|lace))|getcsv)|p(os|brk)|r(chr|ipos|pos|ev))|imilar_text|ubstr(coreplace|_co(unt|mpare)?)|etlocale)|hebrev(c)?|nl(2br|_langinfo)|c(h(unk_split|r)|ount_chars)|trim|implode|ord|dirname|uc(first|words)|join|pa(thinfo|rse_str)|explode|quotemeta|wordwrap|l(cfirst|trim|ocaleconv)|add(slashes|cslashes)|rtrim|money_format|b(in2hex|asename))(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.string.php</string>
 				</dict>
