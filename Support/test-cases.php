@@ -80,7 +80,7 @@ $blah = function (stdClass $foo = invalid, array $blah = array()) {
     
 };
 
-$blah = function (stdClass $foo = invalid, array $blah) use ($foo, $bar) {
+$blah = function (stdClass $foo = invalid, array $blah) use (&$foo, $bar) {
     $test = 'test';
 };
 

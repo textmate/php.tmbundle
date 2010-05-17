@@ -1308,10 +1308,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?x)
-					    \b(function)\s*
-				        (&amp;\s*)?
-				        (\()</string>
+					<string>(?i)\b(function)\s*(&amp;\s*)?(?=\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1324,46 +1321,97 @@
 							<key>name</key>
 							<string>storage.modifier.reference.php</string>
 						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.parameters.begin.php</string>
-						</dict>
 					</dict>
-					<key>contentName</key>
-					<string>meta.function.arguments.php</string>
 					<key>end</key>
-					<string>(\))\s*(?:(use)\s*(\()[^)]*(\)))?</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.parameters.end.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.other.function.use.php</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.parameters.begin.php</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.parameters.end.php</string>
-						</dict>
-					</dict>
+					<string>\{</string>
 					<key>name</key>
 					<string>meta.function.closure.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
-							<string>#function-arguments</string>
+							<key>begin</key>
+							<string>(\()</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.parameters.begin.php</string>
+								</dict>
+							</dict>
+							<key>contentName</key>
+							<string>meta.function.arguments.php</string>
+							<key>end</key>
+							<string>(\))</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.parameters.end.php</string>
+								</dict>
+							</dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#function-arguments</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(?i)(use)\s*(\()</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.other.function.use.php</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.parameters.begin.php</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(\))</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.parameters.end.php</string>
+								</dict>
+							</dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>storage.modifier.php</string>
+										</dict>
+										<key>2</key>
+										<dict>
+											<key>name</key>
+											<string>variable.other.php</string>
+										</dict>
+										<key>3</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.variable.php</string>
+										</dict>
+									</dict>
+									<key>match</key>
+									<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\))</string>
+									<key>name</key>
+									<string>meta.function.closure.use.php</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
