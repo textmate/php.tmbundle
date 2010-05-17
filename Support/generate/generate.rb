@@ -60,7 +60,6 @@ include%bool include(string path)%Includes and evaluates the specified file
 include_once%bool include_once(string path)%Includes and evaluates the specified file
 require%bool require(string path)%Includes and evaluates the specified file, erroring if the file cannot be included
 require_once%bool require_once(string path)%Includes and evaluates the specified file, erroring if the file cannot be included
-lcfirst%string ucfirst(string str)%Make a string's first character lowercase
 end_of_functions_base
 
 functions_base_text.split("\n").each do |line|
@@ -101,6 +100,14 @@ parsefiles.sort.each_with_index do |file, key|
   #   end
   # end
 end
+
+# Workaround for bad docs.
+functions['lcfirst'] = {
+  :type => 'string',
+  :description => "Make a string's first character lowercase",
+  :prototype => 'string lcfirst(string str)'
+}
+sections['string'] << 'lcfirst'
 
 # aliases.each_pair do |func_alias, func|
 #   next unless functions[func]
