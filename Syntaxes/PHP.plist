@@ -2681,7 +2681,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)collator_(sort(_with_sort_keys)?|asort)(?=\s*\()</string>
+					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)collator_(sort(_with_sort_keys)?|asort|get_sort_key)(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.collator_sort.php</string>
 				</dict>
@@ -2879,7 +2879,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)(stat|c(h(own|grp|mod)|learstatcache)|is_(dir|executable|file|link|writable|readable)|touch|disk_(total_space|free_space)|file(size|ctime|type|inode|owner|_exists|perms|atime|group|mtime)|l(stat|chgrp))(?=\s*\()</string>
+					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)(stat|c(h(own|grp|mod)|learstatcache)|is_(dir|executable|file|link|writable|readable)|touch|disk_(total_space|free_space)|file(size|ctime|type|inode|owner|_exists|perms|atime|group|mtime)|l(stat|chgrp)|realpath_cache_(size|get))(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.filestat.php</string>
 				</dict>
@@ -3257,7 +3257,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)oci(setbufferinglob|_(s(tatement_type|e(t_prefetch|rver_version))|c(o(nnect|llection_(size|trim|element_(assign|get)|a(ssign|ppend)|max)|mmit)|lose|ancel)|n(um_(fields|rows)|ew_(c(o(nnect|llection)|ursor)|descriptor))|internal_debug|define_by_name|p(connect|a(ssword_change|rse))|e(rror|xecute)|f(ield_(s(cale|ize)|name|is_null|type(_raw)?|precision)|etch(_(object|a(ssoc|ll|rray)|row))?|ree_(statement|collection|descriptor))|lob_(s(ize|eek|ave)|c(opy|lose)|t(ell|runcate)|i(s_equal|mport)|e(of|rase|xport)|flush|append|write(_temporary)?|load|re(wind|ad))|r(ollback|esult)|bind_(array_by_name|by_name))|fetchinto|getbufferinglob)(?=\s*\()</string>
+					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)oci(setbufferinglob|_(s(tatement_type|e(t_(client_i(nfo|dentifier)|edition|prefetch|action|module_name)|rver_version))|c(o(nnect|llection_(size|trim|element_(assign|get)|a(ssign|ppend)|max)|mmit)|lose|ancel)|n(um_(fields|rows)|ew_(c(o(nnect|llection)|ursor)|descriptor))|internal_debug|define_by_name|p(connect|a(ssword_change|rse))|e(rror|xecute)|f(ield_(s(cale|ize)|name|is_null|type(_raw)?|precision)|etch(_(object|a(ssoc|ll|rray)|row))?|ree_(statement|collection|descriptor))|lob_(s(ize|eek|ave)|c(opy|lose)|t(ell|runcate)|i(s_equal|mport)|e(of|rase|xport)|flush|append|write(_temporary)?|load|re(wind|ad))|r(ollback|esult)|bind_(array_by_name|by_name))|fetchinto|getbufferinglob)(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.oci8_interface.php</string>
 				</dict>
@@ -3509,7 +3509,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)stream_(s(ocket_(s(hutdown|e(ndto|rver))|client|enable_crypto|pair|accept|recvfrom|get_name)|upports_lock|e(t_(timeout|write_buffer|blocking)|lect))|co(ntext_(set_(default|option|params)|create|get_(default|options|params))|py_to_stream)|is_local|filter_(prepend|append|remove)|get_(contents|transports|line|wrappers|meta_data))(?=\s*\()</string>
+					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)stream_(s(ocket_(s(hutdown|e(ndto|rver))|client|enable_crypto|pair|accept|recvfrom|get_name)|upports_lock|e(t_(timeout|write_buffer|blocking)|lect))|co(ntext_(set_(default|option|params)|create|get_(default|options|params))|py_to_stream)|is_local|filter_(prepend|append|remove)|resolve_include_path|get_(contents|transports|line|wrappers|meta_data))(?=\s*\()</string>
 					<key>name</key>
 					<string>support.function.streamsfuncs.php</string>
 				</dict>
@@ -3665,7 +3665,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)(GlobIterator|Re(cursive(RegexIterator|CachingIterator|TreeIterator|IteratorIterator|DirectoryIterator|FilterIterator|ArrayIterator)|flection(Method|Class|Object|Extension|P(arameter|roperty)|Function)?|gexIterator)|stdClass|XMLReader|M(ultipleIterator|ess(sageFormatter|ageFormatter))|tidyNode|S(impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|pl(M(inHeap|axHeap)|Heap|TempFileObject|ObjectStorage|DoublyLinkedList|PriorityQueue|Fi(le(Info|Object)|xedArray))|QLite3(Result|Stmt)?)|N(o(RewindIterator|rmalizer)|umberFormatter)|C(ollator|OMPersistHelper|achingIterator)|I(n(tlDateFormatter|finiteIterator)|teratorIterator)|ZipArchive|D(irectoryIterator|OM(XPath|Node|C(omment|dataSection)|Text|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr))|P(har(FileInfo)?|DO(Statement)?|arentIterator)|E(rrorException|mptyIterator|xception)|Fil(terIterator|esystemIterator)|A(p(pendIterator|acheRequest)|rray(Iterator|Object))|L(imitIterator|ocale))(?=\s*\()</string>
+					<string>(?i)(?:(?&lt;![\\\w])(\\)|(?=$|[^\\])\b)(GlobIterator|Re(sourceBundle|cursive(RegexIterator|CachingIterator|TreeIterator|IteratorIterator|DirectoryIterator|FilterIterator|ArrayIterator)|flection(Method|Class|Object|Extension|P(arameter|roperty)|Function)?|gexIterator)|stdClass|XMLReader|M(ultipleIterator|ess(sageFormatter|ageFormatter))|tidyNode|S(impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|pl(M(inHeap|axHeap)|Heap|TempFileObject|ObjectStorage|DoublyLinkedList|PriorityQueue|Fi(le(Info|Object)|xedArray))|QLite3(Result|Stmt)?)|N(o(RewindIterator|rmalizer)|umberFormatter)|C(ollator|OMPersistHelper|achingIterator)|I(n(tlDateFormatter|finiteIterator)|teratorIterator)|ZipArchive|D(irectoryIterator|OM(XPath|Node|C(omment|dataSection)|Text|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr))|P(har(FileInfo)?|DO(Statement)?|arentIterator)|E(rrorException|mptyIterator|xception)|Fil(terIterator|esystemIterator)|A(p(pendIterator|acheRequest)|rray(Iterator|Object))|L(imitIterator|ocale))(?=\s*\()</string>
 					<key>name</key>
 					<string>support.class.builtin.php</string>
 				</dict>

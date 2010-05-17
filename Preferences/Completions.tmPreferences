@@ -67,6 +67,7 @@
         <string>ReflectionParameter</string>
         <string>ReflectionProperty</string>
         <string>RegexIterator</string>
+        <string>ResourceBundle</string>
         <string>SQLite3</string>
         <string>SQLite3Result</string>
         <string>SQLite3Stmt</string>
@@ -254,6 +255,7 @@
         <string>collator_get_error_code</string>
         <string>collator_get_error_message</string>
         <string>collator_get_locale</string>
+        <string>collator_get_sort_key</string>
         <string>collator_get_strength</string>
         <string>collator_set_attribute</string>
         <string>collator_set_strength</string>
@@ -1557,6 +1559,11 @@
         <string>oci_result</string>
         <string>oci_rollback</string>
         <string>oci_server_version</string>
+        <string>oci_set_action</string>
+        <string>oci_set_client_identifier</string>
+        <string>oci_set_client_info</string>
+        <string>oci_set_edition</string>
+        <string>oci_set_module_name</string>
         <string>oci_set_prefetch</string>
         <string>oci_statement_type</string>
         <string>ocifetchinto</string>
@@ -1881,6 +1888,8 @@
         <string>readline_write_history</string>
         <string>readlink</string>
         <string>realpath</string>
+        <string>realpath_cache_get</string>
+        <string>realpath_cache_size</string>
         <string>recode_file</string>
         <string>recode_string</string>
         <string>register_shutdown_function</string>
@@ -2107,6 +2116,7 @@
         <string>stream_get_transports</string>
         <string>stream_get_wrappers</string>
         <string>stream_is_local</string>
+        <string>stream_resolve_include_path</string>
         <string>stream_select</string>
         <string>stream_set_blocking</string>
         <string>stream_set_timeout</string>
