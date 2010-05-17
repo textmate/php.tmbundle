@@ -162,6 +162,7 @@ collator_get_attribute%int collator_get_attribute( Collator $coll, int $attr )%*
 collator_get_error_code%int collator_get_error_code( Collator $coll )%* Get collator's last error code.
 collator_get_error_message%string collator_get_error_message( Collator $coll )%* Get text description for collator's last error code.
 collator_get_locale%string collator_get_locale( Collator $coll, int $type )%* Gets the locale name of the collator.
+collator_get_sort_key%bool collator_get_sort_key( Collator $coll, string $str )%* Get a sort key for a string from a Collator. }}}
 collator_get_strength%int collator_get_strength(Collator coll)%* Returns the current collation strength.
 collator_set_attribute%bool collator_set_attribute( Collator $coll, int $attr, int $val )%* Set collation attribute.
 collator_set_strength%bool collator_set_strength(Collator coll, int strength)%* Set the collation strength.
@@ -383,7 +384,7 @@ dom_node_append_child%DomNode dom_node_append_child(DomNode newChild);%URL: http
 dom_node_clone_node%DomNode dom_node_clone_node(boolean deep);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-3A0ED0A4 Since:
 dom_node_compare_document_position%short dom_node_compare_document_position(DomNode other);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#Node3-compareDocumentPosition Since: DOM Level 3
 dom_node_get_feature%DomNode dom_node_get_feature(string feature, string version);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#Node3-getFeature Since: DOM Level 3
-dom_node_get_user_data%DomUserData dom_node_get_user_data(string key);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#Node3-getUserData Since: DOM Level 3
+dom_node_get_user_data%mixed dom_node_get_user_data(string key);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#Node3-getUserData Since: DOM Level 3
 dom_node_has_attributes%boolean dom_node_has_attributes();%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-NodeHasAttrs Since: DOM Level 2
 dom_node_has_child_nodes%boolean dom_node_has_child_nodes();%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-810594187 Since:
 dom_node_insert_before%domnode dom_node_insert_before(DomNode newChild, DomNode refChild);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-952280727 Since:
@@ -396,7 +397,7 @@ dom_node_lookup_prefix%string dom_node_lookup_prefix(string namespaceURI);%URL: 
 dom_node_normalize%void dom_node_normalize();%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-normalize Since:
 dom_node_remove_child%DomNode dom_node_remove_child(DomNode oldChild);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-1734834066 Since:
 dom_node_replace_child%DomNode dom_node_replace_child(DomNode newChild, DomNode oldChild);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-785887307 Since:
-dom_node_set_user_data%DomUserData dom_node_set_user_data(string key, DomUserData data, userdatahandler handler);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#Node3-setUserData Since: DOM Level 3
+dom_node_set_user_data%mixed dom_node_set_user_data(string key, mixed data, userdatahandler handler);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#Node3-setUserData Since: DOM Level 3
 dom_nodelist_item%DOMNode dom_nodelist_item(int index);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#ID-844377136 Since:
 dom_string_extend_find_offset16%int dom_string_extend_find_offset16(int offset32);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#i18n-methods-StringExtend-findOffset16 Since:
 dom_string_extend_find_offset32%int dom_string_extend_find_offset32(int offset16);%URL: http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#i18n-methods-StringExtend-findOffset32 Since:
@@ -851,7 +852,7 @@ imagewbmp%bool imagewbmp(resource im [, string filename, [, int foreground]])%Ou
 imagexbm%int imagexbm(int im, string filename [, int foreground])%Output XBM image to browser or file
 imap_8bit%string imap_8bit(string text)%Convert an 8-bit string to a quoted-printable string
 imap_alerts%array imap_alerts(void)%Returns an array of all IMAP alerts that have been generated since the last page load or since the last imap_alerts() call, whichever came last. The alert stack is cleared after imap_alerts() is called.
-imap_append%bool imap_append(resource stream_id, string folder, string message [, string options])%Append a new message to a specified mailbox
+imap_append%bool imap_append(resource stream_id, string folder, string message [, string options [, string internal_date]])%Append a new message to a specified mailbox
 imap_base64%string imap_base64(string text)%Decode BASE64 encoded text
 imap_binary%string imap_binary(string text)%Convert an 8bit string to a base64 string
 imap_body%string imap_body(resource stream_id, int msg_no [, int options])%Read the message body
@@ -1311,7 +1312,7 @@ mysqli_options%bool mysqli_options(object link, int flags, mixed values)%Set opt
 mysqli_ping%bool mysqli_ping(object link)%Ping a server connection or reconnect if there is no connection
 mysqli_poll%int mysqli_poll(array read, array write, array error, long sec [, long usec])%Poll connections
 mysqli_prepare%mixed mysqli_prepare(object link, string query)%Prepare a SQL statement for execution
-mysqli_query%mixed mysqli_query(object link, string query [,int resultmode]) */%PHP_FUNCTION(mysqli_query) {  MY_MYSQL   *mysql;  zval    *mysql_link;  MYSQLI_RESOURCE  *mysqli_resource;  MYSQL_RES    *result;  char    *query = NULL;  unsigned int   query_len;  unsigned long   resultmode = MYSQLI_STORE_RESULT;   if (zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), "Os|l", &mysql_link, mysqli_link_class_entry, &query, &query_len, &resultmode) == FAILURE) {   return;  }   if (!query_len) {   php_error_docref(NULL TSRMLS_CC, E_WARNING, "Empty query");   RETURN_FALSE;  }  if ((resultmode & ~MYSQLI_ASYNC) != MYSQLI_USE_RESULT && (resultmode & ~MYSQLI_ASYNC) != MYSQLI_STORE_RESULT #if defined(MYSQLI_USE_MYSQLND) && defined(MYSQLND_THREADED)   && (resultmode & ~MYSQLI_ASYNC) != MYSQLI_BG_STORE_RESULT #endif  ) {   php_error_docref(NULL TSRMLS_CC, E_WARNING, "Invalid value for resultmode");   RETURN_FALSE;  }   MYSQLI_FETCH_RESOURCE(mysql, MY_MYSQL*, &mysql_link, "mysqli_link", MYSQLI_STATUS_VALID);   MYSQLI_DISABLE_MQ;   #ifdef MYSQLI_USE_MYSQLND  if (resultmode & MYSQLI_ASYNC) {   if (mysqli_async_query(mysql->mysql, query, query_len)) {    MYSQLI_REPORT_MYSQL_ERROR(mysql->mysql);    RETURN_FALSE;   }   mysql->async_result_fetch_type = resultmode & ~MYSQLI_ASYNC;   RETURN_TRUE;  } #endif   if (mysql_real_query(mysql->mysql, query, query_len)) {   MYSQLI_REPORT_MYSQL_ERROR(mysql->mysql);   RETURN_FALSE;  }   if (!mysql_field_count(mysql->mysql)) {   /* no result set - not a SELECT
+mysqli_query%mixed mysqli_query(object link, string query [,int resultmode]) */%PHP_FUNCTION(mysqli_query) {  MY_MYSQL   *mysql;  zval    *mysql_link;  MYSQLI_RESOURCE  *mysqli_resource;  MYSQL_RES    *result;  char    *query = NULL;  unsigned int   query_len;  unsigned long   resultmode = MYSQLI_STORE_RESULT;   if (zend_parse_method_parameters(ZEND_NUM_ARGS() TSRMLS_CC, getThis(), "Os|l", &mysql_link, mysqli_link_class_entry, &query, &query_len, &resultmode) == FAILURE) {   return;  }   if (!query_len) {   php_error_docref(NULL TSRMLS_CC, E_WARNING, "Empty query");   RETURN_FALSE;  }  if ((resultmode & ~MYSQLI_ASYNC) != MYSQLI_USE_RESULT && (resultmode & ~MYSQLI_ASYNC) != MYSQLI_STORE_RESULT) {   php_error_docref(NULL TSRMLS_CC, E_WARNING, "Invalid value for resultmode");   RETURN_FALSE;  }   MYSQLI_FETCH_RESOURCE(mysql, MY_MYSQL*, &mysql_link, "mysqli_link", MYSQLI_STATUS_VALID);   MYSQLI_DISABLE_MQ;   #ifdef MYSQLI_USE_MYSQLND  if (resultmode & MYSQLI_ASYNC) {   if (mysqli_async_query(mysql->mysql, query, query_len)) {    MYSQLI_REPORT_MYSQL_ERROR(mysql->mysql);    RETURN_FALSE;   }   mysql->async_result_fetch_type = resultmode & ~MYSQLI_ASYNC;   RETURN_TRUE;  } #endif   if (mysql_real_query(mysql->mysql, query, query_len)) {   MYSQLI_REPORT_MYSQL_ERROR(mysql->mysql);   RETURN_FALSE;  }   if (!mysql_field_count(mysql->mysql)) {   /* no result set - not a SELECT
 mysqli_real_connect%bool mysqli_real_connect(object link [,string hostname [,string username [,string passwd [,string dbname [,int port [,string socket [,int flags]]]]]]])%Open a connection to a mysql server
 mysqli_real_escape_string%string mysqli_real_escape_string(object link, string escapestr)%Escapes special characters in a string for use in a SQL statement, taking into account the current charset of the connection
 mysqli_real_query%bool mysqli_real_query(object link, string query)%Binary-safe version of mysql_query()
@@ -1465,6 +1466,11 @@ oci_pconnect%resource oci_pconnect(string user, string pass [, string db [, stri
 oci_result%string oci_result(resource stmt, mixed column)%Return a single column of result data
 oci_rollback%bool oci_rollback(resource connection)%Rollback the current context
 oci_server_version%string oci_server_version(resource connection)%Return a string containing server version information
+oci_set_action%bool oci_set_action(resource connection, string value)%Sets the action attribute on the connection
+oci_set_client_identifier%bool oci_set_client_identifier(resource connection, string value)%Sets the client identifier attribute on the connection
+oci_set_client_info%bool oci_set_client_info(resource connection, string value)%Sets the client info attribute on the connection
+oci_set_edition%bool oci_set_edition(string value)%Sets the edition attribute for all subsequent connections created
+oci_set_module_name%bool oci_set_module_name(resource connection, string value)%Sets the module attribute on the connection
 oci_set_prefetch%bool oci_set_prefetch(resource stmt, int prefetch_rows)%Sets the number of rows to be prefetched on execute to prefetch_rows for stmt
 oci_statement_type%string oci_statement_type(resource stmt)%Return the query type of an OCI statement
 ocifetchinto%int ocifetchinto(resource stmt, array &output [, int mode])%Fetch a row of result data into an array
@@ -1789,6 +1795,8 @@ readline_redisplay%void readline_redisplay(void)%Ask readline to redraw the disp
 readline_write_history%bool readline_write_history([string filename])%Writes the history
 readlink%string readlink(string filename)%Return the target of a symbolic link
 realpath%string realpath(string path)%Return the resolved path
+realpath_cache_get%bool realpath_cache_get()%Get current size of realpath cache
+realpath_cache_size%bool realpath_cache_size()%Get current size of realpath cache
 recode_file%bool recode_file(string request, resource input, resource output)%Recode file input into file output according to request
 recode_string%string recode_string(string request, string str)%Recode string str according to request string
 register_shutdown_function%void register_shutdown_function(string function_name)%Register a user-level function to be called on request termination
@@ -2014,6 +2022,7 @@ stream_get_meta_data%array stream_get_meta_data(resource fp)%Retrieves header/me
 stream_get_transports%array stream_get_transports()%Retrieves list of registered socket transports
 stream_get_wrappers%array stream_get_wrappers()%Retrieves list of registered stream wrappers
 stream_is_local%bool stream_is_local(resource stream|string url)%
+stream_resolve_include_path%string stream_resolve_include_path(string filename)%Determine what file will be opened by calls to fopen() with a relative path
 stream_select%int stream_select(array &read_streams, array &write_streams, array &except_streams, int tv_sec[, int tv_usec])%Runs the select() system call on the sets of streams with a timeout specified by tv_sec and tv_usec
 stream_set_blocking%bool stream_set_blocking(resource socket, int mode)%Set blocking/non-blocking mode on a socket or stream
 stream_set_timeout%bool stream_set_timeout(resource stream, int seconds [, int microseconds])%Set timeout on stream read to seconds + microseonds
