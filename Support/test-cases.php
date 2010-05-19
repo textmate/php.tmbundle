@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Code snippets designed to stress the PHP grammar
+ *
+ * This is admittedly a mess, and many of the lines aren't actually valid. I'm just trying to test
+ * that certain things happen in a more sane fashion than others. This will definitely be cleaned up
+ * in the future.
+ */
+
 //
 // Namespaces & Classes
 //
@@ -23,6 +31,18 @@ namespace one\more
 
 class Foo 
 {
+    public $bar;
+    protected $_blah;
+    private $_test;
+    public static $bar;
+    protected static $_blah;
+    private static $_test;
+    static public $bar;
+    static protected $_blah;
+    static private $_test;
+    static $bar;
+    static $_blah;
+    static $_test;
 }
 
 class Foo extends Bar
@@ -43,6 +63,22 @@ class Foo implements foo\Bar
 
 class Foo extends foo\Bar implements foo\Bar
 {
+    public static $blah;
+    
+    public function blah()
+    {
+        shouldNotShowInSymbols();
+    }
+
+    public static function blah()
+    {
+        
+    }
+
+    static protected function blah()
+    {
+        
+    }
 }
 
 abstract class Foo;
@@ -72,7 +108,9 @@ interface Foo extends foo\blah\Bar
 function test()
 function test($foo, $foo = 1, &$foo = array(), &$foo = array(1, "2", "3", 4))
 function test(array $foo = array(1, "2", "3", 4), array &$foo = array(), array $foo = null, array $foo = invalid)
+function test(array $foo)
 function test(stdClass $foo)
+function test(foo\bar\blah $foo)
 function test(stdClass $foo = null)
 function &test(stdClass $foo = invalid)
 
@@ -95,6 +133,10 @@ $blah = new blah\Foo();
 $blah = new $foo();
 $blah = new $foo;
 $blah = new blah\$Foo();
+
+Foo::bar(new test());
+Foo::bar(new test);
+blah\Foo::bar(new blah\test());
 
 // ========================
 // = String interpolation =
@@ -132,6 +174,63 @@ BLAH;
 
 namespace foo\bar;
 
+E_ERROR
+E_DEPRECATED
+E_NOTICE
+E_COMPILE_ERROR
+E_PARSE
+E_USER_DEPRECATED
+__FILE__
+__DIR__
+__NAMESPACE__
+
+echo E_ERROR;
+echo \E_ERROR;
+echo namespace\E_ERROR;
+
+array_map();
+array_map($test, 'foo', MY_CONST);
+\array_map();
+blah\array_map();
+namespace\array_map($test, 'foo');
+
+// `namespace` should not be highlighted as a namespace component but rather as an operator like
+// `self` or `static`
+\foo\blah();
+namespace\foo();
+$blah = new foo();
+$blah = new foo\bar();
+$blah = new foo\bar\();
+$blah = new namespace\Foo();
+$blah = new self\Foo();
+$foo->bar();
+
+// `self` and `static` should be storage.type.php
+self::foo();
+static::foo();
+Blah::foo();
+\foo\Blah::foo();
+
+$foo = self::BAR;
+$foo = static::BAR;
+$foo = self::$bar;
+$foo = static::$bar;
+
+new self(); // `self` should highlight differently
+new static(); // `static` should highlight differently
+new Blah();
+
+goto foo;
+
+foo:
+
+goto blah;
+
+blah: {
+    
+}
+
+
 // =======
 // = SQL =
 // =======
@@ -151,4 +250,167 @@ namespace foo\bar;
 'SELECT * FROM -- foo bar \' asdassdsaas';
 "SELECT * FROM # foo bar \" asdassdsaas";
 "SELECT * FROM -- foo bar \" asdassdsaas";
+
+
+$foo = new Bar();
+
+$mode = PDO::FETCH_ASSOC;
+$mode = \PDO::FETCH_ASSOC;
+$mode = namespace\PDO::FETCH_ASSOC;
+$blah = \stuff\PDO::FETCH_ASSOC;
+$more = stuff\PDO::FETCH_ASSOC;
+$blah = \stuff\more\PDO::FETCH_ASSOC;
+$more = stuff\more\PDO::FETCH_ASSOC;
+$blah = $blah::FETCH_ASSOC;
+$blah = \blah\$blah::FETCH_ASSOC;
+$blah = \blah\$blah\foo\$blah::FETCH_ASSOC;
+
+$mode = PDO::$prop;
+$mode = \PDO::$prop;
+$mode = namespace\PDO::$prop;
+$blah = \stuff\PDO::$prop;
+$more = stuff\PDO::$prop;
+$blah = \stuff\more\PDO::$prop;
+$more = stuff\more\PDO::$prop;
+
+$mode = PDO::staticMethod();
+$mode = \PDO::staticMethod();
+$mode = namespace\PDO::staticMethod();
+$blah = \stuff\PDO::staticMethod();
+$more = stuff\PDO::staticMethod();
+$blah = \stuff\more\PDO::staticMethod();
+$more = stuff\more\PDO::staticMethod();
+
+$mode = funcCall();
+$mode = \funcCall();
+$mode = namespace\funcCall();
+$blah = \stuff\funcCall();
+$more = stuff\funcCall();
+$blah = \stuff\more\funcCall();
+$more = stuff\more\funcCall();
+
+$blah = $foo->test;
+$blah = foo->test;
+$blah = ${'foo'}->test;
+
+// When type hinting:
+class Test {
+    public function __construct(\My\Namespace\MyClass $myClass) {
+        // ..
+    }
+}
+class Test {
+    public function __construct(namespace\MyClass $myClass) {
+        // ..
+    }
+}
+
+// Assuming this is in the same area as type hinting, in catch blocks:
+
+try {
+    // ..
+} catch (PDOException $e) {
+    // ..
+}
+try {
+    // ..
+} catch (asdf\PDOException $e) {
+    // ..
+}
+try {
+    // ..
+} catch (\asdf\foo\PDOException $e) {
+    // ..
+}
+try {
+    // ..
+} catch (namespace\PDOException $e) {
+    // ..
+}
+
+// Also while technically not an issue, the namespace keyword isn't actually interpreted as a library keyword and rather as if it was a user defined namespace. (http://www.php.net/manual/en/language.namespaces.nsconstants.php)
+
+$keyword = new \MyClass();
+$keyword = new namesace\MyClass();
+$blah = new namespace\MyClass();
+$blah = new \namespace\MyClass();
+$blah = new foo\namespace\MyClass();
+
+$blah = new blah();
+$blah = new blah\blah();
+$blah = new blah\$blah\$blah\blah();
+
+if ($test == 1) {
+    
+} else if (123 === $foo) {
+    
+} elseif (CONST) {
+    
+} else {
+    
+}
+
+if ($blah instanceof MyClass) {
+    
+}
+
+if ($blah instanceof foo\MyClass) {
+    
+}
+
+if ($blah instanceof namespace\foo\MyClass) {
+    
+}
+
+if ($blah instanceof $b) {
+    
+}
+
+foo(&$blah); // Ampersand should be invalid.deprecated.call-time-pass-by-reference.php
+foo(&$blah, array(), &$blah); // Ampersand should be invalid.deprecated.call-time-pass-by-reference.php
+foo(array($blah, &$foo)); // Ampersand should be storage.modifier.reference.php
+
+$blah =<<<HTML
+<html>
+</head>
+HTML;
+
+$blah =<<<CSS
+.test {
+    width: 120px;
+}
+CSS;
+
+require 'foo';
+require_once 'blah';
+include 'lkajsdf';
+
+$foo = array(1, 2, 3);
+$foo = array(
+    // One
+    1,
+    // Two
+    2,
+);
+
+call_user_method();
+call_user_method_array();
+define_syslog_variables();
+dl();
+ereg();
+ereg_replace();
+eregi();
+eregi_replace();
+set_magic_quotes_runtime();
+session_register();
+session_unregister();
+session_is_registered();
+set_socket_blocking();
+split();
+spliti();
+sql_regcase();
+mysql_db_query();
+mysql_escape_string();
+
+
 ?>
