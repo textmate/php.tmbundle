@@ -501,39 +501,29 @@
 		<key>function-call</key>
 		<dict>
 			<key>begin</key>
-			<string>(?i)(\\?)(?=[a-z_](?:[a-z0-9_\\]*)[a-z0-9_]*\s*\()</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.separator.inheritance.php</string>
-				</dict>
-			</dict>
+			<string>(?i)(?=\\?[a-z_](?:[a-z0-9_\\]*)[a-z0-9_]*\s*\()</string>
+			<key>comment</key>
+			<string>This is a bit awkward but the structure will make sense on the next commit</string>
 			<key>end</key>
-			<string>[A-Za-z_][A-Za-z_0-9]*(?=\s*\()</string>
+			<string>(?=\s*\()</string>
 			<key>name</key>
 			<string>meta.function-call.php</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.separator.inheritance.php</string>
-						</dict>
-					</dict>
+					<key>include</key>
+					<string>#namespace</string>
+				</dict>
+				<dict>
 					<key>match</key>
-					<string>(?i)[a-z0-9_]+(\\)?</string>
+					<string>[A-Za-z_][A-Za-z_0-9]*</string>
 				</dict>
 			</array>
 		</dict>
 		<key>instantiation</key>
 		<dict>
 			<key>begin</key>
-			<string>(?i)(new)\s+(\\?)\s*</string>
+			<string>(?i)(new)\s+</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -541,32 +531,20 @@
 					<key>name</key>
 					<string>keyword.other.new.php</string>
 				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.separator.inheritance.php</string>
-				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i)\s*[(;]</string>
+			<string>(?i)(?=[^a-z0-9_\\])</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>support.namespace.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.separator.inheritance.php</string>
-						</dict>
-					</dict>
 					<key>match</key>
-					<string>(?i)([a-z0-9_]+)(\\)</string>
+					<string>(parent|static|self)(?=[^a-z0-9_])</string>
+					<key>name</key>
+					<string>storage.type.php</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#namespace</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -582,7 +560,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?i)([a-z0-9_]+)\s*(?=\(|;)</string>
+					<string>(?i)([a-z0-9_]+)(?=[^a-z0-9_])</string>
 				</dict>
 			</array>
 		</dict>
@@ -998,7 +976,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)^\s*(interface)\s+([a-z0-9_]+)\s*(extends)?\s*(\\?)</string>
+					<string>(?i)^\s*(interface)\s+([a-z0-9_]+)\s*(extends)?\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1016,11 +994,6 @@
 							<key>name</key>
 							<string>storage.modifier.extends.php</string>
 						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.separator.inheritance.php</string>
-						</dict>
 					</dict>
 					<key>end</key>
 					<string>([a-zA-Z0-9_]+)?\s*(?:(?=\{)|$)</string>
@@ -1029,7 +1002,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.class.extends.php</string>
+							<string>entity.name.inherited-class.php</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -1037,18 +1010,8 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.separator.inheritance.php</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>[a-zA-Z0-9_]+(\\)</string>
-							<key>name</key>
-							<string>support.class.extends.php</string>
+							<key>include</key>
+							<string>#namespace</string>
 						</dict>
 					</array>
 				</dict>
@@ -1096,49 +1059,33 @@
 							<string>keyword.other.use.php</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>support.other.namespace.use.php</string>
 					<key>end</key>
-					<string>(?=\;)</string>
+					<string>(?xi)
+    				    (?:\s+(as)\s+([a-z0-9_]+))?
+    				    (?:\s*(?:,|(?=;)))
+					    (?=\;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.other.use-as.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.other.namespace.use-as.php</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.use.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>begin</key>
-							<string>\s+</string>
-							<key>contentName</key>
-							<string>support.namespace.use.php</string>
-							<key>end</key>
-							<string>(?xi)
-							    (?:\s+(as)\s+([a-z0-9_]+))?
-							    (?:\s*(?:,|(?=;)))</string>
-							<key>endCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.other.use-as.php</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>support.namespace.use-as.php</string>
-								</dict>
-							</dict>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>captures</key>
-									<dict>
-										<key>1</key>
-										<dict>
-											<key>name</key>
-											<string>punctuation.separator.inheritance.php</string>
-										</dict>
-									</dict>
-									<key>match</key>
-									<string>(?i)(\\)?[a-z0-9_]+</string>
-								</dict>
-							</array>
+							<key>include</key>
+							<string>#namespace</string>
 						</dict>
 					</array>
 				</dict>
@@ -1181,22 +1128,20 @@
 								</dict>
 							</dict>
 							<key>contentName</key>
-							<string>support.class.extends.php</string>
+							<string>meta.other.inherited-class.php</string>
 							<key>end</key>
 							<string>(?=(\s*\b(?i:(implements)))|([;{]))</string>
 							<key>patterns</key>
 							<array>
 								<dict>
-									<key>captures</key>
-									<dict>
-										<key>1</key>
-										<dict>
-											<key>name</key>
-											<string>punctuation.separator.inheritance.php</string>
-										</dict>
-									</dict>
+									<key>include</key>
+									<string>#namespace</string>
+								</dict>
+								<dict>
 									<key>match</key>
-									<string>(?i)(\\)?[a-z0-9_]+</string>
+									<string>(?i)[a-z_][a-z_0-9]*</string>
+									<key>name</key>
+									<string>entity.other.inherited-class.php</string>
 								</dict>
 							</array>
 						</dict>
@@ -1219,22 +1164,14 @@
 									<key>begin</key>
 									<string>(?i)(?=[a-z0-9_\\]+)</string>
 									<key>contentName</key>
-									<string>support.class.implements.php</string>
+									<string>entity.other.inherited-class.php</string>
 									<key>end</key>
 									<string>(?i)(?:\s*(?:(,))|(?=[;{])\s*)</string>
 									<key>patterns</key>
 									<array>
 										<dict>
-											<key>captures</key>
-											<dict>
-												<key>1</key>
-												<dict>
-													<key>name</key>
-													<string>punctuation.separator.inheritance.php</string>
-												</dict>
-											</dict>
-											<key>match</key>
-											<string>(?i)(\\)?[a-z0-9_]+</string>
+											<key>include</key>
+											<string>#namespace</string>
 										</dict>
 									</array>
 								</dict>
@@ -1496,11 +1433,18 @@
 					<string>storage.modifier.php</string>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#object</string>
-				</dict>
-				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>(?i)(?=[a-z_0-9$\\]*(::))</string>
+					<key>end</key>
+					<string>(?x)(::)
+                        (?:
+        				    ([A-Za-z_][A-Za-z_0-9]*)\s*\(
+        				    |
+        				    ((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
+        				    |
+        				    ([a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
+        				)</string>
+					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
@@ -1528,15 +1472,33 @@
 							<string>constant.other.class.php</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>(?x)(::)
-                        (?:
-        				    ([A-Za-z_][A-Za-z_0-9]*)\s*\(
-        				    |
-        				    ((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
-        				    |
-        				    ([a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
-        				)?</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>(self|static|parent)\b</string>
+							<key>name</key>
+							<string>storage.type.php</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#namespace</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#variable-name</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>([A-Za-z_][A-Za-z_0-9]*)</string>
+							<key>name</key>
+							<string>support.class.php</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#object</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1748,6 +1710,51 @@
 				<dict>
 					<key>include</key>
 					<string>#constants</string>
+				</dict>
+			</array>
+		</dict>
+		<key>namespace</key>
+		<dict>
+			<key>begin</key>
+			<string>(?i)(?:(namespace)|([a-z0-9_]+))?(\\)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.language.namespace.php</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.other.namespace.php</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.inheritance.php</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?i)(?=.*[^a-z0-9_\\])</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.other.namespace.partial.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.inheritance.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?i)([a-z0-9_]+)(\\)</string>
 				</dict>
 			</array>
 		</dict>
