@@ -13,7 +13,21 @@
 //
 namespace blah;
 namespace one_two;
+namespace one_two\three_four;
 namespace blah\one\two;
+
+// Respond sanely here, despite the parse error
+namespace noend
+
+// Handle blocks
+namespace block {
+
+}
+
+namespace block
+{
+
+}
 
 namespace 123; // Invalid namespace
 
