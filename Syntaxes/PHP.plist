@@ -510,11 +510,9 @@
 		<key>function-call</key>
 		<dict>
 			<key>begin</key>
-			<string>(?i)(?=\\?[a-z_](?:[a-z0-9_\\]*)[a-z0-9_]*\s*\()</string>
-			<key>comment</key>
-			<string>This is a bit awkward but the structure will make sense on the next commit</string>
+			<string>(?i)(?=[a-z_0-9\\]*[a-z_][a-z0-9_]*\s*\()</string>
 			<key>end</key>
-			<string>(?=\s*\()</string>
+			<string>(?i)[a-z_][a-z_0-9]*(?=\s*\()</string>
 			<key>name</key>
 			<string>meta.function-call.php</string>
 			<key>patterns</key>
@@ -522,10 +520,6 @@
 				<dict>
 					<key>include</key>
 					<string>#namespace</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>[A-Za-z_][A-Za-z_0-9]*</string>
 				</dict>
 			</array>
 		</dict>
