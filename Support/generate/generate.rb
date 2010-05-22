@@ -194,7 +194,7 @@ def pattern_for(name, list)
   return unless list = process_list(list)
   {
     'name'  => name,
-    'match' => "(?i)(?:(?<![\\\\\\w])(\\\\)|(?=$|[^\\\\])\\b)#{ list }(?=\\s*\\()"
+    'match' => "(?i)\\b#{ list }(?=\\s*\\()"
   }
 end
 
@@ -204,28 +204,11 @@ grammar = OSX::PropertyList.load(File.read(GrammarPath))
 
 patterns = []
 
-patterns << {
-  'name' => 'meta.array.php',
-  'begin' => '(array)(\\()',
-  'end' => '\\)',
-  'beginCaptures' => {
-    '1' => { 'name' => 'support.function.construct.php' },
-    '2' => { 'name' => 'punctuation.definition.array.begin.php' },
-  },
-  'endCaptures' => { '0' => { 'name' => 'punctuation.definition.array.end.php' } },
-  'patterns' => [{ 'include' => '#language' } ],
-}
-
 sections.sort.each do |(section, funcs)|
   patterns << pattern_for('support.function.' + section + '.php', funcs)
 end
 patterns << pattern_for('support.function.alias.php', %w{is_int is_integer})
 patterns << pattern_for('support.class.builtin.php', classes)
-
-patterns << {
-  'name' => 'support.function.construct.php',
-  'match' => '(?i)\\b((print|echo)\\b|(isset|unset|e(val|mpty)|list)(?=\\s*\\())'
-}
 
 grammar['repository']['support'] = { 'patterns' => patterns }
 File.open(GrammarPath, 'w') do |file|
