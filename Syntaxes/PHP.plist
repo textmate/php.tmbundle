@@ -1646,21 +1646,41 @@
 					<string>keyword.operator.assignment.php</string>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>(?i)\b(instanceof)\b\s+(?=[\\$a-z_])</string>
+					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.operator.type.php</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>support.class.php</string>
-						</dict>
 					</dict>
-					<key>match</key>
-					<string>(?i)\b(instanceof)\b(?:\s+(\w+))?</string>
+					<key>end</key>
+					<string>(?=[^\\$A-Za-z_0-9])</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#namespace</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#variable-name</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>support.class.php</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(?i)([a-z0-9_]+)</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>include</key>
