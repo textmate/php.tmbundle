@@ -15,14 +15,29 @@ namespace blah;
 namespace one_two;
 namespace blah\one\two;
 
-use foo\bar;
+namespace 123; // Invalid namespace
 
-use \foo\bar;
+use 123\123; // Invalid
+use foo as 123; // Invalid
+use foo\bar; use bar\foo;
+
+// Invalid (missing semicolon)
+use \foo\bar
+
+use \foo\bar\baz;
 
 use \foo\bar,
     \bar\foo,
     blah_foo\foo,
     one\more_time\forKicks;
+
+use \foo\bar as blah, // test
+    // Test
+    \bar\foo as asdf, // test
+    /* Test */
+    blah_foo\foo as fdsa,
+    one\more_time\forKicks as lkajsdf; // test
+    
 
 namespace one\more 
 {

@@ -1063,7 +1063,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)^\s*(use)(?=\s+)</string>
+					<string>(?i)(use)\s+(?=[a-z_0-9\\ ]+\s*(?:;|,))</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1072,33 +1072,64 @@
 							<string>keyword.other.use.php</string>
 						</dict>
 					</dict>
-					<key>contentName</key>
-					<string>support.other.namespace.use.php</string>
 					<key>end</key>
-					<string>(?xi)
-    				    (?:\s+(as)\s+([a-z0-9_]+))?
-    				    (?:\s*(?:,|(?=;)))
-					    (?=\;)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.other.use-as.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>support.other.namespace.use-as.php</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>meta.use.php</string>
+					<string>(?:;|[^,]\s*$)</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#namespace</string>
+							<string>#comments</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(?xi)\s*
+					            (?=[a-z_0-9\\]*[a-z_][a-z_0-9]*
+					                (?:
+					                    (?:\s+as\s+[a-z_][a-z_0-9]*)?
+					                    \s*
+					                    (?:,|;)
+					                )
+					            )
+					        </string>
+							<key>contentName</key>
+							<string>support.other.namespace.use.php</string>
+							<key>end</key>
+							<string>(?xi)
+					            (?:\s+(as)\s+
+					                ([a-z_][a-z_0-9]*)
+					            )?
+					            \s*(?=,|;)
+					        </string>
+							<key>endCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.other.use-as.php</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>support.other.namespace.use-as.php</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>meta.use.php</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.separator.inheritance.php</string>
+										</dict>
+									</dict>
+									<key>match</key>
+									<string>(?i)\s*(\\)?\s*[a-z_][a-z_0-9]*</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
