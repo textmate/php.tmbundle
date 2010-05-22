@@ -1020,7 +1020,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)^\s*(namespace)\s+(?=[a-z0-9_]+)</string>
+					<string>(?i)^\s*(namespace)\s+(?=[a-z_][a-z_0-9]*)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1047,7 +1047,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>(?i)\s*(\\)?\s*[a-z0-9_]+</string>
+							<string>(?i)\s*(\\)?\s*[a-z_][a-z_0-9]*</string>
 						</dict>
 					</array>
 				</dict>
@@ -1751,7 +1751,7 @@
 		<key>namespace</key>
 		<dict>
 			<key>begin</key>
-			<string>(?i)(?:(namespace)|([a-z0-9_]+))?(\\)</string>
+			<string>(?i)(?:(namespace)|([a-z0-9_]+))?(\\)(?=[a-z_0-9\\]*[a-z_][a-z_0-9]*[^a-z_0-9\\])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1771,7 +1771,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i)(?=.*[^a-z0-9_\\])</string>
+			<string>(?i)(?=[a-z_][a-z_0-9]*[^a-z0-9_\\])</string>
 			<key>patterns</key>
 			<array>
 				<dict>
