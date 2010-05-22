@@ -1253,45 +1253,33 @@
 					</array>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>\b(catch)\b\s*\(\s*</string>
-					<key>beginCaptures</key>
+					<key>captures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.control.exception.catch.php</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>([A-Za-z_][A-Za-z_0-9]*)\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*\)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.class.exception.php</string>
+							<string>keyword.control.exception.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.php</string>
+							<string>support.class.php</string>
 						</dict>
 						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.variable.php</string>
 						</dict>
 					</dict>
+					<key>match</key>
+					<string>\b(catch)\b\s*\(\s*([A-Za-z_][A-Za-z_0-9]*)\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*\)</string>
 					<key>name</key>
 					<string>meta.catch.php</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#namespace</string>
-						</dict>
-					</array>
 				</dict>
 				<dict>
 					<key>match</key>
