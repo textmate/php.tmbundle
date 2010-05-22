@@ -362,7 +362,24 @@
 					<string>meta.function.argument.array.php</string>
 				</dict>
 				<dict>
-					<key>captures</key>
+					<key>begin</key>
+					<string>(?i)(?=\\?[a-z_])</string>
+					<key>end</key>
+					<string>(?x)
+							\s*([A-Za-z_][A-Za-z_0-9]*) # Typehinted class name
+							\s*(&amp;)? 					# Reference
+							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
+							(?:
+								\s*(=)	# A default value
+								\s*(?i:
+									(NULL)
+									|
+									(\S.*?)
+									)?
+							)?
+							\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
+							</string>
+					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
@@ -400,23 +417,15 @@
 							<string>invalid.illegal.non-null-typehinted.php</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>(?x)
-							\s*([A-Za-z_][A-Za-z_0-9]*) # Typehinted class name
-							\s*(&amp;)? 					# Reference
-							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
-							(?:
-								\s*(=)	# A default value
-								\s*(?i:
-									(NULL)
-									|
-									(\S.*?)
-									)?
-							)?
-							\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
-							</string>
 					<key>name</key>
 					<string>meta.function.argument.typehinted.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#namespace</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>captures</key>
