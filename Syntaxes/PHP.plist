@@ -1005,7 +1005,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.inherited-class.php</string>
+							<string>entity.other.inherited-class.php</string>
 						</dict>
 					</dict>
 					<key>name</key>
