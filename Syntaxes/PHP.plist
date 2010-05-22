@@ -193,6 +193,83 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>comments</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>/\*\*(?:#@\+)?\s*$</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.php</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>This now only highlights a docblock if the first line contains only /**
+								- this is to stop highlighting everything as invalid when people do comment banners with /******** ...
+								- Now matches /**#@+ too - used for docblock templates: http://manual.phpdoc.org/HTMLframesConverter/default/phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#basics.docblocktemplate</string>
+					<key>end</key>
+					<string>\*/</string>
+					<key>name</key>
+					<string>comment.block.documentation.phpdoc.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#php_doc</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>/\*</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\*/</string>
+					<key>name</key>
+					<string>comment.block.php</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(//).*?($\n?|(?=\?&gt;))</string>
+					<key>name</key>
+					<string>comment.line.double-slash.php</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(#).*?($\n?|(?=\?&gt;))</string>
+					<key>name</key>
+					<string>comment.line.number-sign.php</string>
+				</dict>
+			</array>
+		</dict>
 		<key>constants</key>
 		<dict>
 			<key>patterns</key>
@@ -907,75 +984,8 @@
 					</array>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>/\*\*(?:#@\+)?\s*$</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.php</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>This now only highlights a docblock if the first line contains only /**
-								- this is to stop highlighting everything as invalid when people do comment banners with /******** ...
-								- Now matches /**#@+ too - used for docblock templates: http://manual.phpdoc.org/HTMLframesConverter/default/phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#basics.docblocktemplate</string>
-					<key>end</key>
-					<string>\*/</string>
-					<key>name</key>
-					<string>comment.block.documentation.phpdoc.php</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#php_doc</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>/\*</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.php</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\*/</string>
-					<key>name</key>
-					<string>comment.block.php</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.php</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(//).*?($\n?|(?=\?&gt;))</string>
-					<key>name</key>
-					<string>comment.line.double-slash.php</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.php</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(#).*?($\n?|(?=\?&gt;))</string>
-					<key>name</key>
-					<string>comment.line.number-sign.php</string>
+					<key>include</key>
+					<string>#comments</string>
 				</dict>
 				<dict>
 					<key>begin</key>
