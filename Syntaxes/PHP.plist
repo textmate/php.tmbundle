@@ -1490,7 +1490,16 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)(?=[a-z_0-9$\\]*(::))</string>
+					<string>(?xi)(?=
+				        [a-z_0-9$\\]*(::)
+                        (?:
+        				    ([a-z_][a-z_0-9]*)\s*\(
+        				    |
+        				    ((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*)
+        				    |
+        				    ([a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*)
+        				)?
+				    )</string>
 					<key>end</key>
 					<string>(?x)(::)
                         (?:
@@ -1499,7 +1508,7 @@
         				    ((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
         				    |
         				    ([a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
-        				)</string>
+        				)?</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>

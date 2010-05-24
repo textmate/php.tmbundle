@@ -245,6 +245,11 @@ $foo = static::BAR;
 $foo = self::$bar;
 $foo = static::$bar;
 
+static::${$test} = 'test';
+Blah::${$test} = 'test';
+\foo\Blah::${$test} = 'test';
+${$test} = 'test';
+
 new self(); // `self` should highlight differently
 new static(); // `static` should highlight differently
 new Blah();
