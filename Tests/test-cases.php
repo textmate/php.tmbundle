@@ -427,6 +427,35 @@ $foo = array(
     2,
 );
 
+// Built-in classes
+
+throw new Exception('Bad thing happened!');
+throw new ErrorException('Bad thing happened!');
+
+$x = new SplDoublyLinkedList();
+$x = new SplFileInfo();
+$x = new SplTempFileObject();
+$x = new RecursiveDirectoryIterator();
+$x = new GlobIterator();
+$x = new stdClass;
+
+// SPL Exceptions
+throw new BadFunctionCallException();
+throw new BadMethodCallException();
+throw new DomainException();
+throw new InvalidArgumentException();
+throw new LengthException();
+throw new LogicException();
+throw new OutOfBoundsException();
+throw new OutOfRangeException();
+throw new OverflowException();
+throw new RangeException();
+throw new RuntimeException();
+throw new UnderflowException();
+throw new UnexpectedValueException();
+
+// Built-in functions
+
 call_user_method();
 call_user_method_array();
 define_syslog_variables();

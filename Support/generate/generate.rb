@@ -70,7 +70,23 @@ end
 
 # aliases = {}
 sections = {}
-classes = %w[stdClass]
+
+classes = [
+  'stdClass',
+  'LogicException',
+  'BadFunctionCallException',
+  'BadMethodCallException',
+  'DomainException',
+  'InvalidArgumentException',
+  'LengthException',
+  'OutOfRangeException',
+  'RuntimeException',
+  'OutOfBoundsException',
+  'OverflowException',
+  'RangeException',
+  'UnderflowException',
+  'UnexpectedValueException'  
+]
 
 # prototype blocks
 parsefiles.sort.each_with_index do |file, key|
@@ -190,11 +206,11 @@ def process_list(list)
   end
 end
 
-def pattern_for(name, list)
+def pattern_for(name, list, constructors = false)
   return unless list = process_list(list)
   {
     'name'  => name,
-    'match' => "(?i)\\b#{ list }(?=\\s*\\()"
+    'match' => "(?i)\\b#{ list }(?=\\s*" + (constructors && "[\\(|;]" || "\\(") + ")"
   }
 end
 
@@ -208,7 +224,7 @@ sections.sort.each do |(section, funcs)|
   patterns << pattern_for('support.function.' + section + '.php', funcs)
 end
 patterns << pattern_for('support.function.alias.php', %w{is_int is_integer})
-patterns << pattern_for('support.class.builtin.php', classes)
+patterns << pattern_for('support.class.builtin.php', classes, true)
 
 grammar['repository']['support'] = { 'patterns' => patterns }
 File.open(GrammarPath, 'w') do |file|

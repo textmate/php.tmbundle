@@ -14,6 +14,8 @@
         <string>AppendIterator</string>
         <string>ArrayIterator</string>
         <string>ArrayObject</string>
+        <string>BadFunctionCallException</string>
+        <string>BadMethodCallException</string>
         <string>COMPersistHelper</string>
         <string>CachingIterator</string>
         <string>Collator</string>
@@ -29,6 +31,7 @@
         <string>DOMText</string>
         <string>DOMXPath</string>
         <string>DirectoryIterator</string>
+        <string>DomainException</string>
         <string>EmptyIterator</string>
         <string>ErrorException</string>
         <string>Exception</string>
@@ -37,20 +40,27 @@
         <string>GlobIterator</string>
         <string>InfiniteIterator</string>
         <string>IntlDateFormatter</string>
+        <string>InvalidArgumentException</string>
         <string>IteratorIterator</string>
+        <string>LengthException</string>
         <string>LimitIterator</string>
         <string>Locale</string>
+        <string>LogicException</string>
         <string>MessageFormatter</string>
         <string>MesssageFormatter</string>
         <string>MultipleIterator</string>
         <string>NoRewindIterator</string>
         <string>Normalizer</string>
         <string>NumberFormatter</string>
+        <string>OutOfBoundsException</string>
+        <string>OutOfRangeException</string>
+        <string>OverflowException</string>
         <string>PDO</string>
         <string>PDOStatement</string>
         <string>ParentIterator</string>
         <string>Phar</string>
         <string>PharFileInfo</string>
+        <string>RangeException</string>
         <string>RecursiveArrayIterator</string>
         <string>RecursiveCachingIterator</string>
         <string>RecursiveDirectoryIterator</string>
@@ -68,6 +78,7 @@
         <string>ReflectionProperty</string>
         <string>RegexIterator</string>
         <string>ResourceBundle</string>
+        <string>RuntimeException</string>
         <string>SQLite3</string>
         <string>SQLite3Result</string>
         <string>SQLite3Stmt</string>
@@ -89,6 +100,8 @@
         <string>SplObjectStorage</string>
         <string>SplPriorityQueue</string>
         <string>SplTempFileObject</string>
+        <string>UnderflowException</string>
+        <string>UnexpectedValueException</string>
         <string>XMLReader</string>
         <string>ZipArchive</string>
         <string>abs</string>

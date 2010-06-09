@@ -631,6 +631,10 @@
 					<string>#variable-name</string>
 				</dict>
 				<dict>
+					<key>include</key>
+					<string>#support</string>
+				</dict>
+				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -3849,7 +3853,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(GlobIterator|Re(sourceBundle|cursive(RegexIterator|CachingIterator|TreeIterator|IteratorIterator|DirectoryIterator|FilterIterator|ArrayIterator)|flection(Method|Class|Object|Extension|P(arameter|roperty)|Function)?|gexIterator)|stdClass|XMLReader|M(ultipleIterator|ess(sageFormatter|ageFormatter))|tidyNode|S(impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|pl(M(inHeap|axHeap)|Heap|TempFileObject|ObjectStorage|DoublyLinkedList|PriorityQueue|Fi(le(Info|Object)|xedArray))|QLite3(Result|Stmt)?)|N(o(RewindIterator|rmalizer)|umberFormatter)|C(ollator|OMPersistHelper|achingIterator)|I(n(tlDateFormatter|finiteIterator)|teratorIterator)|ZipArchive|D(irectoryIterator|OM(XPath|Node|C(omment|dataSection)|Text|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr))|P(har(FileInfo)?|DO(Statement)?|arentIterator)|E(rrorException|mptyIterator|xception)|Fil(terIterator|esystemIterator)|A(p(pendIterator|acheRequest)|rray(Iterator|Object))|L(imitIterator|ocale))(?=\s*\()</string>
+					<string>(?i)\b(GlobIterator|R(untimeException|e(sourceBundle|cursive(RegexIterator|CachingIterator|TreeIterator|IteratorIterator|DirectoryIterator|FilterIterator|ArrayIterator)|flection(Method|Class|Object|Extension|P(arameter|roperty)|Function)?|gexIterator)|angeException)|stdClass|XMLReader|M(ultipleIterator|ess(sageFormatter|ageFormatter))|Bad(MethodCallException|FunctionCallException)|tidyNode|S(impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|pl(M(inHeap|axHeap)|Heap|TempFileObject|ObjectStorage|DoublyLinkedList|PriorityQueue|Fi(le(Info|Object)|xedArray))|QLite3(Result|Stmt)?)|N(o(RewindIterator|rmalizer)|umberFormatter)|C(ollator|OMPersistHelper|achingIterator)|I(n(tlDateFormatter|validArgumentException|finiteIterator)|teratorIterator)|ZipArchive|O(utOf(RangeException|BoundsException)|verflowException)|D(irectoryIterator|omainException|OM(XPath|Node|C(omment|dataSection)|Text|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr))|Un(derflowException|expectedValueException)|P(har(FileInfo)?|DO(Statement)?|arentIterator)|E(rrorException|mptyIterator|xception)|Fil(terIterator|esystemIterator)|A(p(pendIterator|acheRequest)|rray(Iterator|Object))|L(imitIterator|o(cale|gicException)|engthException))(?=\s*[\(|;])</string>
 					<key>name</key>
 					<string>support.class.builtin.php</string>
 				</dict>
