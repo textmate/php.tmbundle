@@ -415,6 +415,10 @@ $blah =<<<CSS
 }
 CSS;
 
+$blah =<<<JSON
+{ "blah": { "foo": 123, "bar": 321 } }
+JSON;
+
 require 'foo';
 require_once 'blah';
 include 'lkajsdf';
