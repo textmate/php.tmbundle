@@ -32,7 +32,7 @@ for ($i = $start - 1; $i &gt; 0; $i--)
 			for($tabstop = 1; $tabstop &lt;= count($parameters); ++$tabstop)
 			{
 				$parameter = str_replace('$', '\$', 
-					preg_replace('/^(?:[a-z\s&amp;]+)?(\$[^\s=]+).*$/i', '$1', 
+					preg_replace('/^.*(\$[^\s=]+).*$/i', '$1', 
 						trim($parameters[$tabstop-1])
 					)
 				);
