@@ -8,47 +8,104 @@
 	<string>#!/usr/bin/env php
 &lt;?php
 
-$file = explode("\n", file_get_contents('php://stdin'));
-$start = getenv('TM_LINE_NUMBER');
+$seekLine = intval(getenv('TM_LINE_NUMBER'));
+$tokens = token_get_all(file_get_contents('php://stdin'));
+$numTokens = count($tokens);
 
-for ($i = $start - 1; $i &gt; 0; $i--)
-{
-	$line = trim($file[$i]);
-	switch(substr($line, 0, 1))
-	{
-		case '/':
-		case '*':
-		case '':
-		continue;
-		break;
-	}
+define('TM_EXIT_INSERT_TEXT', 203);
 
-	if (preg_match('/function (.+?)\s*\((.*)\)/', $line, $matches))
-	{
-		if (isset($matches[2]))
-		{
-			$parameters = explode(',', $matches[2]);
+$startToken = false;
 
-			for($tabstop = 1; $tabstop &lt;= count($parameters); ++$tabstop)
-			{
-				$parameter = str_replace('$', '\$', 
-					preg_replace('/^.*(\$[^\s=]+).*$/i', '$1', 
-						trim($parameters[$tabstop-1])
-					)
-				);
-				$parameters[$tabstop-1] = "\${{$tabstop}:${parameter}}";
-			}
-		}
-		else
-		{
-			$parameters = array();
-		}
+// Find the first token that's on/after TM_LINE_NUMBER
+for ($x = 0; $x &lt; $numTokens; $x++) {
+    $token = $tokens[$x];
 
-		echo 'parent::'.$matches[1].'(' . implode(', ', $parameters) . ');$0';
-		break;
-	}
+    if (is_array($tokens[$x]) &amp;&amp; $tokens[$x][2] &gt;= $seekLine) {
+        $startToken = $x;
+        break;
+    }
 }
-?&gt;</string>
+
+// Could not find the line, so just start from the end
+if (false === $startToken) {
+    $startToken = $numTokens - 1;
+}
+
+$functionToken = false;
+$functionName = false;
+
+// Work backwards until we find the function declaration
+for ($x = $startToken; $x &gt;= 0; $x--) {
+    $token = $tokens[$x];
+
+    if (is_array($token) &amp;&amp; T_FUNCTION === $tokens[$x][0]) {
+        // Try to find a function name, which may not exist if this is a closure
+        for ($y = $x + 1; $y &lt; $numTokens; $y++) {
+            if (is_array($tokens[$y])) {
+                if (T_STRING === $tokens[$y][0]) {
+                    $functionToken = $y;
+                    $functionName = $tokens[$y][1];
+                    break 2;
+                }
+            } else if ($tokens[$y] === '(') {
+                break;
+            }
+        }
+    }
+}
+
+// No function declaration found, so let's act like we were never here
+if (false === $functionToken || false === $functionName) {
+    echo 'parent';
+
+    if ('YES' === getenv('TM_SOFT_TABS')) {
+        // Only use enough spaces to get to the next "tab stop"
+        $tabSize = getenv('TM_TAB_SIZE');
+        $col = intval(getenv('TM_COLUMN_NUMBER')) + 5;
+        echo str_repeat(' ', $tabSize - ($col % $tabSize));
+    } else {
+        echo "\t";
+    }
+
+    exit(TM_EXIT_INSERT_TEXT);
+}
+
+$firstParenFound = false;
+$skipParens = 0;
+$numParams = 0;
+$params = array();
+
+for ($x = $functionToken + 1; $x &lt; $numTokens; $x++) {
+    $token = $tokens[$x];
+
+    if ($firstParenFound &amp;&amp; is_array($token)) {
+        if (T_VARIABLE === $token[0]) {
+            $numParams++;
+            $params[] = "\${{$numParams}:" . str_replace('$', '\$', $token[1]) . '}';
+        }
+    } else {
+        switch ($token) {
+            case '(':
+                if ($firstParenFound) {
+                    $skipParens++;
+                } else {
+                    $firstParenFound = true;
+                }
+                break;
+            case ')':
+                if ($skipParens) {
+                    $skipParens--;
+                } else if ($firstParenFound) {
+                    break 2;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+echo "parent::{$functionName}(" . implode(', ', $params) . ');$0';</string>
 	<key>input</key>
 	<string>document</string>
 	<key>name</key>
