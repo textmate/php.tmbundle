@@ -421,40 +421,30 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?x)
+					<string>(?xi)
 							\s*(array) # Typehint
 							\s*(&amp;)? 					# Reference
-							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
+							\s*((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*) # The variable name
 							(?:
-								\s*(=)	# A default value
-								\s*(?i:
-									(NULL)
-									|
-									(\S.*?)
-									)?
+								\s*(?:(=)\s*(?:(null)|((?:\S*?\(\))|(?:\S*?))))	# A default value
 							)?
-							\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
+							\s*(?=,|\)|$) # A closing parentheses (end of argument list) or a comma
 							</string>
 					<key>name</key>
 					<string>meta.function.argument.array.php</string>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)(?=\\?[a-z_])</string>
+					<string>(?i)(?=[a-z_0-9\\]*[a-z_][a-z_0-9]*\s*&amp;?\s*\$)</string>
 					<key>end</key>
-					<string>(?x)
-							\s*([A-Za-z_][A-Za-z_0-9]*) # Typehinted class name
+					<string>(?xi)
+							\s*([a-z_][a-z_0-9]*) # Typehinted class name
 							\s*(&amp;)? 					# Reference
-							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
+							\s*((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*) # The variable name
 							(?:
-								\s*(=)	# A default value
-								\s*(?i:
-									(NULL)
-									|
-									(\S.*?)
-									)?
+								\s*(?:(=)\s*(?:(null)|((?:\S*?\(\))|(?:\S*?))))	# A default value
 							)?
-							\s*(?=,|\)) # A closing parentheses (end of argument list) or a comma
+							\s*(?=,|\)|$) # A closing parentheses (end of argument list) or a comma
 							</string>
 					<key>endCaptures</key>
 					<dict>

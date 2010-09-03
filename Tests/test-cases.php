@@ -479,5 +479,24 @@ sql_regcase();
 mysql_db_query();
 mysql_escape_string();
 
+// Multi-line declarations
+function foo(
+    $asdf,
+    $name = '',
+    array $stuff = array()
+) {
+    $blah = 123;
+    return true;
+}
+
+function foo(
+    $asdf,
+    $name = '',
+    array $stuff = array(),
+    Some_Type $something = null
+) {
+    $blah = 123;
+    return true;
+}
 
 ?>
