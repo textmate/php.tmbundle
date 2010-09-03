@@ -18,8 +18,6 @@ $startToken = false;
 
 // Find the first token that's on/after TM_LINE_NUMBER
 for ($x = 0; $x &lt; $numTokens; $x++) {
-    $token = $tokens[$x];
-
     if (is_array($tokens[$x]) &amp;&amp; $tokens[$x][2] &gt;= $seekLine) {
         $startToken = $x;
         break;
@@ -36,9 +34,7 @@ $functionName = false;
 
 // Work backwards until we find the function declaration
 for ($x = $startToken; $x &gt;= 0; $x--) {
-    $token = $tokens[$x];
-
-    if (is_array($token) &amp;&amp; T_FUNCTION === $tokens[$x][0]) {
+    if (is_array($tokens[$x]) &amp;&amp; T_FUNCTION === $tokens[$x][0]) {
         // Try to find a function name, which may not exist if this is a closure
         for ($y = $x + 1; $y &lt; $numTokens; $y++) {
             if (is_array($tokens[$y])) {
