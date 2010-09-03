@@ -309,6 +309,10 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>(?x)
 							\s*(array) # Typehint
@@ -437,53 +441,7 @@
 					<key>begin</key>
 					<string>(?i)(?=[a-z_0-9\\]*[a-z_][a-z_0-9]*\s*&amp;?\s*\$)</string>
 					<key>end</key>
-					<string>(?xi)
-							\s*([a-z_][a-z_0-9]*) # Typehinted class name
-							\s*(&amp;)? 					# Reference
-							\s*((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*) # The variable name
-							(?:
-								\s*(?:(=)\s*(?:(null)|((?:\S*?\(\))|(?:\S*?))))	# A default value
-							)?
-							\s*(?=,|\)|$) # A closing parentheses (end of argument list) or a comma
-							</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>support.class.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.php</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.php</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.variable.php</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.assignment.php</string>
-						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>constant.language.php</string>
-						</dict>
-						<key>7</key>
-						<dict>
-							<key>name</key>
-							<string>invalid.illegal.non-null-typehinted.php</string>
-						</dict>
-					</dict>
+					<string>(?=,|\)|/[/*]|\#|$)</string>
 					<key>name</key>
 					<string>meta.function.argument.typehinted.php</string>
 					<key>patterns</key>
@@ -491,6 +449,56 @@
 						<dict>
 							<key>include</key>
 							<string>#namespace</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>support.class.php</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>storage.modifier.php</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>variable.other.php</string>
+								</dict>
+								<key>4</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.variable.php</string>
+								</dict>
+								<key>5</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.assignment.php</string>
+								</dict>
+								<key>6</key>
+								<dict>
+									<key>name</key>
+									<string>constant.language.php</string>
+								</dict>
+								<key>7</key>
+								<dict>
+									<key>name</key>
+									<string>invalid.illegal.non-null-typehinted.php</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(?xi)
+        							\s*([a-z_][a-z_0-9]*) # Typehinted class name
+        							\s*(&amp;)? 					# Reference
+        							\s*((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*) # The variable name
+        							(?:
+        								\s*(?:(=)\s*(?:(null)|((?:\S*?\(\))|(?:\S*?))))	# A default value
+        							)?
+        							\s*(?=,|\)|/[/*]|\#|$) # A closing parentheses (end of argument list) or a comma
+					        </string>
 						</dict>
 					</array>
 				</dict>
@@ -555,22 +563,6 @@
 							<string>#parameter-default-types</string>
 						</dict>
 					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>/\*</string>
-					<key>captures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.php</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\*/</string>
-					<key>name</key>
-					<string>comment.block.php</string>
 				</dict>
 			</array>
 		</dict>
@@ -1114,7 +1106,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)(use)\s+(?=[a-z_0-9\\ ]+\s*(?:;|,))</string>
+					<string>(?i)(use)\s+(?=[a-z_0-9\\ ]+\s*(?:;|,|$))</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1124,7 +1116,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?:;|[^,]\s*$)</string>
+					<string>(?=;|(?:^\s*$)|(?:\s*(?!(\/[\/\*])|\#)[^,\s]\s*$))</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1133,24 +1125,16 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(?xi)\s*
-					            (?=[a-z_0-9\\]*[a-z_][a-z_0-9]*
-					                (?:
-					                    (?:\s+as\s+[a-z_][a-z_0-9]*)?
-					                    \s*
-					                    (?:,|;)
-					                )
-					            )
+							<string>(?xi)
+					            (?=\s*[a-z_0-9\\]*[a-z_][a-z_0-9]*\b)
 					        </string>
 							<key>contentName</key>
 							<string>support.other.namespace.use.php</string>
 							<key>end</key>
-							<string>(?xi)
-					            (?:\s+(as)\s+
-					                ([a-z_][a-z_0-9]*)
-					            )?
-					            \s*(?=,|;)
-					        </string>
+							<string>(?xi)(?:
+    			                (?:\s*(as)\b\s*([a-z_][a-z_0-9]*)?\s*(?=,|;|$))
+    			                |(?=,|;|$)
+    			            )</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>1</key>
@@ -1206,11 +1190,15 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?:[;{])</string>
+					<string>(?=[;{])</string>
 					<key>name</key>
 					<string>meta.class.php</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>include</key>
+							<string>#comments</string>
+						</dict>
 						<dict>
 							<key>begin</key>
 							<string>(?i)(extends)\s+</string>
@@ -1225,7 +1213,7 @@
 							<key>contentName</key>
 							<string>meta.other.inherited-class.php</string>
 							<key>end</key>
-							<string>(?=(\s*\b(?i:(implements)))|([;{]))</string>
+							<string>(?i)(?=\s*(implements|[^a-z0-9_\\\s]))</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1252,16 +1240,20 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>(?i)(?=(?:\s*\b(?:extends))|(?:[;{]))</string>
+							<string>(?i)(?=[;{])</string>
 							<key>patterns</key>
 							<array>
+								<dict>
+									<key>include</key>
+									<string>#comments</string>
+								</dict>
 								<dict>
 									<key>begin</key>
 									<string>(?i)(?=[a-z0-9_\\]+)</string>
 									<key>contentName</key>
 									<string>entity.other.inherited-class.php</string>
 									<key>end</key>
-									<string>(?i)(?:\s*(?:(,))|(?=[;{])\s*)</string>
+									<string>(?i)(?:\s*(?:,|(?=[^a-z0-9_\\\s]))\s*)</string>
 									<key>patterns</key>
 									<array>
 										<dict>
