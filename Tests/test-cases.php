@@ -176,18 +176,69 @@ blah\Foo::bar(new blah\test());
 "1\1111"
 "1\x111"
 "$foo"
-"$foo[bar]"
+"$foo[bar]" // 'bar' is treated as a string automatically by PHP
+"{$foo[bar]}" // 'bar' is treated as a *constant*
 "$foo[0]"
 "$foo[$bar]"
 "$foo->bar"
-"$foo->$foo"
+"$foo->bar(" // Should show as access to property ->bar, not as a call to ->bar()
+"$foo->$bar" // Should not show as an object property access, but as two separate variables
 "{$foo->$bar}"
+"{$foo->{$bar}}"
+"{$foo->${bar}}"
+"{$foo->{$bar . $baz}}"
 "{$foo->bar}"
 "{$foo->bar[0]->baz}"
 "{$foo->bar(12, $foo)}"
 "{$foo(12, $foo)}"
 
 $foo = $foo->{'foo' . 'bar'};
+$foo = $foo->{"foo{$bar}"};
+
+$beer = 'Heineken';
+echo "$beer's taste is great"; // works; "'" is an invalid character for variable names
+echo "He drank some $beers";   // won't work; 's' is a valid character for variable names but the variable is "$beer"
+echo "He drank some ${beer}s"; // works
+echo "He drank some {$beer}s"; // works
+
+// The text "($str[1" should *not* be highlighted as a syntax error.
+$str = array("Foo", "Bar");
+echo 'Name: ' . $str[($str[1]) ? 1 : 0]; // Should echo "Name: Bar"
+echo "Name: {$str[($str[1]) ? 1 : 0]}"; // Should echo "Name: Bar"
+
+echo "{\$";
+echo "$foo";
+echo "{$foo}";
+echo "${foo}"; // 'foo' should be variable.other.php
+echo "$foo->${bar}"; // '->' should not be keyword.operator.class.php
+echo "This works: " . $arr['foo'][3];
+echo "This works too: {$obj->values[3]->name}";
+echo "This is the value of the var named $name: {${$name}}";
+echo "This is the value of the var named by the return value of getName(): {${getName()}}";
+echo "Blah: {${Foo::bar()}}";
+
+$blah = $foo[123];
+$blah = $foo[$bar];
+$blah = $foo[bar()];
+$blah = $foo->bar(123);
+$blah = ${'foo'};
+
+$blah = $foo[123];
+$blah = $_POST['blah'];
+$blah = new $_POST['blah'];
+$blah = new $foo;
+$blah = new $foo->{$bar};
+$blah = new $foo->{$bar . '123'};
+$blah = new $foo->{${bar()}};
+
+$bar = array(
+    '123' => '321',
+);
+$x = 2;
+
+echo 'foo ' . $bar['1' . $x . '3'];
+echo 'foo ' . $bar["1{$x}3"];
+echo "foo {$bar["1{$x}3"]}";
 
 // Heredoc
 $foo = <<<BLAH
@@ -268,15 +319,31 @@ blah: {
 // =======
 // = SQL =
 // =======
-'SELECT * from foo WHERE bar = \'foo \\ ' . $foo . 'sadas';
+'SELECT * from foo WHERE bar = \'foo \\ ' . $foo . ' AND blah';
+'SELECT * from foo WHERE bar = \'foo \\ ' . $foo . " AND blah";
 'SELECT * from foo WHERE bar = "foo" asdas' . $foo . '" asdasd';
 
 
 "SELECT * from foo WHERE bar = 'asd $foo $foo->bar {$foo->bar[12]} asda'  'unclosed string";
-"SELECT * from foo WHERE bar = \"dsa$foo\" \"unclosed string"
+"SELECT * from foo WHERE bar = \"dsa$foo\" \"unclosed string";
 'SELECT * from foo WHERE bar = "unclosed string';
 
+'SELECT * from foo WHERE bar = ' . $foo . ' bar" AND foo = 1';
+'SELECT * from foo WHERE bar = ' . ' bar" AND foo = 1';
+
 'SELECT * from foo WHERE bar = "foo \" ' . $foo . ' bar" AND foo = 1';
+
+'SELECT * FROM `foo' . $bar . '` WHERE foo = 1' . fasdf('asdf') . ' AND other = "blah"';
+"SELECT * FROM `foo" . $bar . "` WHERE foo = 1";
+"SELECT * FROM `foo` WHERE foo = 'blah" . $x . "' AND other = 'stuff'";
+"SELECT * FROM `foo` WHERE foo = '{$xblah}" . "' AND other = 'stuff'";
+// Something
+
+
+"SELECT * FROM `foo` WHERE foo = \"blah" . $x . "\" AND other = 'stuff'";
+'SELECT * FROM `foo` WHERE foo = "blah' . '" AND other = "stuff"';
+'SELECT * FROM `foo` WHERE foo = "blah' . $x . '" AND other = "stuff"';
+"SELECT * FROM \``foo" . $bar . "` WHERE foo = 'blah'";
 
 // Comments
 
@@ -498,5 +565,17 @@ function foo(
     $blah = 123;
     return true;
 }
+
+$foo->test()
+    /* something */
+    ->blah()
+    // test
+    ->oneMore();
+
+$blah = "INSERT INTO foo SET blah = '12"; // Unclosed single quote should not be a problem
+$blah = "INSERT INTO `catalogue` SET
+ `model`='{$_POST["page_row{$count}_model"]}',
+ `type`='{$_POST["page_row{$count}_type"]}'
+;");
 
 ?>
