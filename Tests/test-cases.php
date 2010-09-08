@@ -51,14 +51,14 @@ use \foo\bar as blah, // test
     /* Test */
     blah_foo\foo as fdsa,
     one\more_time\forKicks as lkajsdf; // test
-    
 
-namespace one\more 
+
+namespace one\more
 {
     use \foo\bar;
 }
 
-class Foo 
+class Foo
 {
     public $bar;
     protected $_blah;
@@ -93,7 +93,7 @@ class Foo implements foo\Bar
 class Foo extends foo\Bar implements foo\Bar
 {
     public static $blah;
-    
+
     public function blah()
     {
         shouldNotShowInSymbols();
@@ -101,12 +101,12 @@ class Foo extends foo\Bar implements foo\Bar
 
     public static function blah()
     {
-        
+
     }
 
     static protected function blah()
     {
-        
+
     }
 }
 
@@ -127,7 +127,7 @@ interface Foo extends Bar
 {
 }
 
-interface Foo extends foo\blah\Bar 
+interface Foo extends foo\blah\Bar
 {
 }
 
@@ -144,7 +144,7 @@ function test(stdClass $foo = null)
 function &test(stdClass $foo = invalid)
 
 $blah = function (stdClass $foo = invalid, array $blah = array()) {
-    
+
 };
 
 $blah = function (stdClass $foo = invalid, array $blah) use (&$foo, $bar) {
@@ -191,13 +191,13 @@ $foo = $foo->{'foo' . 'bar'};
 
 // Heredoc
 $foo = <<<BLAH
-Blah blah $foo blah {$foo->bar} 
+Blah blah $foo blah {$foo->bar}
 Stuff goes here
 BLAH;
 
 // Nowdoc (no interpolation should occur here)
 $foo = <<<'BLAH'
-Blah blah $foo blah {$foo->bar} 
+Blah blah $foo blah {$foo->bar}
 Stuff goes here
 BLAH;
 
@@ -261,7 +261,7 @@ foo:
 goto blah;
 
 blah: {
-    
+
 }
 
 
@@ -375,29 +375,29 @@ $blah = new blah\blah();
 $blah = new blah\$blah\$blah\blah();
 
 if ($test == 1) {
-    
+
 } else if (123 === $foo) {
-    
+
 } elseif (CONST) {
-    
+
 } else {
-    
+
 }
 
 if ($blah instanceof MyClass) {
-    
+
 }
 
 if ($blah instanceof foo\MyClass) {
-    
+
 }
 
 if ($blah instanceof namespace\foo\MyClass) {
-    
+
 }
 
 if ($blah instanceof $b) {
-    
+
 }
 
 foo(&$blah); // Ampersand should be invalid.deprecated.call-time-pass-by-reference.php
