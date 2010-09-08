@@ -655,6 +655,35 @@
 					<string>constant.character.escape.php</string>
 				</dict>
 				<dict>
+					<key>begin</key>
+					<string>(\{)(?=\$.*?\})</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\})</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#language</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
 					<key>include</key>
 					<string>#variable-name</string>
 				</dict>
@@ -1954,6 +1983,37 @@
 					<key>include</key>
 					<string>#constants</string>
 				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\[</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.index-start.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\]</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.index-end.php</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>variable.other.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#language</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 		<key>namespace</key>
@@ -2010,36 +2070,75 @@
 		</dict>
 		<key>object</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
+			<key>patterns</key>
+			<array>
 				<dict>
-					<key>name</key>
-					<string>keyword.operator.class.php</string>
+					<key>begin</key>
+					<string>(-&gt;)(\$?\{)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.class.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\})</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#language</string>
+						</dict>
+					</array>
 				</dict>
-				<key>2</key>
 				<dict>
-					<key>name</key>
-					<string>meta.function-call.object.php</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.class.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.function-call.object.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.property.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(-&gt;)
+            				(?:
+            				    ([A-Za-z_][A-Za-z_0-9]*)\s*\(
+            				    |
+            				    ((\$+)?[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
+            				)?</string>
 				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>variable.other.property.php</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.variable.php</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?x)(-&gt;)
-    				(?:
-    				    ([A-Za-z_][A-Za-z_0-9]*)\s*\(
-    				    |
-    				    ((\$+)?[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)
-    				)?</string>
+			</array>
 		</dict>
 		<key>parameter-default-types</key>
 		<dict>
@@ -3935,20 +4034,25 @@
 		</dict>
 		<key>var_basic</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
+			<key>patterns</key>
+			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)
+        			            (\$+)[a-zA-Z_\x{7f}-\x{ff}]
+        			            [a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
 					<key>name</key>
-					<string>punctuation.definition.variable.php</string>
+					<string>variable.other.php</string>
 				</dict>
-			</dict>
-			<key>match</key>
-			<string>(?x)
-			            (\$+)[a-zA-Z_\x{7f}-\x{ff}]
-			            [a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
-			<key>name</key>
-			<string>variable.other.php</string>
+			</array>
 		</dict>
 		<key>var_global</key>
 		<dict>
@@ -4021,19 +4125,9 @@
 						<key>10</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.variable.php</string>
-						</dict>
-						<key>11</key>
-						<dict>
-							<key>name</key>
 							<string>string.unquoted.index.php</string>
 						</dict>
-						<key>12</key>
-						<dict>
-							<key>name</key>
-							<string>invalid.illegal.invalid-simple-array-index.php</string>
-						</dict>
-						<key>13</key>
+						<key>11</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.operator.index-end.php</string>
@@ -4056,22 +4150,22 @@
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>invalid.illegal.php</string>
+							<string>keyword.operator.index-start.php</string>
 						</dict>
 						<key>7</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.index-start.php</string>
+							<string>constant.numeric.index.php</string>
 						</dict>
 						<key>8</key>
 						<dict>
 							<key>name</key>
-							<string>constant.numeric.index.php</string>
+							<string>variable.other.index.php</string>
 						</dict>
 						<key>9</key>
 						<dict>
 							<key>name</key>
-							<string>variable.other.index.php</string>
+							<string>punctuation.definition.variable.php</string>
 						</dict>
 					</dict>
 					<key>comment</key>
@@ -4080,39 +4174,36 @@
 					<string>(?x)
 						((\$)(?&lt;name&gt;[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*))
 						(?:
-							(-&gt;)
-								(?:
-									(\g&lt;name&gt;)
-									|
-									(\$\g&lt;name&gt;)
-								)
+							(-&gt;)(\g&lt;name&gt;)
 							|
 							(\[)
-								(?:(\d+)|((\$)\g&lt;name&gt;)|(\w+)|(.*?))
+								(?:(\d+)|((\$)\g&lt;name&gt;)|(\w+))
 							(\])
 						)?
 						</string>
 				</dict>
+			</array>
+		</dict>
+		<key>variables</key>
+		<dict>
+			<key>patterns</key>
+			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?=(?&lt;regex&gt;(?#simple syntax)\$(?&lt;name&gt;[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\[(?&lt;index&gt;[a-zA-Z0-9_\x{7f}-\x{ff}]+|\$\g&lt;name&gt;)\]|-&gt;\g&lt;name&gt;(\(.*?\))?)?|(?#simple syntax with braces)\$\{(?:\g&lt;name&gt;(?&lt;indices&gt;\[(?:\g&lt;index&gt;|'(?:\\.|[^'\\])*'|"(?:\g&lt;regex&gt;|\\.|[^"\\])*")\])?|\g&lt;complex&gt;|\$\{\g&lt;complex&gt;\})\}|(?#complex syntax)\{(?&lt;complex&gt;\$(?&lt;segment&gt;\g&lt;name&gt;(\g&lt;indices&gt;*|\(.*?\))?)(?:-&gt;\g&lt;segment&gt;)*|\$\g&lt;complex&gt;|\$\{\g&lt;complex&gt;\})\}))\{</string>
+					<string>(\$\{)(?=.*?\})</string>
 					<key>beginCaptures</key>
 					<dict>
-						<key>0</key>
+						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.variable.php</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>Complex syntax. It seems this now supports complex method calls, as of PHP5.
-        					   I've put wildcards into the function call parameter lists to handle this, but this may break the pattern.
-        					   It also might be better to disable it as I shouldn't imagine it's used often (hopefully) and it may confuse PHP4 users.</string>
 					<key>end</key>
-					<string>\}</string>
+					<string>(\})</string>
 					<key>endCaptures</key>
 					<dict>
-						<key>0</key>
+						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.variable.php</string>
@@ -4122,44 +4213,10 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#function-call</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#invoke-call</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#var_basic</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#object</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#numbers</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\[</string>
-							<key>name</key>
-							<string>keyword.operator.index-start.php</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\]</string>
-							<key>name</key>
-							<string>keyword.operator.index-end.php</string>
+							<string>#language</string>
 						</dict>
 					</array>
 				</dict>
-			</array>
-		</dict>
-		<key>variables</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
 					<key>include</key>
 					<string>#var_global</string>
