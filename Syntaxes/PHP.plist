@@ -1838,6 +1838,12 @@
 					<string>keyword.operator.assignment.php</string>
 				</dict>
 				<dict>
+					<key>match</key>
+					<string>\?|\:</string>
+					<key>name</key>
+					<string>keyword.operator.ternary.php</string>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>(?i)\b(instanceof)\b\s+(?=[\\$a-z_])</string>
 					<key>beginCaptures</key>
@@ -1914,6 +1920,35 @@
 				<dict>
 					<key>include</key>
 					<string>#instantiation</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.goto.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.other.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?i)(goto)\s+([a-z_][a-z_0-9]*)</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.goto-label.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?i)^\s*([a-z_][a-z_0-9]*)\s*:</string>
 				</dict>
 				<dict>
 					<key>include</key>
