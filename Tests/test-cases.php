@@ -319,11 +319,20 @@ blah: {
 // =======
 // = SQL =
 // =======
+
+// This looks like a mess, but there are quite a few ways you can trick the grammar here, and the
+// following lines know all the tricks.
+
 'SELECT * from foo WHERE bar = \'foo \\ ' . $foo . ' AND blah';
 'SELECT * from foo WHERE bar = \'foo \\ ' . $foo . " AND blah";
 'SELECT * from foo WHERE bar = "foo" asdas' . $foo . '" asdasd';
 
-
+"SELECT \"$foo\" FROM bar";
+"SELECT `$foo` FROM bar";
+"SELECT '$foo' FROM bar";
+'SELECT \'$foo\' FROM bar';
+'SELECT `$foo` FROM bar';
+'SELECT "$foo" FROM bar';
 "SELECT * from foo WHERE bar = 'asd $foo $foo->bar {$foo->bar[12]} asda'  'unclosed string";
 "SELECT * from foo WHERE bar = \"dsa$foo\" \"unclosed string";
 'SELECT * from foo WHERE bar = "unclosed string';
@@ -339,12 +348,29 @@ blah: {
 "SELECT * FROM `foo` WHERE foo = '{$xblah}" . "' AND other = 'stuff'";
 // Something
 
-
+'SELECT * FROM \` blah';
 "SELECT * FROM `foo` WHERE foo = \"blah" . $x . "\" AND other = 'stuff'";
 'SELECT * FROM `foo` WHERE foo = "blah' . '" AND other = "stuff"';
 'SELECT * FROM `foo` WHERE foo = "blah' . $x . '" AND other = "stuff"';
 "SELECT * FROM \``foo" . $bar . "` WHERE foo = 'blah'";
-
+"SELECT * FROM \"foo" . $bar . "baz\" WHERE foo = 'blah'";
+"SELECT * FROM `foo" . $bar . "baz` WHERE foo = 'blah'";
+"SELECT * FROM 'foo" . $bar . "baz' WHERE foo = 'blah'";
+'SELECT * FROM \'foo' . $bar . 'baz\' WHERE foo = "blah"';
+'SELECT * FROM `foo' . $bar . 'baz` WHERE foo = "blah"';
+'SELECT * FROM "foo' . $bar . 'baz" WHERE foo = "blah"';
+'SELECT * FROM "foo' . ($bar) . 'baz" WHERE foo = "blah"';
+('SELECT * FROM "foo') . ($bar) . 'baz" WHERE foo = "blah"';
+'SELECT * FROM foo' . $bar + 1 . 'baz WHERE foo = "blah"');
+'SELECT * FROM foo WHERE blah = "blah"';
+'SELECT * FROM `foo` WHERE blah = "blah"';
+'SELECT * FROM `f\`' . 'oo` WHERE blah = "blah"';
+'SELECT * FROM `f\` asd`f \` asdf`' . 'oo` WHERE blah = "blah"';
+'SELECT * FROM `foo` WHERE blah = "bl\"' . 'ah"';
+"SELECT * FROM foo WHERE blah = 'blah'";
+"SELECT * FROM foo WHERE blah = 'bl\'" . "ah'";
+"SELECT * FROM `foo` WHERE blah = 'blah'";
+"SELECT * FROM `f\`" . "oo` WHERE blah = 'blah'";
 // Comments
 
 'SELECT * FROM # foo bar \' asdassdsaas';
