@@ -151,6 +151,12 @@ $blah = function (stdClass $foo = invalid, array $blah) use (&$foo, $bar) {
     $test = 'test';
 };
 
+$arr = array(
+    'blah' => function (stdClass $foo = invalid, array $blah) use (&$foo, $bar) {
+        $test = 'test';
+    }
+);
+
 $blah();
 $blah(1, 2, 3);
 blah(1, 2, 3);
@@ -497,10 +503,22 @@ foo(&$blah); // Ampersand should be invalid.deprecated.call-time-pass-by-referen
 foo(&$blah, array(), &$blah); // Ampersand should be invalid.deprecated.call-time-pass-by-reference.php
 foo(array($blah, &$foo)); // Ampersand should be storage.modifier.reference.php
 
+$foo = <<<TEST
+blah
+blah {$x+1}
+TEST;
+
+$foo = <<<'TEST'
+blah
+blah {$x+1}
+TEST;
+
 $blah =<<<HTML
-<html>
+<html lang="en">
 </head>
 HTML;
+
+// test
 
 $blah =<<<CSS
 .test {
@@ -603,5 +621,55 @@ $blah = "INSERT INTO `catalogue` SET
  `model`='{$_POST["page_row{$count}_model"]}',
  `type`='{$_POST["page_row{$count}_type"]}'
 ;");
+
+$str = 'foo' . 'bar';
+$str .= 'foo';
+
+$x = 0;
+$x++;
+$y--;
+$x += 1;
+$x -= 1;
+$y = 2;
+
+$x = $x + $y;
+$x = $x - $y;
+$x = $x / $y;
+$x = $x * $y;
+$x = $x % $y;
+$x = $x << $y;
+$x = $x >> $y;
+$x = $x ~ $y;
+$x = $x ^ $y;
+$x = $x & $y;
+$x = $x | $y;
+
+$bar =& foo();
+$bar = &foo();
+$baz =& $bar;
+$baz = &$bar;
+
+foo(&$bar);
+
+$x = $x || $y;
+$x = $x && $y;
+$x = $x and $y;
+$x = $x or $y;
+$x = $x xor $y;
+$x = $x as $y;
+
+if ($x == 0) { }
+if ($x === 0) { }
+if ($x != 0) { }
+if ($x !== 0) { }
+if ($x < 0) { }
+if ($x <= 0) { }
+if ($x > 0) { }
+if ($x >= 0) { }
+if ($x <= 0) { }
+if ($x <> 0) { }
+
+$arr = array(1, 2, 3);
+$arr = array(array(1, 2, 3), array(1, 2, 3));
 
 ?>
