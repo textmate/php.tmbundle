@@ -1653,6 +1653,30 @@
 					<string>punctuation.terminator.expression.php</string>
 				</dict>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.construct.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.array.begin.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.array.end.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(array)(\()(\))</string>
+					<key>name</key>
+					<string>meta.array.empty.php</string>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>(array)(\()</string>
 					<key>beginCaptures</key>
