@@ -631,18 +631,18 @@
 			<key>begin</key>
 			<string>(?=&lt;&lt;&lt;\s*('?)([a-zA-Z_]+[a-zA-Z0-9_]*)(\1)\s*$)</string>
 			<key>end</key>
-			<string>^(\2)\b</string>
+			<string>^((HTML|XML|SQL|JAVASCRIPT|JSON|CSS)|\2)\b</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.section.embedded.end.php</string>
-				</dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.heredoc.php</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.embedded.end.php</string>
 				</dict>
 			</dict>
 			<key>name</key>
