@@ -52,8 +52,24 @@ class Foo implements asdf
     }
 }
 
-function foo(/* blah */ $bar, /* one */ array $foo, /* blah */ stdClass $another)
+function foo(/* blah */ $bar, /* one */ array $foo, /* blah */ stdClass $another/*, ... */)
 {
+    // blah
+}
+
+function foo($bar/*, ... */) {
+    // blah
+}
+
+function foo(
+    $bar // blah
+) {
+    // blah
+}
+
+function foo(
+    $bar # blah
+) {
     // blah
 }
 

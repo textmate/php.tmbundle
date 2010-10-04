@@ -432,7 +432,7 @@
 							(?:
 								\s*(?:(=)\s*(?:(null)|((?:\S*?\(\))|(?:\S*?))))	# A default value
 							)?
-							\s*(?=,|\)|$) # A closing parentheses (end of argument list) or a comma
+							\s*(?=,|\)|/[/*]|\#|$) # A closing parentheses (end of argument list) or a comma or a comment
 							</string>
 					<key>name</key>
 					<string>meta.function.argument.array.php</string>
@@ -522,7 +522,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\))</string>
+					<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\)|/[/*]|\#)</string>
 					<key>name</key>
 					<string>meta.function.argument.no-default.php</string>
 				</dict>
@@ -553,7 +553,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?=,|\))</string>
+					<string>(?=,|\)|/[/*]|\#)</string>
 					<key>name</key>
 					<string>meta.function.argument.default.php</string>
 					<key>patterns</key>
