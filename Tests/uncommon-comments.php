@@ -61,6 +61,10 @@ function foo($bar/*, ... */) {
     // blah
 }
 
+function foo($bar = 12 /* test */) {}
+function foo(array $bar = null/*, blah*/) {}
+function foo(array $bar = array(1, 2, /* test */ 3) /* test */) {}
+
 function foo(
     $bar // blah
 ) {
