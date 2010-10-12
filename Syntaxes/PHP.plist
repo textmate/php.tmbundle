@@ -1550,18 +1550,6 @@
 					</array>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>(?i)\b(real|double|float|int(eger)?|bool(ean)?|string|class|clone|var|function|interface|parent|self|object)\b</string>
-					<key>name</key>
-					<string>storage.type.php</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?i)\b(global|abstract|const|extends|implements|final|p(r(ivate|otected)|ublic)|static)\b</string>
-					<key>name</key>
-					<string>storage.modifier.php</string>
-				</dict>
-				<dict>
 					<key>include</key>
 					<string>#invoke-call</string>
 				</dict>
@@ -1575,8 +1563,8 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?xi)(?=
-				        [a-z_0-9$\\]*(::)
+					<string>(?xi)\s*(?=
+				        [a-z_0-9$\\]+(::)
                         (?:
         				    ([a-z_][a-z_0-9]*)\s*\(
         				    |
@@ -1645,6 +1633,18 @@
 							<string>support.class.php</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i)\b(real|double|float|int(eger)?|bool(ean)?|string|class|clone|var|function|interface|parent|self|object)\b</string>
+					<key>name</key>
+					<string>storage.type.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i)\b(global|abstract|const|extends|implements|final|p(r(ivate|otected)|ublic)|static)\b</string>
+					<key>name</key>
+					<string>storage.modifier.php</string>
 				</dict>
 				<dict>
 					<key>include</key>

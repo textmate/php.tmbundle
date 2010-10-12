@@ -294,6 +294,8 @@ $foo->bar();
 // `self` and `static` should be storage.type.php
 self::foo();
 static::foo();
+    static::foo();
+    parent::foo();
 Blah::foo();
 \foo\Blah::foo();
 
