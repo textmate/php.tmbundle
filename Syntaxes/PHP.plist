@@ -3878,7 +3878,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>((\$)(GLOBALS|_(ENV|SERVER|SESSION)))|\b(global)\b</string>
+			<string>((\$)(GLOBALS|_(ENV|SERVER|SESSION)))</string>
 			<key>name</key>
 			<string>variable.other.global.safer.php</string>
 		</dict>
