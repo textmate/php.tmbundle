@@ -1801,12 +1801,6 @@
 					<string>keyword.operator.assignment.php</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>[?:]</string>
-					<key>name</key>
-					<string>keyword.operator.ternary.php</string>
-				</dict>
-				<dict>
 					<key>begin</key>
 					<string>(?i)\b(instanceof)\b\s+(?=[\\$a-z_])</string>
 					<key>beginCaptures</key>
