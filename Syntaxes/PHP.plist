@@ -1298,7 +1298,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while)\b</string>
+					<string>\s*\b(break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while)\b</string>
 					<key>name</key>
 					<string>keyword.control.php</string>
 				</dict>
