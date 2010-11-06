@@ -415,6 +415,9 @@ $blah = \stuff\PDO::staticMethod();
 $more = stuff\PDO::staticMethod();
 $blah = \stuff\more\PDO::staticMethod();
 $more = stuff\more\PDO::staticMethod();
+$blah = $foo::staticMethod();
+$blah = ($foo::staticMethod());
+$blah = ( $foo::staticMethod());
 
 $mode = funcCall();
 $mode = \funcCall();

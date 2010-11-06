@@ -1554,14 +1554,6 @@
 					<string>#invoke-call</string>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#variables</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#strings</string>
-				</dict>
-				<dict>
 					<key>begin</key>
 					<string>(?xi)\s*(?=
 				        [a-z_0-9$\\]+(::)
@@ -1633,6 +1625,14 @@
 							<string>support.class.php</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variables</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#strings</string>
 				</dict>
 				<dict>
 					<key>match</key>
