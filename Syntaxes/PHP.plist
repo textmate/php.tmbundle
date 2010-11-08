@@ -3865,14 +3865,14 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.variable.php</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>((\$)(GLOBALS|_(ENV|SERVER|SESSION)))</string>
+			<string>(\$)((GLOBALS|_(ENV|SERVER|SESSION)))</string>
 			<key>name</key>
 			<string>variable.other.global.safer.php</string>
 		</dict>
@@ -3881,30 +3881,12 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.variable.php</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.variable.php</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Simple syntax with braces: "foo${bar}baz"</string>
-					<key>match</key>
-					<string>(?x)
-						((\$\{)(?&lt;name&gt;[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(\}))
-						</string>
+					<key>include</key>
+					<string>#var_global</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_global_safer</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -3974,12 +3956,50 @@
 						)?
 						</string>
 				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Simple syntax with braces: "foo${bar}baz"</string>
+					<key>match</key>
+					<string>(?x)
+						((\$\{)(?&lt;name&gt;[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(\}))
+						</string>
+				</dict>
 			</array>
 		</dict>
 		<key>variables</key>
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#var_global</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_global_safer</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_basic</string>
+				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(\$\{)(?=.*?\})</string>
@@ -4008,18 +4028,6 @@
 							<string>#language</string>
 						</dict>
 					</array>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#var_global</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#var_global_safer</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#var_basic</string>
 				</dict>
 			</array>
 		</dict>

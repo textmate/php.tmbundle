@@ -214,6 +214,8 @@ echo "Name: {$str[($str[1]) ? 1 : 0]}"; // Should echo "Name: Bar"
 
 echo "{\$";
 echo "$foo";
+echo "$_SERVER[foo]";
+echo "{$_SERVER['foo']}";
 echo "{$foo}";
 echo "${foo}"; // 'foo' should be variable.other.php
 echo "$foo->${bar}"; // '->' should not be keyword.operator.class.php
