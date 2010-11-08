@@ -949,7 +949,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i)(?=[^a-z0-9_\\])</string>
+			<string>(?i)(?=[^$a-z0-9_\\])</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -961,10 +961,6 @@
 				<dict>
 					<key>include</key>
 					<string>#namespace</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#variable-name</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -981,6 +977,10 @@
 					</dict>
 					<key>match</key>
 					<string>(?i)([a-z0-9_]+)(?=[^a-z0-9_])</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variable-name</string>
 				</dict>
 			</array>
 		</dict>
@@ -1045,10 +1045,21 @@
 		</dict>
 		<key>invoke-call</key>
 		<dict>
-			<key>begin</key>
-			<string>(?i)\$[a-z_0-9]+(?=\s*\()</string>
-			<key>end</key>
-			<string>\s*(?=\()</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.php</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.php</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i)(\$+)([a-z_][a-z_0-9]*)(?=\s*\()</string>
 			<key>name</key>
 			<string>meta.function-call.invoke.php</string>
 		</dict>

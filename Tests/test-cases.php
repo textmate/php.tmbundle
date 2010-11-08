@@ -679,4 +679,7 @@ if ($x <> 0) { }
 $arr = array(1, 2, 3);
 $arr = array(array(1, 2, 3), array(1, 2, 3));
 
+$foo();
+$$foo();
+
 ?>
