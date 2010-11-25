@@ -1147,7 +1147,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)(use)\s+(?=[a-z_0-9\\ ]+\s*(?:;|,|$))</string>
+					<string>(?i)\s*(use)\s+(?=[a-z_0-9\\ ]+\s*(?:;|,|$))</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
