@@ -682,4 +682,7 @@ $arr = array(array(1, 2, 3), array(1, 2, 3));
 $foo();
 $$foo();
 
+if (true and false) {}
+if (true or (true and false)) {}
+
 ?>
