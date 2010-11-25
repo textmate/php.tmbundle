@@ -271,10 +271,12 @@ E_USER_DEPRECATED
 __FILE__
 __DIR__
 __NAMESPACE__
-
-echo E_ERROR;
-echo \E_ERROR;
-echo namespace\E_ERROR;
+CURRENCY_SYMBOL
+\CURRENCY_SYMBOL
+foo\CURRENCY_SYMBOL
+E_ERROR
+\E_ERROR
+foo\E_ERROR
 
 array_map();
 array_map($test, 'foo', MY_CONST);
