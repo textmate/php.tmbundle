@@ -687,4 +687,17 @@ $$foo();
 if (true and false) {}
 if (true or (true and false)) {}
 
+$blah = (binary) $foo;
+$blah = (int) $foo;
+$blah = (integer) $foo;
+$blah = (bool) $foo;
+$blah = (boolean) $foo;
+$blah = (float) $foo;
+$blah = (double) $foo;
+$blah = (real) $foo;
+$blah = (string) $foo;
+$blah = (array) $foo;
+$blah = (object) $foo;
+$blah = (unset) $foo;
+
 ?>
