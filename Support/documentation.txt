@@ -17,9 +17,11 @@ if=language.control-structures
 # Constants
 __line__=language.constants.predefined
 __file__=language.constants.predefined
+__dir__=language.constants.predefined
 __function__=language.constants.predefined
 __class__=language.constants.predefined
 __method__=language.constants.predefined
+__namespace__=language.constants.predefined
 
 # OOP
 new=language.oop5.basic
