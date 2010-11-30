@@ -3922,7 +3922,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\$)(_(COOKIE|FILES|GET|POST|REQUEST))\b</string>
+			<string>(\$)((_(COOKIE|FILES|GET|POST|REQUEST))|arg(v|c))\b</string>
 			<key>name</key>
 			<string>variable.other.global.php</string>
 		</dict>
