@@ -1951,7 +1951,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.index-start.php</string>
+							<string>punctuation.section.array.begin.php</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1961,11 +1961,9 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.index-end.php</string>
+							<string>punctuation.section.array.end.php</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>variable.other.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -3969,7 +3967,7 @@
 						<key>11</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.index-end.php</string>
+							<string>punctuation.section.array.end.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -3989,7 +3987,7 @@
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.index-start.php</string>
+							<string>punctuation.section.array.begin.php</string>
 						</dict>
 						<key>7</key>
 						<dict>
