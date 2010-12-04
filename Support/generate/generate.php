@@ -471,6 +471,6 @@ if ('en' === $lang) {
 
     runCmd(__DIR__ . '/generate.rb', "{$supportDir}/functions.json");
     unlink("{$supportDir}/functions.json");
-}
 
-runCmd('osascript -e\'tell app "TextMate" to reload bundles\'');
+    runCmd('osascript -e\'tell app "TextMate" to reload bundles\'');
+}
