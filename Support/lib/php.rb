@@ -6,7 +6,7 @@ class PHPFunction
   def params
     params = @parts[3] rescue ''
 
-    params.scan(/(\w+ )?(&?[\w.|]+)(?:\s*=\s*(.+))?(\])?,?/).map do |(type, name, default, optional_bracket)|
+    params.scan(/(?:\[\s*)?(\w+ )?(&?\$?[\w.|]+)(?:\s*=\s*(.+))?(\])?,?/).map do |(type, name, default, optional_bracket)|
       param = type.to_s + name
       optional = false
       if optional_bracket

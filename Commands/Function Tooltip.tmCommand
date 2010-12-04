@@ -24,6 +24,13 @@ require ENV['TM_SUPPORT_PATH'] + '/lib/exit_codes'
 # ENV['TM_CURRENT_LINE']   = "date('Y-m-d', time() + ONE_MONTH)"
 # ENV['TM_LINE_INDEX']     = '23'
 
+lang = ENV['LANG'] ? ENV['LANG'][0..2] : 'en'
+$fnFilename = ENV['TM_BUNDLE_SUPPORT'] + '/function-docs/' + lang + '.txt'
+
+if !File.exist?($fnFilename)
+  $fnFilename = ENV['TM_BUNDLE_SUPPORT'] + '/function-docs/en.txt'
+end
+
 class String
   def nbsp
     gsub(' ', '&amp;nbsp;')
@@ -32,23 +39,23 @@ end
 
 def show_function_and_exit(function, line = nil)
   return unless function =~ /^[A-Za-z_][A-Za-z0-9_]*$/
-  functions = `grep -i '^#{function}%' "$TM_BUNDLE_SUPPORT"/functions.txt`.split("\n")
+  functions = `grep -i '^#{function}%' "#{$fnFilename}"`.split("\n")
   
   if functions.size == 1
     function, prototype, description = functions.pop.split('%')
 
     function = PHPFunction.new(prototype)
-    params = function.params.map do |param|
-      html = ''
-      html &lt;&lt; '&lt;span class="type"&gt;' + param[:type] + '&lt;/span&gt; '.nbsp unless param[:type].to_s.empty?
-      html &lt;&lt; param[:name]
-      unless param[:default].to_s.empty?
-        html &lt;&lt; ' = '.nbsp + param[:default]
-      end
-      html = '&lt;i&gt;' + html + '&lt;/i&gt;' if param[:optional]
-      html
-    end
 
+    params = function.params.map do |param|
+     html = ''
+     html &lt;&lt; '&lt;span class="type"&gt;' + param[:type] + '&lt;/span&gt; '.nbsp unless param[:type].to_s.empty?
+     html &lt;&lt; param[:name]
+     unless param[:default].to_s.empty?
+       html &lt;&lt; ' = '.nbsp + param[:default]
+     end
+     html = '&lt;i&gt;[' + html + ']&lt;/i&gt;' if param[:optional]
+     html
+    end
 
     if line
       arg = 0
