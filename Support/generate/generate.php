@@ -127,7 +127,7 @@ $sectionEquivalents = array(
     'xml.dom'                     => 'php_dom',
 );
 
-define('PHP_DOC_DIR', __DIR__ . '/phpdoc');
+define('PHP_DOC_DIR', __DIR__ . '/.phpdoc');
 
 if (!is_dir(PHP_DOC_DIR)) {
     mkdir(PHP_DOC_DIR);
