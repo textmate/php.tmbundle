@@ -60,7 +60,7 @@ def pattern_for(name, list, constructors = false)
   return unless list = process_list(list)
   {
     'name'  => name,
-    'match' => "(?i)\\b#{ list }(?=\\s*" + (constructors && "[\\(|;]" || "\\(") + ")"
+    'match' => "(?i)\\b#{ list }\\b"
   }
 end
 
