@@ -193,6 +193,78 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>class-builtin</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.inheritance.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?i)(\\)?\b(st(dClass|reamWrapper)|R(untimeException|e(sourceBundle|cursive(RegexIterator|CachingIterator|TreeIterator|Iterator(Iterator)?|DirectoryIterator|FilterIterator|ArrayIterator)|flect(ion(Method|Class|Object|P(arameter|roperty)|Extension|Function(Abstract)?)?|or)|gexIterator)|angeException)|G(lobIterator|magick(Draw|Pixel)?)|X(ML(Reader|Writer)|SLTProcessor)|M(ongo(Regex|Grid(fsFile|FS(Cursor|File)?)|BinData|C(o(de|llection)|ursor)|Timestamp|I(nt(32|64)|d)|D(B(Ref)?|ate))?|ultipleIterator|e(ssageFormatter|mcache(d)?))|Bad(MethodCallException|FunctionCallException)|tidy(Node)?|S(impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|CA(_(SoapProxy|LocalProxy))?|p(hinxClient|l(M(inHeap|axHeap)|Bool|S(t(ack|ring)|ubject)|Heap|TempFileObject|Int|Ob(server|jectStorage)|DoublyLinkedList|PriorityQueue|Enum|Queue|F(i(le(Info|Object)|xedArray)|loat)))|e(ekableIterator|rializable)|DO_(Model_(ReflectionDataObject|Type|Property)|Sequence|D(ata(Object|Factory)|AS_(Relational|XML(_Document)?|Setting|ChangeSummary|Data(Object|Factory)))|Exception|List)|wish(Result(s)?|Search)?|QLite(Result|3(Result|Stmt)?|Database|Unbuffered)|AM(Message|Connection))|H(ttp(Re(sponse|quest(Pool)?)|Message|InflateStream|DeflateStream|QueryString)|aru(Image|Outline|D(oc|estination)|Page|Encoder|Font|Annotation))|N(o(RewindIterator|rmalizer)|umberFormatter)|C(o(untable|llator)|achingIterator)|T(okyoTyrant(Table|Query)?|raversable)|I(n(tlDateFormatter|validArgumentException|finiteIterator)|terator(Iterator|Aggregate)?|magick(Draw|Pixel(Iterator)?)?)|ZipArchive|O(CI-(Collection|Lob)|ut(erIterator|Of(RangeException|BoundsException))|verflowException)|D(irectoryIterator|om(XsltStylesheet|Node|Document(Type)?|ProcessingInstruction|Element|ainException|Attribute)|OM(XPath|N(ode(list)?|amedNodeMap)|C(haracterData|omment)|Text|Implementation|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr)|ate(Time(Zone)?|Interval|Period))|Un(derflowException|expectedValueException)|finfo|P(har(Data|FileInfo)?|DO(Statement)?|arentIterator)|E(rrorException|xception|mptyIterator)|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|Frame|AttachedPictureFrame))|Fil(terIterator|esystemIterator)|mysqli(_(stmt|driver|warning|result))?|L(imitIterator|o(cale|gicException)|engthException)|A(MQP(Connection|Exchange|Queue)|ppendIterator|PCIterator|rray(Iterator|Object|Access)))\b</string>
+					<key>name</key>
+					<string>support.class.builtin.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>class-name</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?i)(?=\\?[a-z_0-9]+\\)</string>
+					<key>end</key>
+					<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\])</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.class.php</string>
+						</dict>
+					</dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#namespace</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#class-builtin</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?=[\\a-zA-Z_])</string>
+					<key>end</key>
+					<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\])</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.class.php</string>
+						</dict>
+					</dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#namespace</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>comments</key>
 		<dict>
 			<key>patterns</key>
@@ -494,7 +566,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#namespace</string>
+							<string>#class-name</string>
 						</dict>
 						<dict>
 							<key>captures</key>
@@ -537,7 +609,7 @@
 							</dict>
 							<key>match</key>
 							<string>(?xi)
-        							\s*([a-z_][a-z_0-9]*) # Typehinted class name
+        							\s*([a-z_][a-z_0-9]*)? # Typehinted class name
         							\s*(&amp;)? 					# Reference
         							\s*((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*) # The variable name
         							(?:
@@ -1002,23 +1074,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#namespace</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#support</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>support.class.php</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(?i)([a-z0-9_]+)(?=[^a-z0-9_])</string>
+					<string>#class-name</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1156,7 +1212,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)^\s*(namespace)\s+(?=[a-z_][a-z_0-9]*)</string>
+					<string>(?i)^\s*(namespace)\b</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1168,28 +1224,22 @@
 					<key>contentName</key>
 					<string>entity.name.type.namespace.php</string>
 					<key>end</key>
-					<string>\s*(?=;|{|$)</string>
+					<string>$|(?=[;{])</string>
 					<key>name</key>
 					<string>meta.namespace.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.separator.inheritance.php</string>
-								</dict>
-							</dict>
 							<key>match</key>
-							<string>(?i)\s*(\\)?\s*[a-z_][a-z_0-9]*</string>
+							<string>\\</string>
+							<key>name</key>
+							<string>punctuation.separator.inheritance.php</string>
 						</dict>
 					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)\s*(use)\s+(?=[a-z_0-9\\ ]+\s*(?:;|,|$))</string>
+					<string>(?i)\s*\b(use)\s+</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1199,7 +1249,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>(?=;|(?:^\s*$)|(?:\s*(?!(\/[\/\*])|\#)[^,\s]\s*$))</string>
+					<string>(?=;|(?:^\s*$))</string>
 					<key>name</key>
 					<string>meta.use.php</string>
 					<key>patterns</key>
@@ -1210,14 +1260,10 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(?xi)
-					            (?=\s*[a-z_0-9\\]*[a-z_][a-z_0-9]*\b)
-					        </string>
-							<key>contentName</key>
-							<string>support.other.namespace.use.php</string>
+							<string>(?i)\s*(?=[a-z_0-9\\])</string>
 							<key>end</key>
 							<string>(?xi)(?:
-    			                (?:\s*(as)\b\s*([a-z_][a-z_0-9]*)?\s*(?=,|;|$))
+    			                (?:\s*(as)\b\s*([a-z_0-9]*)\s*(?=,|;|$))
     			                |(?=,|;|$)
     			            )</string>
 							<key>endCaptures</key>
@@ -1236,18 +1282,31 @@
 							<key>patterns</key>
 							<array>
 								<dict>
-									<key>captures</key>
-									<dict>
-										<key>1</key>
+									<key>include</key>
+									<string>#class-builtin</string>
+								</dict>
+								<dict>
+									<key>begin</key>
+									<string>(?i)\s*(?=[\\a-z_0-9])</string>
+									<key>end</key>
+									<string>$|(?=[\s,;])</string>
+									<key>name</key>
+									<string>support.other.namespace.use.php</string>
+									<key>patterns</key>
+									<array>
 										<dict>
+											<key>match</key>
+											<string>\\</string>
 											<key>name</key>
 											<string>punctuation.separator.inheritance.php</string>
 										</dict>
-									</dict>
-									<key>match</key>
-									<string>(?i)\s*(\\)?\s*[a-z_][a-z_0-9]*</string>
+									</array>
 								</dict>
 							</array>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\s*,\s*</string>
 						</dict>
 					</array>
 				</dict>
@@ -1296,9 +1355,34 @@
 							<key>contentName</key>
 							<string>meta.other.inherited-class.php</string>
 							<key>end</key>
-							<string>(?i)(?=\s*(implements|[^a-z0-9_\\\s]))</string>
+							<string>(?i)(?=[^a-z_0-9\\])</string>
 							<key>patterns</key>
 							<array>
+								<dict>
+									<key>begin</key>
+									<string>(?i)(?=\\?[a-z_0-9]+\\)</string>
+									<key>end</key>
+									<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\])</string>
+									<key>endCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>entity.other.inherited-class.php</string>
+										</dict>
+									</dict>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#namespace</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#class-builtin</string>
+								</dict>
 								<dict>
 									<key>include</key>
 									<string>#namespace</string>
@@ -1334,14 +1418,45 @@
 									<key>begin</key>
 									<string>(?i)(?=[a-z0-9_\\]+)</string>
 									<key>contentName</key>
-									<string>entity.other.inherited-class.php</string>
+									<string>meta.other.inherited-class.php</string>
 									<key>end</key>
 									<string>(?i)(?:\s*(?:,|(?=[^a-z0-9_\\\s]))\s*)</string>
 									<key>patterns</key>
 									<array>
 										<dict>
+											<key>begin</key>
+											<string>(?i)(?=\\?[a-z_0-9]+\\)</string>
+											<key>end</key>
+											<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\])</string>
+											<key>endCaptures</key>
+											<dict>
+												<key>1</key>
+												<dict>
+													<key>name</key>
+													<string>entity.other.inherited-class.php</string>
+												</dict>
+											</dict>
+											<key>patterns</key>
+											<array>
+												<dict>
+													<key>include</key>
+													<string>#namespace</string>
+												</dict>
+											</array>
+										</dict>
+										<dict>
+											<key>include</key>
+											<string>#class-builtin</string>
+										</dict>
+										<dict>
 											<key>include</key>
 											<string>#namespace</string>
+										</dict>
+										<dict>
+											<key>match</key>
+											<string>(?i)[a-z_][a-z_0-9]*</string>
+											<key>name</key>
+											<string>entity.other.inherited-class.php</string>
 										</dict>
 									</array>
 								</dict>
@@ -1536,8 +1651,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?x)
-					    (?:^\s*)
+					<string>(?x)\s*
 					    ((?:(?:final|abstract|public|private|protected|static)\s+)*)
 				        (function)
 				        (?:\s+|(\s*&amp;\s*))
@@ -1665,17 +1779,11 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#namespace</string>
+							<string>#class-name</string>
 						</dict>
 						<dict>
 							<key>include</key>
 							<string>#variable-name</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>([A-Za-z_][A-Za-z_0-9]*)</string>
-							<key>name</key>
-							<string>support.class.php</string>
 						</dict>
 					</array>
 				</dict>
@@ -1882,23 +1990,11 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#namespace</string>
+							<string>#class-name</string>
 						</dict>
 						<dict>
 							<key>include</key>
 							<string>#variable-name</string>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>support.class.php</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(?i)([a-z0-9_]+)</string>
 						</dict>
 					</array>
 				</dict>
@@ -1981,7 +2077,7 @@
 		<key>namespace</key>
 		<dict>
 			<key>begin</key>
-			<string>(?i)(?:(namespace)|([a-z0-9_]+))?(\\)(?=[a-z_0-9\\]*[a-z_][a-z_0-9]*[^a-z_0-9\\])</string>
+			<string>(?i)(?:(namespace)|[a-z0-9_]+)?(\\)(?=.*?[^a-z_0-9\\])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1992,16 +2088,13 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.other.namespace.php</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
 					<string>punctuation.separator.inheritance.php</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i)(?=[a-z_][a-z_0-9]*[^a-z0-9_\\])</string>
+			<string>(?i)(?=[a-z0-9_]*[^a-z0-9_\\])</string>
+			<key>name</key>
+			<string>support.other.namespace.php</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -2010,16 +2103,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>support.other.namespace.partial.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
 							<string>punctuation.separator.inheritance.php</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?i)([a-z0-9_]+)(\\)</string>
+					<string>(?i)(\\)</string>
 				</dict>
 			</array>
 		</dict>
@@ -2179,6 +2267,35 @@
 				<dict>
 					<key>include</key>
 					<string>#instantiation</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?xi)\s*(?=
+				        [a-z_0-9\\]+(::)
+    				    ([a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*)?
+				    )</string>
+					<key>end</key>
+					<string>(?i)(::)([a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*)?</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.class.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>constant.other.class.php</string>
+						</dict>
+					</dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#class-name</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -3316,12 +3433,6 @@
 					<string>(?i)\bis_int(eger)?\b</string>
 					<key>name</key>
 					<string>support.function.alias.php</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?i)\b(st(dClass|reamWrapper)|R(untimeException|e(sourceBundle|cursive(RegexIterator|CachingIterator|TreeIterator|Iterator(Iterator)?|DirectoryIterator|FilterIterator|ArrayIterator)|flect(ion(Method|Class|Object|P(arameter|roperty)|Extension|Function(Abstract)?)?|or)|gexIterator)|angeException)|G(lobIterator|magick(Draw|Pixel)?)|X(ML(Reader|Writer)|SLTProcessor)|M(ongo(Regex|Grid(fsFile|FS(Cursor|File)?)|BinData|C(o(de|llection)|ursor)|Timestamp|I(nt(32|64)|d)|D(B(Ref)?|ate))?|ultipleIterator|e(ssageFormatter|mcache(d)?))|Bad(MethodCallException|FunctionCallException)|tidy(Node)?|S(impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|CA(_(SoapProxy|LocalProxy))?|p(hinxClient|l(M(inHeap|axHeap)|Bool|S(t(ack|ring)|ubject)|Heap|TempFileObject|Int|Ob(server|jectStorage)|DoublyLinkedList|PriorityQueue|Enum|Queue|F(i(le(Info|Object)|xedArray)|loat)))|eekableIterator|DO_(Model_(ReflectionDataObject|Type|Property)|Sequence|D(ata(Object|Factory)|AS_(Relational|XML(_Document)?|Setting|ChangeSummary|Data(Object|Factory)))|Exception|List)|wish(Result(s)?|Search)?|QLite(Result|3(Result|Stmt)?|Database|Unbuffered)|AM(Message|Connection))|H(ttp(Re(sponse|quest(Pool)?)|Message|InflateStream|DeflateStream|QueryString)|aru(Image|Outline|D(oc|estination)|Page|Encoder|Font|Annotation))|N(o(RewindIterator|rmalizer)|umberFormatter)|C(o(untable|llator)|achingIterator)|TokyoTyrant(Table|Query)?|I(n(tlDateFormatter|validArgumentException|finiteIterator)|teratorIterator|magick(Draw|Pixel(Iterator)?)?)|ZipArchive|O(CI-(Collection|Lob)|ut(erIterator|Of(RangeException|BoundsException))|verflowException)|D(irectoryIterator|om(XsltStylesheet|Node|Document(Type)?|ProcessingInstruction|Element|ainException|Attribute)|OM(XPath|N(ode(list)?|amedNodeMap)|C(haracterData|omment)|Text|Implementation|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr)|ate(Time(Zone)?|Interval|Period))|Un(derflowException|expectedValueException)|finfo|P(har(Data|FileInfo)?|DO(Statement)?|arentIterator)|E(rrorException|xception|mptyIterator)|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|Frame|AttachedPictureFrame))|Fil(terIterator|esystemIterator)|mysqli(_(stmt|driver|warning|result))?|L(imitIterator|o(cale|gicException)|engthException)|A(MQP(Connection|Exchange|Queue)|ppendIterator|PCIterator|rray(Iterator|Object)))(?=\s*[\(|;])</string>
-					<key>name</key>
-					<string>support.class.builtin.php</string>
 				</dict>
 			</array>
 		</dict>
