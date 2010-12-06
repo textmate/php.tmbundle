@@ -315,12 +315,12 @@ $functionsPlistLines = array();
 // phd's IDE-JSON docs don't include these classes and functions, so we add them manually
 // Note: this shortcut doesn't support functions with multiple arguments, so if you need to
 // add functions with multiple arguments, that functionality will need to be written
-$extraFunctions = <<<'END_OF_FUNCTIONS'
-include%bool include(string $path)%Includes and evaluates the specified file
-include_once%bool include_once(string $path)%Includes and evaluates the specified file
-require%bool require(string $path)%Includes and evaluates the specified file, erroring if the file cannot be included
-require_once%bool require_once(string $path)%Includes and evaluates the specified file, erroring if the file cannot be included
-END_OF_FUNCTIONS;
+$extraFunctions = array(
+    'include%bool include(string $path)%Includes and evaluates the specified file',
+    'include_once%bool include_once(string $path)%Includes and evaluates the specified file',
+    'require%bool require(string $path)%Includes and evaluates the specified file, erroring if the file cannot be included',
+    'require_once%bool require_once(string $path)%Includes and evaluates the specified file, erroring if the file cannot be included',
+);
 
 $classes = array(
     'stdClass',
@@ -336,6 +336,9 @@ $classes = array(
     'SplObserver',
     'SplSubject',
     'Reflector',
+);
+
+$exceptionClasses = array(
     'ErrorException',
     'Exception',
     'LogicException',
@@ -353,7 +356,16 @@ $classes = array(
     'UnexpectedValueException',
 );
 
-foreach (explode("\n", $extraFunctions) as $line) {
+foreach ($exceptionClasses as $name) {
+    $classes[] = $name;
+    $extraFunctions[] = implode('%', array(
+        $name,
+        'object ' . $name . '([string $message = ""], [int $code = 0], [Exception $previous = NULL])',
+        "Create a new {$name}",
+    ));
+}
+
+foreach ($extraFunctions as $line) {
     list($name, $prototype, $description) = explode('%', $line);
     $functionsTxtLines[$name] = $line;
 

@@ -6,6 +6,8 @@ APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $form
 AppendIterator%object AppendIterator()%AppendIterator を作成する
 ArrayIterator%object ArrayIterator(mixed $array)%ArrayIterator を作成する
 ArrayObject%object ArrayObject([mixed $input], [int $flags], [string $iterator_class])%新規配列オブジェクトを生成する
+BadFunctionCallException%object BadFunctionCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadFunctionCallException
+BadMethodCallException%object BadMethodCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadMethodCallException
 CachingIterator%object CachingIterator(Iterator $iterator, [string $flags])%新しい CachingIterator オブジェクトを作成する
 Collator%object Collator(string $locale)%collator を作成する
 DOMAttr%object DOMAttr(string $name, [string $value])%新しい DOMAttr オブジェクトを作成する
@@ -22,6 +24,9 @@ DatePeriod%object DatePeriod(DateTime $start, DateInterval $interval, int $recur
 DateTime%object DateTime([string $time = "now"], [DateTimeZone $timezone], [string $time = "now"], [DateTimeZone $timezone])%新しい DateTime オブジェクトを返す
 DateTimeZone%object DateTimeZone(string $timezone, string $timezone)%新しい DateTimeZone オブジェクトを作成する
 DirectoryIterator%object DirectoryIterator(string $path)%パスから新規ディレクトリイテレータを生成する
+DomainException%object DomainException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new DomainException
+ErrorException%object ErrorException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new ErrorException
+Exception%object Exception([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new Exception
 FilesystemIterator%object FilesystemIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS])%新しい filesystem イテレータを作成する
 FilterIterator%object FilterIterator(Iterator $iterator)%filterIterator を作成する
 FrenchToJD%int FrenchToJD(int $month, int $day, int $year)%フランス革命暦をユリウス積算日に変換する
@@ -41,6 +46,7 @@ ImagickDraw%object ImagickDraw()%ImagickDraw コンストラクタ
 ImagickPixel%object ImagickPixel([string $color])%ImagickPixel のコンストラクタ
 ImagickPixelIterator%object ImagickPixelIterator(Imagick $wand)%ImagickPixelIterator のコンストラクタ
 InfiniteIterator%object InfiniteIterator(Iterator $iterator)%InfiniteIterator を作成する
+InvalidArgumentException%object InvalidArgumentException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new InvalidArgumentException
 IteratorIterator%object IteratorIterator(Traversable $iterator)%traversable な何かからイテレータを作成する
 JDDayOfWeek%mixed JDDayOfWeek(int $julianday, [int $mode = CAL_DOW_DAYNO])%曜日を返す
 JDMonthName%string JDMonthName(int $julianday, int $mode)%月の名前を返す
@@ -50,7 +56,9 @@ JDToJulian%string JDToJulian(int $julianday)%ユリウス積算日をユリウ�
 JewishToJD%int JewishToJD(int $month, int $day, int $year)%ユダヤ暦の日付けをユリウス積算日に変換する
 JulianToJD%int JulianToJD(int $month, int $day, int $year)%ユリウス暦をユリウス積算日に変換する
 KTaglib_MPEG_File%object KTaglib_MPEG_File(string $filename)%新しいファイルをオープンする
+LengthException%object LengthException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LengthException
 LimitIterator%object LimitIterator(Iterator $iterator, [int $offset], [int $count = -1])%LimitIterator を作成する
+LogicException%object LogicException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LogicException
 Memcached%object Memcached([string $persistent_id])%Memcached のインスタンスを作成する
 Mongo%object Mongo([string $server = "mongodb://localhost:27017"], [array $options = )])%新しいデータベース接続オブジェクトを作成する
 MongoBinData%object MongoBinData(string $data, [int $type])%新しいバイナリデータオブジェクトを作成する
@@ -69,11 +77,15 @@ MongoRegex%object MongoRegex(string $regex)%新しい正規表現を作成する
 MongoTimestamp%object MongoTimestamp([long $sec], [long $inc])%新しいタイムスタンプを作成する
 MultipleIterator%object MultipleIterator(integer $flags)%新しい MultipleIterator を作成する
 NoRewindIterator%object NoRewindIterator(Iterator $iterator)%NoRewindIterator を作成する
+OutOfBoundsException%object OutOfBoundsException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfBoundsException
+OutOfRangeException%object OutOfRangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfRangeException
+OverflowException%object OverflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OverflowException
 PDO%object PDO(string $dsn, [string $username], [string $password], [array $driver_options])%データベースへの接続を表す PDO インスタンスを生成する
 ParentIterator%object ParentIterator(RecursiveIterator $iterator)%ParentIterator を作成する
 Phar%object Phar(string $fname, [int $flags], [string $alias])%Phar アーカイブオブジェクトを作成する
 PharData%object PharData(string $fname, [int $flags], [string $alias], [int $format])%実行可能でない tar あるいは zip アーカイブオブジェクトを作成する
 PharFileInfo%object PharFileInfo(string $entry)%Phar エントリオブジェクトを作成する
+RangeException%object RangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new RangeException
 RecursiveCachingIterator%object RecursiveCachingIterator(Iterator $iterator, [string $flags = self::CALL_TOSTRING])%コンストラクタ
 RecursiveDirectoryIterator%object RecursiveDirectoryIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO])%RecursiveDirectoryIterator を作成する
 RecursiveFilterIterator%object RecursiveFilterIterator(RecursiveIterator $iterator)%RecursiveIterator から RecursiveFilterIterator を作成する
@@ -88,6 +100,7 @@ ReflectionObject%object ReflectionObject(object $argument)%ReflectionObject を�
 ReflectionParameter%object ReflectionParameter(string $function, string $parameter)%コンストラクタ
 ReflectionProperty%object ReflectionProperty(mixed $class, string $name)%ReflectionProperty オブジェクトを作成する
 RegexIterator%object RegexIterator(Iterator $iterator, string $regex, [int $mode], [int $flags], [int $preg_flags])%新しい RegexIterator を作成する
+RuntimeException%object RuntimeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new RuntimeException
 SAMConnection%object SAMConnection()%メッセージングサーバへの新しい接続を作成する
 SAMMessage%object SAMMessage([mixed $body])%新しいメッセージオブジェクトを作成する
 SDO_DAS_Relational%object SDO_DAS_Relational(array $database_metadata, [string $application_root_type], [array $SDO_containment_references_metadata])%リレーショナルデータアクセスサービスのインスタンスを作成する
@@ -118,6 +131,8 @@ SplTempFileObject%object SplTempFileObject([integer $max_memory])%新しい一�
 Swish%object Swish(string $index_names)%Swish オブジェクトを作成する
 TokyoTyrant%object TokyoTyrant([string $host], [int $port = TokyoTyrant::RDBDEF_PORT], [array $options])%新しい TokyoTyrant オブジェクトを作成する
 TokyoTyrantQuery%object TokyoTyrantQuery(TokyoTyrantTable $table)%新しいクエリを作成する
+UnderflowException%object UnderflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnderflowException
+UnexpectedValueException%object UnexpectedValueException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnexpectedValueException
 XSLTProcessor%object XSLTProcessor()%新規 XSLTProcessor オブジェクトを生成する
 __halt_compiler%void __halt_compiler()%コンパイラの実行を中止する
 abs%number abs(mixed $number)%絶対値

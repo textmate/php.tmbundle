@@ -4,6 +4,8 @@ AMQPQueue%object AMQPQueue(string $amqp_connection, [string $queue_name = ""])%C
 AppendIterator%object AppendIterator()%Constructs an AppendIterator
 ArrayIterator%object ArrayIterator(mixed $array)%Construct an ArrayIterator
 ArrayObject%object ArrayObject([mixed $input], [int $flags], [string $iterator_class])%Construct a new array object
+BadFunctionCallException%object BadFunctionCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadFunctionCallException
+BadMethodCallException%object BadMethodCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadMethodCallException
 CachingIterator%object CachingIterator(Iterator $iterator, [string $flags])%Construct a new CachingIterator object for the iterator.
 Collator%object Collator(string $locale)%Create a collator
 DOMAttr%object DOMAttr(string $name, [string $value])%Creates a new DOMAttr object
@@ -20,6 +22,9 @@ DatePeriod%object DatePeriod(DateTime $start, DateInterval $interval, int $recur
 DateTime%object DateTime([string $time = "now"], [DateTimeZone $timezone], [string $time = "now"], [DateTimeZone $timezone])%Returns new DateTime object
 DateTimeZone%object DateTimeZone(string $timezone, string $timezone)%Creates new DateTimeZone object
 DirectoryIterator%object DirectoryIterator(string $path)%Constructs a new directory iterator from a path
+DomainException%object DomainException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new DomainException
+ErrorException%object ErrorException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new ErrorException
+Exception%object Exception([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new Exception
 FilesystemIterator%object FilesystemIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS])%Constructs a new filesystem iterator
 FilterIterator%object FilterIterator(Iterator $iterator)%Construct a filterIterator
 GlobIterator%object GlobIterator(string $path, [integer $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO])%Construct a directory using glob
@@ -37,9 +42,12 @@ ImagickDraw%object ImagickDraw()%The ImagickDraw constructor
 ImagickPixel%object ImagickPixel([string $color])%The ImagickPixel constructor
 ImagickPixelIterator%object ImagickPixelIterator(Imagick $wand)%The ImagickPixelIterator constructor
 InfiniteIterator%object InfiniteIterator(Iterator $iterator)%Constructs an InfiniteIterator
+InvalidArgumentException%object InvalidArgumentException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new InvalidArgumentException
 IteratorIterator%object IteratorIterator(Traversable $iterator)%Create an iterator from anything that is traversable
 KTaglib_MPEG_File%object KTaglib_MPEG_File(string $filename)%Opens a new file
+LengthException%object LengthException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LengthException
 LimitIterator%object LimitIterator(Iterator $iterator, [int $offset], [int $count = -1])%Construct a LimitIterator
+LogicException%object LogicException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LogicException
 Memcached%object Memcached([string $persistent_id])%Create a Memcached instance
 Mongo%object Mongo([string $server = "mongodb://localhost:27017"], [array $options = )])%Creates a new database connection object
 MongoBinData%object MongoBinData(string $data, [int $type])%Creates a new binary data object.
@@ -58,11 +66,15 @@ MongoRegex%object MongoRegex(string $regex)%Creates a new regular expression
 MongoTimestamp%object MongoTimestamp([long $sec], [long $inc])%Creates a new timestamp.
 MultipleIterator%object MultipleIterator(integer $flags)%Constructs a new MultipleIterator
 NoRewindIterator%object NoRewindIterator(Iterator $iterator)%Construct a NoRewindIterator
+OutOfBoundsException%object OutOfBoundsException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfBoundsException
+OutOfRangeException%object OutOfRangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfRangeException
+OverflowException%object OverflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OverflowException
 PDO%object PDO(string $dsn, [string $username], [string $password], [array $driver_options])%Creates a PDO instance representing a connection to a database
 ParentIterator%object ParentIterator(RecursiveIterator $iterator)%Constructs a ParentIterator
 Phar%object Phar(string $fname, [int $flags], [string $alias])%Construct a Phar archive object
 PharData%object PharData(string $fname, [int $flags], [string $alias], [int $format])%Construct a non-executable tar or zip archive object
 PharFileInfo%object PharFileInfo(string $entry)%Construct a Phar entry object
+RangeException%object RangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new RangeException
 RecursiveCachingIterator%object RecursiveCachingIterator(Iterator $iterator, [string $flags = self::CALL_TOSTRING])%Construct
 RecursiveDirectoryIterator%object RecursiveDirectoryIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO])%Constructs a RecursiveDirectoryIterator
 RecursiveFilterIterator%object RecursiveFilterIterator(RecursiveIterator $iterator)%Create a RecursiveFilterIterator from a RecursiveIterator
@@ -77,6 +89,7 @@ ReflectionObject%object ReflectionObject(object $argument)%Constructs a Reflecti
 ReflectionParameter%object ReflectionParameter(string $function, string $parameter)%Construct
 ReflectionProperty%object ReflectionProperty(mixed $class, string $name)%Construct a ReflectionProperty object
 RegexIterator%object RegexIterator(Iterator $iterator, string $regex, [int $mode], [int $flags], [int $preg_flags])%Create a new RegexIterator
+RuntimeException%object RuntimeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new RuntimeException
 SAMConnection%object SAMConnection()%Creates a new connection to a Messaging Server
 SAMMessage%object SAMMessage([mixed $body])%Creates a new Message object
 SDO_DAS_Relational%object SDO_DAS_Relational(array $database_metadata, [string $application_root_type], [array $SDO_containment_references_metadata])%Creates an instance of a Relational Data Access Service
@@ -107,6 +120,8 @@ SplTempFileObject%object SplTempFileObject([integer $max_memory])%Construct a ne
 Swish%object Swish(string $index_names)%Construct a Swish object
 TokyoTyrant%object TokyoTyrant([string $host], [int $port = TokyoTyrant::RDBDEF_PORT], [array $options])%Construct a new TokyoTyrant object
 TokyoTyrantQuery%object TokyoTyrantQuery(TokyoTyrantTable $table)%Construct a new query
+UnderflowException%object UnderflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnderflowException
+UnexpectedValueException%object UnexpectedValueException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnexpectedValueException
 XSLTProcessor%object XSLTProcessor()%Erzeugt ein neues XSLTProcessor-Objekt
 __halt_compiler%void __halt_compiler()%Beendet die Kompilerausführung
 abs%number abs(mixed $number)%Absolutwert bzw. Betrag

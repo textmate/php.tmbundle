@@ -5,6 +5,8 @@ APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $form
 AppendIterator%object AppendIterator()%Construit un objet AppendIterator
 ArrayIterator%object ArrayIterator(mixed $array)%Construit un ArrayIterator
 ArrayObject%object ArrayObject([mixed $input], [int $flags], [string $iterator_class])%Construit un nouvel objet tableau
+BadFunctionCallException%object BadFunctionCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadFunctionCallException
+BadMethodCallException%object BadMethodCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadMethodCallException
 CachingIterator%object CachingIterator(Iterator $iterator, [string $flags])%Construit un nouvel objet CachingIterator pour l'itérateur
 Collator%object Collator(string $locale)%Créatin d'un collator
 DOMAttr%object DOMAttr(string $name, [string $value])%Crée un nouvel objet DOMAttr
@@ -21,6 +23,9 @@ DatePeriod%object DatePeriod(DateTime $start, DateInterval $interval, int $recur
 DateTime%object DateTime([string $time = "now"], [DateTimeZone $timezone], [string $time = "now"], [DateTimeZone $timezone])%Retourne un nouvel objet DateTime
 DateTimeZone%object DateTimeZone(string $timezone, string $timezone)%Crée un nouvel objet DateTimeZone
 DirectoryIterator%object DirectoryIterator(string $path)%Construit un nouvel itérateur de dossier à partir d'un chemin
+DomainException%object DomainException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new DomainException
+ErrorException%object ErrorException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new ErrorException
+Exception%object Exception([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new Exception
 FilesystemIterator%object FilesystemIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS])%Construit un objet FilesystemIterator
 FilterIterator%object FilterIterator(Iterator $iterator)%Construit un filterIterator
 FrenchToJD%int FrenchToJD(int $month, int $day, int $year)%Convertit une date du calendrier français républicain en nombre    de jours du calendrier Julien
@@ -40,6 +45,7 @@ ImagickDraw%object ImagickDraw()%Le constructeur ImagickDraw
 ImagickPixel%object ImagickPixel([string $color])%Le constructeur ImagickPixel
 ImagickPixelIterator%object ImagickPixelIterator(Imagick $wand)%Le constructeur ImagickPixelIterator
 InfiniteIterator%object InfiniteIterator(Iterator $iterator)%Construit un InfiniteIterator
+InvalidArgumentException%object InvalidArgumentException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new InvalidArgumentException
 IteratorIterator%object IteratorIterator(Traversable $iterator)%Crée un itérateur à partir d'un objet traversable
 JDDayOfWeek%mixed JDDayOfWeek(int $julianday, [int $mode = CAL_DOW_DAYNO])%Retourne le numéro du jour de la semaine
 JDMonthName%string JDMonthName(int $julianday, int $mode)%Retourne le nom du mois
@@ -49,7 +55,9 @@ JDToJulian%string JDToJulian(int $julianday)%Convertit le nombre de jours du cal
 JewishToJD%int JewishToJD(int $month, int $day, int $year)%Convertit une date du calendrier Juif en nombre de jours du calendrier Julien
 JulianToJD%int JulianToJD(int $month, int $day, int $year)%Convertit un jours du calendrier Julien en un nombre de jours du calendrier Julien
 KTaglib_MPEG_File%object KTaglib_MPEG_File(string $filename)%Ouvre un nouveau fichier
+LengthException%object LengthException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LengthException
 LimitIterator%object LimitIterator(Iterator $iterator, [string $offset], [string $count = -1])%Construit un nouvel objet LimitIterator
+LogicException%object LogicException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LogicException
 Memcached%object Memcached([string $persistent_id])%Crée un objet Memcached
 Mongo%object Mongo([string $server = "mongodb://localhost:27017"], [array $options = )])%Crée un nouvel objet de connection à une base de données Mongo
 MongoBinData%object MongoBinData(string $data, [int $type])%Crée un nouvel objet de données binaires
@@ -68,11 +76,15 @@ MongoRegex%object MongoRegex(string $regex)%Crée une nouvelle expression ration
 MongoTimestamp%object MongoTimestamp([long $sec], [long $inc])%Crée un nouveau timestamp
 MultipleIterator%object MultipleIterator(integer $flags)%Construit un nouvel objet MultipleIterator
 NoRewindIterator%object NoRewindIterator(Iterator $iterator)%Construit un nouvel objet NoRewindIterator
+OutOfBoundsException%object OutOfBoundsException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfBoundsException
+OutOfRangeException%object OutOfRangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfRangeException
+OverflowException%object OverflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OverflowException
 PDO%object PDO(string $dsn, [string $username], [string $password], [array $driver_options])%Crée une instance PDO qui représente une connexion à la base
 ParentIterator%object ParentIterator(RecursiveIterator $iterator)%Construit un nouvel objet ParentIterator
 Phar%object Phar(string $fname, [int $flags], [string $alias])%Construit un objet d'archive Phar
 PharData%object PharData(string $fname, [int $flags], [string $alias], [int $format])%Construit un objet d'archive tar ou zip non-exécutable
 PharFileInfo%object PharFileInfo(string $entry)%Construit un objet d'entrée Phar
+RangeException%object RangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new RangeException
 RecursiveCachingIterator%object RecursiveCachingIterator(Iterator $iterator, [string $flags = self::CALL_TOSTRING])%Constructeur
 RecursiveDirectoryIterator%object RecursiveDirectoryIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO])%Construit un objet RecursiveDirectoryIterator
 RecursiveFilterIterator%object RecursiveFilterIterator(RecursiveIterator $iterator)%Crée un objet RecursiveFilterIterator depuis un objet RecursiveIterator
@@ -87,6 +99,7 @@ ReflectionObject%object ReflectionObject(object $argument)%Construit un nouvel o
 ReflectionParameter%object ReflectionParameter(string $function, string $parameter)%Constructeur
 ReflectionProperty%object ReflectionProperty(mixed $class, string $name)%Construit un nouvel objet ReflectionProperty
 RegexIterator%object RegexIterator(Iterator $iterator, string $regex, [int $mode], [int $flags], [int $preg_flags])%Crée un nouvel objet RegexIterator
+RuntimeException%object RuntimeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new RuntimeException
 SAMConnection%object SAMConnection()%Crée une nouvelle connexion à un serveur de messagerie
 SAMMessage%object SAMMessage([mixed $body])%Crée un nouvel objet de message
 SDO_DAS_Relational%object SDO_DAS_Relational(array $database_metadata, [string $application_root_type], [array $SDO_containment_references_metadata])%Construit une instance de DAS Relationnel
@@ -117,6 +130,8 @@ SplTempFileObject%object SplTempFileObject([integer $max_memory])%Construit un n
 Swish%object Swish(string $index_names)%Construit un objet Swish
 TokyoTyrant%object TokyoTyrant([string $host], [int $port = TokyoTyrant::RDBDEF_PORT], [array $options])%Construct a new TokyoTyrant object
 TokyoTyrantQuery%object TokyoTyrantQuery(TokyoTyrantTable $table)%Construct a new query
+UnderflowException%object UnderflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnderflowException
+UnexpectedValueException%object UnexpectedValueException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnexpectedValueException
 XSLTProcessor%object XSLTProcessor()%Crée un nouvel objet XSLTProcessor
 __halt_compiler%void __halt_compiler()%Stoppe l'exécution du compilateur
 abs%number abs(mixed $number)%Valeur absolue
