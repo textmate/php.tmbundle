@@ -324,6 +324,18 @@ END_OF_FUNCTIONS;
 
 $classes = array(
     'stdClass',
+    'Traversable',
+    'IteratorAggregate',
+    'Iterator',
+    'ArrayAccess',
+    'Serializable',
+    'RecursiveIterator',
+    'OuterIterator',
+    'Countable',
+    'SeekableIterator',
+    'SplObserver',
+    'SplSubject',
+    'Reflector',
     'ErrorException',
     'Exception',
     'LogicException',

@@ -15,6 +15,7 @@
         <string>AMQPQueue</string>
         <string>APCIterator</string>
         <string>AppendIterator</string>
+        <string>ArrayAccess</string>
         <string>ArrayIterator</string>
         <string>ArrayObject</string>
         <string>BadFunctionCallException</string>
@@ -82,6 +83,8 @@
         <string>InfiniteIterator</string>
         <string>IntlDateFormatter</string>
         <string>InvalidArgumentException</string>
+        <string>Iterator</string>
+        <string>IteratorAggregate</string>
         <string>IteratorIterator</string>
         <string>JDDayOfWeek</string>
         <string>JDMonthName</string>
@@ -185,6 +188,7 @@
         <string>SQLiteResult</string>
         <string>SQLiteUnbuffered</string>
         <string>SeekableIterator</string>
+        <string>Serializable</string>
         <string>SimpleXMLElement</string>
         <string>SimpleXMLIterator</string>
         <string>SoapClient</string>
@@ -220,6 +224,7 @@
         <string>TokyoTyrant</string>
         <string>TokyoTyrantQuery</string>
         <string>TokyoTyrantTable</string>
+        <string>Traversable</string>
         <string>UnderflowException</string>
         <string>UnexpectedValueException</string>
         <string>XMLReader</string>
