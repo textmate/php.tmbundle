@@ -1249,7 +1249,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)^\s*(namespace)\b</string>
+					<string>(?i)^\s*(namespace)\b\s+(?=([a-z0-9_\\]+\s*($|[;{]|(\/[\/*])))|$)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1261,7 +1261,7 @@
 					<key>contentName</key>
 					<string>entity.name.type.namespace.php</string>
 					<key>end</key>
-					<string>$|(?=[;{])</string>
+					<string>(?i)(?=\s*$|[^a-z0-9_\\])</string>
 					<key>name</key>
 					<string>meta.namespace.php</string>
 					<key>patterns</key>
