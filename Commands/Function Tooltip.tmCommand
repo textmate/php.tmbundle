@@ -107,7 +107,7 @@ while prefix =~ /\(\s*(\w+)/
   prefix = prefix[$&amp;.length..-1]
 end
 
-show_function_and_exit(function = $1) while ENV['TM_CURRENT_LINE'][0..ENV['TM_LINE_INDEX'].to_i] =~ /(\w+)\($/
+show_function_and_exit(function = $1) if ENV['TM_CURRENT_LINE'][0..ENV['TM_LINE_INDEX'].to_i] =~ /(\w+)\($/
 
 TextMate.exit_show_tool_tip "Function not found: " + function.to_s
 </string>
