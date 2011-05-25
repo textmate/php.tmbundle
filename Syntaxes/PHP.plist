@@ -1200,6 +1200,8 @@
 					</dict>
 					<key>end</key>
 					<string>(?=;|(?:^\s*$)|(?:\s*(?!(\/[\/\*])|\#)[^,\s]\s*$))</string>
+					<key>name</key>
+					<string>meta.use.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1231,8 +1233,6 @@
 									<string>support.other.namespace.use-as.php</string>
 								</dict>
 							</dict>
-							<key>name</key>
-							<string>meta.use.php</string>
 							<key>patterns</key>
 							<array>
 								<dict>
