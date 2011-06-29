@@ -139,6 +139,9 @@
         <string>Phar</string>
         <string>PharData</string>
         <string>PharFileInfo</string>
+        <string>RRDCreator</string>
+        <string>RRDGraph</string>
+        <string>RRDUpdater</string>
         <string>RangeException</string>
         <string>RecursiveArrayIterator</string>
         <string>RecursiveCachingIterator</string>
@@ -181,12 +184,15 @@
         <string>SDO_Model_ReflectionDataObject</string>
         <string>SDO_Model_Type</string>
         <string>SDO_Sequence</string>
+        <string>SNMP</string>
         <string>SQLite3</string>
         <string>SQLite3Result</string>
         <string>SQLite3Stmt</string>
         <string>SQLiteDatabase</string>
         <string>SQLiteResult</string>
         <string>SQLiteUnbuffered</string>
+        <string>SVM</string>
+        <string>SVMModel</string>
         <string>SeekableIterator</string>
         <string>Serializable</string>
         <string>SimpleXMLElement</string>
@@ -224,9 +230,12 @@
         <string>TokyoTyrant</string>
         <string>TokyoTyrantQuery</string>
         <string>TokyoTyrantTable</string>
+        <string>Transliterator</string>
         <string>Traversable</string>
         <string>UnderflowException</string>
         <string>UnexpectedValueException</string>
+        <string>V8Js</string>
+        <string>V8JsException</string>
         <string>XMLReader</string>
         <string>XMLWriter</string>
         <string>XSLTProcessor</string>
@@ -1098,6 +1107,7 @@
         <string>imap_check</string>
         <string>imap_clearflag_full</string>
         <string>imap_close</string>
+        <string>imap_create</string>
         <string>imap_createmailbox</string>
         <string>imap_delete</string>
         <string>imap_deletemailbox</string>
@@ -1106,7 +1116,9 @@
         <string>imap_fetch_overview</string>
         <string>imap_fetchbody</string>
         <string>imap_fetchheader</string>
+        <string>imap_fetchmime</string>
         <string>imap_fetchstructure</string>
+        <string>imap_fetchtext</string>
         <string>imap_gc</string>
         <string>imap_get_quota</string>
         <string>imap_get_quotaroot</string>
@@ -1134,12 +1146,14 @@
         <string>imap_open</string>
         <string>imap_ping</string>
         <string>imap_qprint</string>
+        <string>imap_rename</string>
         <string>imap_renamemailbox</string>
         <string>imap_reopen</string>
         <string>imap_rfc822_parse_adrlist</string>
         <string>imap_rfc822_parse_headers</string>
         <string>imap_rfc822_write_address</string>
         <string>imap_savebody</string>
+        <string>imap_scan</string>
         <string>imap_scanmailbox</string>
         <string>imap_search</string>
         <string>imap_set_quota</string>
@@ -1618,6 +1632,7 @@
         <string>mysqli_stmt_fetch</string>
         <string>mysqli_stmt_field_count</string>
         <string>mysqli_stmt_free_result</string>
+        <string>mysqli_stmt_get_result</string>
         <string>mysqli_stmt_get_warnings</string>
         <string>mysqli_stmt_init</string>
         <string>mysqli_stmt_insert_id</string>
@@ -1635,6 +1650,9 @@
         <string>mysqli_use_result</string>
         <string>mysqli_warning</string>
         <string>mysqli_warning_count</string>
+        <string>mysqlnd_ms_get_stats</string>
+        <string>mysqlnd_ms_query_is_select</string>
+        <string>mysqlnd_ms_set_user_pick_server</string>
         <string>mysqlnd_qc_change_handler</string>
         <string>mysqlnd_qc_clear_cache</string>
         <string>mysqlnd_qc_get_cache_info</string>
@@ -1692,6 +1710,7 @@
         <string>oci_bind_array_by_name</string>
         <string>oci_bind_by_name</string>
         <string>oci_cancel</string>
+        <string>oci_client_version</string>
         <string>oci_close</string>
         <string>oci_commit</string>
         <string>oci_connect</string>
@@ -1831,6 +1850,7 @@
         <string>odbc_tables</string>
         <string>opendir</string>
         <string>openlog</string>
+        <string>openssl_cipher_iv_length</string>
         <string>openssl_csr_export</string>
         <string>openssl_csr_export_to_file</string>
         <string>openssl_csr_get_public_key</string>
@@ -2131,6 +2151,18 @@
         <string>rewinddir</string>
         <string>rmdir</string>
         <string>round</string>
+        <string>rrd_create</string>
+        <string>rrd_error</string>
+        <string>rrd_fetch</string>
+        <string>rrd_first</string>
+        <string>rrd_graph</string>
+        <string>rrd_info</string>
+        <string>rrd_last</string>
+        <string>rrd_lastupdate</string>
+        <string>rrd_restore</string>
+        <string>rrd_tune</string>
+        <string>rrd_update</string>
+        <string>rrd_xport</string>
         <string>rsort</string>
         <string>rtrim</string>
         <string>scandir</string>
@@ -2168,7 +2200,9 @@
         <string>set_time_limit</string>
         <string>setcookie</string>
         <string>setlocale</string>
+        <string>setproctitle</string>
         <string>setrawcookie</string>
+        <string>setthreadtitle</string>
         <string>settype</string>
         <string>sha1</string>
         <string>sha1_file</string>
@@ -2546,6 +2580,13 @@
         <string>token_get_all</string>
         <string>token_name</string>
         <string>touch</string>
+        <string>transliterator_create</string>
+        <string>transliterator_create_from_rules</string>
+        <string>transliterator_create_inverse</string>
+        <string>transliterator_get_error_code</string>
+        <string>transliterator_get_error_message</string>
+        <string>transliterator_list_ids</string>
+        <string>transliterator_transliterate</string>
         <string>trigger_error</string>
         <string>trim</string>
         <string>uasort</string>
@@ -2607,8 +2648,11 @@
         <string>wddx_packet_start</string>
         <string>wddx_serialize_value</string>
         <string>wddx_serialize_vars</string>
-        <string>wddx_unserialize</string>
         <string>wordwrap</string>
+        <string>xhprof_disable</string>
+        <string>xhprof_enable</string>
+        <string>xhprof_sample_disable</string>
+        <string>xhprof_sample_enable</string>
         <string>xml_error_string</string>
         <string>xml_get_current_byte_index</string>
         <string>xml_get_current_column_number</string>
@@ -2645,6 +2689,48 @@
         <string>xmlrpc_server_register_introspection_callback</string>
         <string>xmlrpc_server_register_method</string>
         <string>xmlrpc_set_type</string>
+        <string>xmlwriter_end_attribute</string>
+        <string>xmlwriter_end_cdata</string>
+        <string>xmlwriter_end_comment</string>
+        <string>xmlwriter_end_document</string>
+        <string>xmlwriter_end_dtd</string>
+        <string>xmlwriter_end_dtd_attlist</string>
+        <string>xmlwriter_end_dtd_element</string>
+        <string>xmlwriter_end_dtd_entity</string>
+        <string>xmlwriter_end_element</string>
+        <string>xmlwriter_end_pi</string>
+        <string>xmlwriter_flush</string>
+        <string>xmlwriter_full_end_element</string>
+        <string>xmlwriter_open_memory</string>
+        <string>xmlwriter_open_uri</string>
+        <string>xmlwriter_output_memory</string>
+        <string>xmlwriter_set_indent</string>
+        <string>xmlwriter_set_indent_string</string>
+        <string>xmlwriter_start_attribute</string>
+        <string>xmlwriter_start_attribute_ns</string>
+        <string>xmlwriter_start_cdata</string>
+        <string>xmlwriter_start_comment</string>
+        <string>xmlwriter_start_document</string>
+        <string>xmlwriter_start_dtd</string>
+        <string>xmlwriter_start_dtd_attlist</string>
+        <string>xmlwriter_start_dtd_element</string>
+        <string>xmlwriter_start_dtd_entity</string>
+        <string>xmlwriter_start_element</string>
+        <string>xmlwriter_start_element_ns</string>
+        <string>xmlwriter_start_pi</string>
+        <string>xmlwriter_text</string>
+        <string>xmlwriter_write_attribute</string>
+        <string>xmlwriter_write_attribute_ns</string>
+        <string>xmlwriter_write_cdata</string>
+        <string>xmlwriter_write_comment</string>
+        <string>xmlwriter_write_dtd</string>
+        <string>xmlwriter_write_dtd_attlist</string>
+        <string>xmlwriter_write_dtd_element</string>
+        <string>xmlwriter_write_dtd_entity</string>
+        <string>xmlwriter_write_element</string>
+        <string>xmlwriter_write_element_ns</string>
+        <string>xmlwriter_write_pi</string>
+        <string>xmlwriter_write_raw</string>
         <string>xpath_eval</string>
         <string>xpath_eval_expression</string>
         <string>xpath_new_context</string>
