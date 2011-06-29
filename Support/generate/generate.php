@@ -152,8 +152,7 @@ if ($lang !== 'en') {
     genDocsForLang($lang);
 }
 
-function genDocsForLang($lang)
-{
+function genDocsForLang($lang) {
     chdir(PHP_DOC_DIR);
 
     if (!is_dir($lang)) {
@@ -175,22 +174,29 @@ function genDocsForLang($lang)
     chdir('..');
 }
 
-function printUsage($error = false)
-{
+function printUsage($error = false) {
     echo ($error ? "Error: {$error}\n" : '') . "Usage: php generate.php <lang>\n";
     exit(1);
 }
 
-function runCmd()
-{
+function runCmd() {
     $args = func_get_args();
-    $cmd = array_shift($args);
+    
+    if (isset($args[0]) && false === $args[0]) {
+        array_shift($args);
+        $cmd = array_shift($args);
+    } else {
+        $cmd = false;
+    }
+    
     $args = array_map('escapeshellarg', $args);
-    array_unshift($args, $cmd);
+    
+    if (false !== $cmd) {
+        array_unshift($args, $cmd);
+    }
+    
     $cmd = implode(' ', $args);
-
     echo "Running: {$cmd}\n";
-
     exec($cmd, $output, $ret);
 
     if (0 !== $ret) {
@@ -228,8 +234,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     $parentIds[$row['docbook_id']] = $row['parent_id'];
 }
 
-function getSectionName($id, $raw = false)
-{
+function getSectionName($id, $raw = false) {
     global $parentIds, $sectionEquivalents;
 
     $orig = $id;
@@ -260,8 +265,7 @@ function getSectionName($id, $raw = false)
     die("Could not determine section name for {$orig}");
 }
 
-function parseInfo($info)
-{
+function parseInfo($info) {
     $params = array();
 
     foreach ($info->params as $param) {
@@ -448,8 +452,7 @@ ksort($sections);
 $completions = array_unique(array_merge($classes, array_keys($functionsTxtLines)));
 sort($completions);
 
-function getCompletionsXml($completions)
-{
+function getCompletionsXml($completions) {
     $compStr  = '        <string>';
     $compStr .= implode("</string>\n        <string>", $completions);
     $compStr .= '</string>';
@@ -496,5 +499,5 @@ if ('en' === $lang) {
     runCmd(__DIR__ . '/generate.rb', "{$supportDir}/functions.json");
     unlink("{$supportDir}/functions.json");
 
-    runCmd('osascript -e\'tell app "TextMate" to reload bundles\'');
+    runCmd(false, '/usr/bin/osascript -e\'tell app "TextMate" to reload bundles\'');
 }
