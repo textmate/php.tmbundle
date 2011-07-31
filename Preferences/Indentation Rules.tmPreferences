@@ -9,15 +9,28 @@
 	<key>settings</key>
 	<dict>
 		<key>decreaseIndentPattern</key>
-		<string>(?x)^(.*\*/)?
-    \s*
-    (
-        [\}\)]|
-        ((end(if|for(each)?|while));)
-    )
-    [;\s]*$</string>
+		<string>(?x)
+	    ^ (.* \*/)? \s*
+	    (
+	        (\})         |
+	        (\);)        |
+	        (else:)      |
+	        ((end(if|for(each)?|while|switch));)
+	    )
+	</string>
 		<key>increaseIndentPattern</key>
-		<string>((\([^\)"']*)|(\{[^\}"']*)|(((else)?if|else|for(each)?|while|switch|case).*?:))\s*$</string>
+		<string>(?x)
+	    (   \{ (?! .+ \} ) .*
+	    |   array\(
+	    |   ((else)?if|else|for(each)?|while|switch) .* :
+	    )   \s* (/[/*] .*)? $</string>
+		<key>indentNextLinePattern</key>
+		<string>(?x)^(?! .*? (&lt;\?|\?&gt;) )
+		( . ( (?![/*]) | /(/.*$|\*.*?\*/ \s*) ) )*
+	    [^\s;:{}(,] \s*
+		( /(/.*$|\*.*?\*/ \s*) )*
+		$
+	</string>
 		<key>unIndentedLinePattern</key>
 		<string>^\s*$</string>
 	</dict>
