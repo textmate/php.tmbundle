@@ -11,7 +11,7 @@
 	<key>name</key>
 	<string>&lt;?php if (…) ?&gt; … &lt;?php else ?&gt; … &lt;?php endif ?&gt;</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html.php</string>
 	<key>tabTrigger</key>
 	<string>ifelse</string>
 	<key>uuid</key>

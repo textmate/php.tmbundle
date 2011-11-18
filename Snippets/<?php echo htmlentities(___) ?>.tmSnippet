@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>&lt;?php echo htmlentities(…) ?&gt;</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html.php</string>
 	<key>tabTrigger</key>
 	<string>echoh</string>
 	<key>uuid</key>

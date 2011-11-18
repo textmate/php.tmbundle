@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>&lt;?php else: ?&gt;</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html.php</string>
 	<key>tabTrigger</key>
 	<string>else</string>
 	<key>uuid</key>

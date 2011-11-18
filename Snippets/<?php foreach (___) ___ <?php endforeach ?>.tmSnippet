@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>&lt;?php foreach (…) … &lt;?php endforeach ?&gt;</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html.php</string>
 	<key>tabTrigger</key>
 	<string>foreach</string>
 	<key>uuid</key>

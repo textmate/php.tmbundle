@@ -8,7 +8,7 @@
 	<key>name</key>
 	<string>PHP Error Catching JavaScript</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html.php</string>
 	<key>tabTrigger</key>
 	<string>phperr</string>
 	<key>uuid</key>
