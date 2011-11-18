@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>exit_insert_snippet "
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+exit_insert_snippet "
 \$0
 ?"</string>
 	<key>fallbackInput</key>
 	<string>scope</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
-	<string>
-</string>
+	<string></string>
 	<key>name</key>
 	<string>Special: Return Inside an Empty Tag</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>snippet</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
 	<key>scope</key>
-	<string>meta.embedded.line.empty.html source.php</string>
+	<string>meta.embedded.line.empty.php source.php</string>
 	<key>uuid</key>
 	<string>647C793F-9098-481B-8B5A-BCEF3B48CB03</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
