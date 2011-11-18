@@ -6,6 +6,8 @@
 	<string>TODO:
 • Try to improve parameters list syntax – scope numbers, ‘=’, ‘,’ and possibly be intelligent about entity ordering
 • Is meta.function-call the correct scope? I've added it to my theme but by default it's not highlighted</string>
+	<key>fileTypes</key>
+	<array/>
 	<key>firstLineMatch</key>
 	<string>^#!.*(?&lt;!-)php[0-9]{0,1}\b</string>
 	<key>foldingStartMarker</key>
@@ -27,7 +29,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>source.php.embedded.line.empty.html</string>
+					<string>meta.embedded.line.empty.html</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -136,7 +138,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>source.php.embedded.block.html</string>
+					<string>meta.embedded.block.html</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -181,7 +183,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>source.php.embedded.line.html</string>
+			<string>meta.embedded.line.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
