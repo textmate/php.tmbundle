@@ -4,6 +4,8 @@
 <dict>
 	<key>content</key>
 	<string>?&gt;$0&lt;?${TM_PHP_OPEN_TAG:php}</string>
+	<key>keyEquivalent</key>
+	<string>^&gt;</string>
 	<key>name</key>
 	<string>?&gt;…&lt;?php</string>
 	<key>scope</key>
