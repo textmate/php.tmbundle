@@ -28,7 +28,7 @@ exit_insert_snippet "
 	<key>outputLocation</key>
 	<string>replaceInput</string>
 	<key>scope</key>
-	<string>meta.embedded.line.empty.php source.php</string>
+	<string>meta.special.empty-tag.php</string>
 	<key>uuid</key>
 	<string>647C793F-9098-481B-8B5A-BCEF3B48CB03</string>
 	<key>version</key>

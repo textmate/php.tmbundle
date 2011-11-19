@@ -30,76 +30,8 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.whitespace.embedded.leading.php</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>meta.embedded.line.empty.php</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.section.embedded.begin.php</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>meta.consecutive-tags.php</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>source.php</string>
-						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.section.embedded.end.php</string>
-						</dict>
-						<key>7</key>
-						<dict>
-							<key>name</key>
-							<string>source.php</string>
-						</dict>
-						<key>8</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.whitespace.embedded.trailing.php</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Matches empty tags.</string>
-					<key>match</key>
-					<string>(?x)
-						(^\s*)?							# 1 - Leading whitespace
-							(							# 2 - meta.embedded.line.empty.php
-								(						# 3 - Open Tag
-									(?:
-										((?&lt;=\?&gt;)&lt;)		# 4 - Consecutive tags
-									  | &lt;
-									)
-									\?(?i:php|=)?
-								)
-									(\s*)				# 5 - Loneliness
-								((\?)&gt;)					# 6 - Close Tag
-														# 7 - Scope ? as scope.php
-							)
-						(
-							\1							# Match nothing if there was no
-														#   leading whitespace...
-						  | (\s*$\n)?					# or match trailing whitespace.
-						)
-					</string>
-				</dict>
-				<dict>
 					<key>begin</key>
-					<string>^\s*(?=&lt;\?)</string>
+					<string>(^\s*)(?=&lt;\?(?![^?]*\?&gt;))</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
@@ -108,10 +40,8 @@
 							<string>punctuation.whitespace.embedded.leading.php</string>
 						</dict>
 					</dict>
-					<key>comment</key>
-					<string>Catches tags with preceeding whitespace.</string>
 					<key>end</key>
-					<string>(?&lt;=\?&gt;)(\s*$\n)?</string>
+					<string>(?!\G)(\s*$\n)?</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -164,7 +94,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(((?&lt;=\?&gt;)&lt;)|&lt;)\?(?i:php|=)?</string>
+					<string>&lt;\?(?i:php|=)?(?![^?]*\?&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
@@ -172,14 +102,7 @@
 							<key>name</key>
 							<string>punctuation.section.embedded.begin.php</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>meta.consecutive-tags.php</string>
-						</dict>
 					</dict>
-					<key>comment</key>
-					<string>Catches the remainder.</string>
 					<key>contentName</key>
 					<string>source.php</string>
 					<key>end</key>
@@ -198,12 +121,91 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.embedded.line.php</string>
+					<string>meta.embedded.block.php</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
 							<string>#language</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>&lt;\?(?i:php|=)?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.embedded.begin.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.embedded.end.php</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.embedded.line.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>source.php</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.section.embedded.end.php</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>source.php</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>\G(\s*)((\?))(?=&gt;)</string>
+							<key>name</key>
+							<string>meta.special.empty-tag.php</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>\G</string>
+							<key>contentName</key>
+							<string>source.php</string>
+							<key>end</key>
+							<string>(\?)(?=&gt;)</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.section.embedded.end.php</string>
+								</dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>source.php</string>
+								</dict>
+							</dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#language</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
@@ -371,7 +373,7 @@
 							<key>end</key>
 							<string>\n|(?=\?&gt;)</string>
 							<key>name</key>
-							<string>comment.line.number-sign.php</string>
+							<string>comment.line.double-slash.php</string>
 						</dict>
 					</array>
 				</dict>
@@ -404,7 +406,7 @@
 							<key>end</key>
 							<string>\n|(?=\?&gt;)</string>
 							<key>name</key>
-							<string>comment.line.double-slash.php</string>
+							<string>comment.line.number-sign.php</string>
 						</dict>
 					</array>
 				</dict>
