@@ -482,7 +482,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>storage.modifier.php</string>
+							<string>storage.modifier.reference.php</string>
 						</dict>
 						<key>3</key>
 						<dict>
@@ -551,7 +551,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>storage.modifier.php</string>
+							<string>storage.modifier.reference.php</string>
 						</dict>
 						<key>3</key>
 						<dict>
@@ -616,7 +616,7 @@
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>storage.modifier.php</string>
+									<string>storage.modifier.reference.php</string>
 								</dict>
 								<key>3</key>
 								<dict>
@@ -663,7 +663,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.modifier.php</string>
+							<string>storage.modifier.reference.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -689,7 +689,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>storage.modifier.php</string>
+							<string>storage.modifier.reference.php</string>
 						</dict>
 						<key>2</key>
 						<dict>
@@ -1664,7 +1664,7 @@
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>storage.modifier.php</string>
+											<string>storage.modifier.reference.php</string>
 										</dict>
 										<key>2</key>
 										<dict>
