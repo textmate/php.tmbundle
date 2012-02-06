@@ -1734,7 +1734,7 @@
 					<key>contentName</key>
 					<string>meta.function.arguments.php</string>
 					<key>end</key>
-					<string>\)</string>
+					<string>(\))</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
