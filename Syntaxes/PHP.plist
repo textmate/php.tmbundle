@@ -1277,6 +1277,18 @@
 					<string>#comments</string>
 				</dict>
 				<dict>
+					<key>match</key>
+					<string>\{</string>
+					<key>name</key>
+					<string>punctuation.section.scope.begin.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\}</string>
+					<key>name</key>
+					<string>punctuation.section.scope.end.php</string>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>(?i)^\s*(interface)\s+([a-z0-9_]+)\s*(extends)?\s*</string>
 					<key>beginCaptures</key>
