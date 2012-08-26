@@ -747,13 +747,13 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\)|/[/*]|\#)</string>
+					<string>(?:\s*(&amp;))?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\)|/[/*]|\#)</string>
 					<key>name</key>
 					<string>meta.function.argument.no-default.php</string>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\s*(=)\s*)\s*</string>
+					<string>(?:\s*(&amp;))?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)(?:\s*(=)\s*)\s*</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -1584,10 +1584,16 @@
 					</array>
 				</dict>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.php</string>
+						</dict>
+					</dict>
 					<key>match</key>
-					<string>\s*\b(break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while)\b</string>
-					<key>name</key>
-					<string>keyword.control.php</string>
+					<string>\s*\b((break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while))\b</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1760,7 +1766,7 @@
 										</dict>
 									</dict>
 									<key>match</key>
-									<string>(\s*&amp;)?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\))</string>
+									<string>(?:\s*(&amp;))?\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*(?=,|\))</string>
 									<key>name</key>
 									<string>meta.function.closure.use.php</string>
 								</dict>
@@ -1784,8 +1790,15 @@
 					<dict>
 						<key>1</key>
 						<dict>
-							<key>name</key>
-							<string>storage.modifier.php</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>final|abstract|public|private|protected|static</string>
+									<key>name</key>
+									<string>storage.modifier.php</string>
+								</dict>
+							</array>
 						</dict>
 						<key>2</key>
 						<dict>
