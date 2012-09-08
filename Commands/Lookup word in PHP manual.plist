@@ -87,6 +87,8 @@ fi</string>
 	<string>toolTip</string>
 	<key>scope</key>
 	<string>source.php</string>
+	<key>semanticClass</key>
+	<string>lookup.define.php</string>
 	<key>uuid</key>
 	<string>412481DC-89B7-11D9-9FE3-000A9584EC8C</string>
 	<key>version</key>
