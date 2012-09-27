@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Indentation Rules</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php -string</string>
 	<key>settings</key>
 	<dict>
 		<key>decreaseIndentPattern</key>
