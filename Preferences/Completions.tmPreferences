@@ -625,6 +625,7 @@
         <string>extension_loaded</string>
         <string>extract</string>
         <string>ezmlm_hash</string>
+		<string>fastcgi_finish_request</string>
         <string>fclose</string>
         <string>feof</string>
         <string>fflush</string>

@@ -1431,6 +1431,34 @@
 				</dict>
 				<dict>
 					<key>begin</key>
+					<string>(?i)^\s*(trait)\s+([a-z0-9_]+)\s*</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.trait.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.trait.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=[;{])</string>
+					<key>name</key>
+					<string>meta.trait.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#comments</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>(?i)^\s*(abstract|final)?\s*(class)\s+([a-z0-9_]+)\s*</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -3595,6 +3623,12 @@
 					<string>(?i)\bis_int(eger)?\b</string>
 					<key>name</key>
 					<string>support.function.alias.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>fastcgi_finish_request</string>
+					<key>name</key>
+					<string>support.function.fastcgi.php</string>
 				</dict>
 			</array>
 		</dict>

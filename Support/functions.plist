@@ -527,6 +527,7 @@
 	{display = 'extension_loaded'; insert = '(${1:string \\\$name})';},
 	{display = 'extract'; insert = '(${1:array \\\$var_array}, ${2:[int \\\$extract_type = EXTR_OVERWRITE]}, ${3:[string \\\$prefix]})';},
 	{display = 'ezmlm_hash'; insert = '(${1:string \\\$addr})';},
+	{display = 'fastcgi_finish_request'; insert='()';},
 	{display = 'fclose'; insert = '(${1:resource \\\$handle})';},
 	{display = 'feof'; insert = '(${1:resource \\\$handle})';},
 	{display = 'fflush'; insert = '(${1:resource \\\$handle})';},
