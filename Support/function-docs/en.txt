@@ -526,6 +526,7 @@ expm1%float expm1(float $arg)%Returns exp(number) - 1, computed in a way that is
 extension_loaded%bool extension_loaded(string $name)%Find out whether an extension is loaded
 extract%int extract(array $var_array, [int $extract_type = EXTR_OVERWRITE], [string $prefix])%Import variables into the current symbol table from an array
 ezmlm_hash%int ezmlm_hash(string $addr)%Calculate the hash value needed by EZMLM
+fastcgi_finish_request%void fastcgi_finish_request()%special function to finish request and flush all data while continuing to do something time-consuming (video converting, stats processing etc.)
 fclose%bool fclose(resource $handle)%Closes an open file pointer
 feof%bool feof(resource $handle)%Tests for end-of-file on a file pointer
 fflush%bool fflush(resource $handle)%Flushes the output to a file

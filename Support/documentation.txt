@@ -109,3 +109,4 @@ dir=class.dir
 
 # Misc
 _=function.gettext
+fastcgi_finish_request=install.fpm.php
