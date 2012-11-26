@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Disable Indention Correction in Comments</string>
 	<key>scope</key>
-	<string>comment.block.php, comment.block.documentation.phpdoc.php</string>
+	<string>comment.block.php, comment.block.documentation.phpdoc.php, string.quoted.double.sql.php, string.quoted.single.sql.php, string.quoted.double.php, string.quoted.single.php</string>
 	<key>settings</key>
 	<dict>
 		<key>disableIndentCorrections</key>
