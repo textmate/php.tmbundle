@@ -2470,12 +2470,6 @@
 					<string>^\s*\*\s*(@access)\s+((public|private|protected)|(.+))\s*$</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>((https?|s?ftp|ftps|file|smb|afp|nfs|(x-)?man|gopher|txmt)://|mailto:)[-:@a-zA-Z0-9_.~%+/?=&amp;#]+(?&lt;![.?:])</string>
-					<key>name</key>
-					<string>markup.underline.link.php</string>
-				</dict>
-				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
