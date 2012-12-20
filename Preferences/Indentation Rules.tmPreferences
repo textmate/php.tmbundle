@@ -21,7 +21,7 @@
 	</string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
-	    (   \{ (?! .+ \} ) .*
+	    (   \{ (?! .* \} ) .*
 	    |   array\(
 	    |   (\[)
 	    |   ((else)?if|else|for(each)?|while|switch) .* :
