@@ -6,6 +6,7 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
+# encoding: UTF-8
 require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
 version = %x{#{ENV['TM_PHP'] || 'php'} -v}.split[0..2].join(' ')
 puts "Running syntax check with " + version + "…"
