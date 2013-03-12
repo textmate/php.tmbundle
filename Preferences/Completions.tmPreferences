@@ -10,7 +10,9 @@
     <dict>
       <key>completions</key>
       <array>
+        <string>AMQPChannel</string>
         <string>AMQPConnection</string>
+        <string>AMQPEnvelope</string>
         <string>AMQPExchange</string>
         <string>AMQPQueue</string>
         <string>APCIterator</string>
@@ -21,9 +23,12 @@
         <string>BadFunctionCallException</string>
         <string>BadMethodCallException</string>
         <string>CachingIterator</string>
+        <string>CallbackFilterIterator</string>
         <string>Collator</string>
+        <string>Cond</string>
         <string>Countable</string>
         <string>DOMAttr</string>
+        <string>DOMCdataSection</string>
         <string>DOMCharacterData</string>
         <string>DOMComment</string>
         <string>DOMDocument</string>
@@ -41,21 +46,30 @@
         <string>DatePeriod</string>
         <string>DateTime</string>
         <string>DateTimeZone</string>
+        <string>Directory</string>
         <string>DirectoryIterator</string>
-        <string>DomAttribute</string>
-        <string>DomDocument</string>
-        <string>DomDocumentType</string>
-        <string>DomElement</string>
-        <string>DomNode</string>
-        <string>DomProcessingInstruction</string>
-        <string>DomXsltStylesheet</string>
         <string>DomainException</string>
         <string>EmptyIterator</string>
         <string>ErrorException</string>
+        <string>Ev</string>
+        <string>EvCheck</string>
+        <string>EvChild</string>
+        <string>EvEmbed</string>
+        <string>EvFork</string>
+        <string>EvIdle</string>
+        <string>EvIo</string>
+        <string>EvLoop</string>
+        <string>EvPeriodic</string>
+        <string>EvPrepare</string>
+        <string>EvSignal</string>
+        <string>EvStat</string>
+        <string>EvTimer</string>
+        <string>EvWatcher</string>
         <string>Exception</string>
         <string>FilesystemIterator</string>
         <string>FilterIterator</string>
         <string>FrenchToJD</string>
+        <string>Gender\Gender</string>
         <string>GlobIterator</string>
         <string>Gmagick</string>
         <string>GmagickDraw</string>
@@ -92,6 +106,7 @@
         <string>JDToGregorian</string>
         <string>JDToJulian</string>
         <string>JewishToJD</string>
+        <string>JsonSerializable</string>
         <string>JulianToJD</string>
         <string>KTaglib_ID3v2_AttachedPictureFrame</string>
         <string>KTaglib_ID3v2_Frame</string>
@@ -99,18 +114,23 @@
         <string>KTaglib_MPEG_AudioProperties</string>
         <string>KTaglib_MPEG_File</string>
         <string>KTaglib_Tag</string>
+        <string>Lapack</string>
         <string>LengthException</string>
         <string>LimitIterator</string>
         <string>Locale</string>
         <string>LogicException</string>
+        <string>Lua</string>
+        <string>LuaClosure</string>
         <string>Memcache</string>
         <string>Memcached</string>
         <string>MessageFormatter</string>
         <string>Mongo</string>
         <string>MongoBinData</string>
+        <string>MongoClient</string>
         <string>MongoCode</string>
         <string>MongoCollection</string>
         <string>MongoCursor</string>
+        <string>MongoCursorException</string>
         <string>MongoDB</string>
         <string>MongoDBRef</string>
         <string>MongoDate</string>
@@ -121,9 +141,15 @@
         <string>MongoId</string>
         <string>MongoInt32</string>
         <string>MongoInt64</string>
+        <string>MongoLog</string>
+        <string>MongoPool</string>
         <string>MongoRegex</string>
+        <string>MongoResultException</string>
         <string>MongoTimestamp</string>
         <string>MultipleIterator</string>
+        <string>Mutex</string>
+        <string>MysqlndUhConnection</string>
+        <string>MysqlndUhPreparedStatement</string>
         <string>NoRewindIterator</string>
         <string>Normalizer</string>
         <string>NumberFormatter</string>
@@ -139,12 +165,17 @@
         <string>Phar</string>
         <string>PharData</string>
         <string>PharFileInfo</string>
+        <string>QuickHashIntHash</string>
+        <string>QuickHashIntSet</string>
+        <string>QuickHashIntStringHash</string>
+        <string>QuickHashStringIntHash</string>
         <string>RRDCreator</string>
         <string>RRDGraph</string>
         <string>RRDUpdater</string>
         <string>RangeException</string>
         <string>RecursiveArrayIterator</string>
         <string>RecursiveCachingIterator</string>
+        <string>RecursiveCallbackFilterIterator</string>
         <string>RecursiveDirectoryIterator</string>
         <string>RecursiveFilterIterator</string>
         <string>RecursiveIterator</string>
@@ -160,6 +191,7 @@
         <string>ReflectionObject</string>
         <string>ReflectionParameter</string>
         <string>ReflectionProperty</string>
+        <string>ReflectionZendExtension</string>
         <string>Reflector</string>
         <string>RegexIterator</string>
         <string>ResourceBundle</string>
@@ -195,6 +227,8 @@
         <string>SVMModel</string>
         <string>SeekableIterator</string>
         <string>Serializable</string>
+        <string>SessionHandler</string>
+        <string>SessionHandlerInterface</string>
         <string>SimpleXMLElement</string>
         <string>SimpleXMLIterator</string>
         <string>SoapClient</string>
@@ -204,15 +238,12 @@
         <string>SoapServer</string>
         <string>SoapVar</string>
         <string>SphinxClient</string>
-        <string>SplBool</string>
         <string>SplDoublyLinkedList</string>
         <string>SplEnum</string>
         <string>SplFileInfo</string>
         <string>SplFileObject</string>
         <string>SplFixedArray</string>
-        <string>SplFloat</string>
         <string>SplHeap</string>
-        <string>SplInt</string>
         <string>SplMaxHeap</string>
         <string>SplMinHeap</string>
         <string>SplObjectStorage</string>
@@ -220,14 +251,18 @@
         <string>SplPriorityQueue</string>
         <string>SplQueue</string>
         <string>SplStack</string>
-        <string>SplString</string>
         <string>SplSubject</string>
         <string>SplTempFileObject</string>
+        <string>SplType</string>
+        <string>Spoofchecker</string>
+        <string>Stackable</string>
         <string>Swish</string>
         <string>SwishResult</string>
         <string>SwishResults</string>
         <string>SwishSearch</string>
+        <string>Thread</string>
         <string>TokyoTyrant</string>
+        <string>TokyoTyrantIterator</string>
         <string>TokyoTyrantQuery</string>
         <string>TokyoTyrantTable</string>
         <string>Transliterator</string>
@@ -236,10 +271,44 @@
         <string>UnexpectedValueException</string>
         <string>V8Js</string>
         <string>V8JsException</string>
+        <string>VarnishAdmin</string>
+        <string>VarnishLog</string>
+        <string>VarnishStat</string>
+        <string>WeakMap</string>
+        <string>Weakref</string>
+        <string>Worker</string>
         <string>XMLReader</string>
         <string>XMLWriter</string>
         <string>XSLTProcessor</string>
+        <string>XsltProcessor</string>
+        <string>Yaf_Action_Abstract</string>
+        <string>Yaf_Application</string>
+        <string>Yaf_Config_Abstract</string>
+        <string>Yaf_Config_Ini</string>
+        <string>Yaf_Config_Simple</string>
+        <string>Yaf_Controller_Abstract</string>
+        <string>Yaf_Dispatcher</string>
+        <string>Yaf_Exception</string>
+        <string>Yaf_Loader</string>
+        <string>Yaf_Plugin_Abstract</string>
+        <string>Yaf_Registry</string>
+        <string>Yaf_Request_Abstract</string>
+        <string>Yaf_Request_Http</string>
+        <string>Yaf_Request_Simple</string>
+        <string>Yaf_Response_Abstract</string>
+        <string>Yaf_Route_Interface</string>
+        <string>Yaf_Route_Map</string>
+        <string>Yaf_Route_Regex</string>
+        <string>Yaf_Route_Rewrite</string>
+        <string>Yaf_Route_Simple</string>
+        <string>Yaf_Route_Static</string>
+        <string>Yaf_Route_Supervar</string>
+        <string>Yaf_Router</string>
+        <string>Yaf_Session</string>
+        <string>Yaf_View_Interface</string>
+        <string>Yaf_View_Simple</string>
         <string>ZipArchive</string>
+        <string>__autoload</string>
         <string>__halt_compiler</string>
         <string>abs</string>
         <string>acos</string>
@@ -361,6 +430,7 @@
         <string>bind_textdomain_codeset</string>
         <string>bindec</string>
         <string>bindtextdomain</string>
+        <string>boolval</string>
         <string>bson_decode</string>
         <string>bson_encode</string>
         <string>bzclose</string>
@@ -396,6 +466,7 @@
         <string>class_exists</string>
         <string>class_implements</string>
         <string>class_parents</string>
+        <string>class_uses</string>
         <string>clearstatcache</string>
         <string>closedir</string>
         <string>closelog</string>
@@ -502,13 +573,16 @@
         <string>date_timezone_set</string>
         <string>datefmt_create</string>
         <string>datefmt_format</string>
+        <string>datefmt_format_object</string>
         <string>datefmt_get_calendar</string>
+        <string>datefmt_get_calendar_object</string>
         <string>datefmt_get_datetype</string>
         <string>datefmt_get_error_code</string>
         <string>datefmt_get_error_message</string>
         <string>datefmt_get_locale</string>
         <string>datefmt_get_pattern</string>
         <string>datefmt_get_timetype</string>
+        <string>datefmt_get_timezone</string>
         <string>datefmt_get_timezone_id</string>
         <string>datefmt_is_lenient</string>
         <string>datefmt_localtime</string>
@@ -516,6 +590,7 @@
         <string>datefmt_set_calendar</string>
         <string>datefmt_set_lenient</string>
         <string>datefmt_set_pattern</string>
+        <string>datefmt_set_timezone</string>
         <string>datefmt_set_timezone_id</string>
         <string>dba_close</string>
         <string>dba_delete</string>
@@ -567,21 +642,71 @@
         <string>dns_get_mx</string>
         <string>dns_get_record</string>
         <string>dom_import_simplexml</string>
-        <string>domxml_new_doc</string>
-        <string>domxml_open_file</string>
-        <string>domxml_open_mem</string>
-        <string>domxml_version</string>
-        <string>domxml_xmltree</string>
-        <string>domxml_xslt_stylesheet</string>
-        <string>domxml_xslt_stylesheet_doc</string>
-        <string>domxml_xslt_stylesheet_file</string>
-        <string>domxml_xslt_version</string>
         <string>dotnet_load</string>
         <string>doubleval</string>
         <string>each</string>
         <string>easter_date</string>
         <string>easter_days</string>
         <string>echo</string>
+        <string>eio_busy</string>
+        <string>eio_cancel</string>
+        <string>eio_chmod</string>
+        <string>eio_chown</string>
+        <string>eio_close</string>
+        <string>eio_custom</string>
+        <string>eio_dup2</string>
+        <string>eio_event_loop</string>
+        <string>eio_fallocate</string>
+        <string>eio_fchmod</string>
+        <string>eio_fchown</string>
+        <string>eio_fdatasync</string>
+        <string>eio_fstat</string>
+        <string>eio_fstatvfs</string>
+        <string>eio_fsync</string>
+        <string>eio_ftruncate</string>
+        <string>eio_futime</string>
+        <string>eio_get_event_stream</string>
+        <string>eio_get_last_error</string>
+        <string>eio_grp</string>
+        <string>eio_grp_add</string>
+        <string>eio_grp_cancel</string>
+        <string>eio_grp_limit</string>
+        <string>eio_init</string>
+        <string>eio_link</string>
+        <string>eio_lstat</string>
+        <string>eio_mkdir</string>
+        <string>eio_mknod</string>
+        <string>eio_nop</string>
+        <string>eio_npending</string>
+        <string>eio_nready</string>
+        <string>eio_nreqs</string>
+        <string>eio_nthreads</string>
+        <string>eio_open</string>
+        <string>eio_poll</string>
+        <string>eio_read</string>
+        <string>eio_readahead</string>
+        <string>eio_readdir</string>
+        <string>eio_readlink</string>
+        <string>eio_realpath</string>
+        <string>eio_rename</string>
+        <string>eio_rmdir</string>
+        <string>eio_seek</string>
+        <string>eio_sendfile</string>
+        <string>eio_set_max_idle</string>
+        <string>eio_set_max_parallel</string>
+        <string>eio_set_max_poll_reqs</string>
+        <string>eio_set_max_poll_time</string>
+        <string>eio_set_min_parallel</string>
+        <string>eio_stat</string>
+        <string>eio_statvfs</string>
+        <string>eio_symlink</string>
+        <string>eio_sync</string>
+        <string>eio_sync_file_range</string>
+        <string>eio_syncfs</string>
+        <string>eio_truncate</string>
+        <string>eio_unlink</string>
+        <string>eio_utime</string>
+        <string>eio_write</string>
         <string>empty</string>
         <string>enchant_broker_describe</string>
         <string>enchant_broker_dict_exists</string>
@@ -732,6 +857,7 @@
         <string>get_current_user</string>
         <string>get_declared_classes</string>
         <string>get_declared_interfaces</string>
+        <string>get_declared_traits</string>
         <string>get_defined_constants</string>
         <string>get_defined_functions</string>
         <string>get_defined_vars</string>
@@ -757,6 +883,7 @@
         <string>gethostbynamel</string>
         <string>gethostname</string>
         <string>getimagesize</string>
+        <string>getimagesizefromstring</string>
         <string>getlastmod</string>
         <string>getmxrr</string>
         <string>getmygid</string>
@@ -855,15 +982,18 @@
         <string>hash_hmac</string>
         <string>hash_hmac_file</string>
         <string>hash_init</string>
+        <string>hash_pbkdf2</string>
         <string>hash_update</string>
         <string>hash_update_file</string>
         <string>hash_update_stream</string>
         <string>header</string>
+        <string>header_register_callback</string>
         <string>header_remove</string>
         <string>headers_list</string>
         <string>headers_sent</string>
         <string>hebrev</string>
         <string>hebrevc</string>
+        <string>hex2bin</string>
         <string>hexdec</string>
         <string>highlight_file</string>
         <string>highlight_string</string>
@@ -911,6 +1041,7 @@
         <string>http_request_method_name</string>
         <string>http_request_method_register</string>
         <string>http_request_method_unregister</string>
+        <string>http_response_code</string>
         <string>http_send_content_disposition</string>
         <string>http_send_content_type</string>
         <string>http_send_data</string>
@@ -967,7 +1098,6 @@
         <string>ibase_service_attach</string>
         <string>ibase_service_detach</string>
         <string>ibase_set_event_handler</string>
-        <string>ibase_timefmt</string>
         <string>ibase_trans</string>
         <string>ibase_wait_event</string>
         <string>iconv</string>
@@ -1217,6 +1347,7 @@
         <string>is_soap_fault</string>
         <string>is_string</string>
         <string>is_subclass_of</string>
+        <string>is_tainted</string>
         <string>is_uploaded_file</string>
         <string>is_writable</string>
         <string>is_writeable</string>
@@ -1244,6 +1375,8 @@
         <string>ldap_close</string>
         <string>ldap_compare</string>
         <string>ldap_connect</string>
+        <string>ldap_control_paged_result</string>
+        <string>ldap_control_paged_result_response</string>
         <string>ldap_count_entries</string>
         <string>ldap_delete</string>
         <string>ldap_dn2ufn</string>
@@ -1286,6 +1419,7 @@
         <string>libxml_disable_entity_loader</string>
         <string>libxml_get_errors</string>
         <string>libxml_get_last_error</string>
+        <string>libxml_set_external_entity_loader</string>
         <string>libxml_set_streams_context</string>
         <string>libxml_use_internal_errors</string>
         <string>link</string>
@@ -1335,6 +1469,7 @@
         <string>mb_ereg</string>
         <string>mb_ereg_match</string>
         <string>mb_ereg_replace</string>
+        <string>mb_ereg_replace_callback</string>
         <string>mb_ereg_search</string>
         <string>mb_ereg_search_getpos</string>
         <string>mb_ereg_search_getregs</string>
@@ -1529,7 +1664,6 @@
         <string>mysql_thread_id</string>
         <string>mysql_unbuffered_query</string>
         <string>mysqli</string>
-        <string>mysqli_affected_rows</string>
         <string>mysqli_autocommit</string>
         <string>mysqli_bind_param</string>
         <string>mysqli_bind_result</string>
@@ -1539,8 +1673,6 @@
         <string>mysqli_close</string>
         <string>mysqli_commit</string>
         <string>mysqli_connect</string>
-        <string>mysqli_connect_errno</string>
-        <string>mysqli_connect_error</string>
         <string>mysqli_data_seek</string>
         <string>mysqli_debug</string>
         <string>mysqli_disable_reads_from_master</string>
@@ -1551,8 +1683,6 @@
         <string>mysqli_embedded_server_start</string>
         <string>mysqli_enable_reads_from_master</string>
         <string>mysqli_enable_rpl_parse</string>
-        <string>mysqli_errno</string>
-        <string>mysqli_error</string>
         <string>mysqli_escape_string</string>
         <string>mysqli_execute</string>
         <string>mysqli_fetch</string>
@@ -1562,12 +1692,9 @@
         <string>mysqli_fetch_field</string>
         <string>mysqli_fetch_field_direct</string>
         <string>mysqli_fetch_fields</string>
-        <string>mysqli_fetch_lengths</string>
         <string>mysqli_fetch_object</string>
         <string>mysqli_fetch_row</string>
-        <string>mysqli_field_count</string>
         <string>mysqli_field_seek</string>
-        <string>mysqli_field_tell</string>
         <string>mysqli_free_result</string>
         <string>mysqli_get_cache_stats</string>
         <string>mysqli_get_charset</string>
@@ -1575,22 +1702,14 @@
         <string>mysqli_get_client_stats</string>
         <string>mysqli_get_client_version</string>
         <string>mysqli_get_connection_stats</string>
-        <string>mysqli_get_host_info</string>
         <string>mysqli_get_metadata</string>
-        <string>mysqli_get_proto_info</string>
-        <string>mysqli_get_server_info</string>
-        <string>mysqli_get_server_version</string>
         <string>mysqli_get_warnings</string>
-        <string>mysqli_info</string>
         <string>mysqli_init</string>
-        <string>mysqli_insert_id</string>
         <string>mysqli_kill</string>
         <string>mysqli_master_query</string>
         <string>mysqli_more_results</string>
         <string>mysqli_multi_query</string>
         <string>mysqli_next_result</string>
-        <string>mysqli_num_fields</string>
-        <string>mysqli_num_rows</string>
         <string>mysqli_options</string>
         <string>mysqli_param_count</string>
         <string>mysqli_ping</string>
@@ -1601,6 +1720,7 @@
         <string>mysqli_real_escape_string</string>
         <string>mysqli_real_query</string>
         <string>mysqli_reap_async_query</string>
+        <string>mysqli_refresh</string>
         <string>mysqli_report</string>
         <string>mysqli_result</string>
         <string>mysqli_rollback</string>
@@ -1615,51 +1735,54 @@
         <string>mysqli_set_local_infile_handler</string>
         <string>mysqli_set_opt</string>
         <string>mysqli_slave_query</string>
-        <string>mysqli_sqlstate</string>
         <string>mysqli_ssl_set</string>
         <string>mysqli_stat</string>
         <string>mysqli_stmt</string>
-        <string>mysqli_stmt_affected_rows</string>
         <string>mysqli_stmt_attr_get</string>
         <string>mysqli_stmt_attr_set</string>
         <string>mysqli_stmt_bind_param</string>
         <string>mysqli_stmt_bind_result</string>
         <string>mysqli_stmt_close</string>
         <string>mysqli_stmt_data_seek</string>
-        <string>mysqli_stmt_errno</string>
-        <string>mysqli_stmt_error</string>
         <string>mysqli_stmt_execute</string>
         <string>mysqli_stmt_fetch</string>
-        <string>mysqli_stmt_field_count</string>
         <string>mysqli_stmt_free_result</string>
         <string>mysqli_stmt_get_result</string>
         <string>mysqli_stmt_get_warnings</string>
         <string>mysqli_stmt_init</string>
-        <string>mysqli_stmt_insert_id</string>
-        <string>mysqli_stmt_num_rows</string>
-        <string>mysqli_stmt_param_count</string>
+        <string>mysqli_stmt_more_results</string>
+        <string>mysqli_stmt_next_result</string>
         <string>mysqli_stmt_prepare</string>
         <string>mysqli_stmt_reset</string>
         <string>mysqli_stmt_result_metadata</string>
         <string>mysqli_stmt_send_long_data</string>
-        <string>mysqli_stmt_sqlstate</string>
         <string>mysqli_stmt_store_result</string>
         <string>mysqli_store_result</string>
-        <string>mysqli_thread_id</string>
         <string>mysqli_thread_safe</string>
         <string>mysqli_use_result</string>
         <string>mysqli_warning</string>
-        <string>mysqli_warning_count</string>
+        <string>mysqlnd_memcache_get_config</string>
+        <string>mysqlnd_memcache_set</string>
+        <string>mysqlnd_ms_get_last_gtid</string>
+        <string>mysqlnd_ms_get_last_used_connection</string>
         <string>mysqlnd_ms_get_stats</string>
+        <string>mysqlnd_ms_match_wild</string>
         <string>mysqlnd_ms_query_is_select</string>
+        <string>mysqlnd_ms_set_qos</string>
         <string>mysqlnd_ms_set_user_pick_server</string>
-        <string>mysqlnd_qc_change_handler</string>
         <string>mysqlnd_qc_clear_cache</string>
+        <string>mysqlnd_qc_get_available_handlers</string>
         <string>mysqlnd_qc_get_cache_info</string>
         <string>mysqlnd_qc_get_core_stats</string>
-        <string>mysqlnd_qc_get_handler</string>
+        <string>mysqlnd_qc_get_normalized_query_trace_log</string>
         <string>mysqlnd_qc_get_query_trace_log</string>
+        <string>mysqlnd_qc_set_cache_condition</string>
+        <string>mysqlnd_qc_set_is_select</string>
+        <string>mysqlnd_qc_set_storage_handler</string>
         <string>mysqlnd_qc_set_user_handlers</string>
+        <string>mysqlnd_uh_convert_to_mysqlnd</string>
+        <string>mysqlnd_uh_set_connection_proxy</string>
+        <string>mysqlnd_uh_set_statement_proxy</string>
         <string>natcasesort</string>
         <string>natsort</string>
         <string>next</string>
@@ -1730,6 +1853,7 @@
         <string>oci_field_size</string>
         <string>oci_field_type</string>
         <string>oci_field_type_raw</string>
+        <string>oci_free_descriptor</string>
         <string>oci_free_statement</string>
         <string>oci_internal_debug</string>
         <string>oci_lob_copy</string>
@@ -1900,13 +2024,16 @@
         <string>ord</string>
         <string>output_add_rewrite_var</string>
         <string>output_reset_rewrite_vars</string>
-        <string>overload</string>
         <string>pack</string>
         <string>parse_ini_file</string>
         <string>parse_ini_string</string>
         <string>parse_str</string>
         <string>parse_url</string>
         <string>passthru</string>
+        <string>password_get_info</string>
+        <string>password_hash</string>
+        <string>password_needs_rehash</string>
+        <string>password_verify</string>
         <string>pathinfo</string>
         <string>pclose</string>
         <string>pcntl_alarm</string>
@@ -1943,6 +2070,8 @@
         <string>pg_delete</string>
         <string>pg_end_copy</string>
         <string>pg_escape_bytea</string>
+        <string>pg_escape_identifier</string>
+        <string>pg_escape_literal</string>
         <string>pg_escape_string</string>
         <string>pg_execute</string>
         <string>pg_fetch_all</string>
@@ -2017,6 +2146,7 @@
         <string>php_sapi_name</string>
         <string>php_strip_whitespace</string>
         <string>php_uname</string>
+        <string>php_user_filter</string>
         <string>phpcredits</string>
         <string>phpinfo</string>
         <string>phpversion</string>
@@ -2162,6 +2292,7 @@
         <string>rrd_restore</string>
         <string>rrd_tune</string>
         <string>rrd_update</string>
+        <string>rrd_version</string>
         <string>rrd_xport</string>
         <string>rsort</string>
         <string>rtrim</string>
@@ -2184,10 +2315,12 @@
         <string>session_name</string>
         <string>session_regenerate_id</string>
         <string>session_register</string>
+        <string>session_register_shutdown</string>
         <string>session_save_path</string>
         <string>session_set_cookie_params</string>
         <string>session_set_save_handler</string>
         <string>session_start</string>
+        <string>session_status</string>
         <string>session_unregister</string>
         <string>session_unset</string>
         <string>session_write_close</string>
@@ -2266,6 +2399,7 @@
         <string>socket_get_status</string>
         <string>socket_getpeername</string>
         <string>socket_getsockname</string>
+        <string>socket_import_stream</string>
         <string>socket_last_error</string>
         <string>socket_listen</string>
         <string>socket_read</string>
@@ -2336,6 +2470,32 @@
         <string>sqlite_udf_encode_binary</string>
         <string>sqlite_unbuffered_query</string>
         <string>sqlite_valid</string>
+        <string>sqlsrv_begin_transaction</string>
+        <string>sqlsrv_cancel</string>
+        <string>sqlsrv_client_info</string>
+        <string>sqlsrv_close</string>
+        <string>sqlsrv_commit</string>
+        <string>sqlsrv_configure</string>
+        <string>sqlsrv_connect</string>
+        <string>sqlsrv_errors</string>
+        <string>sqlsrv_execute</string>
+        <string>sqlsrv_fetch</string>
+        <string>sqlsrv_fetch_array</string>
+        <string>sqlsrv_fetch_object</string>
+        <string>sqlsrv_field_metadata</string>
+        <string>sqlsrv_free_stmt</string>
+        <string>sqlsrv_get_config</string>
+        <string>sqlsrv_get_field</string>
+        <string>sqlsrv_has_rows</string>
+        <string>sqlsrv_next_result</string>
+        <string>sqlsrv_num_fields</string>
+        <string>sqlsrv_num_rows</string>
+        <string>sqlsrv_prepare</string>
+        <string>sqlsrv_query</string>
+        <string>sqlsrv_rollback</string>
+        <string>sqlsrv_rows_affected</string>
+        <string>sqlsrv_send_stream_data</string>
+        <string>sqlsrv_server_info</string>
         <string>sqrt</string>
         <string>srand</string>
         <string>sscanf</string>
@@ -2453,6 +2613,7 @@
         <string>stream_resolve_include_path</string>
         <string>stream_select</string>
         <string>stream_set_blocking</string>
+        <string>stream_set_chunk_size</string>
         <string>stream_set_read_buffer</string>
         <string>stream_set_timeout</string>
         <string>stream_set_write_buffer</string>
@@ -2529,6 +2690,7 @@
         <string>sys_getloadavg</string>
         <string>syslog</string>
         <string>system</string>
+        <string>taint</string>
         <string>tan</string>
         <string>tanh</string>
         <string>tempnam</string>
@@ -2542,7 +2704,6 @@
         <string>tidy_error_count</string>
         <string>tidy_get_body</string>
         <string>tidy_get_config</string>
-        <string>tidy_get_error_buffer</string>
         <string>tidy_get_head</string>
         <string>tidy_get_html</string>
         <string>tidy_get_html_ver</string>
@@ -2580,6 +2741,170 @@
         <string>token_get_all</string>
         <string>token_name</string>
         <string>touch</string>
+        <string>trader_acos</string>
+        <string>trader_ad</string>
+        <string>trader_add</string>
+        <string>trader_adosc</string>
+        <string>trader_adx</string>
+        <string>trader_adxr</string>
+        <string>trader_apo</string>
+        <string>trader_aroon</string>
+        <string>trader_aroonosc</string>
+        <string>trader_asin</string>
+        <string>trader_atan</string>
+        <string>trader_atr</string>
+        <string>trader_avgprice</string>
+        <string>trader_bbands</string>
+        <string>trader_beta</string>
+        <string>trader_bop</string>
+        <string>trader_cci</string>
+        <string>trader_cdl2crows</string>
+        <string>trader_cdl3blackcrows</string>
+        <string>trader_cdl3inside</string>
+        <string>trader_cdl3linestrike</string>
+        <string>trader_cdl3outside</string>
+        <string>trader_cdl3starsinsouth</string>
+        <string>trader_cdl3whitesoldiers</string>
+        <string>trader_cdlabandonedbaby</string>
+        <string>trader_cdladvanceblock</string>
+        <string>trader_cdlbelthold</string>
+        <string>trader_cdlbreakaway</string>
+        <string>trader_cdlclosingmarubozu</string>
+        <string>trader_cdlconcealbabyswall</string>
+        <string>trader_cdlcounterattack</string>
+        <string>trader_cdldarkcloudcover</string>
+        <string>trader_cdldoji</string>
+        <string>trader_cdldojistar</string>
+        <string>trader_cdldragonflydoji</string>
+        <string>trader_cdlengulfing</string>
+        <string>trader_cdleveningdojistar</string>
+        <string>trader_cdleveningstar</string>
+        <string>trader_cdlgapsidesidewhite</string>
+        <string>trader_cdlgravestonedoji</string>
+        <string>trader_cdlhammer</string>
+        <string>trader_cdlhangingman</string>
+        <string>trader_cdlharami</string>
+        <string>trader_cdlharamicross</string>
+        <string>trader_cdlhighwave</string>
+        <string>trader_cdlhikkake</string>
+        <string>trader_cdlhikkakemod</string>
+        <string>trader_cdlhomingpigeon</string>
+        <string>trader_cdlidentical3crows</string>
+        <string>trader_cdlinneck</string>
+        <string>trader_cdlinvertedhammer</string>
+        <string>trader_cdlkicking</string>
+        <string>trader_cdlkickingbylength</string>
+        <string>trader_cdlladderbottom</string>
+        <string>trader_cdllongleggeddoji</string>
+        <string>trader_cdllongline</string>
+        <string>trader_cdlmarubozu</string>
+        <string>trader_cdlmatchinglow</string>
+        <string>trader_cdlmathold</string>
+        <string>trader_cdlmorningdojistar</string>
+        <string>trader_cdlmorningstar</string>
+        <string>trader_cdlonneck</string>
+        <string>trader_cdlpiercing</string>
+        <string>trader_cdlrickshawman</string>
+        <string>trader_cdlrisefall3methods</string>
+        <string>trader_cdlseparatinglines</string>
+        <string>trader_cdlshootingstar</string>
+        <string>trader_cdlshortline</string>
+        <string>trader_cdlspinningtop</string>
+        <string>trader_cdlstalledpattern</string>
+        <string>trader_cdlsticksandwich</string>
+        <string>trader_cdltakuri</string>
+        <string>trader_cdltasukigap</string>
+        <string>trader_cdlthrusting</string>
+        <string>trader_cdltristar</string>
+        <string>trader_cdlunique3river</string>
+        <string>trader_cdlupsidegap2crows</string>
+        <string>trader_cdlxsidegap3methods</string>
+        <string>trader_ceil</string>
+        <string>trader_cmo</string>
+        <string>trader_correl</string>
+        <string>trader_cos</string>
+        <string>trader_cosh</string>
+        <string>trader_dema</string>
+        <string>trader_div</string>
+        <string>trader_dx</string>
+        <string>trader_ema</string>
+        <string>trader_errno</string>
+        <string>trader_exp</string>
+        <string>trader_floor</string>
+        <string>trader_get_compat</string>
+        <string>trader_get_unstable_period</string>
+        <string>trader_ht_dcperiod</string>
+        <string>trader_ht_dcphase</string>
+        <string>trader_ht_phasor</string>
+        <string>trader_ht_sine</string>
+        <string>trader_ht_trendline</string>
+        <string>trader_ht_trendmode</string>
+        <string>trader_kama</string>
+        <string>trader_linearreg</string>
+        <string>trader_linearreg_angle</string>
+        <string>trader_linearreg_intercept</string>
+        <string>trader_linearreg_slope</string>
+        <string>trader_ln</string>
+        <string>trader_log10</string>
+        <string>trader_ma</string>
+        <string>trader_macd</string>
+        <string>trader_macdext</string>
+        <string>trader_macdfix</string>
+        <string>trader_mama</string>
+        <string>trader_mavp</string>
+        <string>trader_max</string>
+        <string>trader_maxindex</string>
+        <string>trader_medprice</string>
+        <string>trader_mfi</string>
+        <string>trader_midpoint</string>
+        <string>trader_midprice</string>
+        <string>trader_min</string>
+        <string>trader_minindex</string>
+        <string>trader_minmax</string>
+        <string>trader_minmaxindex</string>
+        <string>trader_minus_di</string>
+        <string>trader_minus_dm</string>
+        <string>trader_mom</string>
+        <string>trader_mult</string>
+        <string>trader_natr</string>
+        <string>trader_obv</string>
+        <string>trader_plus_di</string>
+        <string>trader_plus_dm</string>
+        <string>trader_ppo</string>
+        <string>trader_roc</string>
+        <string>trader_rocp</string>
+        <string>trader_rocr</string>
+        <string>trader_rocr100</string>
+        <string>trader_rsi</string>
+        <string>trader_sar</string>
+        <string>trader_sarext</string>
+        <string>trader_set_compat</string>
+        <string>trader_set_unstable_period</string>
+        <string>trader_sin</string>
+        <string>trader_sinh</string>
+        <string>trader_sma</string>
+        <string>trader_sqrt</string>
+        <string>trader_stddev</string>
+        <string>trader_stoch</string>
+        <string>trader_stochf</string>
+        <string>trader_stochrsi</string>
+        <string>trader_sub</string>
+        <string>trader_sum</string>
+        <string>trader_t3</string>
+        <string>trader_tan</string>
+        <string>trader_tanh</string>
+        <string>trader_tema</string>
+        <string>trader_trange</string>
+        <string>trader_trima</string>
+        <string>trader_trix</string>
+        <string>trader_tsf</string>
+        <string>trader_typprice</string>
+        <string>trader_ultosc</string>
+        <string>trader_var</string>
+        <string>trader_wclprice</string>
+        <string>trader_willr</string>
+        <string>trader_wma</string>
+        <string>trait_exists</string>
         <string>transliterator_create</string>
         <string>transliterator_create_from_rules</string>
         <string>transliterator_create_inverse</string>
@@ -2601,6 +2926,7 @@
         <string>unregister_tick_function</string>
         <string>unserialize</string>
         <string>unset</string>
+        <string>untaint</string>
         <string>urldecode</string>
         <string>urlencode</string>
         <string>use_soap_error_handler</string>
@@ -2731,13 +3057,6 @@
         <string>xmlwriter_write_element_ns</string>
         <string>xmlwriter_write_pi</string>
         <string>xmlwriter_write_raw</string>
-        <string>xpath_eval</string>
-        <string>xpath_eval_expression</string>
-        <string>xpath_new_context</string>
-        <string>xpath_register_ns</string>
-        <string>xpath_register_ns_auto</string>
-        <string>xptr_eval</string>
-        <string>xptr_new_context</string>
         <string>xslt_backend_info</string>
         <string>xslt_backend_name</string>
         <string>xslt_backend_version</string>
@@ -2770,6 +3089,8 @@
         <string>zip_entry_read</string>
         <string>zip_open</string>
         <string>zip_read</string>
+        <string>zlib_decode</string>
+        <string>zlib_encode</string>
         <string>zlib_get_coding_type</string>
       </array>
     </dict>
