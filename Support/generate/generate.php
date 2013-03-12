@@ -189,8 +189,6 @@ function runCmd() {
         $cmd = false;
     }
     
-    $args = array_map('escapeshellarg', $args);
-    
     if (false !== $cmd) {
         array_unshift($args, $cmd);
     }
@@ -498,6 +496,4 @@ if ('en' === $lang) {
 
     runCmd(__DIR__ . '/generate.rb', "{$supportDir}/functions.json");
     unlink("{$supportDir}/functions.json");
-
-    runCmd(false, '/usr/bin/osascript -e\'tell app "TextMate" to reload bundles\'');
 }
