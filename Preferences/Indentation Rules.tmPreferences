@@ -27,11 +27,10 @@
 	    |   ((else)?if|else|for(each)?|while|switch) .* :
 	    )   \s* (/[/*] .*)? $</string>
 		<key>indentNextLinePattern</key>
-		<string>(?x)^(?! .*? (&lt;\?|\?&gt;) )
-		( . ( (?![/*]) | /(/.*$|\*.*?\*/ \s*) ) )*
-	    [^\s;:{}(,] \s*
-		( /(/.*$|\*.*?\*/ \s*) | \#.*$ )*
-		$
+		<string>(?x)^
+		(?! .*? (&lt;\?|\?&gt;) )
+		(?! \s* ($|//|/\*|\#))
+		(?! .* [;:{}(,] \s* ((//|/\*|\#).*)? $)
 	</string>
 		<key>unIndentedLinePattern</key>
 		<string>^\s*$</string>
