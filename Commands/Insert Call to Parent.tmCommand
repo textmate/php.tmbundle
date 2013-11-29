@@ -12,8 +12,6 @@ $seekLine = intval(getenv('TM_LINE_NUMBER'));
 $tokens = token_get_all(file_get_contents('php://stdin'));
 $numTokens = count($tokens);
 
-define('TM_EXIT_INSERT_TEXT', 203);
-
 $startToken = false;
 
 // Find the first token that's on/after TM_LINE_NUMBER
@@ -63,7 +61,7 @@ if (false === $functionToken || false === $functionName) {
         echo "\t";
     }
 
-    exit(TM_EXIT_INSERT_TEXT);
+    exit();
 }
 
 $firstParenFound = false;
