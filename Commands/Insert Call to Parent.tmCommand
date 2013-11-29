@@ -8,41 +8,44 @@
 	<string>#!/usr/bin/env php
 &lt;?php
 
-$seekLine = intval(getenv('TM_LINE_NUMBER'));
-$tokens = token_get_all(file_get_contents('php://stdin'));
-$numTokens = count($tokens);
-
-$startToken = false;
-
-// Find the first token that's on/after TM_LINE_NUMBER
-for ($x = 0; $x &lt; $numTokens; $x++) {
-    if (is_array($tokens[$x]) &amp;&amp; $tokens[$x][2] &gt;= $seekLine) {
-        $startToken = $x;
-        break;
-    }
-}
-
-// Could not find the line, so just start from the end
-if (false === $startToken) {
-    $startToken = $numTokens - 1;
-}
-
 $functionToken = false;
 $functionName = false;
 
-// Work backwards until we find the function declaration
-for ($x = $startToken; $x &gt;= 0; $x--) {
-    if (is_array($tokens[$x]) &amp;&amp; T_FUNCTION === $tokens[$x][0]) {
-        // Try to find a function name, which may not exist if this is a closure
-        for ($y = $x + 1; $y &lt; $numTokens; $y++) {
-            if (is_array($tokens[$y])) {
-                if (T_STRING === $tokens[$y][0]) {
-                    $functionToken = $y;
-                    $functionName = $tokens[$y][1];
-                    break 2;
+if (getenv('TM_CURRENT_WORD') == '') {
+    // try only, if current word is empty (will be '$' if trigger occured for '$parent')
+    $seekLine = intval(getenv('TM_LINE_NUMBER'));
+    $tokens = token_get_all(file_get_contents('php://stdin'));
+    $numTokens = count($tokens);
+
+    $startToken = false;
+
+    // Find the first token that's on/after TM_LINE_NUMBER
+    for ($x = 0; $x &lt; $numTokens; $x++) {
+        if (is_array($tokens[$x]) &amp;&amp; $tokens[$x][2] &gt;= $seekLine) {
+            $startToken = $x;
+            break;
+        }
+    }
+
+    // Could not find the line, so just start from the end
+    if (false === $startToken) {
+        $startToken = $numTokens - 1;
+    }
+
+    // Work backwards until we find the function declaration
+    for ($x = $startToken; $x &gt;= 0; $x--) {
+        if (is_array($tokens[$x]) &amp;&amp; T_FUNCTION === $tokens[$x][0]) {
+            // Try to find a function name, which may not exist if this is a closure
+            for ($y = $x + 1; $y &lt; $numTokens; $y++) {
+                if (is_array($tokens[$y])) {
+                    if (T_STRING === $tokens[$y][0]) {
+                        $functionToken = $y;
+                        $functionName = $tokens[$y][1];
+                        break 2;
+                    }
+                } else if ($tokens[$y] === '(') {
+                    break;
                 }
-            } else if ($tokens[$y] === '(') {
-                break;
             }
         }
     }
