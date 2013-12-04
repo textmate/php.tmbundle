@@ -10,9 +10,9 @@ $1;
 	<key>name</key>
 	<string>Heredoc</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
-	<string>&lt;&lt;&lt;</string>
+	<string>&lt;&lt;&lt; - comment.block.documentation.phpdoc.php</string>
 	<key>uuid</key>
 	<string>1634287E-035A-4617-9AD8-09133183F8FE</string>
 </dict>

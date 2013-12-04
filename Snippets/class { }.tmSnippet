@@ -18,7 +18,7 @@ class ${2:ClassName}${3: extends ${4:AnotherClass}}
 	<key>name</key>
 	<string>class …</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
 	<string>class</string>
 	<key>uuid</key>
