@@ -10,7 +10,7 @@ $1;
 	<key>name</key>
 	<string>Heredoc</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
 	<string>&lt;&lt;&lt; - comment.block.documentation.phpdoc.php</string>
 	<key>uuid</key>

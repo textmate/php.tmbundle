@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>$… = ( … ) ? … : …</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
 	<string>if? - comment.block.documentation.phpdoc.php</string>
 	<key>uuid</key>

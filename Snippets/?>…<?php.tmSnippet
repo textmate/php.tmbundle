@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>?&gt;…&lt;?php</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
 	<string>php</string>
 	<key>uuid</key>

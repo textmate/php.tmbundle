@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>&lt;?php else: ?&gt;</string>
 	<key>scope</key>
-	<string>text.html.php</string>
+	<string>text.html.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
 	<string>else</string>
 	<key>uuid</key>

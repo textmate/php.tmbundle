@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>&lt;?php echo … ?&gt;</string>
 	<key>scope</key>
-	<string>text.html.php</string>
+	<string>text.html.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
 	<string>echo</string>
 	<key>uuid</key>

@@ -13,9 +13,9 @@ ${TM_SELECTED_TEXT/([\t ]*).*/$1/m}}</string>
 	<key>name</key>
 	<string>Wrap in try { … } catch (…) { … }</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
-	<string>try - comment.block.documentation.phpdoc.php</string>
+	<string>try</string>
 	<key>uuid</key>
 	<string>F7751DAF-AC95-4D47-955F-FE2534FDE4F5</string>
 </dict>

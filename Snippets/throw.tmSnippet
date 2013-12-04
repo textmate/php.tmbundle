@@ -8,9 +8,9 @@ $0</string>
 	<key>name</key>
 	<string>Throw Exception</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.php - comment.block.documentation.phpdoc.php</string>
 	<key>tabTrigger</key>
-	<string>throw - comment.block.documentation.phpdoc.php</string>
+	<string>throw</string>
 	<key>uuid</key>
 	<string>FE39640E-A69C-48DF-9282-633672AAEFD2</string>
 </dict>
