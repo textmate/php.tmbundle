@@ -1349,6 +1349,27 @@
 				</dict>
 				<dict>
 					<key>begin</key>
+					<string>(?i)^\s*(trait)\s+([a-zA-Z0-9_]+)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.trait.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.trait.php</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=\{)</string>
+					<key>name</key>
+					<string>meta.trait.php</string>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>(?i)^\s*(abstract|final)?\s*(class)\s+([a-z0-9_]+)\s*</string>
 					<key>beginCaptures</key>
 					<dict>
