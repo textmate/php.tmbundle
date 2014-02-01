@@ -1728,7 +1728,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(catch|try|throw|exception)\b</string>
+					<string>\b(catch|try|throw|exception|finally)\b</string>
 					<key>name</key>
 					<string>keyword.control.exception.php</string>
 				</dict>
