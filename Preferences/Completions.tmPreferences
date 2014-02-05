@@ -22,6 +22,7 @@
         <string>ArrayObject</string>
         <string>BadFunctionCallException</string>
         <string>BadMethodCallException</string>
+        <string>CURLFile</string>
         <string>CachingIterator</string>
         <string>CallbackFilterIterator</string>
         <string>Collator</string>
@@ -45,6 +46,8 @@
         <string>DateInterval</string>
         <string>DatePeriod</string>
         <string>DateTime</string>
+        <string>DateTimeImmutable</string>
+        <string>DateTimeInterface</string>
         <string>DateTimeZone</string>
         <string>Directory</string>
         <string>DirectoryIterator</string>
@@ -65,7 +68,20 @@
         <string>EvStat</string>
         <string>EvTimer</string>
         <string>EvWatcher</string>
+        <string>Event</string>
+        <string>EventBase</string>
+        <string>EventBuffer</string>
+        <string>EventBufferEvent</string>
+        <string>EventConfig</string>
+        <string>EventDnsBase</string>
+        <string>EventHttp</string>
+        <string>EventHttpConnection</string>
+        <string>EventHttpRequest</string>
+        <string>EventListener</string>
+        <string>EventSslContext</string>
+        <string>EventUtil</string>
         <string>Exception</string>
+        <string>FANNConnection</string>
         <string>FilesystemIterator</string>
         <string>FilterIterator</string>
         <string>FrenchToJD</string>
@@ -95,7 +111,14 @@
         <string>ImagickPixel</string>
         <string>ImagickPixelIterator</string>
         <string>InfiniteIterator</string>
+        <string>IntlBreakIterator</string>
+        <string>IntlCalendar</string>
+        <string>IntlCodePointBreakIterator</string>
         <string>IntlDateFormatter</string>
+        <string>IntlIterator</string>
+        <string>IntlPartsIterator</string>
+        <string>IntlRuleBasedBreakIterator</string>
+        <string>IntlTimeZone</string>
         <string>InvalidArgumentException</string>
         <string>Iterator</string>
         <string>IteratorAggregate</string>
@@ -267,6 +290,7 @@
         <string>TokyoTyrantTable</string>
         <string>Transliterator</string>
         <string>Traversable</string>
+        <string>UConverter</string>
         <string>UnderflowException</string>
         <string>UnexpectedValueException</string>
         <string>V8Js</string>
@@ -277,6 +301,10 @@
         <string>WeakMap</string>
         <string>Weakref</string>
         <string>Worker</string>
+        <string>XMLDiff\Base</string>
+        <string>XMLDiff\DOM</string>
+        <string>XMLDiff\File</string>
+        <string>XMLDiff\Memory</string>
         <string>XMLReader</string>
         <string>XMLWriter</string>
         <string>XSLTProcessor</string>
@@ -307,6 +335,16 @@
         <string>Yaf_Session</string>
         <string>Yaf_View_Interface</string>
         <string>Yaf_View_Simple</string>
+        <string>Yar_Client</string>
+        <string>Yar_Client_Exception</string>
+        <string>Yar_Concurrent_Client</string>
+        <string>Yar_Server</string>
+        <string>Yar_Server_Exception</string>
+        <string>ZMQ</string>
+        <string>ZMQContext</string>
+        <string>ZMQDevice</string>
+        <string>ZMQPoll</string>
+        <string>ZMQSocket</string>
         <string>ZipArchive</string>
         <string>__autoload</string>
         <string>__halt_compiler</string>
@@ -356,6 +394,7 @@
         <string>array</string>
         <string>array_change_key_case</string>
         <string>array_chunk</string>
+        <string>array_column</string>
         <string>array_combine</string>
         <string>array_count_values</string>
         <string>array_diff</string>
@@ -430,6 +469,7 @@
         <string>bind_textdomain_codeset</string>
         <string>bindec</string>
         <string>bindtextdomain</string>
+        <string>blenc_encrypt</string>
         <string>boolval</string>
         <string>bson_decode</string>
         <string>bson_encode</string>
@@ -468,6 +508,8 @@
         <string>class_parents</string>
         <string>class_uses</string>
         <string>clearstatcache</string>
+        <string>cli_get_process_title</string>
+        <string>cli_set_process_title</string>
         <string>closedir</string>
         <string>closelog</string>
         <string>collator_asort</string>
@@ -530,7 +572,9 @@
         <string>curl_copy_handle</string>
         <string>curl_errno</string>
         <string>curl_error</string>
+        <string>curl_escape</string>
         <string>curl_exec</string>
+        <string>curl_file_create</string>
         <string>curl_getinfo</string>
         <string>curl_init</string>
         <string>curl_multi_add_handle</string>
@@ -541,14 +585,25 @@
         <string>curl_multi_init</string>
         <string>curl_multi_remove_handle</string>
         <string>curl_multi_select</string>
+        <string>curl_multi_setopt</string>
+        <string>curl_multi_strerror</string>
+        <string>curl_pause</string>
+        <string>curl_reset</string>
         <string>curl_setopt</string>
         <string>curl_setopt_array</string>
+        <string>curl_share_close</string>
+        <string>curl_share_init</string>
+        <string>curl_share_setopt</string>
+        <string>curl_strerror</string>
+        <string>curl_unescape</string>
         <string>curl_version</string>
         <string>current</string>
         <string>date</string>
         <string>date_add</string>
         <string>date_create</string>
         <string>date_create_from_format</string>
+        <string>date_create_immutable</string>
+        <string>date_create_immutable_from_format</string>
         <string>date_date_set</string>
         <string>date_default_timezone_get</string>
         <string>date_default_timezone_set</string>
@@ -750,6 +805,148 @@
         <string>extension_loaded</string>
         <string>extract</string>
         <string>ezmlm_hash</string>
+        <string>fann_cascadetrain_on_data</string>
+        <string>fann_cascadetrain_on_file</string>
+        <string>fann_clear_scaling_params</string>
+        <string>fann_copy</string>
+        <string>fann_create_from_file</string>
+        <string>fann_create_shortcut</string>
+        <string>fann_create_shortcut_array</string>
+        <string>fann_create_sparse</string>
+        <string>fann_create_sparse_array</string>
+        <string>fann_create_standard</string>
+        <string>fann_create_standard_array</string>
+        <string>fann_create_train</string>
+        <string>fann_create_train_from_callback</string>
+        <string>fann_descale_input</string>
+        <string>fann_descale_output</string>
+        <string>fann_descale_train</string>
+        <string>fann_destroy</string>
+        <string>fann_destroy_train</string>
+        <string>fann_duplicate_train_data</string>
+        <string>fann_get_MSE</string>
+        <string>fann_get_activation_function</string>
+        <string>fann_get_activation_steepness</string>
+        <string>fann_get_bias_array</string>
+        <string>fann_get_bit_fail</string>
+        <string>fann_get_bit_fail_limit</string>
+        <string>fann_get_cascade_activation_functions</string>
+        <string>fann_get_cascade_activation_functions_count</string>
+        <string>fann_get_cascade_activation_steepnesses</string>
+        <string>fann_get_cascade_activation_steepnesses_count</string>
+        <string>fann_get_cascade_candidate_change_fraction</string>
+        <string>fann_get_cascade_candidate_limit</string>
+        <string>fann_get_cascade_candidate_stagnation_epochs</string>
+        <string>fann_get_cascade_max_cand_epochs</string>
+        <string>fann_get_cascade_max_out_epochs</string>
+        <string>fann_get_cascade_min_cand_epochs</string>
+        <string>fann_get_cascade_min_out_epochs</string>
+        <string>fann_get_cascade_num_candidate_groups</string>
+        <string>fann_get_cascade_num_candidates</string>
+        <string>fann_get_cascade_output_change_fraction</string>
+        <string>fann_get_cascade_output_stagnation_epochs</string>
+        <string>fann_get_cascade_weight_multiplier</string>
+        <string>fann_get_connection_array</string>
+        <string>fann_get_connection_rate</string>
+        <string>fann_get_errno</string>
+        <string>fann_get_errstr</string>
+        <string>fann_get_layer_array</string>
+        <string>fann_get_learning_momentum</string>
+        <string>fann_get_learning_rate</string>
+        <string>fann_get_network_type</string>
+        <string>fann_get_num_input</string>
+        <string>fann_get_num_layers</string>
+        <string>fann_get_num_output</string>
+        <string>fann_get_quickprop_decay</string>
+        <string>fann_get_quickprop_mu</string>
+        <string>fann_get_rprop_decrease_factor</string>
+        <string>fann_get_rprop_delta_max</string>
+        <string>fann_get_rprop_delta_min</string>
+        <string>fann_get_rprop_delta_zero</string>
+        <string>fann_get_rprop_increase_factor</string>
+        <string>fann_get_sarprop_step_error_shift</string>
+        <string>fann_get_sarprop_step_error_threshold_factor</string>
+        <string>fann_get_sarprop_temperature</string>
+        <string>fann_get_sarprop_weight_decay_shift</string>
+        <string>fann_get_total_connections</string>
+        <string>fann_get_total_neurons</string>
+        <string>fann_get_train_error_function</string>
+        <string>fann_get_train_stop_function</string>
+        <string>fann_get_training_algorithm</string>
+        <string>fann_init_weights</string>
+        <string>fann_length_train_data</string>
+        <string>fann_merge_train_data</string>
+        <string>fann_num_input_train_data</string>
+        <string>fann_num_output_train_data</string>
+        <string>fann_print_error</string>
+        <string>fann_randomize_weights</string>
+        <string>fann_read_train_from_file</string>
+        <string>fann_reset_MSE</string>
+        <string>fann_reset_errno</string>
+        <string>fann_reset_errstr</string>
+        <string>fann_run</string>
+        <string>fann_save</string>
+        <string>fann_save_train</string>
+        <string>fann_scale_input</string>
+        <string>fann_scale_input_train_data</string>
+        <string>fann_scale_output</string>
+        <string>fann_scale_output_train_data</string>
+        <string>fann_scale_train</string>
+        <string>fann_scale_train_data</string>
+        <string>fann_set_activation_function</string>
+        <string>fann_set_activation_function_hidden</string>
+        <string>fann_set_activation_function_layer</string>
+        <string>fann_set_activation_function_output</string>
+        <string>fann_set_activation_steepness</string>
+        <string>fann_set_activation_steepness_hidden</string>
+        <string>fann_set_activation_steepness_layer</string>
+        <string>fann_set_activation_steepness_output</string>
+        <string>fann_set_bit_fail_limit</string>
+        <string>fann_set_callback</string>
+        <string>fann_set_cascade_activation_functions</string>
+        <string>fann_set_cascade_activation_steepnesses</string>
+        <string>fann_set_cascade_candidate_change_fraction</string>
+        <string>fann_set_cascade_candidate_limit</string>
+        <string>fann_set_cascade_candidate_stagnation_epochs</string>
+        <string>fann_set_cascade_max_cand_epochs</string>
+        <string>fann_set_cascade_max_out_epochs</string>
+        <string>fann_set_cascade_min_cand_epochs</string>
+        <string>fann_set_cascade_min_out_epochs</string>
+        <string>fann_set_cascade_num_candidate_groups</string>
+        <string>fann_set_cascade_output_change_fraction</string>
+        <string>fann_set_cascade_output_stagnation_epochs</string>
+        <string>fann_set_cascade_weight_multiplier</string>
+        <string>fann_set_error_log</string>
+        <string>fann_set_input_scaling_params</string>
+        <string>fann_set_learning_momentum</string>
+        <string>fann_set_learning_rate</string>
+        <string>fann_set_output_scaling_params</string>
+        <string>fann_set_quickprop_decay</string>
+        <string>fann_set_quickprop_mu</string>
+        <string>fann_set_rprop_decrease_factor</string>
+        <string>fann_set_rprop_delta_max</string>
+        <string>fann_set_rprop_delta_min</string>
+        <string>fann_set_rprop_delta_zero</string>
+        <string>fann_set_rprop_increase_factor</string>
+        <string>fann_set_sarprop_step_error_shift</string>
+        <string>fann_set_sarprop_step_error_threshold_factor</string>
+        <string>fann_set_sarprop_temperature</string>
+        <string>fann_set_sarprop_weight_decay_shift</string>
+        <string>fann_set_scaling_params</string>
+        <string>fann_set_train_error_function</string>
+        <string>fann_set_train_stop_function</string>
+        <string>fann_set_training_algorithm</string>
+        <string>fann_set_weight</string>
+        <string>fann_set_weight_array</string>
+        <string>fann_shuffle_train_data</string>
+        <string>fann_subset_train_data</string>
+        <string>fann_test</string>
+        <string>fann_test_data</string>
+        <string>fann_train</string>
+        <string>fann_train_epoch</string>
+        <string>fann_train_on_data</string>
+        <string>fann_train_on_file</string>
+        <string>fastcgi_finish_request</string>
         <string>fclose</string>
         <string>feof</string>
         <string>fflush</string>
@@ -1134,6 +1331,9 @@
         <string>image2wbmp</string>
         <string>image_type_to_extension</string>
         <string>image_type_to_mime_type</string>
+        <string>imageaffine</string>
+        <string>imageaffinematrixconcat</string>
+        <string>imageaffinematrixget</string>
         <string>imagealphablending</string>
         <string>imageantialias</string>
         <string>imagearc</string>
@@ -1170,9 +1370,12 @@
         <string>imagecreatefrompng</string>
         <string>imagecreatefromstring</string>
         <string>imagecreatefromwbmp</string>
+        <string>imagecreatefromwebp</string>
         <string>imagecreatefromxbm</string>
         <string>imagecreatefromxpm</string>
         <string>imagecreatetruecolor</string>
+        <string>imagecrop</string>
+        <string>imagecropauto</string>
         <string>imagedashedline</string>
         <string>imagedestroy</string>
         <string>imageellipse</string>
@@ -1183,6 +1386,7 @@
         <string>imagefilledrectangle</string>
         <string>imagefilltoborder</string>
         <string>imagefilter</string>
+        <string>imageflip</string>
         <string>imagefontheight</string>
         <string>imagefontwidth</string>
         <string>imageftbbox</string>
@@ -1200,6 +1404,7 @@
         <string>imageline</string>
         <string>imageloadfont</string>
         <string>imagepalettecopy</string>
+        <string>imagepalettetotruecolor</string>
         <string>imagepng</string>
         <string>imagepolygon</string>
         <string>imagepsbbox</string>
@@ -1212,7 +1417,9 @@
         <string>imagerectangle</string>
         <string>imagerotate</string>
         <string>imagesavealpha</string>
+        <string>imagescale</string>
         <string>imagesetbrush</string>
+        <string>imagesetinterpolation</string>
         <string>imagesetpixel</string>
         <string>imagesetstyle</string>
         <string>imagesetthickness</string>
@@ -1226,6 +1433,7 @@
         <string>imagettftext</string>
         <string>imagetypes</string>
         <string>imagewbmp</string>
+        <string>imagewebp</string>
         <string>imagexbm</string>
         <string>imap_8bit</string>
         <string>imap_alerts</string>
@@ -1317,6 +1525,10 @@
         <string>intl_get_error_code</string>
         <string>intl_get_error_message</string>
         <string>intl_is_failure</string>
+        <string>intlcal_get_error_code</string>
+        <string>intlcal_get_error_message</string>
+        <string>intltz_get_error_code</string>
+        <string>intltz_get_error_message</string>
         <string>intval</string>
         <string>ip2long</string>
         <string>iptcembed</string>
@@ -1362,7 +1574,9 @@
         <string>json_decode</string>
         <string>json_encode</string>
         <string>json_last_error</string>
+        <string>json_last_error_msg</string>
         <string>key</string>
+        <string>key_exists</string>
         <string>krsort</string>
         <string>ksort</string>
         <string>lcfirst</string>
@@ -1426,6 +1640,7 @@
         <string>linkinfo</string>
         <string>list</string>
         <string>locale_accept_from_http</string>
+        <string>locale_canonicalize</string>
         <string>locale_compose</string>
         <string>locale_filter_matches</string>
         <string>locale_get_all_variants</string>
@@ -1665,6 +1880,7 @@
         <string>mysql_unbuffered_query</string>
         <string>mysqli</string>
         <string>mysqli_autocommit</string>
+        <string>mysqli_begin_transaction</string>
         <string>mysqli_bind_param</string>
         <string>mysqli_bind_result</string>
         <string>mysqli_change_user</string>
@@ -1721,12 +1937,14 @@
         <string>mysqli_real_query</string>
         <string>mysqli_reap_async_query</string>
         <string>mysqli_refresh</string>
+        <string>mysqli_release_savepoint</string>
         <string>mysqli_report</string>
         <string>mysqli_result</string>
         <string>mysqli_rollback</string>
         <string>mysqli_rpl_parse_enabled</string>
         <string>mysqli_rpl_probe</string>
         <string>mysqli_rpl_query_type</string>
+        <string>mysqli_savepoint</string>
         <string>mysqli_select_db</string>
         <string>mysqli_send_long_data</string>
         <string>mysqli_send_query</string>
@@ -1855,6 +2073,7 @@
         <string>oci_field_type_raw</string>
         <string>oci_free_descriptor</string>
         <string>oci_free_statement</string>
+        <string>oci_get_implicit_resultset</string>
         <string>oci_internal_debug</string>
         <string>oci_lob_copy</string>
         <string>oci_lob_is_equal</string>
@@ -1972,6 +2191,11 @@
         <string>odbc_statistics</string>
         <string>odbc_tableprivileges</string>
         <string>odbc_tables</string>
+        <string>opcache_compile_file</string>
+        <string>opcache_get_configuration</string>
+        <string>opcache_get_status</string>
+        <string>opcache_invalidate</string>
+        <string>opcache_reset</string>
         <string>opendir</string>
         <string>openlog</string>
         <string>openssl_cipher_iv_length</string>
@@ -1992,6 +2216,7 @@
         <string>openssl_get_privatekey</string>
         <string>openssl_get_publickey</string>
         <string>openssl_open</string>
+        <string>openssl_pbkdf2</string>
         <string>openssl_pkcs12_export</string>
         <string>openssl_pkcs12_export_to_file</string>
         <string>openssl_pkcs12_read</string>
@@ -2037,8 +2262,10 @@
         <string>pathinfo</string>
         <string>pclose</string>
         <string>pcntl_alarm</string>
+        <string>pcntl_errno</string>
         <string>pcntl_exec</string>
         <string>pcntl_fork</string>
+        <string>pcntl_get_last_error</string>
         <string>pcntl_getpriority</string>
         <string>pcntl_setpriority</string>
         <string>pcntl_signal</string>
@@ -2046,6 +2273,7 @@
         <string>pcntl_sigprocmask</string>
         <string>pcntl_sigtimedwait</string>
         <string>pcntl_sigwaitinfo</string>
+        <string>pcntl_strerror</string>
         <string>pcntl_wait</string>
         <string>pcntl_waitpid</string>
         <string>pcntl_wexitstatus</string>
@@ -2107,6 +2335,7 @@
         <string>pg_lo_read_all</string>
         <string>pg_lo_seek</string>
         <string>pg_lo_tell</string>
+        <string>pg_lo_truncate</string>
         <string>pg_lo_unlink</string>
         <string>pg_lo_write</string>
         <string>pg_meta_data</string>
@@ -2294,6 +2523,7 @@
         <string>rrd_update</string>
         <string>rrd_version</string>
         <string>rrd_xport</string>
+        <string>rrdc_disconnect</string>
         <string>rsort</string>
         <string>rtrim</string>
         <string>scandir</string>
@@ -2391,6 +2621,7 @@
         <string>socket_bind</string>
         <string>socket_clear_error</string>
         <string>socket_close</string>
+        <string>socket_cmsg_space</string>
         <string>socket_connect</string>
         <string>socket_create</string>
         <string>socket_create_listen</string>
@@ -2405,8 +2636,10 @@
         <string>socket_read</string>
         <string>socket_recv</string>
         <string>socket_recvfrom</string>
+        <string>socket_recvmsg</string>
         <string>socket_select</string>
         <string>socket_send</string>
+        <string>socket_sendmsg</string>
         <string>socket_sendto</string>
         <string>socket_set_block</string>
         <string>socket_set_blocking</string>
