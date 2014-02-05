@@ -167,7 +167,7 @@ function genDocsForLang($lang) {
 
     if (!is_dir("phd/output-{$lang}")) {
         chdir('phd');
-        runCmd("php render.php -d../doc-base/.manual.{$lang}.xml --package IDE --format json --output ./output-{$lang}/");
+        runCmd("php render.php -d ../doc-base/.manual.{$lang}.xml --package IDE --format json --output ./output-{$lang}/");
         chdir('..');
     }
 
