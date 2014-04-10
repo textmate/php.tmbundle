@@ -20,7 +20,7 @@ def tag(tag, default, trailing = nil)
 end
 
 case next_line
-when /(class|interface)/
+when /(class|interface) /
   type = $&amp;
   tag 'package', 'default'
 when /function\s*(\w+)\((.*)\)/
