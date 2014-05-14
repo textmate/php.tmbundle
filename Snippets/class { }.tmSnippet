@@ -3,18 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/**
-* $1
-*/
-class ${2:ClassName}${3: extends ${4:AnotherClass}}
+	<string>${1/.+/\/**\n* /}${1:Description}${1/.+/\n*\/\n/}class ${2:ClassName}${3: extends ${4:AnotherClass}}
 {
 	$5
 	function ${6:__construct}(${7:argument})
 	{
 		${0:# code...}
 	}
-}
-</string>
+}</string>
 	<key>name</key>
 	<string>class …</string>
 	<key>scope</key>
