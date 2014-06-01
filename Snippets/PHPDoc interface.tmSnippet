@@ -10,7 +10,7 @@
  *
  * @package ${3:default}
  * @author ${PHPDOC_AUTHOR:$TM_FULLNAME}
- **/
+ */
 interface $1
 {$0
 } // END interface $1</string>
