@@ -12,11 +12,11 @@
  * @version \$Id\$
  * @copyright `echo $TM_ORGANIZATION_NAME`, `date +"%e %B, %Y" | sed 's/^ //'`
  * @package ${3:default}
- **/
+ */
 
 /**
  * Define DocBlock
- **/
+ */
 </string>
 	<key>name</key>
 	<string>Header</string>
