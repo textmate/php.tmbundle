@@ -9,7 +9,7 @@
 # The reason for this is so that .textmate_init is sourced, which IMO is the nicest place to set PHP_INCLUDE_PAT
 # However passing the heredoc axes the document STDIN from TextMate, so here we redirect the original STDIN to
 # file descriptor 3, to be later read from the Ruby script
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby 3&gt;&amp;0 &lt;&lt;-'RUBY'
+ruby18 3&gt;&amp;0 &lt;&lt;-'RUBY'
   require ENV["TM_SUPPORT_PATH"] + "/lib/ui.rb"
   require ENV["TM_SUPPORT_PATH"] + "/lib/textmate.rb"
 

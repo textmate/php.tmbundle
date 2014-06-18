@@ -9,7 +9,7 @@
 	<key>settings</key>
 	<dict>
 		<key>completionCommand</key>
-		<string>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby &lt;&lt;-'RUBY'
+		<string>ruby18 &lt;&lt;-'RUBY'
 path = ENV["TM_CURRENT_LINE"].to_s[0..ENV["TM_COLUMN_NUMBER"].to_i-1].to_s[/['"]([^'"]+)['"]/,1].to_s + "*"
 Dir::chdir(File.dirname(ENV["TM_FILEPATH"])) if ENV["TM_FILEPATH"]
 include_paths = ENV["PHP_INCLUDE_PATH"] ? ENV["PHP_INCLUDE_PATH"].split(":") : ["."]

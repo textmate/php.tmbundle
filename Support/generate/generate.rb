@@ -1,4 +1,4 @@
-#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -wKU
+#!/usr/bin/env ruby18 -wKU
 
 # Generate grammar selectors from the PHP docs JSON file produced by generate.php
 #
