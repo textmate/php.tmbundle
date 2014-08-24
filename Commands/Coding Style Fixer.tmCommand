@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/bash
+${TM_PHP_CS_FIXER:-php-cs-fixer} fix -n $TM_PHP_CS_FIXER_OPTIONS "$TM_FILEPATH"|fold -s
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>^H</string>
+	<key>name</key>
+	<string>Coding Style Fixer</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>php-cs-fixer</string>
+			<key>locations</key>
+			<array>
+				<string>/usr/local/bin/php-cs-fixer</string>
+			</array>
+			<key>variable</key>
+			<string>TM_PHP_CS_FIXER</string>
+		</dict>
+	</array>
+	<key>scope</key>
+	<string>text.html.php</string>
+	<key>uuid</key>
+	<string>F82CE7A9-5E20-4B01-95EE-85255FB5A489</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
