@@ -646,6 +646,16 @@
 						<key>7</key>
 						<dict>
 							<key>name</key>
+							<string>punctuation.section.array.begin.php</string>
+						</dict>
+						<key>8</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.array.end.php</string>
+						</dict>
+						<key>9</key>
+						<dict>
+							<key>name</key>
 							<string>invalid.illegal.non-null-typehinted.php</string>
 						</dict>
 					</dict>
@@ -655,7 +665,7 @@
 							\s*(&amp;)? 					# Reference
 							\s*((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*) # The variable name
 							(?:
-								\s*(?:(=)\s*(?:(null)|((?:\S*?\(\))|(?:\S*?))))	# A default value
+								\s*(?:(=)\s*(?:(null)|(\[)(\])|((?:\S*?\(\))|(?:\S*?))))	# A default value
 							)?
 							\s*(?=,|\)|/[/*]|\#|$) # A closing parentheses (end of argument list) or a comma or a comment
 							</string>
