@@ -2005,7 +2005,7 @@
 				        (function)
 				        (?:\s+|(\s*&amp;\s*))
 				        (?:
-				            (__(?:call|construct|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic))
+				            (__(?:call|construct|debugInfo|destruct|get|set|isset|unset|tostring|clone|set_state|sleep|wakeup|autoload|invoke|callStatic))
 				            |([a-zA-Z0-9_]+)
 				        )
 				        \s*
