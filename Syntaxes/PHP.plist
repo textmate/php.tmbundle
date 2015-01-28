@@ -3420,7 +3420,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bhash(_(hmac(_file)?|copy|init|update(_(stream|file))?|pbkdf2|fi(nal|le)|algos))?\b</string>
+					<string>(?i)\bhash(_(hmac(_file)?|copy|init|update(_(stream|file))?|pbkdf2|fi(nal|le)|algos|equals))?\b</string>
 					<key>name</key>
 					<string>support.function.hash.php</string>
 				</dict>
