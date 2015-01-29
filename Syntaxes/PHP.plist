@@ -1513,10 +1513,28 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>([a-zA-Z0-9_]+)?\s*(?:(?=\{)|$)</string>
+					<string>((?:[a-zA-Z0-9_]+\s*,\s*)*)([a-zA-Z0-9_]+)?\s*(?:(?=\{)|$)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
+						<dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>[a-zA-Z0-9_]+</string>
+									<key>name</key>
+									<string>entity.other.inherited-class.php</string>
+								</dict>
+								<dict>
+									<key>match</key>
+									<string>,</string>
+									<key>name</key>
+									<string>punctuation.separator.classes.php</string>
+								</dict>
+							</array>
+						</dict>
+						<key>2</key>
 						<dict>
 							<key>name</key>
 							<string>entity.other.inherited-class.php</string>
