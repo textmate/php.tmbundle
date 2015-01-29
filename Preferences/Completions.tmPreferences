@@ -10,11 +10,6 @@
     <dict>
       <key>completions</key>
       <array>
-        <string>AMQPChannel</string>
-        <string>AMQPConnection</string>
-        <string>AMQPEnvelope</string>
-        <string>AMQPExchange</string>
-        <string>AMQPQueue</string>
         <string>APCIterator</string>
         <string>AppendIterator</string>
         <string>ArrayAccess</string>
@@ -26,6 +21,7 @@
         <string>CachingIterator</string>
         <string>CallbackFilterIterator</string>
         <string>Collator</string>
+        <string>Collectable</string>
         <string>Cond</string>
         <string>Countable</string>
         <string>DOMAttr</string>
@@ -91,6 +87,8 @@
         <string>GmagickDraw</string>
         <string>GmagickPixel</string>
         <string>GregorianToJD</string>
+        <string>HRTime\PerformanceCounter</string>
+        <string>HRTime\StopWatch</string>
         <string>HaruAnnotation</string>
         <string>HaruDestination</string>
         <string>HaruDoc</string>
@@ -152,16 +150,19 @@
         <string>MongoClient</string>
         <string>MongoCode</string>
         <string>MongoCollection</string>
+        <string>MongoCommandCursor</string>
         <string>MongoCursor</string>
         <string>MongoCursorException</string>
         <string>MongoDB</string>
         <string>MongoDBRef</string>
         <string>MongoDate</string>
+        <string>MongoDeleteBatch</string>
         <string>MongoGridFS</string>
         <string>MongoGridFSCursor</string>
         <string>MongoGridFSFile</string>
         <string>MongoGridfsFile</string>
         <string>MongoId</string>
+        <string>MongoInsertBatch</string>
         <string>MongoInt32</string>
         <string>MongoInt64</string>
         <string>MongoLog</string>
@@ -169,6 +170,9 @@
         <string>MongoRegex</string>
         <string>MongoResultException</string>
         <string>MongoTimestamp</string>
+        <string>MongoUpdateBatch</string>
+        <string>MongoWriteBatch</string>
+        <string>MongoWriteConcernException</string>
         <string>MultipleIterator</string>
         <string>Mutex</string>
         <string>MysqlndUhConnection</string>
@@ -188,6 +192,7 @@
         <string>Phar</string>
         <string>PharData</string>
         <string>PharFileInfo</string>
+        <string>Pool</string>
         <string>QuickHashIntHash</string>
         <string>QuickHashIntSet</string>
         <string>QuickHashIntStringHash</string>
@@ -278,12 +283,16 @@
         <string>SplTempFileObject</string>
         <string>SplType</string>
         <string>Spoofchecker</string>
-        <string>Stackable</string>
         <string>Swish</string>
         <string>SwishResult</string>
         <string>SwishResults</string>
         <string>SwishSearch</string>
+        <string>SyncEvent</string>
+        <string>SyncMutex</string>
+        <string>SyncReaderWriter</string>
+        <string>SyncSemaphore</string>
         <string>Thread</string>
+        <string>Threaded</string>
         <string>TokyoTyrant</string>
         <string>TokyoTyrantIterator</string>
         <string>TokyoTyrantQuery</string>
@@ -353,15 +362,6 @@
         <string>acosh</string>
         <string>addcslashes</string>
         <string>addslashes</string>
-        <string>aggregate</string>
-        <string>aggregate_info</string>
-        <string>aggregate_methods</string>
-        <string>aggregate_methods_by_list</string>
-        <string>aggregate_methods_by_regexp</string>
-        <string>aggregate_properties</string>
-        <string>aggregate_properties_by_list</string>
-        <string>aggregate_properties_by_regexp</string>
-        <string>aggregation_info</string>
         <string>apache_child_terminate</string>
         <string>apache_get_modules</string>
         <string>apache_get_version</string>
@@ -525,26 +525,15 @@
         <string>collator_set_strength</string>
         <string>collator_sort</string>
         <string>collator_sort_with_sort_keys</string>
-        <string>com_addref</string>
         <string>com_create_guid</string>
         <string>com_event_sink</string>
-        <string>com_get</string>
         <string>com_get_active_object</string>
-        <string>com_invoke</string>
-        <string>com_isenum</string>
-        <string>com_load</string>
         <string>com_load_typelib</string>
         <string>com_message_pump</string>
         <string>com_print_typeinfo</string>
-        <string>com_propget</string>
-        <string>com_propput</string>
-        <string>com_propset</string>
-        <string>com_release</string>
-        <string>com_set</string>
         <string>compact</string>
         <string>connection_aborted</string>
         <string>connection_status</string>
-        <string>connection_timeout</string>
         <string>constant</string>
         <string>convert_cyr_string</string>
         <string>convert_uudecode</string>
@@ -672,7 +661,6 @@
         <string>dbx_sort</string>
         <string>dcgettext</string>
         <string>dcngettext</string>
-        <string>deaggregate</string>
         <string>debug_backtrace</string>
         <string>debug_print_backtrace</string>
         <string>debug_zval_dump</string>
@@ -697,7 +685,6 @@
         <string>dns_get_mx</string>
         <string>dns_get_record</string>
         <string>dom_import_simplexml</string>
-        <string>dotnet_load</string>
         <string>doubleval</string>
         <string>each</string>
         <string>easter_date</string>
@@ -1111,10 +1098,12 @@
         <string>gmp_div_qr</string>
         <string>gmp_div_r</string>
         <string>gmp_divexact</string>
+        <string>gmp_export</string>
         <string>gmp_fact</string>
         <string>gmp_gcd</string>
         <string>gmp_gcdext</string>
         <string>gmp_hamdist</string>
+        <string>gmp_import</string>
         <string>gmp_init</string>
         <string>gmp_intval</string>
         <string>gmp_invert</string>
@@ -1131,6 +1120,10 @@
         <string>gmp_powm</string>
         <string>gmp_prob_prime</string>
         <string>gmp_random</string>
+        <string>gmp_random_bits</string>
+        <string>gmp_random_range</string>
+        <string>gmp_root</string>
+        <string>gmp_rootrem</string>
         <string>gmp_scan0</string>
         <string>gmp_scan1</string>
         <string>gmp_setbit</string>
@@ -1174,6 +1167,7 @@
         <string>hash</string>
         <string>hash_algos</string>
         <string>hash_copy</string>
+        <string>hash_equals</string>
         <string>hash_file</string>
         <string>hash_final</string>
         <string>hash_hmac</string>
@@ -1597,6 +1591,7 @@
         <string>ldap_err2str</string>
         <string>ldap_errno</string>
         <string>ldap_error</string>
+        <string>ldap_escape</string>
         <string>ldap_explode_dn</string>
         <string>ldap_first_attribute</string>
         <string>ldap_first_entry</string>
@@ -1613,6 +1608,7 @@
         <string>ldap_mod_del</string>
         <string>ldap_mod_replace</string>
         <string>ldap_modify</string>
+        <string>ldap_modify_batch</string>
         <string>ldap_next_attribute</string>
         <string>ldap_next_entry</string>
         <string>ldap_next_reference</string>
@@ -1662,6 +1658,13 @@
         <string>log</string>
         <string>log10</string>
         <string>log1p</string>
+        <string>log_cmd_delete</string>
+        <string>log_cmd_insert</string>
+        <string>log_cmd_update</string>
+        <string>log_getmore</string>
+        <string>log_killcursor</string>
+        <string>log_reply</string>
+        <string>log_write_batch</string>
         <string>long2ip</string>
         <string>lstat</string>
         <string>ltrim</string>
@@ -1918,6 +1921,7 @@
         <string>mysqli_get_client_stats</string>
         <string>mysqli_get_client_version</string>
         <string>mysqli_get_connection_stats</string>
+        <string>mysqli_get_links_stats</string>
         <string>mysqli_get_metadata</string>
         <string>mysqli_get_warnings</string>
         <string>mysqli_init</string>
@@ -1981,6 +1985,9 @@
         <string>mysqli_warning</string>
         <string>mysqlnd_memcache_get_config</string>
         <string>mysqlnd_memcache_set</string>
+        <string>mysqlnd_ms_dump_servers</string>
+        <string>mysqlnd_ms_fabric_select_global</string>
+        <string>mysqlnd_ms_fabric_select_shard</string>
         <string>mysqlnd_ms_get_last_gtid</string>
         <string>mysqlnd_ms_get_last_used_connection</string>
         <string>mysqlnd_ms_get_stats</string>
@@ -1988,6 +1995,10 @@
         <string>mysqlnd_ms_query_is_select</string>
         <string>mysqlnd_ms_set_qos</string>
         <string>mysqlnd_ms_set_user_pick_server</string>
+        <string>mysqlnd_ms_xa_begin</string>
+        <string>mysqlnd_ms_xa_commit</string>
+        <string>mysqlnd_ms_xa_gc</string>
+        <string>mysqlnd_ms_xa_rollback</string>
         <string>mysqlnd_qc_clear_cache</string>
         <string>mysqlnd_qc_get_available_handlers</string>
         <string>mysqlnd_qc_get_cache_info</string>
@@ -2211,6 +2222,7 @@
         <string>openssl_encrypt</string>
         <string>openssl_error_string</string>
         <string>openssl_free_key</string>
+        <string>openssl_get_cert_locations</string>
         <string>openssl_get_cipher_methods</string>
         <string>openssl_get_md_methods</string>
         <string>openssl_get_privatekey</string>
@@ -2238,11 +2250,16 @@
         <string>openssl_random_pseudo_bytes</string>
         <string>openssl_seal</string>
         <string>openssl_sign</string>
+        <string>openssl_spki_export</string>
+        <string>openssl_spki_export_challenge</string>
+        <string>openssl_spki_new</string>
+        <string>openssl_spki_verify</string>
         <string>openssl_verify</string>
         <string>openssl_x509_check_private_key</string>
         <string>openssl_x509_checkpurpose</string>
         <string>openssl_x509_export</string>
         <string>openssl_x509_export_to_file</string>
+        <string>openssl_x509_fingerprint</string>
         <string>openssl_x509_free</string>
         <string>openssl_x509_parse</string>
         <string>openssl_x509_read</string>
@@ -2288,9 +2305,11 @@
         <string>pg_client_encoding</string>
         <string>pg_close</string>
         <string>pg_connect</string>
+        <string>pg_connect_poll</string>
         <string>pg_connection_busy</string>
         <string>pg_connection_reset</string>
         <string>pg_connection_status</string>
+        <string>pg_consume_input</string>
         <string>pg_convert</string>
         <string>pg_copy_from</string>
         <string>pg_copy_to</string>
@@ -2317,6 +2336,7 @@
         <string>pg_field_table</string>
         <string>pg_field_type</string>
         <string>pg_field_type_oid</string>
+        <string>pg_flush</string>
         <string>pg_free_result</string>
         <string>pg_get_notify</string>
         <string>pg_get_pid</string>
@@ -2361,6 +2381,7 @@
         <string>pg_send_query_params</string>
         <string>pg_set_client_encoding</string>
         <string>pg_set_error_verbosity</string>
+        <string>pg_socket</string>
         <string>pg_trace</string>
         <string>pg_transaction_status</string>
         <string>pg_tty</string>
@@ -2532,6 +2553,7 @@
         <string>sem_release</string>
         <string>sem_remove</string>
         <string>serialize</string>
+        <string>session_abort</string>
         <string>session_cache_expire</string>
         <string>session_cache_limiter</string>
         <string>session_commit</string>
@@ -2546,6 +2568,7 @@
         <string>session_regenerate_id</string>
         <string>session_register</string>
         <string>session_register_shutdown</string>
+        <string>session_reset</string>
         <string>session_save_path</string>
         <string>session_set_cookie_params</string>
         <string>session_set_save_handler</string>
@@ -3160,6 +3183,19 @@
         <string>unserialize</string>
         <string>unset</string>
         <string>untaint</string>
+        <string>uopz_backup</string>
+        <string>uopz_compose</string>
+        <string>uopz_copy</string>
+        <string>uopz_delete</string>
+        <string>uopz_extend</string>
+        <string>uopz_flags</string>
+        <string>uopz_function</string>
+        <string>uopz_implement</string>
+        <string>uopz_overload</string>
+        <string>uopz_redefine</string>
+        <string>uopz_rename</string>
+        <string>uopz_restore</string>
+        <string>uopz_undefine</string>
         <string>urldecode</string>
         <string>urlencode</string>
         <string>use_soap_error_handler</string>
@@ -3290,25 +3326,6 @@
         <string>xmlwriter_write_element_ns</string>
         <string>xmlwriter_write_pi</string>
         <string>xmlwriter_write_raw</string>
-        <string>xslt_backend_info</string>
-        <string>xslt_backend_name</string>
-        <string>xslt_backend_version</string>
-        <string>xslt_create</string>
-        <string>xslt_errno</string>
-        <string>xslt_error</string>
-        <string>xslt_free</string>
-        <string>xslt_getopt</string>
-        <string>xslt_process</string>
-        <string>xslt_set_base</string>
-        <string>xslt_set_encoding</string>
-        <string>xslt_set_error_handler</string>
-        <string>xslt_set_log</string>
-        <string>xslt_set_object</string>
-        <string>xslt_set_sax_handler</string>
-        <string>xslt_set_sax_handlers</string>
-        <string>xslt_set_scheme_handler</string>
-        <string>xslt_set_scheme_handlers</string>
-        <string>xslt_setopt</string>
         <string>zend_logo_guid</string>
         <string>zend_thread_id</string>
         <string>zend_version</string>

@@ -1,7 +1,3 @@
-AMQPChannel%object AMQPChannel(AMQPConnection $amqp_connection)%Create an instance of an AMQPChannel object
-AMQPConnection%object AMQPConnection([array $credentials = array()])%Create an instance of AMQPConnection
-AMQPExchange%object AMQPExchange(AMQPChannel $amqp_channel)%Create an instance of AMQPExchange
-AMQPQueue%object AMQPQueue(AMQPChannel $amqp_channel)%Create an instance of an AMQPQueue object
 APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Constructs an APCIterator iterator object
 AppendIterator%object AppendIterator()%Constructs an AppendIterator
 ArrayIterator%object ArrayIterator([mixed $array = array()], [int $flags])%Construct an ArrayIterator
@@ -49,8 +45,8 @@ EventBuffer%object EventBuffer()%Constructs EventBuffer object
 EventBufferEvent%object EventBufferEvent(EventBase $base, [mixed $socket], [int $options], [callable $readcb], [callable $writecb], [callable $eventcb])%Constructs EventBufferEvent object
 EventConfig%object EventConfig()%Constructs EventConfig object
 EventDnsBase%object EventDnsBase(EventBase $base, bool $initialize)%Constructs EventDnsBase object
-EventHttp%object EventHttp(EventBase $base)%Constructs EventHttp object(the HTTP server)
-EventHttpConnection%object EventHttpConnection(EventBase $base, EventDnsBase $dns_base, string $address, int $port)%Constructs EventHttpConnection object
+EventHttp%object EventHttp(EventBase $base, [EventSslContext $ctx])%Constructs EventHttp object(the HTTP server)
+EventHttpConnection%object EventHttpConnection(EventBase $base, EventDnsBase $dns_base, string $address, int $port, [EventSslContext $ctx])%Constructs EventHttpConnection object
 EventHttpRequest%object EventHttpRequest(callable $callback, [mixed $data])%Constructs EventHttpRequest object
 EventListener%object EventListener(EventBase $base, callable $cb, mixed $data, int $flags, int $backlog, mixed $target)%Creates new connection listener associated with an event base
 EventSslContext%object EventSslContext(string $method, string $options)%Constructs an OpenSSL context for use with Event classes
@@ -96,21 +92,26 @@ LogicException%object LogicException([string $message = ""], [int $code = 0], [E
 Lua%object Lua(string $lua_script_file)%Lua constructor
 Memcached%object Memcached([string $persistent_id])%Create a Memcached instance
 Mongo%object Mongo([string $server], [array $options])%The __construct purpose
-MongoBinData%object MongoBinData(string $data, [int $type = 2])%Creates a new binary data object.
-MongoClient%object MongoClient([string $server = "mongodb://localhost:27017"], [array $options = )])%Creates a new database connection object
+MongoBinData%object MongoBinData(string $data, [int $type])%Creates a new binary data object.
+MongoClient%object MongoClient([string $server = "mongodb://localhost:27017"], [array $options = )], [array $driver_options])%Creates a new database connection object
 MongoCode%object MongoCode(string $code, [array $scope = array()])%Creates a new code object
 MongoCollection%object MongoCollection(MongoDB $db, string $name)%Creates a new collection
+MongoCommandCursor%object MongoCommandCursor(MongoClient $connection, string $ns, [array $command = array()])%Create a new command cursor
 MongoCursor%object MongoCursor(MongoClient $connection, string $ns, [array $query = array()], [array $fields = array()])%Create a new cursor
 MongoDB%object MongoDB(MongoClient $conn, string $name)%Creates a new database
 MongoDate%object MongoDate([int $sec = time()], [int $usec])%Creates a new date.
+MongoDeleteBatch%object MongoDeleteBatch(MongoCollection $collection, [array $write_options])%Description
 MongoGridFS%object MongoGridFS(MongoDB $db, [string $prefix = "fs"], [mixed $chunks = "fs"])%Creates new file collections
 MongoGridFSCursor%object MongoGridFSCursor(MongoGridFS $gridfs, resource $connection, string $ns, array $query, array $fields)%Create a new cursor
 MongoGridfsFile%object MongoGridfsFile(MongoGridFS $gridfs, array $file)%Create a new GridFS file
 MongoId%object MongoId([string $id])%Creates a new id
+MongoInsertBatch%object MongoInsertBatch(MongoCollection $collection, [array $write_options])%Description
 MongoInt32%object MongoInt32(string $value)%Creates a new 32-bit integer.
 MongoInt64%object MongoInt64(string $value)%Creates a new 64-bit integer.
 MongoRegex%object MongoRegex(string $regex)%Creates a new regular expression
 MongoTimestamp%object MongoTimestamp([int $sec = time()], [int $inc])%Creates a new timestamp.
+MongoUpdateBatch%object MongoUpdateBatch(MongoCollection $collection, [array $write_options])%Description
+MongoWriteBatch%object MongoWriteBatch(MongoCollection $collection, [string $batch_type], [array $write_options])%Creates a new batch of write operations
 MultipleIterator%object MultipleIterator([int $flags = MultipleIterator::MIT_NEED_ALL|MultipleIterator::MIT_KEYS_NUMERIC])%Constructs a new MultipleIterator
 MysqlndUhConnection%object MysqlndUhConnection()%The __construct purpose
 MysqlndUhPreparedStatement%object MysqlndUhPreparedStatement()%The __construct purpose
@@ -118,11 +119,12 @@ NoRewindIterator%object NoRewindIterator(Iterator $iterator)%Construct a NoRewin
 OutOfBoundsException%object OutOfBoundsException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfBoundsException
 OutOfRangeException%object OutOfRangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfRangeException
 OverflowException%object OverflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OverflowException
-PDO%object PDO(string $dsn, [string $username], [string $password], [array $driver_options])%Creates a PDO instance representing a connection to a database
+PDO%object PDO(string $dsn, [string $username], [string $password], [array $options])%Creates a PDO instance representing a connection to a database
 ParentIterator%object ParentIterator(RecursiveIterator $iterator)%Constructs a ParentIterator
 Phar%object Phar(string $fname, [int $flags], [string $alias])%Construct a Phar archive object
 PharData%object PharData(string $fname, [int $flags], [string $alias], [int $format])%Construct a non-executable tar or zip archive object
 PharFileInfo%object PharFileInfo(string $entry)%Construct a Phar entry object
+Pool%object Pool(integer $size, string $class, [array $ctor])%Creates a new Pool of Workers
 QuickHashIntHash%object QuickHashIntHash(int $size, [int $options])%Creates a new QuickHashIntHash object
 QuickHashIntSet%object QuickHashIntSet(int $size, [int $options])%Creates a new QuickHashIntSet object
 QuickHashIntStringHash%object QuickHashIntStringHash(int $size, [int $options])%Creates a new QuickHashIntStringHash object
@@ -176,6 +178,10 @@ SplTempFileObject%object SplTempFileObject([int $max_memory])%Construct a new te
 SplType%object SplType([mixed $initial_value], [bool $strict])%Creates a new value of some type
 Spoofchecker%object Spoofchecker()%Constructor
 Swish%object Swish(string $index_names)%Construct a Swish object
+SyncEvent%object SyncEvent([string $name], [bool $manual])%Constructs a new SyncEvent object
+SyncMutex%object SyncMutex([string $name])%Constructs a new SyncMutex object
+SyncReaderWriter%object SyncReaderWriter([string $name], [bool $autounlock])%Constructs a new SyncReaderWriter object
+SyncSemaphore%object SyncSemaphore([string $name], [integer $initialval], [bool $autounlock])%Constructs a new SyncSemaphore object
 TokyoTyrant%object TokyoTyrant([string $host], [int $port = TokyoTyrant::RDBDEF_PORT], [array $options])%Construct a new TokyoTyrant object
 TokyoTyrantIterator%object TokyoTyrantIterator(mixed $object)%Construct an iterator
 TokyoTyrantQuery%object TokyoTyrantQuery(TokyoTyrantTable $table)%Construct a new query
@@ -202,7 +208,7 @@ Yaf_Registry%object Yaf_Registry()%Yaf_Registry implements singleton
 Yaf_Request_Http%object Yaf_Request_Http()%The __construct purpose
 Yaf_Request_Simple%object Yaf_Request_Simple()%The __construct purpose
 Yaf_Response_Abstract%object Yaf_Response_Abstract()%The __construct purpose
-Yaf_Route_Map%object Yaf_Route_Map([string $controller_prefer = false], [string $delimiter = ''])%The __construct purpose
+Yaf_Route_Map%object Yaf_Route_Map([string $controller_prefer = false], [string $delimiter = ""])%The __construct purpose
 Yaf_Route_Regex%object Yaf_Route_Regex(string $match, array $route, [array $map], [array $verify], [string $reverse])%Yaf_Route_Regex constructor
 Yaf_Route_Rewrite%object Yaf_Route_Rewrite(string $match, array $route, [array $verify])%Yaf_Route_Rewrite constructor
 Yaf_Route_Simple%object Yaf_Route_Simple(string $module_name, string $controller_name, string $action_name)%Yaf_Route_Simple constructor
@@ -223,15 +229,6 @@ acos%float acos(float $arg)%Arc cosine
 acosh%float acosh(float $arg)%Inverse hyperbolic cosine
 addcslashes%string addcslashes(string $str, string $charlist)%Quote string with slashes in a C style
 addslashes%string addslashes(string $str)%Quote string with slashes
-aggregate%void aggregate(object $object, string $class_name)%Dynamic class and object aggregation of methods and properties
-aggregate_info%array aggregate_info(object $object)%Gets aggregation information for a given object
-aggregate_methods%void aggregate_methods(object $object, string $class_name)%Dynamic class and object aggregation of methods
-aggregate_methods_by_list%void aggregate_methods_by_list(object $object, string $class_name, array $methods_list, [bool $exclude = false])%Selective dynamic class methods aggregation to an object
-aggregate_methods_by_regexp%void aggregate_methods_by_regexp(object $object, string $class_name, string $regexp, [bool $exclude = false])%Selective class methods aggregation to an object using a regular   expression
-aggregate_properties%void aggregate_properties(object $object, string $class_name)%Dynamic aggregation of  class properties to an object
-aggregate_properties_by_list%void aggregate_properties_by_list(object $object, string $class_name, array $properties_list, [bool $exclude = false])%Selective dynamic class properties aggregation to an object
-aggregate_properties_by_regexp%void aggregate_properties_by_regexp(object $object, string $class_name, string $regexp, [bool $exclude = false])%Selective class properties aggregation to an object using a regular   expression
-aggregation_info%void aggregation_info()%Alias of aggregate_info
 apache_child_terminate%bool apache_child_terminate()%Terminate apache process after this request
 apache_get_modules%array apache_get_modules()%Get a list of loaded Apache modules
 apache_get_version%string apache_get_version()%Fetch Apache version
@@ -274,7 +271,7 @@ array_diff_uassoc%array array_diff_uassoc(array $array1, array $array2, [array .
 array_diff_ukey%array array_diff_ukey(array $array1, array $array2, [array ...], callable $key_compare_func)%Computes the difference of arrays using a callback function on the keys for comparison
 array_fill%array array_fill(int $start_index, int $num, mixed $value)%Fill an array with values
 array_fill_keys%array array_fill_keys(array $keys, mixed $value)%Fill an array with values, specifying keys
-array_filter%array array_filter(array $array, [callable $callback])%Filters elements of an array using a callback function
+array_filter%array array_filter(array $array, [callable $callback], [int $flag])%Filters elements of an array using a callback function
 array_flip%string array_flip(array $array)%Exchanges all keys with their associated values in an array
 array_intersect%array array_intersect(array $array1, array $array2, [array ...])%Computes the intersection of arrays
 array_intersect_assoc%array array_intersect_assoc(array $array1, array $array2, [array ...])%Computes the intersection of arrays with additional index check
@@ -310,7 +307,7 @@ array_uintersect_uassoc%array array_uintersect_uassoc(array $array1, array $arra
 array_unique%array array_unique(array $array, [int $sort_flags = SORT_STRING])%Removes duplicate values from an array
 array_unshift%int array_unshift(array $array, mixed $value1, [mixed ...])%Prepend one or more elements to the beginning of an array
 array_values%array array_values(array $array)%Return all the values of an array
-array_walk%bool array_walk(array $array, callable $callback, [mixed $userdata])%Apply a user function to every member of an array
+array_walk%bool array_walk(array $array, callable $callback, [mixed $userdata])%Apply a user supplied function to every member of an array
 array_walk_recursive%bool array_walk_recursive(array $array, callable $callback, [mixed $userdata])%Apply a user function recursively to every member of an array
 arsort%bool arsort(array $array, [int $sort_flags = SORT_REGULAR])%Sort an array in reverse order and maintain index association
 asin%float asin(float $arg)%Arc sine
@@ -326,15 +323,15 @@ base64_encode%string base64_encode(string $data)%Encodes data with MIME base64
 base_convert%string base_convert(string $number, int $frombase, int $tobase)%Convert a number between arbitrary bases
 basename%string basename(string $path, [string $suffix])%Returns trailing name component of path
 bcadd%string bcadd(string $left_operand, string $right_operand, [int $scale])%Add two arbitrary precision numbers
-bccomp%int bccomp(string $left_operand, string $right_operand, [int $scale])%Compare two arbitrary precision numbers
-bcdiv%string bcdiv(string $left_operand, string $right_operand, [int $scale])%Divide two arbitrary precision numbers
+bccomp%int bccomp(string $left_operand, string $right_operand, [int $scale = int])%Compare two arbitrary precision numbers
+bcdiv%string bcdiv(string $left_operand, string $right_operand, [int $scale = int])%Divide two arbitrary precision numbers
 bcmod%string bcmod(string $left_operand, string $modulus)%Get modulus of an arbitrary precision number
-bcmul%string bcmul(string $left_operand, string $right_operand, [int $scale])%Multiply two arbitrary precision numbers
+bcmul%string bcmul(string $left_operand, string $right_operand, [int $scale = int])%Multiply two arbitrary precision numbers
 bcpow%string bcpow(string $left_operand, string $right_operand, [int $scale])%Raise an arbitrary precision number to another
-bcpowmod%string bcpowmod(string $left_operand, string $right_operand, string $modulus, [int $scale])%Raise an arbitrary precision number to another, reduced by a specified modulus
+bcpowmod%string bcpowmod(string $left_operand, string $right_operand, string $modulus, [int $scale = int])%Raise an arbitrary precision number to another, reduced by a specified modulus
 bcscale%bool bcscale(int $scale)%Set default scale parameter for all bc math functions
 bcsqrt%string bcsqrt(string $operand, [int $scale])%Get the square root of an arbitrary precision number
-bcsub%string bcsub(string $left_operand, string $right_operand, [int $scale])%Subtract one arbitrary precision number from another
+bcsub%string bcsub(string $left_operand, string $right_operand, [int $scale = int])%Subtract one arbitrary precision number from another
 bin2hex%string bin2hex(string $str)%Convert binary data into hexadecimal representation
 bind_textdomain_codeset%string bind_textdomain_codeset(string $domain, string $codeset)%Specify the character encoding in which the messages from the DOMAIN message catalog will be returned
 bindec%float bindec(string $binary_string)%Binary to decimal
@@ -374,7 +371,7 @@ chroot%bool chroot(string $directory)%Change the root directory
 chunk_split%string chunk_split(string $body, [int $chunklen = 76], [string $end = "\r\n"])%Split a string into smaller chunks
 class_alias%bool class_alias(string $original, string $alias, [bool $autoload])%Creates an alias for a class
 class_exists%bool class_exists(string $class_name, [bool $autoload = true])%Checks if the class has been defined
-class_implements%array class_implements(mixed $class, [bool $autoload = true])%Return the interfaces which are implemented by the given class
+class_implements%array class_implements(mixed $class, [bool $autoload = true])%Return the interfaces which are implemented by the given class or interface
 class_parents%array class_parents(mixed $class, [bool $autoload = true])%Return the parent classes of the given class
 class_uses%array class_uses(mixed $class, [bool $autoload = true])%Return the traits used by the given class
 clearstatcache%void clearstatcache([bool $clear_realpath_cache = false], [string $filename])%Clears file status cache
@@ -395,26 +392,15 @@ collator_set_attribute%bool collator_set_attribute(int $attr, int $val, Collator
 collator_set_strength%bool collator_set_strength(int $strength, Collator $coll)%Set collation strength
 collator_sort%bool collator_sort(array $arr, [int $sort_flag], Collator $coll)%Sort array using specified collator
 collator_sort_with_sort_keys%bool collator_sort_with_sort_keys(array $arr, Collator $coll)%Sort array using specified collator and sort keys
-com_addref%void com_addref()%Increases the components reference counter [deprecated]
 com_create_guid%string com_create_guid()%Generate a globally unique identifier (GUID)
 com_event_sink%bool com_event_sink(variant $comobject, object $sinkobject, [mixed $sinkinterface])%Connect events from a COM object to a PHP object
-com_get%void com_get()%Gets the value of a COM Component's property [deprecated]
 com_get_active_object%variant com_get_active_object(string $progid, [int $code_page])%Returns a handle to an already running instance of a COM object
-com_invoke%void com_invoke()%Calls a COM component's method [deprecated]
-com_isenum%bool com_isenum(variant $com_module)%Indicates if a COM object has an IEnumVariant interface for iteration [deprecated]
-com_load%void com_load()%Creates a new reference to a COM component [deprecated]
 com_load_typelib%bool com_load_typelib(string $typelib_name, [bool $case_insensitive = true])%Loads a Typelib
 com_message_pump%bool com_message_pump([int $timeoutms])%Process COM messages, sleeping for up to timeoutms milliseconds
 com_print_typeinfo%bool com_print_typeinfo(object $comobject, [string $dispinterface], [bool $wantsink = false])%Print out a PHP class definition for a dispatchable interface
-com_propget%void com_propget()%Alias of com_get
-com_propput%void com_propput()%Alias of com_set
-com_propset%void com_propset()%Alias of com_set
-com_release%void com_release()%Decreases the components reference counter [deprecated]
-com_set%void com_set()%Assigns a value to a COM component's property
 compact%array compact(mixed $varname1, [mixed ...])%Create array containing variables and their values
 connection_aborted%int connection_aborted()%Check whether client disconnected
 connection_status%int connection_status()%Returns connection status bitfield
-connection_timeout%int connection_timeout()%Check if the script timed out
 constant%mixed constant(string $name)%Returns the value of a constant
 convert_cyr_string%string convert_cyr_string(string $str, string $from, string $to)%Convert from one Cyrillic character set to another
 convert_uudecode%string convert_uudecode(string $data)%Decode a uuencoded string
@@ -496,7 +482,7 @@ date_timestamp_get%void date_timestamp_get()%Alias of DateTime::getTimestamp
 date_timestamp_set%void date_timestamp_set()%Alias of DateTime::setTimestamp
 date_timezone_get%void date_timezone_get()%Alias of DateTime::getTimezone
 date_timezone_set%void date_timezone_set()%Alias of DateTime::setTimezone
-datefmt_create%IntlDateFormatter datefmt_create(string $locale, int $datetype, int $timetype, [mixed $timezone = NULL], [mixed $calendar = NULL], [string $pattern = ''])%Create a date formatter
+datefmt_create%IntlDateFormatter datefmt_create(string $locale, int $datetype, int $timetype, [mixed $timezone = NULL], [mixed $calendar = NULL], [string $pattern = ""])%Create a date formatter
 datefmt_format%string datefmt_format(mixed $value, IntlDateFormatter $fmt)%Format the date/time value as a string
 datefmt_format_object%string datefmt_format_object(object $object, [mixed $format = NULL], [string $locale = NULL])%Formats an object
 datefmt_get_calendar%int datefmt_get_calendar(IntlDateFormatter $fmt)%Get the calendar type used for the IntlDateFormatter
@@ -542,7 +528,6 @@ dbx_query%mixed dbx_query(object $link_identifier, string $sql_statement, [int $
 dbx_sort%bool dbx_sort(object $result, string $user_compare_function)%Sort a result from a dbx_query by a custom sort function
 dcgettext%string dcgettext(string $domain, string $message, int $category)%Overrides the domain for a single lookup
 dcngettext%string dcngettext(string $domain, string $msgid1, string $msgid2, int $n, int $category)%Plural version of dcgettext
-deaggregate%void deaggregate(object $object, [string $class_name])%Removes the aggregated methods and properties from an object
 debug_backtrace%array debug_backtrace([int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT], [int $limit])%Generates a backtrace
 debug_print_backtrace%void debug_print_backtrace([int $options], [int $limit])%Prints a backtrace
 debug_zval_dump%void debug_zval_dump(mixed $variable, [mixed ...])%Dumps a string representation of an internal zend value to output
@@ -567,11 +552,10 @@ dns_check_record%void dns_check_record()%Alias of checkdnsrr
 dns_get_mx%void dns_get_mx()%Alias of getmxrr
 dns_get_record%array dns_get_record(string $hostname, [int $type = DNS_ANY], [array $authns], [array $addtl], [bool $raw = false])%Fetch DNS Resource Records associated with a hostname
 dom_import_simplexml%DOMElement dom_import_simplexml(SimpleXMLElement $node)%Gets a DOMElement object from a   SimpleXMLElement object
-dotnet_load%int dotnet_load(string $assembly_name, [string $datatype_name], [int $codepage])%Loads a DOTNET module
 doubleval%void doubleval()%Alias of floatval
 each%array each(array $array)%Return the current key and value pair from an array and advance the array cursor
-easter_date%int easter_date([int $year])%Get Unix timestamp for midnight on Easter of a given year
-easter_days%int easter_days([int $year], [int $method = CAL_EASTER_DEFAULT])%Get number of days after March 21 on which Easter falls for a given year
+easter_date%int easter_date([int $year = date("Y")])%Get Unix timestamp for midnight on Easter of a given year
+easter_days%int easter_days([int $year = date("Y")], [int $method = CAL_EASTER_DEFAULT])%Get number of days after March 21 on which Easter falls for a given year
 echo%void echo(string $arg1, [string ...])%Output one or more strings
 eio_busy%resource eio_busy(int $delay, [int $pri = EIO_PRI_DEFAULT], [callable $callback = NULL], [mixed $data = NULL])%Artificially increase load. Could be useful in tests,  benchmarking.
 eio_cancel%void eio_cancel(resource $req)%Cancels a request
@@ -741,7 +725,7 @@ fann_get_sarprop_weight_decay_shift%float fann_get_sarprop_weight_decay_shift(re
 fann_get_total_connections%int fann_get_total_connections(resource $ann)%Get the total number of connections in the entire network
 fann_get_total_neurons%int fann_get_total_neurons(resource $ann)%Get the total number of neurons in the entire network
 fann_get_train_error_function%int fann_get_train_error_function(resource $ann)%Returns the error function used during training
-fann_get_train_stop_function%int fann_get_train_stop_function(resource $ann)%Returns the the stop function used during training
+fann_get_train_stop_function%int fann_get_train_stop_function(resource $ann)%Returns the stop function used during training
 fann_get_training_algorithm%int fann_get_training_algorithm(resource $ann)%Returns the training algorithm
 fann_init_weights%bool fann_init_weights(resource $ann, resource $train_data)%Initialize the weights using Widrow + Nguyen’s algorithm
 fann_length_train_data%resource fann_length_train_data(resource $data)%Returns the number of training patterns in the train data
@@ -821,7 +805,7 @@ fclose%bool fclose(resource $handle)%Closes an open file pointer
 feof%bool feof(resource $handle)%Tests for end-of-file on a file pointer
 fflush%bool fflush(resource $handle)%Flushes the output to a file
 fgetc%string fgetc(resource $handle)%Gets character from file pointer
-fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ','], [string $enclosure = '"'], [string $escape = '\\'])%Gets line from file pointer and parse for CSV fields
+fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\\"])%Gets line from file pointer and parse for CSV fields
 fgets%string fgets(resource $handle, [int $length])%Gets line from file pointer
 fgetss%string fgetss(resource $handle, [int $length], [string $allowable_tags])%Gets line from file pointer and strip HTML tags
 file%array file(string $filename, [int $flags], [resource $context])%Reads entire file into an array
@@ -844,7 +828,7 @@ filter_input_array%mixed filter_input_array(int $type, [mixed $definition], [boo
 filter_list%array filter_list()%Returns a list of all supported filters
 filter_var%mixed filter_var(mixed $variable, [int $filter = FILTER_DEFAULT], [mixed $options])%Filters a variable with a specified filter
 filter_var_array%mixed filter_var_array(array $data, [mixed $definition], [bool $add_empty = true])%Gets multiple variables and optionally filters them
-finfo%object finfo([int $options = FILEINFO_NONE], [string $magic_file])%Create a new fileinfo resource
+finfo%object finfo([int $options = FILEINFO_NONE], [string $magic_file])%Alias of finfo_open
 finfo_buffer%string finfo_buffer(resource $finfo, string $string, [int $options = FILEINFO_NONE], [resource $context])%Return information about a string buffer
 finfo_close%bool finfo_close(resource $finfo)%Close fileinfo resource
 finfo_file%string finfo_file(resource $finfo, string $file_name, [int $options = FILEINFO_NONE], [resource $context])%Return information about a file
@@ -853,7 +837,7 @@ finfo_set_flags%bool finfo_set_flags(resource $finfo, int $options)%Set libmagic
 floatval%float floatval(mixed $var)%Get float value of a variable
 flock%bool flock(resource $handle, int $operation, [int $wouldblock])%Portable advisory file locking
 floor%float floor(float $value)%Round fractions down
-flush%void flush()%Flush the output buffer
+flush%void flush()%Flush system output buffer
 fmod%float fmod(float $x, float $y)%Returns the floating point remainder (modulo) of the division  of the arguments
 fnmatch%bool fnmatch(string $pattern, string $string, [int $flags])%Match filename against a pattern
 fopen%resource fopen(string $filename, string $mode, [bool $use_include_path = false], [resource $context])%Opens file or URL
@@ -861,7 +845,7 @@ forward_static_call%mixed forward_static_call(callable $function, [mixed $parame
 forward_static_call_array%mixed forward_static_call_array(callable $function, array $parameters)%Call a static method and pass the arguments as array
 fpassthru%int fpassthru(resource $handle)%Output all remaining data on a file pointer
 fprintf%int fprintf(resource $handle, string $format, [mixed $args], [mixed ...])%Write a formatted string to a stream
-fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ','], [string $enclosure = '"'])%Format line as CSV and write to file pointer
+fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ","], [string $enclosure = '"'])%Format line as CSV and write to file pointer
 fputs%void fputs()%Alias of fwrite
 fread%string fread(resource $handle, int $length)%Binary-safe file read
 fscanf%mixed fscanf(resource $handle, string $format, [mixed ...])%Parses input from a file according to a format
@@ -896,7 +880,7 @@ ftp_put%bool ftp_put(resource $ftp_stream, string $remote_file, string $local_fi
 ftp_pwd%string ftp_pwd(resource $ftp_stream)%Returns the current directory name
 ftp_quit%void ftp_quit()%Alias of ftp_close
 ftp_raw%array ftp_raw(resource $ftp_stream, string $command)%Sends an arbitrary command to an FTP server
-ftp_rawlist%array ftp_rawlist(resource $ftp_stream, string $directory, [bool $recursive = false])%Returns a detailed list of files in the given directory
+ftp_rawlist%mixed ftp_rawlist(resource $ftp_stream, string $directory, [bool $recursive = false])%Returns a detailed list of files in the given directory
 ftp_rename%bool ftp_rename(resource $ftp_stream, string $oldname, string $newname)%Renames a file or a directory on the FTP server
 ftp_rmdir%bool ftp_rmdir(resource $ftp_stream, string $directory)%Removes a directory
 ftp_set_option%bool ftp_set_option(resource $ftp_stream, int $option, mixed $value)%Set miscellaneous runtime FTP options
@@ -930,7 +914,7 @@ get_defined_functions%array get_defined_functions()%Returns an array of all defi
 get_defined_vars%array get_defined_vars()%Returns an array of all defined variables
 get_extension_funcs%array get_extension_funcs(string $module_name)%Returns an array with the names of the functions of a module
 get_headers%array get_headers(string $url, [int $format])%Fetches all the headers sent by the server in response to a HTTP request
-get_html_translation_table%array get_html_translation_table([int $table = HTML_SPECIALCHARS], [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'])%Returns the translation table used by htmlspecialchars and htmlentities
+get_html_translation_table%array get_html_translation_table([int $table = HTML_SPECIALCHARS], [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = "UTF-8"])%Returns the translation table used by htmlspecialchars and htmlentities
 get_include_path%string get_include_path()%Gets the current include_path configuration option
 get_included_files%array get_included_files()%Returns an array with the names of included or required files
 get_loaded_extensions%array get_loaded_extensions([bool $zend_extensions = false])%Returns an array with the names of all modules compiled and loaded
@@ -970,47 +954,53 @@ gettype%string gettype(mixed $var)%Get the type of a variable
 glob%array glob(string $pattern, [int $flags])%Find pathnames matching a pattern
 gmdate%string gmdate(string $format, [int $timestamp = time()])%Format a GMT/UTC date/time
 gmmktime%int gmmktime([int $hour = gmdate("H")], [int $minute = gmdate("i")], [int $second = gmdate("s")], [int $month = gmdate("n")], [int $day = gmdate("j")], [int $year = gmdate("Y")], [int $is_dst = -1])%Get Unix timestamp for a GMT date
-gmp_abs%resource gmp_abs(resource $a)%Absolute value
-gmp_add%resource gmp_add(resource $a, resource $b)%Add numbers
-gmp_and%resource gmp_and(resource $a, resource $b)%Bitwise AND
-gmp_clrbit%void gmp_clrbit(resource $a, int $index)%Clear bit
-gmp_cmp%int gmp_cmp(resource $a, resource $b)%Compare numbers
-gmp_com%resource gmp_com(resource $a)%Calculates one's complement
+gmp_abs%GMP gmp_abs(GMP $a)%Absolute value
+gmp_add%GMP gmp_add(GMP $a, GMP $b)%Add numbers
+gmp_and%GMP gmp_and(GMP $a, GMP $b)%Bitwise AND
+gmp_clrbit%void gmp_clrbit(GMP $a, int $index)%Clear bit
+gmp_cmp%int gmp_cmp(GMP $a, GMP $b)%Compare numbers
+gmp_com%GMP gmp_com(GMP $a)%Calculates one's complement
 gmp_div%void gmp_div()%Alias of gmp_div_q
-gmp_div_q%resource gmp_div_q(resource $a, resource $b, [int $round = GMP_ROUND_ZERO])%Divide numbers
-gmp_div_qr%array gmp_div_qr(resource $n, resource $d, [int $round = GMP_ROUND_ZERO])%Divide numbers and get quotient and remainder
-gmp_div_r%resource gmp_div_r(resource $n, resource $d, [int $round = GMP_ROUND_ZERO])%Remainder of the division of numbers
-gmp_divexact%resource gmp_divexact(resource $n, resource $d)%Exact division of numbers
-gmp_fact%resource gmp_fact(mixed $a)%Factorial
-gmp_gcd%resource gmp_gcd(resource $a, resource $b)%Calculate GCD
-gmp_gcdext%array gmp_gcdext(resource $a, resource $b)%Calculate GCD and multipliers
-gmp_hamdist%int gmp_hamdist(resource $a, resource $b)%Hamming distance
-gmp_init%resource gmp_init(mixed $number, [int $base])%Create GMP number
-gmp_intval%int gmp_intval(resource $gmpnumber)%Convert GMP number to integer
-gmp_invert%resource gmp_invert(resource $a, resource $b)%Inverse by modulo
-gmp_jacobi%int gmp_jacobi(resource $a, resource $p)%Jacobi symbol
-gmp_legendre%int gmp_legendre(resource $a, resource $p)%Legendre symbol
-gmp_mod%resource gmp_mod(resource $n, resource $d)%Modulo operation
-gmp_mul%resource gmp_mul(resource $a, resource $b)%Multiply numbers
-gmp_neg%resource gmp_neg(resource $a)%Negate number
-gmp_nextprime%resource gmp_nextprime(int $a)%Find next prime number
-gmp_or%resource gmp_or(resource $a, resource $b)%Bitwise OR
-gmp_perfect_square%bool gmp_perfect_square(resource $a)%Perfect square check
-gmp_popcount%int gmp_popcount(resource $a)%Population count
-gmp_pow%resource gmp_pow(resource $base, int $exp)%Raise number into power
-gmp_powm%resource gmp_powm(resource $base, resource $exp, resource $mod)%Raise number into power with modulo
-gmp_prob_prime%int gmp_prob_prime(resource $a, [int $reps = 10])%Check if number is "probably prime"
-gmp_random%resource gmp_random([int $limiter = 20])%Random number
-gmp_scan0%int gmp_scan0(resource $a, int $start)%Scan for 0
-gmp_scan1%int gmp_scan1(resource $a, int $start)%Scan for 1
-gmp_setbit%void gmp_setbit(resource $a, int $index, [bool $bit_on = true])%Set bit
-gmp_sign%int gmp_sign(resource $a)%Sign of number
-gmp_sqrt%resource gmp_sqrt(resource $a)%Calculate square root
-gmp_sqrtrem%array gmp_sqrtrem(resource $a)%Square root with remainder
-gmp_strval%string gmp_strval(resource $gmpnumber, [int $base = 10])%Convert GMP number to string
-gmp_sub%resource gmp_sub(resource $a, resource $b)%Subtract numbers
-gmp_testbit%bool gmp_testbit(resource $a, int $index)%Tests if a bit is set
-gmp_xor%resource gmp_xor(resource $a, resource $b)%Bitwise XOR
+gmp_div_q%GMP gmp_div_q(GMP $a, GMP $b, [int $round = GMP_ROUND_ZERO])%Divide numbers
+gmp_div_qr%array gmp_div_qr(GMP $n, GMP $d, [int $round = GMP_ROUND_ZERO])%Divide numbers and get quotient and remainder
+gmp_div_r%GMP gmp_div_r(GMP $n, GMP $d, [int $round = GMP_ROUND_ZERO])%Remainder of the division of numbers
+gmp_divexact%GMP gmp_divexact(GMP $n, GMP $d)%Exact division of numbers
+gmp_export%string gmp_export(GMP $gmpnumber, integer $word_size, integer $options)%Export to a binary string
+gmp_fact%GMP gmp_fact(mixed $a)%Factorial
+gmp_gcd%GMP gmp_gcd(GMP $a, GMP $b)%Calculate GCD
+gmp_gcdext%array gmp_gcdext(GMP $a, GMP $b)%Calculate GCD and multipliers
+gmp_hamdist%int gmp_hamdist(GMP $a, GMP $b)%Hamming distance
+gmp_import%GMP gmp_import(string $data, integer $word_size, integer $options)%Import from a binary string
+gmp_init%GMP gmp_init(mixed $number, [int $base])%Create GMP number
+gmp_intval%integer gmp_intval(GMP $gmpnumber)%Convert GMP number to integer
+gmp_invert%GMP gmp_invert(GMP $a, GMP $b)%Inverse by modulo
+gmp_jacobi%int gmp_jacobi(GMP $a, GMP $p)%Jacobi symbol
+gmp_legendre%int gmp_legendre(GMP $a, GMP $p)%Legendre symbol
+gmp_mod%GMP gmp_mod(GMP $n, GMP $d)%Modulo operation
+gmp_mul%GMP gmp_mul(GMP $a, GMP $b)%Multiply numbers
+gmp_neg%GMP gmp_neg(GMP $a)%Negate number
+gmp_nextprime%GMP gmp_nextprime(int $a)%Find next prime number
+gmp_or%GMP gmp_or(GMP $a, GMP $b)%Bitwise OR
+gmp_perfect_square%bool gmp_perfect_square(GMP $a)%Perfect square check
+gmp_popcount%int gmp_popcount(GMP $a)%Population count
+gmp_pow%GMP gmp_pow(GMP $base, int $exp)%Raise number into power
+gmp_powm%GMP gmp_powm(GMP $base, GMP $exp, GMP $mod)%Raise number into power with modulo
+gmp_prob_prime%int gmp_prob_prime(GMP $a, [int $reps = 10])%Check if number is "probably prime"
+gmp_random%GMP gmp_random([int $limiter = 20])%Random number
+gmp_random_bits%GMP gmp_random_bits(integer $bits)%Random number
+gmp_random_range%GMP gmp_random_range(GMP $min, GMP $max)%Random number
+gmp_root%GMP gmp_root(GMP $a, int $nth)%Take the integer part of nth root
+gmp_rootrem%array gmp_rootrem(GMP $a, int $nth)%Take the integer part and remainder of nth root
+gmp_scan0%int gmp_scan0(GMP $a, int $start)%Scan for 0
+gmp_scan1%int gmp_scan1(GMP $a, int $start)%Scan for 1
+gmp_setbit%void gmp_setbit(GMP $a, int $index, [bool $bit_on = true])%Set bit
+gmp_sign%int gmp_sign(GMP $a)%Sign of number
+gmp_sqrt%GMP gmp_sqrt(GMP $a)%Calculate square root
+gmp_sqrtrem%array gmp_sqrtrem(GMP $a)%Square root with remainder
+gmp_strval%string gmp_strval(GMP $gmpnumber, [int $base = 10])%Convert GMP number to string
+gmp_sub%GMP gmp_sub(GMP $a, GMP $b)%Subtract numbers
+gmp_testbit%bool gmp_testbit(GMP $a, int $index)%Tests if a bit is set
+gmp_xor%GMP gmp_xor(GMP $a, GMP $b)%Bitwise XOR
 gmstrftime%string gmstrftime(string $format, [int $timestamp = time()])%Format a GMT/UTC time/date according to locale settings
 grapheme_extract%string grapheme_extract(string $haystack, int $size, [int $extract_type], [int $start], [int $next])%Function to extract a sequence of default grapheme clusters from a text buffer, which must be encoded in UTF-8.
 grapheme_stripos%int grapheme_stripos(string $haystack, string $needle, [int $offset])%Find position (in grapheme units) of first occurrence of a case-insensitive string
@@ -1029,7 +1019,7 @@ gzencode%string gzencode(string $data, [int $level = -1], [int $encoding_mode = 
 gzeof%int gzeof(resource $zp)%Test for EOF on a gz-file pointer
 gzfile%array gzfile(string $filename, [int $use_include_path])%Read entire gz-file into an array
 gzgetc%string gzgetc(resource $zp)%Get character from gz-file pointer
-gzgets%string gzgets(resource $zp, int $length)%Get line from file pointer
+gzgets%string gzgets(resource $zp, [int $length])%Get line from file pointer
 gzgetss%string gzgetss(resource $zp, int $length, [string $allowable_tags])%Get line from gz-file pointer and strip HTML tags
 gzinflate%string gzinflate(string $data, [int $length])%Inflate a deflated string
 gzopen%resource gzopen(string $filename, string $mode, [int $use_include_path])%Open gz-file
@@ -1044,6 +1034,7 @@ gzwrite%int gzwrite(resource $zp, string $string, [int $length])%Binary-safe gz-
 hash%string hash(string $algo, string $data, [bool $raw_output = false])%Generate a hash value (message digest)
 hash_algos%array hash_algos()%Return a list of registered hashing algorithms
 hash_copy%resource hash_copy(resource $context)%Copy hashing context
+hash_equals%bool hash_equals(string $known_string, string $user_string)%Timing attack safe string comparison
 hash_file%string hash_file(string $algo, string $filename, [bool $raw_output = false])%Generate a hash value using the contents of a given file
 hash_final%string hash_final(resource $context, [bool $raw_output = false])%Finalize an incremental hash and return resulting digest
 hash_hmac%string hash_hmac(string $algo, string $data, string $key, [bool $raw_output = false])%Generate a keyed hash value using the HMAC method
@@ -1064,9 +1055,9 @@ hex2bin%string hex2bin(string $data)%Decodes a hexadecimally encoded binary stri
 hexdec%number hexdec(string $hex_string)%Hexadecimal to decimal
 highlight_file%mixed highlight_file(string $filename, [bool $return = false])%Syntax highlighting of a file
 highlight_string%mixed highlight_string(string $str, [bool $return = false])%Syntax highlighting of a string
-html_entity_decode%string html_entity_decode(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'])%Convert all HTML entities to their applicable characters
-htmlentities%string htmlentities(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'], [bool $double_encode = true])%Convert all applicable characters to HTML entities
-htmlspecialchars%string htmlspecialchars(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'], [bool $double_encode = true])%Convert special characters to HTML entities
+html_entity_decode%string html_entity_decode(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = ini_get("default_charset")])%Convert all HTML entities to their applicable characters
+htmlentities%string htmlentities(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = ini_get("default_charset")], [bool $double_encode = true])%Convert all applicable characters to HTML entities
+htmlspecialchars%string htmlspecialchars(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = ini_get("default_charset")], [bool $double_encode = true])%Convert special characters to HTML entities
 htmlspecialchars_decode%string htmlspecialchars_decode(string $string, [int $flags = ENT_COMPAT | ENT_HTML401])%Convert special HTML entities back to characters
 http_build_cookie%string http_build_cookie(array $cookie)%Build cookie string
 http_build_query%string http_build_query(mixed $query_data, [string $numeric_prefix], [string $arg_separator], [int $enc_type])%Generate URL-encoded query string
@@ -1201,7 +1192,7 @@ iis_stop_service%int iis_stop_service(string $service_id)%Stops the service defi
 image2wbmp%bool image2wbmp(resource $image, [string $filename], [int $threshold])%Output image to browser or file
 image_type_to_extension%string image_type_to_extension(int $imagetype, [bool $include_dot])%Get file extension for image type
 image_type_to_mime_type%string image_type_to_mime_type(int $imagetype)%Get Mime-Type for image-type returned by getimagesize,   exif_read_data, exif_thumbnail, exif_imagetype
-imageaffine%resource imageaffine(resource $image, array $affine, [array $clip])%Return an image containing the affine tramsformed src image, using an optional clipping area
+imageaffine%resource imageaffine(resource $image, array $affine, [array $clip])%Return an image containing the affine transformed src image, using an optional clipping area
 imageaffinematrixconcat%array imageaffinematrixconcat(array $m1, array $m2)%Concat two matrices (as in doing many ops in one go)
 imageaffinematrixget%array imageaffinematrixget(int $type, [mixed $options])%Return an image containing the affine tramsformed src image, using an optional clipping area
 imagealphablending%bool imagealphablending(resource $image, bool $blendmode)%Set the blending mode for an image
@@ -1467,6 +1458,7 @@ ldap_dn2ufn%string ldap_dn2ufn(string $dn)%Convert DN to User Friendly Naming fo
 ldap_err2str%string ldap_err2str(int $errno)%Convert LDAP error number into string error message
 ldap_errno%int ldap_errno(resource $link_identifier)%Return the LDAP error number of the last LDAP command
 ldap_error%string ldap_error(resource $link_identifier)%Return the LDAP error message of the last LDAP command
+ldap_escape%string ldap_escape(string $value, [string $ignore], [int $flags])%Escape a string for use in an LDAP filter or DN
 ldap_explode_dn%array ldap_explode_dn(string $dn, int $with_attrib)%Splits DN into its component parts
 ldap_first_attribute%string ldap_first_attribute(resource $link_identifier, resource $result_entry_identifier)%Return first attribute
 ldap_first_entry%resource ldap_first_entry(resource $link_identifier, resource $result_identifier)%Return first result id
@@ -1483,6 +1475,7 @@ ldap_mod_add%bool ldap_mod_add(resource $link_identifier, string $dn, array $ent
 ldap_mod_del%bool ldap_mod_del(resource $link_identifier, string $dn, array $entry)%Delete attribute values from current attributes
 ldap_mod_replace%bool ldap_mod_replace(resource $link_identifier, string $dn, array $entry)%Replace attribute values with new ones
 ldap_modify%bool ldap_modify(resource $link_identifier, string $dn, array $entry)%Modify an LDAP entry
+ldap_modify_batch%bool ldap_modify_batch(resource $link_identifier, string $dn, array $entry)%Batch and execute modifications on an LDAP entry
 ldap_next_attribute%string ldap_next_attribute(resource $link_identifier, resource $result_entry_identifier)%Get the next attribute in result
 ldap_next_entry%resource ldap_next_entry(resource $link_identifier, resource $result_entry_identifier)%Get next result entry
 ldap_next_reference%resource ldap_next_reference(resource $link, resource $entry)%Get next reference
@@ -1532,13 +1525,20 @@ localtime%array localtime([int $timestamp = time()], [bool $is_associative = fal
 log%float log(float $arg, [float $base = M_E])%Natural logarithm
 log10%float log10(float $arg)%Base-10 logarithm
 log1p%float log1p(float $number)%Returns log(1 + number), computed in a way that is accurate even when   the value of number is close to zero
+log_cmd_delete%callable log_cmd_delete(array $server, array $writeOptions, array $deleteOptions, array $protocolOptions)%Callback When Deleting Documents
+log_cmd_insert%callable log_cmd_insert(array $server, array $document, array $writeOptions, array $protocolOptions)%Callback When Inserting Documents
+log_cmd_update%callable log_cmd_update(array $server, array $writeOptions, array $updateOptions, array $protocolOptions)%Callback When Updating Documents
+log_getmore%callable log_getmore(array $server, array $info)%Callback When Retrieving Next Cursor Batch
+log_killcursor%callable log_killcursor(array $server, array $info)%Callback When Executing KILLCURSOR operations
+log_reply%callable log_reply(array $server, array $messageHeaders, array $operationHeaders)%Callback When Reading the MongoDB reply
+log_write_batch%callable log_write_batch(array $server, array $writeOptions, array $batch, array $protocolOptions)%Callback When Writing Batches
 long2ip%string long2ip(string $proper_address)%Converts an (IPv4) Internet network address into a string in Internet standard dotted format
 lstat%array lstat(string $filename)%Gives information about a file or symbolic link
 ltrim%string ltrim(string $str, [string $character_mask])%Strip whitespace (or other characters) from the beginning of a string
 magic_quotes_runtime%void magic_quotes_runtime()%Alias of set_magic_quotes_runtime
 mail%bool mail(string $to, string $subject, string $message, [string $additional_headers], [string $additional_parameters])%Send mail
 main%void main()%Dummy for main
-max%integer max(array $values, mixed $value1, mixed $value2, [mixed ...])%Find highest value
+max%string max(array $values, mixed $value1, mixed $value2, [mixed ...])%Find highest value
 mb_check_encoding%bool mb_check_encoding([string $var], [string $encoding = mb_internal_encoding()])%Check if the string is valid for the specified encoding
 mb_convert_case%string mb_convert_case(string $str, int $mode, [string $encoding = mb_internal_encoding()])%Perform case folding on a string
 mb_convert_encoding%string mb_convert_encoding(string $str, string $to_encoding, [mixed $from_encoding = mb_internal_encoding()])%Convert character encoding
@@ -1596,7 +1596,7 @@ mb_substr%string mb_substr(string $str, int $start, [int $length = NULL], [strin
 mb_substr_count%string mb_substr_count(string $haystack, string $needle, [string $encoding = mb_internal_encoding()])%Count the number of substring occurrences
 mcrypt_cbc%string mcrypt_cbc(string $cipher, string $key, string $data, int $mode, [string $iv])%Encrypts/decrypts data in CBC mode
 mcrypt_cfb%string mcrypt_cfb(string $cipher, string $key, string $data, int $mode, [string $iv])%Encrypts/decrypts data in CFB mode
-mcrypt_create_iv%string mcrypt_create_iv(int $size, [int $source = MCRYPT_DEV_RANDOM])%Creates an initialization vector (IV) from a random source
+mcrypt_create_iv%string mcrypt_create_iv(int $size, [int $source = MCRYPT_DEV_URANDOM])%Creates an initialization vector (IV) from a random source
 mcrypt_decrypt%string mcrypt_decrypt(string $cipher, string $key, string $data, string $mode, [string $iv])%Decrypts crypttext with given parameters
 mcrypt_ecb%string mcrypt_ecb(string $cipher, string $key, string $data, int $mode, [string $iv])%Deprecated: Encrypts/decrypts data in ECB mode
 mcrypt_enc_get_algorithms_name%string mcrypt_enc_get_algorithms_name(resource $td)%Returns the name of the opened algorithm
@@ -1645,7 +1645,7 @@ mhash_get_hash_name%string mhash_get_hash_name(int $hash)%Gets the name of the s
 mhash_keygen_s2k%string mhash_keygen_s2k(int $hash, string $password, string $salt, int $bytes)%Generates a key
 microtime%mixed microtime([bool $get_as_float = false])%Return current Unix timestamp with microseconds
 mime_content_type%string mime_content_type(string $filename)%Detect MIME Content-type for a file (deprecated)
-min%integer min(array $values, mixed $value1, mixed $value2, [mixed ...])%Find lowest value
+min%string min(array $values, mixed $value1, mixed $value2, [mixed ...])%Find lowest value
 mkdir%bool mkdir(string $pathname, [int $mode = 0777], [bool $recursive = false], [resource $context])%Makes directory
 mktime%int mktime([int $hour = date("H")], [int $minute = date("i")], [int $second = date("s")], [int $month = date("n")], [int $day = date("j")], [int $year = date("Y")], [int $is_dst = -1])%Get Unix timestamp for a date
 money_format%string money_format(string $format, float $number)%Formats a number as a currency string
@@ -1739,7 +1739,7 @@ mysql_num_fields%int mysql_num_fields(resource $result)%Get number of fields in 
 mysql_num_rows%int mysql_num_rows(resource $result)%Get number of rows in result
 mysql_pconnect%resource mysql_pconnect([string $server = ini_get("mysql.default_host")], [string $username = ini_get("mysql.default_user")], [string $password = ini_get("mysql.default_password")], [int $client_flags])%Open a persistent connection to a MySQL server
 mysql_ping%bool mysql_ping([resource $link_identifier = NULL])%Ping a server connection or reconnect if there is no connection
-mysql_query%resource mysql_query(string $query, [resource $link_identifier = NULL])%Send a MySQL query
+mysql_query%mixed mysql_query(string $query, [resource $link_identifier = NULL])%Send a MySQL query
 mysql_real_escape_string%string mysql_real_escape_string(string $unescaped_string, [resource $link_identifier = NULL])%Escapes special characters in a string for use in an SQL statement
 mysql_result%string mysql_result(resource $result, int $row, [mixed $field])%Get result data
 mysql_select_db%bool mysql_select_db(string $database_name, [resource $link_identifier = NULL])%Select a MySQL database
@@ -1777,7 +1777,7 @@ mysqli_fetch_assoc%array mysqli_fetch_assoc(mysqli_result $result)%Fetch a resul
 mysqli_fetch_field%object mysqli_fetch_field(mysqli_result $result)%Returns the next field in the result set
 mysqli_fetch_field_direct%object mysqli_fetch_field_direct(int $fieldnr, mysqli_result $result)%Fetch meta-data for a single field
 mysqli_fetch_fields%array mysqli_fetch_fields(mysqli_result $result)%Returns an array of objects representing the fields in a result set
-mysqli_fetch_object%object mysqli_fetch_object([string $class_name], [array $params], mysqli_result $result)%Returns the current row of a result set as an object
+mysqli_fetch_object%object mysqli_fetch_object([string $class_name = "stdClass"], [array $params], mysqli_result $result)%Returns the current row of a result set as an object
 mysqli_fetch_row%mixed mysqli_fetch_row(mysqli_result $result)%Get a result row as an enumerated array
 mysqli_field_seek%bool mysqli_field_seek(int $fieldnr, mysqli_result $result)%Set result pointer to a specified field offset
 mysqli_free_result%void mysqli_free_result(mysqli_result $result)%Frees the memory associated with a result
@@ -1787,6 +1787,7 @@ mysqli_get_client_info%string mysqli_get_client_info(mysqli $link)%Get MySQL cli
 mysqli_get_client_stats%array mysqli_get_client_stats()%Returns client per-process statistics
 mysqli_get_client_version%int mysqli_get_client_version(mysqli $link)%Returns the MySQL client version as an integer
 mysqli_get_connection_stats%array mysqli_get_connection_stats(mysqli $link)%Returns statistics about the client connection
+mysqli_get_links_stats%array mysqli_get_links_stats()%Return information about open and cached links
 mysqli_get_metadata%void mysqli_get_metadata()%Alias for mysqli_stmt_result_metadata
 mysqli_get_warnings%mysqli_warning mysqli_get_warnings(mysqli $link)%Get result of SHOW WARNINGS
 mysqli_init%mysqli mysqli_init()%Initializes MySQLi and returns a resource for use with mysqli_real_connect()
@@ -1842,12 +1843,15 @@ mysqli_stmt_reset%bool mysqli_stmt_reset(mysqli_stmt $stmt)%Resets a prepared st
 mysqli_stmt_result_metadata%mysqli_result mysqli_stmt_result_metadata(mysqli_stmt $stmt)%Returns result set metadata from a prepared statement
 mysqli_stmt_send_long_data%bool mysqli_stmt_send_long_data(int $param_nr, string $data, mysqli_stmt $stmt)%Send data in blocks
 mysqli_stmt_store_result%bool mysqli_stmt_store_result(mysqli_stmt $stmt)%Transfers a result set from a prepared statement
-mysqli_store_result%mysqli_result mysqli_store_result(mysqli $link)%Transfers a result set from the last query
+mysqli_store_result%mysqli_result mysqli_store_result([int $option])%Transfers a result set from the last query
 mysqli_thread_safe%bool mysqli_thread_safe()%Returns whether thread safety is given or not
 mysqli_use_result%mysqli_result mysqli_use_result(mysqli $link)%Initiate a result set retrieval
 mysqli_warning%object mysqli_warning()%The __construct purpose
 mysqlnd_memcache_get_config%array mysqlnd_memcache_get_config(mixed $connection)%Returns information about the plugin configuration
 mysqlnd_memcache_set%bool mysqlnd_memcache_set(mixed $mysql_connection, [Memcached $memcache_connection], [string $pattern], [callback $callback])%Associate a MySQL connection with a Memcache connection
+mysqlnd_ms_dump_servers%array mysqlnd_ms_dump_servers(mixed $connection)%Returns a list of currently configured servers
+mysqlnd_ms_fabric_select_global%array mysqlnd_ms_fabric_select_global(mixed $connection, mixed $table_name)%Switch to global sharding server for a given table
+mysqlnd_ms_fabric_select_shard%array mysqlnd_ms_fabric_select_shard(mixed $connection, mixed $table_name, mixed $shard_key)%Switch to shard
 mysqlnd_ms_get_last_gtid%string mysqlnd_ms_get_last_gtid(mixed $connection)%Returns the latest global transaction ID
 mysqlnd_ms_get_last_used_connection%array mysqlnd_ms_get_last_used_connection(mixed $connection)%Returns an array which describes the last used connection
 mysqlnd_ms_get_stats%array mysqlnd_ms_get_stats()%Returns query distribution and connection statistics
@@ -1855,6 +1859,10 @@ mysqlnd_ms_match_wild%bool mysqlnd_ms_match_wild(string $table_name, string $wil
 mysqlnd_ms_query_is_select%int mysqlnd_ms_query_is_select(string $query)%Find whether to send the query to the master, the slave or the last used MySQL server
 mysqlnd_ms_set_qos%bool mysqlnd_ms_set_qos(mixed $connection, int $service_level, [int $service_level_option], [mixed $option_value])%Sets the quality of service needed from the cluster
 mysqlnd_ms_set_user_pick_server%bool mysqlnd_ms_set_user_pick_server(string $function)%Sets a callback for user-defined read/write splitting
+mysqlnd_ms_xa_begin%int mysqlnd_ms_xa_begin(mixed $connection, string $gtrid, [int $timeout])%Starts a distributed/XA transaction among MySQL servers
+mysqlnd_ms_xa_commit%int mysqlnd_ms_xa_commit(mixed $connection, string $gtrid)%Commits a distributed/XA transaction among MySQL servers
+mysqlnd_ms_xa_gc%int mysqlnd_ms_xa_gc(mixed $connection, [string $gtrid], [boolean $ignore_max_retries])%Garbage collects unfinished XA transactions after severe errors
+mysqlnd_ms_xa_rollback%int mysqlnd_ms_xa_rollback(mixed $connection, string $gtrid)%Rolls back a distributed/XA transaction among MySQL servers
 mysqlnd_qc_clear_cache%bool mysqlnd_qc_clear_cache()%Flush all cache contents
 mysqlnd_qc_get_available_handlers%array mysqlnd_qc_get_available_handlers()%Returns a list of available storage handler
 mysqlnd_qc_get_cache_info%array mysqlnd_qc_get_cache_info()%Returns information on the current handler, the number of cache entries and cache entries, if available
@@ -1931,13 +1939,13 @@ oci_fetch_array%array oci_fetch_array(resource $statement, [int $mode])%Returns 
 oci_fetch_assoc%array oci_fetch_assoc(resource $statement)%Returns the next row from a query as an associative array
 oci_fetch_object%object oci_fetch_object(resource $statement)%Returns the next row from a query as an object
 oci_fetch_row%array oci_fetch_row(resource $statement)%Returns the next row from a query as a numeric array
-oci_field_is_null%bool oci_field_is_null(resource $statement, mixed $field)%Checks if the field is NULL
-oci_field_name%string oci_field_name(resource $statement, int $field)%Returns the name of a field from the statement
-oci_field_precision%int oci_field_precision(resource $statement, int $field)%Tell the precision of a field
-oci_field_scale%int oci_field_scale(resource $statement, int $field)%Tell the scale of the field
+oci_field_is_null%bool oci_field_is_null(resource $statement, mixed $field)%Checks if a field in the currently fetched row is NULL
+oci_field_name%string oci_field_name(resource $statement, mixed $field)%Returns the name of a field from the statement
+oci_field_precision%int oci_field_precision(resource $statement, mixed $field)%Tell the precision of a field
+oci_field_scale%int oci_field_scale(resource $statement, mixed $field)%Tell the scale of the field
 oci_field_size%int oci_field_size(resource $statement, mixed $field)%Returns field's size
-oci_field_type%mixed oci_field_type(resource $statement, int $field)%Returns field's data type
-oci_field_type_raw%int oci_field_type_raw(resource $statement, int $field)%Tell the raw Oracle data type of the field
+oci_field_type%mixed oci_field_type(resource $statement, mixed $field)%Returns a field's data type name
+oci_field_type_raw%int oci_field_type_raw(resource $statement, mixed $field)%Tell the raw Oracle data type of the field
 oci_free_descriptor%bool oci_free_descriptor(resource $descriptor)%Frees a descriptor
 oci_free_statement%bool oci_free_statement(resource $statement)%Frees all resources associated with statement or cursor
 oci_get_implicit_resultset%resource  oci_get_implicit_resultset(resource $statement)%Returns the next child statement resource from a parent statement resource that has Oracle Database 12c Implicit Result Sets
@@ -2078,6 +2086,7 @@ openssl_digest%string openssl_digest(string $data, string $method, [bool $raw_ou
 openssl_encrypt%string openssl_encrypt(string $data, string $method, string $password, [int $options], [string $iv = ""])%Encrypts data
 openssl_error_string%string openssl_error_string()%Return openSSL error message
 openssl_free_key%void openssl_free_key(resource $key_identifier)%Free key resource
+openssl_get_cert_locations%array openssl_get_cert_locations()%Retrieve the available certificate locations
 openssl_get_cipher_methods%array openssl_get_cipher_methods([bool $aliases = false])%Gets available cipher methods
 openssl_get_md_methods%array openssl_get_md_methods([bool $aliases = false])%Gets available digest methods
 openssl_get_privatekey%void openssl_get_privatekey()%Alias of openssl_pkey_get_private
@@ -2105,11 +2114,16 @@ openssl_public_encrypt%bool openssl_public_encrypt(string $data, string $crypted
 openssl_random_pseudo_bytes%string openssl_random_pseudo_bytes(int $length, [bool $crypto_strong])%Generate a pseudo-random string of bytes
 openssl_seal%int openssl_seal(string $data, string $sealed_data, array $env_keys, array $pub_key_ids, [string $method])%Seal (encrypt) data
 openssl_sign%bool openssl_sign(string $data, string $signature, mixed $priv_key_id, [mixed $signature_alg = OPENSSL_ALGO_SHA1])%Generate signature
+openssl_spki_export%string openssl_spki_export(string $spkac)%Exports a valid PEM formatted public key signed public key and challenge
+openssl_spki_export_challenge%string openssl_spki_export_challenge(string $spkac)%Exports the challenge assoicated with a signed public key and challenge
+openssl_spki_new%string openssl_spki_new(resource $privkey, string $challenge, [int $algorithm])%Generate a new signed public key and challenge
+openssl_spki_verify%string openssl_spki_verify(string $spkac)%Verifies a signed public key and challenge
 openssl_verify%int openssl_verify(string $data, string $signature, mixed $pub_key_id, [mixed $signature_alg = OPENSSL_ALGO_SHA1])%Verify signature
 openssl_x509_check_private_key%bool openssl_x509_check_private_key(mixed $cert, mixed $key)%Checks if a private key corresponds to a certificate
 openssl_x509_checkpurpose%int openssl_x509_checkpurpose(mixed $x509cert, int $purpose, [array $cainfo = array()], [string $untrustedfile])%Verifies if a certificate can be used for a particular purpose
 openssl_x509_export%bool openssl_x509_export(mixed $x509, string $output, [bool $notext])%Exports a certificate as a string
 openssl_x509_export_to_file%bool openssl_x509_export_to_file(mixed $x509, string $outfilename, [bool $notext])%Exports a certificate to file
+openssl_x509_fingerprint%bool openssl_x509_fingerprint(mixed $x509, [string $hash_algorithm = "sha1"], [bool $raw_output])%Calculates the fingerprint, or digest, of a given X.509 certificate
 openssl_x509_free%void openssl_x509_free(resource $x509cert)%Free certificate resource
 openssl_x509_parse%array openssl_x509_parse(mixed $x509cert, [bool $shortnames = true])%Parse an X509 certificate and return the information as an array
 openssl_x509_read%resource openssl_x509_read(mixed $x509certdata)%Parse an X.509 certificate and return a resource identifier for  it
@@ -2124,7 +2138,7 @@ parse_url%mixed parse_url(string $url, [int $component = -1])%Parse a URL and re
 passthru%void passthru(string $command, [int $return_var])%Execute an external program and display raw output
 password_get_info%array password_get_info(string $hash)%Returns information about the given hash
 password_hash%string password_hash(string $password, integer $algo, [array $options])%Creates a password hash
-password_needs_rehash%boolean password_needs_rehash(string $hash, string $algo, [string $options])%Checks if the given hash matches the given options
+password_needs_rehash%boolean password_needs_rehash(string $hash, integer $algo, [array $options])%Checks if the given hash matches the given options
 password_verify%boolean password_verify(string $password, string $hash)%Verifies that a password matches a hash
 pathinfo%mixed pathinfo(string $path, [int $options = PATHINFO_DIRNAME | PATHINFO_BASENAME | PATHINFO_EXTENSION | PATHINFO_FILENAME])%Returns information about a file path
 pclose%int pclose(resource $handle)%Closes process file pointer
@@ -2155,9 +2169,11 @@ pg_cancel_query%bool pg_cancel_query(resource $connection)%Cancel an asynchronou
 pg_client_encoding%string pg_client_encoding([resource $connection])%Gets the client encoding
 pg_close%bool pg_close([resource $connection])%Closes a PostgreSQL connection
 pg_connect%resource pg_connect(string $connection_string, [int $connect_type])%Open a PostgreSQL connection
+pg_connect_poll%int pg_connect_poll([resource $connection])%Poll the status of an in-progress asynchronous PostgreSQL connection   attempt.
 pg_connection_busy%bool pg_connection_busy(resource $connection)%Get connection is busy or not
 pg_connection_reset%bool pg_connection_reset(resource $connection)%Reset connection (reconnect)
 pg_connection_status%int pg_connection_status(resource $connection)%Get connection status
+pg_consume_input%bool pg_consume_input(resource $connection)%Reads input on the connection
 pg_convert%array pg_convert(resource $connection, string $table_name, array $assoc_array, [int $options])%Convert associative array values into suitable for SQL statement
 pg_copy_from%bool pg_copy_from(resource $connection, string $table_name, array $rows, [string $delimiter], [string $null_as])%Insert records into a table from an array
 pg_copy_to%array pg_copy_to(resource $connection, string $table_name, [string $delimiter], [string $null_as])%Copy a table to an array
@@ -2184,6 +2200,7 @@ pg_field_size%int pg_field_size(resource $result, int $field_number)%Returns the
 pg_field_table%mixed pg_field_table(resource $result, int $field_number, [bool $oid_only = false])%Returns the name or oid of the tables field
 pg_field_type%string pg_field_type(resource $result, int $field_number)%Returns the type name for the corresponding field number
 pg_field_type_oid%int pg_field_type_oid(resource $result, int $field_number)%Returns the type ID (OID) for the corresponding field number
+pg_flush%mixed pg_flush(resource $connection)%Flush outbound query data on the connection
 pg_free_result%resource pg_free_result(resource $result)%Free result memory
 pg_get_notify%array pg_get_notify(resource $connection, [int $result_type])%Gets SQL NOTIFY message
 pg_get_pid%int pg_get_pid(resource $connection)%Gets the backend's process ID
@@ -2205,7 +2222,7 @@ pg_lo_tell%int pg_lo_tell(resource $large_object)%Returns current seek position 
 pg_lo_truncate%bool pg_lo_truncate(resource $large_object, int $size)%Truncates a large object
 pg_lo_unlink%bool pg_lo_unlink(resource $connection, int $oid)%Delete a large object
 pg_lo_write%int pg_lo_write(resource $large_object, string $data, [int $len])%Write to a large object
-pg_meta_data%array pg_meta_data(resource $connection, string $table_name)%Get meta data for table
+pg_meta_data%array pg_meta_data(resource $connection, string $table_name, [bool $extended])%Get meta data for table
 pg_num_fields%int pg_num_fields(resource $result)%Returns the number of fields in a result
 pg_num_rows%int pg_num_rows(resource $result)%Returns the number of rows in a result
 pg_options%string pg_options([resource $connection])%Get the options associated with the connection
@@ -2228,6 +2245,7 @@ pg_send_query%bool pg_send_query(resource $connection, string $query)%Sends asyn
 pg_send_query_params%bool pg_send_query_params(resource $connection, string $query, array $params)%Submits a command and separate parameters to the server without waiting for the result(s).
 pg_set_client_encoding%int pg_set_client_encoding([resource $connection], string $encoding)%Set the client encoding
 pg_set_error_verbosity%int pg_set_error_verbosity([resource $connection], int $verbosity)%Determines the verbosity of messages returned by pg_last_error    and pg_result_error.
+pg_socket%resource pg_socket(resource $connection)%Get a read only handle to the socket underlying a PostgreSQL connection
 pg_trace%bool pg_trace(string $pathname, [string $mode = "w"], [resource $connection])%Enable tracing a PostgreSQL connection
 pg_transaction_status%int pg_transaction_status(resource $connection)%Returns the current in-transaction status of the server.
 pg_tty%string pg_tty([resource $connection])%Return the TTY name associated with the connection
@@ -2271,7 +2289,7 @@ posix_getrlimit%array posix_getrlimit()%Return info about system resource limits
 posix_getsid%int posix_getsid(int $pid)%Get the current sid of the process
 posix_getuid%int posix_getuid()%Return the real user ID of the current process
 posix_initgroups%bool posix_initgroups(string $name, int $base_group_id)%Calculate the group access list
-posix_isatty%bool posix_isatty(int $fd)%Determine if a file descriptor is an interactive terminal
+posix_isatty%bool posix_isatty(mixed $fd)%Determine if a file descriptor is an interactive terminal
 posix_kill%bool posix_kill(int $pid, int $sig)%Send a signal to a process
 posix_mkfifo%bool posix_mkfifo(string $pathname, int $mode)%Create a fifo special file (a named pipe)
 posix_mknod%bool posix_mknod(string $pathname, int $mode, [int $major], [int $minor])%Create a special or ordinary file (POSIX.1)
@@ -2283,7 +2301,7 @@ posix_setsid%int posix_setsid()%Make the current process a session leader
 posix_setuid%bool posix_setuid(int $uid)%Set the UID of the current process
 posix_strerror%string posix_strerror(int $errno)%Retrieve the system error message associated with the given errno
 posix_times%array posix_times()%Get process times
-posix_ttyname%string posix_ttyname(int $fd)%Determine terminal device name
+posix_ttyname%string posix_ttyname(mixed $fd)%Determine terminal device name
 posix_uname%array posix_uname()%Get system name
 pow%number pow(number $base, number $exp)%Exponential expression
 preg_filter%mixed preg_filter(mixed $pattern, mixed $replacement, mixed $subject, [int $limit = -1], [int $count])%Perform a regular expression search and replace
@@ -2398,6 +2416,7 @@ sem_get%resource sem_get(int $key, [int $max_acquire = 1], [int $perm = 0666], [
 sem_release%bool sem_release(resource $sem_identifier)%Release a semaphore
 sem_remove%bool sem_remove(resource $sem_identifier)%Remove a semaphore
 serialize%string serialize(mixed $value)%Generates a storable representation of a value
+session_abort%bool session_abort()%Discard session array changes and finish session
 session_cache_expire%int session_cache_expire([string $new_cache_expire])%Return current cache expire
 session_cache_limiter%string session_cache_limiter([string $cache_limiter])%Get and/or set the current cache limiter
 session_commit%void session_commit()%Alias of session_write_close
@@ -2412,9 +2431,10 @@ session_name%string session_name([string $name])%Get and/or set the current sess
 session_regenerate_id%bool session_regenerate_id([bool $delete_old_session = false])%Update the current session id with a newly generated one
 session_register%bool session_register(mixed $name, [mixed ...])%Register one or more global variables with the current session
 session_register_shutdown%void session_register_shutdown()%Session shutdown function
+session_reset%bool session_reset()%Re-initialize session array with original values
 session_save_path%string session_save_path([string $path])%Get and/or set the current session save path
 session_set_cookie_params%void session_set_cookie_params(int $lifetime, [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%Set the session cookie parameters
-session_set_save_handler%bool session_set_save_handler(callable $open, callable $close, callable $read, callable $write, callable $destroy, callable $gc, SessionHandlerInterface $sessionhandler, [bool $register_shutdown = true])%Sets user-level session storage functions
+session_set_save_handler%bool session_set_save_handler(callable $open, callable $close, callable $read, callable $write, callable $destroy, callable $gc, [callable $create_sid], SessionHandlerInterface $sessionhandler, [bool $register_shutdown = true])%Sets user-level session storage functions
 session_start%bool session_start()%Start new or resume existing session
 session_status%int session_status()%Returns the current session status
 session_unregister%bool session_unregister(string $name)%Unregister a global variable from the current session
@@ -2426,7 +2446,7 @@ set_file_buffer%void set_file_buffer()%Alias of stream_set_write_buffer
 set_include_path%string set_include_path(string $new_include_path)%Sets the include_path configuration option
 set_magic_quotes_runtime%bool set_magic_quotes_runtime(bool $new_setting)%Sets the current active configuration setting of magic_quotes_runtime
 set_socket_blocking%void set_socket_blocking()%Alias of stream_set_blocking
-set_time_limit%void set_time_limit(int $seconds)%Limits the maximum execution time
+set_time_limit%bool set_time_limit(int $seconds)%Limits the maximum execution time
 setcookie%bool setcookie(string $name, [string $value], [int $expire], [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%Send a cookie
 setlocale%string setlocale(int $category, array $locale, [string ...])%Set locale information
 setproctitle%void setproctitle(string $title)%Set the process title
@@ -2667,7 +2687,7 @@ stats_stat_paired_t%float stats_stat_paired_t(array $arr1, array $arr2)%Not docu
 stats_stat_percentile%float stats_stat_percentile(float $df, float $xnonc)%Not documented
 stats_stat_powersum%float stats_stat_powersum(array $arr, float $power)%Not documented
 stats_variance%float stats_variance(array $a, [bool $sample = false])%Returns the population variance
-str_getcsv%array str_getcsv(string $input, [string $delimiter = ','], [string $enclosure = '"'], [string $escape = '\\'])%Parse a CSV string into an array
+str_getcsv%array str_getcsv(string $input, [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\\"])%Parse a CSV string into an array
 str_ireplace%mixed str_ireplace(mixed $search, mixed $replace, mixed $subject, [int $count])%Case-insensitive version of str_replace.
 str_pad%string str_pad(string $input, int $pad_length, [string $pad_string = " "], [int $pad_type = STR_PAD_RIGHT])%Pad a string to a certain length with another string
 str_repeat%string str_repeat(string $input, int $multiplier)%Repeat a string
@@ -2706,7 +2726,7 @@ stream_get_meta_data%array stream_get_meta_data(resource $stream)%Retrieves head
 stream_get_transports%array stream_get_transports()%Retrieve list of registered socket transports
 stream_get_wrappers%array stream_get_wrappers()%Retrieve list of registered streams
 stream_is_local%bool stream_is_local(mixed $stream_or_url)%Checks if a stream is a local stream
-stream_notification_callback%callable stream_notification_callback(int $notification_code, int $severity, string $message, int $message_code, int $bytes_transferred, int $bytes_max)%A callback function for the notification context paramater
+stream_notification_callback%callable stream_notification_callback(int $notification_code, int $severity, string $message, int $message_code, int $bytes_transferred, int $bytes_max)%A callback function for the notification context parameter
 stream_register_wrapper%void stream_register_wrapper()%Alias of stream_wrapper_register
 stream_resolve_include_path%string stream_resolve_include_path(string $filename)%Resolve filename against the include path
 stream_select%int stream_select(array $read, array $write, array $except, int $tv_sec, [int $tv_usec])%Runs the equivalent of the select() system call on the given   arrays of streams with a timeout specified by tv_sec and tv_usec
@@ -2749,7 +2769,7 @@ strrpos%int strrpos(string $haystack, string $needle, [int $offset])%Find the po
 strspn%int strspn(string $subject, string $mask, [int $start], [int $length])%Finds the length of the initial segment of a string consisting   entirely of characters contained within a given mask.
 strstr%string strstr(string $haystack, mixed $needle, [bool $before_needle = false])%Find the first occurrence of a string
 strtok%string strtok(string $str, string $token)%Tokenize string
-strtolower%string strtolower(string $str)%Make a string lowercase
+strtolower%string strtolower(string $string)%Make a string lowercase
 strtotime%int strtotime(string $time, [int $now = time()])%Parse about any English textual datetime description into a Unix timestamp
 strtoupper%string strtoupper(string $string)%Make a string uppercase
 strtr%string strtr(string $str, string $from, string $to, array $replace_pairs)%Translate characters or replace substrings
@@ -3024,6 +3044,19 @@ unregister_tick_function%void unregister_tick_function(string $function_name)%De
 unserialize%mixed unserialize(string $str)%Creates a PHP value from a stored representation
 unset%void unset(mixed $var, [mixed ...])%Unset a given variable
 untaint%bool untaint(string $string, [string ...])%Untaint strings
+uopz_backup%void uopz_backup(string $class, string $function)%Backup a function
+uopz_compose%void uopz_compose(string $name, array $classes, [array $methods], [array $properties], [int $flags])%Compose a class
+uopz_copy%Closure uopz_copy(string $class, string $function)%Copy a function
+uopz_delete%void uopz_delete(string $class, string $function)%Delete a function
+uopz_extend%void uopz_extend(string $class, string $parent)%Extend a class at runtime
+uopz_flags%int uopz_flags(string $class, string $function, int $flags)%Get or set flags on function or class
+uopz_function%void uopz_function(string $class, string $function, Closure $handler, [int $modifiers])%Creates a function at runtime
+uopz_implement%void uopz_implement(string $class, string $interface)%Implements an interface at runtime
+uopz_overload%void uopz_overload(int $opcode, Callable $callable)%Overload a VM opcode
+uopz_redefine%void uopz_redefine(string $class, string $constant, mixed $value)%Redefine a constant
+uopz_rename%void uopz_rename(string $class, string $function, string $rename)%Rename a function at runtime
+uopz_restore%void uopz_restore(string $class, string $function)%Restore a previously backed up function
+uopz_undefine%void uopz_undefine(string $class, string $constant)%Undefine a constant
 urldecode%string urldecode(string $str)%Decodes URL-encoded string
 urlencode%string urlencode(string $str)%URL-encodes string
 use_soap_error_handler%bool use_soap_error_handler([bool $handler = true])%Set whether to use the SOAP error handler
@@ -3084,7 +3117,7 @@ xml_get_error_code%int xml_get_error_code(resource $parser)%Get XML parser error
 xml_parse%int xml_parse(resource $parser, string $data, [bool $is_final = false])%Start parsing an XML document
 xml_parse_into_struct%int xml_parse_into_struct(resource $parser, string $data, array $values, [array $index])%Parse XML data into an array structure
 xml_parser_create%resource xml_parser_create([string $encoding])%Create an XML parser
-xml_parser_create_ns%resource xml_parser_create_ns([string $encoding], [string $separator = ':'])%Create an XML parser with namespace support
+xml_parser_create_ns%resource xml_parser_create_ns([string $encoding], [string $separator = ":"])%Create an XML parser with namespace support
 xml_parser_free%bool xml_parser_free(resource $parser)%Free an XML parser
 xml_parser_get_option%mixed xml_parser_get_option(resource $parser, int $option)%Get options from an XML parser
 xml_parser_set_option%bool xml_parser_set_option(resource $parser, int $option, mixed $value)%Set options in an XML parser
@@ -3154,25 +3187,6 @@ xmlwriter_write_element%bool xmlwriter_write_element(string $name, [string $cont
 xmlwriter_write_element_ns%bool xmlwriter_write_element_ns(string $prefix, string $name, string $uri, [string $content], resource $xmlwriter)%Write full namespaced element tag
 xmlwriter_write_pi%bool xmlwriter_write_pi(string $target, string $content, resource $xmlwriter)%Writes a PI
 xmlwriter_write_raw%bool xmlwriter_write_raw(string $content, resource $xmlwriter)%Write a raw XML text
-xslt_backend_info%string xslt_backend_info()%Returns the information on the compilation settings of the backend
-xslt_backend_name%string xslt_backend_name()%Returns the name of the backend
-xslt_backend_version%string xslt_backend_version()%Returns the version number of Sablotron
-xslt_create%resource xslt_create()%Create a new XSLT processor
-xslt_errno%int xslt_errno(resource $xh)%Returns an error number
-xslt_error%string xslt_error(resource $xh)%Returns an error string
-xslt_free%void xslt_free(resource $xh)%Free XSLT processor
-xslt_getopt%int xslt_getopt(resource $processor)%Get options on a given xsl processor
-xslt_process%mixed xslt_process(resource $xh, string $xmlcontainer, string $xslcontainer, [string $resultcontainer], [array $arguments], [array $parameters])%Perform an XSLT transformation
-xslt_set_base%void xslt_set_base(resource $xh, string $uri)%Set the base URI for all XSLT transformations
-xslt_set_encoding%void xslt_set_encoding(resource $xh, string $encoding)%Set the encoding for the parsing of XML documents
-xslt_set_error_handler%void xslt_set_error_handler(resource $xh, mixed $handler)%Set an error handler for a XSLT processor
-xslt_set_log%void xslt_set_log(resource $xh, [mixed $log])%Set the log file to write log messages to
-xslt_set_object%bool xslt_set_object(resource $processor, object $obj)%Sets the object in which to resolve callback functions
-xslt_set_sax_handler%void xslt_set_sax_handler(resource $xh, array $handlers)%Set SAX handlers for a XSLT processor
-xslt_set_sax_handlers%void xslt_set_sax_handlers(resource $processor, array $handlers)%Set the SAX handlers to be called when the XML document gets processed
-xslt_set_scheme_handler%void xslt_set_scheme_handler(resource $xh, array $handlers)%Set Scheme handlers for a XSLT processor
-xslt_set_scheme_handlers%void xslt_set_scheme_handlers(resource $xh, array $handlers)%Set the scheme handlers for the XSLT processor
-xslt_setopt%mixed xslt_setopt(resource $processor, int $newmask)%Set options on a given XSLT processor
 zend_logo_guid%string zend_logo_guid()%Gets the Zend guid
 zend_thread_id%int zend_thread_id()%Returns a unique identifier for the current thread
 zend_version%string zend_version()%Gets the version of the current Zend engine

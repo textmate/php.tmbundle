@@ -1,7 +1,3 @@
-AMQPChannel%object AMQPChannel(AMQPConnection $amqp_connection)%Crea una instancia de un objecto AMQPChannel
-AMQPConnection%object AMQPConnection([array $credentials = array()])%Crear una instancia de Conexión de PCMA (AMQP)
-AMQPExchange%object AMQPExchange(AMQPChannel $amqp_channel)%Crea una instancia de AMQPExchange
-AMQPQueue%object AMQPQueue(AMQPChannel $amqp_channel)%Crea una instancia de un objeto AMQPQueue
 APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Construye un objeto iterador APCIterator
 AppendIterator%object AppendIterator()%Construye un AppendIterator
 ArrayIterator%object ArrayIterator([mixed $array = array()], [int $flags])%Construye un ArrayIterator
@@ -38,7 +34,7 @@ EvIdle%object EvIdle(callable $callback, [mixed $data], [int $priority])%Constru
 EvIo%object EvIo(mixed $fd, int $events, callable $callback, [mixed $data], [int $priority])%Constructs EvIo watcher object
 EvLoop%object EvLoop([int $flags], [mixed $data = NULL], [double $io_interval = 0.0], [double $timeout_interval = 0.0])%Constructs the event loop object
 EvPeriodic%object EvPeriodic(double $offset, string $interval, callable $reschedule_cb, callable $callback, [mixed $data], [int $priority])%Constructs EvPeriodic watcher object
-EvPrepare%object EvPrepare(string $callback, [string $data], [string $priority])%Constructs EvPrepare watcher object
+EvPrepare%object EvPrepare(string $callback, [string $data], [string $priority])%Construye un objeto observador de EvPrepare
 EvSignal%object EvSignal(int $signum, callable $callback, [mixed $data], [int $priority])%Constructs EvPeriodic watcher object
 EvStat%object EvStat(string $path, double $interval, callable $callback, [mixed $data], [int $priority])%Constructs EvStat watcher object
 EvTimer%object EvTimer(double $after, double $repeat, callable $callback, [mixed $data], [int $priority])%Constructs an EvTimer watcher object
@@ -49,14 +45,14 @@ EventBuffer%object EventBuffer()%Construye el objeto EventBuffer
 EventBufferEvent%object EventBufferEvent(EventBase $base, [mixed $socket], [int $options], [callable $readcb], [callable $writecb], [callable $eventcb])%Constructs EventBufferEvent object
 EventConfig%object EventConfig()%Constructs EventConfig object
 EventDnsBase%object EventDnsBase(EventBase $base, bool $initialize)%Constructs EventDnsBase object
-EventHttp%object EventHttp(EventBase $base)%Constructs EventHttp object(the HTTP server)
-EventHttpConnection%object EventHttpConnection(EventBase $base, EventDnsBase $dns_base, string $address, int $port)%Constructs EventHttpConnection object
+EventHttp%object EventHttp(EventBase $base, [EventSslContext $ctx])%Constructs EventHttp object(the HTTP server)
+EventHttpConnection%object EventHttpConnection(EventBase $base, EventDnsBase $dns_base, string $address, int $port, [EventSslContext $ctx])%Constructs EventHttpConnection object
 EventHttpRequest%object EventHttpRequest(callable $callback, [mixed $data])%Constructs EventHttpRequest object
 EventListener%object EventListener(EventBase $base, callable $cb, mixed $data, int $flags, int $backlog, mixed $target)%Creates new connection listener associated with an event base
 EventSslContext%object EventSslContext(string $method, string $options)%Constructs an OpenSSL context for use with Event classes
 EventUtil%object EventUtil()%The abstract constructor
 Exception%object Exception([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new Exception
-FANNConnection%object FANNConnection(int $from_neuron, int $to_neuron, float $weight)%The connection constructor
+FANNConnection%object FANNConnection(int $from_neuron, int $to_neuron, float $weight)%El constructor de la conexión
 FilesystemIterator%object FilesystemIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS])%Construye un nuevo iterador filesystem
 FilterIterator%object FilterIterator(Iterator $iterator)%Construye un filterIterator
 FrenchToJD%int FrenchToJD(int $month, int $day, int $year)%Convierte una fecha desde el Calendario Republicano Francés a la Fecha Juliana
@@ -77,9 +73,9 @@ ImagickDraw%object ImagickDraw()%El constructor ImagickDraw
 ImagickPixel%object ImagickPixel([string $color])%El constructor ImagickPixel
 ImagickPixelIterator%object ImagickPixelIterator(Imagick $wand)%El constructor ImagickPixelIterator
 InfiniteIterator%object InfiniteIterator(Iterator $iterator)%Construye un InfiniteIterator
-IntlBreakIterator%object IntlBreakIterator()%Private constructor for disallowing instantiation
+IntlBreakIterator%object IntlBreakIterator()%Constructor privado para denegar la instanciación
 IntlCalendar%object IntlCalendar()%Constructor privado para no permitir la creación de instancias
-IntlRuleBasedBreakIterator%object IntlRuleBasedBreakIterator(string $rules, [string $areCompiled])%Create iterator from ruleset
+IntlRuleBasedBreakIterator%object IntlRuleBasedBreakIterator(string $rules, [string $areCompiled])%Crear un iterador desde un conjunto de reglas
 InvalidArgumentException%object InvalidArgumentException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new InvalidArgumentException
 IteratorIterator%object IteratorIterator(Traversable $iterator)%Crear un iterador de cualquier cosa que se pueda recorrer
 JDDayOfWeek%mixed JDDayOfWeek(int $julianday, [int $mode = CAL_DOW_DAYNO])%Devuelve el día de la semana
@@ -96,21 +92,26 @@ LogicException%object LogicException([string $message = ""], [int $code = 0], [E
 Lua%object Lua(string $lua_script_file)%Constructor de Lua
 Memcached%object Memcached([string $persistent_id])%Crear una instancia de Memcached
 Mongo%object Mongo([string $server], [array $options])%El propósito de __construct
-MongoBinData%object MongoBinData(string $data, [int $type = 2])%Crea un nuevo objeto de datos binarios
-MongoClient%object MongoClient([string $server = "mongodb://localhost:27017"], [array $options = )])%Crea un nuevo objeto de conexión a base de datos
+MongoBinData%object MongoBinData(string $data, [int $type])%Crea un nuevo objeto de datos binarios
+MongoClient%object MongoClient([string $server = "mongodb://localhost:27017"], [array $options = )], [array $driver_options])%Crea un nuevo objeto de conexión a base de datos
 MongoCode%object MongoCode(string $code, [array $scope = array()])%Crea un nuevo objeto de código
 MongoCollection%object MongoCollection(MongoDB $db, string $name)%Crea una nueva colección
+MongoCommandCursor%object MongoCommandCursor(MongoClient $connection, string $ns, [array $command = array()])%Crear un nuevo cursor de comando
 MongoCursor%object MongoCursor(MongoClient $connection, string $ns, [array $query = array()], [array $fields = array()])%Crea un nuevo cursor
 MongoDB%object MongoDB(MongoClient $conn, string $name)%Crea una nueva base de datos
 MongoDate%object MongoDate([int $sec = time()], [int $usec])%Crea un nuevo objeto fecha
+MongoDeleteBatch%object MongoDeleteBatch(MongoCollection $collection, [array $write_options])%Descripción
 MongoGridFS%object MongoGridFS(MongoDB $db, [string $prefix = "fs"], [mixed $chunks = "fs"])%Crea una nueva colección de ficheros
 MongoGridFSCursor%object MongoGridFSCursor(MongoGridFS $gridfs, resource $connection, string $ns, array $query, array $fields)%Crea un nuevo cursor
 MongoGridfsFile%object MongoGridfsFile(MongoGridFS $gridfs, array $file)%Crea un nuevo fichero GridFS
 MongoId%object MongoId([string $id])%Crea un nuevo id
+MongoInsertBatch%object MongoInsertBatch(MongoCollection $collection, [array $write_options])%Descripción
 MongoInt32%object MongoInt32(string $value)%Crea un nuevo entero de 32 bits
 MongoInt64%object MongoInt64(string $value)%Crea un nuevo entero de 64 bits
 MongoRegex%object MongoRegex(string $regex)%Crea una nueva expresión regular
 MongoTimestamp%object MongoTimestamp([int $sec = time()], [int $inc])%Crea un nuevo timestamp
+MongoUpdateBatch%object MongoUpdateBatch(MongoCollection $collection, [array $write_options])%Descripción
+MongoWriteBatch%object MongoWriteBatch(MongoCollection $collection, [string $batch_type], [array $write_options])%Descripción
 MultipleIterator%object MultipleIterator([int $flags = MultipleIterator::MIT_NEED_ALL|MultipleIterator::MIT_KEYS_NUMERIC])%Construye un nuevo MultipleIterator
 MysqlndUhConnection%object MysqlndUhConnection()%The __construct purpose
 MysqlndUhPreparedStatement%object MysqlndUhPreparedStatement()%The __construct purpose
@@ -118,11 +119,12 @@ NoRewindIterator%object NoRewindIterator(Iterator $iterator)%Construye un NoRewi
 OutOfBoundsException%object OutOfBoundsException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfBoundsException
 OutOfRangeException%object OutOfRangeException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OutOfRangeException
 OverflowException%object OverflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new OverflowException
-PDO%object PDO(string $dsn, [string $username], [string $password], [array $driver_options])%Crea una instancia de PDO que representa una conexión a una base de datos
+PDO%object PDO(string $dsn, [string $username], [string $password], [array $options])%Crea una instancia de PDO que representa una conexión a una base de datos
 ParentIterator%object ParentIterator(RecursiveIterator $iterator)%Construye un ParentIterator
 Phar%object Phar(string $fname, [int $flags], [string $alias])%Construir un objeto de archivo Phar
 PharData%object PharData(string $fname, [int $flags], [string $alias], [int $format])%Construir un objeto de archivo tar o zip no ejecutable
 PharFileInfo%object PharFileInfo(string $entry)%Construir un objeto de entrada Phar
+Pool%object Pool(integer $size, string $class, [array $ctor])%Creates a new Pool of Workers
 QuickHashIntHash%object QuickHashIntHash(int $size, [int $options])%Crea un nuevo objeto QuickHashIntHash
 QuickHashIntSet%object QuickHashIntSet(int $size, [int $options])%Crea un nuevo objeto QuickHashIntSet
 QuickHashIntStringHash%object QuickHashIntStringHash(int $size, [int $options])%Crea un nuevo objeto QuickHashIntStringHash
@@ -176,11 +178,15 @@ SplTempFileObject%object SplTempFileObject([int $max_memory])%Construir un nuevo
 SplType%object SplType([mixed $initial_value], [bool $strict])%Crea un valor nuevo de algún tipo de dato
 Spoofchecker%object Spoofchecker()%Constructor
 Swish%object Swish(string $index_names)%Construye un nuevo objeto Swish
+SyncEvent%object SyncEvent([string $name], [bool $manual])%Constructs a new SyncEvent object
+SyncMutex%object SyncMutex([string $name])%Constructs a new SyncMutex object
+SyncReaderWriter%object SyncReaderWriter([string $name], [bool $autounlock])%Constructs a new SyncReaderWriter object
+SyncSemaphore%object SyncSemaphore([string $name], [integer $initialval], [bool $autounlock])%Constructs a new SyncSemaphore object
 TokyoTyrant%object TokyoTyrant([string $host], [int $port = TokyoTyrant::RDBDEF_PORT], [array $options])%Construct a new TokyoTyrant object
 TokyoTyrantIterator%object TokyoTyrantIterator(mixed $object)%Construct an iterator
 TokyoTyrantQuery%object TokyoTyrantQuery(TokyoTyrantTable $table)%Construct a new query
 Transliterator%object Transliterator()%Constructor privado para denegar la instanciación
-UConverter%object UConverter([string $destination_encoding], [string $source_encoding])%Create UConverter object
+UConverter%object UConverter([string $destination_encoding], [string $source_encoding])%Crea un objeto UConverter
 UnderflowException%object UnderflowException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnderflowException
 UnexpectedValueException%object UnexpectedValueException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new UnexpectedValueException
 V8Js%object V8Js([string $object_name = "PHP"], [array $variables = array()], [array $extensions = array()], [bool $report_uncaught_exceptions])%Construct a new V8Js object
@@ -202,7 +208,7 @@ Yaf_Registry%object Yaf_Registry()%Yaf_Registry implementa singleton
 Yaf_Request_Http%object Yaf_Request_Http()%El propósito de __construct
 Yaf_Request_Simple%object Yaf_Request_Simple()%El propósito de __construct
 Yaf_Response_Abstract%object Yaf_Response_Abstract()%El propósito de __construct
-Yaf_Route_Map%object Yaf_Route_Map([string $controller_prefer = false], [string $delimiter = ''])%El propósito de __construct
+Yaf_Route_Map%object Yaf_Route_Map([string $controller_prefer = false], [string $delimiter = ""])%El propósito de __construct
 Yaf_Route_Regex%object Yaf_Route_Regex(string $match, array $route, [array $map], [array $verify], [string $reverse])%Constructor de Yaf_Route_Regex
 Yaf_Route_Rewrite%object Yaf_Route_Rewrite(string $match, array $route, [array $verify])%Constructor de Yaf_Route_Rewrite
 Yaf_Route_Simple%object Yaf_Route_Simple(string $module_name, string $controller_name, string $action_name)%El constructor de la clase Yaf_Route_Simple
@@ -211,8 +217,8 @@ Yaf_Router%object Yaf_Router()%El constructor de Yaf_Router
 Yaf_Session%object Yaf_Session()%El propósito de __construct
 Yaf_View_Simple%object Yaf_View_Simple(string $tempalte_dir, [array $options])%El constructor de Yaf_View_Simple
 Yar_Client%object Yar_Client(string $url)%Create a client
-Yar_Server%object Yar_Server(Object $obj)%Register a server
-ZMQ%object ZMQ()%ZMQ constructor
+Yar_Server%object Yar_Server(Object $obj)%Registrar un servidor
+ZMQ%object ZMQ()%El constructor de ZMQ
 ZMQContext%object ZMQContext([integer $io_threads = 1], [boolean $is_persistent = true])%Construct a new ZMQContext object
 ZMQDevice%object ZMQDevice(ZMQSocket $frontend, ZMQSocket $backend, [ZMQSocket $listener])%Construct a new device
 ZMQSocket%object ZMQSocket(ZMQContext $context, int $type, [string $persistent_id = null], [callback $on_new_socket = null])%Construct a new ZMQSocket
@@ -223,15 +229,6 @@ acos%float acos(float $arg)%Arco coseno
 acosh%float acosh(float $arg)%Arco coseno hiperbólico
 addcslashes%string addcslashes(string $str, string $charlist)%Escapa una cadena al estilo de C
 addslashes%string addslashes(string $str)%Escapa un string con barras invertidas
-aggregate%void aggregate(object $object, string $class_name)%Dynamic class and object aggregation of methods and properties
-aggregate_info%array aggregate_info(object $object)%Gets aggregation information for a given object
-aggregate_methods%void aggregate_methods(object $object, string $class_name)%Dynamic class and object aggregation of methods
-aggregate_methods_by_list%void aggregate_methods_by_list(object $object, string $class_name, array $methods_list, [bool $exclude = false])%Selective dynamic class methods aggregation to an object
-aggregate_methods_by_regexp%void aggregate_methods_by_regexp(object $object, string $class_name, string $regexp, [bool $exclude = false])%Selective class methods aggregation to an object using a regular   expression
-aggregate_properties%void aggregate_properties(object $object, string $class_name)%Dynamic aggregation of  class properties to an object
-aggregate_properties_by_list%void aggregate_properties_by_list(object $object, string $class_name, array $properties_list, [bool $exclude = false])%Selective dynamic class properties aggregation to an object
-aggregate_properties_by_regexp%void aggregate_properties_by_regexp(object $object, string $class_name, string $regexp, [bool $exclude = false])%Selective class properties aggregation to an object using a regular   expression
-aggregation_info%void aggregation_info()%Alias de aggregate_info
 apache_child_terminate%bool apache_child_terminate()%Finaliza un proceso de Apache después de esta llamada
 apache_get_modules%array apache_get_modules()%Obtiene una lista de los módulos cargados en el servidor Apache
 apache_get_version%string apache_get_version()%Obtiene la versión del servidor Apache
@@ -275,42 +272,42 @@ array_diff_ukey%array array_diff_ukey(array $array1, array $array2, [array ...],
 array_fill%array array_fill(int $start_index, int $num, mixed $value)%Llena un array con valores
 array_fill_keys%array array_fill_keys(array $keys, mixed $value)%Llena un array con valores, especificando las keys
 array_filter%array array_filter(array $array, [callable $callback])%Filtra elementos de un array usando una función de devolución de llamada
-array_flip%string array_flip(array $trans)%Intercambia todas las keys con sus valores asociados en un array
+array_flip%string array_flip(array $array)%Intercambia todas las claves de un array con sus valores asociados
 array_intersect%array array_intersect(array $array1, array $array2, [array ...])%Calcula la intersección de arrays
 array_intersect_assoc%array array_intersect_assoc(array $array1, array $array2, [array ...])%Calcula la intersección de arrays con un chequeo adicional de índices
-array_intersect_key%array array_intersect_key(array $array1, array $array2, [array ...])%Calcula la intersección de arrays usando las keys para la comparación
+array_intersect_key%array array_intersect_key(array $array1, array $array2, [array ...])%Calcula la intersección de arrays usando sus claves para la comparación
 array_intersect_uassoc%array array_intersect_uassoc(array $array1, array $array2, [array ...], callable $key_compare_func)%Calcula la intersección de arrays con un chequeo adicional de índices que se realiza por una función de devolución de llamada
-array_intersect_ukey%array array_intersect_ukey(array $array1, array $array2, [array ...], callable $key_compare_func)%Calcula la intersección de arrays usando una función de devolución de llamada en las keys para la comparación
+array_intersect_ukey%array array_intersect_ukey(array $array1, array $array2, [array ...], callable $key_compare_func)%Calcula la intersección de arrays usando una función de devolución de llamada en las claves para la comparación
 array_key_exists%bool array_key_exists(mixed $key, array $array)%Verifica si el índice o clave dada existe en el array
 array_keys%array array_keys(array $array, [mixed $search_value], [bool $strict = false])%Devuelve todas las claves de un array o un subconjunto de claves de un array
-array_map%array array_map(callable $callback, array $array1, [array ...])%Aplica la llamada de retorno especificada a los elementos de cada array
+array_map%array array_map(callable $callback, array $array1, [array ...])%Aplica la retrollamada especificada a los elementos de cada array
 array_merge%array array_merge(array $array1, [array ...])%Combina dos o más arrays
 array_merge_recursive%array array_merge_recursive(array $array1, [array ...])%Une dos o más arrays recursivamente
-array_multisort%string array_multisort(array $arr, [mixed $arg = SORT_REGULAR], [mixed ...])%Ordena múltiples arrays, o arrays multi-dimensionales
+array_multisort%string array_multisort(array $array1, [mixed $array1_sort_order = SORT_ASC], [mixed $array1_sort_flags = SORT_REGULAR], [mixed ...])%Ordena múltiples arrays, o arrays multidimensionales
 array_pad%array array_pad(array $array, int $size, mixed $value)%Rellena un array a la longitud especificada con un valor
 array_pop%array array_pop(array $array)%Extrae el último elemento del final del array
 array_product%number array_product(array $array)%Calcula el producto de los valores de un array
-array_push%int array_push(array $array, mixed $var, [mixed ...])%Inserta uno o más elementos al final de un array
-array_rand%mixed array_rand(array $input, [int $num_req = 1])%Selecciona una o más entradas aleatorias de un array
-array_reduce%mixed array_reduce(array $input, callable $function, [mixed $initial])%Reduce iterativamente una matriz a un solo valor usando una función llamada de retorno
-array_replace%array array_replace(array $array, array $array1, [array ...])%Reemplaza los elementos de los arrays pasados en el primer array
+array_push%int array_push(array $array, mixed $value1, [mixed ...])%Inserta uno o más elementos al final de un array
+array_rand%mixed array_rand(array $array, [int $num = 1])%Seleccionar una o más entradas aleatorias de un array
+array_reduce%mixed array_reduce(array $array, callable $callback, [mixed $initial])%Reduce iterativamente un array a un solo valor usando una función llamada de retorno
+array_replace%array array_replace(array $array1, array $array2, [array ...])%Reemplaza los elementos de los arrays pasados en el primer array
 array_replace_recursive%array array_replace_recursive(array $array1, array $array2, [array ...])%Reemplaza los elementos de los arrays pasados al primer array de forma recursiva
 array_reverse%array array_reverse(array $array, [bool $preserve_keys = false])%Devuelve un array con los elementos en orden inverso
 array_search%mixed array_search(mixed $needle, array $haystack, [bool $strict = false])%Busca un valor determinado en un array y devuelve la clave correspondiente en caso de éxito
 array_shift%array array_shift(array $array)%Quita un elemento del principio del array
 array_slice%array array_slice(array $array, int $offset, [int $length], [bool $preserve_keys = false])%Extrae una parte de un array
 array_splice%array array_splice(array $input, int $offset, [int $length], [mixed $replacement = array()])%Elimina una porción del array y la reemplaza con algo
-array_sum%number array_sum(array $array)%Calcula la suma de los valores en un array
+array_sum%number array_sum(array $array)%Calcular la suma de los valores de un array
 array_udiff%array array_udiff(array $array1, array $array2, [array ...], callable $value_compare_func)%Computa la diferencia entre arrays, usando una llamada de   retorno para la comparación de datos
 array_udiff_assoc%array array_udiff_assoc(array $array1, array $array2, [array ...], callable $value_compare_func)%Computa la diferencia entre arrays con una comprobación de indices adicional, compara la información mediante una función de llamada de retorno
 array_udiff_uassoc%array array_udiff_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%Computa la diferencia entre arrays con una verificación de índices adicional, compara la información y los índices mediante una función de llamada de retorno
 array_uintersect%array array_uintersect(array $array1, array $array2, [array ...], callable $value_compare_func)%Computa una intersección de arrays, compara la información mediante una función de llamada de retorno
-array_uintersect_assoc%array array_uintersect_assoc(array $array1, array $array2, [array ...], callable $data_compare_func)%Computa la intersección de arrays con una comprobación de índices adicional, compara la información mediante una función de llamada de retorno
-array_uintersect_uassoc%array array_uintersect_uassoc(array $array1, array $array2, [array ...], callable $data_compare_func, callable $key_compare_func)%Computa la intersección de arrays con una comprobación de índices adicional, compara la información y los índices mediante funciones de llamada de retorno
+array_uintersect_assoc%array array_uintersect_assoc(array $array1, array $array2, [array ...], callable $value_compare_func)%Calcula la intersección de arrays con una comprobación de índices adicional, compara la información mediante una función de retrollamada
+array_uintersect_uassoc%array array_uintersect_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%Calcula la intersección de arrays con una comprobación de índices adicional, compara la información y los índices mediante funciones de retrollamada
 array_unique%array array_unique(array $array, [int $sort_flags = SORT_STRING])%Elimina valores duplicados de un array
 array_unshift%int array_unshift(array $array, mixed $value1, [mixed ...])%Añadir al inicio de un array uno a más elementos
 array_values%array array_values(array $array)%Devuelve todos los valores de un array
-array_walk%bool array_walk(array $array, callable $callback, [mixed $userdata])%Aplicar una función de usuario a cada miembro de un array
+array_walk%bool array_walk(array $array, callable $callback, [mixed $userdata])%Aplicar una función proporcionada por el usuario a cada miembro de un array
 array_walk_recursive%bool array_walk_recursive(array $array, callable $callback, [mixed $userdata])%Aplicar una función de usuario recursivamente a cada miembro de un array
 arsort%bool arsort(array $array, [int $sort_flags = SORT_REGULAR])%Ordena un array en orden inverso y mantiene la asociación de índices
 asin%float asin(float $arg)%Arco seno
@@ -324,17 +321,17 @@ atanh%float atanh(float $arg)%Arco tangente hiperbólica
 base64_decode%string base64_decode(string $data, [bool $strict = false])%Decodifica datos codificados con MIME base64
 base64_encode%string base64_encode(string $data)%Codifica datos con MIME base64
 base_convert%string base_convert(string $number, int $frombase, int $tobase)%Convertir un número entre bases arbitrarias
-basename%string basename(string $path, [string $suffix])%Devuelve el componente de nombre de rastreo de la ruta
+basename%string basename(string $path, [string $suffix])%Devuelve el último componente de nombre de una ruta
 bcadd%string bcadd(string $left_operand, string $right_operand, [int $scale])%Añade dos números de precisión arbitrária
-bccomp%int bccomp(string $left_operand, string $right_operand, [int $scale])%Compara dos números de precisión arbitraria
-bcdiv%string bcdiv(string $left_operand, string $right_operand, [int $scale])%Divide dos números de precisión arbitraria
+bccomp%int bccomp(string $left_operand, string $right_operand, [int $scale = int])%Compara dos números de precisión arbitraria
+bcdiv%string bcdiv(string $left_operand, string $right_operand, [int $scale = int])%Divide dos números de precisión arbitraria
 bcmod%string bcmod(string $left_operand, string $modulus)%Obtiene el módulo de un número de precisión arbitraria
-bcmul%string bcmul(string $left_operand, string $right_operand, [int $scale])%Multiplica dos números de precisión arbitraria
+bcmul%string bcmul(string $left_operand, string $right_operand, [int $scale = int])%Multiplica dos números de precisión arbitraria
 bcpow%string bcpow(string $left_operand, string $right_operand, [int $scale])%Elevar un número de precisión arbitraria a otro
-bcpowmod%string bcpowmod(string $left_operand, string $right_operand, string $modulus, [int $scale])%Eleva un número de precisión arbitraria a otro, reducido por un módulo especificado
+bcpowmod%string bcpowmod(string $left_operand, string $right_operand, string $modulus, [int $scale = int])%Eleva un número de precisión arbitraria a otro, reducido por un módulo especificado
 bcscale%bool bcscale(int $scale)%Establece los parametros de scale por defecto para todas las funciones matemáticas de bc
 bcsqrt%string bcsqrt(string $operand, [int $scale])%Obtiene la raiz cuadrada de un número de precisión arbitraria
-bcsub%string bcsub(string $left_operand, string $right_operand, [int $scale])%Resta un número de precisión arbitraria de otro
+bcsub%string bcsub(string $left_operand, string $right_operand, [int $scale = int])%Resta un número de precisión arbitraria de otro
 bin2hex%string bin2hex(string $str)%Convierte datos binarios en su representación hexadecimal
 bind_textdomain_codeset%string bind_textdomain_codeset(string $domain, string $codeset)%Especifica el juego de caracteres en que los mensajes del catálogo del dominio serán devueltos
 bindec%float bindec(string $binary_string)%Binario a decimal
@@ -366,7 +363,7 @@ chdir%bool chdir(string $directory)%Cambia de directorio
 checkdate%bool checkdate(int $month, int $day, int $year)%Validar una fecha gregoriana
 checkdnsrr%bool checkdnsrr(string $host, [string $type = "MX"])%Comprueba registros DNS correspondientes a un nombre de host de Internet dado o dirección IP
 chgrp%bool chgrp(string $filename, mixed $group)%Cambia el grupo del archivo
-chmod%bool chmod(string $filename, int $mode)%Cambia el modo de archivo
+chmod%bool chmod(string $filename, int $mode)%Cambia el modo de un fichero
 chop%void chop()%Alias de rtrim
 chown%bool chown(string $filename, mixed $user)%Cambia el propietario del archivo
 chr%string chr(int $ascii)%Devuelve un caracter específico
@@ -395,26 +392,15 @@ collator_set_attribute%bool collator_set_attribute(int $attr, int $val, Collator
 collator_set_strength%bool collator_set_strength(int $strength, Collator $coll)%Establecer la fuerza (strength) de un cotejo
 collator_sort%bool collator_sort(array $arr, [int $sort_flag], Collator $coll)%Ordenar un array usando cotejador especificado
 collator_sort_with_sort_keys%bool collator_sort_with_sort_keys(array $arr, Collator $coll)%Ordenar un array usando el cotejador y las claves de ordenación especificados
-com_addref%void com_addref()%Aumenta el contador de referencia de componentes [obsoleto]
 com_create_guid%string com_create_guid()%Generar un identificador único globalmente (GUID)
 com_event_sink%bool com_event_sink(variant $comobject, object $sinkobject, [mixed $sinkinterface])%Conectar eventos de un objeto COM a un objeto PHP
-com_get%void com_get()%Obtiene el valor de una propiedad de un Componente COM Component [obsoleto]
 com_get_active_object%variant com_get_active_object(string $progid, [int $code_page])%Devuelve un gestor a una instancia de un objeto COM ya en ejecución
-com_invoke%void com_invoke()%Llama a un método de un componente COM [obsoleto]
-com_isenum%bool com_isenum(variant $com_module)%Indica si un objeto COM tiene una interfaz IEnumVariant para iteraciones [obsoleto]
-com_load%void com_load()%Crea una nueva referencia a un componente COM [obsoleto]
 com_load_typelib%bool com_load_typelib(string $typelib_name, [bool $case_insensitive = true])%Carga una biblioteca de tipos
 com_message_pump%bool com_message_pump([int $timeoutms])%Procesar mensajes COM, durmiendo hata timeoutms milisegundos
 com_print_typeinfo%bool com_print_typeinfo(object $comobject, [string $dispinterface], [bool $wantsink = false])%Imprime una definición de clase de PHP para una interfaz despachable
-com_propget%void com_propget()%Alias de com_get
-com_propput%void com_propput()%Alias de com_set
-com_propset%void com_propset()%Alias de com_set
-com_release%void com_release()%Disminuye el contador de referencia de componentes [obsoleto]
-com_set%void com_set()%Asigna un valor a una propiedad de un componente COM
 compact%array compact(mixed $varname1, [mixed ...])%Crear un array que contiene variables y sus valores
 connection_aborted%int connection_aborted()%Verifica si el cliente se desconectó
 connection_status%int connection_status()%Devuelve el campo de bits de status de conexión
-connection_timeout%int connection_timeout()%Verificar si el script ha alcanzado su tiempo de espera máximo
 constant%mixed constant(string $name)%Devuelve el valor de una constante
 convert_cyr_string%string convert_cyr_string(string $str, string $from, string $to)%Convierte de un juego de caracteres cirílico a otro juego de caracteres cirílico
 convert_uudecode%string convert_uudecode(string $data)%Descodifica una cadena codificada mediante  uuencode
@@ -422,7 +408,7 @@ convert_uuencode%string convert_uuencode(string $data)%Codifica, mediante uuenco
 copy%bool copy(string $source, string $dest, [resource $context])%Copia archivos
 cos%float cos(float $arg)%Coseno
 cosh%float cosh(float $arg)%Coseno hiperbólico
-count%int count(mixed $var, [int $mode = COUNT_NORMAL])%Cuenta todos los elementos de un array o en un objeto
+count%int count(mixed $array_or_countable, [int $mode = COUNT_NORMAL])%Cuenta todos los elementos de un array o algo de un objeto
 count_chars%mixed count_chars(string $string, [int $mode])%Devuelve información sobre los caracteres usados en una cadena
 crc32%int crc32(string $str)%Calcula el polinomio crc32 de una cadena
 create_function%string create_function(string $args, string $code)%Crear una función anónima (estilo lambda)
@@ -496,7 +482,7 @@ date_timestamp_get%void date_timestamp_get()%Alias de DateTime::getTimestamp
 date_timestamp_set%void date_timestamp_set()%Alias de DateTime::setTimestamp
 date_timezone_get%void date_timezone_get()%Alias de DateTime::getTimezone
 date_timezone_set%void date_timezone_set()%Alias de DateTime::setTimezone
-datefmt_create%IntlDateFormatter datefmt_create(string $locale, int $datetype, int $timetype, [mixed $timezone = NULL], [mixed $calendar = NULL], [string $pattern = ''])%Crear un formateador de fechas
+datefmt_create%IntlDateFormatter datefmt_create(string $locale, int $datetype, int $timetype, [mixed $timezone = NULL], [mixed $calendar = NULL], [string $pattern = ""])%Crear un formateador de fechas
 datefmt_format%string datefmt_format(mixed $value, IntlDateFormatter $fmt)%Formatear el valor fecha/hora como una cadena
 datefmt_format_object%string datefmt_format_object(object $object, [mixed $format = NULL], [string $locale = NULL])%Formatea un objeto
 datefmt_get_calendar%int datefmt_get_calendar(IntlDateFormatter $fmt)%Obtener el tipo de calendario usado por el objeto IntlDateFormatter
@@ -542,7 +528,6 @@ dbx_query%mixed dbx_query(object $link_identifier, string $sql_statement, [int $
 dbx_sort%bool dbx_sort(object $result, string $user_compare_function)%Ordenar un resultado de una llamada a dbx_query mediante una función de ordenación personalizada
 dcgettext%string dcgettext(string $domain, string $message, int $category)%Sobrescribe el dominio de la búsqueda única del mensaje
 dcngettext%string dcngettext(string $domain, string $msgid1, string $msgid2, int $n, int $category)%Versión plural de dcgettext
-deaggregate%void deaggregate(object $object, [string $class_name])%Removes the aggregated methods and properties from an object
 debug_backtrace%array debug_backtrace([int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT], [int $limit])%Genera un rastreo
 debug_print_backtrace%void debug_print_backtrace([int $options], [int $limit])%Muestra un rastreo
 debug_zval_dump%void debug_zval_dump(mixed $variable, [mixed ...])%Vuelca a la salida una cadena con la representación de un valor interno de zend
@@ -561,17 +546,16 @@ dirname%string dirname(string $path)%Devuelve el directorio padre de la ruta
 disk_free_space%float disk_free_space(string $directory)%Devuelve el espacio disponible de un sistema de archivos o partición de disco
 disk_total_space%float disk_total_space(string $directory)%Devuelve el tamaño total de un sistema de archivos o partición de disco
 diskfreespace%void diskfreespace()%Alias de disk_free_space
-dl%bool dl(string $library)%Carga una extensión PHP en tiempo de ejecucción
+dl%bool dl(string $library)%Carga una extensión de PHP en tiempo de ejecución
 dngettext%string dngettext(string $domain, string $msgid1, string $msgid2, int $n)%Versión plural de dgettext
 dns_check_record%void dns_check_record()%Alias de checkdnsrr
 dns_get_mx%void dns_get_mx()%Alias de getmxrr
 dns_get_record%array dns_get_record(string $hostname, [int $type = DNS_ANY], [array $authns], [array $addtl], [bool $raw = false])%Fetch DNS Resource Records associated with a hostname
 dom_import_simplexml%DOMElement dom_import_simplexml(SimpleXMLElement $node)%Obtiene un objeto DOMElement desde un   objeto SimpleXMLElement
-dotnet_load%int dotnet_load(string $assembly_name, [string $datatype_name], [int $codepage])%Carga un módulo de DOTNET
 doubleval%void doubleval()%Alias de floatval
 each%array each(array $array)%Devolver el par clave/valor actual de un array y avanzar el cursor del array
-easter_date%int easter_date([int $year])%Obtener la fecha Unix para la medianoche de Pascua de un año dado
-easter_days%int easter_days([int $year], [int $method = CAL_EASTER_DEFAULT])%Obtener el número de días despúes del 21 de marzo en el cuál cae Pascua para un año dado
+easter_date%int easter_date([int $year = date("Y")])%Obtener la fecha Unix para la medianoche de Pascua de un año dado
+easter_days%int easter_days([int $year = date("Y")], [int $method = CAL_EASTER_DEFAULT])%Obtener el número de días despúes del 21 de marzo en el cuál cae Pascua para un año dado
 echo%void echo(string $arg1, [string ...])%Muestra una o más cadenas
 eio_busy%resource eio_busy(int $delay, [int $pri = EIO_PRI_DEFAULT], [callable $callback = NULL], [mixed $data = NULL])%Incrementar artificialmente la carga. Podría ser útil en pruebas,   evaluaciones comparativas
 eio_cancel%void eio_cancel(resource $req)%Cancelar una petición
@@ -652,7 +636,7 @@ enchant_dict_is_in_session%bool enchant_dict_is_in_session(resource $dict, strin
 enchant_dict_quick_check%bool enchant_dict_quick_check(resource $dict, string $word, [array $suggestions])%Verifica si la palabra está correctamente escrita y proporciona sugerencias
 enchant_dict_store_replacement%void enchant_dict_store_replacement(resource $dict, string $mis, string $cor)%Añadir una corrección a una palabra
 enchant_dict_suggest%array enchant_dict_suggest(resource $dict, string $word)%Devolverá una lista de valores si no se reúnen esas pre-condiciones
-end%mixed end(array $array)%Establece el puntero intero de un array a su último elemento
+end%mixed end(array $array)%Establece el puntero interno de un array a su último elemento
 ereg%int ereg(string $pattern, string $string, [array $regs])%Comparación de una expresión regular
 ereg_replace%string ereg_replace(string $pattern, string $replacement, string $string)%Sustituye una expresión regular
 eregi%int eregi(string $pattern, string $string, [array $regs])%Comparación de una expresión regular de forma insensible a mayúsculas-minúsculas
@@ -670,158 +654,158 @@ exif_tagname%string exif_tagname(int $index)%Obtener el nombre de la cabecera de
 exif_thumbnail%string exif_thumbnail(string $filename, [int $width], [int $height], [int $imagetype])%Recuperar la miniatura embebida de una imagen TIFF o JPEG
 exit%void exit(int $status)%Imprime un mensaje y termina el script actual
 exp%float exp(float $arg)%Calcula la exponencial de e
-explode%array explode(string $delimiter, string $string, [int $limit])%Divide una cadena en varias cadenas
+explode%array explode(string $delimiter, string $string, [int $limit])%Divide un string en varios string
 expm1%float expm1(float $arg)%Devuelve exp(numero)-1, calculado de tal forma que no pierde precisión    incluso cuando el valor del numero se aproxima a cero.
 extension_loaded%bool extension_loaded(string $name)%Encontrar si una extensión está cargada
 extract%int extract(array $array, [int $flags = EXTR_OVERWRITE], [string $prefix])%Importar variables a la tabla de símbolos actual desde un array
 ezmlm_hash%int ezmlm_hash(string $addr)%Calcula el valor hash que necesita EZMLM
-fann_cascadetrain_on_data%bool fann_cascadetrain_on_data(resource $ann, resource $data, int $max_neurons, int $neurons_between_reports, float $desired_error)%Trains on an entire dataset, for a period of time using the Cascade2 training algorithm
-fann_cascadetrain_on_file%bool fann_cascadetrain_on_file(resource $ann, string $filename, int $max_neurons, int $neurons_between_reports, float $desired_error)%Trains on an entire dataset read from file, for a period of time using the Cascade2 training algorithm.
-fann_clear_scaling_params%bool fann_clear_scaling_params(resource $ann)%Clears scaling parameters
-fann_copy%resource fann_copy(resource $ann)%Creates a copy of a fann structure
-fann_create_from_file%resource fann_create_from_file(string $configuration_file)%Constructs a backpropagation neural network from a configuration file
-fann_create_shortcut%reference fann_create_shortcut(int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Creates a standard backpropagation neural network which is not fully connectected and has shortcut connections
-fann_create_shortcut_array%resource fann_create_shortcut_array(int $num_layers, array $layers)%Creates a standard backpropagation neural network which is not fully connectected and has shortcut connections
-fann_create_sparse%ReturnType fann_create_sparse(float $connection_rate, int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Creates a standard backpropagation neural network, which is not fully connected
-fann_create_sparse_array%ReturnType fann_create_sparse_array(float $connection_rate, int $num_layers, array $layers)%Creates a standard backpropagation neural network, which is not fully connected using an array of layer sizes
-fann_create_standard%resource fann_create_standard(int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Creates a standard fully connected backpropagation neural network
-fann_create_standard_array%resource fann_create_standard_array(int $num_layers, array $layers)%Creates a standard fully connected backpropagation neural network using an array of layer sizes
-fann_create_train%resource fann_create_train(int $num_data, int $num_input, int $num_output)%Creates an empty training data struct
-fann_create_train_from_callback%resource fann_create_train_from_callback(int $num_data, int $num_input, int $num_output, collable $user_function)%Creates the training data struct from a user supplied function
-fann_descale_input%bool fann_descale_input(resource $ann, array $input_vector)%Scale data in input vector after get it from ann based on previously calculated parameters
-fann_descale_output%bool fann_descale_output(resource $ann, array $output_vector)%Scale data in output vector after get it from ann based on previously calculated parameters
-fann_descale_train%bool fann_descale_train(resource $ann, resource $train_data)%Descale input and output data based on previously calculated parameters
-fann_destroy%bool fann_destroy(resource $ann)%Destroys the entire network and properly freeing all the associated memory
-fann_destroy_train%bool fann_destroy_train(resource $train_data)%Destructs the training data
-fann_duplicate_train_data%resource fann_duplicate_train_data(resource $data)%Returns an exact copy of a fann train data
-fann_get_MSE%float fann_get_MSE(resource $ann)%Reads the mean square error from the network
-fann_get_activation_function%int fann_get_activation_function(resource $ann, int $layer, int $neuron)%Returns the activation function
-fann_get_activation_steepness%float fann_get_activation_steepness(resource $ann, int $layer, int $neuron)%Returns the activation steepness for supplied neuron and layer number
-fann_get_bias_array%array fann_get_bias_array(resource $ann)%Get the number of bias in each layer in the network
-fann_get_bit_fail%int fann_get_bit_fail(resource $ann)%The number of fail bits
-fann_get_bit_fail_limit%float fann_get_bit_fail_limit(resource $ann)%Returns the bit fail limit used during training
-fann_get_cascade_activation_functions%array fann_get_cascade_activation_functions(resource $ann)%Returns the cascade activation functions
-fann_get_cascade_activation_functions_count%int fann_get_cascade_activation_functions_count(resource $ann)%Returns the number of cascade activation functions
-fann_get_cascade_activation_steepnesses%array fann_get_cascade_activation_steepnesses(resource $ann)%Returns the cascade activation steepnesses
-fann_get_cascade_activation_steepnesses_count%int fann_get_cascade_activation_steepnesses_count(resource $ann)%The number of activation steepnesses
-fann_get_cascade_candidate_change_fraction%float fann_get_cascade_candidate_change_fraction(resource $ann)%Returns the cascade candidate change fraction
-fann_get_cascade_candidate_limit%float fann_get_cascade_candidate_limit(resource $ann)%Return the candidate limit
-fann_get_cascade_candidate_stagnation_epochs%float fann_get_cascade_candidate_stagnation_epochs(resource $ann)%Returns the number of cascade candidate stagnation epochs
-fann_get_cascade_max_cand_epochs%int fann_get_cascade_max_cand_epochs(resource $ann)%Returns the maximum candidate epochs
-fann_get_cascade_max_out_epochs%int fann_get_cascade_max_out_epochs(resource $ann)%Returns the maximum out epochs
-fann_get_cascade_min_cand_epochs%int fann_get_cascade_min_cand_epochs(resource $ann)%Returns the minimum candidate epochs
-fann_get_cascade_min_out_epochs%int fann_get_cascade_min_out_epochs(resource $ann)%Returns the minimum out epochs
-fann_get_cascade_num_candidate_groups%int fann_get_cascade_num_candidate_groups(resource $ann)%Returns the number of candidate groups
-fann_get_cascade_num_candidates%int fann_get_cascade_num_candidates(resource $ann)%Returns the number of candidates used during training
-fann_get_cascade_output_change_fraction%float fann_get_cascade_output_change_fraction(resource $ann)%Returns the cascade output change fraction
-fann_get_cascade_output_stagnation_epochs%int fann_get_cascade_output_stagnation_epochs(resource $ann)%Returns the number of cascade output stagnation epochs
-fann_get_cascade_weight_multiplier%float fann_get_cascade_weight_multiplier(resource $ann)%Returns the weight multiplier
-fann_get_connection_array%array fann_get_connection_array(resource $ann)%Get connections in the network
-fann_get_connection_rate%float fann_get_connection_rate(resource $ann)%Get the connection rate used when the network was created
-fann_get_errno%int fann_get_errno(resource $errdat)%Returns the last error number
-fann_get_errstr%string fann_get_errstr(resource $errdat)%Returns the last errstr
-fann_get_layer_array%array fann_get_layer_array(resource $ann)%Get the number of neurons in each layer in the network
-fann_get_learning_momentum%float fann_get_learning_momentum(resource $ann)%Returns the learning momentum
-fann_get_learning_rate%float fann_get_learning_rate(resource $ann)%Returns the learning rate
-fann_get_network_type%int fann_get_network_type(resource $ann)%Get the type of neural network it was created as
-fann_get_num_input%int fann_get_num_input(resource $ann)%Get the number of input neurons
-fann_get_num_layers%int fann_get_num_layers(resource $ann)%Get the number of layers in the neural network
-fann_get_num_output%int fann_get_num_output(resource $ann)%Get the number of output neurons
-fann_get_quickprop_decay%float fann_get_quickprop_decay(resource $ann)%Returns the decay which is a factor that weights should decrease in each iteration during quickprop training
-fann_get_quickprop_mu%float fann_get_quickprop_mu(resource $ann)%Returns the mu factor
-fann_get_rprop_decrease_factor%float fann_get_rprop_decrease_factor(resource $ann)%Returns the increase factor used during RPROP training
-fann_get_rprop_delta_max%float fann_get_rprop_delta_max(resource $ann)%Returns the maximum step-size
-fann_get_rprop_delta_min%float fann_get_rprop_delta_min(resource $ann)%Returns the minimum step-size
-fann_get_rprop_delta_zero%ReturnType fann_get_rprop_delta_zero(resource $ann)%Returns the initial step-size
-fann_get_rprop_increase_factor%float fann_get_rprop_increase_factor(resource $ann)%Returns the increase factor used during RPROP training
-fann_get_sarprop_step_error_shift%float fann_get_sarprop_step_error_shift(resource $ann)%Returns the sarprop step error shift
-fann_get_sarprop_step_error_threshold_factor%float fann_get_sarprop_step_error_threshold_factor(resource $ann)%Returns the sarprop step error threshold factor
-fann_get_sarprop_temperature%float fann_get_sarprop_temperature(resource $ann)%Returns the sarprop temperature
-fann_get_sarprop_weight_decay_shift%float fann_get_sarprop_weight_decay_shift(resource $ann)%Returns the sarprop weight decay shift
-fann_get_total_connections%int fann_get_total_connections(resource $ann)%Get the total number of connections in the entire network
-fann_get_total_neurons%int fann_get_total_neurons(resource $ann)%Get the total number of neurons in the entire network
-fann_get_train_error_function%int fann_get_train_error_function(resource $ann)%Returns the error function used during training
-fann_get_train_stop_function%int fann_get_train_stop_function(resource $ann)%Returns the the stop function used during training
-fann_get_training_algorithm%int fann_get_training_algorithm(resource $ann)%Returns the training algorithm
-fann_init_weights%bool fann_init_weights(resource $ann, resource $train_data)%Initialize the weights using Widrow + Nguyen’s algorithm
-fann_length_train_data%resource fann_length_train_data(resource $data)%Returns the number of training patterns in the train data
-fann_merge_train_data%resource fann_merge_train_data(resource $data1, resource $data2)%Merges the train data
-fann_num_input_train_data%resource fann_num_input_train_data(resource $data)%Returns the number of inputs in each of the training patterns in the train data
-fann_num_output_train_data%resource fann_num_output_train_data(resource $data)%Returns the number of outputs in each of the training patterns in the train data
-fann_print_error%void fann_print_error(string $errdat)%Prints the error string
-fann_randomize_weights%bool fann_randomize_weights(resource $ann, float $min_weight, float $max_weight)%Give each connection a random weight between min_weight and max_weight
-fann_read_train_from_file%resource fann_read_train_from_file(string $filename)%Reads a file that stores training data
-fann_reset_MSE%bool fann_reset_MSE(string $ann)%Resets the mean square error from the network
-fann_reset_errno%void fann_reset_errno(resource $errdat)%Resets the last error number
-fann_reset_errstr%void fann_reset_errstr(resource $errdat)%Resets the last error string
-fann_run%array fann_run(resource $ann, array $input)%Will run input through the neural network
-fann_save%bool fann_save(resource $ann, string $configuration_file)%Saves the entire network to a configuration file
-fann_save_train%bool fann_save_train(resource $data, string $file_name)%Save the training structure to a file
-fann_scale_input%bool fann_scale_input(resource $ann, array $input_vector)%Scale data in input vector before feed it to ann based on previously calculated parameters
-fann_scale_input_train_data%bool fann_scale_input_train_data(resource $train_data, float $new_min, float $new_max)%Scales the inputs in the training data to the specified range
-fann_scale_output%bool fann_scale_output(resource $ann, array $output_vector)%Scale data in output vector before feed it to ann based on previously calculated parameters
-fann_scale_output_train_data%bool fann_scale_output_train_data(resource $train_data, float $new_min, float $new_max)%Scales the outputs in the training data to the specified range
-fann_scale_train%bool fann_scale_train(resource $ann, resource $train_data)%Scale input and output data based on previously calculated parameters
-fann_scale_train_data%bool fann_scale_train_data(resource $train_data, float $new_min, float $new_max)%Scales the inputs and outputs in the training data to the specified range
-fann_set_activation_function%bool fann_set_activation_function(resource $ann, int $activation_function, int $layer, int $neuron)%Sets the activation function for supplied neuron and layer
-fann_set_activation_function_hidden%bool fann_set_activation_function_hidden(resource $ann, int $activation_function)%Sets the activation function for all of the hidden layers
-fann_set_activation_function_layer%bool fann_set_activation_function_layer(resource $ann, int $activation_function, int $layer)%Sets the activation function for all the neurons in the supplied layer.
-fann_set_activation_function_output%bool fann_set_activation_function_output(resource $ann, int $activation_function)%Sets the activation function for the output layer
-fann_set_activation_steepness%bool fann_set_activation_steepness(resource $ann, float $activation_steepness, int $layer, int $neuron)%Sets the activation steepness for supplied neuron and layer number
-fann_set_activation_steepness_hidden%bool fann_set_activation_steepness_hidden(resource $ann, float $activation_steepness)%Sets the steepness of the activation steepness for all neurons in the all hidden layers
-fann_set_activation_steepness_layer%bool fann_set_activation_steepness_layer(resource $ann, float $activation_steepness, int $layer)%Sets the activation steepness for all of the neurons in the supplied layer number
-fann_set_activation_steepness_output%bool fann_set_activation_steepness_output(resource $ann, float $activation_steepness)%Sets the steepness of the activation steepness in the output layer
-fann_set_bit_fail_limit%bool fann_set_bit_fail_limit(resource $ann, float $bit_fail_limit)%Set the bit fail limit used during training
-fann_set_callback%bool fann_set_callback(resource $ann, collable $callback)%Sets the callback function for use during training
-fann_set_cascade_activation_functions%bool fann_set_cascade_activation_functions(resource $ann, array $cascade_activation_functions)%Sets the array of cascade candidate activation functions
-fann_set_cascade_activation_steepnesses%bool fann_set_cascade_activation_steepnesses(resource $ann, array $cascade_activation_steepnesses_count)%Sets the array of cascade candidate activation steepnesses
-fann_set_cascade_candidate_change_fraction%bool fann_set_cascade_candidate_change_fraction(resource $ann, float $cascade_candidate_change_fraction)%Sets the cascade candidate change fraction
-fann_set_cascade_candidate_limit%bool fann_set_cascade_candidate_limit(resource $ann, float $cascade_candidate_limit)%Sets the candidate limit
-fann_set_cascade_candidate_stagnation_epochs%bool fann_set_cascade_candidate_stagnation_epochs(resource $ann, int $cascade_candidate_stagnation_epochs)%Sets the number of cascade candidate stagnation epochs
-fann_set_cascade_max_cand_epochs%bool fann_set_cascade_max_cand_epochs(resource $ann, int $cascade_max_cand_epochs)%Sets the max candidate epochs
-fann_set_cascade_max_out_epochs%bool fann_set_cascade_max_out_epochs(resource $ann, int $cascade_max_out_epochs)%Sets the maximum out epochs
-fann_set_cascade_min_cand_epochs%bool fann_set_cascade_min_cand_epochs(resource $ann, int $cascade_min_cand_epochs)%Sets the min candidate epochs
-fann_set_cascade_min_out_epochs%bool fann_set_cascade_min_out_epochs(resource $ann, int $cascade_min_out_epochs)%Sets the minimum out epochs
-fann_set_cascade_num_candidate_groups%bool fann_set_cascade_num_candidate_groups(resource $ann, int $cascade_num_candidate_groups)%Sets the number of candidate groups
-fann_set_cascade_output_change_fraction%bool fann_set_cascade_output_change_fraction(resource $ann, float $cascade_output_change_fraction)%Sets the cascade output change fraction
-fann_set_cascade_output_stagnation_epochs%bool fann_set_cascade_output_stagnation_epochs(resource $ann, int $cascade_output_stagnation_epochs)%Sets the number of cascade output stagnation epochs
-fann_set_cascade_weight_multiplier%bool fann_set_cascade_weight_multiplier(resource $ann, float $cascade_weight_multiplier)%Sets the weight multiplier
-fann_set_error_log%void fann_set_error_log(resource $errdat, string $log_file)%Sets where the errors are logged to
-fann_set_input_scaling_params%bool fann_set_input_scaling_params(resource $ann, resource $train_data, float $new_input_min, float $new_input_max)%Calculate input scaling parameters for future use based on training data
-fann_set_learning_momentum%bool fann_set_learning_momentum(resource $ann, float $learning_momentum)%Sets the learning momentum
-fann_set_learning_rate%bool fann_set_learning_rate(resource $ann, float $learning_rate)%Sets the learning rate
-fann_set_output_scaling_params%bool fann_set_output_scaling_params(resource $ann, resource $train_data, float $new_output_min, float $new_output_max)%Calculate output scaling parameters for future use based on training data
-fann_set_quickprop_decay%bool fann_set_quickprop_decay(resource $ann, float $quickprop_decay)%Sets the quickprop decay factor
-fann_set_quickprop_mu%bool fann_set_quickprop_mu(resource $ann, float $quickprop_mu)%Sets the quickprop mu factor
-fann_set_rprop_decrease_factor%bool fann_set_rprop_decrease_factor(resource $ann, float $rprop_decrease_factor)%Sets the decrease factor used during RPROP training
-fann_set_rprop_delta_max%bool fann_set_rprop_delta_max(resource $ann, float $rprop_delta_max)%Sets the maximum step-size
-fann_set_rprop_delta_min%bool fann_set_rprop_delta_min(resource $ann, float $rprop_delta_min)%Sets the minimum step-size
-fann_set_rprop_delta_zero%bool fann_set_rprop_delta_zero(resource $ann, float $rprop_delta_zero)%Sets the initial step-size
-fann_set_rprop_increase_factor%bool fann_set_rprop_increase_factor(resource $ann, float $rprop_increase_factor)%Sets the increase factor used during RPROP training
-fann_set_sarprop_step_error_shift%bool fann_set_sarprop_step_error_shift(resource $ann, float $sarprop_step_error_shift)%Sets the sarprop step error shift
-fann_set_sarprop_step_error_threshold_factor%bool fann_set_sarprop_step_error_threshold_factor(resource $ann, float $sarprop_step_error_threshold_factor)%Sets the sarprop step error threshold factor
-fann_set_sarprop_temperature%bool fann_set_sarprop_temperature(resource $ann, float $sarprop_temperature)%Sets the sarprop temperature
-fann_set_sarprop_weight_decay_shift%bool fann_set_sarprop_weight_decay_shift(resource $ann, float $sarprop_weight_decay_shift)%Sets the sarprop weight decay shift
-fann_set_scaling_params%bool fann_set_scaling_params(resource $ann, resource $train_data, float $new_input_min, float $new_input_max, float $new_output_min, float $new_output_max)%Calculate input and output scaling parameters for future use based on training data
-fann_set_train_error_function%bool fann_set_train_error_function(resource $ann, int $error_function)%Sets the error function used during training
-fann_set_train_stop_function%bool fann_set_train_stop_function(resource $ann, int $stop_function)%Sets the stop function used during training
-fann_set_training_algorithm%bool fann_set_training_algorithm(resource $ann, int $training_algorithm)%Sets the training algorithm
-fann_set_weight%bool fann_set_weight(resource $ann, int $from_neuron, int $to_neuron, float $weight)%Set a connection in the network
-fann_set_weight_array%bool fann_set_weight_array(resource $ann, array $connections)%Set connections in the network
-fann_shuffle_train_data%bool fann_shuffle_train_data(resource $train_data)%Shuffles training data, randomizing the order
-fann_subset_train_data%resource fann_subset_train_data(resource $data, int $pos, int $length)%Returns an copy of a subset of the train data
-fann_test%bool fann_test(resource $ann, array $input, array $desired_output)%Test with a set of inputs, and a set of desired outputs
-fann_test_data%float fann_test_data(resource $ann, resource $data)%Test a set of training data and calculates the MSE for the training data
-fann_train%bool fann_train(resource $ann, array $input, array $desired_output)%Train one iteration with a set of inputs, and a set of desired outputs
-fann_train_epoch%float fann_train_epoch(resource $ann, resource $data)%Train one epoch with a set of training data
-fann_train_on_data%bool fann_train_on_data(resource $ann, resource $data, int $max_epochs, int $epochs_between_reports, float $desired_error)%Trains on an entire dataset for a period of time
-fann_train_on_file%bool fann_train_on_file(resource $ann, string $filename, int $max_epochs, int $epochs_between_reports, float $desired_error)%Trains on an entire dataset, which is read from file, for a period of time
+fann_cascadetrain_on_data%bool fann_cascadetrain_on_data(resource $ann, resource $data, int $max_neurons, int $neurons_between_reports, float $desired_error)%Entrena un conjunto de datos completo, por un período de tiempo utilizando el algoritmo de entrenamiento Cascade2
+fann_cascadetrain_on_file%bool fann_cascadetrain_on_file(resource $ann, string $filename, int $max_neurons, int $neurons_between_reports, float $desired_error)%Entre un conjunto de datos completo desde un fichero, por un período de tiempo utilizando el algoritmo de entrenamiento Cascade2
+fann_clear_scaling_params%bool fann_clear_scaling_params(resource $ann)%Limpia los parámetros de escala
+fann_copy%resource fann_copy(resource $ann)%Crea una copia de una estructura fann
+fann_create_from_file%resource fann_create_from_file(string $configuration_file)%Construye una red neuronal de retropropagación desde un fichero de configuración
+fann_create_shortcut%reference fann_create_shortcut(int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Crea una red neuronal de retropropagación estándar que no está completamente conectada y que posee conexiones de atajo
+fann_create_shortcut_array%resource fann_create_shortcut_array(int $num_layers, array $layers)%Crea una red neuronal de retropropagación estándar que no está completamente conectada y que posee conexiones de atajo
+fann_create_sparse%ReturnType fann_create_sparse(float $connection_rate, int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Crea una red neuronal de retropropagación estándar que no está conectada completamente
+fann_create_sparse_array%ReturnType fann_create_sparse_array(float $connection_rate, int $num_layers, array $layers)%Crea una red neuronal de retropropagación estándar que no está completamente conectada empleando un array con tamaños de capas
+fann_create_standard%resource fann_create_standard(int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Crea una red neuronal de retropropagación estándar completamente conectada
+fann_create_standard_array%resource fann_create_standard_array(int $num_layers, array $layers)%Crea una red neuronal de retropropagación estándar completamente conectada empleando un array con tamaños de capas
+fann_create_train%resource fann_create_train(int $num_data, int $num_input, int $num_output)%Crea una estructura de datos de entrenamiento vacía
+fann_create_train_from_callback%resource fann_create_train_from_callback(int $num_data, int $num_input, int $num_output, collable $user_function)%Crea una estructura de datos de entrenamiento desde una función proporcionada por el usuario
+fann_descale_input%bool fann_descale_input(resource $ann, array $input_vector)%Escalar datos en un vector de entrada después de obtenerlo de una RNA basada en parámetros previamente calculados
+fann_descale_output%bool fann_descale_output(resource $ann, array $output_vector)%Escalar datos en un vector de entrada después de obtenerlo de una RNA basada en parámetros previamente calculados
+fann_descale_train%bool fann_descale_train(resource $ann, resource $train_data)%Descalar datos de entrada y salida basados en parámetros previamente calculados
+fann_destroy%bool fann_destroy(resource $ann)%Destruye la red por completo y libera adecuadamente toda la memoria asociada
+fann_destroy_train%bool fann_destroy_train(resource $train_data)%Destruye los datos de entrenamiento
+fann_duplicate_train_data%resource fann_duplicate_train_data(resource $data)%Devuelve una copia exacta de uno datos de entrenamiento de fann
+fann_get_MSE%float fann_get_MSE(resource $ann)%Lee el error cuadrático medio de la red
+fann_get_activation_function%int fann_get_activation_function(resource $ann, int $layer, int $neuron)%Devuelve la función de activación
+fann_get_activation_steepness%float fann_get_activation_steepness(resource $ann, int $layer, int $neuron)%Devuelve la pendiente de activación para el número de neurona y de capa proporcionados
+fann_get_bias_array%array fann_get_bias_array(resource $ann)%Obtener el número de tendencias de cada capa de una red
+fann_get_bit_fail%int fann_get_bit_fail(resource $ann)%El número de bit fallidos
+fann_get_bit_fail_limit%float fann_get_bit_fail_limit(resource $ann)%Devuelve el límite de fallo de bit empleado durante un entrenamiento
+fann_get_cascade_activation_functions%array fann_get_cascade_activation_functions(resource $ann)%Devuelve las funciones de activación en cascada
+fann_get_cascade_activation_functions_count%int fann_get_cascade_activation_functions_count(resource $ann)%Devuelve el número de funciones de activación en cascada
+fann_get_cascade_activation_steepnesses%array fann_get_cascade_activation_steepnesses(resource $ann)%Devuelve las pendientes de activación en cascada
+fann_get_cascade_activation_steepnesses_count%int fann_get_cascade_activation_steepnesses_count(resource $ann)%El número de pendientes de activación
+fann_get_cascade_candidate_change_fraction%float fann_get_cascade_candidate_change_fraction(resource $ann)%Devuelve la fracción de cambio de candidatas en cascada
+fann_get_cascade_candidate_limit%float fann_get_cascade_candidate_limit(resource $ann)%Devuelve el límite de candidatas
+fann_get_cascade_candidate_stagnation_epochs%float fann_get_cascade_candidate_stagnation_epochs(resource $ann)%Devuelve el número de épocas de estancamiento de candidatas en cascada
+fann_get_cascade_max_cand_epochs%int fann_get_cascade_max_cand_epochs(resource $ann)%Devuelve el máximo de épocas de candidatas
+fann_get_cascade_max_out_epochs%int fann_get_cascade_max_out_epochs(resource $ann)%Devuelve el máximo de épocas de salida
+fann_get_cascade_min_cand_epochs%int fann_get_cascade_min_cand_epochs(resource $ann)%Devuelve el mínimo de épocas de candidatas
+fann_get_cascade_min_out_epochs%int fann_get_cascade_min_out_epochs(resource $ann)%Devuelve el mínimo de épocas de salida
+fann_get_cascade_num_candidate_groups%int fann_get_cascade_num_candidate_groups(resource $ann)%Devuelve el número de grupos de candidatas
+fann_get_cascade_num_candidates%int fann_get_cascade_num_candidates(resource $ann)%Devuelve el número de candidatas empleadas durante un entrenamiento
+fann_get_cascade_output_change_fraction%float fann_get_cascade_output_change_fraction(resource $ann)%Devuelve la fracción de cambio de salida en cascada
+fann_get_cascade_output_stagnation_epochs%int fann_get_cascade_output_stagnation_epochs(resource $ann)%Devuelve el número de épocas de estancamiento de salida en cascada
+fann_get_cascade_weight_multiplier%float fann_get_cascade_weight_multiplier(resource $ann)%Devuelve el multiplicador de peso
+fann_get_connection_array%array fann_get_connection_array(resource $ann)%Obtener las conexiones de la red
+fann_get_connection_rate%float fann_get_connection_rate(resource $ann)%Obtener el índice de conexión empleado al crear la red
+fann_get_errno%int fann_get_errno(resource $errdat)%Devuelve el número del último error
+fann_get_errstr%string fann_get_errstr(resource $errdat)%Devuelve el string de último error
+fann_get_layer_array%array fann_get_layer_array(resource $ann)%Obtener el número de neuronas de cada capa de la red
+fann_get_learning_momentum%float fann_get_learning_momentum(resource $ann)%Devuelve el momento del aprendizaje
+fann_get_learning_rate%float fann_get_learning_rate(resource $ann)%Devuelve el índice de aprendizaje
+fann_get_network_type%int fann_get_network_type(resource $ann)%Obtener el tipo de una red neuronal
+fann_get_num_input%int fann_get_num_input(resource $ann)%Obtener el número de neuronas de entrada
+fann_get_num_layers%int fann_get_num_layers(resource $ann)%Obtener el número de capas de la red neuronal
+fann_get_num_output%int fann_get_num_output(resource $ann)%Obtener el número de neuronas de salida
+fann_get_quickprop_decay%float fann_get_quickprop_decay(resource $ann)%Devuelve la decadencia, que es un factor por el que los pesos deberían decrementar en cada iteración durante un entrenamiento quickprop
+fann_get_quickprop_mu%float fann_get_quickprop_mu(resource $ann)%Devuelve el factor mu
+fann_get_rprop_decrease_factor%float fann_get_rprop_decrease_factor(resource $ann)%Devuelve el factor de disminución empleado durante un entrenamiento RPROP
+fann_get_rprop_delta_max%float fann_get_rprop_delta_max(resource $ann)%Devuelve el tamaño de paso máximo
+fann_get_rprop_delta_min%float fann_get_rprop_delta_min(resource $ann)%Devuelve el tamaño de paso mínimo
+fann_get_rprop_delta_zero%ReturnType fann_get_rprop_delta_zero(resource $ann)%Devuelve el tamaño de paso inicial
+fann_get_rprop_increase_factor%float fann_get_rprop_increase_factor(resource $ann)%Devuelve el factor de aumento empleado durante un entrenamiento RPROP
+fann_get_sarprop_step_error_shift%float fann_get_sarprop_step_error_shift(resource $ann)%Devuelve el desplazamiento del error de paso de sarprop
+fann_get_sarprop_step_error_threshold_factor%float fann_get_sarprop_step_error_threshold_factor(resource $ann)%Devuelve el factor de umbral del error de paso de sarprop
+fann_get_sarprop_temperature%float fann_get_sarprop_temperature(resource $ann)%Devuelve la temperatura de sarprop
+fann_get_sarprop_weight_decay_shift%float fann_get_sarprop_weight_decay_shift(resource $ann)%Devuelve el desplazamiento de decadencia del peso de sarprop
+fann_get_total_connections%int fann_get_total_connections(resource $ann)%Obtener el número total de conexiones de la red completa
+fann_get_total_neurons%int fann_get_total_neurons(resource $ann)%Obtener el número total de neuronas de la red completa
+fann_get_train_error_function%int fann_get_train_error_function(resource $ann)%Devuelve la función de error empleada durante un entrenamiento
+fann_get_train_stop_function%int fann_get_train_stop_function(resource $ann)%Devuelve la función de parada empleada durante el entrenamiento
+fann_get_training_algorithm%int fann_get_training_algorithm(resource $ann)%Devuelve el algoritmo de entrenamiento
+fann_init_weights%bool fann_init_weights(resource $ann, resource $train_data)%Inicializar los pesos empleando el algoritmo de Widrow + Nguyen
+fann_length_train_data%resource fann_length_train_data(resource $data)%Devuelve el número de patrones de entrenamiento de los datos de entrenamiento
+fann_merge_train_data%resource fann_merge_train_data(resource $data1, resource $data2)%Funde los datos de entrenamiento
+fann_num_input_train_data%resource fann_num_input_train_data(resource $data)%Devuelve el número de entradas de cada patrón de entrenamiento de los datos de entrenamiento
+fann_num_output_train_data%resource fann_num_output_train_data(resource $data)%Devuelve el número de salidas de cada patrón de entrenamiento de los datos de entrenamiento
+fann_print_error%void fann_print_error(string $errdat)%Imprime el string de error
+fann_randomize_weights%bool fann_randomize_weights(resource $ann, float $min_weight, float $max_weight)%Dar a cada conexión un peso aleatorio entre min_weight y max_weight
+fann_read_train_from_file%resource fann_read_train_from_file(string $filename)%Lee un fichero que almacena datos de entrenamiento
+fann_reset_MSE%bool fann_reset_MSE(string $ann)%Reinicia el error cuadrático medio de la red
+fann_reset_errno%void fann_reset_errno(resource $errdat)%Reinicia el número del último error
+fann_reset_errstr%void fann_reset_errstr(resource $errdat)%Reinicia el string del último error
+fann_run%array fann_run(resource $ann, array $input)%Ejecutará la entrada a través de la red neuronal
+fann_save%bool fann_save(resource $ann, string $configuration_file)%Guarda la red completa a un fichero de configuración
+fann_save_train%bool fann_save_train(resource $data, string $file_name)%Guarda la estructura de entrenamiento en un fichero
+fann_scale_input%bool fann_scale_input(resource $ann, array $input_vector)%Escalar datos en un vector de entrada antes de alimentarlo a una RNA basada en parámetros previamente calculados
+fann_scale_input_train_data%bool fann_scale_input_train_data(resource $train_data, float $new_min, float $new_max)%Escala las entradas de los datos de entrenamiento al rango especificado
+fann_scale_output%bool fann_scale_output(resource $ann, array $output_vector)%Escalar datos en un vector de entrada antes de alimentarlo a una RNA basada en parámetros previamente calculados
+fann_scale_output_train_data%bool fann_scale_output_train_data(resource $train_data, float $new_min, float $new_max)%Escala las salidas de los datos de entrenamiento al rango especificado
+fann_scale_train%bool fann_scale_train(resource $ann, resource $train_data)%Escalar datos de entrada y salida basados en parámetros previamente calculados
+fann_scale_train_data%bool fann_scale_train_data(resource $train_data, float $new_min, float $new_max)%Escala la entradas y salidas de los datos de entrenamiento al rango especificado
+fann_set_activation_function%bool fann_set_activation_function(resource $ann, int $activation_function, int $layer, int $neuron)%Establece la función de activación para la neurona y capa proporcionadas
+fann_set_activation_function_hidden%bool fann_set_activation_function_hidden(resource $ann, int $activation_function)%Establece la función de activación para todas las capas ocultas
+fann_set_activation_function_layer%bool fann_set_activation_function_layer(resource $ann, int $activation_function, int $layer)%Establece la función de activación para todas las neuronas de la capa proporcionada
+fann_set_activation_function_output%bool fann_set_activation_function_output(resource $ann, int $activation_function)%Establece la función de activación para la capa de salida
+fann_set_activation_steepness%bool fann_set_activation_steepness(resource $ann, float $activation_steepness, int $layer, int $neuron)%Establece la pendiente de activación el número de neurona y capa proporcionados
+fann_set_activation_steepness_hidden%bool fann_set_activation_steepness_hidden(resource $ann, float $activation_steepness)%Establece la pendiente de la activación para todas las neuronas de todas las capas ocultas
+fann_set_activation_steepness_layer%bool fann_set_activation_steepness_layer(resource $ann, float $activation_steepness, int $layer)%Establece la pendiente de activación para todas las neuronas del número de capa proporcionada
+fann_set_activation_steepness_output%bool fann_set_activation_steepness_output(resource $ann, float $activation_steepness)%Establece la pendiente de activación de la capa de salida
+fann_set_bit_fail_limit%bool fann_set_bit_fail_limit(resource $ann, float $bit_fail_limit)%Establece el límite de fallo de bit empleado durante un entrenamiento
+fann_set_callback%bool fann_set_callback(resource $ann, collable $callback)%Establece la función de retrollamada a emplear durante el entrenamiento
+fann_set_cascade_activation_functions%bool fann_set_cascade_activation_functions(resource $ann, array $cascade_activation_functions)%Establece el array de funciones de activación de candidatas en cascada
+fann_set_cascade_activation_steepnesses%bool fann_set_cascade_activation_steepnesses(resource $ann, array $cascade_activation_steepnesses_count)%Establece el array de pendientes de activación de candidatas en cascada
+fann_set_cascade_candidate_change_fraction%bool fann_set_cascade_candidate_change_fraction(resource $ann, float $cascade_candidate_change_fraction)%Establece la fracción de cambio de candidatas en cascada
+fann_set_cascade_candidate_limit%bool fann_set_cascade_candidate_limit(resource $ann, float $cascade_candidate_limit)%Establece el límite de candidatas
+fann_set_cascade_candidate_stagnation_epochs%bool fann_set_cascade_candidate_stagnation_epochs(resource $ann, int $cascade_candidate_stagnation_epochs)%Establece el número de épocas de estancamiento de candidatas en cascada
+fann_set_cascade_max_cand_epochs%bool fann_set_cascade_max_cand_epochs(resource $ann, int $cascade_max_cand_epochs)%Establece el máximo de épocas de candidatas
+fann_set_cascade_max_out_epochs%bool fann_set_cascade_max_out_epochs(resource $ann, int $cascade_max_out_epochs)%Establece el máximo de épocas de salida
+fann_set_cascade_min_cand_epochs%bool fann_set_cascade_min_cand_epochs(resource $ann, int $cascade_min_cand_epochs)%Establece el mínimo de épocas de candidatas
+fann_set_cascade_min_out_epochs%bool fann_set_cascade_min_out_epochs(resource $ann, int $cascade_min_out_epochs)%Establece el mínimo de épocas de salida
+fann_set_cascade_num_candidate_groups%bool fann_set_cascade_num_candidate_groups(resource $ann, int $cascade_num_candidate_groups)%Establece el número de grupos de candidatas
+fann_set_cascade_output_change_fraction%bool fann_set_cascade_output_change_fraction(resource $ann, float $cascade_output_change_fraction)%Establece la fracción de cambio de salida en cascada
+fann_set_cascade_output_stagnation_epochs%bool fann_set_cascade_output_stagnation_epochs(resource $ann, int $cascade_output_stagnation_epochs)%Establece el número de épocas de estancamiento de salida en cascada
+fann_set_cascade_weight_multiplier%bool fann_set_cascade_weight_multiplier(resource $ann, float $cascade_weight_multiplier)%Establece el multiplicador de peso
+fann_set_error_log%void fann_set_error_log(resource $errdat, string $log_file)%Establece dónde registrar los errores
+fann_set_input_scaling_params%bool fann_set_input_scaling_params(resource $ann, resource $train_data, float $new_input_min, float $new_input_max)%Calcular los parámetros de escala de entrada para un uso futuro basados en datos de entrenamiento
+fann_set_learning_momentum%bool fann_set_learning_momentum(resource $ann, float $learning_momentum)%Establece el momento del aprendizaje
+fann_set_learning_rate%bool fann_set_learning_rate(resource $ann, float $learning_rate)%Establece el índice de aprendizaje
+fann_set_output_scaling_params%bool fann_set_output_scaling_params(resource $ann, resource $train_data, float $new_output_min, float $new_output_max)%Calcular los parámetros de escala de salida para un uso futuro basados en datos de entrenamiento
+fann_set_quickprop_decay%bool fann_set_quickprop_decay(resource $ann, float $quickprop_decay)%Establece el factor de decadencia de quickprop
+fann_set_quickprop_mu%bool fann_set_quickprop_mu(resource $ann, float $quickprop_mu)%Establece el factor mu de quickprop
+fann_set_rprop_decrease_factor%bool fann_set_rprop_decrease_factor(resource $ann, float $rprop_decrease_factor)%Establece el factor de disminución empleado durante un entrenamiento RPROP
+fann_set_rprop_delta_max%bool fann_set_rprop_delta_max(resource $ann, float $rprop_delta_max)%Establece el tamaño de paso máximo
+fann_set_rprop_delta_min%bool fann_set_rprop_delta_min(resource $ann, float $rprop_delta_min)%Establece el tamaño de paso mínimo
+fann_set_rprop_delta_zero%bool fann_set_rprop_delta_zero(resource $ann, float $rprop_delta_zero)%Establece el tamaño de paso inicial
+fann_set_rprop_increase_factor%bool fann_set_rprop_increase_factor(resource $ann, float $rprop_increase_factor)%Establece el factor de aumento empleado durante un entrenamiento RPROP
+fann_set_sarprop_step_error_shift%bool fann_set_sarprop_step_error_shift(resource $ann, float $sarprop_step_error_shift)%Establece el desplazamiento del error de paso de sarprop
+fann_set_sarprop_step_error_threshold_factor%bool fann_set_sarprop_step_error_threshold_factor(resource $ann, float $sarprop_step_error_threshold_factor)%Establece el factor de umbral del error de paso de sarprop
+fann_set_sarprop_temperature%bool fann_set_sarprop_temperature(resource $ann, float $sarprop_temperature)%Establece la temperatura de sarprop
+fann_set_sarprop_weight_decay_shift%bool fann_set_sarprop_weight_decay_shift(resource $ann, float $sarprop_weight_decay_shift)%Establece el desplazamiento de decadencia del peso de sarprop
+fann_set_scaling_params%bool fann_set_scaling_params(resource $ann, resource $train_data, float $new_input_min, float $new_input_max, float $new_output_min, float $new_output_max)%Calcular los parámetros de escala de entrada y salida para un uso futuro basados en datos de entrenamiento
+fann_set_train_error_function%bool fann_set_train_error_function(resource $ann, int $error_function)%Establecer la función de error empleada durante un entrenamiento
+fann_set_train_stop_function%bool fann_set_train_stop_function(resource $ann, int $stop_function)%Establece la función de parada empleada durante el entrenamiento
+fann_set_training_algorithm%bool fann_set_training_algorithm(resource $ann, int $training_algorithm)%Establece el algoritmo de entrenamiento
+fann_set_weight%bool fann_set_weight(resource $ann, int $from_neuron, int $to_neuron, float $weight)%Establecer una conexión de la red
+fann_set_weight_array%bool fann_set_weight_array(resource $ann, array $connections)%Establecer las conexiones de la red
+fann_shuffle_train_data%bool fann_shuffle_train_data(resource $train_data)%Mezcla los datos de entrenamiento, aleatorizando el orden
+fann_subset_train_data%resource fann_subset_train_data(resource $data, int $pos, int $length)%Devuelve una copia de un subconjunto de los datos de entrenamiento
+fann_test%bool fann_test(resource $ann, array $input, array $desired_output)%Probar con un conjunto de entradas, y un conjunto de salidas deseadas
+fann_test_data%float fann_test_data(resource $ann, resource $data)%Prueba un conjunto de datos de entrenamiento y calcula el ECM de dichos datos
+fann_train%bool fann_train(resource $ann, array $input, array $desired_output)%Entrenar una iteración con un conjunto de entradas y un conjunto de salidas deseadas
+fann_train_epoch%float fann_train_epoch(resource $ann, resource $data)%Entrenar una época con un conjunto de datos de entrenamiento
+fann_train_on_data%bool fann_train_on_data(resource $ann, resource $data, int $max_epochs, int $epochs_between_reports, float $desired_error)%Entrena un conjunto de datos completo por un período de tiempo
+fann_train_on_file%bool fann_train_on_file(resource $ann, string $filename, int $max_epochs, int $epochs_between_reports, float $desired_error)%Entrena un conjunto de datos completo leído desde un fichero, por un período de tiempo
 fastcgi_finish_request%boolean fastcgi_finish_request()%Flushes all response data to the client
 fclose%bool fclose(resource $handle)%Cierra un puntero a un archivo abierto
 feof%bool feof(resource $handle)%Comprueba si el puntero a un archivo está al final del archivo
 fflush%bool fflush(resource $handle)%Vuelca la salida a un archivo
 fgetc%string fgetc(resource $handle)%Obtiene un carácter de un puntero a un archivo
-fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ','], [string $enclosure = '"'], [string $escape = '\\'])%Obtiene una línea del puntero a un archivo y la examina para tratar campos CSV
+fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\\"])%Obtiene una línea del puntero a un fichero y la examina para analizar campos CSV
 fgets%string fgets(resource $handle, [int $length])%Obtiene una línea desde el puntero a un fichero
 fgetss%string fgetss(resource $handle, [int $length], [string $allowable_tags])%Obtiene un línea desde un puntero a un archivo y elimina las etiquetas HTML
 file%array file(string $filename, [int $flags], [resource $context])%Transfiere un fichero completo a un array
@@ -853,15 +837,15 @@ finfo_set_flags%bool finfo_set_flags(resource $finfo, int $options)%Opciones de 
 floatval%float floatval(mixed $var)%Obtener el valor flotante de una variable
 flock%bool flock(resource $handle, int $operation, [int $wouldblock])%Bloqueo de archivos asesorado portable
 floor%float floor(float $value)%Redondear fracciones hacia abajo
-flush%void flush()%Vaciar el búfer de salida
-fmod%float fmod(float $x, float $y)%Devuelve el residuo de punto flotante (módulo) de la división  de los argumentos
+flush%void flush()%Vaciar el búfer de salida del sistema
+fmod%float fmod(float $x, float $y)%Devuelve el resto en punto flotante (módulo) de la división  de los argumentos
 fnmatch%bool fnmatch(string $pattern, string $string, [int $flags])%Compara un nombre de fichero con un patrón
 fopen%resource fopen(string $filename, string $mode, [bool $use_include_path = false], [resource $context])%Abre un fichero o una URL
 forward_static_call%mixed forward_static_call(callable $function, [mixed $parameter], [mixed ...])%Llamar a un método estático
 forward_static_call_array%mixed forward_static_call_array(callable $function, array $parameters)%Llamar a un método estático y pasar los argumentos como matriz
 fpassthru%int fpassthru(resource $handle)%Escribe toda la información restante de un puntero a un archivo
 fprintf%int fprintf(resource $handle, string $format, [mixed $args], [mixed ...])%Escribir una cadena con formato a una secuencia
-fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ','], [string $enclosure = '"'])%Da formato a una línea como CSV y la escribe en un puntero a un archivo
+fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ","], [string $enclosure = '"'])%Dar formato CSV a una línea y escribirla en un puntero a un fichero
 fputs%void fputs()%Alias de fwrite
 fread%string fread(resource $handle, int $length)%Lectura de un fichero en modo binario seguro
 fscanf%mixed fscanf(resource $handle, string $format, [mixed ...])%Analiza la entrada desde un archivo de acuerdo a un formato
@@ -896,7 +880,7 @@ ftp_put%bool ftp_put(resource $ftp_stream, string $remote_file, string $local_fi
 ftp_pwd%string ftp_pwd(resource $ftp_stream)%Devuelve el nombre del directorio actual
 ftp_quit%void ftp_quit()%Alias de ftp_close
 ftp_raw%array ftp_raw(resource $ftp_stream, string $command)%Envía un comando arbitrario a un servidor FTP
-ftp_rawlist%array ftp_rawlist(resource $ftp_stream, string $directory, [bool $recursive = false])%Devuelve una lista detallada de archivos en el directorio especificado
+ftp_rawlist%mixed ftp_rawlist(resource $ftp_stream, string $directory, [bool $recursive = false])%Devuelve una lista detallada de archivos en el directorio especificado
 ftp_rename%bool ftp_rename(resource $ftp_stream, string $oldname, string $newname)%Renombra un archivo o un directorio en el servidor FTP
 ftp_rmdir%bool ftp_rmdir(resource $ftp_stream, string $directory)%Elimina un directorio
 ftp_set_option%bool ftp_set_option(resource $ftp_stream, int $option, mixed $value)%Establecer varias opciones FTP de tiempo de ejecución
@@ -906,11 +890,11 @@ ftp_ssl_connect%resource ftp_ssl_connect(string $host, [int $port = 21], [int $t
 ftp_systype%string ftp_systype(resource $ftp_stream)%Devuelve el identificador del tipo de sistema del servidor FTP remoto
 ftruncate%bool ftruncate(resource $handle, int $size)%Trunca un archivo a una longitud dada
 func_get_arg%mixed func_get_arg(int $arg_num)%Devuelve un elemento de una lista de argumentos
-func_get_args%array func_get_args()%Devuelve una matriz que se compone de una lista de argumentos de función
+func_get_args%array func_get_args()%Devuelve un array que se compone de una lista de argumentos de función
 func_num_args%int func_num_args()%Devuelve el número de argumentos pasados a la función
 function_exists%bool function_exists(string $function_name)%Devuelve TRUE si la función dada ha sido definida
 fwrite%int fwrite(resource $handle, string $string, [int $length])%Escritura de un archivo en modo binario seguro
-gc_collect_cycles%int gc_collect_cycles()%Las fuerzas de la colección de todos los ciclos de basura existentes
+gc_collect_cycles%int gc_collect_cycles()%Fuerza la recolección de los ciclos de basura existentes
 gc_disable%void gc_disable()%Desactiva el recolector de referencia circular
 gc_enable%void gc_enable()%Activa el colector de referencia circular
 gc_enabled%bool gc_enabled()%Devuelve el estado del colector de referencia circular
@@ -930,7 +914,7 @@ get_defined_functions%array get_defined_functions()%Devuelve una matriz de todas
 get_defined_vars%array get_defined_vars()%Devuelve una matriz con todas las variables definidas
 get_extension_funcs%array get_extension_funcs(string $module_name)%Devuelve una matriz con los nombres de funciones de un  módulo
 get_headers%array get_headers(string $url, [int $format])%Recupera todas las cabeceras enviadas por el servidor en respuesta a una petición HTTP
-get_html_translation_table%array get_html_translation_table([int $table = HTML_SPECIALCHARS], [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'])%Devuelve la tabla de traducción utilizada por htmlspecialchars y htmlentities
+get_html_translation_table%array get_html_translation_table([int $table = HTML_SPECIALCHARS], [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = "UTF-8"])%Devuelve la tabla de traducción utilizada por htmlspecialchars y htmlentities
 get_include_path%string get_include_path()%Obtiene la opción de configuración include_path actual
 get_included_files%array get_included_files()%Devuelve un array con los nombres de los archivos incluidos  o requeridos
 get_loaded_extensions%array get_loaded_extensions([bool $zend_extensions = false])%Devuelve un array con los nombres de todos los módulos compilados y cargados
@@ -949,7 +933,7 @@ gethostbyaddr%string gethostbyaddr(string $ip_address)%Obtener el nombre del hos
 gethostbyname%string gethostbyname(string $hostname)%Obtener la dirección IPv4 que corresponde a un nombre de host de Internet dado
 gethostbynamel%array gethostbynamel(string $hostname)%Obtener una lista de direcciones IPv4 que corresponde a un nombre de host de Internet dado
 gethostname%string gethostname()%Obtiene el nombre de host
-getimagesize%array getimagesize(string $filename, [array $imageinfo])%Obtiene el tamaño de una imagen
+getimagesize%array getimagesize(string $filename, [array $imageinfo])%Obtener el tamaño de una imagen
 getimagesizefromstring%array getimagesizefromstring(string $imagedata, [array $imageinfo])%Obtener el tamaño de una imagen desde una cadena
 getlastmod%int getlastmod()%Obtiene la hora de la última modificación de la  página
 getmxrr%bool getmxrr(string $hostname, array $mxhosts, [array $weight])%Get MX records corresponding to a given Internet host name
@@ -967,55 +951,61 @@ getservbyport%string getservbyport(int $port, string $protocol)%Obtener el servi
 gettext%string gettext(string $message)%Consultar un mensaje en el dominio actual
 gettimeofday%mixed gettimeofday([bool $return_float = false])%Obtener la hora actual
 gettype%string gettype(mixed $var)%Obtener el tipo de una variable
-glob%array glob(string $pattern, [int $flags])%Busca coincidencias de nombres de ruta con un patrón
+glob%array glob(string $pattern, [int $flags])%Buscar coincidencias de nombres de ruta con un patrón
 gmdate%string gmdate(string $format, [int $timestamp = time()])%Formatea una fecha/hora GMT/UTC
 gmmktime%int gmmktime([int $hour = gmdate("H")], [int $minute = gmdate("i")], [int $second = gmdate("s")], [int $month = gmdate("n")], [int $day = gmdate("j")], [int $year = gmdate("Y")], [int $is_dst = -1])%Obtener la marca de tiempo Unix para una fecha GMT
-gmp_abs%resource gmp_abs(resource $a)%Valor absoluto
-gmp_add%resource gmp_add(resource $a, resource $b)%Agrega números
-gmp_and%resource gmp_and(resource $a, resource $b)%Nivel de bit AND
-gmp_clrbit%void gmp_clrbit(resource $a, int $index)%Limpia un bit
-gmp_cmp%int gmp_cmp(resource $a, resource $b)%Compara los números
-gmp_com%resource gmp_com(resource $a)%Calcula uno de los complementos
+gmp_abs%GMP gmp_abs(GMP $a)%Valor absoluto
+gmp_add%GMP gmp_add(GMP $a, GMP $b)%Agrega números
+gmp_and%GMP gmp_and(GMP $a, GMP $b)%AND a nivel de bit
+gmp_clrbit%void gmp_clrbit(GMP $a, int $index)%Limpia un bit
+gmp_cmp%int gmp_cmp(GMP $a, GMP $b)%Compara los números
+gmp_com%GMP gmp_com(GMP $a)%Calcula uno de los complementos
 gmp_div%void gmp_div()%Alias de gmp_div_q
-gmp_div_q%resource gmp_div_q(resource $a, resource $b, [int $round = GMP_ROUND_ZERO])%Divide los números
-gmp_div_qr%array gmp_div_qr(resource $n, resource $d, [int $round = GMP_ROUND_ZERO])%Divide los números y obtiene el cociente y resto
-gmp_div_r%resource gmp_div_r(resource $n, resource $d, [int $round = GMP_ROUND_ZERO])%El resto de la división de los números
-gmp_divexact%resource gmp_divexact(resource $n, resource $d)%División exacta de números
-gmp_fact%resource gmp_fact(mixed $a)%Factorial
-gmp_gcd%resource gmp_gcd(resource $a, resource $b)%Calcula el máximo común divisor
-gmp_gcdext%array gmp_gcdext(resource $a, resource $b)%Calcula el máximo común divisor y multiplicadores
-gmp_hamdist%int gmp_hamdist(resource $a, resource $b)%Distancia Hamming
-gmp_init%resource gmp_init(mixed $number, [int $base])%Crea un número GMP
-gmp_intval%int gmp_intval(resource $gmpnumber)%Convertir un número GMP a entero
-gmp_invert%resource gmp_invert(resource $a, resource $b)%Inverso del modulo
-gmp_jacobi%int gmp_jacobi(resource $a, resource $p)%Símbolo Jacobi
-gmp_legendre%int gmp_legendre(resource $a, resource $p)%Símbolo Legendre
-gmp_mod%resource gmp_mod(resource $n, resource $d)%Modulo de operación
-gmp_mul%resource gmp_mul(resource $a, resource $b)%Multiplicación de números
-gmp_neg%resource gmp_neg(resource $a)%Número negativo
-gmp_nextprime%resource gmp_nextprime(int $a)%Encuentra el siguiente número primo
-gmp_or%resource gmp_or(resource $a, resource $b)%Nivel de bit OR
-gmp_perfect_square%bool gmp_perfect_square(resource $a)%Comprueba el cuadrado perfecto
-gmp_popcount%int gmp_popcount(resource $a)%Cuenta la población
-gmp_pow%resource gmp_pow(resource $base, int $exp)%Aumenta el número a la potencia
-gmp_powm%resource gmp_powm(resource $base, resource $exp, resource $mod)%Eleva un número a la potencia con modulo
-gmp_prob_prime%int gmp_prob_prime(resource $a, [int $reps = 10])%Revisa si el número es "probablemente primo"
-gmp_random%resource gmp_random([int $limiter = 20])%Numero al azar
-gmp_scan0%int gmp_scan0(resource $a, int $start)%Escanear para 0
-gmp_scan1%int gmp_scan1(resource $a, int $start)%Escanear para 1
-gmp_setbit%void gmp_setbit(resource $a, int $index, [bool $bit_on = true])%Establece el bit
-gmp_sign%int gmp_sign(resource $a)%El símbolo del número
-gmp_sqrt%resource gmp_sqrt(resource $a)%Calcula la raíz cuadrada
-gmp_sqrtrem%array gmp_sqrtrem(resource $a)%Raíz cuadrada con resto
-gmp_strval%string gmp_strval(resource $gmpnumber, [int $base = 10])%Convierte un número GMP a cadena
-gmp_sub%resource gmp_sub(resource $a, resource $b)%Resta los números
-gmp_testbit%bool gmp_testbit(resource $a, int $index)%Prueba si un bit es establecido
-gmp_xor%resource gmp_xor(resource $a, resource $b)%Nivel de bit XOR
+gmp_div_q%GMP gmp_div_q(GMP $a, GMP $b, [int $round = GMP_ROUND_ZERO])%Divide los números
+gmp_div_qr%array gmp_div_qr(GMP $n, GMP $d, [int $round = GMP_ROUND_ZERO])%Divide los números y obtiene el cociente y resto
+gmp_div_r%GMP gmp_div_r(GMP $n, GMP $d, [int $round = GMP_ROUND_ZERO])%El resto de la división de los números
+gmp_divexact%GMP gmp_divexact(GMP $n, GMP $d)%División exacta de números
+gmp_export%string gmp_export(GMP $gmpnumber, integer $word_size, integer $options)%Export to a binary string
+gmp_fact%GMP gmp_fact(mixed $a)%Factorial
+gmp_gcd%GMP gmp_gcd(GMP $a, GMP $b)%Calcula el máximo común divisor
+gmp_gcdext%array gmp_gcdext(GMP $a, GMP $b)%Calcula el máximo común divisor y multiplicadores
+gmp_hamdist%int gmp_hamdist(GMP $a, GMP $b)%Distancia Hamming
+gmp_import%GMP gmp_import(string $data, integer $word_size, integer $options)%Import from a binary string
+gmp_init%GMP gmp_init(mixed $number, [int $base])%Crea un número GMP
+gmp_intval%integer gmp_intval(GMP $gmpnumber)%Convertir un número GMP a entero
+gmp_invert%GMP gmp_invert(GMP $a, GMP $b)%Inverso del modulo
+gmp_jacobi%int gmp_jacobi(GMP $a, GMP $p)%Símbolo Jacobi
+gmp_legendre%int gmp_legendre(GMP $a, GMP $p)%Símbolo Legendre
+gmp_mod%GMP gmp_mod(GMP $n, GMP $d)%Modulo de operación
+gmp_mul%GMP gmp_mul(GMP $a, GMP $b)%Multiplicación de números
+gmp_neg%GMP gmp_neg(GMP $a)%Número negativo
+gmp_nextprime%GMP gmp_nextprime(int $a)%Encuentra el siguiente número primo
+gmp_or%GMP gmp_or(GMP $a, GMP $b)%Nivel de bit OR
+gmp_perfect_square%bool gmp_perfect_square(GMP $a)%Comprueba el cuadrado perfecto
+gmp_popcount%int gmp_popcount(GMP $a)%Cuenta la población
+gmp_pow%GMP gmp_pow(GMP $base, int $exp)%Aumenta el número a la potencia
+gmp_powm%GMP gmp_powm(GMP $base, GMP $exp, GMP $mod)%Eleva un número a la potencia con modulo
+gmp_prob_prime%int gmp_prob_prime(GMP $a, [int $reps = 10])%Revisa si el número es "probablemente primo"
+gmp_random%GMP gmp_random([int $limiter = 20])%Numero al azar
+gmp_random_bits%GMP gmp_random_bits(integer $bits)%Random number
+gmp_random_range%GMP gmp_random_range(GMP $min, GMP $max)%Random number
+gmp_root%GMP gmp_root(GMP $a, int $nth)%Take the integer part of nth root
+gmp_rootrem%array gmp_rootrem(GMP $a, int $nth)%Take the integer part and remainder of nth root
+gmp_scan0%int gmp_scan0(GMP $a, int $start)%Escanear para 0
+gmp_scan1%int gmp_scan1(GMP $a, int $start)%Escanear para 1
+gmp_setbit%void gmp_setbit(GMP $a, int $index, [bool $bit_on = true])%Establece el bit
+gmp_sign%int gmp_sign(GMP $a)%El símbolo del número
+gmp_sqrt%GMP gmp_sqrt(GMP $a)%Calcula la raíz cuadrada
+gmp_sqrtrem%array gmp_sqrtrem(GMP $a)%Raíz cuadrada con resto
+gmp_strval%string gmp_strval(GMP $gmpnumber, [int $base = 10])%Convierte un número GMP a cadena
+gmp_sub%GMP gmp_sub(GMP $a, GMP $b)%Resta los números
+gmp_testbit%bool gmp_testbit(GMP $a, int $index)%Prueba si un bit es establecido
+gmp_xor%GMP gmp_xor(GMP $a, GMP $b)%Nivel de bit XOR
 gmstrftime%string gmstrftime(string $format, [int $timestamp = time()])%Formatear una fecha/hora GMT/UTC según la configuración regional
 grapheme_extract%string grapheme_extract(string $haystack, int $size, [int $extract_type], [int $start], [int $next])%Función para extraer una secuencia de un clúster de grafemas predeterminados desde un buffer de texto, que puede estar codificado en UTF-8
 grapheme_stripos%int grapheme_stripos(string $haystack, string $needle, [int $offset])%Buscar la posición (en unidades de grafema) de la primera coincidencia de una cadena insensible a mayúsculas-minúsculas
 grapheme_stristr%string grapheme_stristr(string $haystack, string $needle, [bool $before_needle = false])%Devolver parte de la cadena "pajar" desde la primera coincidencia de la cadena "aguja" insensible a mayúsculas-minúsculas hasta el final de "pajar"
-grapheme_strlen%int grapheme_strlen(string $input)%Obtener la longitud de una cadena en unidades de grafema
+grapheme_strlen%int grapheme_strlen(string $input)%Obtener la longitud de un string en unidades de grafema
 grapheme_strpos%int grapheme_strpos(string $haystack, string $needle, [int $offset])%Buscar la posición (en unidades de grafema) de la primera ocurrencia de una cadena
 grapheme_strripos%int grapheme_strripos(string $haystack, string $needle, [int $offset])%Buscar la posición (en unidades de grafema) de la última coincidencia de una cadena insensible a mayúsculas-minúsculas
 grapheme_strrpos%int grapheme_strrpos(string $haystack, string $needle, [int $offset])%Buscar la posición (en unidades de grafema) de la última coincidencia de una cadena
@@ -1029,7 +1019,7 @@ gzencode%string gzencode(string $data, [int $level = -1], [int $encoding_mode = 
 gzeof%int gzeof(resource $zp)%Prueba de apuntador para EOF de archivo gz
 gzfile%array gzfile(string $filename, [int $use_include_path])%Lee un archivo gz completo en una matriz
 gzgetc%string gzgetc(resource $zp)%Obtiene el caracter donde está el apuntador al archivo gz
-gzgets%string gzgets(resource $zp, int $length)%Obtiene la línea del apuntador al archivo
+gzgets%string gzgets(resource $zp, [int $length])%Obtiene la línea del apuntador al archivo
 gzgetss%string gzgetss(resource $zp, int $length, [string $allowable_tags])%Obtiene la línea del apuntador al archivo gz y retira las etiquetas HTML
 gzinflate%string gzinflate(string $data, [int $length])%Descomprime una cadena comprimida
 gzopen%resource gzopen(string $filename, string $mode, [int $use_include_path])%Abre un archivo gz
@@ -1041,9 +1031,10 @@ gzseek%int gzseek(resource $zp, int $offset, [int $whence = SEEK_SET])%Ubica el 
 gztell%int gztell(resource $zp)%Indica la posición de lectura/escritura del apuntador al archivo gz
 gzuncompress%string gzuncompress(string $data, [int $length])%Descomprime una cadena comprimida
 gzwrite%int gzwrite(resource $zp, string $string, [int $length])%Escritura en un archivo gz, segura a nivel binario
-hash%string hash(string $algo, string $data, [bool $raw_output = false])%Genera un valor cifrado en base a un string
+hash%string hash(string $algo, string $data, [bool $raw_output = false])%Genera un valor cifrado con base a un string
 hash_algos%array hash_algos()%Devuelve una lista con los algoritmos de cifrado soportados
 hash_copy%resource hash_copy(resource $context)%Copia un recurso de contexto de cifrado
+hash_equals%bool hash_equals(string $known_string, string $user_string)%Comparación de strings segura contra ataques de temporización
 hash_file%string hash_file(string $algo, string $filename, [bool $raw_output = false])%Genera un valor cifrado usando el contenido de un fichero dado
 hash_final%string hash_final(resource $context, [bool $raw_output = false])%Finaliza un contexto incremental y devuelve el resultado cifrado
 hash_hmac%string hash_hmac(string $algo, string $data, string $key, [bool $raw_output = false])%Genera un valor cifrado mediante una clave especificada usando el método HMAC
@@ -1064,9 +1055,9 @@ hex2bin%string hex2bin(string $data)%Decodifica una cadena binaria codificada he
 hexdec%number hexdec(string $hex_string)%Hexadecimal a decimal
 highlight_file%mixed highlight_file(string $filename, [bool $return = false])%Remarcado de la sintaxis de un fichero
 highlight_string%mixed highlight_string(string $str, [bool $return = false])%Remarcado de sintaxis de una cadena
-html_entity_decode%string html_entity_decode(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'])%Convierte todas las entidades HTML a sus caracteres correspondientes
-htmlentities%string htmlentities(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'], [bool $double_encode = true])%Convierte todos los caracteres aplicables a entidades HTML
-htmlspecialchars%string htmlspecialchars(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = 'UTF-8'], [bool $double_encode = true])%Convierte caracteres especiales en entidades HTML
+html_entity_decode%string html_entity_decode(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = ini_get("default_charset")])%Convierte todas las entidades HTML a sus caracteres correspondientes
+htmlentities%string htmlentities(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = ini_get("default_charset")], [bool $double_encode = true])%Convierte todos los caracteres aplicables a entidades HTML
+htmlspecialchars%string htmlspecialchars(string $string, [int $flags = ENT_COMPAT | ENT_HTML401], [string $encoding = ini_get("default_charset")], [bool $double_encode = true])%Convierte caracteres especiales en entidades HTML
 htmlspecialchars_decode%string htmlspecialchars_decode(string $string, [int $flags = ENT_COMPAT | ENT_HTML401])%Convierte entidades HTML especiales de nuevo en caracteres
 http_build_cookie%string http_build_cookie(array $cookie)%Construir el string de una cookie
 http_build_query%string http_build_query(mixed $query_data, [string $numeric_prefix], [string $arg_separator], [int $enc_type])%Generar una cadena de consulta codificada estilo URL
@@ -1201,7 +1192,7 @@ iis_stop_service%int iis_stop_service(string $service_id)%Detiene el servicio de
 image2wbmp%bool image2wbmp(resource $image, [string $filename], [int $threshold])%Exportar la imagen al navegador o a un fichero
 image_type_to_extension%string image_type_to_extension(int $imagetype, [bool $include_dot])%Obtiene la extensión de un tipo de imagen
 image_type_to_mime_type%string image_type_to_mime_type(int $imagetype)%Obtiene el tipo Mime de un tipo de imagen devuelto por getimagesize,   exif_read_data, exif_thumbnail, exif_imagetype
-imageaffine%resource imageaffine(resource $image, array $affine, [array $clip])%Devuelve la imagen que contiene la imagen fuente transformada afín, usando un área de recorte opcional
+imageaffine%resource imageaffine(resource $image, array $affine, [array $clip])%Devuelve la imagen que contiene la imagen origen transformada afín, usando un área de recorte opcional
 imageaffinematrixconcat%array imageaffinematrixconcat(array $m1, array $m2)%Concatena dos matrices (como al hacer muchas opciones de una vez)
 imageaffinematrixget%array imageaffinematrixget(int $type, [mixed $options])%Devuelve la imagen que contiene la imagen fuente transformada afín, usando un área de recorte opcional
 imagealphablending%bool imagealphablending(resource $image, bool $blendmode)%Establece el modo de mezcla para una imagen
@@ -1210,7 +1201,7 @@ imagearc%bool imagearc(resource $image, int $cx, int $cy, int $width, int $heigh
 imagechar%bool imagechar(resource $image, int $font, int $x, int $y, string $c, int $color)%Dibujar un carácter horizontalmente
 imagecharup%bool imagecharup(resource $image, int $font, int $x, int $y, string $c, int $color)%Dibujar un carácter verticalmente
 imagecolorallocate%int imagecolorallocate(resource $image, int $red, int $green, int $blue)%Asigna un color para una imagen
-imagecolorallocatealpha%int imagecolorallocatealpha(resource $image, int $red, int $green, int $blue, int $alpha)%Asigna un color para una imagen
+imagecolorallocatealpha%int imagecolorallocatealpha(resource $image, int $red, int $green, int $blue, int $alpha)%Asignar un color para una imagen
 imagecolorat%int imagecolorat(resource $image, int $x, int $y)%Obtener el índice del color de un píxel
 imagecolorclosest%int imagecolorclosest(resource $image, int $red, int $green, int $blue)%Obtener el índice del color más próximo al color especificado
 imagecolorclosestalpha%int imagecolorclosestalpha(resource $image, int $red, int $green, int $blue, int $alpha)%Obtener el índice del color más próximo al color + alpha especificado
@@ -1278,7 +1269,7 @@ imagepalettetotruecolor%bool imagepalettetotruecolor(resource $src)%Convierte un
 imagepng%bool imagepng(resource $image, [string $filename], [int $quality], [int $filters])%Imprimir una imagen PNG al navegador o a un archivo
 imagepolygon%bool imagepolygon(resource $image, array $points, int $num_points, int $color)%Dibujar un polígono
 imagepsbbox%array imagepsbbox(string $text, resource $font, int $size, int $space, int $tightness, float $angle)%Devolver la caja circundante de un rectángulo de texto usando fuentes PostScript Type1
-imagepsencodefont%bool imagepsencodefont(resource $font_index, string $encodingfile)%Cambiar el vector de codificación del caráter de una fuente
+imagepsencodefont%bool imagepsencodefont(resource $font_index, string $encodingfile)%Cambiar el vector de codificación de carácter de un tipo de letra
 imagepsextendfont%bool imagepsextendfont(resource $font_index, float $extend)%Extender o condensar una fuente
 imagepsfreefont%bool imagepsfreefont(resource $font_index)%Liberar la memoria usada por una fuente PostScript Type 1
 imagepsloadfont%resource imagepsloadfont(string $filename)%Cargar una fuente PostScript Type 1 desde un archivo
@@ -1380,7 +1371,7 @@ imap_utf7_encode%string imap_utf7_encode(string $data)%Convierte una cadena ISO-
 imap_utf8%string imap_utf8(string $mime_encoded_text)%Convierte texto codificado MIME en UTF-8
 implode%string implode(string $glue, array $pieces)%Une elementos de un array en un string
 import_request_variables%bool import_request_variables(string $types, [string $prefix])%Importar variables GET/POST/Cookie en el ámbito global
-in_array%bool in_array(mixed $needle, array $haystack, [bool $strict])%Comprueba si un valor existe en un array usando comparación flexible
+in_array%bool in_array(mixed $needle, array $haystack, [bool $strict])%Comprueba si un valor existe en un array
 include%bool include(string $path)%Includes and evaluates the specified file
 include_once%bool include_once(string $path)%Includes and evaluates the specified file
 inet_ntop%string inet_ntop(string $in_addr)%Converts a packed internet address to a human readable representation
@@ -1395,10 +1386,10 @@ intl_error_name%string intl_error_name(int $error_code)%Obtiene un nombre simbó
 intl_get_error_code%int intl_get_error_code()%Obtiene el último código de error
 intl_get_error_message%string intl_get_error_message()%Obtener una descripción del último error
 intl_is_failure%bool intl_is_failure(int $error_code)%Comprueba si el código de error dado indica un fallo
-intlcal_get_error_code%int intlcal_get_error_code(IntlCalendar $calendar)%Get last error code on the object
-intlcal_get_error_message%string intlcal_get_error_message(IntlCalendar $calendar)%Get last error message on the object
-intltz_get_error_code%integer intltz_get_error_code()%Get last error code on the object
-intltz_get_error_message%string intltz_get_error_message()%Get last error message on the object
+intlcal_get_error_code%int intlcal_get_error_code(IntlCalendar $calendar)%Obtener el código de error del objeto
+intlcal_get_error_message%string intlcal_get_error_message(IntlCalendar $calendar)%Obtener el últime mensaje de error del objeto
+intltz_get_error_code%integer intltz_get_error_code()%Obtener el último código de error del objeto
+intltz_get_error_message%string intltz_get_error_message()%Obtener el último mensaje de error del objeto
 intval%integer intval(mixed $var, [int $base = 10])%Obtiene el valor entero de una variable
 ip2long%int ip2long(string $ip_address)%Convierte una cadena que contiene una dirección con puntos del Protocolo de Internet (IPv4) en una dirección apropiada
 iptcembed%mixed iptcembed(string $iptcdata, string $jpeg_file_name, [int $spool])%Incluir información IPTC binaria en una imagen JPEG
@@ -1441,8 +1432,8 @@ jdtojewish%string jdtojewish(int $juliandaycount, [bool $hebrew = false], [int $
 jdtounix%int jdtounix(int $jday)%Convierte una Fecha Juliana a una fecha Unix
 join%void join()%Alias de implode
 jpeg2wbmp%bool jpeg2wbmp(string $jpegname, string $wbmpname, int $dest_height, int $dest_width, int $threshold)%Convertir un archiov de imagen JPEG a un archivo de imagen WBMP
-json_decode%mixed json_decode(string $json, [bool $assoc = false], [int $depth = 512], [int $options])%Decodifica un string JSON
-json_encode%string json_encode(mixed $value, [int $options], [int $depth = 512])%Retorna la representación JSON representation del valor dado
+json_decode%mixed json_decode(string $json, [bool $assoc = false], [int $depth = 512], [int $options])%Decodifica un string de JSON
+json_encode%string json_encode(mixed $value, [int $options], [int $depth = 512])%Retorna la representación JSON del valor dado
 json_last_error%int json_last_error()%Devuelve el último error que ocurrió
 json_last_error_msg%string json_last_error_msg()%Devuelve el string con el error de la última llamada a json_encode() o a json_decode()
 key%mixed key(array $array)%Obtiene una clave de un array
@@ -1459,14 +1450,15 @@ ldap_bind%bool ldap_bind(resource $link_identifier, [string $bind_rdn], [string 
 ldap_close%void ldap_close()%Alias de ldap_unbind
 ldap_compare%mixed ldap_compare(resource $link_identifier, string $dn, string $attribute, string $value)%Comparar el valor del atributo encontrado en la entrada que se especificó con un DN
 ldap_connect%resource ldap_connect([string $hostname], [int $port = 389])%Abre una conexión a un servidor LDAP
-ldap_control_paged_result%bool ldap_control_paged_result(resource $link, int $pagesize, [bool $iscritical = false], [string $cookie = ""])%Send LDAP pagination control
-ldap_control_paged_result_response%bool ldap_control_paged_result_response(resource $link, resource $result, [string $cookie], [int $estimated])%Retrieve the LDAP pagination cookie
+ldap_control_paged_result%bool ldap_control_paged_result(resource $link, int $pagesize, [bool $iscritical = false], [string $cookie = ""])%Enviar el control de paginación LDAP
+ldap_control_paged_result_response%bool ldap_control_paged_result_response(resource $link, resource $result, [string $cookie], [int $estimated])%Recuperar la cookie de paginación LDAP
 ldap_count_entries%int ldap_count_entries(resource $link_identifier, resource $result_identifier)%Contar el número de entradas en una búsqueda
 ldap_delete%bool ldap_delete(resource $link_identifier, string $dn)%Eliminar una entrada de un directorio
 ldap_dn2ufn%string ldap_dn2ufn(string $dn)%Convertir un DN a un formato de nombramiento amigable al usuario
 ldap_err2str%string ldap_err2str(int $errno)%Convertir un número de error de LDAP a una cadena con un mensaje de error
 ldap_errno%int ldap_errno(resource $link_identifier)%Devuelve el número de error LDAP del último comando LDAP
 ldap_error%string ldap_error(resource $link_identifier)%Devuelve el mensaje de error de LDAP del último comando LDAP
+ldap_escape%string ldap_escape(string $value, [string $ignore], [int $flags])%Escape a string for use in an LDAP filter or DN
 ldap_explode_dn%array ldap_explode_dn(string $dn, int $with_attrib)%Divide un DN en sus partes componentes
 ldap_first_attribute%string ldap_first_attribute(resource $link_identifier, resource $result_entry_identifier)%Devolver el primer atributo
 ldap_first_entry%resource ldap_first_entry(resource $link_identifier, resource $result_identifier)%Devolver el primer resultado de identificación
@@ -1483,6 +1475,7 @@ ldap_mod_add%bool ldap_mod_add(resource $link_identifier, string $dn, array $ent
 ldap_mod_del%bool ldap_mod_del(resource $link_identifier, string $dn, array $entry)%Borrar valores de atributo de los atributos actuales
 ldap_mod_replace%bool ldap_mod_replace(resource $link_identifier, string $dn, array $entry)%Reemplazar valores de atributos con valores nuevos
 ldap_modify%bool ldap_modify(resource $link_identifier, string $dn, array $entry)%Modificar una entrada de LDAP
+ldap_modify_batch%bool ldap_modify_batch(resource $link_identifier, string $dn, array $entry)%Batch and execute modifications on an LDAP entry
 ldap_next_attribute%string ldap_next_attribute(resource $link_identifier, resource $result_entry_identifier)%Obtener el siguiente atributo en un resultado
 ldap_next_entry%resource ldap_next_entry(resource $link_identifier, resource $result_entry_identifier)%Obtener el siguiente resultado de entrada
 ldap_next_reference%resource ldap_next_reference(resource $link, resource $entry)%Obtener la siguiente referencia
@@ -1510,7 +1503,7 @@ link%bool link(string $target, string $link)%Crea un enlace duro
 linkinfo%int linkinfo(string $path)%Obtiene información acerca de un enlace
 list%array list(mixed $var1, [mixed ...])%Asigna variables como si fuera un array
 locale_accept_from_http%string locale_accept_from_http(string $header)%Intentar encontrar la mejor configuración regional basada en la cabecera "Accept-Language" de HTTP
-locale_canonicalize%string locale_canonicalize(string $locale)%Canonicalize the locale string
+locale_canonicalize%string locale_canonicalize(string $locale)%Canonizar el string de configuración regional
 locale_compose%string locale_compose(array $subtags)%Devolver un ID regional correctamente ordenado y delimitado
 locale_filter_matches%bool locale_filter_matches(string $langtag, string $locale, [bool $canonicalize = false])%Comprobar si unfiltro de etiquetas de lenguaje coincide con una configuración regional
 locale_get_all_variants%array locale_get_all_variants(string $locale)%Obtener las variantes de la configuración regional de entrada
@@ -1524,7 +1517,7 @@ locale_get_keywords%array locale_get_keywords(string $locale)%Obtener las palabr
 locale_get_primary_language%string locale_get_primary_language(string $locale)%Obtener el lenguaje principal de la configuración regional de entrada
 locale_get_region%string locale_get_region(string $locale)%Obtener la región de la configuración local de entrada
 locale_get_script%string locale_get_script(string $locale)%Obtener la escritura de la configuración regional de entrada
-locale_lookup%string locale_lookup(array $langtag, string $locale, [bool $canonicalize = false], [string $default])%Buscar en la lista de etiquetas de lenguaje la mejor coincidencia para el lenguaje
+locale_lookup%string locale_lookup(array $langtag, string $locale, [bool $canonicalize = false], [string $default])%Busca en la lista de etiquetas de lenguaje la mejor coincidencia para el lenguaje
 locale_parse%array locale_parse(string $locale)%Devolver un array de claves-valores de los elementos de las subetiquetas del ID regional
 locale_set_default%bool locale_set_default(string $locale)%Establecer la configuración regional predeterminada en tiempo de ejecución
 localeconv%array localeconv()%Obtener información sobre el formato numérico
@@ -1532,6 +1525,13 @@ localtime%array localtime([int $timestamp = time()], [bool $is_associative = fal
 log%float log(float $arg, [float $base = M_E])%Logaritmo natural
 log10%float log10(float $arg)%Logaritmo en base 10
 log1p%float log1p(float $number)%Devuelve log(1 + numero), calculado de tal forma que no pierde precisión    incluso cuando el valor del numero se aproxima a cero.
+log_cmd_delete%callable log_cmd_delete(array $server, array $writeOptions, array $deleteOptions, array $protocolOptions)%Función de retrollamada al borrar documentos
+log_cmd_insert%callable log_cmd_insert(array $server, array $document, array $writeOptions, array $protocolOptions)%Función de retrollamada al insertar documentos
+log_cmd_update%callable log_cmd_update(array $server, array $writeOptions, array $updateOptions, array $protocolOptions)%Función de retrollamada al actualizar documentos
+log_getmore%callable log_getmore(array $server, array $info)%Función de retrollamada al obtener el próximo lote del cursor
+log_killcursor%callable log_killcursor(array $server, array $info)%Función de retrollamada al ejecutar operaciones KILLCURSOR
+log_reply%callable log_reply(array $server, array $messageHeaders, array $operationHeaders)%Función de retrollamada al leer una réplica de MongoDB
+log_write_batch%callable log_write_batch(array $server, array $writeOptions, array $batch, array $protocolOptions)%Función de retrollamada al escribir lotes
 long2ip%string long2ip(string $proper_address)%Convierte una dirección de red (IPv4) en una cadena de texto en formato con puntos estándar de internet
 lstat%array lstat(string $filename)%Da información acerca de un archivo o enlace simbólico
 ltrim%string ltrim(string $str, [string $character_mask])%Retira espacios en blanco (u otros caracteres) del inicio de un string
@@ -1573,7 +1573,7 @@ mb_list_encodings%array mb_list_encodings()%Devuelve un array con todos los tipo
 mb_output_handler%string mb_output_handler(string $contents, int $status)%Función de llamada de retorno que convierte la codificación de caracteres en búfer de salida
 mb_parse_str%array mb_parse_str(string $encoded_string, [array $result])%Analiza datos GET/POST/COOKIE y establece varialbes globales
 mb_preferred_mime_name%string mb_preferred_mime_name(string $encoding)%Obtener un string del conjunto de caracteres del MIME
-mb_regex_encoding%mixed mb_regex_encoding([string $encoding = mb_regex_encoding()])%Establece/obtiene la codificación de caracteres para expresiones regulares multibyte
+mb_regex_encoding%mixed mb_regex_encoding([string $encoding = mb_regex_encoding()])%Establecer/obtener la codificación de caracteres para expresiones regulares multibyte
 mb_regex_set_options%string mb_regex_set_options([string $options = mb_regex_set_options()])%Establece/obtiene las opciones predeterminadas para las funciones mbregex
 mb_send_mail%bool mb_send_mail(string $to, string $subject, string $message, [string $additional_headers], [string $additional_parameter])%Envía un correo codificado
 mb_split%array mb_split(string $pattern, string $string, [int $limit = -1])%Divide cadenas de caracteres multibyte usando una expresión regular
@@ -1596,7 +1596,7 @@ mb_substr%string mb_substr(string $str, int $start, [int $length = NULL], [strin
 mb_substr_count%string mb_substr_count(string $haystack, string $needle, [string $encoding = mb_internal_encoding()])%Cuenta el número de ocurrencias de un substring
 mcrypt_cbc%string mcrypt_cbc(string $cipher, string $key, string $data, int $mode, [string $iv])%Encripta/decripta datos en modo CBC
 mcrypt_cfb%string mcrypt_cfb(string $cipher, string $key, string $data, int $mode, [string $iv])%Encripta/decripta datos en modo CFB
-mcrypt_create_iv%string mcrypt_create_iv(int $size, [int $source = MCRYPT_DEV_RANDOM])%Crea un vector de inicialización (IV) desde una fuente aleatoria
+mcrypt_create_iv%string mcrypt_create_iv(int $size, [int $source = MCRYPT_DEV_URANDOM])%Crea un vector de inicialización (IV) desde una fuente aleatoria
 mcrypt_decrypt%string mcrypt_decrypt(string $cipher, string $key, string $data, string $mode, [string $iv])%Desencripta texto cifrado con los parámetros dados
 mcrypt_ecb%string mcrypt_ecb(string $cipher, string $key, string $data, int $mode, [string $iv])%Obsoleto: Encripta/decripta datos en modo ECB
 mcrypt_enc_get_algorithms_name%string mcrypt_enc_get_algorithms_name(resource $td)%Devuelve el nombre del algoritmo abierto
@@ -1739,7 +1739,7 @@ mysql_num_fields%int mysql_num_fields(resource $result)%Obtiene el número de ca
 mysql_num_rows%int mysql_num_rows(resource $result)%Obtener el número de filas de un conjunto de resultados
 mysql_pconnect%resource mysql_pconnect([string $server = ini_get("mysql.default_host")], [string $username = ini_get("mysql.default_user")], [string $password = ini_get("mysql.default_password")], [int $client_flags])%Abre una conexión persistente a un servidor MySQL
 mysql_ping%bool mysql_ping([resource $link_identifier = NULL])%Efectuar un chequeo de respuesta (ping) sobre una conexión al servidor o reconectarse si no hay conexión
-mysql_query%resource mysql_query(string $query, [resource $link_identifier = NULL])%Enviar una consulta MySQL
+mysql_query%mixed mysql_query(string $query, [resource $link_identifier = NULL])%Enviar una consulta MySQL
 mysql_real_escape_string%string mysql_real_escape_string(string $unescaped_string, [resource $link_identifier = NULL])%Escapa caracteres especiales en un string para su uso en una sentencia SQL
 mysql_result%string mysql_result(resource $result, int $row, [mixed $field])%Obtener datos de resultado
 mysql_select_db%bool mysql_select_db(string $database_name, [resource $link_identifier = NULL])%Seleccionar una base de datos MySQL
@@ -1757,7 +1757,7 @@ mysqli_change_user%bool mysqli_change_user(string $user, string $password, strin
 mysqli_character_set_name%string mysqli_character_set_name(mysqli $link)%Devuelve el juego de caracteres predeterminado para la conexión a la base de datos
 mysqli_client_encoding%void mysqli_client_encoding()%Alias de mysqli_character_set_name
 mysqli_close%bool mysqli_close(mysqli $link)%Cierra una conexión a base de datos previamente abierta
-mysqli_commit%bool mysqli_commit([int $flags], [string $name], mysqli $link)%Realiza un "commit" de la transacción actual
+mysqli_commit%bool mysqli_commit([int $flags], [string $name], mysqli $link)%Consigna la transacción actual
 mysqli_connect%void mysqli_connect()%Alias de mysqli::__construct
 mysqli_data_seek%bool mysqli_data_seek(int $offset, mysqli_result $result)%Ajustar el puntero de resultado a una fila arbitraria del resultado
 mysqli_debug%bool mysqli_debug(string $message)%Realiza operaciones de depuración
@@ -1773,11 +1773,11 @@ mysqli_execute%void mysqli_execute()%Alias para mysqli_stmt_execute
 mysqli_fetch%void mysqli_fetch()%Alias de mysqli_stmt_fetch
 mysqli_fetch_all%mixed mysqli_fetch_all([int $resulttype = MYSQLI_NUM], mysqli_result $result)%Obtener todas las filas en un array asociativo, numérico, o en ambos
 mysqli_fetch_array%mixed mysqli_fetch_array([int $resulttype = MYSQLI_BOTH], mysqli_result $result)%Obtiene una fila de resultados como un array asociativo, numérico, o ambos
-mysqli_fetch_assoc%array mysqli_fetch_assoc(mysqli_result $result)%Obtiene una fila de resultado como un array asociativo
+mysqli_fetch_assoc%array mysqli_fetch_assoc(mysqli_result $result)%Obteter una fila de resultado como un array asociativo
 mysqli_fetch_field%object mysqli_fetch_field(mysqli_result $result)%Retorna el próximo campo del resultset
 mysqli_fetch_field_direct%object mysqli_fetch_field_direct(int $fieldnr, mysqli_result $result)%Obtener los metadatos de un único campo
 mysqli_fetch_fields%array mysqli_fetch_fields(mysqli_result $result)%Devuelve un array de objetos que representan los campos de un conjunto de resultados
-mysqli_fetch_object%object mysqli_fetch_object([string $class_name], [array $params], mysqli_result $result)%Devuelve la fila actual de un conjunto de resultados como un objeto
+mysqli_fetch_object%object mysqli_fetch_object([string $class_name = "stdClass"], [array $params], mysqli_result $result)%Devuelve la fila actual de un conjunto de resultados como un objeto
 mysqli_fetch_row%mixed mysqli_fetch_row(mysqli_result $result)%Obtener una fila de resultados como un array enumerado
 mysqli_field_seek%bool mysqli_field_seek(int $fieldnr, mysqli_result $result)%Establecer el puntero del resultado al índice del campo especificado
 mysqli_free_result%void mysqli_free_result(mysqli_result $result)%Libera la memoria asociada a un resultado
@@ -1787,10 +1787,11 @@ mysqli_get_client_info%string mysqli_get_client_info(mysqli $link)%Obtiene infor
 mysqli_get_client_stats%array mysqli_get_client_stats()%Devuelve estadísticas de clientes por proceso
 mysqli_get_client_version%int mysqli_get_client_version(mysqli $link)%Devuelve la versión clientes de MySQL como valor de tipo integer
 mysqli_get_connection_stats%array mysqli_get_connection_stats(mysqli $link)%Devuelve estadísticas sobre la conexión del cliente
+mysqli_get_links_stats%array mysqli_get_links_stats()%Devolver información sobre enlaces abiertos y almacenados en caché
 mysqli_get_metadata%void mysqli_get_metadata()%Alias de mysqli_stmt_result_metadata
 mysqli_get_warnings%mysqli_warning mysqli_get_warnings(mysqli $link)%Obtiene el resultado de SHOW WARNINGS
 mysqli_init%mysqli mysqli_init()%Inicializa y devuelve un recurso para utilizarlo con mysqli_real_connect()
-mysqli_kill%bool mysqli_kill(int $processid, mysqli $link)%Pide al servidor matar una hebra de MySQL
+mysqli_kill%bool mysqli_kill(int $processid, mysqli $link)%Pide al servidor poner fin a un hilo de MySQL
 mysqli_master_query%bool mysqli_master_query(mysqli $link, string $query)%Fuerza la ejecución de una cosulta en un maestro en una configuración maestro/esclavo
 mysqli_more_results%bool mysqli_more_results(mysqli $link)%Comprueba si hay más resultados de una multi consulta
 mysqli_multi_query%bool mysqli_multi_query(string $query, mysqli $link)%Realiza una consulta a la base de datos
@@ -1800,7 +1801,7 @@ mysqli_param_count%void mysqli_param_count()%Alias de mysqli_stmt_param_count
 mysqli_ping%bool mysqli_ping(mysqli $link)%Comprueba la conexión al servidor, o trata de reconectar si se perdió la conexión
 mysqli_poll%int mysqli_poll(array $read, array $error, array $reject, int $sec, [int $usec])%Almacena en caché conexiones
 mysqli_prepare%mysqli_stmt mysqli_prepare(string $query, mysqli $link)%Prepara una sentencia SQL para su ejecución
-mysqli_query%mixed mysqli_query(string $query, [int $resultmode = MYSQLI_STORE_RESULT], mysqli $link)%Realiza una consulta a la Base de Datos
+mysqli_query%mixed mysqli_query(string $query, [int $resultmode = MYSQLI_STORE_RESULT], mysqli $link)%Realiza una consulta a la base de datos
 mysqli_real_connect%bool mysqli_real_connect([string $host], [string $username], [string $passwd], [string $dbname], [int $port], [string $socket], [int $flags], mysqli $link)%Abre una conexión a un servidor mysql
 mysqli_real_escape_string%string mysqli_real_escape_string(string $escapestr, mysqli $link)%Escapa los caracteres especiales de una cadena para usarla en una sentencia SQL, tomando en cuenta el conjunto de caracteres actual de la conexión
 mysqli_real_query%bool mysqli_real_query(string $query, mysqli $link)%Ejecuta una consulta SQL
@@ -1842,12 +1843,15 @@ mysqli_stmt_reset%bool mysqli_stmt_reset(mysqli_stmt $stmt)%Reinicia una sentenc
 mysqli_stmt_result_metadata%mysqli_result mysqli_stmt_result_metadata(mysqli_stmt $stmt)%Devuelve los metadatos del conjunto de resultados de una sentencia preparada
 mysqli_stmt_send_long_data%bool mysqli_stmt_send_long_data(int $param_nr, string $data, mysqli_stmt $stmt)%Enviar datos en bloques
 mysqli_stmt_store_result%bool mysqli_stmt_store_result(mysqli_stmt $stmt)%Transfiere un conjunto de resultados desde una sentencia preparada
-mysqli_store_result%mysqli_result mysqli_store_result(mysqli $link)%Transfiere un conjunto de resulados de la última consulta
+mysqli_store_result%mysqli_result mysqli_store_result([int $option])%Transfiere un conjunto de resulados de la última consulta
 mysqli_thread_safe%bool mysqli_thread_safe()%Devuelve si la seguridad a nivel de hilos está dada o no
-mysqli_use_result%mysqli_result mysqli_use_result(mysqli $link)%Inicia la resuperación de un conjunto de resultados
+mysqli_use_result%mysqli_result mysqli_use_result(mysqli $link)%Inicia la recuperación de un conjunto de resultados
 mysqli_warning%object mysqli_warning()%El propósito __construct
-mysqlnd_memcache_get_config%array mysqlnd_memcache_get_config(mixed $connection)%Returns information about the plugin configuration
-mysqlnd_memcache_set%bool mysqlnd_memcache_set(mixed $mysql_connection, [Memcached $memcache_connection], [string $pattern], [callback $callback])%Associate a MySQL connection with a Memcache connection
+mysqlnd_memcache_get_config%array mysqlnd_memcache_get_config(mixed $connection)%Devuelve información acerca de la configuración del complemento
+mysqlnd_memcache_set%bool mysqlnd_memcache_set(mixed $mysql_connection, [Memcached $memcache_connection], [string $pattern], [callback $callback])%Asociar una conexión de MySQL con una conexión de Memcache
+mysqlnd_ms_dump_servers%array mysqlnd_ms_dump_servers(mixed $connection)%Devuelve una lista con los servidores actualmente configurados
+mysqlnd_ms_fabric_select_global%array mysqlnd_ms_fabric_select_global(mixed $connection, mixed $table_name)%Cambiar al servidor de fragmentación global para una tabla dada
+mysqlnd_ms_fabric_select_shard%array mysqlnd_ms_fabric_select_shard(mixed $connection, mixed $table_name, mixed $shard_key)%Cambiar a los fragmentos
 mysqlnd_ms_get_last_gtid%string mysqlnd_ms_get_last_gtid(mixed $connection)%Devuelve el último ID de transacciones global
 mysqlnd_ms_get_last_used_connection%array mysqlnd_ms_get_last_used_connection(mixed $connection)%Devuelve un array que describe la última conexión usada
 mysqlnd_ms_get_stats%array mysqlnd_ms_get_stats()%Devuelve la distribución consultas y las estadísticas de conexión
@@ -1855,6 +1859,10 @@ mysqlnd_ms_match_wild%bool mysqlnd_ms_match_wild(string $table_name, string $wil
 mysqlnd_ms_query_is_select%int mysqlnd_ms_query_is_select(string $query)%Comprueba si se envía la conslta al servidor maestro, al esclavo, o al último servidor MySQL usado
 mysqlnd_ms_set_qos%bool mysqlnd_ms_set_qos(mixed $connection, int $service_level, [int $service_level_option], [mixed $option_value])%Establece la calidad de servicio necesaria de un clúster
 mysqlnd_ms_set_user_pick_server%bool mysqlnd_ms_set_user_pick_server(string $function)%Establece una llamada de retorno para la división de lectura/escritura definida por el usuario
+mysqlnd_ms_xa_begin%int mysqlnd_ms_xa_begin(mixed $connection, string $gtrid, [int $timeout])%Inicia una transacción distribuida/XA entre servidores de MySQL
+mysqlnd_ms_xa_commit%int mysqlnd_ms_xa_commit(mixed $connection, string $gtrid)%Consigna una transacción distribuida/XA entre servidores de MySQL
+mysqlnd_ms_xa_gc%int mysqlnd_ms_xa_gc(mixed $connection, [string $gtrid], [boolean $ignore_max_retries])%Recolecta basura de transacciones XA no finalizadas después de algún error del servidor
+mysqlnd_ms_xa_rollback%int mysqlnd_ms_xa_rollback(mixed $connection, string $gtrid)%Revierte una transacción distribuida/XA entre servidores de MySQL
 mysqlnd_qc_clear_cache%bool mysqlnd_qc_clear_cache()%Vacía todo el contenido de la caché
 mysqlnd_qc_get_available_handlers%array mysqlnd_qc_get_available_handlers()%Devuelve una lista de los gestores de almacenamiento disponibles
 mysqlnd_qc_get_cache_info%array mysqlnd_qc_get_cache_info()%Devuelve información sobre el gestor en uso, el número de entradas de la caché y sobre las entradas de la caché, si está disponible
@@ -1879,7 +1887,7 @@ normalizer_normalize%string normalizer_normalize(string $input, [string $form = 
 nsapi_request_headers%array nsapi_request_headers()%Obtiene todas las cabeceras de petición HTTP
 nsapi_response_headers%array nsapi_response_headers()%Obtiene todas las cabeceras de respuesta HTTP
 nsapi_virtual%bool nsapi_virtual(string $uri)%Realiza una sub-petición NSAPI
-number_format%string number_format(float $number, int $decimals, string $dec_point, string $thousands_sep)%Formatear un número con los miles agrupados
+number_format%string number_format(float $number, int $decimals, string $dec_point, string $thousands_sep)%Formatear un número con los millares agrupados
 numfmt_create%NumberFormatter numfmt_create(string $locale, int $style, [string $pattern])%Crear un formateador de números
 numfmt_format%string numfmt_format(number $value, [int $type], NumberFormatter $fmt)%Dar formato a un número
 numfmt_format_currency%string numfmt_format_currency(float $value, string $currency, NumberFormatter $fmt)%Dar formato a un valor monetario
@@ -1913,7 +1921,7 @@ ob_iconv_handler%string ob_iconv_handler(string $contents, int $status)%Conviert
 ob_implicit_flush%void ob_implicit_flush([int $flag = true])%Habilitar/deshabilitar el volcado implícito
 ob_inflatehandler%string ob_inflatehandler(string $data, int $mode)%Descromprimir el Manejador de salidas
 ob_list_handlers%array ob_list_handlers()%Enumerar todos los gestores de salida en uso
-ob_start%bool ob_start([callable $output_callback], [int $chunk_size], [int $flags])%Activa el almacenamiento en búfer de salida
+ob_start%bool ob_start([callable $output_callback], [int $chunk_size], [int $flags])%Activa el almacenamiento en búfer de la salida
 ob_tidyhandler%string ob_tidyhandler(string $input, [int $mode])%Función callback de ob_start para reparar el buffer
 oci_bind_array_by_name%bool oci_bind_array_by_name(resource $statement, string $name, array $var_array, int $max_table_length, [int $max_item_length = -1], [int $type = SQLT_AFC])%Vincula un array de PHP con un parámetro de un array de Oracle PL/SQL
 oci_bind_by_name%bool oci_bind_by_name(resource $statement, string $bv_name, mixed $variable, [int $maxlength = -1], [int $type = SQLT_CHR])%Vincula una variable de PHP a un parámetro de sustitución de Oracle
@@ -1931,13 +1939,13 @@ oci_fetch_array%array oci_fetch_array(resource $statement, [int $mode])%Devuelve
 oci_fetch_assoc%array oci_fetch_assoc(resource $statement)%Devuelve la siguiente fila de una consulta como un array asociativo
 oci_fetch_object%object oci_fetch_object(resource $statement)%Devuelve la siguiente fila de una consulta como un objeto
 oci_fetch_row%array oci_fetch_row(resource $statement)%Devuelve la siguiente fila de una consulta como un array numérico
-oci_field_is_null%bool oci_field_is_null(resource $statement, mixed $field)%Comprueba si el campo es  NULL
-oci_field_name%string oci_field_name(resource $statement, int $field)%Devuelve el nombre de un campo de una sentencia
-oci_field_precision%int oci_field_precision(resource $statement, int $field)%Indica la precisión de un campo
-oci_field_scale%int oci_field_scale(resource $statement, int $field)%Indica la escala de un campo
+oci_field_is_null%bool oci_field_is_null(resource $statement, mixed $field)%Comprueba si un campo de la fila actualmente obtenida es NULL
+oci_field_name%string oci_field_name(resource $statement, mixed $field)%Devuelve el nombre de un campo de una sentencia
+oci_field_precision%int oci_field_precision(resource $statement, mixed $field)%Indica la precisión de un campo
+oci_field_scale%int oci_field_scale(resource $statement, mixed $field)%Indica la escala de un campo
 oci_field_size%int oci_field_size(resource $statement, mixed $field)%Devuelve el tamaño de un campo
-oci_field_type%mixed oci_field_type(resource $statement, int $field)%Devuelve el tipo de datos de un campo
-oci_field_type_raw%int oci_field_type_raw(resource $statement, int $field)%Indica el tipo de datos sin tratar de Oracle de un campo
+oci_field_type%mixed oci_field_type(resource $statement, mixed $field)%Devuelve el nombre del tipo de datos de un campo
+oci_field_type_raw%int oci_field_type_raw(resource $statement, mixed $field)%Indica el tipo de datos sin tratar de Oracle de un campo
 oci_free_descriptor%bool oci_free_descriptor(resource $descriptor)%Libera un descriptor
 oci_free_statement%bool oci_free_statement(resource $statement)%Libera todos los recursos asociados con una sentencia o cursor
 oci_get_implicit_resultset%resource  oci_get_implicit_resultset(resource $statement)%Devuelve el siguiente recurso de sentencia hija desde un recurso de sentencia padre que posee Conjuntos de resultados implícitos de Oracle Database 12c
@@ -2028,9 +2036,9 @@ odbc_error%string odbc_error([resource $connection_id])%Obtener el último códi
 odbc_errormsg%string odbc_errormsg([resource $connection_id])%Obtener el último mensaje de error
 odbc_exec%resource odbc_exec(resource $connection_id, string $query_string, [int $flags])%Preparar y ejecutar una sentencia SQL
 odbc_execute%bool odbc_execute(resource $result_id, [array $parameters_array])%Ejecutar una declaración preparada
-odbc_fetch_array%array odbc_fetch_array(resource $result, [int $rownumber])%Traer una fila de resultados como una matriz asociativa
+odbc_fetch_array%array odbc_fetch_array(resource $result, [int $rownumber])%Obtener una fila de resultados como una matriz asociativa
 odbc_fetch_into%array odbc_fetch_into(resource $result_id, array $result_array, [int $rownumber])%Traer una fila de resultados en una matriz
-odbc_fetch_object%object odbc_fetch_object(resource $result, [int $rownumber])%Traer una fila de resultados como un objeto
+odbc_fetch_object%object odbc_fetch_object(resource $result, [int $rownumber])%Obtener una fila de resultados como un objeto
 odbc_fetch_row%bool odbc_fetch_row(resource $result_id, [int $row_number])%Traer una fila
 odbc_field_len%int odbc_field_len(resource $result_id, int $field_number)%Obtener la longitud (precisión) de un campo
 odbc_field_name%string odbc_field_name(resource $result_id, int $field_number)%Obtener el nombre de una columna
@@ -2065,7 +2073,7 @@ opcache_invalidate%boolean opcache_invalidate(string $script, [boolean $force])%
 opcache_reset%boolean opcache_reset()%Resets the contents of the opcode cache
 opendir%resource opendir(string $path, [resource $context])%Abre un gestor de directorio
 openlog%bool openlog(string $ident, int $option, int $facility)%Open connection to system logger
-openssl_cipher_iv_length%int openssl_cipher_iv_length(string $method)%Obtener la longitud del IV de Cipher
+openssl_cipher_iv_length%int openssl_cipher_iv_length(string $method)%Obtener la longitud del iv de cipher
 openssl_csr_export%bool openssl_csr_export(resource $csr, string $out, [bool $notext = true])%Exporta una CSR como una cadena
 openssl_csr_export_to_file%bool openssl_csr_export_to_file(resource $csr, string $outfilename, [bool $notext = true])%Exporta una CSR a un archivo
 openssl_csr_get_public_key%resource openssl_csr_get_public_key(mixed $csr, [bool $use_shortnames = true])%Devuelve la clave púbilca de un CERT
@@ -2078,6 +2086,7 @@ openssl_digest%string openssl_digest(string $data, string $method, [bool $raw_ou
 openssl_encrypt%string openssl_encrypt(string $data, string $method, string $password, [int $options], [string $iv = ""])%Encripta datos
 openssl_error_string%string openssl_error_string()%Devolver un mensaje de error openSSL
 openssl_free_key%void openssl_free_key(resource $key_identifier)%Liberar el recurso de clave
+openssl_get_cert_locations%array openssl_get_cert_locations()%Retrieve the available certificate locations
 openssl_get_cipher_methods%array openssl_get_cipher_methods([bool $aliases = false])%Obtiene los métodos de cifrado disponibles
 openssl_get_md_methods%array openssl_get_md_methods([bool $aliases = false])%Obtener los métodos de resumen disponibles
 openssl_get_privatekey%void openssl_get_privatekey()%Alias de openssl_pkey_get_private
@@ -2105,11 +2114,16 @@ openssl_public_encrypt%bool openssl_public_encrypt(string $data, string $crypted
 openssl_random_pseudo_bytes%cadena openssl_random_pseudo_bytes(int $length, [bool $crypto_strong])%Genera una cadena de bytes pseudo-aleatoria
 openssl_seal%int openssl_seal(string $data, string $sealed_data, array $env_keys, array $pub_key_ids, [string $method])%Sellar (encriptar) información
 openssl_sign%bool openssl_sign(string $data, string $signature, mixed $priv_key_id, [mixed $signature_alg = OPENSSL_ALGO_SHA1])%Genera una firma
+openssl_spki_export%string openssl_spki_export(string $spkac)%Exports a valid PEM formatted public key signed public key and challenge
+openssl_spki_export_challenge%string openssl_spki_export_challenge(string $spkac)%Exports the challenge assoicated with a signed public key and challenge
+openssl_spki_new%string openssl_spki_new(resource $privkey, string $challenge, [int $algorithm])%Generate a new signed public key and challenge
+openssl_spki_verify%string openssl_spki_verify(string $spkac)%Verifies a signed public key and challenge
 openssl_verify%int openssl_verify(string $data, string $signature, mixed $pub_key_id, [mixed $signature_alg = OPENSSL_ALGO_SHA1])%Verificar una firma
 openssl_x509_check_private_key%bool openssl_x509_check_private_key(mixed $cert, mixed $key)%Comprueba si una clave privada se corresponde a un certificado
 openssl_x509_checkpurpose%int openssl_x509_checkpurpose(mixed $x509cert, int $purpose, [array $cainfo = array()], [string $untrustedfile])%Verifica si un certificado se puede usar para un propósito en particular
 openssl_x509_export%bool openssl_x509_export(mixed $x509, string $output, [bool $notext])%Exporta un certificado como una cadena
 openssl_x509_export_to_file%bool openssl_x509_export_to_file(mixed $x509, string $outfilename, [bool $notext])%Exporta un certificado a un archivo
+openssl_x509_fingerprint%bool openssl_x509_fingerprint(mixed $x509, [string $hash_algorithm = "sha1"], [bool $raw_output])%Calculates the fingerprint, or digest, of a given X.509 certificate
 openssl_x509_free%void openssl_x509_free(resource $x509cert)%Liberar un recurso de certificado
 openssl_x509_parse%array openssl_x509_parse(mixed $x509cert, [bool $shortnames = true])%Analiza un certificado X509 y devuelve la información como un matriz
 openssl_x509_read%resource openssl_x509_read(mixed $x509certdata)%Analiza un certificado X.509 y devuelve un identificador de recurso para él
@@ -2117,14 +2131,14 @@ ord%int ord(string $string)%devuelve el valor ASCII de una caracter
 output_add_rewrite_var%bool output_add_rewrite_var(string $name, string $value)%Aladir valores al mecanismo de reescritura de URLs
 output_reset_rewrite_vars%bool output_reset_rewrite_vars()%Restablecer los valores del mecanismo de reescritura de URLs
 pack%string pack(string $format, [mixed $args], [mixed ...])%Empaqueta información a una cadena binaria
-parse_ini_file%array parse_ini_file(string $filename, [bool $process_sections = false], [int $scanner_mode = INI_SCANNER_NORMAL])%Analiza un archivo de configuración
+parse_ini_file%array parse_ini_file(string $filename, [bool $process_sections = false], [int $scanner_mode = INI_SCANNER_NORMAL])%Analiza un fichero de configuración
 parse_ini_string%array parse_ini_string(string $ini, [bool $process_sections = false], [int $scanner_mode = INI_SCANNER_NORMAL])%Analiza una cadena de configuración
-parse_str%void parse_str(string $str, [array $arr])%Interpreta el string en variables
-parse_url%mixed parse_url(string $url, [int $component = -1])%Analiza una URL y devolver sus componentes
+parse_str%void parse_str(string $str, [array $arr])%Convierte el string en variables
+parse_url%mixed parse_url(string $url, [int $component = -1])%Analiza un URL y devuelve sus componentes
 passthru%void passthru(string $command, [int $return_var])%Ejecuta un programa externo y muestra la salida en bruto
 password_get_info%array password_get_info(string $hash)%Devuelve información sobre el hash proporcionado
 password_hash%string password_hash(string $password, integer $algo, [array $options])%Crea un nuevo hash de contraseña
-password_needs_rehash%boolean password_needs_rehash(string $hash, string $algo, [string $options])%Comprueba si el hash facilitado coincide con las opciones proporcionadas
+password_needs_rehash%boolean password_needs_rehash(string $hash, integer $algo, [array $options])%Comprueba si el hash facilitado coincide con las opciones proporcionadas
 password_verify%boolean password_verify(string $password, string $hash)%Comprueba que la contraseña coincida con un hash
 pathinfo%mixed pathinfo(string $path, [int $options = PATHINFO_DIRNAME | PATHINFO_BASENAME | PATHINFO_EXTENSION | PATHINFO_FILENAME])%Devuelve información acerca de la ruta de un fichero
 pclose%int pclose(resource $handle)%Cierra un proceso de un puntero a un archivo
@@ -2155,10 +2169,12 @@ pg_cancel_query%bool pg_cancel_query(resource $connection)%Cancelar una consulta
 pg_client_encoding%string pg_client_encoding([resource $connection])%Obtiene la codificación del cliente
 pg_close%bool pg_close([resource $connection])%Cierra una conexión PostgreSQL
 pg_connect%resource pg_connect(string $connection_string, [int $connect_type])%Abrir una conexión a PostgreSQL
+pg_connect_poll%int pg_connect_poll([resource $connection])%Poll the status of an in-progress asynchronous PostgreSQL connection   attempt.
 pg_connection_busy%bool pg_connection_busy(resource $connection)%Permite saber si la conexión esta ocupada o no
 pg_connection_reset%bool pg_connection_reset(resource $connection)%Restablece conexión (reconectar)
 pg_connection_status%int pg_connection_status(resource $connection)%Obtener estado de la conexión
-pg_convert%array pg_convert(resource $connection, string $table_name, array $assoc_array, [int $options])%convierte los valores de un array asociativo en valores adecuandolos para   su uso en una sentencia SQL
+pg_consume_input%bool pg_consume_input(resource $connection)%Reads input on the connection
+pg_convert%array pg_convert(resource $connection, string $table_name, array $assoc_array, [int $options])%Conviertir valores de un array asociativo en valores adcuados para sentencias SQL
 pg_copy_from%bool pg_copy_from(resource $connection, string $table_name, array $rows, [string $delimiter], [string $null_as])%Insertar registros dentro de una tabla desde un array
 pg_copy_to%array pg_copy_to(resource $connection, string $table_name, [string $delimiter], [string $null_as])%Copiar una tabla a un array
 pg_dbname%string pg_dbname([resource $connection])%Obtiene el nombre de la base de datos
@@ -2184,6 +2200,7 @@ pg_field_size%int pg_field_size(resource $result, int $field_number)%Returns the
 pg_field_table%mixed pg_field_table(resource $result, int $field_number, [bool $oid_only = false])%Returns the name or oid of the tables field
 pg_field_type%string pg_field_type(resource $result, int $field_number)%Returns the type name for the corresponding field number
 pg_field_type_oid%int pg_field_type_oid(resource $result, int $field_number)%Returns the type ID (OID) for the corresponding field number
+pg_flush%mixed pg_flush(resource $connection)%Flush outbound query data on the connection
 pg_free_result%resource pg_free_result(resource $result)%Free result memory
 pg_get_notify%array pg_get_notify(resource $connection, [int $result_type])%Gets SQL NOTIFY message
 pg_get_pid%int pg_get_pid(resource $connection)%Gets the backend's process ID
@@ -2205,7 +2222,7 @@ pg_lo_tell%int pg_lo_tell(resource $large_object)%Returns current seek position 
 pg_lo_truncate%bool pg_lo_truncate(resource $large_object, int $size)%Truncates a large object
 pg_lo_unlink%bool pg_lo_unlink(resource $connection, int $oid)%Delete a large object
 pg_lo_write%int pg_lo_write(resource $large_object, string $data, [int $len])%Write to a large object
-pg_meta_data%array pg_meta_data(resource $connection, string $table_name)%Get meta data for table
+pg_meta_data%array pg_meta_data(resource $connection, string $table_name, [bool $extended])%Get meta data for table
 pg_num_fields%int pg_num_fields(resource $result)%Returns the number of fields in a result
 pg_num_rows%int pg_num_rows(resource $result)%Returns the number of rows in a result
 pg_options%string pg_options([resource $connection])%Get the options associated with the connection
@@ -2228,6 +2245,7 @@ pg_send_query%bool pg_send_query(resource $connection, string $query)%Sends asyn
 pg_send_query_params%bool pg_send_query_params(resource $connection, string $query, array $params)%Submits a command and separate parameters to the server without waiting for the result(s).
 pg_set_client_encoding%int pg_set_client_encoding([resource $connection], string $encoding)%Set the client encoding
 pg_set_error_verbosity%int pg_set_error_verbosity([resource $connection], int $verbosity)%Determines the verbosity of messages returned by pg_last_error    and pg_result_error.
+pg_socket%resource pg_socket(resource $connection)%Get a read only handle to the socket underlying a PostgreSQL connection
 pg_trace%bool pg_trace(string $pathname, [string $mode = "w"], [resource $connection])%Enable tracing a PostgreSQL connection
 pg_transaction_status%int pg_transaction_status(resource $connection)%Returns the current in-transaction status of the server.
 pg_tty%string pg_tty([resource $connection])%Return the TTY name associated with the connection
@@ -2247,7 +2265,7 @@ phpinfo%bool phpinfo([int $what = INFO_ALL])%Muestra información sobre la confi
 phpversion%string phpversion([string $extension])%Obtiene la versión de PHP
 pi%float pi()%Obtener valor de pi
 png2wbmp%bool png2wbmp(string $pngname, string $wbmpname, int $dest_height, int $dest_width, int $threshold)%Convertir un archivo de imagen PNG a un archivo de imagen WBMP
-popen%resource popen(string $command, string $mode)%Abre un proceso de un puntero a un archivo
+popen%resource popen(string $command, string $mode)%Abre un proceso de un puntero a un fichero
 pos%void pos()%Alias de current
 posix_access%bool posix_access(string $file, [int $mode = POSIX_F_OK])%Determinar la accesibilidad de un archivo
 posix_ctermid%string posix_ctermid()%Obtener el nombre de la ruta del terminal controlador
@@ -2271,7 +2289,7 @@ posix_getrlimit%array posix_getrlimit()%Devolver información sobre los límites
 posix_getsid%int posix_getsid(int $pid)%Obtener el sid actual del proceos
 posix_getuid%int posix_getuid()%Devolver el ID real de usuario del proceso actual
 posix_initgroups%bool posix_initgroups(string $name, int $base_group_id)%Calcular la lista de acceso al grupo
-posix_isatty%bool posix_isatty(int $fd)%Determinar si un descriptor de archivo es una terminal  interactiva
+posix_isatty%bool posix_isatty(mixed $fd)%Determinar si un descriptor de fichero es un terminal interactiva
 posix_kill%bool posix_kill(int $pid, int $sig)%Enviar una señal a un proceso
 posix_mkfifo%bool posix_mkfifo(string $pathname, int $mode)%Crear un archivo especial fifo (un pipe con nombre)
 posix_mknod%bool posix_mknod(string $pathname, int $mode, [int $major], [int $minor])%Crear un fichero especial u ordinario (POSIX.1)
@@ -2283,7 +2301,7 @@ posix_setsid%int posix_setsid()%Hacer del proceso actual un líder de sesión
 posix_setuid%bool posix_setuid(int $uid)%Establecer el UID del proceso actual
 posix_strerror%string posix_strerror(int $errno)%Recuperar el mensaje de error del sistema asociado con el errno dado
 posix_times%array posix_times()%Obtener los tiempos de procesos
-posix_ttyname%string posix_ttyname(int $fd)%Determinar el nombre del dispositivo terminal
+posix_ttyname%string posix_ttyname(mixed $fd)%Determinar el nombre del dispositivo terminal
 posix_uname%array posix_uname()%Obtener el nombre del sistema
 pow%number pow(number $base, number $exp)%Expresión exponencial
 preg_filter%mixed preg_filter(mixed $pattern, mixed $replacement, mixed $subject, [int $limit = -1], [int $count])%Realiza una búsqueda y sustitución de una expresión regular
@@ -2398,6 +2416,7 @@ sem_get%resource sem_get(int $key, [int $max_acquire = 1], [int $perm = 0666], [
 sem_release%bool sem_release(resource $sem_identifier)%Liberar un semáforo
 sem_remove%bool sem_remove(resource $sem_identifier)%Eliminar un semáforo
 serialize%string serialize(mixed $value)%Genera una representación apta para el almacenamiento de un valor
+session_abort%bool session_abort()%Discard session array changes and finish session
 session_cache_expire%int session_cache_expire([string $new_cache_expire])%Devuelve la caducidad de la caché actual
 session_cache_limiter%string session_cache_limiter([string $cache_limiter])%Obtener y/o establecer el limitador de caché actual
 session_commit%void session_commit()%Alias de session_write_close
@@ -2412,9 +2431,10 @@ session_name%string session_name([string $name])%Obtener y/o establecer el nombr
 session_regenerate_id%bool session_regenerate_id([bool $delete_old_session = false])%Actualiza el id de sesión actual con uno generado más reciente
 session_register%bool session_register(mixed $name, [mixed ...])%Registrar una o más variables globales con la sesión actual
 session_register_shutdown%void session_register_shutdown()%Función de cierre de sesiones
+session_reset%bool session_reset()%Re-initialize session array with original values
 session_save_path%string session_save_path([string $path])%Obtener y/o establecer la ruta de almacenamiento de la sesión actual
 session_set_cookie_params%void session_set_cookie_params(int $lifetime, [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%Establecer los parámetros de la cookie de sesión
-session_set_save_handler%bool session_set_save_handler(callable $open, callable $close, callable $read, callable $write, callable $destroy, callable $gc, SessionHandlerInterface $sessionhandler, [bool $register_shutdown = true])%Establece funciones de almacenamiento de sesiones a nivel de usuario
+session_set_save_handler%bool session_set_save_handler(callable $open, callable $close, callable $read, callable $write, callable $destroy, callable $gc, [callable $create_sid], SessionHandlerInterface $sessionhandler, [bool $register_shutdown = true])%Establece funciones de almacenamiento de sesiones a nivel de usuario
 session_start%bool session_start()%Iniciar una nueva sesión o reanudar la existente
 session_status%int session_status()%Devuelve el estado de la sesión actual
 session_unregister%bool session_unregister(string $name)%Deja de registrar una variable global de la sesión actual
@@ -2426,7 +2446,7 @@ set_file_buffer%void set_file_buffer()%Alias de stream_set_write_buffer
 set_include_path%string set_include_path(string $new_include_path)%Establece la opción de configuración include_path
 set_magic_quotes_runtime%bool set_magic_quotes_runtime(bool $new_setting)%Establece el valor de configuración activo actual de magic_quotes_runtime
 set_socket_blocking%void set_socket_blocking()%Alias de stream_set_blocking
-set_time_limit%void set_time_limit(int $seconds)%Limita el tiempo máximo de ejecución
+set_time_limit%bool set_time_limit(int $seconds)%Limita el tiempo máximo de ejecución
 setcookie%bool setcookie(string $name, [string $value], [int $expire], [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%Enviar una cookie
 setlocale%string setlocale(int $category, array $locale, [string ...])%Establecer la información de la configuración regional
 setproctitle%void setproctitle(string $title)%Establecer el título de proceso
@@ -2667,7 +2687,7 @@ stats_stat_paired_t%float stats_stat_paired_t(array $arr1, array $arr2)%No docum
 stats_stat_percentile%float stats_stat_percentile(float $df, float $xnonc)%No documentada
 stats_stat_powersum%float stats_stat_powersum(array $arr, float $power)%No documentada
 stats_variance%float stats_variance(array $a, [bool $sample = false])%Devuelve la varianza de población
-str_getcsv%array str_getcsv(string $input, [string $delimiter = ','], [string $enclosure = '"'], [string $escape = '\\'])%Interpreta un string de CSV en un array
+str_getcsv%array str_getcsv(string $input, [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\\"])%Convierte un string con formato CSV a un array
 str_ireplace%mixed str_ireplace(mixed $search, mixed $replace, mixed $subject, [int $count])%Versión insensible a mayúsculas y minúsculas de str_replace
 str_pad%string str_pad(string $input, int $pad_length, [string $pad_string = " "], [int $pad_type = STR_PAD_RIGHT])%Rellena un string hasta una longitud determinada con otro string
 str_repeat%string str_repeat(string $input, int $multiplier)%Repite un string
@@ -2706,7 +2726,7 @@ stream_get_meta_data%array stream_get_meta_data(resource $stream)%Recuperar meta
 stream_get_transports%array stream_get_transports()%Recuperar la lista de transportes de socket registrados
 stream_get_wrappers%array stream_get_wrappers()%Recupera la lista de los flujos registrados
 stream_is_local%bool stream_is_local(mixed $stream_or_url)%Comprueba si un flujo es un flujo local
-stream_notification_callback%callable stream_notification_callback(int $notification_code, int $severity, string $message, int $message_code, int $bytes_transferred, int $bytes_max)%Una función de llamada de retorno para el parámetro de contexto de notificación
+stream_notification_callback%callable stream_notification_callback(int $notification_code, int $severity, string $message, int $message_code, int $bytes_transferred, int $bytes_max)%Una función de retrollamada para el parámetro de contexto de notificación
 stream_register_wrapper%void stream_register_wrapper()%Alias de stream_wrapper_register
 stream_resolve_include_path%string stream_resolve_include_path(string $filename)%Resuelve el nombre de archivo en la ruta incluida
 stream_select%int stream_select(array $read, array $write, array $except, int $tv_sec, [int $tv_usec])%Ejecuta el equivalente de la llamada al sistema select() sobre las matrices   de flujos dadas con un tiempo de espera especificado por tv_sec y tv_usec
@@ -2731,7 +2751,7 @@ stream_wrapper_unregister%bool stream_wrapper_unregister(string $protocol)%Deja 
 strftime%string strftime(string $format, [int $timestamp = time()])%Formatea una fecha/hora local según la configuración regional
 strip_tags%string strip_tags(string $str, [string $allowable_tags])%Retira las etiquetas HTML y PHP de un string
 stripcslashes%string stripcslashes(string $str)%Desmarca la cadena marcada con  addcslashes
-stripos%int stripos(string $haystack, string $needle, [int $offset])%Encuentra la posición de la primera aparición de un substring insensible a mayúsculas y minúsculas en in string
+stripos%int stripos(string $haystack, string $needle, [int $offset])%Encuentra la posición de la primera aparición de un substring en un string sin considerar mayúsculas ni minúsculas
 stripslashes%string stripslashes(string $str)%Quita las barras de un string con comillas escapadas
 stristr%string stristr(string $haystack, mixed $needle, [bool $before_needle = false])%strstr insensible a mayúsculas y minúsculas
 strlen%int strlen(string $string)%Obtiene la longitud de un string
@@ -2755,7 +2775,7 @@ strtoupper%string strtoupper(string $string)%Convierte un string a mayúsculas
 strtr%string strtr(string $str, string $from, string $to, array $replace_pairs)%Convierte caracteres o reemplaza substrings
 strval%string strval(mixed $var)%Obtiene el valor de cadena de una variable
 substr%string substr(string $string, int $start, [int $length])%Devuelve parte de una cadena
-substr_compare%int substr_compare(string $main_str, string $str, int $offset, [int $length], [bool $case_insensitivity = false])%Comparación segura a nivel binario de dos o más cadenas desde un índice, hasta una longitud dada de caracteres
+substr_compare%int substr_compare(string $main_str, string $str, int $offset, [int $length], [bool $case_insensitivity = false])%Comparación segura a nivel binario de dos o más strings desde un índice hasta una longitud de caracteres dada
 substr_count%int substr_count(string $haystack, string $needle, [int $offset], [int $length])%Cuenta el número de apariciones del substring
 substr_replace%mixed substr_replace(mixed $string, mixed $replacement, mixed $start, [mixed $length])%Reemplaza el texto dentro de una porción de un string
 sybase_affected_rows%int sybase_affected_rows([resource $link_identifier])%Obtiene el número de filas afectadas en la última operación
@@ -2791,7 +2811,7 @@ system%string system(string $command, [int $return_var])%Ejecutar un programa ex
 taint%bool taint(string $string, [string ...])%Taint a string
 tan%float tan(float $arg)%Tangente
 tanh%float tanh(float $arg)%Tangente hiperbólica
-tempnam%string tempnam(string $dir, string $prefix)%Crea un archivo con un nombre de archivo único
+tempnam%string tempnam(string $dir, string $prefix)%Crea un fichero con un nombre de fichero único
 textdomain%string textdomain(string $text_domain)%Establece el dominio actual
 tidy%object tidy([string $filename], [mixed $config], [string $encoding], [bool $use_include_path])%Construye un nuevo objeto tidy
 tidy_access_count%int tidy_access_count(tidy $object)%Devuelve el número de alertas de accesibilidad Tidy encontradas en un documento dado
@@ -3024,6 +3044,19 @@ unregister_tick_function%void unregister_tick_function(string $function_name)%De
 unserialize%mixed unserialize(string $str)%Crea un valor PHP a partir de una representación almacenada
 unset%void unset(mixed $var, [mixed ...])%Destruye una variable especificada
 untaint%bool untaint(string $string, [string ...])%Untaint strings
+uopz_backup%void uopz_backup(string $class, string $function)%Backup a function
+uopz_compose%void uopz_compose(string $name, array $classes, [array $methods], [array $properties], [int $flags])%Compose a class
+uopz_copy%Closure uopz_copy(string $class, string $function)%Copy a function
+uopz_delete%void uopz_delete(string $class, string $function)%Delete a function
+uopz_extend%void uopz_extend(string $class, string $parent)%Extend a class at runtime
+uopz_flags%int uopz_flags(string $class, string $function, int $flags)%Get or set flags on function or class
+uopz_function%void uopz_function(string $class, string $function, Closure $handler, [int $modifiers])%Creates a function at runtime
+uopz_implement%void uopz_implement(string $class, string $interface)%Implements an interface at runtime
+uopz_overload%void uopz_overload(int $opcode, Callable $callable)%Overload a VM opcode
+uopz_redefine%void uopz_redefine(string $class, string $constant, mixed $value)%Redefine a constant
+uopz_rename%void uopz_rename(string $class, string $function, string $rename)%Rename a function at runtime
+uopz_restore%void uopz_restore(string $class, string $function)%Restore a previously backed up function
+uopz_undefine%void uopz_undefine(string $class, string $constant)%Undefine a constant
 urldecode%string urldecode(string $str)%Decodifica una cadena cifrada como URL
 urlencode%string urlencode(string $str)%Codifica como URL una cadena
 use_soap_error_handler%bool use_soap_error_handler([bool $handler = true])%Establecer si se desea utilizar el controlador de errores SOAP
@@ -3031,7 +3064,7 @@ user_error%void user_error()%Alias de trigger_error
 usleep%void usleep(int $micro_seconds)%Retrasar la ejecución en microsegundos
 usort%bool usort(array $array, callable $value_compare_func)%Ordena un array según sus valores usando una función de comparación definida por el usuario
 utf8_decode%string utf8_decode(string $data)%Convierte una cadena con los caracteres codificados ISO-8859-1 con UTF-8   a un sencillo byte ISO-8859-1
-utf8_encode%string utf8_encode(string $data)%Codifica una cadena ISO-8859-1 a UTF-8
+utf8_encode%string utf8_encode(string $data)%Codifica un string ISO-8859-1 a UTF-8
 var_dump%string var_dump(mixed $expression, [mixed ...])%Muestra información sobre una variable
 var_export%mixed var_export(mixed $expression, [bool $return = false])%Imprime o devuelve una representación string de una variable analizable
 variant_abs%mixed variant_abs(mixed $val)%Devuelve el valor absoluto de una variante
@@ -3084,7 +3117,7 @@ xml_get_error_code%int xml_get_error_code(resource $parser)%Obtiene un código d
 xml_parse%int xml_parse(resource $parser, string $data, [bool $is_final = false])%Inicia un intérprete sobre un documento XML
 xml_parse_into_struct%int xml_parse_into_struct(resource $parser, string $data, array $values, [array $index])%Interpreta datos XML en una estructura de array
 xml_parser_create%resource xml_parser_create([string $encoding])%Crea un intérprete XML
-xml_parser_create_ns%resource xml_parser_create_ns([string $encoding], [string $separator = ':'])%Crea un analizador XML con soporte para espacios de nombres
+xml_parser_create_ns%resource xml_parser_create_ns([string $encoding], [string $separator = ":"])%Crea un analizador XML con soporte para espacios de nombres
 xml_parser_free%bool xml_parser_free(resource $parser)%Liberar una analizador XML
 xml_parser_get_option%mixed xml_parser_get_option(resource $parser, int $option)%Obtiene el valor de las opciones de un intérprete XML
 xml_parser_set_option%bool xml_parser_set_option(resource $parser, int $option, mixed $value)%Configura las opciones en un intérprete XML
@@ -3154,25 +3187,6 @@ xmlwriter_write_element%bool xmlwriter_write_element(string $name, [string $cont
 xmlwriter_write_element_ns%bool xmlwriter_write_element_ns(string $prefix, string $name, string $uri, [string $content], resource $xmlwriter)%Escribe una etiqueta completa del elemento
 xmlwriter_write_pi%bool xmlwriter_write_pi(string $target, string $content, resource $xmlwriter)%Escribe un IP
 xmlwriter_write_raw%bool xmlwriter_write_raw(string $content, resource $xmlwriter)%Escribe un texto sin formato del XML
-xslt_backend_info%string xslt_backend_info()%Devuelve la información sobre las opciones de compilación del servidor
-xslt_backend_name%string xslt_backend_name()%Devuelve el nombre del backend
-xslt_backend_version%string xslt_backend_version()%Devuelve el número de versión de Sablotron
-xslt_create%resource xslt_create()%Crear un nuevo procesador de XSLT
-xslt_errno%int xslt_errno(resource $xh)%Devuelve un número de error
-xslt_error%string xslt_error(resource $xh)%Devuelve una cadena de errores
-xslt_free%void xslt_free(resource $xh)%Libera el procesador de XSLT
-xslt_getopt%int xslt_getopt(resource $processor)%Obtener las opciones de un procesador XSL dado
-xslt_process%mixed xslt_process(resource $xh, string $xmlcontainer, string $xslcontainer, [string $resultcontainer], [array $arguments], [array $parameters])%Perform an XSLT transformation
-xslt_set_base%void xslt_set_base(resource $xh, string $uri)%Establecer el URI base para todas las transformaciones XSLT
-xslt_set_encoding%void xslt_set_encoding(resource $xh, string $encoding)%Establecer la codificación para el análisis de documentos XML
-xslt_set_error_handler%void xslt_set_error_handler(resource $xh, mixed $handler)%Establecer un manejador de error para un procesador XSLT
-xslt_set_log%void xslt_set_log(resource $xh, [mixed $log])%Set the log file to write log messages to
-xslt_set_object%bool xslt_set_object(resource $processor, object $obj)%Establece el objeto en que resolver funciones de devolución de llamada
-xslt_set_sax_handler%void xslt_set_sax_handler(resource $xh, array $handlers)%Establecer manejadores SAX para un procesador XSLT
-xslt_set_sax_handlers%void xslt_set_sax_handlers(resource $processor, array $handlers)%Establecer los manejadores SAX que se llamará cuando el documento XML se procesa
-xslt_set_scheme_handler%void xslt_set_scheme_handler(resource $xh, array $handlers)%Establecer manejadores de esquema para un procesador XSLT
-xslt_set_scheme_handlers%void xslt_set_scheme_handlers(resource $xh, array $handlers)%Set the scheme handlers for the XSLT processor
-xslt_setopt%mixed xslt_setopt(resource $processor, int $newmask)%Set options on a given XSLT processor
 zend_logo_guid%string zend_logo_guid()%Obtiene el valor guid de Zend
 zend_thread_id%int zend_thread_id()%Devuelve un identificador único del thread actual
 zend_version%string zend_version()%Obtiene la versión del motor Zend actual
