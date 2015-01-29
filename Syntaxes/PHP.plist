@@ -1534,7 +1534,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?i)^\s*(namespace)\b\s+(?=([a-z0-9_\\]+\s*($|[;{]|(\/[\/*])))|$)</string>
+					<string>(?i)(?:^|(?&lt;=&lt;\?php))\s*(namespace)\b\s+(?=([a-z0-9_\\]+\s*($|[;{]|(\/[\/*])))|$)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
