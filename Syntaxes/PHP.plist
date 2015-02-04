@@ -2894,22 +2894,6 @@
 					<string>string.regexp.arbitrary-repitition.php</string>
 				</dict>
 				<dict>
-					<key>comment</key>
-					<string>Escaped from the regexp – there can also be 2 backslashes (since 1 will escape the first)</string>
-					<key>match</key>
-					<string>(\\){1,2}[.$^\[\]{}]</string>
-					<key>name</key>
-					<string>constant.character.escape.regex.php</string>
-				</dict>
-				<dict>
-					<key>comment</key>
-					<string>Escaped from the PHP string – there can also be 2 backslashes (since 1 will escape the first)</string>
-					<key>match</key>
-					<string>\\{1,2}[\\']</string>
-					<key>name</key>
-					<string>constant.character.escape.php</string>
-				</dict>
-				<dict>
 					<key>begin</key>
 					<string>\[(?:\^?\])?</string>
 					<key>captures</key>
@@ -2927,16 +2911,8 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>match</key>
-							<string>\\\\[\[\]]</string>
-							<key>name</key>
-							<string>constant.character.escape.php</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\\[\\']</string>
-							<key>name</key>
-							<string>constant.character.escape.php</string>
+							<key>include</key>
+							<string>#single_quote_regex_escape</string>
 						</dict>
 					</array>
 				</dict>
@@ -2946,7 +2922,23 @@
 					<key>name</key>
 					<string>keyword.operator.regexp.php</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single_quote_regex_escape</string>
+				</dict>
 			</array>
+			<key>repository</key>
+			<dict>
+				<key>single_quote_regex_escape</key>
+				<dict>
+					<key>comment</key>
+					<string>Support both PHP string and regex escaping</string>
+					<key>match</key>
+					<string>(?x) \\ \\?+ (?: [^\\] | \\ [\\']? )</string>
+					<key>name</key>
+					<string>constant.character.escape.php</string>
+				</dict>
+			</dict>
 		</dict>
 		<key>sql-string-double-quoted</key>
 		<dict>
