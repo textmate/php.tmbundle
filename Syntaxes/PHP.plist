@@ -2851,7 +2851,7 @@
 		<key>regex-single-quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>(?x)'/ (?= (\\.|[^'/])++/[imsxeADSUXu]*' )</string>
+			<string>(?x)'/ (?= ( \\ (?: \\ (?: \\ [\\']? | [^'] ) | . ) | [^'/] )++/[imsxeADSUXu]*' )</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -2934,7 +2934,7 @@
 					<key>comment</key>
 					<string>Support both PHP string and regex escaping</string>
 					<key>match</key>
-					<string>(?x) \\ \\?+ (?: [^\\] | \\ [\\']? )</string>
+					<string>(?x) \\ (?: \\ (?: \\ [\\']? | [^'] ) | . )</string>
 					<key>name</key>
 					<string>constant.character.escape.php</string>
 				</dict>
