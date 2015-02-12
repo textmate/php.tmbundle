@@ -34,7 +34,7 @@ when /function\s*(\w+)\((.*)\)/
 when /const|define/
   type = 'constant'
   author = false
-when /var|p(ublic|rivate|rotected)\s*\$/
+when /var|p(ublic|rivate|rotected)(\s*static)?\s*\$/
   type = 'variable'
   tag 'var', 'string'
   author = false
@@ -59,15 +59,23 @@ print ' */$0'</string>
 	<string>scope</string>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>Post-doc</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>snippet</string>
+	<key>outputLocation</key>
+	<string>replaceSelection</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>doc</string>
 	<key>uuid</key>
 	<string>94D8B40B-9F49-4B6D-90B5-DBFF5FB36590</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
