@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Folding</string>
+	<key>scope</key>
+	<string>text.html.php</string>
+	<key>settings</key>
+	<dict>
+		<key>foldingStartMarker</key>
+		<string>(?x)
+		(&lt;(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|section|article|header|footer|nav|aside)\b.*?&gt;
+		|&lt;!--(?!.*--\s*&gt;)
+		|^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
+		|&lt;\?(?:php)?.*\b(if|for(each)?|while)\b.+:
+		|\{\{?(if|foreach|capture|literal|foreach|php|section|strip)
+		|\{\s*($|\?&gt;\s*$|//|/\*(.*\*/\s*$|(?!.*?\*/)))
+		|array\s?\(\s*$
+		|\[\s*$
+		)</string>
+		<key>foldingStopMarker</key>
+		<string>(?x)
+		(&lt;/(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|li|form|dl|section|article|header|footer|nav|aside)&gt;
+		|^(?!.*?&lt;!--).*?--\s*&gt;
+		|^&lt;!--\ end\ tminclude\ --&gt;$
+		|&lt;\?(?:php)?.*\bend(if|for(each)?|while)\b
+		|\{\{?/(if|foreach|capture|literal|foreach|php|section|strip)
+		|^[^{]*\}
+		|^\s*\)[,;]
+		|^\s*\][,;]
+		)</string>
+	</dict>
+	<key>uuid</key>
+	<string>7F5C8332-CEE9-4A30-A3A1-54F36AF45C38</string>
+</dict>
+</plist>
