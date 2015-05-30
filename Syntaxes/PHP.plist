@@ -535,7 +535,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?x)
+					<string>(?xi)
 							\s*(array) # Typehint
 							\s*(&amp;)? 					# Reference
 							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
