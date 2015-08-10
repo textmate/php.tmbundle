@@ -24,7 +24,7 @@ ruby18 -- "$TM_BUNDLE_SUPPORT/lib/php_mate.rb"</string>
 	<key>outputLocation</key>
 	<string>newWindow</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>text.html.php</string>
 	<key>semanticClass</key>
 	<string>process.run.php</string>
 	<key>uuid</key>
