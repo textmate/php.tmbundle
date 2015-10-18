@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby18 -wKU
+#!/usr/local/opt/ruby187/bin/ruby -wKU
 
 # Generate grammar selectors from the PHP docs JSON file produced by generate.php
 #
@@ -9,8 +9,8 @@
 
 require 'rubygems'
 require 'json'
-require File.dirname(File.dirname(__FILE__)) + '/lib/Builder'
-require '/Applications/TextMate.app/Contents/SharedSupport/Support/lib/osx/plist'
+require '~/Library/Application Support/Avian/Bundles/php.tmbundle/Support/lib/Builder'
+require '~/Library/Application Support/Avian/Bundles/bundle-support.tmbundle/Support/shared/lib/osx/plist'
 
 data = JSON.parse(File.read(ARGV[0]))
 classes = data['classes']

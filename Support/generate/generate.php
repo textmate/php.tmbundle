@@ -140,7 +140,7 @@ if (!is_dir('doc-base')) {
 }
 
 if (!is_dir('phd')) {
-    runCmd('svn checkout http://svn.php.net/repository/phd/trunk ./phd');
+    runCmd('git clone https://github.com/php/phd.git ./phd');
 }
 
 chdir('..');
