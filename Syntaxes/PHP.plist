@@ -239,7 +239,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?i)(\\)?\b(st(dClass|reamWrapper)|R(RD(Graph|Creator|Updater)|untimeException|e(sourceBundle|cursive(RegexIterator|Ca(chingIterator|llbackFilterIterator)|TreeIterator|Iterator(Iterator)?|DirectoryIterator|FilterIterator|ArrayIterator)|flect(ion(Method|Class|ZendExtension|Object|P(arameter|roperty)|Extension|Function(Abstract)?)?|or)|gexIterator)|angeException)|G(ender\Gender|lobIterator|magick(Draw|Pixel)?)|X(sltProcessor|ML(Reader|Diff\\(Memory|Base|DOM|File)|Writer)|SLTProcessor)|M(ysqlndUh(Connection|PreparedStatement)|ongo(Re(sultException|gex)|Grid(fsFile|FS(Cursor|File)?)|BinData|C(o(de|llection|mmandCursor)|ursor(Exception)?|lient)|Timestamp|I(n(sertBatch|t(32|64))|d)|D(B(Ref)?|eleteBatch|ate)|UpdateBatch|Pool|Write(Batch|ConcernException)|Log)?|u(tex|ltipleIterator)|e(ssageFormatter|mcache(d)?))|Bad(MethodCallException|FunctionCallException)|tidy(Node)?|S(ync(ReaderWriter|Mutex|Semaphore|Event)|impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|NMP|CA(_(SoapProxy|LocalProxy))?|p(hinxClient|oofchecker|l(M(inHeap|axHeap)|S(tack|ubject)|Heap|T(ype|empFileObject)|Ob(server|jectStorage)|DoublyLinkedList|PriorityQueue|Enum|Queue|Fi(le(Info|Object)|xedArray)))|e(ssionHandler(Interface)?|ekableIterator|rializable)|DO_(Model_(ReflectionDataObject|Type|Property)|Sequence|D(ata(Object|Factory)|AS_(Relational|XML(_Document)?|Setting|ChangeSummary|Data(Object|Factory)))|Exception|List)|wish(Result(s)?|Search)?|VM(Model)?|QLite(Result|3(Result|Stmt)?|Database|Unbuffered)|AM(Message|Connection))|H(RTime\\(StopWatch|PerformanceCounter)|ttp(Re(sponse|quest(Pool)?)|Message|InflateStream|DeflateStream|QueryString)|aru(Image|Outline|D(oc|estination)|Page|Encoder|Font|Annotation))|Ya(f_(R(oute(_(Re(write|gex)|Map|S(tatic|imple|upervar)|Interface)|r)|e(sponse_Abstract|quest_(Simple|Http|Abstract)|gistry))|Session|Con(troller_Abstract|fig_(Simple|Ini|Abstract))|Dispatcher|Plugin_Abstract|Exception|View_(Simple|Interface)|Loader|A(ction_Abstract|pplication))|r_(Server(_Exception)?|C(oncurrent_Client|lient(_Exception)?)))|N(o(RewindIterator|rmalizer)|umberFormatter)|C(o(nd|untable|ll(ectable|ator))|URLFile|a(chingIterator|llbackFilterIterator))|T(hread(ed)?|okyoTyrant(Table|Iterator|Query)?|ra(nsliterator|versable))|I(n(tl(RuleBasedBreakIterator|BreakIterator|C(odePointBreakIterator|alendar)|TimeZone|Iterator|DateFormatter|PartsIterator)|validArgumentException|finiteIterator)|terator(Iterator|Aggregate)?|magick(Draw|Pixel(Iterator)?)?)|php_user_filter|Z(MQ(Socket|Context|Device|Poll)?|ipArchive)|O(CI-(Collection|Lob)|ut(erIterator|Of(RangeException|BoundsException))|verflowException)|D(irectory(Iterator)?|omainException|OM(XPath|N(ode(list)?|amedNodeMap)|C(haracterData|omment|dataSection)|Text|Implementation|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr)|ate(Time(I(nterface|mmutable)|Zone)?|Interval|Period))|U(n(derflowException|expectedValueException)|Converter)|JsonSerializable|finfo|P(har(Data|FileInfo)?|ool|DO(Statement)?|arentIterator)|E(v(S(tat|ignal)|Ch(ild|eck)|Timer|I(o|dle)|ent(B(uffer(Event)?|ase)|SslContext|Http(Request|Connection)?|Config|DnsBase|Util|Listener)?|P(eriodic|repare)|Embed|Fork|Watcher|Loop)?|rrorException|xception|mptyIterator)|V(8Js(Exception)?|arnish(Stat|Log|Admin))|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|Frame|AttachedPictureFrame))|QuickHash(StringIntHash|Int(S(tringHash|et)|Hash))|F(il(terIterator|esystemIterator)|ANNConnection)|mysqli(_(stmt|driver|warning|result))?|W(orker|eak(Map|ref))|L(imitIterator|o(cale|gicException)|ua(Closure)?|engthException|apack)|A(ppendIterator|PCIterator|rray(Iterator|Object|Access)))\b</string>
+					<string>(?i)(\\)?\b(st(dClass|reamWrapper)|R(RD(Graph|Creator|Updater)|untimeException|e(sourceBundle|cursive(RegexIterator|Ca(chingIterator|llbackFilterIterator)|TreeIterator|Iterator(Iterator)?|DirectoryIterator|FilterIterator|ArrayIterator)|flect(ion(Generator|Method|Class|Type|ZendExtension|Object|P(arameter|roperty)|Extension|Function(Abstract)?)?|or)|gexIterator)|angeException)|G(ender\\Gender|lobIterator|magick(Draw|Pixel)?)|X(sltProcessor|ML(Reader|Diff\\(Memory|Base|DOM|File)|Writer)|SLTProcessor)|M(ysqlndUh(Connection|PreparedStatement)|ongo(Re(sultException|gex)|Grid(fsFile|FS(Cursor|File)?)|BinData|C(o(de|llection|mmandCursor)|ursor(Interface|Exception)?|lient)|Timestamp|I(n(sertBatch|t(32|64))|d)|D(B(Ref|\\(BSON\\(Regex|Binary|Serializable|Timestamp|ObjectID|U(nserializable|TCDatetime)|Javascript)|Driver\\(ReadPreference|Manager|BulkWrite|Server|C(ommand|ursor(Id)?)|Query|Write(Result|Concern(Error)?|E(rror|xception)))))?|eleteBatch|ate)|UpdateBatch|Pool|Write(Batch|ConcernException)|Log)?|u(tex|ltipleIterator)|e(ssageFormatter|mcache(d)?))|Bad(MethodCallException|FunctionCallException)|tidy(Node)?|S(ync(ReaderWriter|Mutex|Semaphore|Event)|impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|NMP|CA(_(SoapProxy|LocalProxy))?|p(hinxClient|oofchecker|l(M(inHeap|axHeap)|S(tack|ubject)|Heap|T(ype|empFileObject)|Ob(server|jectStorage)|DoublyLinkedList|PriorityQueue|Enum|Queue|Fi(le(Info|Object)|xedArray)))|e(ssionHandler(Interface)?|ekableIterator|rializable)|DO_(Model_(ReflectionDataObject|Type|Property)|Sequence|D(ata(Object|Factory)|AS_(Relational|XML(_Document)?|Setting|ChangeSummary|Data(Object|Factory)))|Exception|List)|wish(Result(s)?|Search)?|VM(Model)?|QLite(Result|3(Result|Stmt)?|Database|Unbuffered)|AM(Message|Connection))|H(RTime\\(StopWatch|PerformanceCounter)|ttp(Re(sponse|quest(Pool)?)|Message|InflateStream|DeflateStream|QueryString)|aru(Image|Outline|D(oc|estination)|Page|Encoder|Font|Annotation))|Ya(f_(R(oute(_(Re(write|gex)|Map|S(tatic|imple|upervar)|Interface)|r)|e(sponse_Abstract|quest_(Simple|Http|Abstract)|gistry))|Session|Con(troller_Abstract|fig_(Simple|Ini|Abstract))|Dispatcher|Plugin_Abstract|Exception|View_(Simple|Interface)|Loader|A(ction_Abstract|pplication))|r_(Server(_Exception)?|C(oncurrent_Client|lient(_Exception)?)))|N(o(RewindIterator|rmalizer)|umberFormatter)|C(o(nd|untable|ll(ectable|ator))|URLFile|a(chingIterator|llbackFilterIterator))|T(hread(ed)?|okyoTyrant(Table|Iterator|Query)?|ra(nsliterator|versable))|I(n(tl(RuleBasedBreakIterator|BreakIterator|C(har|odePointBreakIterator|alendar)|TimeZone|Iterator|DateFormatter|PartsIterator)|validArgumentException|finiteIterator)|terator(Iterator|Aggregate)?|magick(Draw|Pixel(Iterator)?|Kernel)?)|php_user_filter|Z(MQ(Socket|Context|Device|Poll)?|ipArchive)|O(CI-(Collection|Lob)|ut(erIterator|Of(RangeException|BoundsException))|verflowException)|D(irectory(Iterator)?|omainException|OM(XPath|N(ode(list)?|amedNodeMap)|C(haracterData|omment|dataSection)|Text|Implementation|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr)|ate(Time(I(nterface|mmutable)|Zone)?|Interval|Period))|U(n(derflowException|expectedValueException)|Converter)|JsonSerializable|finfo|P(har(Data|FileInfo)?|ool|DO(Statement)?|arentIterator)|E(v(S(tat|ignal)|Ch(ild|eck)|Timer|I(o|dle)|ent(B(uffer(Event)?|ase)|SslContext|Http(Request|Connection)?|Config|DnsBase|Util|Listener)?|P(eriodic|repare)|Embed|Fork|Watcher|Loop)?|rrorException|xception|mptyIterator)|V(8Js(Exception)?|arnish(Stat|Log|Admin))|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|Frame|AttachedPictureFrame))|QuickHash(StringIntHash|Int(S(tringHash|et)|Hash))|F(il(terIterator|esystemIterator)|ANNConnection)|mysqli(_(stmt|driver|warning|result))?|W(orker|eak(Map|ref))|L(imitIterator|o(cale|gicException)|ua(Closure)?|engthException|apack)|A(ppendIterator|PCIterator|rray(Iterator|Object|Access)))\b</string>
 					<key>name</key>
 					<string>support.class.builtin.php</string>
 				</dict>
@@ -3290,13 +3290,19 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>(?i)\bBSON\\(to(JSON|Array)|from(JSON|Array))\b</string>
+					<key>name</key>
+					<string>support.function.bson.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(?i)\bbz(c(ompress|lose)|open|decompress|err(str|no|or)|flush|write|read)\b</string>
 					<key>name</key>
 					<string>support.function.bz2.php</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(GregorianToJD|cal_(to_jd|info|days_in_month|from_jd)|unixtojd|jdto(unix|jewish)|easter_da(ys|te)|J(ulianToJD|ewishToJD|D(MonthName|To(Gregorian|Julian|French)|DayOfWeek))|FrenchToJD)\b</string>
+					<string>(?i)\b(cal_(to_jd|info|days_in_month|from_jd)|unixtojd|j(d(to(unix|j(ulian|ewish)|french|gregorian)|dayofweek|monthname)|uliantojd|ewishtojd)|easter_da(ys|te)|frenchtojd|gregoriantojd)\b</string>
 					<key>name</key>
 					<string>support.function.calendar.php</string>
 				</dict>
@@ -3311,6 +3317,12 @@
 					<string>(?i)\b(com_(create_guid|print_typeinfo|event_sink|load_typelib|get_active_object|message_pump)|variant_(s(ub|et(_type)?)|n(ot|eg)|c(a(st|t)|mp)|i(nt|div|mp)|or|d(iv|ate_(to_timestamp|from_timestamp))|pow|eqv|fix|a(nd|dd|bs)|round|get_type|xor|m(od|ul)))\b</string>
 					<key>name</key>
 					<string>support.function.com.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i)\brandom_(int|bytes)\b</string>
+					<key>name</key>
+					<string>support.function.csprng.php</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -3356,7 +3368,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\benchant_(dict_(s(tore_replacement|uggest)|check|is_in_session|describe|quick_check|add_to_(session|personal)|get_error)|broker_(set_ordering|init|d(ict_exists|escribe)|free(_dict)?|list_dicts|request_(dict|pwl_dict)|get_error))\b</string>
+					<string>(?i)\benchant_(dict_(s(tore_replacement|uggest)|check|is_in_session|describe|quick_check|add_to_(session|personal)|get_error)|broker_(set_(ordering|dict_path)|init|d(ict_exists|escribe)|free(_dict)?|list_dicts|request_(dict|pwl_dict)|get_(dict_path|error)))\b</string>
 					<key>name</key>
 					<string>support.function.enchant.php</string>
 				</dict>
@@ -3368,7 +3380,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(set_e(rror_handler|xception_handler)|trigger_error|debug_(print_backtrace|backtrace)|user_error|error_(log|reporting|get_last)|restore_e(rror_handler|xception_handler))\b</string>
+					<string>(?i)\b(set_e(rror_handler|xception_handler)|trigger_error|debug_(print_backtrace|backtrace)|user_error|error_(clear_last|log|reporting|get_last)|restore_e(rror_handler|xception_handler))\b</string>
 					<key>name</key>
 					<string>support.function.errorfunc.php</string>
 				</dict>
@@ -3428,7 +3440,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bgmp_(s(can(1|0)|trval|ign|ub|etbit|qrt(rem)?)|hamdist|ne(g|xtprime)|c(om|lrbit|mp)|testbit|i(n(tval|it|vert)|mport)|or|div(_(q(r)?|r)|exact)?|jacobi|p(o(pcount|w(m)?)|erfect_square|rob_prime)|export|fact|legendre|a(nd|dd|bs)|r(oot(rem)?|andom(_(range|bits))?)|gcd(ext)?|xor|m(od|ul))\b</string>
+					<string>(?i)\bgmp_(s(can(1|0)|trval|ign|ub|etbit|qrt(rem)?)|hamdist|ne(g|xtprime)|c(om|lrbit|mp)|testbit|i(n(tval|it|vert)|mport)|or|div(_(q(r)?|r)|exact)?|jacobi|p(o(pcount|w(m)?)|erfect_square|rob_prime)|export|fact|legendre|a(nd|dd|bs)|r(oot(rem)?|andom(_(seed|range|bits))?)|gcd(ext)?|xor|m(od|ul))\b</string>
 					<key>name</key>
 					<string>support.function.gmp.php</string>
 				</dict>
@@ -3464,7 +3476,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(s(ys_get_temp_dir|et_(time_limit|include_path|magic_quotes_runtime))|cli_(set_process_title|get_process_title)|ini_(set|alter|restore|get(_all)?)|zend_(thread_id|version|logo_guid)|dl|p(hp(credits|info|_(sapi_name|ini_(scanned_files|loaded_file)|uname|logo_guid)|version)|utenv)|extension_loaded|version_compare|assert(_options)?|restore_include_path|g(c_(collect_cycles|disable|enable(d)?)|et(opt|_(c(urrent_user|fg_var)|include(d_files|_path)|defined_constants|extension_funcs|loaded_extensions|required_files|magic_quotes_(runtime|gpc))|env|lastmod|rusage|my(inode|uid|pid|gid)))|m(emory_get_(usage|peak_usage)|a(in|gic_quotes_runtime)))\b</string>
+					<string>(?i)\b(s(ys_get_temp_dir|et_(time_limit|include_path|magic_quotes_runtime))|cli_(set_process_title|get_process_title)|ini_(set|alter|restore|get(_all)?)|zend_(thread_id|version|logo_guid)|dl|p(hp(credits|info|_(sapi_name|ini_(scanned_files|loaded_file)|uname|logo_guid)|version)|utenv)|extension_loaded|version_compare|assert(_options)?|restore_include_path|g(c_(collect_cycles|disable|enable(d)?|mem_caches)|et(opt|_(c(urrent_user|fg_var)|include(d_files|_path)|defined_constants|extension_funcs|loaded_extensions|re(sources|quired_files)|magic_quotes_(runtime|gpc))|env|lastmod|rusage|my(inode|uid|pid|gid)))|m(emory_get_(usage|peak_usage)|a(in|gic_quotes_runtime)))\b</string>
 					<key>name</key>
 					<string>support.function.info.php</string>
 				</dict>
@@ -3506,7 +3518,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(s(in(h)?|qrt|rand)|h(ypot|exdec)|c(os(h)?|eil)|tan(h)?|is_(nan|infinite|finite)|octdec|de(c(hex|oct|bin)|g2rad)|p(i|ow)|exp(m1)?|f(loor|mod)|l(cg_value|og(1(p|0))?)|a(sin(h)?|cos(h)?|tan(h|2)?|bs)|r(ound|a(nd|d2deg))|getrandmax|m(t_(srand|rand|getrandmax)|in|ax)|b(indec|ase_convert))\b</string>
+					<string>(?i)\b(s(in(h)?|qrt|rand)|h(ypot|exdec)|c(os(h)?|eil)|tan(h)?|i(s_(nan|infinite|finite)|ntdiv)|octdec|de(c(hex|oct|bin)|g2rad)|p(i|ow)|exp(m1)?|f(loor|mod)|l(cg_value|og(1(p|0))?)|a(sin(h)?|cos(h)?|tan(h|2)?|bs)|r(ound|a(nd|d2deg))|getrandmax|m(t_(srand|rand|getrandmax)|in|ax)|b(indec|ase_convert))\b</string>
 					<key>name</key>
 					<string>support.function.math.php</string>
 				</dict>
@@ -3596,7 +3608,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bopcache_(compile_file|invalidate|reset|get_(status|configuration))\b</string>
+					<string>(?i)\bopcache_(compile_file|i(s_script_cached|nvalidate)|reset|get_(status|configuration))\b</string>
 					<key>name</key>
 					<string>support.function.opcache.php</string>
 				</dict>
@@ -3668,7 +3680,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bpreg_(split|quote|filter|last_error|replace(_callback)?|grep|match(_all)?)\b</string>
+					<string>(?i)\bpreg_(split|quote|filter|last_error|replace(_callback(_array)?)?|grep|match(_all)?)\b</string>
 					<key>name</key>
 					<string>support.function.php_pcre.php</string>
 				</dict>
@@ -3686,7 +3698,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bposix_(s(trerror|et(sid|uid|pgid|e(uid|gid)|gid))|ctermid|t(tyname|imes)|i(satty|nitgroups)|uname|errno|kill|access|get(sid|cwd|uid|_last_error|p(id|pid|w(nam|uid)|g(id|rp))|e(uid|gid)|login|rlimit|g(id|r(nam|oups|gid)))|mk(nod|fifo))\b</string>
+					<string>(?i)\bposix_(s(trerror|et(sid|uid|pgid|e(uid|gid)|rlimit|gid))|ctermid|t(tyname|imes)|i(satty|nitgroups)|uname|errno|kill|access|get(sid|cwd|uid|_last_error|p(id|pid|w(nam|uid)|g(id|rp))|e(uid|gid)|login|rlimit|g(id|r(nam|oups|gid)))|mk(nod|fifo))\b</string>
 					<key>name</key>
 					<string>support.function.posix.php</string>
 				</dict>

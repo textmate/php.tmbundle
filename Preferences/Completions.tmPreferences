@@ -15,6 +15,10 @@
         <string>ArrayAccess</string>
         <string>ArrayIterator</string>
         <string>ArrayObject</string>
+        <string>BSON\fromArray</string>
+        <string>BSON\fromJSON</string>
+        <string>BSON\toArray</string>
+        <string>BSON\toJSON</string>
         <string>BadFunctionCallException</string>
         <string>BadMethodCallException</string>
         <string>CURLFile</string>
@@ -80,13 +84,11 @@
         <string>FANNConnection</string>
         <string>FilesystemIterator</string>
         <string>FilterIterator</string>
-        <string>FrenchToJD</string>
         <string>Gender\Gender</string>
         <string>GlobIterator</string>
         <string>Gmagick</string>
         <string>GmagickDraw</string>
         <string>GmagickPixel</string>
-        <string>GregorianToJD</string>
         <string>HRTime\PerformanceCounter</string>
         <string>HRTime\StopWatch</string>
         <string>HaruAnnotation</string>
@@ -106,11 +108,13 @@
         <string>HttpResponse</string>
         <string>Imagick</string>
         <string>ImagickDraw</string>
+        <string>ImagickKernel</string>
         <string>ImagickPixel</string>
         <string>ImagickPixelIterator</string>
         <string>InfiniteIterator</string>
         <string>IntlBreakIterator</string>
         <string>IntlCalendar</string>
+        <string>IntlChar</string>
         <string>IntlCodePointBreakIterator</string>
         <string>IntlDateFormatter</string>
         <string>IntlIterator</string>
@@ -121,14 +125,7 @@
         <string>Iterator</string>
         <string>IteratorAggregate</string>
         <string>IteratorIterator</string>
-        <string>JDDayOfWeek</string>
-        <string>JDMonthName</string>
-        <string>JDToFrench</string>
-        <string>JDToGregorian</string>
-        <string>JDToJulian</string>
-        <string>JewishToJD</string>
         <string>JsonSerializable</string>
-        <string>JulianToJD</string>
         <string>KTaglib_ID3v2_AttachedPictureFrame</string>
         <string>KTaglib_ID3v2_Frame</string>
         <string>KTaglib_ID3v2_Tag</string>
@@ -153,8 +150,30 @@
         <string>MongoCommandCursor</string>
         <string>MongoCursor</string>
         <string>MongoCursorException</string>
+        <string>MongoCursorInterface</string>
         <string>MongoDB</string>
         <string>MongoDBRef</string>
+        <string>MongoDB\BSON\Binary</string>
+        <string>MongoDB\BSON\Javascript</string>
+        <string>MongoDB\BSON\ObjectID</string>
+        <string>MongoDB\BSON\Regex</string>
+        <string>MongoDB\BSON\Serializable</string>
+        <string>MongoDB\BSON\Timestamp</string>
+        <string>MongoDB\BSON\UTCDatetime</string>
+        <string>MongoDB\BSON\Unserializable</string>
+        <string>MongoDB\Driver\BulkWrite</string>
+        <string>MongoDB\Driver\Command</string>
+        <string>MongoDB\Driver\Cursor</string>
+        <string>MongoDB\Driver\CursorId</string>
+        <string>MongoDB\Driver\Manager</string>
+        <string>MongoDB\Driver\Query</string>
+        <string>MongoDB\Driver\ReadPreference</string>
+        <string>MongoDB\Driver\Server</string>
+        <string>MongoDB\Driver\WriteConcern</string>
+        <string>MongoDB\Driver\WriteConcernError</string>
+        <string>MongoDB\Driver\WriteError</string>
+        <string>MongoDB\Driver\WriteException</string>
+        <string>MongoDB\Driver\WriteResult</string>
         <string>MongoDate</string>
         <string>MongoDeleteBatch</string>
         <string>MongoGridFS</string>
@@ -215,10 +234,12 @@
         <string>ReflectionExtension</string>
         <string>ReflectionFunction</string>
         <string>ReflectionFunctionAbstract</string>
+        <string>ReflectionGenerator</string>
         <string>ReflectionMethod</string>
         <string>ReflectionObject</string>
         <string>ReflectionParameter</string>
         <string>ReflectionProperty</string>
+        <string>ReflectionType</string>
         <string>ReflectionZendExtension</string>
         <string>Reflector</string>
         <string>RegexIterator</string>
@@ -754,11 +775,13 @@
         <string>enchant_broker_dict_exists</string>
         <string>enchant_broker_free</string>
         <string>enchant_broker_free_dict</string>
+        <string>enchant_broker_get_dict_path</string>
         <string>enchant_broker_get_error</string>
         <string>enchant_broker_init</string>
         <string>enchant_broker_list_dicts</string>
         <string>enchant_broker_request_dict</string>
         <string>enchant_broker_request_pwl_dict</string>
+        <string>enchant_broker_set_dict_path</string>
         <string>enchant_broker_set_ordering</string>
         <string>enchant_dict_add_to_personal</string>
         <string>enchant_dict_add_to_session</string>
@@ -774,6 +797,7 @@
         <string>ereg_replace</string>
         <string>eregi</string>
         <string>eregi_replace</string>
+        <string>error_clear_last</string>
         <string>error_get_last</string>
         <string>error_log</string>
         <string>error_reporting</string>
@@ -981,6 +1005,7 @@
         <string>fputcsv</string>
         <string>fputs</string>
         <string>fread</string>
+        <string>frenchtojd</string>
         <string>fscanf</string>
         <string>fseek</string>
         <string>fsockopen</string>
@@ -1031,6 +1056,7 @@
         <string>gc_disable</string>
         <string>gc_enable</string>
         <string>gc_enabled</string>
+        <string>gc_mem_caches</string>
         <string>gd_info</string>
         <string>get_browser</string>
         <string>get_called_class</string>
@@ -1058,6 +1084,7 @@
         <string>get_parent_class</string>
         <string>get_required_files</string>
         <string>get_resource_type</string>
+        <string>get_resources</string>
         <string>getallheaders</string>
         <string>getcwd</string>
         <string>getdate</string>
@@ -1122,6 +1149,7 @@
         <string>gmp_random</string>
         <string>gmp_random_bits</string>
         <string>gmp_random_range</string>
+        <string>gmp_random_seed</string>
         <string>gmp_root</string>
         <string>gmp_rootrem</string>
         <string>gmp_scan0</string>
@@ -1144,6 +1172,7 @@
         <string>grapheme_strrpos</string>
         <string>grapheme_strstr</string>
         <string>grapheme_substr</string>
+        <string>gregoriantojd</string>
         <string>gzclose</string>
         <string>gzcompress</string>
         <string>gzdecode</string>
@@ -1514,6 +1543,7 @@
         <string>ini_get_all</string>
         <string>ini_restore</string>
         <string>ini_set</string>
+        <string>intdiv</string>
         <string>interface_exists</string>
         <string>intl_error_name</string>
         <string>intl_get_error_code</string>
@@ -1561,14 +1591,21 @@
         <string>iterator_apply</string>
         <string>iterator_count</string>
         <string>iterator_to_array</string>
+        <string>jddayofweek</string>
+        <string>jdmonthname</string>
+        <string>jdtofrench</string>
+        <string>jdtogregorian</string>
         <string>jdtojewish</string>
+        <string>jdtojulian</string>
         <string>jdtounix</string>
+        <string>jewishtojd</string>
         <string>join</string>
         <string>jpeg2wbmp</string>
         <string>json_decode</string>
         <string>json_encode</string>
         <string>json_last_error</string>
         <string>json_last_error_msg</string>
+        <string>juliantojd</string>
         <string>key</string>
         <string>key_exists</string>
         <string>krsort</string>
@@ -2206,6 +2243,7 @@
         <string>opcache_get_configuration</string>
         <string>opcache_get_status</string>
         <string>opcache_invalidate</string>
+        <string>opcache_is_script_cached</string>
         <string>opcache_reset</string>
         <string>opendir</string>
         <string>openlog</string>
@@ -2434,6 +2472,7 @@
         <string>posix_seteuid</string>
         <string>posix_setgid</string>
         <string>posix_setpgid</string>
+        <string>posix_setrlimit</string>
         <string>posix_setsid</string>
         <string>posix_setuid</string>
         <string>posix_strerror</string>
@@ -2449,6 +2488,7 @@
         <string>preg_quote</string>
         <string>preg_replace</string>
         <string>preg_replace_callback</string>
+        <string>preg_replace_callback_array</string>
         <string>preg_split</string>
         <string>prev</string>
         <string>print</string>
@@ -2485,6 +2525,8 @@
         <string>quotemeta</string>
         <string>rad2deg</string>
         <string>rand</string>
+        <string>random_bytes</string>
+        <string>random_int</string>
         <string>range</string>
         <string>rawurldecode</string>
         <string>rawurlencode</string>

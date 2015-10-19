@@ -2,10 +2,14 @@ APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $form
 AppendIterator%object AppendIterator()%AppendIterator を作成する
 ArrayIterator%object ArrayIterator([mixed $array = array()], [int $flags])%ArrayIterator を作成する
 ArrayObject%object ArrayObject([mixed $input = []], [int $flags], [string $iterator_class = "ArrayIterator"])%新規配列オブジェクトを生成する
+BSON\fromArray%ReturnType BSON\fromArray(string $array)%Description
+BSON\fromJSON%ReturnType BSON\fromJSON(string $json)%Description
+BSON\toArray%ReturnType BSON\toArray(string $bson)%Description
+BSON\toJSON%ReturnType BSON\toJSON(string $bson)%Description
 BadFunctionCallException%object BadFunctionCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadFunctionCallException
 BadMethodCallException%object BadMethodCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadMethodCallException
 CURLFile%object CURLFile(string $filename, [string $mimetype], [string $postname])%CURLFile オブジェクトを作る
-CachingIterator%object CachingIterator(Iterator $iterator, [string $flags = self::CALL_TOSTRING])%新しい CachingIterator オブジェクトを作成する
+CachingIterator%object CachingIterator(Iterator $iterator, [int $flags = self::CALL_TOSTRING])%新しい CachingIterator オブジェクトを作成する
 CallbackFilterIterator%object CallbackFilterIterator(Iterator $iterator, callable $callback)%フィルタリングしたイテレータを別のイテレータから作成する
 Collator%object Collator(string $locale)%collator を作成する
 DOMAttr%object DOMAttr(string $name, [string $value])%新しい DOMAttr オブジェクトを作成する
@@ -19,7 +23,7 @@ DOMProcessingInstruction%object DOMProcessingInstruction(string $name, [string $
 DOMText%object DOMText([string $value])%新しい DOMText オブジェクトを作成する
 DOMXPath%object DOMXPath(DOMDocument $doc)%新しい DOMXPath オブジェクトを作成する
 DateInterval%object DateInterval(string $interval_spec)%新しい DateInterval オブジェクトを作成する
-DatePeriod%object DatePeriod(DateTime $start, DateInterval $interval, int $recurrences, [int $options], DateTime $end, string $isostr)%新しい DatePeriod オブジェクトを作成する
+DatePeriod%object DatePeriod(DateTimeInterface $start, DateInterval $interval, int $recurrences, [int $options], DateTimeInterface $end, string $isostr)%新しい DatePeriod オブジェクトを作成する
 DateTime%object DateTime([string $time = "now"], [DateTimeZone $timezone])%新しい DateTime オブジェクトを返す
 DateTimeImmutable%object DateTimeImmutable([string $time = "now"], [DateTimeZone $timezone])%新しい DateTimeImmutable オブジェクトを返す
 DateTimeZone%object DateTimeZone(string $timezone)%新しい DateTimeZone オブジェクトを作成する
@@ -55,12 +59,10 @@ Exception%object Exception([string $message = ""], [int $code = 0], [Exception $
 FANNConnection%object FANNConnection(int $from_neuron, int $to_neuron, float $weight)%The connection constructor
 FilesystemIterator%object FilesystemIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS])%新しい filesystem イテレータを作成する
 FilterIterator%object FilterIterator(Iterator $iterator)%filterIterator を作成する
-FrenchToJD%int FrenchToJD(int $month, int $day, int $year)%フランス革命暦をユリウス積算日に変換する
 Gender\Gender%object Gender\Gender([string $dsn])%Gender オブジェクトを作る
 GlobIterator%object GlobIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO])%glob を使うディレクトリを作成する
 Gmagick%object Gmagick([string $filename])%Gmagick のコンストラクタ
 GmagickPixel%object GmagickPixel([string $color])%GmagickPixel のコンストラクタ
-GregorianToJD%int GregorianToJD(int $month, int $day, int $year)%グレゴリウス日をユリウス積算日に変換する
 HaruDoc%object HaruDoc()%新しい HaruDoc のインスタンスを作成する
 HttpDeflateStream%object HttpDeflateStream([int $flags])%HttpDeflateStream クラスのコンストラクタ
 HttpInflateStream%object HttpInflateStream([int $flags])%HttpInflateStream クラスのコンストラクタ
@@ -78,13 +80,6 @@ IntlCalendar%object IntlCalendar()%Private constructor for disallowing instantia
 IntlRuleBasedBreakIterator%object IntlRuleBasedBreakIterator(string $rules, [string $areCompiled])%Create iterator from ruleset
 InvalidArgumentException%object InvalidArgumentException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new InvalidArgumentException
 IteratorIterator%object IteratorIterator(Traversable $iterator)%traversable な何かからイテレータを作成する
-JDDayOfWeek%mixed JDDayOfWeek(int $julianday, [int $mode = CAL_DOW_DAYNO])%曜日を返す
-JDMonthName%string JDMonthName(int $julianday, int $mode)%月の名前を返す
-JDToFrench%string JDToFrench(int $juliandaycount)%ユリウス積算日をフランス革命暦(共和暦)に変換する
-JDToGregorian%string JDToGregorian(int $julianday)%ユリウス積算日をグレゴリウス日に変換する
-JDToJulian%string JDToJulian(int $julianday)%ユリウス積算日をユリウス暦に変換する
-JewishToJD%int JewishToJD(int $month, int $day, int $year)%ユダヤ暦の日付けをユリウス積算日に変換する
-JulianToJD%int JulianToJD(int $month, int $day, int $year)%ユリウス暦をユリウス積算日に変換する
 KTaglib_MPEG_File%object KTaglib_MPEG_File(string $filename)%新しいファイルをオープンする
 LengthException%object LengthException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LengthException
 LimitIterator%object LimitIterator(Iterator $iterator, [int $offset], [int $count = -1])%LimitIterator を作成する
@@ -95,15 +90,30 @@ Mongo%object Mongo([string $server], [array $options])%コンストラクタ
 MongoBinData%object MongoBinData(string $data, [int $type])%新しいバイナリデータオブジェクトを作成する
 MongoCode%object MongoCode(string $code, [array $scope = array()])%新しいコードオブジェクトを作成する
 MongoCollection%object MongoCollection(MongoDB $db, string $name)%新しいコレクションを作成する
-MongoCommandCursor%object MongoCommandCursor(MongoClient $connection, string $ns, [array $command = array()])%Create a new command cursor
+MongoCommandCursor%object MongoCommandCursor(MongoClient $connection, string $ns, array $command)%Create a new command cursor
 MongoCursor%object MongoCursor(MongoClient $connection, string $ns, [array $query = array()], [array $fields = array()])%新しいカーソルを作成する
 MongoDB%object MongoDB(MongoClient $conn, string $name)%新しいデータベースを作成する
+MongoDB\BSON\Binary%object MongoDB\BSON\Binary(string $data, string $subtype)%Description
+MongoDB\BSON\Javascript%object MongoDB\BSON\Javascript(string $javascript, [string $scope])%Description
+MongoDB\BSON\ObjectID%object MongoDB\BSON\ObjectID([string $id])%Description
+MongoDB\BSON\Regex%object MongoDB\BSON\Regex(string $pattern, string $flags)%Description
+MongoDB\BSON\Timestamp%object MongoDB\BSON\Timestamp(string $increment, string $timestamp)%Description
+MongoDB\BSON\UTCDatetime%object MongoDB\BSON\UTCDatetime(string $milliseconds)%Description
+MongoDB\Driver\BulkWrite%object MongoDB\Driver\BulkWrite([boolean $ordered = true])%Create new BulkWrite
+MongoDB\Driver\Command%object MongoDB\Driver\Command(array|object $document)%Construct new Command
+MongoDB\Driver\Cursor%object MongoDB\Driver\Cursor(Server $server, string $responseDocument)%Description
+MongoDB\Driver\CursorId%object MongoDB\Driver\CursorId(string $id)%Description
+MongoDB\Driver\Manager%object MongoDB\Driver\Manager(string $uri, [array $options], [array $driverOptions])%Create new MongoDB Manager
+MongoDB\Driver\Query%object MongoDB\Driver\Query(array|object $filter, [array $queryOptions])%Construct new Query
+MongoDB\Driver\ReadPreference%object MongoDB\Driver\ReadPreference(string $readPreference, [array $tagSets])%Description
+MongoDB\Driver\Server%object MongoDB\Driver\Server(string $host, string $port, [array $options], [array $driverOptions])%Description
+MongoDB\Driver\WriteConcern%object MongoDB\Driver\WriteConcern(string $wstring, [integer $wtimeout], [boolean $journal], [boolean $fsync])%Construct immutable WriteConcern
 MongoDate%object MongoDate([int $sec = time()], [int $usec])%新しい日付を作成する
 MongoDeleteBatch%object MongoDeleteBatch(MongoCollection $collection, [array $write_options])%Description
 MongoGridFS%object MongoGridFS(MongoDB $db, [string $prefix = "fs"], [mixed $chunks = "fs"])%新しいファイルコレクションを作成する
 MongoGridFSCursor%object MongoGridFSCursor(MongoGridFS $gridfs, resource $connection, string $ns, array $query, array $fields)%新しいカーソルを作成する
 MongoGridfsFile%object MongoGridfsFile(MongoGridFS $gridfs, array $file)%新しい GridFS ファイルを作成する
-MongoId%object MongoId([string $id])%新しい ID を作成する
+MongoId%object MongoId([string|MongoId $id])%新しい ID を作成する
 MongoInsertBatch%object MongoInsertBatch(MongoCollection $collection, [array $write_options])%Description
 MongoInt32%object MongoInt32(string $value)%新しい 32 ビット整数値を作成する
 MongoInt64%object MongoInt64(string $value)%新しい 64 ビット整数値を作成する
@@ -142,6 +152,7 @@ RecursiveTreeIterator%object RecursiveTreeIterator(RecursiveIterator|IteratorAgg
 ReflectionClass%object ReflectionClass(mixed $argument)%ReflectionClass を作成する
 ReflectionExtension%object ReflectionExtension(string $name)%ReflectionExtension を作成する
 ReflectionFunction%object ReflectionFunction(mixed $name)%ReflectionFunction オブジェクトを作成する
+ReflectionGenerator%object ReflectionGenerator(Generator $generator)%Constructs a ReflectionGenerator object
 ReflectionMethod%object ReflectionMethod(mixed $class, string $name, string $class_method)%ReflectionMethod を作成する
 ReflectionObject%object ReflectionObject(object $argument)%ReflectionObject を作成する
 ReflectionParameter%object ReflectionParameter(string $function, string $parameter)%コンストラクタ
@@ -193,7 +204,7 @@ VarnishAdmin%object VarnishAdmin([array $args])%VarnishAdmin のコンストラ�
 VarnishLog%object VarnishLog([array $args])%Varnishlog のコンストラクタ
 VarnishStat%object VarnishStat([array $args])%VarnishStat のコンストラクタ
 WeakMap%object WeakMap()%新しいマップを作る
-Weakref%object Weakref([object $object])%弱い参照を新しく作る
+Weakref%object Weakref(object $object)%弱い参照を新しく作る
 XMLDiff\Base%object XMLDiff\Base(string $nsname)%Constructor
 XSLTProcessor%object XSLTProcessor()%新規 XSLTProcessor オブジェクトを生成する
 Yaf_Application%object Yaf_Application(mixed $config, [string $envrion])%Yaf_Application のコンストラクタ
@@ -214,7 +225,7 @@ Yaf_Route_Simple%object Yaf_Route_Simple(string $module_name, string $controller
 Yaf_Route_Supervar%object Yaf_Route_Supervar(string $supervar_name)%The __construct purpose
 Yaf_Router%object Yaf_Router()%Yaf_Router のコンストラクタ
 Yaf_Session%object Yaf_Session()%The __construct purpose
-Yaf_View_Simple%object Yaf_View_Simple(string $tempalte_dir, [array $options])%Yaf_View_Simple のコンストラクタ
+Yaf_View_Simple%object Yaf_View_Simple(string $template_dir, [array $options])%Yaf_View_Simple のコンストラクタ
 Yar_Client%object Yar_Client(string $url)%Create a client
 Yar_Server%object Yar_Server(Object $obj)%Register a server
 ZMQ%object ZMQ()%ZMQ constructor
@@ -302,7 +313,7 @@ array_udiff_assoc%array array_udiff_assoc(array $array1, array $array2, [array .
 array_udiff_uassoc%array array_udiff_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%データと添字の比較にコールバック関数を用い、  追加された添字の確認を含めて配列の差を計算する
 array_uintersect%array array_uintersect(array $array1, array $array2, [array ...], callable $value_compare_func)%データの比較にコールバック関数を用い、配列の共通項を計算する
 array_uintersect_assoc%array array_uintersect_assoc(array $array1, array $array2, [array ...], callable $value_compare_func)%データの比較にコールバック関数を用い、  追加された添字の確認も含めて配列の共通項を計算する
-array_uintersect_uassoc%array array_uintersect_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%データと添字の比較にコールバック関数を用い、  追加された添字の確認も含めて配列の共通項を計算する
+array_uintersect_uassoc%array array_uintersect_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%データと添字の比較に個別のコールバック関数を用い、  追加された添字の確認も含めて配列の共通項を計算する
 array_unique%array array_unique(array $array, [int $sort_flags = SORT_STRING])%配列から重複した値を削除する
 array_unshift%int array_unshift(array $array, mixed $value1, [mixed ...])%一つ以上の要素を配列の最初に加える
 array_values%array array_values(array $array)%配列の全ての値を返す
@@ -312,7 +323,7 @@ arsort%bool arsort(array $array, [int $sort_flags = SORT_REGULAR])%連想キー�
 asin%float asin(float $arg)%逆正弦（アークサイン）
 asinh%float asinh(float $arg)%逆双曲線正弦（アークハイパボリックサイン）
 asort%bool asort(array $array, [int $sort_flags = SORT_REGULAR])%連想キーと要素との関係を維持しつつ配列をソートする
-assert%bool assert(mixed $assertion, [string $description])%assertion が FALSE であるかどうかを調べる
+assert%bool assert(mixed $assertion, [string $description], [Throwable $exception])%assertion が FALSE であるかどうかを調べる
 assert_options%mixed assert_options(int $what, [mixed $value])%様々な assert フラグを設定/取得する
 atan%float atan(float $arg)%逆正接（アークタンジェント）
 atan2%float atan2(float $y, float $x)%2 変数のアークタンジェント
@@ -345,8 +356,8 @@ bzdecompress%mixed bzdecompress(string $source, [int $small])%bzip2 形式のデ
 bzerrno%int bzerrno(resource $bz)%bzip2 エラー番号を返す
 bzerror%array bzerror(resource $bz)%bzip2 エラー番号とエラー文字列を配列で返す
 bzerrstr%string bzerrstr(resource $bz)%bzip2 エラー文字列を返す
-bzflush%int bzflush(resource $bz)%全てのバッファリングされたデータを強制的に書き込む
-bzopen%resource bzopen(string $filename, string $mode)%bzip2 圧縮されたファイルをオープンする
+bzflush%bool bzflush(resource $bz)%全てのバッファリングされたデータを強制的に書き込む
+bzopen%resource bzopen(mixed $file, string $mode)%bzip2 圧縮されたファイルをオープンする
 bzread%string bzread(resource $bz, [int $length = 1024])%バイナリ対応の bzip2 ファイル読み込み
 bzwrite%int bzwrite(resource $bz, string $data, [int $length])%バイナリ対応の bzip2 ファイルへの書き込み
 cal_days_in_month%int cal_days_in_month(int $calendar, int $month, int $year)%指定した年とカレンダーについて、月の日数を返す
@@ -355,8 +366,8 @@ cal_info%array cal_info([int $calendar = -1])%特定のカレンダーに関す�
 cal_to_jd%int cal_to_jd(int $calendar, int $month, int $day, int $year)%サポートされるカレンダーからユリウス積算日に変換する
 call_user_func%mixed call_user_func(callable $callback, [mixed $parameter], [mixed ...])%最初の引数で指定したコールバック関数をコールする
 call_user_func_array%mixed call_user_func_array(callable $callback, array $param_arr)%パラメータの配列を指定してコールバック関数をコールする
-call_user_method%mixed call_user_method(string $method_name, object $obj, [mixed $parameter], [mixed ...])%指定したオブジェクトのユーザーメソッドをコールする [古い関数]
-call_user_method_array%mixed call_user_method_array(string $method_name, object $obj, array $params)%パラメータの配列を指定してユーザーメソッドをコールする [古い関数]
+call_user_method%mixed call_user_method(string $method_name, object $obj, [mixed $parameter], [mixed ...])%指定したオブジェクトのユーザーメソッドをコールする
+call_user_method_array%mixed call_user_method_array(string $method_name, object $obj, array $params)%パラメータの配列を指定してユーザーメソッドをコールする
 ceil%float ceil(float $value)%端数の切り上げ
 chdir%bool chdir(string $directory)%ディレクトリを変更する
 checkdate%bool checkdate(int $month, int $day, int $year)%グレゴリオ暦の日付/時刻の妥当性を確認します
@@ -541,7 +552,7 @@ delete%void delete()%unlink か unset を参照してください
 dgettext%string dgettext(string $domain, string $message)%現在のドメインを上書きする
 die%void die()%exit と同等
 dir%Directory dir(string $directory, [resource $context])%ディレクトリクラスのインスタンスを返す
-dirname%string dirname(string $path)%親ディレクトリのパスを返す
+dirname%string dirname(string $path, [int $levels = 1])%親ディレクトリのパスを返す
 disk_free_space%float disk_free_space(string $directory)%ファイルシステムあるいはディスクパーティション上で利用可能な領域を返す
 disk_total_space%float disk_total_space(string $directory)%ファイルシステムあるいはディスクパーティションの全体サイズを返す
 diskfreespace%void diskfreespace()%disk_free_space のエイリアス
@@ -620,11 +631,13 @@ enchant_broker_describe%array enchant_broker_describe(resource $broker)%Enchant 
 enchant_broker_dict_exists%bool enchant_broker_dict_exists(resource $broker, string $tag)%辞書が存在するかどうかを調べる。空でないタグを使用する
 enchant_broker_free%bool enchant_broker_free(resource $broker)%ブローカーリソースおよびその辞書を開放する
 enchant_broker_free_dict%bool enchant_broker_free_dict(resource $dict)%辞書リソースを開放する
+enchant_broker_get_dict_path%bool enchant_broker_get_dict_path(resource $broker, int $dict_type)%Get the directory path for a given backend
 enchant_broker_get_error%string enchant_broker_get_error(resource $broker)%ブローカーの直近のエラーを返す
 enchant_broker_init%resource enchant_broker_init()%要求を満たすブローカーオブジェクトを作成する
 enchant_broker_list_dicts%mixed enchant_broker_list_dicts(resource $broker)%使用可能な辞書の一覧を返す
 enchant_broker_request_dict%resource enchant_broker_request_dict(resource $broker, string $tag)%タグを使用して新しい辞書を作成する
 enchant_broker_request_pwl_dict%resource enchant_broker_request_pwl_dict(resource $broker, string $filename)%PWL ファイルを使用して辞書を作成する
+enchant_broker_set_dict_path%bool enchant_broker_set_dict_path(resource $broker, int $dict_type, string $value)%Set the directory path for a given backend
 enchant_broker_set_ordering%bool enchant_broker_set_ordering(resource $broker, string $tag, string $ordering)%その言語で使用する辞書の優先順位を宣言する
 enchant_dict_add_to_personal%void enchant_dict_add_to_personal(resource $dict, string $word)%パーソナル単語リストに単語を追加する
 enchant_dict_add_to_session%void enchant_dict_add_to_session(resource $dict, string $word)%'単語' を、このスペルチェックセッションに追加する
@@ -640,6 +653,7 @@ ereg%int ereg(string $pattern, string $string, [array $regs])%正規表現によ
 ereg_replace%string ereg_replace(string $pattern, string $replacement, string $string)%正規表現による置換を行う
 eregi%int eregi(string $pattern, string $string, [array $regs])%大文字小文字を区別せずに正規表現によるマッチングを行う
 eregi_replace%string eregi_replace(string $pattern, string $replacement, string $string)%大文字小文字を区別せずに正規表現による置換を行う
+error_clear_last%void error_clear_last()%最も最近のエラーをクリア
 error_get_last%array error_get_last()%最後に発生したエラーを取得する
 error_log%bool error_log(string $message, [int $message_type], [string $destination], [string $extra_headers])%定義されたエラー処理ルーチンにエラーメッセージを送信する
 error_reporting%int error_reporting([int $level])%出力する PHP エラーの種類を設定する
@@ -670,7 +684,7 @@ fann_create_sparse_array%ReturnType fann_create_sparse_array(float $connection_r
 fann_create_standard%resource fann_create_standard(int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Creates a standard fully connected backpropagation neural network
 fann_create_standard_array%resource fann_create_standard_array(int $num_layers, array $layers)%Creates a standard fully connected backpropagation neural network using an array of layer sizes
 fann_create_train%resource fann_create_train(int $num_data, int $num_input, int $num_output)%Creates an empty training data struct
-fann_create_train_from_callback%resource fann_create_train_from_callback(int $num_data, int $num_input, int $num_output, collable $user_function)%Creates the training data struct from a user supplied function
+fann_create_train_from_callback%resource fann_create_train_from_callback(int $num_data, int $num_input, int $num_output, callable $user_function)%Creates the training data struct from a user supplied function
 fann_descale_input%bool fann_descale_input(resource $ann, array $input_vector)%Scale data in input vector after get it from ann based on previously calculated parameters
 fann_descale_output%bool fann_descale_output(resource $ann, array $output_vector)%Scale data in output vector after get it from ann based on previously calculated parameters
 fann_descale_train%bool fann_descale_train(resource $ann, resource $train_data)%Descale input and output data based on previously calculated parameters
@@ -804,7 +818,7 @@ fclose%bool fclose(resource $handle)%オープンされたファイルポイン�
 feof%bool feof(resource $handle)%ファイルポインタがファイル終端に達しているかどうか調べる
 fflush%bool fflush(resource $handle)%出力をファイルにフラッシュする
 fgetc%string fgetc(resource $handle)%ファイルポインタから1文字取り出す
-fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\\"])%ファイルポインタから行を取得し、CSVフィールドを処理する
+fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\"])%ファイルポインタから行を取得し、CSVフィールドを処理する
 fgets%string fgets(resource $handle, [int $length])%ファイルポインタから 1 行取得する
 fgetss%string fgetss(resource $handle, [int $length], [string $allowable_tags])%ファイルポインタから 1 行取り出し、HTML タグを取り除く
 file%array file(string $filename, [int $flags], [resource $context])%ファイル全体を読み込んで配列に格納する
@@ -827,7 +841,7 @@ filter_input_array%mixed filter_input_array(int $type, [mixed $definition], [boo
 filter_list%array filter_list()%サポートされるフィルタの一覧を返す
 filter_var%mixed filter_var(mixed $variable, [int $filter = FILTER_DEFAULT], [mixed $options])%指定したフィルタでデータをフィルタリングする
 filter_var_array%mixed filter_var_array(array $data, [mixed $definition], [bool $add_empty = true])%複数の変数を受け取り、オプションでそれらをフィルタリングする
-finfo%object finfo([int $options = FILEINFO_NONE], [string $magic_file])%のエイリアス finfo_open
+finfo%object finfo([int $options = FILEINFO_NONE], [string $magic_file])%finfo_open のエイリアス
 finfo_buffer%string finfo_buffer(resource $finfo, string $string, [int $options = FILEINFO_NONE], [resource $context])%文字列バッファの情報を返す
 finfo_close%bool finfo_close(resource $finfo)%fileinfo リソースを閉じる
 finfo_file%string finfo_file(resource $finfo, string $file_name, [int $options = FILEINFO_NONE], [resource $context])%ファイルについての情報を返す
@@ -835,7 +849,7 @@ finfo_open%resource finfo_open([int $options = FILEINFO_NONE], [string $magic_fi
 finfo_set_flags%bool finfo_set_flags(resource $finfo, int $options)%libmagic のオプションを設定する
 floatval%float floatval(mixed $var)%変数の float 値を取得する
 flock%bool flock(resource $handle, int $operation, [int $wouldblock])%汎用のファイルロックを行う
-floor%float floor(float $value)%端数の切り捨て
+floor%mixed floor(float $value)%端数の切り捨て
 flush%void flush()%システム出力バッファをフラッシュする
 fmod%float fmod(float $x, float $y)%引数で除算をした際の剰余を返す
 fnmatch%bool fnmatch(string $pattern, string $string, [int $flags])%ファイル名がパターンにマッチするか調べる
@@ -844,9 +858,10 @@ forward_static_call%mixed forward_static_call(callable $function, [mixed $parame
 forward_static_call_array%mixed forward_static_call_array(callable $function, array $parameters)%静的メソッドをコールし、引数を配列で渡す
 fpassthru%int fpassthru(resource $handle)%ファイルポインタ上に残っているすべてのデータを出力する
 fprintf%int fprintf(resource $handle, string $format, [mixed $args], [mixed ...])%フォーマットされた文字列をストリームに書き込む
-fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ","], [string $enclosure = '"'])%行を CSV 形式にフォーマットし、ファイルポインタに書き込む
+fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ","], [string $enclosure = '"'], [string $escape_char = "\"])%行を CSV 形式にフォーマットし、ファイルポインタに書き込む
 fputs%void fputs()%fwrite のエイリアス
 fread%string fread(resource $handle, int $length)%バイナリセーフなファイルの読み込み
+frenchtojd%int frenchtojd(int $month, int $day, int $year)%フランス革命暦をユリウス積算日に変換する
 fscanf%mixed fscanf(resource $handle, string $format, [mixed ...])%フォーマットに基づきファイルからの入力を処理する
 fseek%int fseek(resource $handle, int $offset, [int $whence = SEEK_SET])%ファイルポインタを移動する
 fsockopen%resource fsockopen(string $hostname, [int $port = -1], [int $errno], [string $errstr], [float $timeout = ini_get("default_socket_timeout")])%インターネット接続もしくは Unix ドメインソケット接続をオープンする
@@ -897,6 +912,7 @@ gc_collect_cycles%int gc_collect_cycles()%すべての既存ガベージサイ�
 gc_disable%void gc_disable()%循環参照コレクタを無効にする
 gc_enable%void gc_enable()%循環参照コレクタを有効にする
 gc_enabled%bool gc_enabled()%循環参照コレクタの状態を返す
+gc_mem_caches%int gc_mem_caches()%Zend Engine のメモリーマネージャによって使用されたメモリーを再利用する
 gd_info%array gd_info()%現在インストールされているGDライブラリに関する情報を取得する
 get_browser%mixed get_browser([string $user_agent], [bool $return_array = false])%ユーザーのブラウザの機能を取得する
 get_called_class%string get_called_class()%"静的遅延束縛" のクラス名
@@ -924,6 +940,7 @@ get_object_vars%array get_object_vars(object $object)%指定したオブジェ�
 get_parent_class%string get_parent_class([mixed $object])%オブジェクトの親クラスの名前を取得する
 get_required_files%void get_required_files()%get_included_files のエイリアス
 get_resource_type%string get_resource_type(resource $handle)%リソース型を返す
+get_resources%リソース get_resources([string $type])%アクティブなリソースを返す
 getallheaders%array getallheaders()%全てのHTTPリクエストヘッダを取得する
 getcwd%string getcwd()%カレントのワーキングディレクトリを取得する
 getdate%array getdate([int $timestamp = time()])%日付/時刻情報を取得する
@@ -988,6 +1005,7 @@ gmp_prob_prime%int gmp_prob_prime(GMP $a, [int $reps = 10])%数が"おそらく�
 gmp_random%GMP gmp_random([int $limiter = 20])%乱数を生成する
 gmp_random_bits%GMP gmp_random_bits(integer $bits)%Random number
 gmp_random_range%GMP gmp_random_range(GMP $min, GMP $max)%Random number
+gmp_random_seed%mixed gmp_random_seed(mixed $seed)%Sets the RNG seed
 gmp_root%GMP gmp_root(GMP $a, int $nth)%Take the integer part of nth root
 gmp_rootrem%array gmp_rootrem(GMP $a, int $nth)%Take the integer part and remainder of nth root
 gmp_scan0%int gmp_scan0(GMP $a, int $start)%0 を探す
@@ -1010,6 +1028,7 @@ grapheme_strripos%int grapheme_strripos(string $haystack, string $needle, [int $
 grapheme_strrpos%int grapheme_strrpos(string $haystack, string $needle, [int $offset])%文字列内で最後にあらわれる場所の (書記素単位の) 位置を見つける
 grapheme_strstr%string grapheme_strstr(string $haystack, string $needle, [bool $before_needle = false])%haystack 文字列の中で、needle が最初に登場した場所以降の部分文字列を返す
 grapheme_substr%int grapheme_substr(string $string, int $start, [int $length])%部分文字列を返す
+gregoriantojd%int gregoriantojd(int $month, int $day, int $year)%グレゴリウス日をユリウス積算日に変換する
 gzclose%bool gzclose(resource $zp)%開かれたgzファイルへのポインタを閉じる
 gzcompress%string gzcompress(string $data, [int $level = -1], [int $encoding = ZLIB_ENCODING_DEFLATE])%文字列を圧縮する
 gzdecode%string gzdecode(string $data, [int $length])%gzip 圧縮された文字列をデコードする
@@ -1353,11 +1372,11 @@ imap_rfc822_write_address%string imap_rfc822_write_address(string $mailbox, stri
 imap_savebody%bool imap_savebody(resource $imap_stream, mixed $file, int $msg_number, [string $part_number = ""], [int $options])%指定した本文部をファイルに保存する
 imap_scan%void imap_scan()%imap_listscan のエイリアス
 imap_scanmailbox%void imap_scanmailbox()%imap_listscan のエイリアス
-imap_search%array imap_search(resource $imap_stream, string $criteria, [int $options = SE_FREE], [string $charset = NIL])%指定した検索条件にマッチするメッセージを配列として返す
+imap_search%array imap_search(resource $imap_stream, string $criteria, [int $options = SE_FREE], [string $charset])%指定した検索条件にマッチするメッセージを配列として返す
 imap_set_quota%bool imap_set_quota(resource $imap_stream, string $quota_root, int $quota_limit)%指定したメールボックスにクォータを設定する
 imap_setacl%bool imap_setacl(resource $imap_stream, string $mailbox, string $id, string $rights)%指定したメールボックスの ACL を設定する
 imap_setflag_full%bool imap_setflag_full(resource $imap_stream, string $sequence, string $flag, [int $options = NIL])%メッセージにフラグをセットする
-imap_sort%array imap_sort(resource $imap_stream, int $criteria, int $reverse, [int $options], [string $search_criteria], [string $charset = NIL])%メッセージヘッダの配列をソートする
+imap_sort%array imap_sort(resource $imap_stream, int $criteria, int $reverse, [int $options], [string $search_criteria], [string $charset])%メッセージヘッダの配列をソートする
 imap_status%object imap_status(resource $imap_stream, string $mailbox, int $options)%現在のメールボックス以外のメールボックスのステータス情報を返す
 imap_subscribe%bool imap_subscribe(resource $imap_stream, string $mailbox)%メールボックスを購読する
 imap_thread%array imap_thread(resource $imap_stream, [int $options = SE_FREE])%スレッド化したメッセージのツリーを返す
@@ -1380,6 +1399,7 @@ ini_get%string ini_get(string $varname)%設定オプションの値を得る
 ini_get_all%array ini_get_all([string $extension], [bool $details = true])%すべての設定オプションを得る
 ini_restore%void ini_restore(string $varname)%設定オプションの値を元に戻す
 ini_set%string ini_set(string $varname, string $newvalue)%設定オプションの値を設定する
+intdiv%int intdiv(int $dividend, int $divisor)%Integer division
 interface_exists%bool interface_exists(string $interface_name, [bool $autoload = true])%インターフェイスが宣言されているかどうかを確認する
 intl_error_name%string intl_error_name(int $error_code)%指定したエラーコードに対応する名前を取得する
 intl_get_error_code%int intl_get_error_code()%直近のエラーコードを取得する
@@ -1390,13 +1410,13 @@ intlcal_get_error_message%string intlcal_get_error_message(IntlCalendar $calenda
 intltz_get_error_code%integer intltz_get_error_code()%直近のエラーコードを取得する
 intltz_get_error_message%string intltz_get_error_message()%直近のエラーメッセージを取得する
 intval%integer intval(mixed $var, [int $base = 10])%変数の整数としての値を取得する
-ip2long%int ip2long(string $ip_address)%ドット表記の (IPv4) IP アドレスを、適切なアドレスに変換する
+ip2long%int ip2long(string $ip_address)%ドット表記の (IPv4) IP アドレスを、長整数表現に変換する
 iptcembed%mixed iptcembed(string $iptcdata, string $jpeg_file_name, [int $spool])%バイナリ IPTC データを JPEG イメージに埋めこむ
 iptcparse%array iptcparse(string $iptcblock)%バイナリの IPTC ブロックのタグをパースする
 is_a%bool is_a(object $object, string $class_name, [bool $allow_string])%オブジェクトがこのクラスのものであるか、このクラスをその親クラスのひとつとしているかどうかを調べる
 is_array%bool is_array(mixed $var)%変数が配列かどうかを検査する
 is_bool%bool is_bool(mixed $var)%変数が boolean であるかを調べる
-is_callable%bool is_callable(callable $name, [bool $syntax_only = false], [string $callable_name])%引数が、関数としてコール可能な構造であるかどうかを調べる
+is_callable%bool is_callable(mixed $var, [bool $syntax_only = false], [string $callable_name])%引数が、関数としてコール可能な構造であるかどうかを調べる
 is_dir%bool is_dir(string $filename)%ファイルがディレクトリかどうかを調べる
 is_double%void is_double()%is_float のエイリアス
 is_executable%bool is_executable(string $filename)%ファイルが実行可能かどうかを調べる
@@ -1418,7 +1438,7 @@ is_resource%bool is_resource(mixed $var)%変数がリソースかどうかを調
 is_scalar%resource is_scalar(mixed $var)%変数がスカラかどうかを調べる
 is_soap_fault%bool is_soap_fault(mixed $object)%SOAP コールが失敗したかどうかを調べる
 is_string%bool is_string(mixed $var)%変数の型が文字列かどうかを調べる
-is_subclass_of%bool is_subclass_of(mixed $object, string $class_name, [bool $allow_string])%あるオブジェクトが指定したクラスのサブクラスに属するかどうかを調べる
+is_subclass_of%bool is_subclass_of(mixed $object, string $class_name, [bool $allow_string])%あるオブジェクトが指定したクラスのサブクラスに属するか (あるいは指定したインターフェイスを実装しているか) どうかを調べる
 is_tainted%bool is_tainted(string $string)%文字列が汚染されているかどうかを調べる
 is_uploaded_file%bool is_uploaded_file(string $filename)%HTTP POST でアップロードされたファイルかどうかを調べる
 is_writable%bool is_writable(string $filename)%ファイルが書き込み可能かどうかを調べる
@@ -1427,14 +1447,21 @@ isset%bool isset(mixed $var, [mixed ...])%変数がセットされているこ�
 iterator_apply%int iterator_apply(Traversable $iterator, callable $function, [array $args])%ユーザー関数をイテレータのすべての要素でコールする
 iterator_count%int iterator_count(Traversable $iterator)%イテレータにある要素をカウントする
 iterator_to_array%array iterator_to_array(Traversable $iterator, [bool $use_keys = true])%イテレータを配列にコピーする
+jddayofweek%mixed jddayofweek(int $julianday, [int $mode = CAL_DOW_DAYNO])%曜日を返す
+jdmonthname%string jdmonthname(int $julianday, int $mode)%月の名前を返す
+jdtofrench%string jdtofrench(int $juliandaycount)%ユリウス積算日をフランス革命暦(共和暦)に変換する
+jdtogregorian%string jdtogregorian(int $julianday)%ユリウス積算日をグレゴリウス日に変換する
 jdtojewish%string jdtojewish(int $juliandaycount, [bool $hebrew = false], [int $fl])%ユリウス積算日をユダヤ暦に変換する
+jdtojulian%string jdtojulian(int $julianday)%ユリウス積算日をユリウス暦に変換する
 jdtounix%int jdtounix(int $jday)%ユリウス歴を Unix タイムスタンプに変換する
+jewishtojd%int jewishtojd(int $month, int $day, int $year)%ユダヤ暦の日付けをユリウス積算日に変換する
 join%void join()%implode のエイリアス
 jpeg2wbmp%bool jpeg2wbmp(string $jpegname, string $wbmpname, int $dest_height, int $dest_width, int $threshold)%JPEG イメージファイルから WBMP イメージファイルに変換する
 json_decode%mixed json_decode(string $json, [bool $assoc = false], [int $depth = 512], [int $options])%JSON 文字列をデコードする
 json_encode%string json_encode(mixed $value, [int $options], [int $depth = 512])%値を JSON 形式にして返す
 json_last_error%int json_last_error()%直近に発生したエラーを返す
 json_last_error_msg%string json_last_error_msg()%直近の json_encode() や json_decode() の呼び出しのエラー文字列を返すl
+juliantojd%int juliantojd(int $month, int $day, int $year)%ユリウス暦をユリウス積算日に変換する
 key%mixed key(array $array)%配列からキーを取り出す
 key_exists%void key_exists()%array_key_exists のエイリアス
 krsort%bool krsort(array $array, [int $sort_flags = SORT_REGULAR])%配列をキーで逆順にソートする
@@ -1531,7 +1558,7 @@ log_getmore%callable log_getmore(array $server, array $info)%Callback When Retri
 log_killcursor%callable log_killcursor(array $server, array $info)%Callback When Executing KILLCURSOR operations
 log_reply%callable log_reply(array $server, array $messageHeaders, array $operationHeaders)%Callback When Reading the MongoDB reply
 log_write_batch%callable log_write_batch(array $server, array $writeOptions, array $batch, array $protocolOptions)%Callback When Writing Batches
-long2ip%string long2ip(string $proper_address)%(IPv4) インターネットアドレスをインターネット標準ドット表記に変換する
+long2ip%string long2ip(string $proper_address)%長整数評言のインターネットアドレスを (IPv4) インターネット標準ドット表記に変換する
 lstat%array lstat(string $filename)%ファイルあるいはシンボリックリンクの情報を取得する
 ltrim%string ltrim(string $str, [string $character_mask])%文字列の最初から空白 (もしくはその他の文字) を取り除く
 magic_quotes_runtime%void magic_quotes_runtime()%set_magic_quotes_runtime のエイリアス
@@ -1804,9 +1831,9 @@ mysqli_query%mixed mysqli_query(string $query, [int $resultmode = MYSQLI_STORE_R
 mysqli_real_connect%bool mysqli_real_connect([string $host], [string $username], [string $passwd], [string $dbname], [int $port], [string $socket], [int $flags], mysqli $link)%mysql サーバーとの接続をオープンする
 mysqli_real_escape_string%string mysqli_real_escape_string(string $escapestr, mysqli $link)%接続の現在の文字セットを考慮して、SQL 文で使用する文字列の特殊文字をエスケープする
 mysqli_real_query%bool mysqli_real_query(string $query, mysqli $link)%SQL クエリを実行する
-mysqli_reap_async_query%mysqli_result mysqli_reap_async_query(mysql $link)%非同期クエリから結果を取得する
+mysqli_reap_async_query%mysqli_result mysqli_reap_async_query(mysqli $link)%非同期クエリから結果を取得する
 mysqli_refresh%int mysqli_refresh(int $options, resource $link)%リフレッシュする
-mysqli_release_savepoint%bool mysqli_release_savepoint(string $name, mysqli $link)%指定したセーブポイントまで、トランザクションをロールバックする
+mysqli_release_savepoint%bool mysqli_release_savepoint(string $name, mysqli $link)%現在のトランザクションのセーブポイント群から、指定した名前のセーブポイントを削除する
 mysqli_report%void mysqli_report()%mysqli_driver->report_mode のエイリアス
 mysqli_rollback%bool mysqli_rollback([int $flags], [string $name], mysqli $link)%現在のトランザクションをロールバックする
 mysqli_rpl_parse_enabled%int mysqli_rpl_parse_enabled(mysqli $link)%RPL のパースが有効かどうかを確認する
@@ -1823,6 +1850,7 @@ mysqli_set_opt%void mysqli_set_opt()%mysqli_options のエイリアス
 mysqli_slave_query%bool mysqli_slave_query(mysqli $link, string $query)%マスタ/スレーブ設定で、スレーブ側のクエリを実行する
 mysqli_ssl_set%bool mysqli_ssl_set(string $key, string $cert, string $ca, string $capath, string $cipher, mysqli $link)%SSL を使用したセキュアな接続を確立する
 mysqli_stat%string mysqli_stat(mysqli $link)%現在のシステム状態を取得する
+mysqli_stmt%object mysqli_stmt(mysqli $link, [string $query])%Constructs a new mysqli_stmt object
 mysqli_stmt_attr_get%int mysqli_stmt_attr_get(int $attr, mysqli_stmt $stmt)%ステートメントの属性の現在の値を取得する
 mysqli_stmt_attr_set%bool mysqli_stmt_attr_set(int $attr, int $mode, mysqli_stmt $stmt)%プリペアドステートメントの振る舞いを変更する
 mysqli_stmt_bind_param%bool mysqli_stmt_bind_param(string $types, mixed $var1, [mixed ...], mysqli_stmt $stmt)%プリペアドステートメントのパラメータに変数をバインドする
@@ -1881,8 +1909,8 @@ next%mixed next(array $array)%内部配列ポインタを進める
 ngettext%string ngettext(string $msgid1, string $msgid2, int $n)%gettext の複数形版
 nl2br%string nl2br(string $string, [bool $is_xhtml = true])%改行文字の前に HTML の改行タグを挿入する
 nl_langinfo%string nl_langinfo(int $item)%言語およびロケール情報を検索する
-normalizer_is_normalized%bool normalizer_is_normalized(string $input, [string $form = Normalizer::FORM_C])%渡された文字列が、指定した正規化を適用済みかどうかを調べる
-normalizer_normalize%string normalizer_normalize(string $input, [string $form = Normalizer::FORM_C])%渡された入力を正規化し、正規化後の文字列を返す
+normalizer_is_normalized%bool normalizer_is_normalized(string $input, [int $form = Normalizer::FORM_C])%渡された文字列が、指定した正規化を適用済みかどうかを調べる
+normalizer_normalize%string normalizer_normalize(string $input, [int $form = Normalizer::FORM_C])%渡された入力を正規化し、正規化後の文字列を返す
 nsapi_request_headers%array nsapi_request_headers()%HTTP リクエストヘッダを全て取得する
 nsapi_response_headers%array nsapi_response_headers()%すべての HTTP レスポンスヘッダを取得する
 nsapi_virtual%bool nsapi_virtual(string $uri)%NSAPI サブリクエストを発行する
@@ -1947,7 +1975,7 @@ oci_field_type%mixed oci_field_type(resource $statement, mixed $field)%フィー
 oci_field_type_raw%int oci_field_type_raw(resource $statement, mixed $field)%Oracle におけるフィールドの型を問い合わせる
 oci_free_descriptor%bool oci_free_descriptor(resource $descriptor)%ディスクリプタを解放する
 oci_free_statement%bool oci_free_statement(resource $statement)%文やカーソルに関連付けられた全てのリソースを解放する
-oci_get_implicit_resultset%resource  oci_get_implicit_resultset(resource $statement)%Returns the next child statement resource from a parent statement resource that has Oracle Database 12c Implicit Result Sets
+oci_get_implicit_resultset%resource  oci_get_implicit_resultset(resource $statement)%Oracle Database 12c の暗黙の結果セットを持つ親ステートメント・リソースから次の子ステートメント・リソースを返す
 oci_internal_debug%void oci_internal_debug(bool $onoff)%内部デバッグ用の出力を有効または無効にする
 oci_lob_copy%bool oci_lob_copy(OCI-Lob $lob_to, OCI-Lob $lob_from, [int $length])%ラージオブジェクトをコピーする
 oci_lob_is_equal%bool oci_lob_is_equal(OCI-Lob $lob1, OCI-Lob $lob2)%2 つの LOB/FILE ロケータの等価性を比較する
@@ -2066,9 +2094,10 @@ odbc_statistics%resource odbc_statistics(resource $connection_id, string $qualif
 odbc_tableprivileges%resource odbc_tableprivileges(resource $connection_id, string $qualifier, string $owner, string $name)%各テーブルのリストおよび関連する権限のリストを取得する
 odbc_tables%resource odbc_tables(resource $connection_id, [string $qualifier], [string $owner], [string $name], [string $types])%指定したデータソースに保存されたテーブルの名前のリストを取得する
 opcache_compile_file%boolean opcache_compile_file(string $file)%PHP スクリプトを、実行せずにコンパイルしてキャッシュする
-opcache_get_configuration%array opcache_get_configuration()%Get configuration information about the cache
-opcache_get_status%array opcache_get_status([boolean $get_scripts])%Get status information about the cache
+opcache_get_configuration%array opcache_get_configuration()%キャッシュについての構成情報を取得
+opcache_get_status%array opcache_get_status([boolean $get_scripts])%キャッシュについてのステータス情報を取得
 opcache_invalidate%boolean opcache_invalidate(string $script, [boolean $force])%キャッシュされたスクリプトを無効にする
+opcache_is_script_cached%boolean opcache_is_script_cached(string $file)%スクリプトが OPCache にキャッシュされているかどうかを伝えます。
 opcache_reset%boolean opcache_reset()%opcode のキャッシュ内容をリセットする
 opendir%resource opendir(string $path, [resource $context])%ディレクトリハンドルをオープンする
 openlog%bool openlog(string $ident, int $option, int $facility)%システムのロガーへの接続をオープンする
@@ -2111,7 +2140,7 @@ openssl_private_encrypt%bool openssl_private_encrypt(string $data, string $crypt
 openssl_public_decrypt%bool openssl_public_decrypt(string $data, string $decrypted, mixed $key, [int $padding = OPENSSL_PKCS1_PADDING])%公開鍵でデータを復号する
 openssl_public_encrypt%bool openssl_public_encrypt(string $data, string $crypted, mixed $key, [int $padding = OPENSSL_PKCS1_PADDING])%公開鍵でデータを暗号化する
 openssl_random_pseudo_bytes%string openssl_random_pseudo_bytes(int $length, [bool $crypto_strong])%疑似乱数のバイト文字列を生成する
-openssl_seal%int openssl_seal(string $data, string $sealed_data, array $env_keys, array $pub_key_ids, [string $method])%データをシール(暗号化)する
+openssl_seal%int openssl_seal(string $data, string $sealed_data, array $env_keys, array $pub_key_ids, [string $method = "RC4"])%データをシール(暗号化)する
 openssl_sign%bool openssl_sign(string $data, string $signature, mixed $priv_key_id, [mixed $signature_alg = OPENSSL_ALGO_SHA1])%署名を生成する
 openssl_spki_export%string openssl_spki_export(string $spkac)%Exports a valid PEM formatted public key signed public key and challenge
 openssl_spki_export_challenge%string openssl_spki_export_challenge(string $spkac)%Exports the challenge assoicated with a signed public key and challenge
@@ -2143,7 +2172,7 @@ pathinfo%mixed pathinfo(string $path, [int $options = PATHINFO_DIRNAME | PATHINF
 pclose%int pclose(resource $handle)%プロセスのファイルポインタをクローズする
 pcntl_alarm%int pcntl_alarm(int $seconds)%シグナルを送信するアラームを設定する
 pcntl_errno%void pcntl_errno()%pcntl_strerror のエイリアス
-pcntl_exec%void pcntl_exec(string $path, [array $args], [array $envs])%現在のプロセス空間で指定したプログラムを実行する
+pcntl_exec%bool pcntl_exec(string $path, [array $args], [array $envs])%現在のプロセス空間で指定したプログラムを実行する
 pcntl_fork%int pcntl_fork()%現在実行中のプロセスをフォークする
 pcntl_get_last_error%int pcntl_get_last_error()%直近の pcntl 関数が失敗したときのエラー番号を取得する
 pcntl_getpriority%int pcntl_getpriority([int $pid = getmypid()], [int $process_identifier = PRIO_PROCESS])%プロセスの優先度を取得する
@@ -2296,6 +2325,7 @@ posix_setegid%bool posix_setegid(int $gid)%現在のプロセスの実効 GID �
 posix_seteuid%bool posix_seteuid(int $uid)%現在のプロセスの実効 UID を設定する
 posix_setgid%bool posix_setgid(int $gid)%現在のプロセスの GID を設定する
 posix_setpgid%bool posix_setpgid(int $pid, int $pgid)%ジョブ制御のプロセスグループ ID を設定する
+posix_setrlimit%bool posix_setrlimit(int $resource, int $softlimit, int $hardlimit)%Set system resource limits
 posix_setsid%int posix_setsid()%現在のプロセスをセッションリーダーにする
 posix_setuid%bool posix_setuid(int $uid)%現在のプロセスの UID を設定する
 posix_strerror%string posix_strerror(int $errno)%指定したエラー番号に対応するシステムのエラーメッセージを取得する
@@ -2311,6 +2341,7 @@ preg_match_all%int preg_match_all(string $pattern, string $subject, [array $matc
 preg_quote%string preg_quote(string $str, [string $delimiter])%正規表現文字をクオートする
 preg_replace%mixed preg_replace(mixed $pattern, mixed $replacement, mixed $subject, [int $limit = -1], [int $count])%正規表現検索および置換を行う
 preg_replace_callback%mixed preg_replace_callback(mixed $pattern, callable $callback, mixed $subject, [int $limit = -1], [int $count])%正規表現検索を行い、コールバック関数を使用して置換を行う
+preg_replace_callback_array%mixed preg_replace_callback_array(array $patterns_and_callbacks, mixed $subject, [int $limit = -1], [int $count])%Perform a regular expression search and replace using callbacks
 preg_split%array preg_split(string $pattern, string $subject, [int $limit = -1], [int $flags])%正規表現で文字列を分割する
 prev%mixed prev(array $array)%内部の配列ポインタをひとつ前に戻す
 print%int print(string $arg)%文字列を出力する
@@ -2347,6 +2378,8 @@ quoted_printable_encode%string quoted_printable_encode(string $str)%8 ビット�
 quotemeta%string quotemeta(string $str)%メタ文字をクォートする
 rad2deg%float rad2deg(float $number)%ラジアン単位の数値を度単位に変換する
 rand%int rand(int $min, int $max)%乱数を生成する
+random_bytes%string random_bytes(int $length)%Generates cryptographically secure pseudo-random bytes
+random_int%int random_int(int $min, int $max)%Generates cryptographically secure pseudo-random integers
 range%array range(mixed $start, mixed $end, [number $step = 1])%ある範囲の整数を有する配列を作成する
 rawurldecode%string rawurldecode(string $str)%URL エンコードされた文字列をデコードする
 rawurlencode%string rawurlencode(string $str)%RFC 3986 に基づき URL エンコードを行う
@@ -2410,12 +2443,12 @@ rrdc_disconnect%void rrdc_disconnect()%Close any outstanding connection to rrd c
 rsort%bool rsort(array $array, [int $sort_flags = SORT_REGULAR])%配列を逆順にソートする
 rtrim%string rtrim(string $str, [string $character_mask])%文字列の最後から空白 (もしくはその他の文字) を取り除く
 scandir%array scandir(string $directory, [int $sorting_order = SCANDIR_SORT_ASCENDING], [resource $context])%指定されたパスのファイルとディレクトリのリストを取得する
-sem_acquire%bool sem_acquire(resource $sem_identifier)%セマフォを得る
+sem_acquire%bool sem_acquire(resource $sem_identifier, [bool $nowait = false])%セマフォを得る
 sem_get%resource sem_get(int $key, [int $max_acquire = 1], [int $perm = 0666], [int $auto_release = 1])%セマフォ ID を得る
 sem_release%bool sem_release(resource $sem_identifier)%セマフォを解放する
 sem_remove%bool sem_remove(resource $sem_identifier)%セマフォを削除する
 serialize%string serialize(mixed $value)%値の保存可能な表現を生成する
-session_abort%bool session_abort()%Discard session array changes and finish session
+session_abort%void session_abort()%session 配列の変更を破棄してセッションを終了します
 session_cache_expire%int session_cache_expire([string $new_cache_expire])%現在のキャッシュの有効期限を返す
 session_cache_limiter%string session_cache_limiter([string $cache_limiter])%現在のキャッシュリミッタを取得または設定する
 session_commit%void session_commit()%session_write_close のエイリアス
@@ -2430,11 +2463,11 @@ session_name%string session_name([string $name])%現在のセッション名を�
 session_regenerate_id%bool session_regenerate_id([bool $delete_old_session = false])%現在のセッションIDを新しく生成したものと置き換える
 session_register%bool session_register(mixed $name, [mixed ...])%現在のセッションに1つ以上の変数を登録する
 session_register_shutdown%void session_register_shutdown()%セッションのシャットダウン関数
-session_reset%bool session_reset()%Re-initialize session array with original values
+session_reset%void session_reset()%session 配列を元の値で再初期化します
 session_save_path%string session_save_path([string $path])%現在のセッションデータ保存パスを取得または設定する
 session_set_cookie_params%void session_set_cookie_params(int $lifetime, [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%セッションクッキーパラメータを設定する
 session_set_save_handler%bool session_set_save_handler(callable $open, callable $close, callable $read, callable $write, callable $destroy, callable $gc, [callable $create_sid], SessionHandlerInterface $sessionhandler, [bool $register_shutdown = true])%ユーザー定義のセッション保存関数を設定する
-session_start%bool session_start()%新しいセッションを開始、あるいは既存のセッションを再開する
+session_start%bool session_start([array $options = []])%新しいセッションを開始、あるいは既存のセッションを再開する
 session_status%int session_status()%現在のセッションの状態を返す
 session_unregister%bool session_unregister(string $name)%現在のセッションから変数の登録を削除する
 session_unset%void session_unset()%全てのセッション変数を開放する
@@ -2446,7 +2479,7 @@ set_include_path%string set_include_path(string $new_include_path)%include_path 
 set_magic_quotes_runtime%bool set_magic_quotes_runtime(bool $new_setting)%magic_quotes_runtime の現在アクティブな設定をセットする
 set_socket_blocking%void set_socket_blocking()%stream_set_blocking のエイリアス
 set_time_limit%bool set_time_limit(int $seconds)%実行時間の最大値を制限する
-setcookie%bool setcookie(string $name, [string $value], [int $expire], [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%クッキーを送信する
+setcookie%bool setcookie(string $name, [string $value = ""], [int $expire], [string $path = ""], [string $domain = ""], [bool $secure = false], [bool $httponly = false])%クッキーを送信する
 setlocale%string setlocale(int $category, array $locale, [string ...])%ロケール情報を設定する
 setproctitle%void setproctitle(string $title)%プロセスのタイトルを設定
 setrawcookie%bool setrawcookie(string $name, [string $value], [int $expire], [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%値を URL エンコードせずにクッキーを送信する
@@ -2699,12 +2732,12 @@ strcasecmp%int strcasecmp(string $str1, string $str2)%大文字小文字を区�
 strchr%void strchr()%strstr のエイリアス
 strcmp%int strcmp(string $str1, string $str2)%バイナリセーフな文字列比較
 strcoll%int strcoll(string $str1, string $str2)%ロケールに基づく文字列比較
-strcspn%int strcspn(string $str1, string $str2, [int $start], [int $length])%マスクにマッチしない最初のセグメントの長さを返す
+strcspn%int strcspn(string $subject, string $mask, [int $start], [int $length])%マスクにマッチしない最初のセグメントの長さを返す
 streamWrapper%object streamWrapper()%新しいストリームラッパーを作成する
-stream_bucket_append%void stream_bucket_append(resource $brigade, resource $bucket)%bucket を brigade に追加する
+stream_bucket_append%void stream_bucket_append(resource $brigade, object $bucket)%bucket を brigade に追加する
 stream_bucket_make_writeable%object stream_bucket_make_writeable(resource $brigade)%操作する brigade から bucket オブジェクトを返す
 stream_bucket_new%object stream_bucket_new(resource $stream, string $buffer)%現在のストリームで使用する新しい bucket を作成する
-stream_bucket_prepend%void stream_bucket_prepend(resource $brigade, resource $bucket)%bucket を brigade の先頭に追加する
+stream_bucket_prepend%void stream_bucket_prepend(resource $brigade, object $bucket)%bucket を brigade の先頭に追加する
 stream_context_create%resource stream_context_create([array $options], [array $params])%ストリームコンテキストを作成する
 stream_context_get_default%resource stream_context_get_default([array $options])%デフォルトのストリームコンテキストを取得する
 stream_context_get_options%array stream_context_get_options(resource $stream_or_context)%ストリーム / ラッパー / コンテキストに設定されているオプションを取得する
@@ -2750,7 +2783,7 @@ stream_wrapper_unregister%bool stream_wrapper_unregister(string $protocol)%URL �
 strftime%string strftime(string $format, [int $timestamp = time()])%ロケールの設定に基づいてローカルな日付・時間をフォーマットする
 strip_tags%string strip_tags(string $str, [string $allowable_tags])%文字列から HTML および PHP タグを取り除く
 stripcslashes%string stripcslashes(string $str)%addcslashes でクォートされた文字列をアンクォートする
-stripos%int stripos(string $haystack, string $needle, [int $offset])%大文字小文字を区別せずに文字列が最初に現れる位置を探す
+stripos%mixed stripos(string $haystack, string $needle, [int $offset])%大文字小文字を区別せずに文字列が最初に現れる位置を探す
 stripslashes%string stripslashes(string $str)%クォートされた文字列のクォート部分を取り除く
 stristr%string stristr(string $haystack, mixed $needle, [bool $before_needle = false])%大文字小文字を区別しない strstr
 strlen%int strlen(string $string)%文字列の長さを得る
@@ -3032,7 +3065,7 @@ trigger_error%bool trigger_error(string $error_msg, [int $error_type = E_USER_NO
 trim%string trim(string $str, [string $character_mask = " \t\n\r\0\x0B"])%文字列の先頭および末尾にあるホワイトスペースを取り除く
 uasort%bool uasort(array $array, callable $value_compare_func)%ユーザー定義の比較関数で配列をソートし、連想インデックスを保持する
 ucfirst%string ucfirst(string $str)%文字列の最初の文字を大文字にする
-ucwords%string ucwords(string $str)%文字列の各単語の最初の文字を大文字にする
+ucwords%string ucwords(string $str, [string $delimiters = " \t\r\n\f\v"])%文字列の各単語の最初の文字を大文字にする
 uksort%bool uksort(array $array, callable $key_compare_func)%ユーザー定義の比較関数を用いて、キーで配列をソートする
 umask%int umask([int $mask])%現在の umask を変更する
 uniqid%string uniqid([string $prefix = ""], [bool $more_entropy = false])%一意な ID を生成する
@@ -3040,7 +3073,7 @@ unixtojd%int unixtojd([int $timestamp = time()])%Unix タイムスタンプを�
 unlink%bool unlink(string $filename, [resource $context])%ファイルを削除する
 unpack%array unpack(string $format, string $data)%バイナリ文字列からデータを切り出す
 unregister_tick_function%void unregister_tick_function(string $function_name)%各 tick の実行用の関数の登録を解除する
-unserialize%mixed unserialize(string $str)%保存用表現から PHP の値を生成する
+unserialize%mixed unserialize(string $str, [array $options])%保存用表現から PHP の値を生成する
 unset%void unset(mixed $var, [mixed ...])%指定した変数の割当を解除する
 untaint%bool untaint(string $string, [string ...])%文字列の汚染を除去する
 uopz_backup%void uopz_backup(string $class, string $function)%Backup a function

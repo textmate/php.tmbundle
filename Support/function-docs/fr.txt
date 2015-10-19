@@ -2,10 +2,20 @@ APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $form
 AppendIterator%object AppendIterator()%Construit un objet AppendIterator
 ArrayIterator%object ArrayIterator([mixed $array = array()], [int $flags])%Construit un ArrayIterator
 ArrayObject%object ArrayObject([mixed $input = []], [int $flags], [string $iterator_class = "ArrayIterator"])%Construit un nouvel objet tableau
+BSON\Binary%object BSON\Binary(string $data, string $subtype)%Description
+BSON\Javascript%object BSON\Javascript(string $javascript, [string $scope])%Description
+BSON\ObjectID%object BSON\ObjectID([string $id])%Description
+BSON\Regex%object BSON\Regex(string $pattern, string $flags)%Description
+BSON\Timestamp%object BSON\Timestamp(string $increment, string $timestamp)%Description
+BSON\UTCDatetime%object BSON\UTCDatetime(string $milliseconds)%Description
+BSON\fromArray%ReturnType BSON\fromArray(string $array)%Description
+BSON\fromJSON%ReturnType BSON\fromJSON(string $json)%Description
+BSON\toArray%ReturnType BSON\toArray(string $bson)%Description
+BSON\toJSON%ReturnType BSON\toJSON(string $bson)%Description
 BadFunctionCallException%object BadFunctionCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadFunctionCallException
 BadMethodCallException%object BadMethodCallException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new BadMethodCallException
 CURLFile%object CURLFile(string $filename, [string $mimetype], [string $postname])%Crée un objet CURLFile
-CachingIterator%object CachingIterator(Iterator $iterator, [string $flags = self::CALL_TOSTRING])%Construit un nouvel objet CachingIterator pour l'itérateur
+CachingIterator%object CachingIterator(Iterator $iterator, [int $flags = self::CALL_TOSTRING])%Construit un nouvel objet CachingIterator pour l'itérateur
 CallbackFilterIterator%object CallbackFilterIterator(Iterator $iterator, callable $callback)%Crée un itérateur filtré depuis un autre itérateur
 Collator%object Collator(string $locale)%Création d'un collator
 DOMAttr%object DOMAttr(string $name, [string $value])%Crée un nouvel objet DOMAttr
@@ -19,7 +29,7 @@ DOMProcessingInstruction%object DOMProcessingInstruction(string $name, [string $
 DOMText%object DOMText([string $value])%Crée un nouvel objet DOMText
 DOMXPath%object DOMXPath(DOMDocument $doc)%Crée un nouvel objet DOMXPath
 DateInterval%object DateInterval(string $interval_spec)%Crée un nouvel objet DateInterval
-DatePeriod%object DatePeriod(DateTime $start, DateInterval $interval, int $recurrences, [int $options], DateTime $end, string $isostr)%Crée un nouvel objet DatePeriod
+DatePeriod%object DatePeriod(DateTimeInterface $start, DateInterval $interval, int $recurrences, [int $options], DateTimeInterface $end, string $isostr)%Crée un nouvel objet DatePeriod
 DateTime%object DateTime([string $time = "now"], [DateTimeZone $timezone])%Retourne un nouvel objet DateTime
 DateTimeImmutable%object DateTimeImmutable([string $time = "now"], [DateTimeZone $timezone])%Retourne un nouvel objet DateTimeImmutable
 DateTimeZone%object DateTimeZone(string $timezone)%Crée un nouvel objet DateTimeZone
@@ -55,12 +65,10 @@ Exception%object Exception([string $message = ""], [int $code = 0], [Exception $
 FANNConnection%object FANNConnection(int $from_neuron, int $to_neuron, float $weight)%Le constructeur de connexion
 FilesystemIterator%object FilesystemIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS])%Construit un objet FilesystemIterator
 FilterIterator%object FilterIterator(Iterator $iterator)%Construit un filterIterator
-FrenchToJD%int FrenchToJD(int $month, int $day, int $year)%Convertit une date du calendrier français républicain en nombre   de jours du calendrier Julien
 Gender\Gender%object Gender\Gender([string $dsn])%Construit un objet Gender
 GlobIterator%object GlobIterator(string $path, [int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO])%Construit un itérateur de type glob
 Gmagick%object Gmagick([string $filename])%Le constructeur Gmagick
 GmagickPixel%object GmagickPixel([string $color])%Le constructeur GmagickPixel
-GregorianToJD%int GregorianToJD(int $month, int $day, int $year)%Convertit une date grégorienne en nombre de jours du calendrier Julien
 HaruDoc%object HaruDoc()%Construit un nouvel objet HaruDoc
 HttpDeflateStream%object HttpDeflateStream([int $flags])%Constructeur de la classe HttpDeflateStream
 HttpInflateStream%object HttpInflateStream([int $flags])%Constructeur de la classe HttpInflateStream
@@ -78,13 +86,6 @@ IntlCalendar%object IntlCalendar()%Constructeur privé pour la désactivation de
 IntlRuleBasedBreakIterator%object IntlRuleBasedBreakIterator(string $rules, [string $areCompiled])%Crée un itérateur depuis un jeu de règles
 InvalidArgumentException%object InvalidArgumentException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new InvalidArgumentException
 IteratorIterator%object IteratorIterator(Traversable $iterator)%Crée un itérateur à partir d'un objet traversable
-JDDayOfWeek%mixed JDDayOfWeek(int $julianday, [int $mode = CAL_DOW_DAYNO])%Retourne le numéro du jour de la semaine
-JDMonthName%string JDMonthName(int $julianday, int $mode)%Retourne le nom du mois
-JDToFrench%string JDToFrench(int $juliandaycount)%Convertit le nombre de jours du calendrier Julien en date du calendrier   français républicain
-JDToGregorian%string JDToGregorian(int $julianday)%Convertit le nombre de jours du calendrier Julien en date   grégorienne
-JDToJulian%string JDToJulian(int $julianday)%Convertit le nombre de jours du calendrier Julien en date du calendrier Julien
-JewishToJD%int JewishToJD(int $month, int $day, int $year)%Convertit une date du calendrier Juif en nombre de jours du calendrier Julien
-JulianToJD%int JulianToJD(int $month, int $day, int $year)%Convertit un jours du calendrier Julien en un nombre de jours du calendrier Julien
 KTaglib_MPEG_File%object KTaglib_MPEG_File(string $filename)%Ouvre un nouveau fichier
 LengthException%object LengthException([string $message = ""], [int $code = 0], [Exception $previous = NULL])%Create a new LengthException
 LimitIterator%object LimitIterator(Iterator $iterator, [int $offset], [int $count = -1])%Construit un nouvel objet LimitIterator
@@ -96,22 +97,31 @@ MongoBinData%object MongoBinData(string $data, [int $type])%Crée un nouvel obje
 MongoClient%object MongoClient([string $server = "mongodb://localhost:27017"], [array $options = )], [array $driver_options])%Crée un nouvel objet de connexion à une base de données
 MongoCode%object MongoCode(string $code, [array $scope = array()])%Crée un nouvel objet de code
 MongoCollection%object MongoCollection(MongoDB $db, string $name)%Crée une nouvelle collection
-MongoCommandCursor%object MongoCommandCursor(MongoClient $connection, string $ns, [array $command = array()])%Crée un nouveau curseur de commande
+MongoCommandCursor%object MongoCommandCursor(MongoClient $connection, string $ns, array $command)%Crée un nouveau curseur de commande
 MongoCursor%object MongoCursor(MongoClient $connection, string $ns, [array $query = array()], [array $fields = array()])%Crée un nouveau curseur
 MongoDB%object MongoDB(MongoClient $conn, string $name)%Crée une nouvelle base de données Mongo
+MongoDB\Driver\BulkWrite%object MongoDB\Driver\BulkWrite([boolean $ordered = true])%Create new BulkWrite
+MongoDB\Driver\Command%object MongoDB\Driver\Command(array|object $document)%Construit une nouvelle commande
+MongoDB\Driver\Cursor%object MongoDB\Driver\Cursor(Server $server, string $responseDocument)%Description
+MongoDB\Driver\CursorId%object MongoDB\Driver\CursorId(string $id)%Description
+MongoDB\Driver\Manager%object MongoDB\Driver\Manager(string $uri, [array $options], [array $driverOptions])%Create new MongoDB Manager
+MongoDB\Driver\Query%object MongoDB\Driver\Query(array|object $filter, [array $queryOptions])%Construct new Query
+MongoDB\Driver\ReadPreference%object MongoDB\Driver\ReadPreference(string $readPreference, [array $tagSets])%Description
+MongoDB\Driver\Server%object MongoDB\Driver\Server(string $host, string $port, [array $options], [array $driverOptions])%Description
+MongoDB\Driver\WriteConcern%object MongoDB\Driver\WriteConcern(string $wstring, [integer $wtimeout], [boolean $journal], [boolean $fsync])%Construit un WriteConcern immutable
 MongoDate%object MongoDate([int $sec = time()], [int $usec])%Crée une nouvelle date
 MongoDeleteBatch%object MongoDeleteBatch(MongoCollection $collection, [array $write_options])%Description
 MongoGridFS%object MongoGridFS(MongoDB $db, [string $prefix = "fs"], [mixed $chunks = "fs"])%Crée une nouvelle collection de fichiers
 MongoGridFSCursor%object MongoGridFSCursor(MongoGridFS $gridfs, resource $connection, string $ns, array $query, array $fields)%Crée un nouveau curseur
 MongoGridfsFile%object MongoGridfsFile(MongoGridFS $gridfs, array $file)%Crée un nouveau fichier GridFS
-MongoId%object MongoId([string $id])%Crée un nouvel identifiant
+MongoId%object MongoId([string|MongoId $id])%Crée un nouvel identifiant
 MongoInsertBatch%object MongoInsertBatch(MongoCollection $collection, [array $write_options])%Description
 MongoInt32%object MongoInt32(string $value)%Crée un nouvel entier 32-bit
 MongoInt64%object MongoInt64(string $value)%Crée un nouvel entier 64-bit
 MongoRegex%object MongoRegex(string $regex)%Crée une nouvelle expression rationnelle
 MongoTimestamp%object MongoTimestamp([int $sec = time()], [int $inc])%Crée un nouveau timestamp
 MongoUpdateBatch%object MongoUpdateBatch(MongoCollection $collection, [array $write_options])%Description
-MongoWriteBatch%object MongoWriteBatch(MongoCollection $collection, [string $batch_type], [array $write_options])%Description
+MongoWriteBatch%object MongoWriteBatch(MongoCollection $collection, [string $batch_type], [array $write_options])%Crée un nouveau lot d'opérations d'écriture
 MultipleIterator%object MultipleIterator([int $flags = MultipleIterator::MIT_NEED_ALL|MultipleIterator::MIT_KEYS_NUMERIC])%Construit un nouvel objet MultipleIterator
 MysqlndUhConnection%object MysqlndUhConnection()%Le but de __construct
 MysqlndUhPreparedStatement%object MysqlndUhPreparedStatement()%Le but de __construct
@@ -143,6 +153,7 @@ RecursiveTreeIterator%object RecursiveTreeIterator(RecursiveIterator|IteratorAgg
 ReflectionClass%object ReflectionClass(mixed $argument)%Construit une ReflectionClass
 ReflectionExtension%object ReflectionExtension(string $name)%Construit un nouvel objet ReflectionExtension
 ReflectionFunction%object ReflectionFunction(mixed $name)%Construit un nouvel objet ReflectionFunction
+ReflectionGenerator%object ReflectionGenerator(Generator $generator)%Constructs a ReflectionGenerator object
 ReflectionMethod%object ReflectionMethod(mixed $class, string $name, string $class_method)%Construit un nouvel objet ReflectionMethod
 ReflectionObject%object ReflectionObject(object $argument)%Construit un nouvel objet ReflectionObject
 ReflectionParameter%object ReflectionParameter(string $function, string $parameter)%Constructeur
@@ -194,7 +205,7 @@ VarnishAdmin%object VarnishAdmin([array $args])%Constructeur VarnishAdmin
 VarnishLog%object VarnishLog([array $args])%Constructeur Varnishlog
 VarnishStat%object VarnishStat([array $args])%Constructeur VarnishStat
 WeakMap%object WeakMap()%Construit un nouveau map
-Weakref%object Weakref([object $object])%Construit une nouvelle référence forte
+Weakref%object Weakref(object $object)%Construit une nouvelle référence forte
 XMLDiff\Base%object XMLDiff\Base(string $nsname)%Constructeur
 XSLTProcessor%object XSLTProcessor()%Crée un nouvel objet XSLTProcessor
 Yaf_Application%object Yaf_Application(mixed $config, [string $envrion])%Constructeur de Yaf_Application
@@ -215,7 +226,7 @@ Yaf_Route_Simple%object Yaf_Route_Simple(string $module_name, string $controller
 Yaf_Route_Supervar%object Yaf_Route_Supervar(string $supervar_name)%Le but de __construct
 Yaf_Router%object Yaf_Router()%Constructeur de la classe Yaf_Router
 Yaf_Session%object Yaf_Session()%Le but de __construct
-Yaf_View_Simple%object Yaf_View_Simple(string $tempalte_dir, [array $options])%Constructeur de la classe Yaf_View_Simple
+Yaf_View_Simple%object Yaf_View_Simple(string $template_dir, [array $options])%Constructeur de la classe Yaf_View_Simple
 Yar_Client%object Yar_Client(string $url)%Crée un client
 Yar_Server%object Yar_Server(Object $obj)%Enregistre un serveur
 ZMQ%object ZMQ()%ZMQ constructor
@@ -291,7 +302,7 @@ array_push%int array_push(array $array, mixed $value1, [mixed ...])%Empile un ou
 array_rand%mixed array_rand(array $array, [int $num = 1])%Prend une ou plusieurs valeurs, au hasard dans un tableau
 array_reduce%mixed array_reduce(array $array, callable $callback, [mixed $initial])%Réduit itérativement un tableau
 array_replace%array array_replace(array $array1, array $array2, [array ...])%Remplace les éléments d'un tableau par ceux d'autres tableaux
-array_replace_recursive%array array_replace_recursive(array $array1, array $array2, [array ...])%Replaces elements from passed arrays into the first array recursively
+array_replace_recursive%array array_replace_recursive(array $array1, array $array2, [array ...])%Remplace récursivement dans le premier tableau les éléments des autres tableaux fournis
 array_reverse%array array_reverse(array $array, [bool $preserve_keys = false])%Inverse l'ordre des éléments d'un tableau
 array_search%mixed array_search(mixed $needle, array $haystack, [bool $strict = false])%Recherche dans un tableau la clé associée à une valeur
 array_shift%mixed array_shift(array $array)%Dépile un élément au début d'un tableau
@@ -303,17 +314,17 @@ array_udiff_assoc%array array_udiff_assoc(array $array1, array $array2, [array .
 array_udiff_uassoc%array array_udiff_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%Calcule la différence de deux tableaux associatifs, compare les données et   les index avec une fonction de rappel
 array_uintersect%array array_uintersect(array $array1, array $array2, [array ...], callable $value_compare_func)%Calcule l'intersection de deux tableaux, compare les données en   utilisant une fonction de rappel
 array_uintersect_assoc%array array_uintersect_assoc(array $array1, array $array2, [array ...], callable $value_compare_func)%Calcule l'intersection de deux tableaux avec des tests sur l'index,   compare les données en utilisant une fonction de rappel
-array_uintersect_uassoc%array array_uintersect_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%Calcule l'intersection de deux tableaux avec des tests sur l'index,   compare les données et les indexes des deux tableaux en utilisant   une fonction de rappel
+array_uintersect_uassoc%array array_uintersect_uassoc(array $array1, array $array2, [array ...], callable $value_compare_func, callable $key_compare_func)%Calcule l'intersection de deux tableaux avec des tests sur l'index,   compare les données et les indexes des deux tableaux en utilisant   une fonction de rappel séparée
 array_unique%array array_unique(array $array, [int $sort_flags = SORT_STRING])%Dédoublonne un tableau
 array_unshift%int array_unshift(array $array, mixed $value1, [mixed ...])%Empile un ou plusieurs éléments au début d'un tableau
 array_values%array array_values(array $array)%Retourne toutes les valeurs d'un tableau
-array_walk%bool array_walk(array $array, callable $callback, [mixed $userdata])%Exécute une fonction fourni par l'utilisateur sur chacun des éléments d'un tableau
+array_walk%bool array_walk(array $array, callable $callback, [mixed $userdata])%Exécute une fonction fournie par l'utilisateur sur chacun des éléments d'un tableau
 array_walk_recursive%bool array_walk_recursive(array $array, callable $callback, [mixed $userdata])%Applique une fonction de rappel récursivement à chaque membre d'un tableau
 arsort%bool arsort(array $array, [int $sort_flags = SORT_REGULAR])%Trie un tableau en ordre inverse
 asin%float asin(float $arg)%Arc sinus
 asinh%float asinh(float $arg)%Arc sinus hyperbolique
 asort%bool asort(array $array, [int $sort_flags = SORT_REGULAR])%Trie un tableau et conserve l'association des index
-assert%bool assert(mixed $assertion, [string $description])%Vérifie si une assertion est fausse
+assert%bool assert(mixed $assertion, [string $description], [Throwable $exception])%Vérifie si une assertion est fausse
 assert_options%mixed assert_options(int $what, [mixed $value])%Fixe et lit différentes options d'assertions
 atan%float atan(float $arg)%Arc tangente
 atan2%float atan2(float $y, float $x)%Arc tangent de deux variables
@@ -347,7 +358,7 @@ bzerrno%int bzerrno(resource $bz)%Retourne le code d'erreur bzip2
 bzerror%array bzerror(resource $bz)%Retourne le numéro et le message d'erreur bzip2 dans un tableau
 bzerrstr%string bzerrstr(resource $bz)%Retourne le message d'erreur bzip2
 bzflush%int bzflush(resource $bz)%Force l'écriture de toutes les données compressées
-bzopen%resource bzopen(string $filename, string $mode)%Ouvre un fichier compressé avec bzip2
+bzopen%resource bzopen(mixed $file, string $mode)%Ouvre un fichier compressé avec bzip2
 bzread%string bzread(resource $bz, [int $length = 1024])%Lecture binaire d'un fichier bzip2
 bzwrite%int bzwrite(resource $bz, string $data, [int $length])%Écriture binaire dans un fichier bzip2
 cal_days_in_month%int cal_days_in_month(int $calendar, int $month, int $year)%Retourne le nombre de jours dans un mois, pour une année et un calendrier donné
@@ -356,8 +367,8 @@ cal_info%array cal_info([int $calendar = -1])%Retourne des détails sur un calen
 cal_to_jd%int cal_to_jd(int $calendar, int $month, int $day, int $year)%Convertit un calendrier en nombre de jours Julien
 call_user_func%mixed call_user_func(callable $callback, [mixed $parameter], [mixed ...])%Appelle une fonction de rappel fournie par le premier argument
 call_user_func_array%mixed call_user_func_array(callable $callback, array $param_arr)%Appelle une fonction de rappel avec les paramètres rassemblés en tableau
-call_user_method%mixed call_user_method(string $method_name, object $obj, [mixed $parameter], [mixed ...])%Appelle une méthode utilisateur sur un objet donné [obsolète]
-call_user_method_array%mixed call_user_method_array(string $method_name, object $obj, array $params)%Appelle une méthode utilisateur avec un tableau de paramètres [obsolète]
+call_user_method%mixed call_user_method(string $method_name, object $obj, [mixed $parameter], [mixed ...])%Appelle une méthode utilisateur sur un objet donné
+call_user_method_array%mixed call_user_method_array(string $method_name, object $obj, array $params)%Appelle une méthode utilisateur avec un tableau de paramètres
 ceil%float ceil(float $value)%Arrondit au nombre supérieur
 chdir%bool chdir(string $directory)%Change de dossier
 checkdate%bool checkdate(int $month, int $day, int $year)%Valide une date grégorienne
@@ -371,7 +382,7 @@ chroot%bool chroot(string $directory)%Change le dossier racine
 chunk_split%string chunk_split(string $body, [int $chunklen = 76], [string $end = "\r\n"])%Scinde une chaîne
 class_alias%bool class_alias(string $original, string $alias, [bool $autoload])%Crée un alias de classe
 class_exists%bool class_exists(string $class_name, [bool $autoload = true])%Vérifie si une classe a été définie
-class_implements%array class_implements(mixed $class, [bool $autoload = true])%Retourne les interfaces implémentées par une classe donnée
+class_implements%array class_implements(mixed $class, [bool $autoload = true])%Retourne les interfaces implémentées par une classe ou une interface donnée
 class_parents%array class_parents(mixed $class, [bool $autoload = true])%Retourne la classe parente d'une classe
 class_uses%array class_uses(mixed $class, [bool $autoload = true])%Retourne le trait utilisé par une classe donnée.
 clearstatcache%void clearstatcache([bool $clear_realpath_cache = false], [string $filename])%Efface le cache de stat
@@ -542,7 +553,7 @@ delete%void delete()%Voir unlink ou unset
 dgettext%string dgettext(string $domain, string $message)%Remplace le domaine courant
 die%void die()%Alias de la fonction exit
 dir%Directory dir(string $directory, [resource $context])%Retourne une instance de la classe Directory
-dirname%string dirname(string $path)%Renvoie le nom du dossier parent
+dirname%string dirname(string $path, [int $levels = 1])%Renvoie le chemin du dossier parent
 disk_free_space%float disk_free_space(string $directory)%Renvoie l'espace disque disponible sur le système de fichiers ou la partition
 disk_total_space%float disk_total_space(string $directory)%Retourne la taille d'un dossier ou d'une partition
 diskfreespace%void diskfreespace()%Alias de disk_free_space
@@ -621,11 +632,13 @@ enchant_broker_describe%array enchant_broker_describe(resource $broker)%Énumèr
 enchant_broker_dict_exists%bool enchant_broker_dict_exists(resource $broker, string $tag)%Vérifie si un dictionnaire existe
 enchant_broker_free%bool enchant_broker_free(resource $broker)%Libère la ressource de sponsor ainsi que ses dictionnaires
 enchant_broker_free_dict%bool enchant_broker_free_dict(resource $dict)%Libère une ressource de dictionnaire
+enchant_broker_get_dict_path%bool enchant_broker_get_dict_path(resource $broker, int $dict_type)%Get the directory path for a given backend
 enchant_broker_get_error%string enchant_broker_get_error(resource $broker)%Retourne la dernière erreur d'un sponsor
 enchant_broker_init%resource enchant_broker_init()%Crée un nouvel objet sponsor
 enchant_broker_list_dicts%mixed enchant_broker_list_dicts(resource $broker)%Retourne une liste de tous les dictionnaires disponibles
 enchant_broker_request_dict%resource enchant_broker_request_dict(resource $broker, string $tag)%Crée un nouveau dictionnaire
 enchant_broker_request_pwl_dict%resource enchant_broker_request_pwl_dict(resource $broker, string $filename)%Crée un dictionnaire en utilisant un fichier PWL
+enchant_broker_set_dict_path%bool enchant_broker_set_dict_path(resource $broker, int $dict_type, string $value)%Set the directory path for a given backend
 enchant_broker_set_ordering%bool enchant_broker_set_ordering(resource $broker, string $tag, string $ordering)%Déclare une préférence pour un dictionnaire d'une langue
 enchant_dict_add_to_personal%void enchant_dict_add_to_personal(resource $dict, string $word)%Ajoute un mot à la liste des mots personnelle
 enchant_dict_add_to_session%void enchant_dict_add_to_session(resource $dict, string $word)%Ajoute un mot à la session courante
@@ -641,6 +654,7 @@ ereg%int ereg(string $pattern, string $string, [array $regs])%Recherche par expr
 ereg_replace%string ereg_replace(string $pattern, string $replacement, string $string)%>Remplacement par expression rationnelle
 eregi%int eregi(string $pattern, string $string, [array $regs])%Recherche par expression rationnelle insensible à la casse
 eregi_replace%string eregi_replace(string $pattern, string $replacement, string $string)%Remplacement par expression rationnelle insensible à la casse
+error_clear_last%void error_clear_last()%Clear the most recent error
 error_get_last%array error_get_last()%Récupère la dernière erreur survenue
 error_log%bool error_log(string $message, [int $message_type], [string $destination], [string $extra_headers])%Envoi un message d'erreur vers le gestionnaire d'erreurs défini
 error_reporting%int error_reporting([int $level])%Fixe le niveau de rapport d'erreurs PHP
@@ -671,7 +685,7 @@ fann_create_sparse_array%ReturnType fann_create_sparse_array(float $connection_r
 fann_create_standard%resource fann_create_standard(int $num_layers, int $num_neurons1, int $num_neurons2, [int ...])%Creates a standard fully connected backpropagation neural network
 fann_create_standard_array%resource fann_create_standard_array(int $num_layers, array $layers)%Creates a standard fully connected backpropagation neural network using an array of layer sizes
 fann_create_train%resource fann_create_train(int $num_data, int $num_input, int $num_output)%Crée une structure vide de données d'entrainement
-fann_create_train_from_callback%resource fann_create_train_from_callback(int $num_data, int $num_input, int $num_output, collable $user_function)%Crée la structure de données d'entrainement depuis une fonction   fournie par l'utilisateur
+fann_create_train_from_callback%resource fann_create_train_from_callback(int $num_data, int $num_input, int $num_output, callable $user_function)%Crée la structure de données d'entrainement depuis une fonction   fournie par l'utilisateur
 fann_descale_input%bool fann_descale_input(resource $ann, array $input_vector)%Scale data in input vector after get it from ann based on previously calculated parameters
 fann_descale_output%bool fann_descale_output(resource $ann, array $output_vector)%Scale data in output vector after get it from ann based on previously calculated parameters
 fann_descale_train%bool fann_descale_train(resource $ann, resource $train_data)%Descale input and output data based on previously calculated parameters
@@ -726,7 +740,7 @@ fann_get_total_connections%int fann_get_total_connections(resource $ann)%Récup�
 fann_get_total_neurons%int fann_get_total_neurons(resource $ann)%Récupère le nombre total de neurones dans la totalité du réseau
 fann_get_train_error_function%int fann_get_train_error_function(resource $ann)%Retourne la fonction d'erreur utilisée pendant l'entrainement
 fann_get_train_stop_function%int fann_get_train_stop_function(resource $ann)%Retourne la fonction d'arrêt utilisée pendant l'entrainement
-fann_get_training_algorithm%int fann_get_training_algorithm(resource $ann)%Retourne l'algorythme d'entrainement
+fann_get_training_algorithm%int fann_get_training_algorithm(resource $ann)%Retourne l'algorithme d'entrainement
 fann_init_weights%bool fann_init_weights(resource $ann, resource $train_data)%Initialise les poids en utilisant les algorythme Widrow et Nguyen
 fann_length_train_data%int fann_length_train_data(resource $data)%Retourne le nombre de masques d'entrainement dans les données d'entrainement
 fann_merge_train_data%resource fann_merge_train_data(resource $data1, resource $data2)%Fusionne les données d'entrainement
@@ -805,7 +819,7 @@ fclose%bool fclose(resource $handle)%Ferme un fichier
 feof%bool feof(resource $handle)%Teste la fin du fichier
 fflush%bool fflush(resource $handle)%Envoie tout le contenu généré dans un fichier
 fgetc%string fgetc(resource $handle)%Lit un caractère dans un fichier
-fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\\"])%Obtient une ligne depuis un pointeur de fichier et l'analyse pour des champs CSV
+fgetcsv%array fgetcsv(resource $handle, [int $length], [string $delimiter = ","], [string $enclosure = '"'], [string $escape = "\"])%Obtient une ligne depuis un pointeur de fichier et l'analyse pour des champs CSV
 fgets%string fgets(resource $handle, [int $length])%Récupère la ligne courante sur laquelle se trouve le pointeur du fichier
 fgetss%string fgetss(resource $handle, [int $length], [string $allowable_tags])%Renvoie la ligne courante du fichier et élimine les balises HTML
 file%array file(string $filename, [int $flags], [resource $context])%Lit le fichier et renvoie le résultat dans un tableau
@@ -813,7 +827,7 @@ file_exists%bool file_exists(string $filename)%Vérifie si un fichier ou un doss
 file_get_contents%string file_get_contents(string $filename, [bool $use_include_path = false], [resource $context], [int $offset = -1], [int $maxlen])%Lit tout un fichier dans une chaîne
 file_put_contents%int file_put_contents(string $filename, mixed $data, [int $flags], [resource $context])%Écrit un contenu dans un fichier
 fileatime%int fileatime(string $filename)%Renvoie la date à laquelle le fichier a été accédé pour la dernière fois
-filectime%int filectime(string $filename)%Renvoie la date de dernier accès à un inode
+filectime%int filectime(string $filename)%Renvoie la date de dernière modification de l'inode d'un fichier
 filegroup%int filegroup(string $filename)%Lire le nom du groupe
 fileinode%int fileinode(string $filename)%Lit le numéro d'inode du fichier
 filemtime%int filemtime(string $filename)%Lit la date de dernière modification du fichier
@@ -828,7 +842,7 @@ filter_input_array%mixed filter_input_array(int $type, [mixed $definition], [boo
 filter_list%array filter_list()%Retourne une liste de tous les filtres supportés
 filter_var%mixed filter_var(mixed $variable, [int $filter = FILTER_DEFAULT], [mixed $options])%Filtre une variable avec un filtre spécifique
 filter_var_array%mixed filter_var_array(array $data, [mixed $definition], [bool $add_empty = true])%Récupère plusieurs variables et les filtre
-finfo%object finfo([int $options = FILEINFO_NONE], [string $magic_file])%Crée une nouvelle ressource fileinfo
+finfo%object finfo([int $options = FILEINFO_NONE], [string $magic_file])%Alias de de finfo_open
 finfo_buffer%string finfo_buffer(resource $finfo, string $string, [int $options = FILEINFO_NONE], [resource $context])%Retourne des informations à propos d'une chaîne de caractères tampon
 finfo_close%bool finfo_close(resource $finfo)%Ferme une ressource fileinfo
 finfo_file%string finfo_file(resource $finfo, string $file_name, [int $options = FILEINFO_NONE], [resource $context])%Retourne des informations à propos d'un fichier
@@ -839,15 +853,16 @@ flock%bool flock(resource $handle, int $operation, [int $wouldblock])%Verrouille
 floor%float floor(float $value)%Arrondit à l'entier inférieur
 flush%void flush()%Vide les tampons de sortie du système
 fmod%float fmod(float $x, float $y)%Retourne le reste de la division
-fnmatch%bool fnmatch(string $pattern, string $string, [int $flags])%Repère un fichier à partir d'un masque de recherche
+fnmatch%bool fnmatch(string $pattern, string $string, [int $flags])%Teste un nom de fichier au moyen d'un masque de recherche
 fopen%resource fopen(string $filename, string $mode, [bool $use_include_path = false], [resource $context])%Ouvre un fichier ou une URL
 forward_static_call%mixed forward_static_call(callable $function, [mixed $parameter], [mixed ...])%Appelle une méthode statique
 forward_static_call_array%mixed forward_static_call_array(callable $function, array $parameters)%Appelle une méthode statique et passe les arguments en tableau
 fpassthru%int fpassthru(resource $handle)%Affiche le reste du fichier
 fprintf%int fprintf(resource $handle, string $format, [mixed $args], [mixed ...])%Écrit une chaîne formatée dans un flux
-fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ","], [string $enclosure = '"'])%Formate une ligne en CSV et l'écrit dans un fichier
+fputcsv%int fputcsv(resource $handle, array $fields, [string $delimiter = ","], [string $enclosure = '"'], [string $escape_char = "\"])%Formate une ligne en CSV et l'écrit dans un fichier
 fputs%void fputs()%Alias de fwrite
 fread%string fread(resource $handle, int $length)%Lecture du fichier en mode binaire
+frenchtojd%int frenchtojd(int $month, int $day, int $year)%Convertit une date du calendrier français républicain en nombre   de jours du calendrier Julien
 fscanf%mixed fscanf(resource $handle, string $format, [mixed ...])%Analyse un fichier en fonction d'un format
 fseek%int fseek(resource $handle, int $offset, [int $whence = SEEK_SET])%Modifie la position du pointeur de fichier
 fsockopen%resource fsockopen(string $hostname, [int $port = -1], [int $errno], [string $errstr], [float $timeout = ini_get("default_socket_timeout")])%Ouvre un socket de connexion Internet ou Unix
@@ -898,6 +913,7 @@ gc_collect_cycles%int gc_collect_cycles()%Force le passage du collecteur de mém
 gc_disable%void gc_disable()%Désactive le collecteur de références circulaires
 gc_enable%void gc_enable()%Active le collecteur de références circulaires
 gc_enabled%bool gc_enabled()%Retourne le statut du collecteur de références circulaires
+gc_mem_caches%int gc_mem_caches()%Reclaims memory used by the Zend Engine memory manager
 gd_info%array gd_info()%Retourne des informations à propos de la bibliothèque GD installée
 get_browser%mixed get_browser([string $user_agent], [bool $return_array = false])%Indique les capacités du navigateur client
 get_called_class%string get_called_class()%Le nom de la classe en "Late Static Binding"
@@ -925,6 +941,7 @@ get_object_vars%array get_object_vars(object $object)%Retourne les propriétés 
 get_parent_class%string get_parent_class([mixed $object])%Retourne le nom de la classe parente d'un objet
 get_required_files%void get_required_files()%Alias de get_included_files
 get_resource_type%string get_resource_type(resource $handle)%Retourne le type de ressource
+get_resources%resource get_resources([string $type])%Returns active resources
 getallheaders%array getallheaders()%Récupère tous les en-têtes de la requête HTTP
 getcwd%string getcwd()%Retourne le dossier de travail courant
 getdate%array getdate([int $timestamp = time()])%Retourne la date/heure
@@ -965,12 +982,12 @@ gmp_div_q%GMP gmp_div_q(GMP $a, GMP $b, [int $round = GMP_ROUND_ZERO])%Divisions
 gmp_div_qr%array gmp_div_qr(GMP $n, GMP $d, [int $round = GMP_ROUND_ZERO])%Divise deux nombres GMP
 gmp_div_r%GMP gmp_div_r(GMP $n, GMP $d, [int $round = GMP_ROUND_ZERO])%Reste de la division de deux nombres GMP
 gmp_divexact%GMP gmp_divexact(GMP $n, GMP $d)%Division exacte de nombres GMP
-gmp_export%string gmp_export(GMP $gmpnumber, integer $word_size, integer $options)%Export to a binary string
+gmp_export%string gmp_export(GMP $gmpnumber, integer $word_size, integer $options)%Exportation vers une chaîne binaire
 gmp_fact%GMP gmp_fact(mixed $a)%Factorielle GMP
 gmp_gcd%GMP gmp_gcd(GMP $a, GMP $b)%Calcule le GCD
 gmp_gcdext%array gmp_gcdext(GMP $a, GMP $b)%PGCD étendu
 gmp_hamdist%int gmp_hamdist(GMP $a, GMP $b)%Distance de Hamming
-gmp_import%GMP gmp_import(string $data, integer $word_size, integer $options)%Import from a binary string
+gmp_import%GMP gmp_import(string $data, integer $word_size, integer $options)%Importation depuis une chaîne binaire
 gmp_init%GMP gmp_init(mixed $number, [int $base])%Crée un nombre GMP
 gmp_intval%int gmp_intval(GMP $gmpnumber)%Convertit un nombre GMP en entier
 gmp_invert%GMP gmp_invert(GMP $a, GMP $b)%Modulo inversé
@@ -987,8 +1004,9 @@ gmp_pow%GMP gmp_pow(GMP $base, int $exp)%Puissance
 gmp_powm%GMP gmp_powm(GMP $base, GMP $exp, GMP $mod)%Puissance et modulo
 gmp_prob_prime%int gmp_prob_prime(GMP $a, [int $reps = 10])%Nombre GMP probablement premier
 gmp_random%GMP gmp_random([int $limiter = 20])%Nombre GMP aléatoire
-gmp_random_bits%GMP gmp_random_bits(integer $bits)%Random number
-gmp_random_range%GMP gmp_random_range(GMP $min, GMP $max)%Random number
+gmp_random_bits%GMP gmp_random_bits(integer $bits)%Génère un nombre aléatoire
+gmp_random_range%GMP gmp_random_range(GMP $min, GMP $max)%Génère un nombre aléatoire
+gmp_random_seed%mixed gmp_random_seed(mixed $seed)%Sets the RNG seed
 gmp_root%GMP gmp_root(GMP $a, int $nth)%Récupère la partie entière de la n-ème racine
 gmp_rootrem%array gmp_rootrem(GMP $a, int $nth)%Récupère la partie entière et le reste de la n-ème racine
 gmp_scan0%int gmp_scan0(GMP $a, int $start)%Recherche 0
@@ -1011,6 +1029,7 @@ grapheme_strripos%int grapheme_strripos(string $haystack, string $needle, [int $
 grapheme_strrpos%int grapheme_strrpos(string $haystack, string $needle, [int $offset])%Trouve la position du dernier graphème
 grapheme_strstr%string grapheme_strstr(string $haystack, string $needle, [bool $before_needle = false])%Retourne la partie d'une chaîne à partir d'une occurrence, insensible à la casse
 grapheme_substr%int grapheme_substr(string $string, int $start, [int $length])%Retourne une partie d'une chaîne
+gregoriantojd%int gregoriantojd(int $month, int $day, int $year)%Convertit une date grégorienne en nombre de jours du calendrier Julien
 gzclose%bool gzclose(resource $zp)%Ferme un pointeur sur un fichier gz ouvert
 gzcompress%string gzcompress(string $data, [int $level = -1], [int $encoding = ZLIB_ENCODING_DEFLATE])%Compresse une chaîne
 gzdecode%string gzdecode(string $data, [int $length])%Décode une chaîne de caractères compressée gzip
@@ -1381,6 +1400,7 @@ ini_get%string ini_get(string $varname)%Lit la valeur d'une option de configurat
 ini_get_all%array ini_get_all([string $extension], [bool $details = true])%Lit toutes les valeurs de configuration
 ini_restore%void ini_restore(string $varname)%Restaure la valeur de l'option de configuration
 ini_set%string ini_set(string $varname, string $newvalue)%Modifie la valeur d'une option de configuration
+intdiv%int intdiv(int $dividend, int $divisor)%Integer division
 interface_exists%bool interface_exists(string $interface_name, [bool $autoload = true])%Vérifie si une interface a été définie
 intl_error_name%string intl_error_name(int $error_code)%Lit le nom symbolique d'un code d'erreur donné
 intl_get_error_code%int intl_get_error_code()%Lit le dernier code d'erreur
@@ -1397,7 +1417,7 @@ iptcparse%array iptcparse(string $iptcblock)%Analyse un bloc binaire IPTC et rec
 is_a%bool is_a(object $object, string $class_name, [bool $allow_string])%Vérifie si l'objet est une instance d'une classe donnée ou a cette classe parmi ses parents
 is_array%bool is_array(mixed $var)%Détermine si une variable est un tableau
 is_bool%bool is_bool(mixed $var)%Détermine si une variable est un booléen
-is_callable%bool is_callable(callable $name, [bool $syntax_only = false], [string $callable_name])%Détermine si l'argument peut être appelé comme fonction
+is_callable%bool is_callable(mixed $var, [bool $syntax_only = false], [string $callable_name])%Détermine si l'argument peut être appelé comme fonction
 is_dir%bool is_dir(string $filename)%Indique si le fichier est un dossier
 is_double%void is_double()%Alias de is_float
 is_executable%bool is_executable(string $filename)%Indique si le fichier est exécutable
@@ -1428,14 +1448,21 @@ isset%bool isset(mixed $var, [mixed ...])%Détermine si une variable est défini
 iterator_apply%int iterator_apply(Traversable $iterator, callable $function, [array $args])%Appelle une fonction pour tous les éléments d'un itérateur
 iterator_count%int iterator_count(Traversable $iterator)%Compte de nombre d'éléments dans un itérateur
 iterator_to_array%array iterator_to_array(Traversable $iterator, [bool $use_keys = true])%Copie un itérateur dans un tableau
+jddayofweek%mixed jddayofweek(int $julianday, [int $mode = CAL_DOW_DAYNO])%Retourne le numéro du jour de la semaine
+jdmonthname%string jdmonthname(int $julianday, int $mode)%Retourne le nom du mois
+jdtofrench%string jdtofrench(int $juliandaycount)%Convertit le nombre de jours du calendrier Julien en date du calendrier   français républicain
+jdtogregorian%string jdtogregorian(int $julianday)%Convertit le nombre de jours du calendrier Julien en date   grégorienne
 jdtojewish%string jdtojewish(int $juliandaycount, [bool $hebrew = false], [int $fl])%Convertit le nombre de jours du calendrier Julien en date du calendrier juif
+jdtojulian%string jdtojulian(int $julianday)%Convertit le nombre de jours du calendrier Julien en date du calendrier Julien
 jdtounix%int jdtounix(int $jday)%Convertit un jour Julien en timestamp UNIX
+jewishtojd%int jewishtojd(int $month, int $day, int $year)%Convertit une date du calendrier Juif en nombre de jours du calendrier Julien
 join%void join()%Alias de implode
 jpeg2wbmp%bool jpeg2wbmp(string $jpegname, string $wbmpname, int $dest_height, int $dest_width, int $threshold)%Convertit une image JPEG en image WBMP
 json_decode%mixed json_decode(string $json, [bool $assoc = false], [int $depth = 512], [int $options])%Décode une chaîne JSON
 json_encode%string json_encode(mixed $value, [int $options], [int $depth = 512])%Retourne la représentation JSON d'une valeur
 json_last_error%int json_last_error()%Retourne la dernière erreur JSON
 json_last_error_msg%string json_last_error_msg()%Retourne le message de la dernière erreur survenue lors de l'appel à la fonction json_encode() ou json_decode()
+juliantojd%int juliantojd(int $month, int $day, int $year)%Convertit un jours du calendrier Julien en un nombre de jours du calendrier Julien
 key%mixed key(array $array)%Retourne une clé d'un tableau associatif
 key_exists%void key_exists()%Alias de array_key_exists
 krsort%bool krsort(array $array, [int $sort_flags = SORT_REGULAR])%Trie un tableau en sens inverse et suivant les clés
@@ -1489,7 +1516,7 @@ ldap_set_option%bool ldap_set_option(resource $link_identifier, int $option, mix
 ldap_set_rebind_proc%bool ldap_set_rebind_proc(resource $link, callable $callback)%Configure une fonction de retour pour refaire des liaisons lors de recherche de référants
 ldap_sort%bool ldap_sort(resource $link, resource $result, string $sortfilter)%Trie les entrées d'un résultat LDAP
 ldap_start_tls%bool ldap_start_tls(resource $link)%Démarre TLS
-ldap_t61_to_8859%string ldap_t61_to_8859(string $value)%Convertit les caractères t6 en caractères 8859
+ldap_t61_to_8859%string ldap_t61_to_8859(string $value)%Convertit les caractères t61 en caractères 8859
 ldap_unbind%bool ldap_unbind(resource $link_identifier)%Déconnecte d'un serveur LDAP
 levenshtein%int levenshtein(string $str1, string $str2, int $cost_ins, int $cost_rep, int $cost_del)%Calcule la distance Levenshtein entre deux chaînes
 libxml_clear_errors%void libxml_clear_errors()%Vide le buffer d'erreur libxml
@@ -1807,8 +1834,8 @@ mysqli_real_escape_string%string mysqli_real_escape_string(string $escapestr, my
 mysqli_real_query%bool mysqli_real_query(string $query, mysqli $link)%Exécute une requête SQL
 mysqli_reap_async_query%mysqli_result mysqli_reap_async_query(mysql $link)%Lit un résultat pour une requête asynchrone
 mysqli_refresh%int mysqli_refresh(int $options, resource $link)%Rafraîchie
-mysqli_release_savepoint%bool mysqli_release_savepoint(string $name, mysqli $link)%Ré-initialise une transaction à un point de sauvegardé nommé donné
-mysqli_report%void mysqli_report()%Alias de de mysqli_driver->report_mode
+mysqli_release_savepoint%bool mysqli_release_savepoint(string $name, mysqli $link)%Supprime le point de sauvegardé nommé du jeu des points de sauvegarde de la transaction courante
+mysqli_report%void mysqli_report()%Alias de mysqli_driver->report_mode
 mysqli_rollback%bool mysqli_rollback([int $flags], [string $name], mysqli $link)%Annule la transaction courante
 mysqli_rpl_parse_enabled%int mysqli_rpl_parse_enabled(mysqli $link)%Vérifie si l'analyseur RPL est activé
 mysqli_rpl_probe%bool mysqli_rpl_probe(mysqli $link)%Sonde le RPL
@@ -1824,6 +1851,7 @@ mysqli_set_opt%void mysqli_set_opt()%Alias de mysqli_options
 mysqli_slave_query%bool mysqli_slave_query(mysqli $link, string $query)%Force l'exécution de la requête sur un serveur esclave pour une configuration   maître/esclave
 mysqli_ssl_set%bool mysqli_ssl_set(string $key, string $cert, string $ca, string $capath, string $cipher, mysqli $link)%Utilisée pour établir une connexion sécurisée avec SSL
 mysqli_stat%string mysqli_stat(mysqli $link)%Obtient le statut courant du système
+mysqli_stmt%object mysqli_stmt(mysqli $link, [string $query])%Construit un nouvel objet mysqli_stmt
 mysqli_stmt_attr_get%int mysqli_stmt_attr_get(int $attr, mysqli_stmt $stmt)%Récupère la valeur courante d'un attribut de requête
 mysqli_stmt_attr_set%bool mysqli_stmt_attr_set(int $attr, int $mode, mysqli_stmt $stmt)%Modifie le comportement d'une requête préparée
 mysqli_stmt_bind_param%bool mysqli_stmt_bind_param(string $types, mixed $var1, [mixed ...], mysqli_stmt $stmt)%Lie des variables à une requête MySQL
@@ -2070,6 +2098,7 @@ opcache_compile_file%boolean opcache_compile_file(string $file)%Compiles et met 
 opcache_get_configuration%array opcache_get_configuration()%Récupère les informations de configuration du cache
 opcache_get_status%array opcache_get_status([boolean $get_scripts])%Récupère les informations de statut du cache
 opcache_invalidate%boolean opcache_invalidate(string $script, [boolean $force])%Invalide un script mis en cache
+opcache_is_script_cached%boolean opcache_is_script_cached(string $file)%Indique si un script est dans le cache d'OPCache
 opcache_reset%boolean opcache_reset()%Ré-initialise le contenu du cache opcode
 opendir%resource opendir(string $path, [resource $context])%Ouvre un dossier, et récupère un pointeur dessus
 openlog%bool openlog(string $ident, int $option, int $facility)%Ouvre la connexion à l'historique système
@@ -2136,15 +2165,15 @@ parse_ini_string%array parse_ini_string(string $ini, [bool $process_sections = f
 parse_str%void parse_str(string $str, [array $arr])%Analyse une requête HTTP
 parse_url%mixed parse_url(string $url, [int $component = -1])%Analyse une URL et retourne ses composants
 passthru%void passthru(string $command, [int $return_var])%Exécute un programme externe et affiche le résultat brut
-password_get_info%array password_get_info(string $hash)%Retourne des informations à propos de la table de hachage fournie
+password_get_info%array password_get_info(string $hash)%Retourne des informations à propos du hachage fourni
 password_hash%string password_hash(string $password, integer $algo, [array $options])%Crée une clé de hachage pour un mot de passe
-password_needs_rehash%boolean password_needs_rehash(string $hash, integer $algo, [array $options])%Vérifie si la table de hachage fournie correspond aux options fournies
-password_verify%boolean password_verify(string $password, string $hash)%Vérifie qu'un mot de passe correspond à une table de hachage
+password_needs_rehash%boolean password_needs_rehash(string $hash, integer $algo, [array $options])%Vérifie que le hachage fourni est conforme à l'algorithme et aux options spécifiées
+password_verify%boolean password_verify(string $password, string $hash)%Vérifie qu'un mot de passe correspond à un hachage
 pathinfo%mixed pathinfo(string $path, [int $options = PATHINFO_DIRNAME | PATHINFO_BASENAME | PATHINFO_EXTENSION | PATHINFO_FILENAME])%Retourne des informations sur un chemin système
 pclose%int pclose(resource $handle)%Ferme un processus de pointeur de fichier
 pcntl_alarm%int pcntl_alarm(int $seconds)%Planifie une alarme pour délivrer un signal
 pcntl_errno%void pcntl_errno()%Alias de pcntl_strerror
-pcntl_exec%void pcntl_exec(string $path, [array $args], [array $envs])%Exécute le programme indiqué dans l'espace courant de processus
+pcntl_exec%bool pcntl_exec(string $path, [array $args], [array $envs])%Exécute le programme indiqué dans l'espace courant de processus
 pcntl_fork%int pcntl_fork()%Duplique le process courant
 pcntl_get_last_error%int pcntl_get_last_error()%Récupère le numéro de l'erreur générée par la dernière fonction pcntl utilisée
 pcntl_getpriority%int pcntl_getpriority([int $pid = getmypid()], [int $process_identifier = PRIO_PROCESS])%Retourne la priorité d'un processus
@@ -2297,6 +2326,7 @@ posix_setegid%bool posix_setegid(int $gid)%Modifie le GID réel du processus cou
 posix_seteuid%bool posix_seteuid(int $uid)%Modifie l'identifiant d'utilisateur réel (UID) du processus courant
 posix_setgid%bool posix_setgid(int $gid)%Fixe le GID effectif du processus courant
 posix_setpgid%bool posix_setpgid(int $pid, int $pgid)%Fixe l'identifiant de groupe de processus
+posix_setrlimit%bool posix_setrlimit(int $resource, int $softlimit, int $hardlimit)%Set system resource limits
 posix_setsid%int posix_setsid()%Fait du processus courant un chef de session
 posix_setuid%bool posix_setuid(int $uid)%Fixe l'UID effective du processus courant
 posix_strerror%string posix_strerror(int $errno)%Lit le message d'erreur associé à un numéro d'erreur POSIX
@@ -2307,11 +2337,12 @@ pow%number pow(number $base, number $exp)%Expression exponentielle
 preg_filter%mixed preg_filter(mixed $pattern, mixed $replacement, mixed $subject, [int $limit = -1], [int $count])%Recherche et remplace avec une expression rationnelle
 preg_grep%array preg_grep(string $pattern, array $input, [int $flags])%Retourne un tableau avec les résultats de la recherche
 preg_last_error%int preg_last_error()%Retourne le code erreur de la dernière expression PCRE exécutée
-preg_match%int preg_match(string $pattern, string $subject, [array $matches], [int $flags], [int $offset])%Expression rationnelle standard
+preg_match%int preg_match(string $pattern, string $subject, [array $matches], [int $flags], [int $offset])%Effectue une recherche de correspondance avec une expression rationnelle standard
 preg_match_all%int preg_match_all(string $pattern, string $subject, [array $matches], [int $flags], [int $offset])%Expression rationnelle globale
 preg_quote%string preg_quote(string $str, [string $delimiter])%Protection des caractères spéciaux des expressions rationnelles
 preg_replace%mixed preg_replace(mixed $pattern, mixed $replacement, mixed $subject, [int $limit = -1], [int $count])%Rechercher et remplacer par expression rationnelle standard
 preg_replace_callback%mixed preg_replace_callback(mixed $pattern, callable $callback, mixed $subject, [int $limit = -1], [int $count])%Rechercher et remplacer par expression rationnelle standard en utilisant une fonction de callback
+preg_replace_callback_array%mixed preg_replace_callback_array(array $patterns_and_callbacks, mixed $subject, [int $limit = -1], [int $count])%Perform a regular expression search and replace using callbacks
 preg_split%array preg_split(string $pattern, string $subject, [int $limit = -1], [int $flags])%Éclate une chaîne par expression rationnelle
 prev%mixed prev(array $array)%Recule le pointeur courant de tableau
 print%int print(string $arg)%Affiche une chaîne de caractères
@@ -2348,6 +2379,8 @@ quoted_printable_encode%string quoted_printable_encode(string $str)%Convertit un
 quotemeta%string quotemeta(string $str)%Protège les métacaractères
 rad2deg%float rad2deg(float $number)%Conversion de radians en degrés
 rand%int rand(int $min, int $max)%Génère une valeur aléatoire
+random_bytes%string random_bytes(int $length)%Generates cryptographically secure pseudo-random bytes
+random_int%int random_int(int $min, int $max)%Generates cryptographically secure pseudo-random integers
 range%array range(mixed $start, mixed $end, [number $step = 1])%Crée un tableau contenant un intervalle d'éléments
 rawurldecode%string rawurldecode(string $str)%Décode une chaîne URL
 rawurlencode%string rawurlencode(string $str)%Encode une chaîne en URL, selon la RFC 3986
@@ -2416,7 +2449,7 @@ sem_get%resource sem_get(int $key, [int $max_acquire = 1], [int $perm = 0666], [
 sem_release%bool sem_release(resource $sem_identifier)%Libère un sémaphore
 sem_remove%bool sem_remove(resource $sem_identifier)%Détruit un sémaphore
 serialize%string serialize(mixed $value)%Génère une représentation stockable d'une valeur
-session_abort%bool session_abort()%Discard session array changes and finish session
+session_abort%bool session_abort()%Abandonne les changements sur le tableau de session et termine la session
 session_cache_expire%int session_cache_expire([string $new_cache_expire])%Retourne la configuration actuelle du délai d'expiration du cache
 session_cache_limiter%string session_cache_limiter([string $cache_limiter])%Lit et/ou modifie le limiteur de cache de session
 session_commit%void session_commit()%Alias de session_write_close
@@ -2431,7 +2464,7 @@ session_name%string session_name([string $name])%Lit et/ou modifie le nom de la 
 session_regenerate_id%bool session_regenerate_id([bool $delete_old_session = false])%Remplace l'identifiant de session courant par un nouveau
 session_register%bool session_register(mixed $name, [mixed ...])%Enregistre une variable globale dans une session
 session_register_shutdown%void session_register_shutdown()%Fonction de fermeture de session
-session_reset%bool session_reset()%Re-initialize session array with original values
+session_reset%bool session_reset()%Réinitialise le tableau de session avec les valeurs originales
 session_save_path%string session_save_path([string $path])%Lit et/ou modifie le chemin de sauvegarde des sessions
 session_set_cookie_params%void session_set_cookie_params(int $lifetime, [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%Modifie les paramètres du cookie de session
 session_set_save_handler%bool session_set_save_handler(callable $open, callable $close, callable $read, callable $write, callable $destroy, callable $gc, [callable $create_sid], SessionHandlerInterface $sessionhandler, [bool $register_shutdown = true])%Configure les fonctions de stockage de sessions
@@ -2700,12 +2733,12 @@ strcasecmp%int strcasecmp(string $str1, string $str2)%Comparaison insensible à 
 strchr%void strchr()%Alias de strstr
 strcmp%int strcmp(string $str1, string $str2)%Comparaison binaire de chaînes
 strcoll%int strcoll(string $str1, string $str2)%Comparaison de chaînes localisées
-strcspn%int strcspn(string $str1, string $str2, [int $start], [int $length])%Trouve un segment de chaîne ne contenant pas certains caractères
+strcspn%int strcspn(string $subject, string $mask, [int $start], [int $length])%Trouve un segment de chaîne ne contenant pas certains caractères
 streamWrapper%object streamWrapper()%Construit un nouveau gestionnaire de flux
-stream_bucket_append%void stream_bucket_append(resource $brigade, resource $bucket)%Ajoute un compartiment au corps
+stream_bucket_append%void stream_bucket_append(resource $brigade, object $bucket)%Ajoute un compartiment au corps
 stream_bucket_make_writeable%object stream_bucket_make_writeable(resource $brigade)%Retourne un objet de compartiment depuis le corps pour des opérations sur celui-ci
 stream_bucket_new%object stream_bucket_new(resource $stream, string $buffer)%Crée un nouveau compartiment pour l'utiliser sur le flux courant
-stream_bucket_prepend%void stream_bucket_prepend(resource $brigade, resource $bucket)%Ajout initial d'un bucket dans une brigade
+stream_bucket_prepend%void stream_bucket_prepend(resource $brigade, object $bucket)%Ajout initial d'un bucket dans une brigade
 stream_context_create%resource stream_context_create([array $options], [array $params])%Crée un contexte de flux
 stream_context_get_default%resource stream_context_get_default([array $options])%Lit le contexte par défaut des flux
 stream_context_get_options%array stream_context_get_options(resource $stream_or_context)%Lit la valeur des options pour un flux/gestionnaire/contexte
@@ -2751,7 +2784,7 @@ stream_wrapper_unregister%bool stream_wrapper_unregister(string $protocol)%Suppr
 strftime%string strftime(string $format, [int $timestamp = time()])%Formate une date/heure locale avec la configuration locale
 strip_tags%string strip_tags(string $str, [string $allowable_tags])%Supprime les balises HTML et PHP d'une chaîne
 stripcslashes%string stripcslashes(string $str)%Décode une chaîne encodée avec addcslashes
-stripos%int stripos(string $haystack, string $needle, [int $offset])%Recherche la position de la première occurrence dans une chaîne, sans tenir compte de la casse
+stripos%mixed stripos(string $haystack, string $needle, [int $offset])%Recherche la position de la première occurrence dans une chaîne, sans tenir compte de la casse
 stripslashes%string stripslashes(string $str)%Supprime les antislashs d'une chaîne
 stristr%string stristr(string $haystack, mixed $needle, [bool $before_needle = false])%Version insensible à la casse de strstr
 strlen%int strlen(string $string)%Calcule la taille d'une chaîne
@@ -2765,7 +2798,7 @@ strptime%array strptime(string $date, string $format)%Analyse une date généré
 strrchr%string strrchr(string $haystack, mixed $needle)%Trouve la dernière occurrence d'un caractère dans une chaîne
 strrev%string strrev(string $string)%Inverse une chaîne
 strripos%int strripos(string $haystack, string $needle, [int $offset])%Cherche la position de la dernière occurrence d'une chaîne contenue   dans une autre, de façon insensible à la casse
-strrpos%int strrpos(string $haystack, string $needle, [int $offset])%Cherche la position de la dernière occurrence d'une sous-chaine dans une chaîne
+strrpos%int strrpos(string $haystack, string $needle, [int $offset])%Cherche la position de la dernière occurrence d'une sous-chaîne dans une chaîne
 strspn%int strspn(string $subject, string $mask, [int $start], [int $length])%Trouve la longueur du segment initial d'une chaîne contenant   tous les caractères d'un masque donné
 strstr%string strstr(string $haystack, mixed $needle, [bool $before_needle = false])%Trouve la première occurrence dans une chaîne
 strtok%string strtok(string $str, string $token)%Coupe une chaîne en segments
@@ -3033,7 +3066,7 @@ trigger_error%bool trigger_error(string $error_msg, [int $error_type = E_USER_NO
 trim%string trim(string $str, [string $character_mask = " \t\n\r\0\x0B"])%Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
 uasort%bool uasort(array $array, callable $value_compare_func)%Trie un tableau en utilisant une fonction de rappel
 ucfirst%string ucfirst(string $str)%Met le premier caractère en majuscule
-ucwords%string ucwords(string $str)%Met en majuscule la première lettre de tous les mots
+ucwords%string ucwords(string $str, [string $delimiters = " \t\r\n\f\v"])%Met en majuscule la première lettre de tous les mots
 uksort%bool uksort(array $array, callable $key_compare_func)%Trie un tableau par ses clés en utilisant une fonction de rappel
 umask%int umask([int $mask])%Change le "umask" courant
 uniqid%string uniqid([string $prefix = ""], [bool $more_entropy = false])%Génère un identifiant unique
@@ -3041,7 +3074,7 @@ unixtojd%int unixtojd([int $timestamp = time()])%Convertit un timestamp UNIX en 
 unlink%bool unlink(string $filename, [resource $context])%Efface un fichier
 unpack%array unpack(string $format, string $data)%Déconditionne des données depuis une chaîne binaire
 unregister_tick_function%void unregister_tick_function(string $function_name)%Annule la fonction exécutée à chaque tick
-unserialize%mixed unserialize(string $str)%Crée une variable PHP à partir d'une valeur linéarisée
+unserialize%mixed unserialize(string $str, [array $options])%Crée une variable PHP à partir d'une valeur linéarisée
 unset%void unset(mixed $var, [mixed ...])%Détruit une variable
 untaint%bool untaint(string $string, [string ...])%Ne nettoie pas une chaîne
 uopz_backup%void uopz_backup(string $class, string $function)%Sauvegarde une fonction
