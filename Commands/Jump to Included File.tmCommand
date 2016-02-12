@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string># This command passes the script to Ruby via a heredoc, rather than using a shebang.
+	<string>#!/bin/bash
+
+# This command passes the script to Ruby via a heredoc, rather than using a shebang.
 # The reason for this is so that .textmate_init is sourced, which IMO is the nicest place to set PHP_INCLUDE_PAT
 # However passing the heredoc axes the document STDIN from TextMate, so here we redirect the original STDIN to
 # file descriptor 3, to be later read from the Ruby script
@@ -39,7 +41,7 @@ ruby18 3&gt;&amp;0 &lt;&lt;-'RUBY'
   if ENV['PHP_INCLUDE_PATH']
     paths = ENV['PHP_INCLUDE_PATH'].split(':')
   else
-    paths = ['.']
+    paths = [ENV['TM_DIRECTORY']]
   end
 
   paths.each do |path|
@@ -55,15 +57,23 @@ RUBY
 </string>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@D</string>
 	<key>name</key>
 	<string>Jump to Included File</string>
-	<key>output</key>
-	<string>showAsTooltip</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>uuid</key>
 	<string>B3E79B47-40E9-4EF9-BAD9-11FEEE0D238F</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
