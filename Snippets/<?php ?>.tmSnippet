@@ -4,12 +4,10 @@
 <dict>
 	<key>content</key>
 	<string>&lt;?${TM_PHP_OPEN_TAG:php} $0 ?&gt;</string>
-	<key>keyEquivalent</key>
-	<string>^&gt;</string>
 	<key>name</key>
 	<string>&lt;?php … ?&gt;</string>
 	<key>scope</key>
-	<string>text.html.php</string>
+	<string>text.html.php, L:dyn.caret.begin.document</string>
 	<key>tabTrigger</key>
 	<string>php</string>
 	<key>uuid</key>
