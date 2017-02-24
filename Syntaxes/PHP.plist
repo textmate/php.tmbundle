@@ -239,7 +239,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?i)(\\)?\b(st(dClass|reamWrapper)|R(RD(Graph|Creator|Updater)|untimeException|e(sourceBundle|cursive(RegexIterator|Ca(chingIterator|llbackFilterIterator)|TreeIterator|Iterator(Iterator)?|DirectoryIterator|FilterIterator|ArrayIterator)|flect(ion(Generator|Method|Class|Type|ZendExtension|Object|P(arameter|roperty)|Extension|Function(Abstract)?)?|or)|gexIterator)|angeException)|G(ender\\Gender|lobIterator|magick(Draw|Pixel)?)|X(sltProcessor|ML(Reader|Diff\\(Memory|Base|DOM|File)|Writer)|SLTProcessor)|M(ysqlndUh(Connection|PreparedStatement)|ongo(Re(sultException|gex)|Grid(fsFile|FS(Cursor|File)?)|BinData|C(o(de|llection|mmandCursor)|ursor(Interface|Exception)?|lient)|Timestamp|I(n(sertBatch|t(32|64))|d)|D(B(Ref|\\(BSON\\(Regex|Binary|Serializable|Timestamp|ObjectID|U(nserializable|TCDatetime)|Javascript)|Driver\\(ReadPreference|Manager|BulkWrite|Server|C(ommand|ursor(Id)?)|Query|Write(Result|Concern(Error)?|E(rror|xception)))))?|eleteBatch|ate)|UpdateBatch|Pool|Write(Batch|ConcernException)|Log)?|u(tex|ltipleIterator)|e(ssageFormatter|mcache(d)?))|Bad(MethodCallException|FunctionCallException)|tidy(Node)?|S(ync(ReaderWriter|Mutex|Semaphore|Event)|impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|NMP|CA(_(SoapProxy|LocalProxy))?|p(hinxClient|oofchecker|l(M(inHeap|axHeap)|S(tack|ubject)|Heap|T(ype|empFileObject)|Ob(server|jectStorage)|DoublyLinkedList|PriorityQueue|Enum|Queue|Fi(le(Info|Object)|xedArray)))|e(ssionHandler(Interface)?|ekableIterator|rializable)|DO_(Model_(ReflectionDataObject|Type|Property)|Sequence|D(ata(Object|Factory)|AS_(Relational|XML(_Document)?|Setting|ChangeSummary|Data(Object|Factory)))|Exception|List)|wish(Result(s)?|Search)?|VM(Model)?|QLite(Result|3(Result|Stmt)?|Database|Unbuffered)|AM(Message|Connection))|H(RTime\\(StopWatch|PerformanceCounter)|ttp(Re(sponse|quest(Pool)?)|Message|InflateStream|DeflateStream|QueryString)|aru(Image|Outline|D(oc|estination)|Page|Encoder|Font|Annotation))|Ya(f_(R(oute(_(Re(write|gex)|Map|S(tatic|imple|upervar)|Interface)|r)|e(sponse_Abstract|quest_(Simple|Http|Abstract)|gistry))|Session|Con(troller_Abstract|fig_(Simple|Ini|Abstract))|Dispatcher|Plugin_Abstract|Exception|View_(Simple|Interface)|Loader|A(ction_Abstract|pplication))|r_(Server(_Exception)?|C(oncurrent_Client|lient(_Exception)?)))|N(o(RewindIterator|rmalizer)|umberFormatter)|C(o(nd|untable|ll(ectable|ator))|URLFile|a(chingIterator|llbackFilterIterator))|T(hread(ed)?|okyoTyrant(Table|Iterator|Query)?|ra(nsliterator|versable))|I(n(tl(RuleBasedBreakIterator|BreakIterator|C(har|odePointBreakIterator|alendar)|TimeZone|Iterator|DateFormatter|PartsIterator)|validArgumentException|finiteIterator)|terator(Iterator|Aggregate)?|magick(Draw|Pixel(Iterator)?|Kernel)?)|php_user_filter|Z(MQ(Socket|Context|Device|Poll)?|ipArchive)|O(CI-(Collection|Lob)|ut(erIterator|Of(RangeException|BoundsException))|verflowException)|D(irectory(Iterator)?|omainException|OM(XPath|N(ode(list)?|amedNodeMap)|C(haracterData|omment|dataSection)|Text|Implementation|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr)|ate(Time(I(nterface|mmutable)|Zone)?|Interval|Period))|U(n(derflowException|expectedValueException)|Converter)|JsonSerializable|finfo|P(har(Data|FileInfo)?|ool|DO(Statement)?|arentIterator)|E(v(S(tat|ignal)|Ch(ild|eck)|Timer|I(o|dle)|ent(B(uffer(Event)?|ase)|SslContext|Http(Request|Connection)?|Config|DnsBase|Util|Listener)?|P(eriodic|repare)|Embed|Fork|Watcher|Loop)?|rrorException|xception|mptyIterator)|V(8Js(Exception)?|arnish(Stat|Log|Admin))|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|Frame|AttachedPictureFrame))|QuickHash(StringIntHash|Int(S(tringHash|et)|Hash))|F(il(terIterator|esystemIterator)|ANNConnection)|mysqli(_(stmt|driver|warning|result))?|W(orker|eak(Map|ref))|L(imitIterator|o(cale|gicException)|ua(Closure)?|engthException|apack)|A(ppendIterator|PCIterator|rray(Iterator|Object|Access)))\b</string>
+					<string>(?i)(\\)?\b(st(dClass|reamWrapper)|R(RD(Graph|Creator|Updater)|untimeException|e(sourceBundle|cursive(RegexIterator|Ca(chingIterator|llbackFilterIterator)|TreeIterator|Iterator(Iterator)?|DirectoryIterator|FilterIterator|ArrayIterator)|flect(ion(Generator|Method|Class|Type|ZendExtension|Object|P(arameter|roperty)|Extension|Function(Abstract)?)?|or)|gexIterator)|angeException)|G(ender\\Gender|lobIterator|magick(Draw|Pixel)?)|X(sltProcessor|ML(Reader|Diff\\(Memory|Base|DOM|File)|Writer)|SLTProcessor)|M(ysqlndUh(Connection|PreparedStatement)|ongo(Re(sultException|gex)|Grid(fsFile|FS(Cursor|File)?)|BinData|C(o(de|llection|mmandCursor)|ursor(Interface|Exception)?|lient)|Timestamp|I(n(sertBatch|t(32|64))|d)|D(B(Ref|\\(BSON\\(Regex|M(inKey|axKey)|Binary|Serializable|Timestamp|ObjectID|Decimal128|U(nserializable|TCDateTime)|Javascript)|Driver\\(Read(Concern|Preference)|Manager|BulkWrite|Server|C(ommand|ursor(Id)?)|Exception\\WriteException|Query|Write(Result|Concern(Error)?|Error))))?|eleteBatch|ate)|UpdateBatch|Pool|Write(Batch|ConcernException)|Log)?|u(tex|ltipleIterator)|e(ssageFormatter|mcache(d)?))|Bad(MethodCallException|FunctionCallException)|tidy(Node)?|S(ync(ReaderWriter|Mutex|S(haredMemory|emaphore)|Event)|impleXML(Iterator|Element)|oap(Server|Header|Client|Param|Var|Fault)|NMP|CA(_(SoapProxy|LocalProxy))?|p(hinxClient|oofchecker|l(M(inHeap|axHeap)|S(tack|ubject)|Heap|T(ype|empFileObject)|Ob(server|jectStorage)|DoublyLinkedList|PriorityQueue|Enum|Queue|Fi(le(Info|Object)|xedArray)))|e(ssionHandler(Interface)?|ekableIterator|rializable)|DO_(Model_(ReflectionDataObject|Type|Property)|Sequence|D(ata(Object|Factory)|AS_(Relational|XML(_Document)?|Setting|ChangeSummary|Data(Object|Factory)))|Exception|List)|wish(Result(s)?|Search)?|VM(Model)?|QLite(Result|3(Result|Stmt)?|Database|Unbuffered)|AM(Message|Connection))|H(RTime\\(StopWatch|PerformanceCounter)|aru(Image|Outline|D(oc|estination)|Page|Encoder|Font|Annotation))|Ya(f_(R(oute(_(Re(write|gex)|Map|S(tatic|imple|upervar)|Interface)|r)|e(sponse_Abstract|quest_(Simple|Http|Abstract)|gistry))|Session|Con(troller_Abstract|fig_(Simple|Ini|Abstract))|Dispatcher|Plugin_Abstract|Exception|View_(Simple|Interface)|Loader|A(ction_Abstract|pplication))|r_(Server(_Exception)?|C(oncurrent_Client|lient(_Exception)?)))|N(o(RewindIterator|rmalizer)|umberFormatter)|C(o(nd|untable|ll(ectable|ator))|URLFile|a(chingIterator|llbackFilterIterator))|T(hread(ed)?|okyoTyrant(Table|Iterator|Query)?|ra(nsliterator|versable))|I(n(tl(RuleBasedBreakIterator|BreakIterator|C(har|odePointBreakIterator|alendar)|TimeZone|Iterator|DateFormatter|PartsIterator)|validArgumentException|finiteIterator)|terator(Iterator|Aggregate)?|magick(Draw|Pixel(Iterator)?|Kernel)?)|php_user_filter|Z(MQ(Socket|Context|Device|Poll)?|ipArchive|ookeeper)|O(CI-(Collection|Lob)|ut(erIterator|Of(RangeException|BoundsException))|verflowException)|D(s\\(Map|S(tack|e(t|quence))|Hashable|Collection|Deque|P(air|riorityQueue)|Vector|Queue)|irectory(Iterator)?|omainException|OM(XPath|N(ode(list)?|amedNodeMap)|C(haracterData|omment|dataSection)|Text|Implementation|Document(Fragment)?|ProcessingInstruction|E(ntityReference|lement)|Attr)|ate(Time(I(nterface|mmutable)|Zone)?|Interval|Period))|U(n(derflowException|expectedValueException)|Converter|I\\(Menu(Item)?|Size|Control(s\\(Radio|Gr(id|oup)|MultilineEntry|B(ox|utton)|S(pin|eparator|lider)|C(heck|o(lorButton|mbo))|Tab|P(icker|rogress)|E(ntry|ditableCombo)|Form|Label))?|Draw\\(Matrix|Brush(\\(RadialGradient|Gradient|LinearGradient))?|Stroke|Color|Text\\(Font(\\Descriptor)?|Layout)|P(en|ath))|Point|Executor|Window|Area))|JsonSerializable|finfo|P(har(Data|FileInfo)?|ool|DO(Statement)?|arentIterator)|E(v(S(tat|ignal)|Ch(ild|eck)|Timer|I(o|dle)|ent(B(uffer(Event)?|ase)|SslContext|Http(Request|Connection)?|Config|DnsBase|Util|Listener)?|P(eriodic|repare)|Embed|Fork|Watcher|Loop)?|rrorException|xception|mptyIterator)|V(8Js(Exception)?|arnish(Stat|Log|Admin))|KTaglib_(MPEG_(File|AudioProperties)|Tag|ID3v2_(Tag|Frame|AttachedPictureFrame))|QuickHash(StringIntHash|Int(S(tringHash|et)|Hash))|F(il(terIterator|esystemIterator)|ANNConnection)|mysqli(_(stmt|driver|warning|result))?|W(orker|eak(Map|ref))|L(imitIterator|o(cale|gicException)|ua(Closure)?|engthException|apack)|A(ppendIterator|PC(Iterator|UIterator)|rray(Iterator|Object|Access)))\b</string>
 					<key>name</key>
 					<string>support.class.builtin.php</string>
 				</dict>
@@ -3266,6 +3266,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>(?i)\bapcu_(s(tore|ma_info)|c(lear_cache|a(s|che_info))|inc|de(c|lete)|e(ntry|xists)|fetch|add)\b</string>
+					<key>name</key>
+					<string>support.function.apcu.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(?i)\b(s(huffle|izeof|ort)|n(ext|at(sort|casesort))|c(o(unt|mpact)|urrent)|in_array|u(sort|ksort|asort)|p(os|rev)|e(nd|ach|xtract)|k(sort|ey(_exists)?|rsort)|list|a(sort|r(sort|ray(_(s(hift|um|plice|earch|lice)|c(h(unk|ange_key_case)|o(unt_values|lumn|mbine))|intersect(_(u(key|assoc)|key|assoc))?|diff(_(u(key|assoc)|key|assoc))?|u(n(shift|ique)|intersect(_(uassoc|assoc))?|diff(_(uassoc|assoc))?)|p(op|ush|ad|roduct)|values|key(s|_exists)|f(il(ter|l(_keys)?)|lip)|walk(_recursive)?|r(e(duce|place(_recursive)?|verse)|and)|m(ultisort|erge(_recursive)?|ap)))?))|r(sort|eset|ange))\b</string>
 					<key>name</key>
 					<string>support.function.array.php</string>
@@ -3290,7 +3296,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bBSON\\(to(JSON|Array)|from(JSON|Array))\b</string>
+					<string>(?i)\bMongoDB\BSON\(to(JSON|PHP)|from(JSON|PHP))\b</string>
 					<key>name</key>
 					<string>support.function.bson.php</string>
 				</dict>
@@ -3452,12 +3458,6 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(http_(s(upport|end_(st(atus|ream)|content_(type|disposition)|data|file|last_modified))|head|negotiate_(c(harset|ontent_type)|language)|c(hunked_decode|ache_(etag|last_modified))|throttle|inflate|d(eflate|ate)|p(ost_(data|fields)|ut_(stream|data|file)|ersistent_handles_(c(ount|lean)|ident)|arse_(headers|cookie|params|message))|re(direct|quest(_(method_(name|unregister|exists|register)|body_encode))?)|get(_request_(headers|body(_stream)?))?|match_(etag|request_header|modified)|build_(str|cookie|url))|ob_(inflatehandler|deflatehandler|etaghandler))\b</string>
-					<key>name</key>
-					<string>support.function.http.php</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>(?i)\b(iconv(_(s(tr(pos|len|rpos)|ubstr|et_encoding)|get_encoding|mime_(decode(_headers)?|encode)))?|ob_iconv_handler)\b</string>
 					<key>name</key>
 					<string>support.function.iconv.php</string>
@@ -3470,7 +3470,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(i(ptc(parse|embed)|mage(s(y|cale|tring(up)?|et(style|t(hickness|ile)|interpolation|pixel|brush)|avealpha|x)|c(har(up)?|o(nvolution|py(res(ized|ampled)|merge(gray)?)?|lor(s(total|et|forindex)|closest(hwb|alpha)?|transparent|deallocate|exact(alpha)?|a(t|llocate(alpha)?)|resolve(alpha)?|match))|r(op(auto)?|eate(truecolor|from(string|jpeg|png|w(ebp|bmp)|g(if|d(2(part)?)?)|x(pm|bm)))?))|t(ypes|tf(text|bbox)|ruecolortopalette)|i(struecolor|nterlace)|2wbmp|d(estroy|ashedline)|jpeg|_type_to_(extension|mime_type)|p(s(slantfont|text|e(ncodefont|xtendfont)|freefont|loadfont|bbox)|ng|olygon|alette(copy|totruecolor))|ellipse|f(t(text|bbox)|il(ter|l(toborder|ed(polygon|ellipse|arc|rectangle))?)|ont(height|width)|lip)|w(ebp|bmp)|l(ine|oadfont|ayereffect)|a(ntialias|ffine(matrix(concat|get))?|lphablending|rc)|r(otate|ectangle)|g(if|d(2)?|ammacorrect|rab(screen|window))|xbm))|jpeg2wbmp|png2wbmp|g(d_info|etimagesize(fromstring)?))\b</string>
+					<string>(?i)\b(i(ptc(parse|embed)|mage(s(y|cale|tring(up)?|et(style|clip|t(hickness|ile)|interpolation|pixel|brush)|avealpha|x)|c(har(up)?|o(nvolution|py(res(ized|ampled)|merge(gray)?)?|lor(s(total|et|forindex)|closest(hwb|alpha)?|transparent|deallocate|exact(alpha)?|a(t|llocate(alpha)?)|resolve(alpha)?|match))|r(op(auto)?|eate(truecolor|from(string|jpeg|png|w(ebp|bmp)|g(if|d(2(part)?)?)|x(pm|bm)|bmp))?))|t(ypes|tf(text|bbox)|ruecolortopalette)|i(struecolor|nterlace)|2wbmp|openpolygon|d(estroy|ashedline)|jpeg|_type_to_(extension|mime_type)|p(s(slantfont|text|e(ncodefont|xtendfont)|freefont|loadfont|bbox)|ng|olygon|alette(copy|totruecolor))|ellipse|f(t(text|bbox)|il(ter|l(toborder|ed(polygon|ellipse|arc|rectangle))?)|ont(height|width)|lip)|w(ebp|bmp)|l(ine|oadfont|ayereffect)|a(ntialias|ffine(matrix(concat|get))?|lphablending|rc)|r(otate|e(solution|ctangle))|g(if|d(2)?|etclip|ammacorrect|rab(screen|window))|xbm|bmp))|jpeg2wbmp|png2wbmp|g(d_info|etimagesize(fromstring)?))\b</string>
 					<key>name</key>
 					<string>support.function.image.php</string>
 				</dict>
@@ -3488,7 +3488,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(n(ormalizer_(normalize|is_normalized)|umfmt_(set_(symbol|text_attribute|pattern|attribute)|create|parse(_currency)?|format(_currency)?|get_(symbol|text_attribute|pattern|error_(code|message)|locale|attribute)))|collator_(s(ort(_with_sort_keys)?|et_(strength|attribute))|c(ompare|reate)|asort|get_(s(trength|ort_key)|error_(code|message)|locale|attribute))|transliterator_(create(_(inverse|from_rules))?|transliterate|list_ids|get_error_(code|message))|i(ntl(cal_get_error_(code|message)|tz_get_error_(code|message)|_(is_failure|error_name|get_error_(code|message)))|dn_to_(u(nicode|tf8)|ascii))|datefmt_(set_(calendar|timezone(_id)?|pattern|lenient)|create|is_lenient|parse|format(_object)?|localtime|get_(calendar(_object)?|time(type|zone(_id)?)|datetype|pattern|error_(code|message)|locale))|locale_(set_default|c(ompose|anonicalize)|parse|filter_matches|lookup|accept_from_http|get_(script|d(isplay_(script|name|variant|language|region)|efault)|primary_language|keywords|all_variants|region))|resourcebundle_(c(ount|reate)|locales|get(_error_(code|message))?)|grapheme_(s(tr(str|i(str|pos)|pos|len|r(ipos|pos))|ubstr)|extract)|msgfmt_(set_pattern|create|parse(_message)?|format(_message)?|get_(pattern|error_(code|message)|locale)))\b</string>
+					<string>(?i)\b(n(ormalizer_(normalize|is_normalized)|umfmt_(set_(symbol|text_attribute|pattern|attribute)|create|parse(_currency)?|format(_currency)?|get_(symbol|text_attribute|pattern|error_(code|message)|locale|attribute)))|collator_(s(ort(_with_sort_keys)?|et_(strength|attribute))|c(ompare|reate)|asort|get_(s(trength|ort_key)|error_(code|message)|locale|attribute))|transliterator_(create(_(inverse|from_rules))?|transliterate|list_ids|get_error_(code|message))|i(ntl(cal_get_error_(code|message)|tz_get_error_(code|message)|_(is_failure|error_name|get_error_(code|message)))|dn_to_(utf8|ascii))|datefmt_(set_(calendar|timezone(_id)?|pattern|lenient)|create|is_lenient|parse|format(_object)?|localtime|get_(calendar(_object)?|time(type|zone(_id)?)|datetype|pattern|error_(code|message)|locale))|locale_(set_default|c(ompose|anonicalize)|parse|filter_matches|lookup|accept_from_http|get_(script|d(isplay_(script|name|variant|language|region)|efault)|primary_language|keywords|all_variants|region))|resourcebundle_(c(ount|reate)|locales|get(_error_(code|message))?)|grapheme_(s(tr(str|i(str|pos)|pos|len|r(ipos|pos))|ubstr)|extract)|msgfmt_(set_pattern|create|parse(_message)?|format(_message)?|get_(pattern|error_(code|message)|locale)))\b</string>
 					<key>name</key>
 					<string>support.function.intl.php</string>
 				</dict>
@@ -3632,7 +3632,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bpcntl_(s(trerror|ig(nal(_dispatch)?|timedwait|procmask|waitinfo)|etpriority)|e(rrno|xec)|fork|w(stopsig|termsig|if(s(topped|ignaled)|exited)|exitstatus|ait(pid)?)|alarm|get(_last_error|priority))\b</string>
+					<string>(?i)\bpcntl_(s(trerror|ig(nal(_(dispatch|get_handler))?|timedwait|procmask|waitinfo)|etpriority)|e(rrno|xec)|fork|w(stopsig|termsig|if(s(topped|ignaled)|exited)|exitstatus|ait(pid)?)|alarm|get(_last_error|priority))\b</string>
 					<key>name</key>
 					<string>support.function.pcntl.php</string>
 				</dict>
@@ -3740,7 +3740,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bsession_(s(ta(tus|rt)|et_(save_handler|cookie_params)|ave_path)|name|c(ommit|ache_(expire|limiter))|i(s_registered|d)|de(stroy|code)|un(set|register)|encode|write_close|abort|re(set|g(ister(_shutdown)?|enerate_id))|get_cookie_params|module_name)\b</string>
+					<string>(?i)\bsession_(s(ta(tus|rt)|et_(save_handler|cookie_params)|ave_path)|name|c(ommit|ache_(expire|limiter)|reate_id)|i(s_registered|d)|de(stroy|code)|un(set|register)|encode|write_close|abort|re(set|g(ister(_shutdown)?|enerate_id))|g(c|et_cookie_params)|module_name)\b</string>
 					<key>name</key>
 					<string>support.function.session.php</string>
 				</dict>
@@ -3770,7 +3770,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bsocket_(s(hutdown|trerror|e(nd(to|msg)?|t_(nonblock|option|block)|lect))|c(onnect|l(ose|ear_error)|reate(_(pair|listen))?|msg_space)|import_stream|write|l(isten|ast_error)|accept|re(cv(from|msg)?|ad)|get(sockname|_option|peername)|bind)\b</string>
+					<string>(?i)\bsocket_(s(hutdown|trerror|e(nd(to|msg)?|t(opt|_(nonblock|option|block))|lect))|c(onnect|l(ose|ear_error)|reate(_(pair|listen))?|msg_space)|import_stream|write|l(isten|ast_error)|accept|re(cv(from|msg)?|ad)|get(sockname|opt|_option|peername)|bind)\b</string>
 					<key>name</key>
 					<string>support.function.sockets.php</string>
 				</dict>
@@ -3836,6 +3836,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>(?i)\bUI\(Draw\Text\Font\fontFamilies|quit|run)\b</string>
+					<key>name</key>
+					<string>support.function.ui.php</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(?i)\buopz_(co(py|mpose)|implement|overload|delete|undefine|extend|f(unction|lags)|re(store|name|define)|backup)\b</string>
 					<key>name</key>
 					<string>support.function.uopz.php</string>
@@ -3884,7 +3890,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(zlib_(decode|encode|get_coding_type)|readgzfile|gz(seek|c(ompress|lose)|tell|inflate|open|de(code|flate)|uncompress|p(uts|assthru)|e(ncode|of)|file|write|re(wind|ad)|get(s(s)?|c)))\b</string>
+					<string>(?i)\b(inflate_(init|add)|zlib_(decode|encode|get_coding_type)|deflate_(init|add)|readgzfile|gz(seek|c(ompress|lose)|tell|inflate|open|de(code|flate)|uncompress|p(uts|assthru)|e(ncode|of)|file|write|re(wind|ad)|get(s(s)?|c)))\b</string>
 					<key>name</key>
 					<string>support.function.zlib.php</string>
 				</dict>
