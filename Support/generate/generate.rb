@@ -9,8 +9,8 @@
 
 require 'rubygems'
 require 'json'
-require '~/Library/Application Support/Avian/Bundles/php.tmbundle/Support/lib/Builder'
-require '~/Library/Application Support/Avian/Bundles/bundle-support.tmbundle/Support/shared/lib/osx/plist'
+require '~/Library/Application Support/TextMate/Bundles/php.tmbundle/Support/lib/Builder'
+require '~/Library/Application Support/TextMate/Bundles/bundle-support.tmbundle/Support/shared/lib/osx/plist'
 
 data = JSON.parse(File.read(ARGV[0]))
 classes = data['classes']
