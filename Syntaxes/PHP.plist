@@ -25,7 +25,7 @@
 	<string>(\*/|^\s*\}|^HTML;)</string>
 	<key>injections</key>
 	<dict>
-		<key>^text.html - (meta.embedded | meta.tag), L:^text.html meta.tag, L:source.js.embedded.html</key>
+		<key>^text.html - (meta.embedded | meta.tag), L:^text.html meta.tag, L:text.html.php source.js</key>
 		<dict>
 			<key>patterns</key>
 			<array>
