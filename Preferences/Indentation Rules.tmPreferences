@@ -15,16 +15,16 @@
 	        (\})         |
 	        (\)+[;,])    |
 	        (\][;,])     |
-	        (else:)      |
-	        ((end(if|for(each)?|while|switch));)
+	        \b (else:)   |
+	        \b ((end(if|for(each)?|while|switch));)
 	    )
 	</string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
 	    (   \{ (?! .+ \} ) .*
-	    |   array\(
+	    |   \b array\(
 	    |   (\[)
-	    |   ((else)?if|else|for(each)?|while|switch) .* :
+	    |   \b ((else)?if|else|for(each)?|while|switch) .* :
 	    )   \s* (/[/*] .*)? $</string>
 		<key>indentNextLinePattern</key>
 		<string>(?x)^
