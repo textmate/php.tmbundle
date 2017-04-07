@@ -1934,7 +1934,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\{</string>
+					<string>(?=\{)</string>
 					<key>name</key>
 					<string>meta.function.closure.php</string>
 					<key>patterns</key>
