@@ -6,7 +6,7 @@
  * Usage: php generate.php <lang>
  * Example: php generate.php en
  * 
- * Some languges may require memory_limit to 256MB in php.ini
+ * Some languages may require memory_limit to 256MB in php.ini
  *
  * This script will produce/modify the following files:
  *  - Support/functions.plist
