@@ -3296,7 +3296,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bMongoDB\BSON\(to(JSON|PHP)|from(JSON|PHP))\b</string>
+					<string>(?i)\bMongoDB\BSON\\(to|from)(JSON|PHP)\b</string>
 					<key>name</key>
 					<string>support.function.bson.php</string>
 				</dict>
@@ -3836,7 +3836,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\bUI\(Draw\Text\Font\fontFamilies|quit|run)\b</string>
+					<string>(?i)\bUI\\(Draw\Text\Font\fontFamilies|quit|run)\b</string>
 					<key>name</key>
 					<string>support.function.ui.php</string>
 				</dict>
