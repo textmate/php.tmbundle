@@ -1,5 +1,5 @@
 APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Construye un objeto iterador APCIterator
-APCUIterator%object APCUIterator([mixed $search = null], [int $format = APCU_ITER_ALL], [int $chunk_size = 100], [int $list = APCU_LIST_ACTIVE])%Constructs an APCUIterator iterator object
+APCUIterator%object APCUIterator([mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Constructs an APCUIterator iterator object
 AppendIterator%object AppendIterator()%Construye un AppendIterator
 ArrayIterator%object ArrayIterator([mixed $array = array()], [int $flags])%Construye un ArrayIterator
 ArrayObject%object ArrayObject([mixed $input = []], [int $flags], [string $iterator_class = "ArrayIterator"])%Construir un nuevo objeto Array
@@ -106,7 +106,7 @@ MongoDB\BSON\UTCDateTime%object MongoDB\BSON\UTCDateTime([integer|float|string|D
 MongoDB\BSON\fromJSON%string MongoDB\BSON\fromJSON(string $json)%Returns the BSON representation of a JSON value
 MongoDB\BSON\fromPHP%string MongoDB\BSON\fromPHP(array|object $value)%Returns the BSON representation of a PHP value
 MongoDB\BSON\toJSON%string MongoDB\BSON\toJSON(string $bson)%Returns the JSON representation of a BSON value
-MongoDB\BSON\toPHP%array|object MongoDB\BSON\toPHP(string $bson, [array $typeMap = array()])%Returns the PHP representation of a BSON value
+MongoDB\BSON\toPHP%array|object MongoDB\BSON\toPHP(string $bson, [array $typeMap = []])%Returns the PHP representation of a BSON value
 MongoDB\Driver\BulkWrite%object MongoDB\Driver\BulkWrite([array $options])%Create a new BulkWrite
 MongoDB\Driver\Command%object MongoDB\Driver\Command(array|object $document)%Create a new Command
 MongoDB\Driver\Cursor%object MongoDB\Driver\Cursor()%Create a new Cursor (not used)
@@ -226,7 +226,7 @@ UI\Draw\Path%object UI\Draw\Path([integer $mode = UI\Draw\Path::Winding])%Constr
 UI\Draw\Stroke%object UI\Draw\Stroke([integer $cap = UI\Draw\Line\Cap::Flat], [integer $join = UI\Draw\Line\Join::Miter], [float $thickness = 1], [float $miterLimit = 10])%Construct a new Stroke
 UI\Draw\Text\Font%object UI\Draw\Text\Font(UI\Draw\Text\Font\Descriptor $descriptor)%Construct a new Font
 UI\Draw\Text\Font\Descriptor%object UI\Draw\Text\Font\Descriptor(string $family, float $size, [integer $weight = UI\Draw\Text\Font\Weight::Normal], [integer $italic = UI\Draw\Text\Font\Italic::Normal], [integer $stretch = UI\Draw\Text\Font\Stretch::Normal])%Construct a new Font Descriptor
-UI\Draw\Text\Font\fontFamilies%array UI\Draw\Text\Font\fontFamilies()%Retrieve Font Families
+UI\Draw\Text\Font\fontFamilies%array UI\Draw\Text\Font\fontFamilies()%Recuperar las familias de fuentes
 UI\Draw\Text\Layout%object UI\Draw\Text\Layout(string $text, UI\Draw\Text\Font $font, float $width)%Construct a new Text Layout
 UI\Executor%object UI\Executor(integer $microseconds, integer $seconds)%Construct a new Executor
 UI\Menu%object UI\Menu(string $name)%Construct a new Menu
@@ -312,7 +312,7 @@ apcu_cache_info%array apcu_cache_info([bool $limited = false])%Retrieves cached 
 apcu_cas%bool apcu_cas(string $key, int $old, int $new)%Updates an old value with a new value
 apcu_clear_cache%bool apcu_clear_cache()%Clears the APCu cache
 apcu_dec%int apcu_dec(string $key, [int $step = 1], [bool $success])%Decrease a stored number
-apcu_delete%bool apcu_delete(mixed $key)%Removes a stored variable from the cache
+apcu_delete%bool apcu_delete(mixed $key)%Elimina una variable almacenada en caché
 apcu_entry%mixed apcu_entry(string $key, callable $generator, [int $ttl])%Atomically fetch or generate a cache entry
 apcu_exists%mixed apcu_exists(mixed $keys)%Checks if entry exists
 apcu_fetch%mixed apcu_fetch(mixed $key, [bool $success])%Fetch a stored variable from the cache
@@ -970,14 +970,14 @@ get_browser%mixed get_browser([string $user_agent], [bool $return_array = false]
 get_called_class%string get_called_class()%El nombre de la clase "Vinculante Static Última"
 get_cfg_var%string get_cfg_var(string $option)%Obtiene el valor de una opción de configuración de PHP
 get_class%string get_class([object $object])%Devuelve el nombre de la clase de un objeto
-get_class_methods%array get_class_methods(mixed $class_name)%Obtiene los nombres de los métdos de una clase
+get_class_methods%array get_class_methods(mixed $class_name)%Obtiene los nombres de los métodos de una clase
 get_class_vars%array get_class_vars(string $class_name)%Obtener las propiedades predeterminadas de una clase
 get_current_user%string get_current_user()%Obtiene el nombre del propietario del script PHP actual
 get_declared_classes%array get_declared_classes()%Devuelve una matriz con los nombres de las clases definidas
 get_declared_interfaces%array get_declared_interfaces()%Devuelve un array con todas las interfaces declaradas
 get_declared_traits%array get_declared_traits()%Devuelve un array de todos los traits declarados
 get_defined_constants%array get_defined_constants([bool $categorize = false])%Devuelve un array asociativo con los nombres de todas las constantes y sus valores
-get_defined_functions%array get_defined_functions()%Devuelve una matriz de todas las funciones definidas
+get_defined_functions%array get_defined_functions([bool $exclude_disabled])%Devuelve un array de todas las funciones definidas
 get_defined_vars%array get_defined_vars()%Devuelve una matriz con todas las variables definidas
 get_extension_funcs%array get_extension_funcs(string $module_name)%Devuelve una matriz con los nombres de funciones de un  módulo
 get_headers%array get_headers(string $url, [int $format])%Recupera todas las cabeceras enviadas por el servidor en respuesta a una petición HTTP
@@ -1004,7 +1004,7 @@ gethostname%string gethostname()%Obtiene el nombre de host
 getimagesize%array getimagesize(string $filename, [array $imageinfo])%Obtener el tamaño de una imagen
 getimagesizefromstring%array getimagesizefromstring(string $imagedata, [array $imageinfo])%Obtener el tamaño de una imagen desde una cadena
 getlastmod%int getlastmod()%Obtiene la hora de la última modificación de la  página
-getmxrr%bool getmxrr(string $hostname, array $mxhosts, [array $weight])%Obtener lod registros MX correspondientes a un nombre de host de Internet
+getmxrr%bool getmxrr(string $hostname, array $mxhosts, [array $weight])%Obtener los registros MX correspondientes a un nombre de host de Internet
 getmygid%int getmygid()%Obtener el GID del dueño del script PHP
 getmyinode%int getmyinode()%Obtiene el inode del script actual
 getmypid%int getmypid()%Obtiene el ID del proceso PHP
@@ -1107,6 +1107,7 @@ hash_copy%resource hash_copy(resource $context)%Copia un recurso de contexto de 
 hash_equals%bool hash_equals(string $known_string, string $user_string)%Comparación de strings segura contra ataques de temporización
 hash_file%string hash_file(string $algo, string $filename, [bool $raw_output = false])%Genera un valor cifrado usando el contenido de un fichero dado
 hash_final%string hash_final(resource $context, [bool $raw_output = false])%Finaliza un contexto incremental y devuelve el resultado cifrado
+hash_hkdf%string hash_hkdf(string $algo, string $ikm, [int $length], [string $info = ''], [string $salt = ''])%Generate a HKDF key derivation of a supplied key input
 hash_hmac%string hash_hmac(string $algo, string $data, string $key, [bool $raw_output = false])%Genera un valor cifrado mediante una clave especificada usando el método HMAC
 hash_hmac_file%string hash_hmac_file(string $algo, string $filename, string $key, [bool $raw_output = false])%Genera un valor cifrado mediante una clave especificada usando el método HMAC y el contenido de un fichero dado
 hash_init%resource hash_init(string $algo, [int $options], [string $key])%Inicializa un contexto incremental para cifrar
@@ -1437,6 +1438,7 @@ is_float%bool is_float(mixed $var)%Comprueba si el tipo de una variable es float
 is_infinite%bool is_infinite(float $val)%Encuentra si un valor es infinito
 is_int%bool is_int(mixed $var)%Comprueba si el tipo de una variable es integer
 is_integer%void is_integer()%Alias de is_int
+is_iterable%array is_iterable(mixed $var)%Verify that the contents of a variable is an iterable value
 is_link%bool is_link(string $filename)%Indica si el nombre de archivo es un enlace simbólico
 is_long%void is_long()%Alias de is_int
 is_nan%bool is_nan(float $val)%Encuentra si un valor no es un número
@@ -1667,7 +1669,7 @@ mcrypt_module_is_block_mode%bool mcrypt_module_is_block_mode(string $mode, [stri
 mcrypt_module_open%resource mcrypt_module_open(string $algorithm, string $algorithm_directory, string $mode, string $mode_directory)%Abre el módulo del algoritmo y el modo a ser utilizados
 mcrypt_module_self_test%bool mcrypt_module_self_test(string $algorithm, [string $lib_dir])%Esta función ejecuta una prueba automática sobre el módulo especificado
 mcrypt_ofb%string mcrypt_ofb(string $cipher, string $key, string $data, int $mode, [string $iv])%Encripta/desencripta datos en modo OFB
-md5%string md5(string $str, [bool $raw_output = false])%Calcula el hash md5 de un string
+md5%string md5(string $str, [bool $raw_output = false])%Calcula el 'hash' md5 de un string
 md5_file%string md5_file(string $filename, [bool $raw_output = false])%Calcula el resumen criptográfico md5 de un archivo dado
 mdecrypt_generic%string mdecrypt_generic(resource $td, string $data)%Desencripta datos
 memcache_debug%bool memcache_debug(bool $on_off)%Activa/desactiva debug output
@@ -1966,6 +1968,7 @@ oci_close%bool oci_close(resource $connection)%Cierra una conexión a Oracle
 oci_commit%bool oci_commit(resource $connection)%Consigna la transacción pendiente de la base de datos
 oci_connect%resource oci_connect(string $username, string $password, [string $connection_string], [string $character_set], [int $session_mode])%Conecta a una base de datos de Oracle
 oci_define_by_name%bool oci_define_by_name(resource $statement, string $column_name, mixed $variable, [int $type = SQLT_CHR])%Asocia una variable de PHP con una columna para la obtención de consultas
+oci_disable_taf_callback%bool oci_disable_taf_callback(resource $connection)%Inhabilitar una función de retrollamada definida por el usuario para TAF de Oracle Database
 oci_error%array oci_error([resource $resource])%Devuelve el último error encontrado
 oci_execute%bool oci_execute(resource $statement, [int $mode = OCI_COMMIT_ON_SUCCESS])%Ejecuta una sentencia
 oci_fetch%bool oci_fetch(resource $statement)%Coloca la siguiente fila de una consulta en los búferes internos
@@ -1990,12 +1993,13 @@ oci_lob_is_equal%bool oci_lob_is_equal(OCI-Lob $lob1, OCI-Lob $lob2)%Compara dos
 oci_new_collection%OCI-Collection oci_new_collection(resource $connection, string $tdo, [string $schema])%Asigna un nuevo objeto colección
 oci_new_connect%resource oci_new_connect(string $username, string $password, [string $connection_string], [string $character_set], [int $session_mode])%Conectar al servidor de Oracle usando una conexión única
 oci_new_cursor%resource oci_new_cursor(resource $connection)%Asigna y devuelve un nuevo cursor (gestor de sentencia)
-oci_new_descriptor%OCI-Lob oci_new_descriptor(resource $connection, [int $type = OCI_DTYPE_LOB])%Inicializa un nuevo descriptor vacío LOB o FILE
+oci_new_descriptor%OCI-Lob oci_new_descriptor(resource $connection, [int $type = OCI_DTYPE_LOB])%Inicializa un nuevo descriptor LOB o FILE vacío
 oci_num_fields%int oci_num_fields(resource $statement)%Devuelve el número de columnas del resultado de una sentencia
 oci_num_rows%int oci_num_rows(resource $statement)%Devuelve el número de filas afectadas durante la ejecución de una sentencia
 oci_parse%resource oci_parse(resource $connection, string $sql_text)%Prepara una sentencia de Oracle para su ejecución
 oci_password_change%resource oci_password_change(resource $connection, string $username, string $old_password, string $new_password, string $dbname)%Cambia la contraseña de un usuario de Oracle
 oci_pconnect%resource oci_pconnect(string $username, string $password, [string $connection_string], [string $character_set], [int $session_mode])%Conectar a una base de datos de Oracle usando una conexión persistente
+oci_register_taf_callback%bool oci_register_taf_callback(resource $connection, mix $callbackFn)%Registrar una función de retrollamada definida por el usuario para TAF de Oracle Database
 oci_result%mixed oci_result(resource $statement, mixed $field)%Devuelve el valor de un campo de la fila obtenida
 oci_rollback%bool oci_rollback(resource $connection)%Revierte la transacción pendiente de la base de datos
 oci_server_version%string oci_server_version(resource $connection)%Devuelve la versión de Oracle Database
@@ -2205,8 +2209,8 @@ pg_affected_rows%int pg_affected_rows(resource $result)%Devuelve el número de r
 pg_cancel_query%bool pg_cancel_query(resource $connection)%Cancelar una consulta asíncrona
 pg_client_encoding%string pg_client_encoding([resource $connection])%Obtiene la codificación del cliente
 pg_close%bool pg_close([resource $connection])%Cierra una conexión PostgreSQL
-pg_connect%resource pg_connect(string $connection_string, [int $connect_type])%Abrir una conexión a PostgreSQL
-pg_connect_poll%int pg_connect_poll([resource $connection])%Poll the status of an in-progress asynchronous PostgreSQL connection   attempt.
+pg_connect%resource pg_connect(string $connection_string, [int $connect_type])%Abre una conexión a PostgreSQL
+pg_connect_poll%int pg_connect_poll([resource $connection])%Verifica el estado de un intento de conexión asíncrono en curso de PostgreSQL
 pg_connection_busy%bool pg_connection_busy(resource $connection)%Permite saber si la conexión esta ocupada o no
 pg_connection_reset%bool pg_connection_reset(resource $connection)%Restablece conexión (reconectar)
 pg_connection_status%int pg_connection_status(resource $connection)%Obtener estado de la conexión
@@ -2222,7 +2226,7 @@ pg_escape_identifier%string pg_escape_identifier([resource $connection], string 
 pg_escape_literal%string pg_escape_literal([resource $connection], string $data)%Escape a literal for insertion into a text field
 pg_escape_string%string pg_escape_string([resource $connection], string $data)%Escape a string for query
 pg_execute%resource pg_execute([resource $connection], string $stmtname, array $params)%Envía una solicitud para ejecutar una setencia preparada con parámetros dados, y espera el resultado
-pg_fetch_all%array pg_fetch_all(resource $result)%Fetches all rows from a result as an array
+pg_fetch_all%array pg_fetch_all(resource $result)%Obtiene todas las filas de un resultado como un array
 pg_fetch_all_columns%array pg_fetch_all_columns(resource $result, [int $column])%Fetches all rows in a particular result column as an array
 pg_fetch_array%array pg_fetch_array(resource $result, [int $row], [int $result_type = PGSQL_BOTH])%Fetch a row as an array
 pg_fetch_assoc%array pg_fetch_assoc(resource $result, [int $row])%Fetch a row as an associative array
@@ -2235,17 +2239,17 @@ pg_field_num%int pg_field_num(resource $result, string $field_name)%Returns the 
 pg_field_prtlen%integer pg_field_prtlen(resource $result, int $row_number, mixed $field_name_or_number)%Returns the printed length
 pg_field_size%int pg_field_size(resource $result, int $field_number)%Returns the internal storage size of the named field
 pg_field_table%mixed pg_field_table(resource $result, int $field_number, [bool $oid_only = false])%Returns the name or oid of the tables field
-pg_field_type%string pg_field_type(resource $result, int $field_number)%Returns the type name for the corresponding field number
+pg_field_type%string pg_field_type(resource $result, int $field_number)%Devuelve el nombre de tipo para el número de campo correspondiente
 pg_field_type_oid%int pg_field_type_oid(resource $result, int $field_number)%Returns the type ID (OID) for the corresponding field number
 pg_flush%mixed pg_flush(resource $connection)%Flush outbound query data on the connection
 pg_free_result%resource pg_free_result(resource $result)%Free result memory
 pg_get_notify%array pg_get_notify(resource $connection, [int $result_type])%Gets SQL NOTIFY message
 pg_get_pid%int pg_get_pid(resource $connection)%Gets the backend's process ID
 pg_get_result%resource pg_get_result([resource $connection])%Get asynchronous query result
-pg_host%string pg_host([resource $connection])%Returns the host name associated with the connection
+pg_host%string pg_host([resource $connection])%Devuelve el nombre de host asociado a la conexión
 pg_insert%mixed pg_insert(resource $connection, string $table_name, array $assoc_array, [int $options = PGSQL_DML_EXEC])%Insert array into table
-pg_last_error%string pg_last_error([resource $connection])%Get the last error message string of a connection
-pg_last_notice%string pg_last_notice(resource $connection)%Returns the last notice message from PostgreSQL server
+pg_last_error%string pg_last_error([resource $connection])%Obtiene una cadena con el último mensaje de error de la conexión
+pg_last_notice%string pg_last_notice(resource $connection)%Devuelve el último aviso del servidor PostgreSQL
 pg_last_oid%string pg_last_oid(resource $result)%Returns the last row's OID
 pg_lo_close%bool pg_lo_close(resource $large_object)%Close a large object
 pg_lo_create%int pg_lo_create([resource $connection], mixed $object_id)%Create a large object
@@ -2262,9 +2266,9 @@ pg_lo_write%int pg_lo_write(resource $large_object, string $data, [int $len])%Wr
 pg_meta_data%array pg_meta_data(resource $connection, string $table_name, [bool $extended])%Get meta data for table
 pg_num_fields%int pg_num_fields(resource $result)%Returns the number of fields in a result
 pg_num_rows%int pg_num_rows(resource $result)%Returns the number of rows in a result
-pg_options%string pg_options([resource $connection])%Get the options associated with the connection
+pg_options%string pg_options([resource $connection])%Obtener las opciones asociadas con la conexión
 pg_parameter_status%string pg_parameter_status([resource $connection], string $param_name)%Looks up a current parameter setting of the server.
-pg_pconnect%resource pg_pconnect(string $connection_string, [int $connect_type])%Open a persistent PostgreSQL connection
+pg_pconnect%resource pg_pconnect(string $connection_string, [int $connect_type])%Abre una conexión persistente a PostgreSQL
 pg_ping%bool pg_ping([resource $connection])%Ping a conexión de base de datos
 pg_port%int pg_port([resource $connection])%Devuelve el número de puerto asociado con la conexión
 pg_prepare%resource pg_prepare([resource $connection], string $stmtname, string $query)%Submits a request to create a prepared statement with the   given parameters, and waits for completion.
@@ -2282,13 +2286,13 @@ pg_send_query%bool pg_send_query(resource $connection, string $query)%Sends asyn
 pg_send_query_params%bool pg_send_query_params(resource $connection, string $query, array $params)%Submits a command and separate parameters to the server without waiting for the result(s).
 pg_set_client_encoding%int pg_set_client_encoding([resource $connection], string $encoding)%Set the client encoding
 pg_set_error_verbosity%int pg_set_error_verbosity([resource $connection], int $verbosity)%Determines the verbosity of messages returned by pg_last_error    and pg_result_error.
-pg_socket%resource pg_socket(resource $connection)%Get a read only handle to the socket underlying a PostgreSQL connection
+pg_socket%resource pg_socket(resource $connection)%Obtener un identificador de sólo lectura en el socket subyacente a una conexión de PostgreSQL
 pg_trace%bool pg_trace(string $pathname, [string $mode = "w"], [resource $connection])%Enable tracing a PostgreSQL connection
-pg_transaction_status%int pg_transaction_status(resource $connection)%Returns the current in-transaction status of the server.
-pg_tty%string pg_tty([resource $connection])%Return the TTY name associated with the connection
+pg_transaction_status%int pg_transaction_status(resource $connection)%Devuelve el estado actual de la transaccion del servidor
+pg_tty%string pg_tty([resource $connection])%Devolver el nombre TTY asociado con la conexión
 pg_unescape_bytea%string pg_unescape_bytea(string $data)%Unescape binary for bytea type
-pg_untrace%bool pg_untrace([resource $connection])%Disable tracing of a PostgreSQL connection
-pg_update%mixed pg_update(resource $connection, string $table_name, array $data, array $condition, [int $options = PGSQL_DML_EXEC])%Update table
+pg_untrace%bool pg_untrace([resource $connection])%Desactivar el rastreo de una conexión de PostgreSQL
+pg_update%mixed pg_update(resource $connection, string $table_name, array $data, array $condition, [int $options = PGSQL_DML_EXEC])%Actualizar tabla
 pg_version%array pg_version([resource $connection])%Devuelve un array con el cliente, protocolo y versión del servidor (si está disponible)
 php_check_syntax%bool php_check_syntax(string $filename, [string $error_message])%Verifica la sintaxis PHP del archivo especificado (y lo ejecuta)
 php_ini_loaded_file%string php_ini_loaded_file()%Recupera la ruta de acceso al archivo php.ini cargado
@@ -2496,7 +2500,7 @@ setproctitle%void setproctitle(string $title)%Establecer el título de proceso
 setrawcookie%bool setrawcookie(string $name, [string $value], [int $expire], [string $path], [string $domain], [bool $secure = false], [bool $httponly = false])%Enviar una cookie sin codificar su valor
 setthreadtitle%bool setthreadtitle(string $title)%Set the thread title
 settype%bool settype(mixed $var, string $type)%Establece el tipo de una variable
-sha1%string sha1(string $str, [bool $raw_output = false])%Calcula el hash sha1 de un string
+sha1%string sha1(string $str, [bool $raw_output = false])%Calcula el 'hash' sha1 de un string
 sha1_file%string sha1_file(string $filename, [bool $raw_output = false])%Calcula el hash sha1 de un archivo
 shell_exec%string shell_exec(string $cmd)%Ejecutar un comando mediante el intérprete de comandos y devolver la salida completa como una cadena
 shm_attach%resource shm_attach(int $key, [int $memsize], [int $perm = 0666])%Crea o abre un segmento de memoria compartida

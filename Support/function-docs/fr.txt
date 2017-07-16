@@ -1,5 +1,5 @@
 APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Construit un objet d'itération APCIterator
-APCUIterator%object APCUIterator([mixed $search = null], [int $format = APCU_ITER_ALL], [int $chunk_size = 100], [int $list = APCU_LIST_ACTIVE])%Constructs an APCUIterator iterator object
+APCUIterator%object APCUIterator([mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Constructs an APCUIterator iterator object
 AppendIterator%object AppendIterator()%Construit un objet AppendIterator
 ArrayIterator%object ArrayIterator([mixed $array = array()], [int $flags])%Construit un ArrayIterator
 ArrayObject%object ArrayObject([mixed $input = []], [int $flags], [string $iterator_class = "ArrayIterator"])%Construit un nouvel objet tableau
@@ -105,7 +105,7 @@ MongoDB\BSON\MinKey%object MongoDB\BSON\MinKey()%Construct a new MinKey
 MongoDB\BSON\ObjectID%object MongoDB\BSON\ObjectID([string $id])%Construit un nouvel ObjectID
 MongoDB\BSON\Regex%object MongoDB\BSON\Regex(string $pattern, string $flags)%Construit une nouvelle REGEX
 MongoDB\BSON\fromPHP%string MongoDB\BSON\fromPHP(array|object $value)%Returns the BSON representation of a PHP value
-MongoDB\BSON\toPHP%array|object MongoDB\BSON\toPHP(string $bson, [array $typeMap = array()])%Returns the PHP representation of a BSON value
+MongoDB\BSON\toPHP%array|object MongoDB\BSON\toPHP(string $bson, [array $typeMap = []])%Returns the PHP representation of a BSON value
 MongoDB\Driver\BulkWrite%object MongoDB\Driver\BulkWrite([array $options])%Create a new BulkWrite
 MongoDB\Driver\Command%object MongoDB\Driver\Command(array|object $document)%Crée une nouvelle commande
 MongoDB\Driver\Cursor%object MongoDB\Driver\Cursor(Server $server, string $responseDocument)%Description
@@ -182,7 +182,7 @@ SoapFault%object SoapFault(string $faultcode, string $faultstring, [string $faul
 SoapHeader%object SoapHeader(string $namespace, string $name, [mixed $data], [bool $mustunderstand], [string $actor])%Constructeur SoapHeader
 SoapParam%object SoapParam(mixed $data, string $name)%Constructeur SoapParam
 SoapServer%object SoapServer(mixed $wsdl, [array $options])%Constructeur SoapServer
-SoapVar%object SoapVar(string $data, string $encoding, [string $type_name], [string $type_namespace], [string $node_name], [string $node_namespace])%Constructeur SoapVar
+SoapVar%object SoapVar(mixed $data, string $encoding, [string $type_name], [string $type_namespace], [string $node_name], [string $node_namespace])%Constructeur SoapVar
 SphinxClient%object SphinxClient()%Crée un nouvel objet SphinxClient
 SplDoublyLinkedList%object SplDoublyLinkedList()%Construit une nouvelle liste
 SplFileInfo%object SplFileInfo(string $file_name)%Construit un nouvel objet SplFileInfo
@@ -196,10 +196,11 @@ SplTempFileObject%object SplTempFileObject([int $max_memory])%Construit un nouve
 SplType%object SplType([mixed $initial_value], [bool $strict])%Crée une nouvelle valeur d'un certain type
 Spoofchecker%object Spoofchecker()%Constructeur
 Swish%object Swish(string $index_names)%Construit un objet Swish
-SyncEvent%object SyncEvent([string $name], [bool $manual])%Construit un nouvel objet SyncEvent
+SyncEvent%object SyncEvent([string $name], [bool $manual = false], [bool $prefire = false])%Construit un nouvel objet SyncEvent
 SyncMutex%object SyncMutex([string $name])%Construit un nouvel objet SyncMutex
 SyncReaderWriter%object SyncReaderWriter([string $name], [bool $autounlock = true])%Construit un nouvel objet SyncReaderWriter
 SyncSemaphore%object SyncSemaphore([string $name], [integer $initialval = 1], [bool $autounlock = true])%Construit un nouvel objet SyncSemaphore
+SyncSharedMemory%object SyncSharedMemory(string $name, integer $size)%Constructs a new SyncSharedMemory object
 TokyoTyrant%object TokyoTyrant([string $host], [int $port = TokyoTyrant::RDBDEF_PORT], [array $options])%Construit un nouvel objet TokyoTyrant
 TokyoTyrantIterator%object TokyoTyrantIterator(mixed $object)%Construit un itérateur
 TokyoTyrantQuery%object TokyoTyrantQuery(TokyoTyrantTable $table)%Construit une nouvelle requête
@@ -587,7 +588,7 @@ dbx_query%mixed dbx_query(object $link_identifier, string $sql_statement, [int $
 dbx_sort%bool dbx_sort(object $result, string $user_compare_function)%Trie un résultat avec une fonction utilisateur
 dcgettext%string dcgettext(string $domain, string $message, int $category)%Remplace le domaine lors d'une recherche
 dcngettext%string dcngettext(string $domain, string $msgid1, string $msgid2, int $n, int $category)%Version plurielle de dcgettext
-debug_backtrace%array debug_backtrace([int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT], [int $limit])%Génère le contexte de déboguage
+debug_backtrace%array debug_backtrace([int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT], [int $limit])%Génère le contexte de débogage
 debug_print_backtrace%void debug_print_backtrace([int $options], [int $limit])%Affiche la pile d'exécution PHP
 debug_zval_dump%void debug_zval_dump(mixed $variable, [mixed ...])%Extrait une représentation sous forme de chaîne d'une valeur interne à Zend  pour affichage
 decbin%string decbin(int $number)%Convertit de décimal en binaire
@@ -1106,6 +1107,7 @@ hash_copy%resource hash_copy(resource $context)%Copie un contexte de hashage
 hash_equals%bool hash_equals(string $known_string, string $user_string)%Comparaison de chaînes résistante aux attaques temporelles
 hash_file%string hash_file(string $algo, string $filename, [bool $raw_output = false])%Génère une valeur de hachage en utilisant le contenu d'un fichier donné
 hash_final%string hash_final(resource $context, [bool $raw_output = false])%Finalise un hachage incrémental et retourne le résultat de l'empreinte numérique
+hash_hkdf%string hash_hkdf(string $algo, string $ikm, [int $length], [string $info = ''], [string $salt = ''])%Generate a HKDF key derivation of a supplied key input
 hash_hmac%string hash_hmac(string $algo, string $data, string $key, [bool $raw_output = false])%Génère une valeur de clé de hachage en utilisant la méthode HMAC
 hash_hmac_file%string hash_hmac_file(string $algo, string $filename, string $key, [bool $raw_output = false])%Génère une valeur de clé de hachage en utilisant la méthode HMAC et le contenu d'un fichier donné
 hash_init%resource hash_init(string $algo, [int $options], [string $key])%Initialise un contexte de hachage incrémental
@@ -1190,7 +1192,7 @@ iconv_strpos%int iconv_strpos(string $haystack, string $needle, [int $offset], [
 iconv_strrpos%int iconv_strrpos(string $haystack, string $needle, [string $charset = ini_get("iconv.internal_encoding")])%Trouve la position de la dernière occurrence d'un élément dans une chaîne
 iconv_substr%string iconv_substr(string $str, int $offset, [int $length = iconv_strlen($str, $charset)], [string $charset = ini_get("iconv.internal_encoding")])%Coupe une partie de chaîne
 idate%int idate(string $format, [int $timestamp = time()])%Formate une date/heure locale en tant qu'entier
-idn_to_ascii%string idn_to_ascii(string $domain, [int $options], [int $variant = INTL_IDNA_VARIANT_2003], [array $idna_info])%Convertie un nom de domaine au format IDNA ASCII
+idn_to_ascii%string idn_to_ascii(string $domain, [int $options], [int $variant = INTL_IDNA_VARIANT_2003], [array $idna_info])%Convertit un nom de domaine au format IDNA ASCII
 idn_to_utf8%string idn_to_utf8(string $domain, [int $options], [int $variant = INTL_IDNA_VARIANT_2003], [array $idna_info])%Convertit le nom de domaine IDNA ASCII en Unicode
 ignore_user_abort%int ignore_user_abort([string $value])%Active l'interruption de script sur déconnexion du visiteur
 iis_add_server%int iis_add_server(string $path, string $comment, string $server_ip, int $port, string $host_name, int $rights, int $start_server)%Crée un nouveau serveur web virtuel
@@ -1212,7 +1214,7 @@ iis_stop_service%int iis_stop_service(string $service_id)%Stoppe le service IIS 
 image2wbmp%bool image2wbmp(resource $image, [string $filename], [int $threshold])%Affichage de l'image vers le navigateur ou dans un fichier
 image_type_to_extension%string image_type_to_extension(int $imagetype, [bool $include_dot])%Retourne l'extension du fichier pour le type d'image
 image_type_to_mime_type%string image_type_to_mime_type(int $imagetype)%Lit le Mime-Type d'un type d'image
-imageaffine%resource imageaffine(resource $image, array $affine, [array $clip])%Retourne une image contenant l'image source transformé, en utilisant optionnellement une zone de découpe
+imageaffine%resource imageaffine(resource $image, array $affine, [array $clip])%Retourne une image contenant l'image source transformée, en utilisant optionnellement une zone de découpe
 imageaffinematrixconcat%array imageaffinematrixconcat(array $m1, array $m2)%Concatène deux matrices
 imageaffinematrixget%array imageaffinematrixget(int $type, [mixed $options])%Retourne une image contenant l'image source transformée, en utilisant optionnellement une zone de découpe
 imagealphablending%bool imagealphablending(resource $image, bool $blendmode)%Modifie le mode de blending d'une image
@@ -1436,6 +1438,7 @@ is_float%bool is_float(mixed $var)%Détermine si une variable est de type nombre
 is_infinite%bool is_infinite(float $val)%Indique si un nombre est infini
 is_int%bool is_int(mixed $var)%Détermine si une variable est de type nombre entier
 is_integer%void is_integer()%Alias de is_int
+is_iterable%array is_iterable(mixed $var)%Verify that the contents of a variable is an iterable value
 is_link%bool is_link(string $filename)%Indique si le fichier est un lien symbolique
 is_long%void is_long()%Alias de is_int
 is_nan%bool is_nan(float $val)%Indique si une valeur n'est pas un nombre
@@ -1898,7 +1901,7 @@ mysqlnd_ms_set_qos%bool mysqlnd_ms_set_qos(mixed $connection, int $service_level
 mysqlnd_ms_set_user_pick_server%bool mysqlnd_ms_set_user_pick_server(string $function)%Définit une fonction de rappel utilisateur pour la séparation lecture/écriture
 mysqlnd_ms_xa_begin%int mysqlnd_ms_xa_begin(mixed $connection, string $gtrid, [int $timeout])%Démarre une transaction distribuée/XA sur les serveurs MySQL particpants
 mysqlnd_ms_xa_commit%int mysqlnd_ms_xa_commit(mixed $connection, string $gtrid)%Valide une transaction distribuée/XA sur les serveurs MySQL participants
-mysqlnd_ms_xa_gc%int mysqlnd_ms_xa_gc(mixed $connection, [string $gtrid], [boolean $ignore_max_retries])%Collecte les données incorrectes issues des transactions XA non terminées en raison d'erreurs sébères
+mysqlnd_ms_xa_gc%int mysqlnd_ms_xa_gc(mixed $connection, [string $gtrid], [boolean $ignore_max_retries])%Collecte les données incorrectes issues des transactions XA non terminées en raison d'erreurs sévères
 mysqlnd_ms_xa_rollback%int mysqlnd_ms_xa_rollback(mixed $connection, string $gtrid)%Annule une transaction distribuée/XA sur les serveurs MySQL
 mysqlnd_qc_clear_cache%bool mysqlnd_qc_clear_cache()%Force l'affichage complet du contenu du cache
 mysqlnd_qc_get_available_handlers%array mysqlnd_qc_get_available_handlers()%Retourne la liste des gestionnaires de stockage disponibles
@@ -1965,6 +1968,7 @@ oci_close%bool oci_close(resource $connection)%Ferme une connexion Oracle
 oci_commit%bool oci_commit(resource $connection)%Valide les transactions Oracle en cours
 oci_connect%resource oci_connect(string $username, string $password, [string $connection_string], [string $character_set], [int $session_mode])%Établit une connexion avec un serveur Oracle
 oci_define_by_name%bool oci_define_by_name(resource $statement, string $column_name, mixed $variable, [int $type = SQLT_CHR])%Associe une variable PHP avec une colonne pour une requête de récupération de données
+oci_disable_taf_callback%bool oci_disable_taf_callback(resource $connection)%Disable a user-defined callback function for Oracle Database TAF
 oci_error%array oci_error([resource $resource])%Retourne la dernière erreur Oracle
 oci_execute%bool oci_execute(resource $statement, [int $mode = OCI_COMMIT_ON_SUCCESS])%Exécute une commande SQL Oracle
 oci_fetch%bool oci_fetch(resource $statement)%Lit la prochaine ligne d'un résultat Oracle dans un buffer interne
@@ -1995,6 +1999,7 @@ oci_num_rows%int oci_num_rows(resource $statement)%Retourne le nombre de lignes 
 oci_parse%resource oci_parse(resource $connection, string $sql_text)%Prépare une requête SQL avec Oracle
 oci_password_change%resource oci_password_change(resource $connection, string $username, string $old_password, string $new_password, string $dbname)%Modifie le mot de passe d'un utilisateur Oracle
 oci_pconnect%resource oci_pconnect(string $username, string $password, [string $connection_string], [string $character_set], [int $session_mode])%Ouvre une connexion persistante à un serveur Oracle
+oci_register_taf_callback%bool oci_register_taf_callback(resource $connection, mix $callbackFn)%Register a user-defined callback function for Oracle Database TAF
 oci_result%mixed oci_result(resource $statement, mixed $field)%Retourne la valeur d'une colonne dans un résultat Oracle
 oci_rollback%bool oci_rollback(resource $connection)%Annule les transactions Oracle en cours
 oci_server_version%string oci_server_version(resource $connection)%Retourne la version du serveur Oracle

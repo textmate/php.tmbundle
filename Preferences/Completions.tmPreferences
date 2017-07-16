@@ -1266,6 +1266,7 @@
         <string>hash_equals</string>
         <string>hash_file</string>
         <string>hash_final</string>
+        <string>hash_hkdf</string>
         <string>hash_hmac</string>
         <string>hash_hmac_file</string>
         <string>hash_init</string>
@@ -1596,6 +1597,7 @@
         <string>is_infinite</string>
         <string>is_int</string>
         <string>is_integer</string>
+        <string>is_iterable</string>
         <string>is_link</string>
         <string>is_long</string>
         <string>is_nan</string>
@@ -2127,6 +2129,7 @@
         <string>oci_commit</string>
         <string>oci_connect</string>
         <string>oci_define_by_name</string>
+        <string>oci_disable_taf_callback</string>
         <string>oci_error</string>
         <string>oci_execute</string>
         <string>oci_fetch</string>
@@ -2157,6 +2160,7 @@
         <string>oci_parse</string>
         <string>oci_password_change</string>
         <string>oci_pconnect</string>
+        <string>oci_register_taf_callback</string>
         <string>oci_result</string>
         <string>oci_rollback</string>
         <string>oci_server_version</string>

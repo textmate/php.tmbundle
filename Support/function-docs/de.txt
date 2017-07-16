@@ -1,5 +1,5 @@
 APCIterator%object APCIterator(string $cache, [mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Constructs an APCIterator iterator object
-APCUIterator%object APCUIterator([mixed $search = null], [int $format = APCU_ITER_ALL], [int $chunk_size = 100], [int $list = APCU_LIST_ACTIVE])%Constructs an APCUIterator iterator object
+APCUIterator%object APCUIterator([mixed $search = null], [int $format = APC_ITER_ALL], [int $chunk_size = 100], [int $list = APC_LIST_ACTIVE])%Constructs an APCUIterator iterator object
 AppendIterator%object AppendIterator()%Constructs an AppendIterator
 ArrayIterator%object ArrayIterator([mixed $array = array()], [int $flags])%Construct an ArrayIterator
 ArrayObject%object ArrayObject([mixed $input = []], [int $flags], [string $iterator_class = "ArrayIterator"])%Construct a new array object
@@ -105,7 +105,7 @@ MongoDB\BSON\UTCDateTime%object MongoDB\BSON\UTCDateTime([integer|float|string|D
 MongoDB\BSON\fromJSON%string MongoDB\BSON\fromJSON(string $json)%Returns the BSON representation of a JSON value
 MongoDB\BSON\fromPHP%string MongoDB\BSON\fromPHP(array|object $value)%Returns the BSON representation of a PHP value
 MongoDB\BSON\toJSON%string MongoDB\BSON\toJSON(string $bson)%Returns the JSON representation of a BSON value
-MongoDB\BSON\toPHP%array|object MongoDB\BSON\toPHP(string $bson, [array $typeMap = array()])%Returns the PHP representation of a BSON value
+MongoDB\BSON\toPHP%array|object MongoDB\BSON\toPHP(string $bson, [array $typeMap = []])%Returns the PHP representation of a BSON value
 MongoDB\Driver\BulkWrite%object MongoDB\Driver\BulkWrite([array $options])%Create a new BulkWrite
 MongoDB\Driver\Command%object MongoDB\Driver\Command(array|object $document)%Create a new Command
 MongoDB\Driver\Cursor%object MongoDB\Driver\Cursor()%Create a new Cursor (not used)
@@ -996,7 +996,7 @@ get_resources%resource get_resources([string $type])%Returns active resources
 getallheaders%array getallheaders()%Liefert alle HTTP-Request-Header
 getcwd%string getcwd()%Ermittelt das aktuelle Arbeitsverzeichnis
 getdate%array getdate([int $timestamp = time()])%Gibt Datums- und Zeitinformationen zurück
-getenv%string getenv(string $varname)%Liefert den Wert einer Umgebungsvariable
+getenv%string getenv(string $varname, [bool $local_only = false])%Liefert den Wert einer Umgebungsvariable
 gethostbyaddr%string gethostbyaddr(string $ip_address)%Ermittelt den zur angegebenen IP-Adresse passenden Internet-Hostnamen
 gethostbyname%string gethostbyname(string $hostname)%Ermittelt die zum angegebenen Internet-Hostnamen passende IPv4-Adresse
 gethostbynamel%array gethostbynamel(string $hostname)%Ermittelt eine Liste von IPv4-Adressen passend zum angegebenen Internet-Hostnamen
@@ -1079,7 +1079,7 @@ grapheme_strpos%int grapheme_strpos(string $haystack, string $needle, [int $offs
 grapheme_strripos%int grapheme_strripos(string $haystack, string $needle, [int $offset])%Find position (in grapheme units) of last occurrence of a case-insensitive string
 grapheme_strrpos%int grapheme_strrpos(string $haystack, string $needle, [int $offset])%Find position (in grapheme units) of last occurrence of a string
 grapheme_strstr%string grapheme_strstr(string $haystack, string $needle, [bool $before_needle = false])%Returns part of haystack string from the first occurrence of needle to the end of haystack.
-grapheme_substr%int grapheme_substr(string $string, int $start, [int $length])%Return part of a string
+grapheme_substr%string grapheme_substr(string $string, int $start, [int $length])%Return part of a string
 gregoriantojd%int gregoriantojd(int $month, int $day, int $year)%Konvertierung vom Gregorianischen Kalender zum Julianischen Datum
 gzclose%bool gzclose(resource $zp)%Schließt eine geöffnete gz-Datei
 gzcompress%string gzcompress(string $data, [int $level = -1], [int $encoding = ZLIB_ENCODING_DEFLATE])%Komprimiert einen String
@@ -1107,6 +1107,7 @@ hash_copy%resource hash_copy(resource $context)%Dupliziert einen Hash-Kontext
 hash_equals%bool hash_equals(string $known_string, string $user_string)%Timing attack safe string comparison
 hash_file%string hash_file(string $algo, string $filename, [bool $raw_output = false])%Berechnet den Hash des Inhalts einer Datei
 hash_final%string hash_final(resource $context, [bool $raw_output = false])%Schließt einen schrittweisen Hashing-Vorgang ab und gibt sein Ergebnis zurück
+hash_hkdf%string hash_hkdf(string $algo, string $ikm, [int $length], [string $info = ''], [string $salt = ''])%Generate a HKDF key derivation of a supplied key input
 hash_hmac%string hash_hmac(string $algo, string $data, string $key, [bool $raw_output = false])%Berechnet einen Hash mit Schlüssel unter Verwendung von HMAC
 hash_hmac_file%string hash_hmac_file(string $algo, string $filename, string $key, [bool $raw_output = false])%Berechnet einen Hash einer Datei mit Schlüssel unter Verwendung von HMAC
 hash_init%resource hash_init(string $algo, [int $options], [string $key])%Initialisiert einen schrittweisen Hashing-Kontext
@@ -1437,6 +1438,7 @@ is_float%bool is_float(mixed $var)%Prüft, ob eine Variable vom Typ float ist
 is_infinite%float is_infinite(float $val)%Prüft ob ein Wert unendlich ist
 is_int%bool is_int(mixed $var)%Prüft, ob eine Variable vom Typ int ist
 is_integer%void is_integer()%Alias von is_int
+is_iterable%array is_iterable(mixed $var)%Verify that the contents of a variable is an iterable value
 is_link%bool is_link(string $filename)%Prüft, ob der Dateiname ein symbolischer Link ist
 is_long%void is_long()%Alias von is_int
 is_nan%bool is_nan(float $val)%Prüft ob ein Wert keine Zahl ist
@@ -1966,6 +1968,7 @@ oci_close%bool oci_close(resource $connection)%Schließt eine Oracle-Verbindung
 oci_commit%bool oci_commit(resource $connection)%Commits the outstanding database transaction
 oci_connect%resource oci_connect(string $username, string $password, [string $connection_string], [string $character_set], [int $session_mode])%Connect to an Oracle database
 oci_define_by_name%bool oci_define_by_name(resource $statement, string $column_name, mixed $variable, [int $type = SQLT_CHR])%Associates a PHP variable with a column for query fetches
+oci_disable_taf_callback%bool oci_disable_taf_callback(resource $connection)%Disable a user-defined callback function for Oracle Database TAF
 oci_error%array oci_error([resource $source])%Liefert den letzten Fehler
 oci_execute%bool oci_execute(resource $statement, [int $mode = OCI_COMMIT_ON_SUCCESS])%Executes a statement
 oci_fetch%bool oci_fetch(resource $statement)%Holt die nächste Reihe in den Ergebnispuffer
@@ -1996,6 +1999,7 @@ oci_num_rows%int oci_num_rows(resource $statement)%Returns number of rows affect
 oci_parse%resource oci_parse(resource $connection, string $sql_text)%Prepares an Oracle statement for execution
 oci_password_change%resource oci_password_change(resource $connection, string $username, string $old_password, string $new_password, string $dbname)%Changes password of Oracle's user
 oci_pconnect%resource oci_pconnect(string $username, string $password, [string $connection_string], [string $character_set], [int $session_mode])%Connect to an Oracle database using a persistent connection
+oci_register_taf_callback%bool oci_register_taf_callback(resource $connection, mix $callbackFn)%Register a user-defined callback function for Oracle Database TAF
 oci_result%mixed oci_result(resource $statement, mixed $field)%Returns field's value from the fetched row
 oci_rollback%bool oci_rollback(resource $connection)%Rolls back the outstanding database transaction
 oci_server_version%string oci_server_version(resource $connection)%Returns the Oracle Database version
@@ -2116,7 +2120,7 @@ openssl_csr_get_public_key%resource openssl_csr_get_public_key(mixed $csr, [bool
 openssl_csr_get_subject%array openssl_csr_get_subject(mixed $csr, [bool $use_shortnames])%Gibt das Subject eines CERT zurück
 openssl_csr_new%mixed openssl_csr_new(array $dn, resource $privkey, [array $configargs], [array $extraattribs])%Erzeugt einen CSR
 openssl_csr_sign%resource openssl_csr_sign(mixed $csr, mixed $cacert, mixed $priv_key, int $days, [array $configargs], [int $serial])%Signiert einen CSR mit einem anderen Zertifikat (oder sich selbst) und generiert ein Zertifikat
-openssl_decrypt%string openssl_decrypt(string $data, string $method, string $password, [int $options], [string $iv = ""], [string $tag = ""], [string $aad = ""])%Decrypts data
+openssl_decrypt%string openssl_decrypt(string $data, string $method, string $key, [int $options], [string $iv = ""], [string $tag = ""], [string $aad = ""])%Decrypts data
 openssl_dh_compute_key%string openssl_dh_compute_key(string $pub_key, resource $dh_key)%Computes shared secret for public value of remote DH key and local DH key
 openssl_digest%string openssl_digest(string $data, string $method, [bool $raw_output = false])%Computes a digest
 openssl_encrypt%string openssl_encrypt(string $data, string $method, string $password, [int $options], [string $iv = ""])%Verschlüsselt Daten
@@ -2424,7 +2428,7 @@ require_once%bool require_once(string $path)%Includes and evaluates the specifie
 reset%mixed reset(array $array)%Setzt den internen Zeiger eines Arrays auf sein erstes Element
 resourcebundle_count%int resourcebundle_count(ResourceBundle $r)%Get number of elements in the bundle
 resourcebundle_create%ResourceBundle resourcebundle_create(string $locale, string $bundlename, [bool $fallback])%Create a resource bundle
-resourcebundle_get%mixed resourcebundle_get(string|int $index, ResourceBundle $r)%Get data from the bundle
+resourcebundle_get%mixed resourcebundle_get(string|int $index, [bool $fallback], ResourceBundle $r)%Get data from the bundle
 resourcebundle_get_error_code%int resourcebundle_get_error_code(ResourceBundle $r)%Get bundle's last error code.
 resourcebundle_get_error_message%string resourcebundle_get_error_message(ResourceBundle $r)%Get bundle's last error message.
 resourcebundle_locales%array resourcebundle_locales(string $bundlename)%Get supported locales
