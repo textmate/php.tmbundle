@@ -13,8 +13,15 @@ require '~/Library/Application Support/TextMate/Bundles/php.tmbundle/Support/lib
 require '~/Library/Application Support/TextMate/Bundles/bundle-support.tmbundle/Support/shared/lib/osx/plist'
 
 data = JSON.parse(File.read(ARGV[0]))
-classes = data['classes']
-sections = data['sections']
+
+# Escape strings before passing though to regex building
+
+classes = data['classes'].map! { |name| Regexp.escape(name) }
+
+sections = { }
+data['sections'].each { |section, values|
+  sections[section] = values.map! { |name| Regexp.escape(name) }
+}
 
 # ==================
 # = Syntax writing =
