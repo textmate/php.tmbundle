@@ -258,7 +258,7 @@
 					<key>begin</key>
 					<string>(?i)(?=\\?[a-z_0-9]+\\)</string>
 					<key>end</key>
-					<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\])</string>
+					<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\]|\z)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
@@ -283,7 +283,7 @@
 					<key>begin</key>
 					<string>(?=[\\a-zA-Z_])</string>
 					<key>end</key>
-					<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\])</string>
+					<string>(?i)([a-z_][a-z_0-9]*)?(?=[^a-z0-9_\\]|\z)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
@@ -2472,7 +2472,7 @@
 		<key>namespace</key>
 		<dict>
 			<key>begin</key>
-			<string>(?i)(?:(namespace)|[a-z0-9_]+)?(\\)(?=.*?[^a-z_0-9\\])</string>
+			<string>(?i)(?:(namespace)|[a-z0-9_]+)?(\\)(?=.*?([^a-z0-9_\\]|\z))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -2487,7 +2487,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i)(?=[a-z0-9_]*[^a-z0-9_\\])</string>
+			<string>(?i)(?=[a-z0-9_]*([^a-z0-9_\\]|\z))</string>
 			<key>name</key>
 			<string>support.other.namespace.php</string>
 			<key>patterns</key>
