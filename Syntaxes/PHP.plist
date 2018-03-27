@@ -1919,13 +1919,60 @@
 					<key>contentName</key>
 					<string>meta.function.arguments.php</string>
 					<key>end</key>
-					<string>(\))</string>
+					<string>(?ix)
+						(\))											# Close arguments
+						(?:												# Optional return type
+							\s*(:)\s*
+							(\?)?
+							(?:
+								(array|bool|float|int|string)			# scalar-type
+							  | (callable|iterable)						# base-type-declaration
+							  | (void)
+							  | ([a-z_0-9\\]*[a-z_][a-z_0-9]*)			# qualified-name
+							)
+						)?
+					</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.parameters.end.php</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.return-type.php</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.nullable.php</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.$4.php</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.$5.php</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.void.php</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#class-name</string>
+								</dict>
+							</array>
 						</dict>
 					</dict>
 					<key>name</key>
