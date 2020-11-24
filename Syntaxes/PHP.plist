@@ -1683,7 +1683,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\s*\b((break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while|yield))\b</string>
+					<string>\s*\b((break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|match|return|switch|use|while|yield))\b</string>
 				</dict>
 				<dict>
 					<key>begin</key>
