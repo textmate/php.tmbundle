@@ -1720,7 +1720,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>([A-Za-z_][A-Za-z_0-9]*)\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*\)</string>
+					<string>([A-Za-z_][A-Za-z_0-9]*)\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)?\s*\)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
