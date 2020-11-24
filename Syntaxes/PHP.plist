@@ -1928,6 +1928,7 @@
 							  (array|bool|float|int|string|mixed)    # scalar-type
 							  | (callable|iterable)                  # base-type-declaration
 							  | (void)
+							  | (self|parent|static)                 # late static binding
 							  | ([a-z_0-9\\]*[a-z_][a-z_0-9]*)       # qualified-name
 							)
 						)?
@@ -1965,6 +1966,11 @@
 							<string>storage.type.void.php</string>
 						</dict>
 						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.$7.php</string>
+						</dict>
+						<key>8</key>
 						<dict>
 							<key>patterns</key>
 							<array>
