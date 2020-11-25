@@ -547,17 +547,17 @@
 				<dict>
 					<key>begin</key>
 					<string>(?ix)
-						(?:														# Optional
+						(?:                                                  # Optional
 							(\?)?
 							(?:
-								(array|bool|float|int|string)					# scalar-type
-							  | (callable|iterable)								# base-type-declaration
+							  (array|bool|float|int|string|mixed)        # scalar-type
+							  | (callable|iterable)                      # base-type-declaration
 							  | ([a-z_0-9\\]*[a-z_][a-z_0-9]*)
 							)
 							\s+
 						)?
-						(?:(&amp;)\s*)?												# Reference
-						((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*)		# Variable name
+						(?:(&amp;)\s*)?                                      # Reference
+						((\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*)    # Variable name
 					</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -777,7 +777,7 @@
 							<key>contentName</key>
 							<string>text.html</string>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -825,7 +825,7 @@
 							<key>contentName</key>
 							<string>text.xml</string>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -873,7 +873,7 @@
 							<key>contentName</key>
 							<string>source.sql</string>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -921,7 +921,7 @@
 							<key>contentName</key>
 							<string>source.js</string>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -969,7 +969,7 @@
 							<key>contentName</key>
 							<string>source.json</string>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -1017,7 +1017,7 @@
 							<key>contentName</key>
 							<string>source.css</string>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -1065,7 +1065,7 @@
 							<key>contentName</key>
 							<string>string.regexp.heredoc.php</string>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -1184,7 +1184,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>^(\3)\b</string>
+							<string>^\s*(\3)\b</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>1</key>
@@ -1683,7 +1683,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\s*\b((break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|return|switch|use|while|yield))\b</string>
+					<string>\s*\b((break|c(ase|ontinue)|d(e(clare|fault)|ie|o)|e(lse(if)?|nd(declare|for(each)?|if|switch|while)|xit)|for(each)?|if|match|return|switch|use|while|yield))\b</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1720,7 +1720,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>([A-Za-z_][A-Za-z_0-9]*)\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)\s*\)</string>
+					<string>([A-Za-z_][A-Za-z_0-9]*)\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*)?\s*\)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>1</key>
@@ -1920,15 +1920,16 @@
 					<string>meta.function.arguments.php</string>
 					<key>end</key>
 					<string>(?ix)
-						(\))											# Close arguments
-						(?:												# Optional return type
+						(\))                                             # Close arguments
+						(?:                                              # Optional return type
 							\s*(:)\s*
 							(\?)?
 							(?:
-								(array|bool|float|int|string)			# scalar-type
-							  | (callable|iterable)						# base-type-declaration
+							  (array|bool|float|int|string|mixed)    # scalar-type
+							  | (callable|iterable)                  # base-type-declaration
 							  | (void)
-							  | ([a-z_0-9\\]*[a-z_][a-z_0-9]*)			# qualified-name
+							  | (self|parent|static)                 # late static binding
+							  | ([a-z_0-9\\]*[a-z_][a-z_0-9]*)       # qualified-name
 							)
 						)?
 					</string>
@@ -1965,6 +1966,11 @@
 							<string>storage.type.void.php</string>
 						</dict>
 						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.$7.php</string>
+						</dict>
+						<key>8</key>
 						<dict>
 							<key>patterns</key>
 							<array>
@@ -2138,7 +2144,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(array|real|double|float|int(eger)?|bool(ean)?|string|class|clone|var|function|interface|parent|self|object)\b</string>
+					<string>(?i)\b(array|real|double|float|int(eger)?|bool(ean)?|string|mixed|class|clone|var|function|interface|parent|self|object)\b</string>
 					<key>name</key>
 					<string>storage.type.php</string>
 				</dict>
@@ -2450,7 +2456,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?x)(-&gt;)
+					<string>(?x)(\??-&gt;)
             				(?:
             				    ([A-Za-z_][A-Za-z_0-9]*)\s*\(
             				    |
